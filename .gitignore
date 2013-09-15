@@ -10,4 +10,5 @@ nodebox/tests/graphics/_results/
 NodeBox.xcodeproj/*.mode1v3
 NodeBox.xcodeproj/*.pbxuser
 nodebox/tests/vdiff/images/*/_compare.png
+nodebox/tests/vdiff/test-results.html
 
