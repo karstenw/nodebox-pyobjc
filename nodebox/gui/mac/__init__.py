@@ -5,8 +5,54 @@ import re
 import objc
 import time
 import random
-from Foundation import *
-from AppKit import *
+#from Foundation import *
+#from AppKit import *
+
+import Foundation
+import AppKit
+import AppKit
+
+NSObject = AppKit.NSObject
+NSColor = AppKit.NSColor
+NSScriptCommand = AppKit.NSScriptCommand
+
+NSDocument = AppKit.NSDocument
+NSDocumentController = AppKit.NSDocumentController
+
+NSNotificationCenter = AppKit.NSNotificationCenter
+
+NSFontAttributeName = AppKit.NSFontAttributeName
+NSScreen = AppKit.NSScreen
+NSMenu = AppKit.NSMenu
+NSCursor = AppKit.NSCursor
+NSTimer = AppKit.NSTimer
+NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
+
+NSPasteboard = AppKit.NSPasteboard
+NSPDFPboardType = AppKit.NSPDFPboardType
+NSPostScriptPboardType = AppKit.NSPostScriptPboardType
+NSTIFFPboardType = AppKit.NSTIFFPboardType
+
+NSBundle = AppKit.NSBundle
+NSSavePanel = AppKit.NSSavePanel
+NSLog = AppKit.NSLog
+NSApp = AppKit.NSApp
+NSPrintOperation = AppKit.NSPrintOperation
+NSWindow = AppKit.NSWindow
+NSBorderlessWindowMask = AppKit.NSBorderlessWindowMask
+NSBackingStoreBuffered = AppKit.NSBackingStoreBuffered
+NSView = AppKit.NSView
+NSGraphicsContext = AppKit.NSGraphicsContext
+NSRectFill = AppKit.NSRectFill
+NSAffineTransform = AppKit.NSAffineTransform
+NSFocusRingTypeExterior = AppKit.NSFocusRingTypeExterior
+NSResponder = AppKit.NSResponder
+
+NSURL = AppKit.NSURL
+NSWorkspace = AppKit.NSWorkspace
+
+
+
 from threading import Thread
 
 from nodebox.gui.mac.ValueLadder import MAGICVAR
@@ -19,8 +65,12 @@ from nodebox import graphics
 PDF = 0x70646678 # 'pdfx'
 QUICKTIME = 0x71747878 # 'qt  '
 
-VERY_LIGHT_GRAY = NSColor.blackColor().blendedColorWithFraction_ofColor_(0.95, NSColor.whiteColor())
-DARKER_GRAY = NSColor.blackColor().blendedColorWithFraction_ofColor_(0.8, NSColor.whiteColor())
+
+black = NSColor.blackColor()
+VERY_LIGHT_GRAY = black.blendedColorWithFraction_ofColor_(0.95,
+                                                          NSColor.whiteColor())
+DARKER_GRAY = black.blendedColorWithFraction_ofColor_(0.8,
+                                                      NSColor.whiteColor())
 
 from nodebox.gui.mac.dashboard import *
 from nodebox.gui.mac.progressbar import ProgressBarController
@@ -79,7 +129,10 @@ class NodeBoxDocument(NSDocument):
     def init(self):
         self = super(NodeBoxDocument, self).init()
         nc = NSNotificationCenter.defaultCenter()
-        nc.addObserver_selector_name_object_(self, "textFontChanged:", "PyDETextFontChanged", None)
+        nc.addObserver_selector_name_object_(self,
+                                             "textFontChanged:",
+                                             "PyDETextFontChanged",
+                                             None)
         self.namespace = {}
         self.canvas = graphics.Canvas()
         self.context = graphics.Context(self.canvas, self.namespace)
@@ -282,7 +335,11 @@ class NodeBoxDocument(NSDocument):
 
             # Start the timer
             self.animationTimer = NSTimer.scheduledTimerWithTimeInterval_target_selector_userInfo_repeats_(
-                1.0 / self.speed, self, objc.selector(self.doFrame, signature="v@:@"), None, True)
+                1.0 / self.speed,
+                self,
+                objc.selector(self.doFrame, signature="v@:@"),
+                None,
+                True)
                 
             # Start the spinner
             self.animationSpinner.startAnimation_(None)
@@ -332,7 +389,9 @@ class NodeBoxDocument(NSDocument):
         if source is None:
             source = self.textView.string()
         self._code = None
-        self._code = compile(source + "\n\n", self.scriptName.encode('ascii', 'ignore'), "exec")
+        self._code = compile(source + "\n\n",
+                             self.scriptName.encode('ascii', 'ignore'),
+                             "exec")
 
     def _initNamespace(self):
         self.namespace.clear()
@@ -375,12 +434,16 @@ class NodeBoxDocument(NSDocument):
         """
 
         self.scriptName = self.fileName()
-        libDir = os.path.join(os.getenv("HOME"), "Library", "Application Support", "NodeBox")
+        libDir = os.path.join(os.getenv("HOME"),
+                              "Library",
+                              "Application Support",
+                              "NodeBox")
         if not self.scriptName:
             curDir = os.getenv("HOME")
             self.scriptName = "<untitled>"
         else:
             curDir = os.path.dirname(self.scriptName)
+
         save = sys.stdout, sys.stderr
         saveDir = os.getcwd()
         saveArgv = sys.argv
@@ -459,7 +522,10 @@ class NodeBoxDocument(NSDocument):
     def copyImageAsPDF_(self, sender):
         pboard = NSPasteboard.generalPasteboard()
         # graphicsView implements the pboard delegate method to provide the data
-        pboard.declareTypes_owner_([NSPDFPboardType,NSPostScriptPboardType,NSTIFFPboardType], self.graphicsView)
+        pboard.declareTypes_owner_( [NSPDFPboardType,
+                                     NSPostScriptPboardType,
+                                     NSTIFFPboardType],
+                                    self.graphicsView)
 
     @objc.IBAction
     def exportAsImage_(self, sender):
@@ -483,7 +549,10 @@ class NodeBoxDocument(NSDocument):
         if self.exportDir is not None:
             dirName = self.exportDir
         exportPanel.beginSheetForDirectory_file_modalForWindow_modalDelegate_didEndSelector_contextInfo_(
-            dirName, fileName, NSApp().mainWindow(), self,
+            dirName,
+            fileName,
+            NSApp().mainWindow(),
+            self,
             "exportPanelDidEnd:returnCode:contextInfo:", 0)
 
     def exportPanelDidEnd_returnCode_contextInfo_(self, panel, returnCode, context):
@@ -494,8 +563,9 @@ class NodeBoxDocument(NSDocument):
             format = panel.requiredFileType()
             panel.close()
             self.doExportAsImage(fname, format, pages)
-    exportPanelDidEnd_returnCode_contextInfo_ = objc.selector(exportPanelDidEnd_returnCode_contextInfo_,
-            signature="v@:@ii")
+    exportPanelDidEnd_returnCode_contextInfo_ = objc.selector(
+        exportPanelDidEnd_returnCode_contextInfo_,
+        signature="v@:@ii")
             
     @objc.IBAction
     def exportImageFormatChanged_(self, sender):
@@ -582,7 +652,10 @@ class NodeBoxDocument(NSDocument):
         if self.exportDir is not None:
             dirName = self.exportDir
         exportPanel.beginSheetForDirectory_file_modalForWindow_modalDelegate_didEndSelector_contextInfo_(
-            dirName, fileName, NSApp().mainWindow(), self,
+            dirName,
+            fileName,
+            NSApp().mainWindow(),
+            self,
             "qtPanelDidEnd:returnCode:contextInfo:", 0)
                 
     def qtPanelDidEnd_returnCode_contextInfo_(self, panel, returnCode, context):
@@ -596,13 +669,15 @@ class NodeBoxDocument(NSDocument):
             if frames <= 0 or fps <= 0: return
             self.doExportAsMovie(fname, frames, fps)
     qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
-            signature="v@:@ii")
+                                                          signature="v@:@ii")
 
     def doExportAsMovie(self, fname, frames=60, fps=30):
         # Only load QTSupport when necessary. 
-        # QTSupport loads QTKit, which wants to establish a connection to the window server.
-        # If we load QTSupport before something is on screen, the connection to the window server
-        # cannot be established.
+        # QTSupport loads QTKit, which wants to establish a connection to the window
+        # server.
+        # If we load QTSupport before something is on screen, the connection to the
+        # window server cannot be established.
+
         from nodebox.util import QTSupport
         try:
             os.unlink(fname)
@@ -612,7 +687,8 @@ class NodeBoxDocument(NSDocument):
             fp = open(fname, 'w')
             fp.close()
         except:
-            errorAlert("File Error", "Could not create file '%s'. Perhaps it is locked or busy." % fname)
+            errorAlert("File Error", ("Could not create file '%s'. "
+                                      "Perhaps it is locked or busy.") % fname)
             return
 
         movie = None
@@ -704,7 +780,11 @@ class NodeBoxDocument(NSDocument):
 class FullscreenWindow(NSWindow):
     
     def initWithRect_(self, fullRect):
-        super(FullscreenWindow, self).initWithContentRect_styleMask_backing_defer_(fullRect, NSBorderlessWindowMask, NSBackingStoreBuffered, True)
+        super(FullscreenWindow,
+              self).initWithContentRect_styleMask_backing_defer_(
+                fullRect,
+                NSBorderlessWindowMask,
+                NSBackingStoreBuffered, True)
         return self
         
     def canBecomeKeyWindow(self):
@@ -904,7 +984,9 @@ class NodeBoxGraphicsView(NSView):
                     t = NSAffineTransform.transform()
                     t.scaleBy_(self.zoom)
                     t.concat()
-                    clip = NSBezierPath.bezierPathWithRect_( ((0, 0), (self.canvas.width, self.canvas.height)) )
+                    clip = NSBezierPath.bezierPathWithRect_( ( (0, 0),
+                                                               (self.canvas.width,
+                                                                self.canvas.height)) )
                     clip.addClip()
                 self.canvas.draw()
             except:
@@ -993,15 +1075,20 @@ class NodeBoxAppDelegate(NSObject):
 
     def awakeFromNib(self):
         self._prefsController = None
-        libDir = os.path.join(os.getenv("HOME"), "Library", "Application Support", "NodeBox")
+        libDir = os.path.join(os.getenv("HOME"), "Library",
+                                                 "Application Support",
+                                                 "NodeBox")
         try:
             if not os.path.exists(libDir):
                 os.mkdir(libDir)
                 f = open(os.path.join(libDir, "README"), "w")
-                f.write("In this directory, you can put Python libraries to make them available to your scripts.\n")
+                f.write( ("In this directory, you can put Python libraries "
+                          "to make them available to your scripts.\n") )
                 f.close()
-        except OSError: pass
-        except IOError: pass
+        except OSError:
+            pass
+        except IOError:
+            pass
 
     @objc.IBAction
     def showPreferencesPanel_(self, sender):

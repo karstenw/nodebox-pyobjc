@@ -1,8 +1,49 @@
 import os
 import warnings
-from random import choice, shuffle
-from AppKit import *
-from Foundation import *
+
+# from random import choice, shuffle
+import random
+choice = random.choice
+shuffle = random.shuffle
+
+
+# from AppKit import *
+import AppKit
+NSBezierPath = AppKit.NSBezierPath
+NSColor = AppKit.NSColor
+NSGraphicsContext = AppKit.NSGraphicsContext
+
+NSView = AppKit.NSView
+
+NSDeviceCMYKColorSpace = AppKit.NSDeviceCMYKColorSpace
+NSDeviceRGBColorSpace = AppKit.NSDeviceRGBColorSpace
+NSAffineTransform = AppKit.NSAffineTransform
+NSImage = AppKit.NSImage
+NSImageCacheNever = AppKit.NSImageCacheNever
+NSCompositeSourceOver = AppKit.NSCompositeSourceOver
+NSLeftTextAlignment = AppKit.NSLeftTextAlignment
+NSFont = AppKit.NSFont
+NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
+NSLineBreakByWordWrapping = AppKit.NSLineBreakByWordWrapping
+NSParagraphStyleAttributeName = AppKit.NSParagraphStyleAttributeName
+NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
+NSFontAttributeName = AppKit.NSFontAttributeName
+NSTextStorage = AppKit.NSTextStorage
+NSLayoutManager = AppKit.NSLayoutManager
+NSTextContainer = AppKit.NSTextContainer
+NSRectFillUsingOperation = AppKit.NSRectFillUsingOperation
+NSGIFFileType = AppKit.NSGIFFileType
+NSJPEGFileType = AppKit.NSJPEGFileType
+NSJPEGFileType = AppKit.NSJPEGFileType
+NSPNGFileType = AppKit.NSPNGFileType
+NSTIFFFileType = AppKit.NSTIFFFileType
+NSBitmapImageRep = AppKit.NSBitmapImageRep
+NSString = AppKit.NSString
+NSData = AppKit.NSData
+NSAffineTransformStruct = AppKit.NSAffineTransformStruct
+
+
+# from Foundation import *
 
 from nodebox.util import _copy_attr, _copy_attrs
 
@@ -22,7 +63,8 @@ __all__ = [
         "NORMAL","FORTYFIVE",
         "NUMBER", "TEXT", "BOOLEAN","BUTTON",
         "NodeBoxError",
-        "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect", "Oval", "Color", "Transform", "Image", "Text",
+        "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect", "Oval",
+        "Color", "Transform", "Image", "Text",
         "Variable", "Canvas",
         ]
 
@@ -39,21 +81,21 @@ CMYK = "cmyk"
 CENTER = "center"
 CORNER = "corner"
 
-MOVETO = NSMoveToBezierPathElement
-LINETO = NSLineToBezierPathElement
-CURVETO = NSCurveToBezierPathElement
-CLOSE = NSClosePathBezierPathElement
+MOVETO = AppKit.NSMoveToBezierPathElement
+LINETO = AppKit.NSLineToBezierPathElement
+CURVETO = AppKit.NSCurveToBezierPathElement
+CLOSE = AppKit.NSClosePathBezierPathElement
 
-MITER = NSMiterLineJoinStyle
-ROUND = NSRoundLineJoinStyle # Also used for NSRoundLineCapStyle, same value.
-BEVEL = NSBevelLineJoinStyle
-BUTT = NSButtLineCapStyle
-SQUARE = NSSquareLineCapStyle
+MITER = AppKit.NSMiterLineJoinStyle
+ROUND = AppKit.NSRoundLineJoinStyle # Also used for NSRoundLineCapStyle, same value.
+BEVEL = AppKit.NSBevelLineJoinStyle
+BUTT = AppKit.NSButtLineCapStyle
+SQUARE = AppKit.NSSquareLineCapStyle
 
-LEFT = NSLeftTextAlignment
-RIGHT = NSRightTextAlignment
-CENTER = NSCenterTextAlignment
-JUSTIFY = NSJustifiedTextAlignment
+LEFT = AppKit.NSLeftTextAlignment
+RIGHT = AppKit.NSRightTextAlignment
+CENTER = AppKit.NSCenterTextAlignment
+JUSTIFY = AppKit.NSJustifiedTextAlignment
 
 NORMAL=1
 FORTYFIVE=2

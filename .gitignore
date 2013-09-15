@@ -6,3 +6,5 @@ dist/
 # Xcode user files
 project.xcworkspace
 xcuserdata
+nodebox/tests/graphics/_results/
+

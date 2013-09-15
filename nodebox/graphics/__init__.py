@@ -1,10 +1,44 @@
-from nodebox.graphics.cocoa import *
-from nodebox.graphics import cocoa as graphics_impl
+#from nodebox.graphics.cocoa import *
 
-from nodebox.util import _copy_attr, _copy_attrs
+#import nodebox
+#import nodebox.graphics
+#import nodebox.graphics.cocoa
+
+import cocoa
+# from nodebox.graphics import cocoa as graphics_impl
+graphics_impl = cocoa
+
+
+# I despise it but cocoa.py has an __all__...
+from nodebox.graphics.cocoa import *
+# Canvas = graphics_impl.Canvas
+# RGB = graphics_impl.RGB
+# Color = graphics_impl.Color
+# BUTT = graphics_impl.BUTT
+# CENTER = graphics_impl.CENTER
+# CORNER = graphics_impl.CORNER
+# LEFT = graphics_impl.LEFT
+# BUTT = graphics_impl.BUTT
+# ROUND = graphics_impl.ROUND
+# SQUARE = graphics_impl.SQUARE
+# MITER = graphics_impl.MITER
+# 
+# Transform = graphics_impl.Transform
+
+
+
+
+# from nodebox.util import _copy_attr, _copy_attrs
+import nodebox.util
+_copy_attr = nodebox.util._copy_attr
+_copy_attrs = nodebox.util._copy_attrs
+
+
+import nodebox.geo
 
 __all__ = list(graphics_impl.__all__)
 __all__.extend(['Context'])
+
 
 class Context(object):
     
@@ -15,7 +49,11 @@ class Context(object):
     KEY_BACKSPACE = graphics_impl.KEY_BACKSPACE
     KEY_TAB = graphics_impl.KEY_TAB
     KEY_ESC = graphics_impl.KEY_ESC
-    
+
+    NORMAL = graphics_impl.NORMAL
+    FORTYFIVE = graphics_impl.FORTYFIVE
+
+
     def __init__(self, canvas=None, ns=None):
 
         """Initializes the context.
@@ -124,18 +162,25 @@ class Context(object):
            This method sets the context of the object to the current context."""
         inst = clazz(self, *args, **kwargs)
         return inst
+
     def BezierPath(self, *args, **kwargs):
         return self._makeInstance(BezierPath, args, kwargs)
+
     def ClippingPath(self, *args, **kwargs):
         return self._makeInstance(ClippingPath, args, kwargs)
+
     def Rect(self, *args, **kwargs):
         return self._makeInstance(Rect, args, kwargs)
+
     def Oval(self, *args, **kwargs):
         return self._makeInstance(Oval, args, kwargs)
+
     def Color(self, *args, **kwargs):
         return self._makeInstance(Color, args, kwargs)
+
     def Image(self, *args, **kwargs):
         return self._makeInstance(Image, args, kwargs)
+
     def Text(self, *args, **kwargs):
         return self._makeInstance(Text, args, kwargs)
 
@@ -171,7 +216,7 @@ class Context(object):
         path.inheritFromContext(kwargs.keys())
 
         if draw:
-          path.draw()
+            path.draw()
         return path
 
     ellipse = oval
@@ -182,7 +227,7 @@ class Context(object):
         p.line(x1, y1, x2, y2)
         p.inheritFromContext(kwargs.keys())
         if draw:
-          p.draw()
+            p.draw()
         return p
 
     def star(self, startx, starty, points=20, outer= 100, inner = 50, draw=True, **kwargs):
@@ -193,21 +238,21 @@ class Context(object):
         p.moveto(startx, starty + outer)
 
         for i in range(1, int(2 * points)):
-          angle = i * pi / points
-          x = sin(angle)
-          y = cos(angle)
-          if i % 2:
-              radius = inner
-          else:
-              radius = outer
-          x = startx + radius * x
-          y = starty + radius * y
-          p.lineto(x,y)
+            angle = i * pi / points
+            x = sin(angle)
+            y = cos(angle)
+            if i % 2:
+                radius = inner
+            else:
+                radius = outer
+            x = startx + radius * x
+            y = starty + radius * y
+            p.lineto(x,y)
 
         p.closepath()
         p.inheritFromContext(kwargs.keys())
         if draw:
-          p.draw()
+            p.draw()
         return p
 
     def arrow(self, x, y, width=100, type=NORMAL, draw=True, **kwargs):
@@ -220,11 +265,11 @@ class Context(object):
 
         BezierPath.checkKwargs(kwargs)
         if type==NORMAL:
-          return self._arrow(x, y, width, draw, **kwargs)
+            return self._arrow(x, y, width, draw, **kwargs)
         elif type==FORTYFIVE:
-          return self._arrow45(x, y, width, draw, **kwargs)
+            return self._arrow45(x, y, width, draw, **kwargs)
         else:
-          raise NodeBoxError("arrow: available types for arrow() are NORMAL and FORTYFIVE\n")
+            raise NodeBoxError("arrow: available types for arrow() are NORMAL and FORTYFIVE\n")
 
     def _arrow(self, x, y, width, draw, **kwargs):
 
@@ -243,7 +288,7 @@ class Context(object):
         p.closepath()
         p.inheritFromContext(kwargs.keys())
         if draw:
-          p.draw()
+            p.draw()
         return p
 
     def _arrow45(self, x, y, width, draw, **kwargs):
@@ -264,7 +309,7 @@ class Context(object):
         p.lineto(x, y)
         p.inheritFromContext(kwargs.keys())
         if draw:
-          p.draw()
+            p.draw()
         return p
 
     ### Path Commands ###
@@ -466,14 +511,14 @@ class Context(object):
         txt = self.Text(txt, x, y, width, height, **kwargs)
         txt.inheritFromContext(kwargs.keys())
         if outline:
-          path = txt.path
-          if draw:
-              path.draw()
-          return path
+            path = txt.path
+            if draw:
+                path.draw()
+            return path
         else:
-          if draw:
-            txt.draw()
-          return txt
+            if draw:
+                txt.draw()
+            return txt
 
     def textpath(self, txt, x, y, width=None, height=None, **kwargs):
         Text.checkKwargs(kwargs)
@@ -503,3 +548,19 @@ class Context(object):
     
     def save(self, fname, format=None):
         self.canvas.save(fname, format)
+
+    
+    ## cGeo
+
+    def angle(self, x0, y0, x1, y1):
+        return nodebox.geo.angle( x0, y0, x1, y1)
+
+    def distance(self, x0, y0, x1, y1):
+        return nodebox.geo.distance( x0, y0, x1, y1)
+
+    def coordinates(self, x0, y0, distance, angle):
+        return nodebox.geo.coordinates(self, x0, y0, distance, angle)
+
+    def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
+        return nodebox.geo.reflect(self, x0, y0, x1, y1, d=1.0, a=180)
+

@@ -1,3 +1,7 @@
+NodeBox 1.9.8
+-------------
+* added angle, distance, coordinates and reflect from cGeo
+
 NodeBox 1.9.7
 -------------
 * Compatibility with Mac OS X 10.7 Lion (auto-saving! versions!).

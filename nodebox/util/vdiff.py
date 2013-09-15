@@ -1,5 +1,5 @@
 import os
-import Image
+import PIL.Image as Image
 
 HTML_HEADER = r'''
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
