@@ -1,5 +1,37 @@
-from Foundation import *
-from AppKit import *
+#from Foundation import *
+#from AppKit import *
+
+import compiler
+parse = compiler.parse
+
+import compiler.ast
+Sub = compiler.ast.Sub
+UnarySub = compiler.ast.UnarySub
+Add = compiler.ast.Add
+
+
+import Foundation
+import AppKit
+
+NSObject = AppKit.NSObject
+NSColor = AppKit.NSColor
+NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
+NSCenterTextAlignment = AppKit.NSCenterTextAlignment
+NSFont = AppKit.NSFont
+NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
+NSCursor = AppKit.NSCursor
+NSGraphicsContext = AppKit.NSGraphicsContext
+NSBezierPath = AppKit.NSBezierPath
+NSString = AppKit.NSString
+NSEvent = AppKit.NSEvent
+NSAlternateKeyMask = AppKit.NSAlternateKeyMask
+NSShiftKeyMask = AppKit.NSShiftKeyMask
+NSParagraphStyleAttributeName = AppKit.NSParagraphStyleAttributeName
+NSFontAttributeName = AppKit.NSFontAttributeName
+
+
+
+
 
 MAGICVAR = "__magic_var__"
 
@@ -32,7 +64,9 @@ class ValueLadder:
         paraStyle = NSMutableParagraphStyle.alloc().init()
         paraStyle.setAlignment_(NSCenterTextAlignment)
         font = NSFont.fontWithName_size_("Monaco", 10)
-        self.textAttributes = {NSForegroundColorAttributeName:self.textColor,NSParagraphStyleAttributeName:paraStyle,NSFontAttributeName:font}
+        self.textAttributes = {
+            NSForegroundColorAttributeName: self.textColor,
+            NSParagraphStyleAttributeName:  paraStyle,NSFontAttributeName:font}
 
         # To speed things up, the code is compiled only once. 
         # The number is replaced with a magic variable, that is set in the 
@@ -50,7 +84,6 @@ class ValueLadder:
             self.textView.document._flushOutput(output)
 
     def _parseAndCompile(self):
-        from compiler import parse
         ast = parse(self.patchedSource.encode('ascii', 'replace') + "\n\n")
         self._checkSigns(ast)
         self.textView.document._compileScript(self.patchedSource)
@@ -82,8 +115,6 @@ class ValueLadder:
         -  0: bail out. Somewhere, a child contained the magicvar, and we
               acted upon it. Now leave this algorithm as soon as possible.
         """
-
-        from compiler.ast import Sub, UnarySub, Add
 
         # Check whether I am the correct node
         try:

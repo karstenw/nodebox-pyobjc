@@ -1,6 +1,23 @@
 #from PyObjCTools import NibClassBuilder, AppHelper
 from PyObjCTools import AppHelper
-from AppKit import *
+
+import AppKit
+
+NSObject = AppKit.NSObject
+NSFont = AppKit.NSFont
+NSMiniControlSize = AppKit.NSMiniControlSize
+NSOnState = AppKit.NSOnState
+NSOffState = AppKit.NSOffState
+NSTextField = AppKit.NSTextField
+NSRightTextAlignment = AppKit.NSRightTextAlignment
+NSSlider = AppKit.NSSlider
+NSMiniControlSize = AppKit.NSMiniControlSize
+NSGraphiteControlTint = AppKit.NSGraphiteControlTint
+NSButton = AppKit.NSButton
+NSSwitchButton = AppKit.NSSwitchButton
+NSSmallControlSize = AppKit.NSSmallControlSize
+
+
 import objc
 
 from nodebox import graphics

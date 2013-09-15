@@ -5,12 +5,14 @@
 #import nodebox.graphics.cocoa
 
 import cocoa
+# import graphics
 # from nodebox.graphics import cocoa as graphics_impl
 graphics_impl = cocoa
 
 
 # I despise it but cocoa.py has an __all__...
-from nodebox.graphics.cocoa import *
+# from nodebox.graphics.cocoa import *
+from cocoa import *
 # Canvas = graphics_impl.Canvas
 # RGB = graphics_impl.RGB
 # Color = graphics_impl.Color

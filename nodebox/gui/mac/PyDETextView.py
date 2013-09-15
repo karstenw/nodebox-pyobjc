@@ -1,11 +1,50 @@
 from bisect import bisect
 import re
 import objc
-from Foundation import *
-from AppKit import *
+
+#from Foundation import *
+#from AppKit import *
+import AppKit
+
+
+NSBackgroundColorAttributeName = AppKit.NSBackgroundColorAttributeName
+NSBeep = AppKit.NSBeep
+NSColor = AppKit.NSColor
+NSCommandKeyMask = AppKit.NSCommandKeyMask
+NSDictionary = AppKit.NSDictionary
+NSEvent = AppKit.NSEvent
+NSFont = AppKit.NSFont
+NSFontAttributeName = AppKit.NSFontAttributeName
+NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
+NSLigatureAttributeName = AppKit.NSLigatureAttributeName
+NSLiteralSearch = AppKit.NSLiteralSearch
+NSNotificationCenter = AppKit.NSNotificationCenter
+NSObject = AppKit.NSObject
+NSStringPboardType = AppKit.NSStringPboardType
+NSTextStorage = AppKit.NSTextStorage
+NSTextStorageEditedCharacters = AppKit.NSTextStorageEditedCharacters
+NSTextView = AppKit.NSTextView
+NSURL = AppKit.NSURL
+NSURLPboardType = AppKit.NSURLPboardType
+NSViewWidthSizable = AppKit.NSViewWidthSizable
+
+NSCalibratedRGBColorSpace = AppKit.NSCalibratedRGBColorSpace
+NSUserDefaults = AppKit.NSUserDefaults
+
+
+
+
+
+
 #from PyObjCTools import NibClassBuilder
-from nodebox.util.PyFontify import fontify
+# from nodebox.util.PyFontify import fontify
+import nodebox.PyFontify
+fontify = nodebox.PyFontify.fontify
+
+
 from nodebox.gui.mac.ValueLadder import ValueLadder
+# import nodebox.gui.mac.ValueLadder
+# ValueLadder = nodebox.gui.mac.ValueLadder.ValueLadder
 
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")

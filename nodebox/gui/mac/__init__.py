@@ -10,7 +10,6 @@ import random
 
 import Foundation
 import AppKit
-import AppKit
 
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
@@ -50,16 +49,31 @@ NSResponder = AppKit.NSResponder
 
 NSURL = AppKit.NSURL
 NSWorkspace = AppKit.NSWorkspace
-
+NSBezierPath = AppKit.NSBezierPath
 
 
 from threading import Thread
 
 from nodebox.gui.mac.ValueLadder import MAGICVAR
+# import nodebox.gui.mac.ValueLadder
+# MAGICVAR = nodebox.gui.mac.ValueLadder.MAGICVAR
+
 from nodebox.gui.mac import PyDETextView
+# import nodebox.gui.mac.PyDETextView
+# PyDETextView = nodebox.gui.mac.PyDETextView.PyDETextView
+
 from nodebox.gui.mac.util import errorAlert
-from nodebox import util
-from nodebox import graphics
+# import nodebox.gui.mac.util.errorAlert
+# errorAlert = nodebox.gui.mac.util.errorAlert
+
+# from nodebox import util
+import nodebox.util
+util = nodebox.util
+
+# from nodebox import graphics
+import nodebox.graphics
+graphics = nodebox.graphics
+
 
 # AppleScript enumerator codes for PDF and Quicktime export
 PDF = 0x70646678 # 'pdfx'

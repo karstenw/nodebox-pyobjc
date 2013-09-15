@@ -9,6 +9,21 @@ import AppKit
 
 from PyObjCTools import AppHelper
 
+import nodebox
+import nodebox.geo
+import nodebox.geo.pathmatics
+import nodebox.graphics
+import nodebox.graphics.bezier
+import nodebox.graphics.cocoa
+import nodebox.gui
+
 import nodebox.gui.mac
+
+import sgmllib
+
+
+import PyObjCTools.Debugging
+PyObjCTools.Debugging.installVerboseExceptionHandler()
+
 
 AppHelper.runEventLoop()

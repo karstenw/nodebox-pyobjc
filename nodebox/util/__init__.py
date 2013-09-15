@@ -1,6 +1,15 @@
-from random import choice
+import random as librandom
+choice = librandom.choice
 
-__all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs')
+#import kgp
+# import ottobot
+#import PyFontify
+#import QTSupport
+#import vdiff
+
+__all__ = ('grid', 'random', 'choice', 'files', 'autotext',
+           '_copy_attr', '_copy_attrs')
+            #'kgp', 'ottobot', 'PyFontify', 'QTSupport', 'vdiff' )
 
 ### Utilities ###
 
@@ -36,23 +45,23 @@ def random(v1=None, v2=None):
     - If two values are given, random returns a value between the two; if two
       integers are given, the two boundaries are inclusive.
     """
-    import random
+    # import random
     if v1 != None and v2 == None: # One value means 0 -> v1
         if isinstance(v1, float):
-            return random.random() * v1
+            return librandom.random() * v1
         else:
-            return int(random.random() * v1)
+            return int(librandom.random() * v1)
     elif v1 != None and v2 != None: # v1 -> v2
         if isinstance(v1, float) or isinstance(v2, float):
             start = min(v1, v2)
             end = max(v1, v2)
-            return start + random.random() * (end-start)
+            return start + librandom.random() * (end-start)
         else:
             start = min(v1, v2)
             end = max(v1, v2) + 1
-            return int(start + random.random() * (end-start))
+            return int(start + librandom.random() * (end-start))
     else: # No values means 0.0 -> 1.0
-        return random.random()
+        return librandom.random()
 
 def files(path="*"):
     """Returns a list of files.

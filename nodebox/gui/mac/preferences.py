@@ -1,5 +1,19 @@
-from AppKit import *
-from Foundation import *
+#from AppKit import *
+#from Foundation import *
+
+import objc
+
+import AppKit
+NSWindowController = AppKit.NSWindowController
+NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
+NSNotificationCenter = AppKit.NSNotificationCenter
+NSFontManager = AppKit.NSFontManager
+NSFontAttributeName = AppKit.NSFontAttributeName
+
+
+
+
+
 from PyDETextView import getBasicTextAttributes, getSyntaxTextAttributes
 from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttributes
 

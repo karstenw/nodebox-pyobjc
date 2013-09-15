@@ -82,14 +82,20 @@ def cube(x, y, w, filled=1.0):
     bar(x, y, w, w*0.5, filled)
 
 from random import seed
-seed(55)
+seed(15)
 w = 110
 n = 3
-strokewidth(0.5)
+strokewidth(2.4)
 
 colormode(RGB)
 c = color(0.05,0.65,0.85)
 c.brightness += 0.2
+
+
+truth = [
+         [ [1,1,1],[0,0,1],[0,0,1] ],
+         [ [1,0,0],[0,0,0],[0,0,1] ],
+         [ [1,0,0],[1,0,0],[1,1,1] ]]
 
 for x in range(n):
 
@@ -99,7 +105,7 @@ for x in range(n):
     
         for z in range(n):
             stroke(0.1)
-            strokewidth(1)
+            # strokewidth(4.5)
             
             colormode(RGB)
             dr = (1-c.r)/(n-1) * (x*0.85+y*0.15+z*0.05) * 1.1
@@ -107,6 +113,8 @@ for x in range(n):
             db = (1-c.b)/(n-1) * (x*0.85+y*0.15+z*0.05) * 1.1
             fill(1.2-dr, 1.1-dg, 1.2-db)
             
+            doit = truth[z][x][y]
+            # if not doit: #random() > 0.4: 
             if random() > 0.5: 
                 nostroke()
                 nofill()
