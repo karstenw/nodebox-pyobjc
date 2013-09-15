@@ -1,5 +1,5 @@
 """
-Script for building the AKConverter.
+Script for building NodeBox
 
 Usage:
     python setup.py py2app
@@ -13,6 +13,7 @@ import nodebox
 
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
+
 
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
@@ -62,14 +63,14 @@ bundleID = "net.nodebox.NodeBox"
 
 setup(
     
-#     name = NAME,
-#     version = VERSION,
-#     description = DESCRIPTION,
-#     long_description = LONG_DESCRIPTION,
-#     author = AUTHOR,
-#     author_email = AUTHOR_EMAIL,
-#     url = URL,
-#     classifiers = CLASSIFIERS,
+    name = NAME,
+    version = VERSION,
+    description = DESCRIPTION,
+    long_description = LONG_DESCRIPTION,
+    author = AUTHOR,
+    author_email = AUTHOR_EMAIL,
+    url = URL,
+    classifiers = CLASSIFIERS,
 
 
     # data_files=["English.lproj"],
@@ -84,7 +85,7 @@ setup(
             "CFBundleSignature": creator,
             "CFBundleShortVersionString": VERSION,
             "CFBundleGetInfoString": DESCRIPTION,
-            # "NSHumanReadableCopyright": copyright,
+            # "NSHumanReadableCopyright": "",
 
             'CFBundleDocumentTypes': [
                 {
