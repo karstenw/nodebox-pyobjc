@@ -20,7 +20,11 @@ import nodebox.gui
 import nodebox.gui.mac
 
 import sgmllib
-#import numeric
+#import matplotlib
+
+#import sys
+#import pprint
+#pprint.pprint(sys.path)
 
 
 import PyObjCTools.Debugging
