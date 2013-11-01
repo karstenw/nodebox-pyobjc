@@ -7,6 +7,7 @@ It differs from the official version. It:
 + Has 4 additional commands: angle, distance, coordinates, reflect
 + Uses a different and bigger icon (512px)
 
+![Image](art/nodeboxlogo_big.png?raw=true)
 
 Download the app at my dropbox: http://goo.gl/vkuBeV
 
