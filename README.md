@@ -1,3 +1,15 @@
+This is a personal fork of NodeBox1. 
+
+It differs from the official version in:
++ Uses Python 2.7
++ is self containend
++ Builds without Xcode (python setup.py py2app)
++ Has 4 additional commands: angle, distance, coordinates, reflect
++ Uses a different and bigger icon (512px)
+
+Download the app at my dropbox: http://goo.gl/vkuBeV
+
+
 NodeBox
 =======
 NodeBox is an application used in graphic design research. It provides

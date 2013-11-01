@@ -20,6 +20,7 @@ import nodebox.gui
 import nodebox.gui.mac
 
 import sgmllib
+#import numeric
 
 
 import PyObjCTools.Debugging
