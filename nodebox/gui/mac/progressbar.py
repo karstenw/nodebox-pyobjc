@@ -1,13 +1,12 @@
 import objc
-from Foundation import *
-from AppKit import *
+import AppKit
 
-class ProgressBarController(NSWindowController):
+class ProgressBarController(AppKit.NSWindowController):
     messageField = objc.IBOutlet()
     progressBar = objc.IBOutlet()
     
     def init(self):
-        NSBundle.loadNibNamed_owner_("ProgressBarSheet", self)
+        AppKit.NSBundle.loadNibNamed_owner_("ProgressBarSheet", self)
         return self
 
     def begin(self, message, maxval):
@@ -16,16 +15,16 @@ class ProgressBarController(NSWindowController):
         self.maxval = maxval
         self.progressBar.setMaxValue_(self.maxval)
         self.messageField.cell().setTitle_(self.message)
-        parentWindow = NSApp().keyWindow()
-        NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_(self.window(), parentWindow, self, None, 0)
+        parentWindow = AppKit.NSApp().keyWindow()
+        AppKit.NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_(self.window(), parentWindow, self, None, 0)
         
     def inc(self):
         self.value += 1
         self.progressBar.setDoubleValue_(self.value)
-        date = NSDate.dateWithTimeIntervalSinceNow_(0.01)
-        NSRunLoop.currentRunLoop().acceptInputForMode_beforeDate_(NSDefaultRunLoopMode, date)
+        date = AppKit.NSDate.dateWithTimeIntervalSinceNow_(0.01)
+        AppKit.NSRunLoop.currentRunLoop().acceptInputForMode_beforeDate_(NSDefaultRunLoopMode, date)
         
     def end(self):
-        NSApp().endSheet_(self.window())
+        AppKit.NSApp().endSheet_(self.window())
         self.window().orderOut_(self)
         

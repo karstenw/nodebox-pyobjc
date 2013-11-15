@@ -11,6 +11,7 @@ import random
 import Foundation
 import AppKit
 
+
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSScriptCommand = AppKit.NSScriptCommand
@@ -52,19 +53,28 @@ NSWorkspace = AppKit.NSWorkspace
 NSBezierPath = AppKit.NSBezierPath
 
 
-from threading import Thread
+import threading
+Thread = threading.Thread
 
-from nodebox.gui.mac.ValueLadder import MAGICVAR
+# from nodebox.gui.mac.ValueLadder import MAGICVAR
 # import nodebox.gui.mac.ValueLadder
 # MAGICVAR = nodebox.gui.mac.ValueLadder.MAGICVAR
+import ValueLadder
+MAGICVAR = ValueLadder.MAGICVAR
+
+
 
 from nodebox.gui.mac import PyDETextView
 # import nodebox.gui.mac.PyDETextView
 # PyDETextView = nodebox.gui.mac.PyDETextView.PyDETextView
 
-from nodebox.gui.mac.util import errorAlert
-# import nodebox.gui.mac.util.errorAlert
-# errorAlert = nodebox.gui.mac.util.errorAlert
+# from nodebox.gui.mac.util import errorAlert
+#import nodebox.gui.mac.util
+#errorAlert = nodebox.gui.mac.util.errorAlert
+
+import util
+errorAlert = util.errorAlert
+
 
 # from nodebox import util
 import nodebox.util
