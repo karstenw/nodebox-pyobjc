@@ -1,6 +1,10 @@
 import random as librandom
 choice = librandom.choice
 
+import glob
+
+import unicodedata
+
 #import kgp
 # import ottobot
 #import PyFontify
@@ -12,6 +16,12 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext',
             #'kgp', 'ottobot', 'PyFontify', 'QTSupport', 'vdiff' )
 
 ### Utilities ###
+
+def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
+    if type(s) != unicode:
+        s = unicode(s, srcencoding)
+    s = unicodedata.normalize(normalizer, s)
+    return s
 
 def grid(cols, rows, colSize=1, rowSize=1, shuffled = False):
     """Returns an iterator that contains coordinate tuples.
@@ -69,8 +79,11 @@ def files(path="*"):
     You can use wildcards to specify which files to pick, e.g.
         f = files('*.gif')
     """
-    from glob import glob
-    return glob(path)
+    
+    f = glob.glob(path)
+    f = [makeunicode(t) for t in f]
+    return f
+
 
 def autotext(sourceFile):
     from nodebox.util.kgp import KantGenerator
