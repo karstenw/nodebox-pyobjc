@@ -1,9 +1,9 @@
-This is a personal fork of NodeBox1. 
+This is a personal fork of NodeBox1.
 
 Download the app from my dropbox: http://goo.gl/vkuBeV
 
 
-It differs from the official version:
+Differences from the official version:
 
 + Uses Python 2.7.9 and PyObjC 3.1b1
 
