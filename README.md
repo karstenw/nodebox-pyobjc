@@ -1,11 +1,12 @@
 This is a personal fork of NodeBox1. 
 
 It differs from the official version. It:
-+ Uses Python 2.7
++ Uses Python 2.7.9 and PyObjC 3.1b1
 + is self containend
 + Builds without Xcode (python setup.py py2app)
 + Has 4 additional commands: angle, distance, coordinates, reflect
 + Uses a different and bigger icon (512px)
++ Has some additional Escher examples
 
 ![Image](art/nodeboxlogo_big.png?raw=true)
 
