@@ -1,5 +1,7 @@
 import objc
 import AppKit
+NSDefaultRunLoopMode = AppKit.NSDefaultRunLoopMode
+
 
 class ProgressBarController(AppKit.NSWindowController):
     messageField = objc.IBOutlet()
