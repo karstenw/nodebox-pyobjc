@@ -13,7 +13,11 @@ fill(0.1, 0.1, 0.75, 0.8)
 rect(0, 0, WIDTH, HEIGHT)
 
 # Show the main image.
-image("nodeboxicon.png", 100, 100)
+# old version
+# image("nodeboxicon.png", 100, 100)
+
+# newly rendered hires version
+image("nodeboxlogo_larger.png", 100, 100, width=200)
 
 # Show the text below the image
 font("Georgia Bold", 39)
