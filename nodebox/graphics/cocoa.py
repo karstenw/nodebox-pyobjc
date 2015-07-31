@@ -1,6 +1,8 @@
 import os
 import warnings
 
+import pdb
+
 # from random import choice, shuffle
 import random
 choice = random.choice
@@ -1332,7 +1334,15 @@ class _PDFRenderView(NSView):
     # the PDF data.
 
     def initWithCanvas_(self, canvas):
-        super(_PDFRenderView, self).initWithFrame_( ((0, 0), (canvas.width, canvas.height)) )
+        # pdb.set_trace()
+        
+        # for some unknown reason the following line stopped working
+        # super(_PDFRenderView, self).initWithFrame_( ((0, 0), (canvas.width, canvas.height)) )
+
+        # for some unknown reason this is the solution for the preceding problem
+        self.initWithFrame_( ((0, 0), (canvas.width, canvas.height)) )
+        
+        # it is the only super in this file, having a NS* superclass
         self.canvas = canvas
         return self
         
