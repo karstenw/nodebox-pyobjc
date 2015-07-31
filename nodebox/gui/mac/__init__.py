@@ -5,13 +5,11 @@ import re
 import objc
 import time
 import random
-#from Foundation import *
-#from AppKit import *
+
+import pdb
 
 import Foundation
 import AppKit
-
-
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSScriptCommand = AppKit.NSScriptCommand
@@ -118,6 +116,7 @@ class OutputFile(object):
 
 # class defined in NodeBoxDocument.xib
 class NodeBoxDocument(NSDocument):
+
     graphicsView = objc.IBOutlet()
     outputView = objc.IBOutlet() 
     textView = objc.IBOutlet()
@@ -125,17 +124,21 @@ class NodeBoxDocument(NSDocument):
     variablesController = objc.IBOutlet()
     dashboardController = objc.IBOutlet()
     animationSpinner = objc.IBOutlet()
+
     # The ExportImageAccessory adds:
     exportImageAccessory = objc.IBOutlet()
     exportImageFormat = objc.IBOutlet()
     exportImagePageCount = objc.IBOutlet()
+
     # The ExportMovieAccessory adds:
     exportMovieAccessory = objc.IBOutlet()
     exportMovieFrames = objc.IBOutlet()
     exportMovieFps = objc.IBOutlet()
+
     # When the PageCount accessory is loaded, we also add:
     pageCount = objc.IBOutlet()
     pageCountAccessory = objc.IBOutlet()
+
     # When the ExportSheet is loaded, we also add:
     exportSheet = objc.IBOutlet()
     exportSheetIndicator = objc.IBOutlet()
@@ -166,6 +169,13 @@ class NodeBoxDocument(NSDocument):
         self._frame = 150
         self.fullScreen = None
         self._seed = time.time()
+        
+        # another debugging not completed
+        #if not self.graphicsView:
+        #    pdb.set_trace()
+        #    print
+        
+        # this is None
         self.currentView = self.graphicsView
         return self
     
@@ -269,6 +279,10 @@ class NodeBoxDocument(NSDocument):
         random.seed(self._seed)
 
         # Set the mouse position
+        
+        # kw fix
+        if not self.currentView:
+            self.currentView = self.graphicsView
         window = self.currentView.window()
         pt = window.mouseLocationOutsideOfEventStream()
         mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
@@ -802,13 +816,8 @@ class NodeBoxDocument(NSDocument):
         self.graphicsView.zoomToFit_(sender)
         
 class FullscreenWindow(NSWindow):
-    
     def initWithRect_(self, fullRect):
-        super(FullscreenWindow,
-              self).initWithContentRect_styleMask_backing_defer_(
-                fullRect,
-                NSBorderlessWindowMask,
-                NSBackingStoreBuffered, True)
+        objc.super(FullscreenWindow, self).initWithContentRect_styleMask_backing_defer_(fullRect, NSBorderlessWindowMask, NSBackingStoreBuffered, True)
         return self
         
     def canBecomeKeyWindow(self):
