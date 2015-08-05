@@ -1,6 +1,6 @@
 This is a personal fork of NodeBox1.
 
-Download the app from my dropbox: http://goo.gl/vkuBeV
+Download the app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV)
 
 
 Differences from the official version:

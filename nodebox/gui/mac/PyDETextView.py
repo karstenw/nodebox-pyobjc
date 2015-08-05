@@ -1,6 +1,7 @@
 from bisect import bisect
 import re
 import objc
+super = objc.super
 
 #from Foundation import *
 #from AppKit import *

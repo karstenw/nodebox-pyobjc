@@ -8,6 +8,8 @@ import random
 choice = random.choice
 shuffle = random.shuffle
 
+import objc
+super = objc.super
 
 # from AppKit import *
 import AppKit
@@ -1334,15 +1336,14 @@ class _PDFRenderView(NSView):
     # the PDF data.
 
     def initWithCanvas_(self, canvas):
-        # pdb.set_trace()
-        
-        # for some unknown reason the following line stopped working
-        # super(_PDFRenderView, self).initWithFrame_( ((0, 0), (canvas.width, canvas.height)) )
 
+        # for some unknown reason the following line stopped working
+        # Solution: use objc.super -- see import
+        super(_PDFRenderView, self).initWithFrame_( ((0, 0), (canvas.width, canvas.height)) )
         # for some unknown reason this is the solution for the preceding problem
-        self.initWithFrame_( ((0, 0), (canvas.width, canvas.height)) )
-        
+        # self.initWithFrame_( ((0, 0), (canvas.width, canvas.height)) )
         # it is the only super in this file, having a NS* superclass
+
         self.canvas = canvas
         return self
         
