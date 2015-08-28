@@ -17,6 +17,8 @@ Differences from the official version:
 
 + Has some additional Escher examples
 
++ Additional 64-bit app which runs on OSX 10.6 & 10.10 (10.7, 10.8 and 10.9 due to lack of installment not tested)
+
 ![Image](art/nodeboxlogo_big.png?raw=true)
 
 
