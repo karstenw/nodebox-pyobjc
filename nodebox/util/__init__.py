@@ -79,7 +79,6 @@ def files(path="*"):
     You can use wildcards to specify which files to pick, e.g.
         f = files('*.gif')
     """
-    
     f = glob.glob(path)
     f = [makeunicode(t) for t in f]
     return f
