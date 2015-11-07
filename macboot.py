@@ -19,7 +19,20 @@ import nodebox.graphics
 import nodebox.gui
 import nodebox.gui.mac
 
-# import sgmllib
+# for the libraries
+import sgmllib
+import bs4
+import numpy
+import sqlite3
+import PIL
+import PIL.Image
+import hashlib
+import base64
+import re
+import pickle
+import UserList
+
+
 #import matplotlib
 
 #import sys
