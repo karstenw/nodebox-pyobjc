@@ -1,5 +1,6 @@
 #from PyObjCTools import NibClassBuilder, AppHelper
-from PyObjCTools import AppHelper
+
+#from PyObjCTools import AppHelper
 
 import AppKit
 
