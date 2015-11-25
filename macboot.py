@@ -24,8 +24,17 @@ import sgmllib
 import bs4
 import numpy
 import sqlite3
+
+# PIL / Pillow support
 import PIL
 import PIL.Image
+import PIL.ImageFilter
+import PIL.ImageChops
+import PIL.ImageEnhance
+import PIL.ImageOps
+import PIL.ImageDraw
+import PIL.ImageStat
+
 import hashlib
 import base64
 import re
