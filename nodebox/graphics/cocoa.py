@@ -269,7 +269,8 @@ class ColorMixin(object):
 class BezierPath(Grob, TransformMixin, ColorMixin):
     """A BezierPath provides a wrapper around NSBezierPath."""
     
-    stateAttributes = ('_fillcolor', '_strokecolor', '_strokewidth', '_capstyle', '_joinstyle', '_transform', '_transformmode')
+    stateAttributes = ('_fillcolor', '_strokecolor', '_strokewidth', '_capstyle',
+                       '_joinstyle', '_transform', '_transformmode')
     kwargs = ('fill', 'stroke', 'strokewidth', 'capstyle', 'joinstyle')
 
     def __init__(self, ctx, path=None, **kwargs):
@@ -293,7 +294,8 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             raise NodeBoxError, "Don't know what to do with %s." % path
             
     def _get_path(self):
-        warnings.warn("The 'path' attribute is deprecated. Please use _nsBezierPath instead.", DeprecationWarning, stacklevel=2)
+        s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
+        warnings.warn(s, DeprecationWarning, stacklevel=2)
         return self._nsBezierPath
     path = property(_get_path)
 
@@ -330,7 +332,8 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
 
     def curveto(self, x1, y1, x2, y2, x3, y3):
         self._segment_cache = None
-        self._nsBezierPath.curveToPoint_controlPoint1_controlPoint2_( (x3, y3), (x1, y1), (x2, y2) )
+        self._nsBezierPath.curveToPoint_controlPoint1_controlPoint2_(
+                                                (x3, y3), (x1, y1), (x2, y2) )
 
     def closepath(self):
         self._segment_cache = None
@@ -355,11 +358,13 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
     
     def rect(self, x, y, width, height):
         self._segment_cache = None
-        self._nsBezierPath.appendBezierPathWithRect_( ((x, y), (width, height)) )
+        self._nsBezierPath.appendBezierPathWithRect_( ((x, y),
+                                                       (width, height)) )
         
     def oval(self, x, y, width, height):
         self._segment_cache = None
-        self._nsBezierPath.appendBezierPathWithOvalInRect_( ((x, y), (width, height)) )
+        self._nsBezierPath.appendBezierPathWithOvalInRect_( ((x, y),
+                                                             (width, height)) )
     
     ellipse = oval
         
@@ -449,8 +454,8 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
 
         """Fits this path to the specified bounds.
         
-        All parameters are optional; if no parameters are specified, nothing will happen.
-        Specifying a parameter will constrain its value:
+        All parameters are optional; if no parameters are specified,
+        nothing will happen. Specifying a parameter will constrain its value:
         
         - x: The path will be positioned at the specified x value 
         - y: The path will be positioned at the specified y value 
@@ -488,7 +493,8 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         import bezier
         if relative: # Use the opportunity to store the segment cache.
             if self._segment_cache is None:
-                self._segment_cache = bezier.segment_lengths(self, relative=True, n=n)
+                self._segment_cache = bezier.segment_lengths(self,
+                                                            relative=True, n=n)
             return self._segment_cache
         else:
             return bezier.segment_lengths(self, relative=False, n=n)
@@ -507,7 +513,8 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         if len(self) == 0:
             raise NodeBoxError, "The given path is empty"
 
-        # The delta value is divided by amount - 1, because we also want the last point (t=1.0)
+        # The delta value is divided by amount - 1, because we also want the
+        # last point (t=1.0)
         # If I wouldn't use amount - 1, I fall one point short of the end.
         # E.g. if amount = 4, I want point at t 0.0, 0.33, 0.66 and 1.0,
         # if amount = 2, I want point at t 0.0 and t 1.0
@@ -530,16 +537,20 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return cPolymagic.intersects(self._nsBezierPath, other._nsBezierPath)
         
     def union(self, other, flatness=0.6):
-        return BezierPath(self._ctx, cPolymagic.union(self._nsBezierPath, other._nsBezierPath, flatness))
+        return BezierPath(self._ctx, cPolymagic.union(self._nsBezierPath,
+                                                    other._nsBezierPath, flatness))
     
     def intersect(self, other, flatness=0.6):
-        return BezierPath(self._ctx, cPolymagic.intersect(self._nsBezierPath, other._nsBezierPath, flatness))
+        return BezierPath(self._ctx, cPolymagic.intersect(self._nsBezierPath,
+                                                    other._nsBezierPath, flatness))
 
     def difference(self, other, flatness=0.6):
-        return BezierPath(self._ctx, cPolymagic.difference(self._nsBezierPath, other._nsBezierPath, flatness))
+        return BezierPath(self._ctx, cPolymagic.difference(self._nsBezierPath,
+                                                    other._nsBezierPath, flatness))
 
     def xor(self, other, flatness=0.6):
-        return BezierPath(self._ctx, cPolymagic.xor(self._nsBezierPath, other._nsBezierPath, flatness))
+        return BezierPath(self._ctx, cPolymagic.xor(self._nsBezierPath,
+                                                    other._nsBezierPath, flatness))
 
 class PathElement(object):
 
@@ -576,8 +587,10 @@ class PathElement(object):
         elif self.cmd == LINETO:
             return "PathElement(LINETO, ((%.3f, %.3f),))" % (self.x, self.y)
         elif self.cmd == CURVETO:
-            return "PathElement(CURVETO, ((%.3f, %.3f), (%.3f, %s), (%.3f, %.3f))" % \
-                (self.ctrl1.x, self.ctrl1.y, self.ctrl2.x, self.ctrl2.y, self.x, self.y)
+            s = "PathElement(CURVETO, ((%.3f, %.3f), (%.3f, %s), (%.3f, %.3f))"
+            return s % (self.ctrl1.x, self.ctrl1.y,
+                        self.ctrl2.x, self.ctrl2.y,
+                        self.x, self.y)
         elif self.cmd == CLOSE:
             return "PathElement(CLOSE)"
             
@@ -611,9 +624,11 @@ class ClippingPath(Grob):
 class Rect(BezierPath):
 
     def __init__(self, ctx, x, y, width, height, **kwargs):
-        warnings.warn("Rect is deprecated. Use BezierPath's rect method.", DeprecationWarning, stacklevel=2)
+        warnings.warn("Rect is deprecated. Use BezierPath's rect method.",
+                                            DeprecationWarning, stacklevel=2)
         r = (x,y), (width,height)
-        super(Rect, self).__init__(ctx, NSBezierPath.bezierPathWithRect_(r), **kwargs)
+        super(Rect, self).__init__(ctx, NSBezierPath.bezierPathWithRect_(r),
+                                        **kwargs)
 
     def copy(self):
         raise NotImplementedError, "Please don't use Rect anymore"
@@ -621,9 +636,11 @@ class Rect(BezierPath):
 class Oval(BezierPath):
 
     def __init__(self, ctx, x, y, width, height, **kwargs):
-        warnings.warn("Oval is deprecated. Use BezierPath's oval method.", DeprecationWarning, stacklevel=2)
+        warnings.warn("Oval is deprecated. Use BezierPath's oval method.",
+                      DeprecationWarning, stacklevel=2)
         r = (x,y), (width,height)
-        super(Oval, self).__init__(ctx, NSBezierPath.bezierPathWithOvalInRect_(r), **kwargs)
+        super(Oval, self).__init__(ctx, NSBezierPath.bezierPathWithOvalInRect_(r),
+                                        **kwargs)
 
     def copy(self):
         raise NotImplementedError, "Please don't use Oval anymore"
@@ -831,7 +848,11 @@ class Color(object):
     k = black = property(_get_black, _set_black, doc="the black component of the color")
 
     def _get_cmyka(self):
-        return (self._cmyk.cyanComponent(), self._cmyk.magentaComponent(), self._cmyk.yellowComponent(), self._cmyk.blackComponent(), self._cmyk.alphaComponent())
+        return (self._cmyk.cyanComponent(),
+                self._cmyk.magentaComponent(),
+                self._cmyk.yellowComponent(),
+                self._cmyk.blackComponent(),
+                self._cmyk.alphaComponent())
     cmyka = property(_get_cmyka, doc="a tuple containing the CMYKA values for this color")
 
     def blend(self, otherColor, factor):
@@ -876,7 +897,9 @@ class Transform(object):
         self._nsAffineTransform = transform
         
     def _get_transform(self):
-        warnings.warn("The 'transform' attribute is deprecated. Please use _nsAffineTransform instead.", DeprecationWarning, stacklevel=2)
+        s = ("The 'transform' attribute is deprecated. "
+             "Please use _nsAffineTransform instead.")
+        warnings.warn(s, DeprecationWarning, stacklevel=2)
         return self._nsAffineTransform
     transform = property(_get_transform)
     
