@@ -5,26 +5,26 @@ Download the app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV)
 
 Differences from the official version:
 
-1 Additional Commands
-  1.1  angle(x0, y0, x1, y1)
-  1.2  distance(x0, y0, x1, y1)
-  1.3  coordinates(x0, y0, distance, angle)
-  1.4  reflect(x0, y0, x1, y1, d=1.0, a=180)
+1. Additional Commands
+  1.  angle(x0, y0, x1, y1)
+  1.  distance(x0, y0, x1, y1)
+  1.  coordinates(x0, y0, distance, angle)
+  1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
 
-2 Different behaviour:
-  2.1  size(0,0) sets to main screen size
+2. Different behaviour:
+  1.  size(0,0) sets to main screen size
 
-3 Uses Python 2.7.9 and PyObjC 3.1b1
+3. Uses Python 2.7.9 and PyObjC 3.1b1
 
-4 is self containend
+4. is self containend
 
-5 Builds without Xcode (python setup.py py2app)
+5. Builds without Xcode (python setup.py py2app)
 
-6 Uses a different and bigger icon (512px)
+6. Uses a different and bigger icon (512px)
 
-7 Has some additional Escher examples
+7. Has some additional Escher examples
 
-8 Additional 64-bit app which runs on OSX 10.6 & 10.10 (10.7, 10.8 and 10.9 due to lack of installment not tested)
+8. Additional 64-bit app which runs on OSX 10.6 & 10.10 (10.7, 10.8 and 10.9 due to lack of installment not tested)
 
 ![Image](art/nodeboxlogo_big.png?raw=true)
 
