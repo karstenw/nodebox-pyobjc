@@ -12,7 +12,7 @@ Differences from the official version:
   1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
 
 1. Different behaviour:
-  1.  size(0,0) sets to main screen size
+  1.  ```size(0,0)```  sets to main screen size
 
 1. Uses Python 2.7.9 and PyObjC 3.1b1
 
