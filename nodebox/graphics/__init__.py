@@ -4,6 +4,8 @@
 #import nodebox.graphics
 #import nodebox.graphics.cocoa
 
+import AppKit
+
 import cocoa
 # import graphics
 # from nodebox.graphics import cocoa as graphics_impl
@@ -106,6 +108,14 @@ class Context(object):
     ### Setup methods ###
 
     def size(self, width, height):
+        if width == 0 and height == 0:
+            # set to main screen size
+            allsc = AppKit.NSScreen.screens()
+            mainscreen = allsc[0]
+            mainframe = mainscreen.frame()
+            width = mainframe.size.width
+            height = mainframe.size.height
+
         self.canvas.width = width
         self.canvas.height = height
         self._ns["WIDTH"] = width
