@@ -499,7 +499,8 @@ class NodeBoxDocument(NSDocument):
                 pass
                 # Creating a thread is a heavy operation,
                 # don't install it when animating, where speed is crucial
-                #t = Thread(target=self._userCancelledMonitor, name="UserCancelledMonitor")
+                #t = Thread(target=self._userCancelledMonitor,
+                #           name="UserCancelledMonitor")
                 #t.start()
             try:
                 method(*args)
