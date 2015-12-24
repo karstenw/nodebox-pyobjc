@@ -1,16 +1,25 @@
 """The convex hull algorith as presented by 
    https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
+
+   This algorithm is faster than it might appear. It calculates the convex hull for a million
+   points in less than 10s on a 2 GHz machine.
    
+   Displaying a million points takes about 4-8 minutes
 """
-size(1680, 1050)
 
+# This is new with Nodebox 1.9.13; size(0,0) sets size to main screen size
+size(0, 0)
+if not WIDTH and not HEIGHT:
+    # if we're running an older version, set some reasonable default
+    size(800, 800)
 
-# how many points
-noOfPoints = 5000
+import time
+
+# how many points 1,000,000 takes about 5 min.
+noOfPoints = 10000
 
 # inset from canvas size
 inset = 20
-
 
 
 def convex_hull(points):
@@ -64,6 +73,7 @@ def mark( point, style="CROSS" ):
     """Mark a point with a cross or a rect."""
     push()
     
+    fill( 0 )
     strokewidth( 1 )
     stroke( 0.5, 0,0, 0.5 )
     if style == "CROSS":
@@ -74,18 +84,22 @@ def mark( point, style="CROSS" ):
         lineto( point[0]  , point[1]+2 )
         endpath(draw=1)
     else:
-        fill( 0 )
         rect(point[0],point[1], 1, 1)
     pop()
 
 def createRandomPoints( count, width, height, inset):
     # create the random points
     points = []
+    # fill(0.5)
+    strokewidth(1)
+    stroke(0)
     for i in xrange( count ):
         px = inset + random() * (width - inset * 2)
         py = inset + random() * (height - inset * 2)
         points.append( (px,py) )
-        mark( (px,py), style="RECT" )
+        # mark( (px,py), style="RECT" )
+        # line(px-0.5,py,px+0.5,py)
+        rect(px-0.5,py-0.5,1.0,1.0)
     return points
 
 
@@ -115,12 +129,28 @@ def displayHullPoints( outline ):
     endpath(draw=1)
     pop()
 
+t_start = time.time()
 
 # create & display points
 points = createRandomPoints( noOfPoints, WIDTH, HEIGHT, inset)
+t_points = time.time()
 
 # calculate the hull points
 outline = convex_hull(points)
 
+noofhullpoints = len(outline)
+
+t_hull = time.time()
+
 # display the hull
 displayHullPoints( outline )
+
+t_display = time.time()
+
+print
+print "#Total points:", len(points)
+print "#Hull points:", len(outline)
+
+print "Time creating and displaying points: %.3f sek." % (round(t_points - t_start, 3), )
+print "Time calculating hull: %.3f sek." % (round(t_hull - t_points, 3), )
+print "Time displaying hull: %.3f sek." % (round(t_display - t_hull, 3), )
