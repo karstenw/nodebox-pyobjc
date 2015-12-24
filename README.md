@@ -26,6 +26,11 @@ Differences from the official version:
 
 1.  Additional 64-bit app which runs on OSX 10.6 & 10.10 (10.7, 10.8 and 10.9 due to lack of installation not tested)
 
+
+The adapted Nodebox library is available here: [Library](https://github.com/karstenw/Library). Download as zip and unpack the contents into ~/Library/Application Support/NodeBox.
+
+
+
 ![Image](art/nodeboxlogo_big.png?raw=true)
 
 
