@@ -12,17 +12,17 @@ Differences from the official version:
   1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
 
 1. Different behaviour:
-  1.  `size(0,0)`  sets to main screen size
+  1.  `size(0,0)`  sets size to size of main screen
 
-1.  Uses Python 2.7.9 and PyObjC 3.1b1
+1.  Uses Python 2.7.10 and PyObjC 3.1b1
 
-1.  Is self containend
+1.  Is self containend so it does not depend on an installed Python
 
 1.  Builds without Xcode (python setup.py py2app)
 
 1.  Uses a different and bigger icon (512px)
 
-1.  Has some additional Escher examples
+1.  Has some additional examples. See folders `Escher` and `geometry/Convex Hull`.
 
 1.  Additional 64-bit app which runs on OSX 10.6 & 10.10 (10.7, 10.8 and 10.9 due to lack of installation not tested)
 
@@ -31,7 +31,7 @@ The adapted Nodebox library is available here: [Library](https://github.com/kars
 
 
 
-![Image](art/nodeboxlogo_big.png?raw=true)
+![](art/nodeboxlogo_big.png?raw=true)
 
 
 NodeBox
