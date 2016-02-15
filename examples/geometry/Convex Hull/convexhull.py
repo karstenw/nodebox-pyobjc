@@ -16,7 +16,7 @@ if not WIDTH and not HEIGHT:
 import time
 
 # how many points 1,000,000 takes about 5 min.
-noOfPoints = 10000
+noOfPoints = 5000
 
 # inset from canvas size
 inset = 20
@@ -90,6 +90,8 @@ def mark( point, style="CROSS" ):
 def createRandomPoints( count, width, height, inset):
     # create the random points
     points = []
+    midx = (width - inset ) / 2.0
+    midy = (height - inset) / 2.0
     # fill(0.5)
     strokewidth(1)
     stroke(0)
@@ -97,9 +99,9 @@ def createRandomPoints( count, width, height, inset):
         px = inset + random() * (width - inset * 2)
         py = inset + random() * (height - inset * 2)
         points.append( (px,py) )
-        # mark( (px,py), style="RECT" )
+        mark( (px,py), style="CROSS" )
         # line(px-0.5,py,px+0.5,py)
-        rect(px-0.5,py-0.5,1.0,1.0)
+        # rect(px-0.5,py-0.5,1.0,1.0)
     return points
 
 
