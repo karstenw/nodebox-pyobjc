@@ -1,11 +1,12 @@
 This is a personal fork of NodeBox1.
 
-Download the app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV)
+Download the compiled app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV)
+Versions for 32 and 64-bit are available.
 
 
 Differences from the official version:
 
-1. Additional Commands
+1. Additional Commands (they were already in the original source but not active)
   1.  angle(x0, y0, x1, y1)
   1.  distance(x0, y0, x1, y1)
   1.  coordinates(x0, y0, distance, angle)
@@ -14,7 +15,7 @@ Differences from the official version:
 1. Different behaviour:
   1.  `size(0,0)`  sets size to size of main screen
 
-1.  Uses Python 2.7.10 and PyObjC 3.1b1
+1.  Uses Python 2.7.12 and PyObjC 3.2a1
 
 1.  Is self containend so it does not depend on an installed Python
 
@@ -27,13 +28,21 @@ Differences from the official version:
 1.  Additional 64-bit app which runs on OSX 10.6 & 10.10 (10.7, 10.8 and 10.9 due to lack of installation not tested)
 
 
+
 The adapted Nodebox library is available here: [Library](https://github.com/karstenw/Library). Download as zip and unpack the contents into ~/Library/Application Support/NodeBox.
 
+
+Latest changes
+--------------
+2016-10-06 Version 1.9.14. Upgraded to Python 2.7.12 and PyobjC 3.2a1.
 
 
 ![](art/nodeboxlogo_big.png?raw=true)
 
 
+
+
+The original README:
 NodeBox
 =======
 NodeBox is an application used in graphic design research. It provides
