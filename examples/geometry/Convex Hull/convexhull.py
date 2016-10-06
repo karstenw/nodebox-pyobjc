@@ -16,7 +16,7 @@ if not WIDTH and not HEIGHT:
 import time
 
 # how many points 1,000,000 takes about 5 min.
-noOfPoints = 5000
+noOfPoints = 10000
 
 # inset from canvas size
 inset = 20
