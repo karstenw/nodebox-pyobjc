@@ -11,7 +11,7 @@ class ProgressBarController(AppKit.NSWindowController):
         AppKit.NSBundle.loadNibNamed_owner_("ProgressBarSheet", self)
         return self
 
-    def begin(self, message, maxval):
+    def begin_maxval_(self, message, maxval):
         self.value = 0
         self.message = message
         self.maxval = maxval

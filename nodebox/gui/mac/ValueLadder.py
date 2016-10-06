@@ -77,7 +77,7 @@ class ValueLadder:
 
         #ast = parse(self.patchedSource + "\n\n")
         #self._checkSigns(ast)
-        success, output = self.textView.document._boxedRun(self._parseAndCompile)
+        success, output = self.textView.document.boxedRun_args_(self._parseAndCompile, [])
         if success:
             self.show()
         else:

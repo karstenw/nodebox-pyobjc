@@ -202,7 +202,7 @@ class NodeBoxDocument(NSDocument):
             self.path = path
         else:
             # "revert"
-            self.readFromUTF8(path)
+            self.readFromUTF8_(path)
         return True
 
     def writeToFile_ofType_(self, path, tp):
@@ -214,27 +214,27 @@ class NodeBoxDocument(NSDocument):
 
     def windowControllerDidLoadNib_(self, controller):
         if self.path:
-            self.readFromUTF8(self.path)
+            self.readFromUTF8_(self.path)
         font = PyDETextView.getBasicTextAttributes()[NSFontAttributeName]
         self.outputView.setFont_(font)
         self.textView.window().makeFirstResponder_(self.textView)
         self.windowControllers()[0].setWindowFrameAutosaveName_("NodeBoxDocumentWindow")
 
-    def readFromUTF8(self, path):
+    def readFromUTF8_(self, path):
         f = file(path)
         text = unicode(f.read(), "utf_8")
         f.close()
         self.textView.setString_(text)
         self.textView.usesTabs = "\t" in text
         
-    def cleanRun(self, fn, newSeed = True, buildInterface=True):
+    def cleanRun_newSeed_buildInterface_(self, fn, newSeed, buildInterface):
         self.animationSpinner.startAnimation_(None)
 
         # Prepare everything for running the script
         self.prepareRun()
 
         # Run the actual script
-        success = self.fastRun(fn, newSeed)
+        success = self.fastRun_newSeed_(fn, newSeed)
         self.animationSpinner.stopAnimation_(None)
 
         if success and buildInterface:
@@ -249,8 +249,8 @@ class NodeBoxDocument(NSDocument):
     def prepareRun(self):
 
         # Compile the script
-        success, output = self._boxedRun(self._compileScript)
-        self._flushOutput(output)
+        success, output = self.boxedRun_args_(self._compileScript, [])
+        self.flushOutput_(output)
         if not success:
             return False
 
@@ -265,7 +265,7 @@ class NodeBoxDocument(NSDocument):
 
         self.speed = self.canvas.speed = None
 
-    def fastRun(self, fn, newSeed = False):
+    def fastRun_newSeed_(self, fn, newSeed = False):
         # Check if there is code to run
         if self._code is None:
             return False
@@ -314,13 +314,13 @@ class NodeBoxDocument(NSDocument):
         self.namespace['FRAME'] = self._frame
 
         # Run the script
-        success, output = self._boxedRun(fn)
-        self._flushOutput(output)
+        success, output = self.boxedRun_args_(fn, [])
+        self.flushOutput_(output)
         if not success:
             return False
 
         # Display the output of the script
-        self.currentView.setCanvas(self.canvas)
+        self.currentView.setCanvas_(self.canvas)
 
         return True
         
@@ -349,7 +349,7 @@ class NodeBoxDocument(NSDocument):
         self._runScript(compile, newSeed)
 
     def _runScript(self, compile=True, newSeed=True):
-        if not self.cleanRun(self._execScript):
+        if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
             pass
 
         # Check whether we are dealing with animation
@@ -367,7 +367,7 @@ class NodeBoxDocument(NSDocument):
 
             # Run setup routine
             if self.namespace.has_key("setup"):
-                self.fastRun(self.namespace["setup"])
+                self.fastRun_newSeed_(self.namespace["setup"], False)
             window = self.currentView.window()
             window.makeFirstResponder_(self.currentView)
 
@@ -384,16 +384,16 @@ class NodeBoxDocument(NSDocument):
 
     def runScriptFast(self):        
         if self.animationTimer is None:
-            self.fastRun(self._execScript)
+            self.fastRun_newSeed_(self._execScript, False)
         else:
             # XXX: This can be sped up. We just run _execScript to get the
             # method with __MAGICVAR__ into the namespace, and execute
             # that, so it should only be called once for animations.
-            self.fastRun(self._execScript)
-            self.fastRun(self.namespace["draw"])
+            self.fastRun_newSeed_(self._execScript, False)
+            self.fastRun_newSeed_(self.namespace["draw"], False)
 
     def doFrame(self):
-        self.fastRun(self.namespace["draw"], newSeed=True)
+        self.fastRun_newSeed_(self.namespace["draw"], True)
         self._frame += 1
         
     def source(self):
@@ -408,8 +408,8 @@ class NodeBoxDocument(NSDocument):
         
     def stopScript(self):
         if self.namespace.has_key("stop"):
-            success, output = self._boxedRun(self.namespace["stop"])
-            self._flushOutput(output)
+            success, output = self.boxedRun_args_(self.namespace["stop"], [])
+            self.flushOutput_(output)
         self.animationSpinner.stopAnimation_(None)
         if self.animationTimer is not None:
             self.animationTimer.invalidate()
@@ -458,7 +458,7 @@ class NodeBoxDocument(NSDocument):
         exec self._code in self.namespace
         self.__doc__ = self.namespace.get("__doc__", self.__doc__)
 
-    def _boxedRun(self, method, args=[]):
+    def boxedRun_args_(self, method, args):
         """
         Runs the given method in a boxed environment.
         Boxed environments:
@@ -523,7 +523,7 @@ class NodeBoxDocument(NSDocument):
             except ValueError:
                 pass
             sys.argv = saveArgv
-            #self._flushOutput()
+            #self.flushOutput_()
         return True, output
 
     # from Mac/Tools/IDE/PyEdit.py
@@ -540,7 +540,7 @@ class NodeBoxDocument(NSDocument):
                 break
             time.sleep(0.25)
 
-    def _flushOutput(self, output):
+    def flushOutput_(self, output):
         outAttrs = PyDETextView.getBasicTextAttributes()
         errAttrs = outAttrs.copy()
         # XXX err color from user defaults...
@@ -601,7 +601,7 @@ class NodeBoxDocument(NSDocument):
             pages = self.exportImagePageCount.intValue()
             format = panel.requiredFileType()
             panel.close()
-            self.doExportAsImage(fname, format, pages)
+            self.doExportAsImage_fmt_pages_(fname, format, pages)
     exportPanelDidEnd_returnCode_contextInfo_ = objc.selector(
         exportPanelDidEnd_returnCode_contextInfo_,
         signature="v@:@ii")
@@ -612,7 +612,7 @@ class NodeBoxDocument(NSDocument):
         panel = sender.window()
         panel.setRequiredFileType_(image_formats[sender.indexOfSelectedItem()])
 
-    def doExportAsImage(self, fname, format, pages=1):
+    def doExportAsImage_fmt_pages_(self, fname, format, pages):
         basename, ext = os.path.splitext(fname)
         # When saving one page (the default), just save the current graphics
         # context. When generating multiple pages, we run the script again 
@@ -624,9 +624,10 @@ class NodeBoxDocument(NSDocument):
             self.canvas.save(fname, format)
         elif pages > 1:
             pb = ProgressBarController.alloc().init()
-            pb.begin("Generating %s images..." % pages, pages)
+            pb.begin_maxval_("Generating %s images..." % pages, pages)
             try:
-                if not self.cleanRun(self._execScript): return
+                if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
+                    return
                 self._pageNumber = 1
                 self._frame = 1
 
@@ -634,7 +635,7 @@ class NodeBoxDocument(NSDocument):
                 if self.canvas.speed is None:
                     for i in range(pages):
                         if i > 0: # Run has already happened first time
-                            self.fastRun(self._execScript, newSeed=True)
+                            self.fastRun_newSeed_(self._execScript, True)
                         counterAsString = "-%5d" % self._pageNumber
                         counterAsString = counterAsString.replace(' ', '0')
                         exportName = basename + counterAsString + ext
@@ -646,9 +647,9 @@ class NodeBoxDocument(NSDocument):
                         pb.inc()
                 else:
                     if self.namespace.has_key("setup"):
-                        self.fastRun(self.namespace["setup"])
+                        self.fastRun_newSeed_(self.namespace["setup"], False)
                     for i in range(pages):
-                        self.fastRun(self.namespace["draw"], newSeed=True)
+                        self.fastRun_newSeed_(self.namespace["draw"], True)
                         counterAsString = "-%5d" % self._pageNumber
                         counterAsString = counterAsString.replace(' ', '0')
                         exportName = basename + counterAsString + ext
@@ -658,8 +659,8 @@ class NodeBoxDocument(NSDocument):
                         self._frame += 1
                         pb.inc()
                     if self.namespace.has_key("stop"):
-                        success, output = self._boxedRun(self.namespace["stop"])
-                        self._flushOutput(output)
+                        success, output = self.boxedRun_args_(self.namespace["stop"], [])
+                        self.flushOutput_(output)
             except KeyboardInterrupt:
                 pass
             pb.end()
@@ -706,11 +707,11 @@ class NodeBoxDocument(NSDocument):
             panel.close()
 
             if frames <= 0 or fps <= 0: return
-            self.doExportAsMovie(fname, frames, fps)
+            self.doExportAsMovie_frames_fps_(fname, frames, fps)
     qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
                                                           signature="v@:@ii")
 
-    def doExportAsMovie(self, fname, frames=60, fps=30):
+    def doExportAsMovie_frames_fps_(self, fname, frames, fps):
         # Only load QTSupport when necessary. 
         # QTSupport loads QTKit, which wants to establish a connection to the window
         # server.
@@ -733,9 +734,10 @@ class NodeBoxDocument(NSDocument):
         movie = None
 
         pb = ProgressBarController.alloc().init()
-        pb.begin("Generating %s frames..." % frames, frames)
+        pb.begin_maxval_("Generating %s frames..." % frames, frames)
         try:
-            if not self.cleanRun(self._execScript): return
+            if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
+                return
             self._pageNumber = 1
             self._frame = 1
 
@@ -744,7 +746,7 @@ class NodeBoxDocument(NSDocument):
             if self.canvas.speed is None:
                 for i in range(frames):
                     if i > 0: # Run has already happened first time
-                        self.fastRun(self._execScript, newSeed=True)
+                        self.fastRun_newSeed_(self._execScript, True)
                     movie.add(self.canvas)
                     self.graphicsView.setNeedsDisplay_(True)
                     pb.inc()
@@ -752,17 +754,17 @@ class NodeBoxDocument(NSDocument):
                     self._frame += 1
             else:
                 if self.namespace.has_key("setup"):
-                    self.fastRun(self.namespace["setup"])
+                    self.fastRun_newSeed_(self.namespace["setup"], False)
                 for i in range(frames):
-                    self.fastRun(self.namespace["draw"], newSeed=True)
+                    self.fastRun_newSeed_(self.namespace["draw"], True)
                     movie.add(self.canvas)
                     self.graphicsView.setNeedsDisplay_(True)
                     pb.inc()
                     self._pageNumber += 1
                     self._frame += 1
                 if self.namespace.has_key("stop"):
-                    success, output = self._boxedRun(self.namespace["stop"])
-                    self._flushOutput(output)
+                    success, output = self.boxedRun_args_(self.namespace["stop"], [])
+                    self.flushOutput_(output)
         except KeyboardInterrupt:
             pass
         pb.end()
@@ -836,7 +838,7 @@ class FullscreenView(NSView):
         self.wheeldelta = 0.0
         return self
         
-    def setCanvas(self, canvas):
+    def setCanvas_(self, canvas):
         self.canvas = canvas
         self.setNeedsDisplay_(True)
         if not hasattr(self, "screenRect"):
@@ -927,28 +929,28 @@ class NodeBoxGraphicsView(NSView):
         if self.superview() is not None:
             self.superview().setBackgroundColor_(VERY_LIGHT_GRAY)
 
-    def setCanvas(self, canvas):
+    def setCanvas_(self, canvas):
         self.canvas = canvas
         if canvas is not None:
             w, h = self.canvas.size
             self.setFrameSize_([w*self._zoom, h*self._zoom])
         self.markDirty()
         
-    def _get_zoom(self):
+    def getZoom(self):
         return self._zoom
-    def _set_zoom(self, zoom):
+    def setZoom_(self, zoom):
         self._zoom = zoom
         self.zoomLevel.setTitle_("%i%%" % (self._zoom * 100.0))
         self.zoomSlider.setFloatValue_(self._zoom * 100.0)
-        self.setCanvas(self.canvas)
-    zoom = property(_get_zoom, _set_zoom)
+        self.setCanvas_(self.canvas)
+    zoom = property(getZoom, setZoom_)
         
     @objc.IBAction
     def dragZoom_(self, sender):
         self.zoom = self.zoomSlider.floatValue() / 100.0
-        self.setCanvas(self.canvas)
+        self.setCanvas_(self.canvas)
         
-    def findNearestZoomIndex(self, zoom):
+    def findNearestZoomIndex_(self, zoom):
         """Returns the nearest zoom level, and whether we found a direct, exact
         match or a fuzzy match."""
         try: # Search for a direct hit first.
@@ -965,7 +967,7 @@ class NodeBoxGraphicsView(NSView):
         
     @objc.IBAction
     def zoomIn_(self, sender):
-        idx, direct = self.findNearestZoomIndex(self.zoom)
+        idx, direct = self.findNearestZoomIndex_(self.zoom)
         # Direct hits are perfect, but indirect hits require a bit of help.
         # Because of the way indirect hits are calculated, they are already 
         # rounded up to the upper zoom level; this means we don't need to add 1.
@@ -976,7 +978,7 @@ class NodeBoxGraphicsView(NSView):
 
     @objc.IBAction
     def zoomOut_(self, sender):
-        idx, direct = self.findNearestZoomIndex(self.zoom)
+        idx, direct = self.findNearestZoomIndex_(self.zoom)
         idx -= 1
         idx = max(min(idx, len(self.zoomLevels)-1), 0)
         self.zoom = self.zoomLevels[idx]

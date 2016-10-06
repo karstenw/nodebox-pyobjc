@@ -56,10 +56,10 @@ class DashboardController(NSObject):
         
     def buttonClicked_(self, sender):
         var = self.document.vars[sender.tag()]
-        self.document.fastRun(self.document.namespace[var.name], newSeed=True)
+        self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
         #self.document.runFunction_(var.name)
 
-    def buildInterface(self, vars):
+    def buildInterface_(self, vars):
         self.vars = vars
         self.clearInterface()
         if len(self.vars) > 0:
@@ -81,20 +81,20 @@ class DashboardController(NSObject):
         cnt = 0
         for v in self.vars:
             if v.type == graphics.NUMBER:
-                self._addLabel(v, y, cnt)
-                self._addSlider(v, y, cnt)
+                self.addLabel_y_c_(v, y, cnt)
+                self.addSlider_y_c_(v, y, cnt)
             elif v.type == graphics.TEXT:
-                self._addLabel(v, y, cnt)
-                self._addTextField(v, y, cnt)
+                self.addLabel_y_c_(v, y, cnt)
+                self.addTextField_y_c_(v, y, cnt)
             elif v.type == graphics.BOOLEAN:
-                self._addSwitch(v, y, cnt)
+                self.addSwitch_y_c_(v, y, cnt)
             elif v.type == graphics.BUTTON:
-                self._addButton(v, y, cnt)
+                self.addButton_y_c_(v, y, cnt)
             y -= 21
             cnt += 1
         self.panel.setFrame_display_animate_( ((px,py),(pw,ph)), True, True )
 
-    def _addLabel(self, v, y, cnt):
+    def addLabel_y_c_(self, v, y, cnt):
         control = NSTextField.alloc().init()
         control.setFrame_(((0,y),(100,13)))
         control.setStringValue_(v.name + ":")
@@ -105,7 +105,7 @@ class DashboardController(NSObject):
         control.setFont_(SMALL_FONT)
         self.panel.contentView().addSubview_(control)
 
-    def _addSlider(self, v, y, cnt):
+    def addSlider_y_c_(self, v, y, cnt):
         control = NSSlider.alloc().init()
         control.setMaxValue_(v.max)
         control.setMinValue_(v.min)
@@ -119,7 +119,7 @@ class DashboardController(NSObject):
         control.setAction_(objc.selector(self.numberChanged_, signature="v@:@@"))
         self.panel.contentView().addSubview_(control)
 
-    def _addTextField(self, v, y, cnt):
+    def addTextField_y_c_(self, v, y, cnt):
         control = NSTextField.alloc().init()
         control.setStringValue_(v.value)
         control.setFrame_(((108,y-2),(172,15)))
@@ -131,7 +131,7 @@ class DashboardController(NSObject):
         control.setAction_(objc.selector(self.textChanged_, signature="v@:@@"))
         self.panel.contentView().addSubview_(control)
 
-    def _addSwitch(self, v, y, cnt):
+    def addSwitch_y_c_(self, v, y, cnt):
         control = NSButton.alloc().init()
         control.setButtonType_(NSSwitchButton)
         if v.value:
@@ -148,7 +148,7 @@ class DashboardController(NSObject):
         control.setAction_(objc.selector(self.booleanChanged_, signature="v@:@@"))
         self.panel.contentView().addSubview_(control)
         
-    def _addButton(self, v, y, cnt):
+    def addButton_y_c_(self, v, y, cnt):
         control = NSButton.alloc().init()
         control.setFrame_(((108, y-2),(172,16)))
         control.setTitle_(v.name)

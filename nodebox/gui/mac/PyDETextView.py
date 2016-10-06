@@ -47,6 +47,10 @@ from nodebox.gui.mac.ValueLadder import ValueLadder
 # import nodebox.gui.mac.ValueLadder
 # ValueLadder = nodebox.gui.mac.ValueLadder.ValueLadder
 
+from nodebox.util import _copy_attr, _copy_attrs, makeunicode
+
+
+
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
 
@@ -203,10 +207,10 @@ class PyDETextView(NSTextView):
     @objc.IBAction
     def jumpToLine_(self, sender):
         from nodebox.gui.mac.AskString import AskString
-        AskString("Jump to line number:", self._jumpToLineCallback,
+        AskString("Jump to line number:", self.jumpToLineCallback_,
                   parentWindow=self.window())
 
-    def _jumpToLineCallback(self, value):
+    def jumpToLineCallback_(self, value):
         if value is None:
             return  # user cancelled
         try:
@@ -214,9 +218,9 @@ class PyDETextView(NSTextView):
         except ValueError:
             NSBeep()
         else:
-            self.jumpToLine(lineNo)
+            self.jumpToLineNr_(lineNo)
 
-    def jumpToLine(self, lineNo):
+    def jumpToLineNr_(self, lineNo):
         lines = self.textStorage().string().splitlines()
         lineNo = min(max(0, lineNo - 1), len(lines))
         length_of_prevs = sum([len(line)+1 for line in lines[:lineNo]])
@@ -233,7 +237,7 @@ class PyDETextView(NSTextView):
         self.layoutManager().invalidateDisplayForCharacterRange_((0, self._string.length()))
         self._storageDelegate.textFontChanged_(notification)
 
-    def setTextStorage(self, storage, string, usesTabs):
+    def setTextStorage_str_tabs_(self, storage, string, usesTabs):
         storage.addLayoutManager_(self.layoutManager())
         self._string = string
         self.usesTabs = usesTabs
@@ -246,7 +250,7 @@ class PyDETextView(NSTextView):
         font = sender.convertFont_(font)
         setTextFont(font)
 
-    def getLinesForRange(self, rng):
+    def getLinesForRange_(self, rng):
         rng = self._string.lineRangeForRange_(rng)
         return self._string.substringWithRange_(rng), rng
 
@@ -265,11 +269,11 @@ class PyDETextView(NSTextView):
         char = event.characters()[:1]
         if char in ")]}":
             selRng = self.selectedRange()
-            line, lineRng, pos = self._findMatchingParen(selRng[0] - 1, char)
+            line, lineRng, pos = self.findMatchingIndex_paren_(selRng[0] - 1, char)
             if pos is not None:
-                self.balanceParens(lineRng[0] + pos)
+                self.balanceParens_(lineRng[0] + pos)
 
-    def balanceParens(self, index):
+    def balanceParens_(self, index):
         rng = (index, 1)
         oldAttrs, effRng = self.textStorage().attributesAtIndex_effectiveRange_(index, None)
         balancingAttrs = {NSBackgroundColorAttributeName: NSColor.selectedTextBackgroundColor()}
@@ -281,13 +285,13 @@ class PyDETextView(NSTextView):
     def resetBalanceParens_(self, (attrs, rng)):
         self.layoutManager().setTemporaryAttributes_forCharacterRange_(attrs, rng)
 
-    def _iterLinesBackwards(self, end, maxChars=8192):
+    def iterLinesBackwards_maxChars_(self, end, maxChars):
         begin = max(0, end - maxChars)
         if end > 0:
             prevChar = self._string.characterAtIndex_(end - 1)
             if prevChar == "\n":
                 end += 1
-        lines, linesRng = self.getLinesForRange((begin, end - begin))
+        lines, linesRng = self.getLinesForRange_((begin, end - begin))
         lines = lines[:end - linesRng[0]]
         linesRng = (linesRng[0], len(lines))
         lines = lines.splitlines(True)
@@ -298,14 +302,14 @@ class PyDETextView(NSTextView):
             end -= nChars
         assert end == linesRng[0]
 
-    def _findMatchingParen(self, index, paren):
+    def findMatchingIndex_paren_(self, index, paren):
         openToCloseMap = {"(": ")", "[": "]", "{": "}"}
         if paren:
             stack = [paren]
         else:
             stack = []
         line, lineRng, pos = None, None, None
-        for line, lineRng in self._iterLinesBackwards(index):
+        for line, lineRng in self.iterLinesBackwards_maxChars_(index, 8192):
             line = removeStringsAndComments(line)
             pos = None
             for i in range(len(line)-1, -1, -1):
@@ -333,7 +337,7 @@ class PyDETextView(NSTextView):
     def insertNewline_(self, sender):
         selRng = self.selectedRange()
         super(PyDETextView, self).insertNewline_(sender)
-        line, lineRng, pos = self._findMatchingParen(selRng[0], None)
+        line, lineRng, pos = self.findMatchingIndex_paren_(selRng[0], None)
         if line is None:
             return
         leadingSpace = ""
@@ -343,7 +347,7 @@ class PyDETextView(NSTextView):
                 leadingSpace = m.group()
         else:
             leadingSpace = re.sub(r"[^\t]", " ", line[:pos + 1])
-        line, lineRng = self.getLinesForRange((selRng[0], 0))
+        line, lineRng = self.getLinesForRange_((selRng[0], 0))
         line = removeStringsAndComments(line).strip()
         if line and line[-1] == ":":
             leadingSpace += self.getIndent()
@@ -357,7 +361,7 @@ class PyDETextView(NSTextView):
         self.insertText_("")
         selRng = self.selectedRange()
         assert selRng[1] == 0
-        lines, linesRng = self.getLinesForRange(selRng)
+        lines, linesRng = self.getLinesForRange_(selRng)
         sel = selRng[0] - linesRng[0]
         whiteEnd = findWhitespace(lines, sel)
         nSpaces = self.indentSize - (whiteEnd % self.indentSize)
@@ -368,16 +372,16 @@ class PyDETextView(NSTextView):
         self.setSelectedRange_((sel + linesRng[0], 0))
 
     def deleteBackward_(self, sender):
-        self._delete(sender, False, super(PyDETextView, self).deleteBackward_)
+        self.delete_fwd_superf_(sender, False, super(PyDETextView, self).deleteBackward_)
 
     def deleteForward_(self, sender):
-        self._delete(sender, True, super(PyDETextView, self).deleteForward_)
+        self.delete_fwd_superf_(sender, True, super(PyDETextView, self).deleteForward_)
 
-    def _delete(self, sender, isForward, superFunc):
+    def delete_fwd_superf_(self, sender, isForward, superFunc):
         selRng = self.selectedRange()
         if self.usesTabs or selRng[1]:
             return superFunc(sender)
-        lines, linesRng = self.getLinesForRange(selRng)
+        lines, linesRng = self.getLinesForRange_(selRng)
         sel = selRng[0] - linesRng[0]
         whiteEnd = findWhitespace(lines, sel)
         whiteBegin = sel
@@ -414,7 +418,7 @@ class PyDETextView(NSTextView):
                     indentedLines.append(line)
             [indent + line for line in lines[:-1]]
             return indentedLines
-        self._filterLines(indentFilter)
+        self.filterLines_(indentFilter)
 
     @objc.IBAction
     def dedent_(self, sender):
@@ -427,7 +431,7 @@ class PyDETextView(NSTextView):
                     line = line[indentSize:]
                 dedentedLines.append(line)
             return dedentedLines
-        self._filterLines(dedentFilter)
+        self.filterLines_(dedentFilter)
 
     @objc.IBAction
     def comment_(self, sender):
@@ -445,7 +449,7 @@ class PyDETextView(NSTextView):
                 else:
                     commentedLines.append(line)
             return commentedLines
-        self._filterLines(commentFilter)
+        self.filterLines_(commentFilter)
 
     @objc.IBAction
     def uncomment_(self, sender):
@@ -459,11 +463,11 @@ class PyDETextView(NSTextView):
                     line = line[:pos] + line[pos+1:]
                 commentedLines.append(line)
             return commentedLines
-        self._filterLines(uncommentFilter)
+        self.filterLines_(uncommentFilter)
 
-    def _filterLines(self, filterFunc):
+    def filterLines_(self, filterFunc):
         selRng = self.selectedRange()
-        lines, linesRng = self.getLinesForRange(selRng)
+        lines, linesRng = self.getLinesForRange_(selRng)
 
         filteredLines = filterFunc(lines.splitlines(True))
 
@@ -507,11 +511,11 @@ class PyDETextStorageDelegate(NSObject):
     def string(self):
         return self._string
 
-    def lineIndexFromCharIndex(self, charIndex):
-        return self._lineTracker.lineIndexFromCharIndex(charIndex)
+    def lineIndexFromCharIndex_(self, charIndex):
+        return self._lineTracker.lineIndexFromCharIndex_(charIndex)
 
-    def charIndexFromLineIndex(self, lineIndex):
-        return self._lineTracker.charIndexFromLineIndex(lineIndex)
+    def charIndexFromLineIndex_(self, lineIndex):
+        return self._lineTracker.charIndexFromLineIndex_(lineIndex)
 
     def numberOfLines(self):
         return self._lineTracker.numberOfLines()
@@ -648,7 +652,7 @@ class LineTracker(object):
         end = pos + rng[1]
         while pos < end:
             lineRng = string.lineRangeForRange_((pos, 0))
-            line = unicode(string.substringWithRange_(lineRng))
+            line = makeunicode(string.substringWithRange_(lineRng))
             assert len(line) == lineRng[1]
             lines.append(line)
             lineStarts.append(lineRng[0])
@@ -660,9 +664,9 @@ class LineTracker(object):
 
     def _update(self, editedRange, changeInLength):
         oldRange = editedRange[0], editedRange[1] - changeInLength
-        start = self.lineIndexFromCharIndex(oldRange[0])
+        start = self.lineIndexFromCharIndex_(oldRange[0])
         if oldRange[1]:
-            end = self.lineIndexFromCharIndex(oldRange[0] + oldRange[1])
+            end = self.lineIndexFromCharIndex_(oldRange[0] + oldRange[1])
         else:
             end = start
 
@@ -674,7 +678,7 @@ class LineTracker(object):
         # XXX: This assertion doesn't actually assert
         # assert "".join(self.lines) == unicode(self.string)
 
-    def lineIndexFromCharIndex(self, charIndex):
+    def lineIndexFromCharIndex_(self, charIndex):
         lineIndex = bisect(self.lineStarts, charIndex)
         if lineIndex == 0:
             return 0
@@ -698,7 +702,7 @@ class LineTracker(object):
             lineIndex += 1
         return lineIndex
 
-    def charIndexFromLineIndex(self, lineIndex):
+    def charIndexFromLineIndex_(self, lineIndex):
         if not self.lines:
             return 0
         if lineIndex == len(self.lines):
