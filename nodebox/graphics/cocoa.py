@@ -49,7 +49,7 @@ NSAffineTransformStruct = AppKit.NSAffineTransformStruct
 
 # from Foundation import *
 
-from nodebox.util import _copy_attr, _copy_attrs
+from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 
 try:
     import cPolymagic
@@ -1162,7 +1162,7 @@ class Text(Grob, TransformMixin, ColorMixin):
         super(Text, self).__init__(ctx)
         TransformMixin.__init__(self)
         ColorMixin.__init__(self, **kwargs)
-        self.text = unicode(text)
+        self.text = makeunicode(text)
         self.x = x
         self.y = y
         self.width = width
