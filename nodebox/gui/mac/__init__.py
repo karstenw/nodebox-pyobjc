@@ -789,7 +789,7 @@ class NodeBoxDocument(NSDocument):
 
     @objc.IBAction
     def buildInterface_(self, sender):
-        self.dashboardController.buildInterface(self.vars)
+        self.dashboardController.buildInterface_(self.vars)
 
     def validateMenuItem_(self, menuItem):
         if menuItem.action() in ("exportAsImage:", "exportAsMovie:"):
