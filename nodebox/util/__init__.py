@@ -4,7 +4,12 @@ choice = librandom.choice
 import glob
 
 import unicodedata
+import objc
+import pdb
 
+import Foundation
+NSMutableAttributedString = Foundation.NSMutableAttributedString
+NSMutableStringProxyForMutableAttributedString = Foundation.NSMutableStringProxyForMutableAttributedString
 #import kgp
 # import ottobot
 #import PyFontify
@@ -18,9 +23,20 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext',
 ### Utilities ###
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
-    if type(s) != unicode:
-        s = unicode(s, srcencoding)
-    s = unicodedata.normalize(normalizer, s)
+    if type(s) not in (unicode, NSMutableAttributedString,
+                       objc.pyobjc_unicode,
+                       NSMutableStringProxyForMutableAttributedString):
+        try:
+            s = unicode(s, srcencoding)
+        except TypeError, err:
+            print 
+            print err
+            print repr(s)
+            print type(s)
+            #pdb.set_trace()
+            print
+    if type(s) in (unicode,):
+        s = unicodedata.normalize(normalizer, s)
     return s
 
 def grid(cols, rows, colSize=1, rowSize=1, shuffled = False):
