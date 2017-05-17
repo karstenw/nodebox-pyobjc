@@ -7,13 +7,13 @@ Versions for 32 and 64-bit are available.
 Differences from the official version:
 
 1. Additional Commands (they were already in the original source but not active)
-  1.  angle(x0, y0, x1, y1)
-  1.  distance(x0, y0, x1, y1)
-  1.  coordinates(x0, y0, distance, angle)
-  1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
+	1.  angle(x0, y0, x1, y1)
+	1.  distance(x0, y0, x1, y1)
+	 1.  coordinates(x0, y0, distance, angle)
+	 1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
 
 1. Different behaviour:
-  1.  `size(0,0)`  sets size to size of main screen
+	1.  `size(0,0)`  sets size to size of main screen
 
 1.  Uses Python 2.7.12 and PyObjC 3.2a1
 
@@ -29,7 +29,7 @@ Differences from the official version:
 
 
 
-The adapted Nodebox library is available here: [Library](https://github.com/karstenw/Library). Download as zip and unpack the contents into ~/Library/Application Support/NodeBox.
+The adapted Nodebox library is available here: [Library](https://github.com/karstenw/Library). Download as zip, unpack, rename to 'NodeBox' and move it to ~/Library/Application Support/.
 
 
 Latest changes
