@@ -1195,11 +1195,14 @@ class Text(Grob, TransformMixin, ColorMixin):
         paraStyle.setLineBreakMode_(NSLineBreakByWordWrapping)
         paraStyle.setLineHeightMultiple_(self._lineheight)
 
-        dict = {NSParagraphStyleAttributeName:paraStyle,
-                NSForegroundColorAttributeName:clr,
-                NSFontAttributeName:self.font}
+        d = {
+            NSParagraphStyleAttributeName:  paraStyle,
+            NSForegroundColorAttributeName: clr,
+            NSFontAttributeName:            self.font
+        }
 
-        textStorage = NSTextStorage.alloc().initWithString_attributes_(self.text, dict)
+        t = unicode(self.text)
+        textStorage = NSTextStorage.alloc().initWithString_attributes_(t, d)
         try:
             textStorage.setFont_(self.font)
         except ValueError:
@@ -1217,11 +1220,18 @@ class Text(Grob, TransformMixin, ColorMixin):
         return layoutManager, textContainer, textStorage
 
     def _draw(self):
-        if self._fillcolor is None: return
-        layoutManager, textContainer, textStorage = self._getLayoutManagerTextContainerTextStorage(self._fillcolor.nsColor)
+        if self._fillcolor is None:
+            return
+
+        s = self._getLayoutManagerTextContainerTextStorage(self._fillcolor.nsColor)
+        layoutManager, textContainer, textStorage = s
+
         x,y = self.x, self.y
         glyphRange = layoutManager.glyphRangeForTextContainer_(textContainer)
-        (dx, dy), (w, h) = layoutManager.boundingRectForGlyphRange_inTextContainer_(glyphRange, textContainer)
+        s = layoutManager.boundingRectForGlyphRange_inTextContainer_(glyphRange,
+                                                                    textContainer)
+        (dx, dy), (w, h) = s
+
         preferredWidth, preferredHeight = textContainer.containerSize()
         if self.width is not None:
             if self._align == RIGHT:
