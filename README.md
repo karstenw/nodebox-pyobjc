@@ -1,3 +1,5 @@
+![](art/nodeboxlogo_big.png?raw=true)
+
 This is a personal fork of NodeBox1.
 
 Download the compiled app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV)
@@ -9,8 +11,8 @@ Differences from the official version:
 1. Additional Commands (they were already in the original source but not active)
 	1.  angle(x0, y0, x1, y1)
 	1.  distance(x0, y0, x1, y1)
-	 1.  coordinates(x0, y0, distance, angle)
-	 1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
+	1.  coordinates(x0, y0, distance, angle)
+	1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
 
 1. Different behaviour:
 	1.  `size(0,0)`  sets size to size of main screen
@@ -37,7 +39,6 @@ Latest changes
 2016-10-06 Version 1.9.14. Upgraded to Python 2.7.12 and PyobjC 3.2a1.
 
 
-![](art/nodeboxlogo_big.png?raw=true)
 
 
 
