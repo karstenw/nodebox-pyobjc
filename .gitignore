@@ -2,7 +2,6 @@
 *.pyc
 build/
 dist/
-
 # Xcode user files
 project.xcworkspace
 xcuserdata
@@ -13,4 +12,11 @@ nodebox/tests/vdiff/images/*/_compare.png
 nodebox/tests/vdiff/test-results.html
 +trash
 .gitignore
-
++current
+examples/Escher/FG*
+examples/Images/Images*
+examples/Path/Spider-kw.py
+examples/zzz/
+lib@appsupport
+packages_nodebox.png
+classes_nodebox.png
