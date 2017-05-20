@@ -1,8 +1,25 @@
 import os
-from tempfile import mkstemp
-from Foundation import NSNumber
-from AppKit import NSImage, NSApplication, NSColor, NSData, NSBitmapImageRep, NSJPEGFileType
-from QTKit import QTMovie, QTDataReference, QTMovieFileNameAttribute, QTMakeTimeRange, QTMakeTime, QTMovieEditableAttribute, QTAddImageCodecType, QTMovieFlatten
+import tempfile
+import Foundation
+NSNumber = Foundation.NSNumber
+
+import AppKit
+NSImage = AppKit.NSImage
+NSApplication = AppKit.NSApplication
+NSColor = AppKit.NSColor
+NSData = AppKit.NSData
+NSBitmapImageRep = AppKit.NSBitmapImageRep
+NSJPEGFileType = AppKit.NSJPEGFileType
+
+import QTKit
+QTMovie = QTKit.QTMovie
+QTDataReference = QTKit.QTDataReference
+QTMovieFileNameAttribute = QTKit.QTMovieFileNameAttribute
+QTMakeTimeRange = QTKit.QTMakeTimeRange
+QTMakeTime = QTKit.QTMakeTime
+QTMovieEditableAttribute = QTKit.QTMovieEditableAttribute
+QTAddImageCodecType = QTKit.QTAddImageCodecType
+QTMovieFlatten = QTKit.QTMovieFlatten
 
 class Movie(object):
 
@@ -21,7 +38,7 @@ class Movie(object):
         if self.movie is None:
             # The first frame will be written to a temporary png file,
             # then opened as a movie file, then saved again as a movie.
-            handle, self.tmpfname = mkstemp('.tiff')
+            handle, self.tmpfname = tempfile.mkstemp('.tiff')
             canvas_or_context.save(self.tmpfname)
             try:
                 movie, err = QTMovie.movieWithFile_error_(self.tmpfname, None)
@@ -33,7 +50,8 @@ class Movie(object):
                 movie.writeToFile_withAttributes_(self.fname, {QTMovieFlatten:True})
                 self.movie, err = QTMovie.movieWithFile_error_(self.fname, None)
                 self.movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
-                if err is not None: raise str(err)
+                if err is not None:
+                    raise str(err)
                 self.imageTrack = self.movie.tracks()[0]
             finally:
                 os.remove(self.tmpfname)
@@ -45,7 +63,9 @@ class Movie(object):
             finally:
                 try:
                     os.remove(self.tmpfname)
-                except OSError: pass
+                except OSError, err:
+                    print err
+                    # pass
         self.frame += 1
                 
     def save(self):
@@ -54,6 +74,7 @@ class Movie(object):
 def test():
     import sys
     sys.path.insert(0, '../..')
+    sys.path.insert(0, '../../..')
     from nodebox.graphics import Canvas, Context
     from math import sin
 
@@ -65,7 +86,7 @@ def test():
         ctx = Context()
         ctx.size(w, h)
         ctx.rect(100.0+sin(i/10.0)*100.0,i/2.0,100,100)
-        ctx.text(i, 0, 200)
+        ctx.text(str(i), i*2, 200)
         m.add(ctx)
     m.save()
     
