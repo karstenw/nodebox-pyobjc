@@ -40,7 +40,7 @@ The adapted Nodebox library is available here: [Library](https://github.com/kars
 Latest changes
 --------------
 
-2017-05-20 Version 1.9.17. Added zipfile for support of patched color library.
+2017-05-20 Version 1.9.17. Added zipfile for support of patched color library [Shoebot zipped color lib](https://github.com/shoebot/shoebot/commit/b2b9c43b28acb9312ca2a0557cc8728fc49a47bb).
 
 2017-05-20 Version 1.9.16. Added preference for Library Path. It can be anywhere now. Added help menu item to open the Library path.
 
