@@ -1,4 +1,5 @@
-from AppKit import NSApplication
+import AppKit
+NSApplication = AppKit.NSApplication
 
 try:
     import nodebox
@@ -7,8 +8,14 @@ except ImportError:
     nodebox_dir = os.path.dirname(os.path.abspath(__file__))
     sys.path.append(os.path.dirname(nodebox_dir))
 
-from nodebox import graphics
-from nodebox import util
+import modebox.graphics
+graphics = modebox.graphics
+
+import nodebox.util
+util = nodebox.util
+
+#from nodebox import graphics
+#from nodebox import util
 
 class NodeBoxRunner(object):
     
