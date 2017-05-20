@@ -1,5 +1,6 @@
-#from AppKit import *
-#from Foundation import *
+import sys
+import os
+# import pdb
 
 import objc
 
@@ -9,18 +10,42 @@ NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
 NSNotificationCenter = AppKit.NSNotificationCenter
 NSFontManager = AppKit.NSFontManager
 NSFontAttributeName = AppKit.NSFontAttributeName
-
-
-
+NSUserDefaults = AppKit.NSUserDefaults
+NSOpenPanel = AppKit.NSOpenPanel
 
 
 from PyDETextView import getBasicTextAttributes, getSyntaxTextAttributes
 from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttributes
 
+
+class LibraryFolder(object):
+    def __init__(self):
+        prefpath = NSUserDefaults.standardUserDefaults().objectForKey_("libraryPath")
+
+        stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support",
+                               "NodeBox")
+
+        if prefpath and os.path.exists( prefpath ):
+            self.libDir = prefpath
+            NSUserDefaults.standardUserDefaults().setObject_forKey_( self.libDir,
+                                                                    "libraryPath")
+        else:
+            self.libDir = stdpath
+            try:
+                if not os.path.exists(self.libDir):
+                    os.mkdir(libDir)
+            except OSError:
+                pass
+            except IOError:
+                pass
+
+
+
 # class defined in NodeBoxPreferences.xib
 class NodeBoxPreferencesController(NSWindowController):
     commentsColorWell = objc.IBOutlet()
     fontPreview = objc.IBOutlet()
+    libraryPath = objc.IBOutlet()
     funcClassColorWell = objc.IBOutlet()
     keywordsColorWell = objc.IBOutlet()
     stringsColorWell = objc.IBOutlet()
@@ -38,6 +63,8 @@ class NodeBoxPreferencesController(NSWindowController):
         self.keywordsColorWell.setColor_(syntaxAttrs["keyword"][NSForegroundColorAttributeName])
         self.funcClassColorWell.setColor_(syntaxAttrs["identifier"][NSForegroundColorAttributeName])
         self.commentsColorWell.setColor_(syntaxAttrs["comment"][NSForegroundColorAttributeName])
+        libpath = LibraryFolder()
+        self.libraryPath.setStringValue_( libpath.libDir )
 
         nc = NSNotificationCenter.defaultCenter()
         nc.addObserver_selector_name_object_(self, "textFontChanged:", "PyDETextFontChanged", None)
@@ -72,6 +99,22 @@ class NodeBoxPreferencesController(NSWindowController):
         fm.orderFrontFontPanel_(sender)
         fp = fm.fontPanel_(False)
         fp.setDelegate_(self)
+
+    @objc.IBAction
+    def chooseLibrary_(self, sender):
+        panel = NSOpenPanel.openPanel()
+        panel.setCanChooseFiles_(False)
+        panel.setCanChooseDirectories_(True)
+        panel.setAllowsMultipleSelection_(False)
+        rval = panel.runModalForTypes_([])
+        if rval:
+            s = [t for t in panel.filenames()]
+            s = s[0]
+            NSUserDefaults.standardUserDefaults().setObject_forKey_( s,
+                                                                    "libraryPath")
+            libpath = LibraryFolder()
+            self.libraryPath.setStringValue_( libpath.libDir )
+
 
     @objc.IBAction
     def changeFont_(self, sender):
