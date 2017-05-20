@@ -5,7 +5,8 @@
 # Refer to the "Use" section on http://nodebox.net/code
 # Thanks to Dr. Florimond De Smedt at the Free University of Brussels for the math routines.
 
-# from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point, MOVETO, LINETO, CURVETO, CLOSE
+from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point, MOVETO, LINETO, CURVETO, CLOSE
+"""
 import nodebox.graphics
 
 BezierPath = nodebox.graphics.BezierPath
@@ -16,17 +17,15 @@ MOVETO = nodebox.graphics.MOVETO
 LINETO = nodebox.graphics.LINETO
 CURVETO = nodebox.graphics.CURVETO
 CLOSE = nodebox.graphics.CLOSE
-
+"""
 
 try:
-    #from cPathmatics import linepoint, linelength, curvepoint, curvelength
     import cPathmatics
     linepoint = cPathmatics.linepoint
     linelength = cPathmatics.linelength
     curvepoint = cPathmatics.curvepoint
     curvelength = cPathmatics.curvelength
 except:
-    # from nodebox.geo.pathmatics import linepoint, linelength, curvepoint, curvelength
     import nodebox.geo.pathmatics
     linepoint = nodebox.geo.pathmatics.linepoint
     linelength = nodebox.geo.pathmatics.linelength
