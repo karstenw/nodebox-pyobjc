@@ -1,7 +1,7 @@
 ![](art/nodeboxlogo_big.png?raw=true)
 
 
-This is a personal fork of NodeBox1.
+This is a personal fork of NodeBox 1.
 
 
 Download the compiled app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV).
@@ -40,6 +40,8 @@ The adapted Nodebox library is available here: [Library](https://github.com/kars
 Latest changes
 --------------
 
+2017-05-20 Version 1.9.17. Added zipfile for support of patched color library.
+
 2017-05-20 Version 1.9.16. Added preference for Library Path. It can be anywhere now. Added help menu item to open the Library path.
 
 2017-05-17 Version 1.9.15. Upgraded to Python 2.7.13. Dropped the 32-bit version.
@@ -52,6 +54,8 @@ Latest changes
 
 
 The original README:
+
+
 NodeBox
 =======
 NodeBox is an application used in graphic design research. It provides
