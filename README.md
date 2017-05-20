@@ -3,6 +3,7 @@
 This is a personal fork of NodeBox1.
 
 Download the compiled app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV)
+
 As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue if you need one.
 
 
