@@ -3,7 +3,7 @@
 This is a personal fork of NodeBox1.
 
 Download the compiled app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV)
-Versions for 32 and 64-bit are available.
+As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue if you need one.
 
 
 Differences from the official version:
@@ -17,9 +17,9 @@ Differences from the official version:
 1. Different behaviour:
 	1.  `size(0,0)`  sets size to size of main screen
 
-1.  Uses Python 2.7.12 and PyObjC 3.2a1
+1.  Uses Python 2.7.13 and PyObjC 3.2a1
 
-1.  Is self containend so it does not depend on an installed Python
+1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
 1.  Builds without Xcode (python setup.py py2app)
 
@@ -27,15 +27,19 @@ Differences from the official version:
 
 1.  Has some additional examples. See folders `Escher` and `geometry/Convex Hull`.
 
-1.  Additional 64-bit app which runs on OSX 10.6 & 10.10 (10.7, 10.8 and 10.9 due to lack of installation not tested)
-
 
 
 The adapted Nodebox library is available here: [Library](https://github.com/karstenw/Library). Download as zip, unpack, rename to 'NodeBox' and move it to ~/Library/Application Support/.
 
 
+
 Latest changes
 --------------
+
+2017-05-20 Version 1.9.16. Added preference for Library Path. It can be anywhere now. Added help menu item to open the Library path.
+
+2017-05-17 Version 1.9.15. Upgraded to Python 2.7.13. Dropped the 32-bit version.
+
 2016-10-06 Version 1.9.14. Upgraded to Python 2.7.12 and PyobjC 3.2a1.
 
 
