@@ -5,6 +5,8 @@ import re
 import objc
 import time
 import random
+import signal
+import atexit
 
 import pdb
 
@@ -54,21 +56,14 @@ NSBezierPath = AppKit.NSBezierPath
 import threading
 Thread = threading.Thread
 
-# from nodebox.gui.mac.ValueLadder import MAGICVAR
-# import nodebox.gui.mac.ValueLadder
-# MAGICVAR = nodebox.gui.mac.ValueLadder.MAGICVAR
 import ValueLadder
 MAGICVAR = ValueLadder.MAGICVAR
 
+import PyDETextView
 
-
-from nodebox.gui.mac import PyDETextView
-# import nodebox.gui.mac.PyDETextView
-# PyDETextView = nodebox.gui.mac.PyDETextView.PyDETextView
-
-# from nodebox.gui.mac.util import errorAlert
-#import nodebox.gui.mac.util
-#errorAlert = nodebox.gui.mac.util.errorAlert
+import preferences
+NodeBoxPreferencesController = preferences.NodeBoxPreferencesController
+LibraryFolder = preferences.LibraryFolder
 
 import util
 errorAlert = util.errorAlert
@@ -77,11 +72,18 @@ errorAlert = util.errorAlert
 # from nodebox import util
 import nodebox.util
 util = nodebox.util
+makeunicode = nodebox.util.makeunicode
+
+import nodebox.util.ottobot
+genProgram = nodebox.util.ottobot.genProgram
+
+
+import nodebox.util.QTSupport
+QTSupport = nodebox.util.QTSupport
 
 # from nodebox import graphics
 import nodebox.graphics
 graphics = nodebox.graphics
-
 
 # AppleScript enumerator codes for PDF and Quicktime export
 PDF = 0x70646678 # 'pdfx'
@@ -113,6 +115,8 @@ class OutputFile(object):
             except UnicodeDecodeError:
                 data = "XXX " + repr(data)
         self.data.append((self.isErr, data))
+
+
 
 # class defined in NodeBoxDocument.xib
 class NodeBoxDocument(NSDocument):
@@ -472,10 +476,9 @@ class NodeBoxDocument(NSDocument):
         """
 
         self.scriptName = self.fileName()
-        libDir = os.path.join(os.getenv("HOME"),
-                              "Library",
-                              "Application Support",
-                              "NodeBox")
+        libpath = LibraryFolder()
+        libDir = libpath.libDir
+
         if not self.scriptName:
             curDir = os.getenv("HOME")
             self.scriptName = "<untitled>"
@@ -528,15 +531,13 @@ class NodeBoxDocument(NSDocument):
 
     # from Mac/Tools/IDE/PyEdit.py
     def _userCancelledMonitor(self):
-        import time
-        from signal import SIGINT
         from Carbon import Evt
         while not self._scriptDone:
             if Evt.CheckEventQueueForUserCancel():
                 # Send a SIGINT signal to ourselves.
                 # This gets delivered to the main thread,
                 # cancelling the running script.
-                os.kill(os.getpid(), SIGINT)
+                os.kill(os.getpid(), signal.SIGINT)
                 break
             time.sleep(0.25)
 
@@ -718,7 +719,6 @@ class NodeBoxDocument(NSDocument):
         # If we load QTSupport before something is on screen, the connection to the
         # window server cannot be established.
 
-        from nodebox.util import QTSupport
         try:
             os.unlink(fname)
         except:
@@ -775,7 +775,8 @@ class NodeBoxDocument(NSDocument):
 
     @objc.IBAction
     def printDocument_(self, sender):
-        op = NSPrintOperation.printOperationWithView_printInfo_(self.graphicsView, self.printInfo())
+        op = NSPrintOperation.printOperationWithView_printInfo_(self.graphicsView,
+                                                                self.printInfo())
         op.runOperationModalForWindow_delegate_didRunSelector_contextInfo_(
             NSApp().mainWindow(), self, "printOperationDidRun:success:contextInfo:",
             0)
@@ -784,8 +785,9 @@ class NodeBoxDocument(NSDocument):
         if success:
             self.setPrintInfo_(op.printInfo())
 
-    printOperationDidRun_success_contextInfo_ = objc.selector(printOperationDidRun_success_contextInfo_,
-            signature="v@:@ci")
+    printOperationDidRun_success_contextInfo_ = objc.selector(
+                                            printOperationDidRun_success_contextInfo_,
+                                            signature="v@:@ci")
 
     @objc.IBAction
     def buildInterface_(self, sender):
@@ -820,7 +822,12 @@ class NodeBoxDocument(NSDocument):
         
 class FullscreenWindow(NSWindow):
     def initWithRect_(self, fullRect):
-        objc.super(FullscreenWindow, self).initWithContentRect_styleMask_backing_defer_(fullRect, NSBorderlessWindowMask, NSBackingStoreBuffered, True)
+        objc.super(FullscreenWindow,
+                   self).initWithContentRect_styleMask_backing_defer_(
+                                        fullRect,
+                                        NSBorderlessWindowMask,
+                                        NSBackingStoreBuffered,
+                                        True)
         return self
         
     def canBecomeKeyWindow(self):
@@ -860,7 +867,8 @@ class FullscreenView(NSView):
             t.translateXBy_yBy_(self.dx, self.dy)
             t.scaleBy_(self.scalingFactor)
             t.concat()
-            clip = NSBezierPath.bezierPathWithRect_( ((0, 0), (self.canvas.width, self.canvas.height)) )
+            clip = NSBezierPath.bezierPathWithRect_(
+                                ((0, 0), (self.canvas.width, self.canvas.height)) )
             clip.addClip()
             self.canvas.draw()
         NSGraphicsContext.currentContext().restoreGraphicsState()
@@ -1111,32 +1119,19 @@ class NodeBoxAppDelegate(NSObject):
 
     def awakeFromNib(self):
         self._prefsController = None
-        libDir = os.path.join(os.getenv("HOME"), "Library",
-                                                 "Application Support",
-                                                 "NodeBox")
-        try:
-            if not os.path.exists(libDir):
-                os.mkdir(libDir)
-                f = open(os.path.join(libDir, "README"), "w")
-                f.write( ("In this directory, you can put Python libraries "
-                          "to make them available to your scripts.\n") )
-                f.close()
-        except OSError:
-            pass
-        except IOError:
-            pass
+        libpath = LibraryFolder()
+
 
     @objc.IBAction
     def showPreferencesPanel_(self, sender):
         if self._prefsController is None:
-            from nodebox.gui.mac.preferences import NodeBoxPreferencesController
             self._prefsController = NodeBoxPreferencesController.alloc().init()
         self._prefsController.showWindow_(sender)
 
     @objc.IBAction
     def generateCode_(self, sender):
         """Generate a piece of NodeBox code using OttoBot"""
-        from nodebox.util.ottobot import genProgram
+        # from nodebox.util.ottobot import genProgram
         controller = NSDocumentController.sharedDocumentController()
         doc = controller.newDocument_(sender)
         doc = controller.currentDocument()
@@ -1153,6 +1148,12 @@ class NodeBoxAppDelegate(NSObject):
         url = NSURL.URLWithString_("http://nodebox.net/")
         NSWorkspace.sharedWorkspace().openURL_(url)
 
+    @objc.IBAction
+    def showLibrary_(self, sender):
+        libpath = LibraryFolder()
+        url = NSURL.fileURLWithPath_( makeunicode(libpath.libDir) )
+        NSWorkspace.sharedWorkspace().openURL_(url)
+
     def applicationWillTerminate_(self, note):
-        import atexit
+        # import atexit
         atexit._run_exitfuncs()
