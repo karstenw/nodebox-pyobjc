@@ -88,8 +88,10 @@ def curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n=20):
 
     for i in range(n):
         t = 1.0 * (i+1) / n
-        pt_x, pt_y, pt_c1x, pt_c1y, pt_c2x, pt_c2y = \
-            curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3)
+        pt_x, pt_y, pt_c1x, pt_c1y, pt_c2x, pt_c2y = curvepoint(t, x0, y0,
+                                                                   x1, y1,
+                                                                   x2, y2,
+                                                                   x3, y3)
         c = sqrt(pow(abs(xi-pt_x),2) + pow(abs(yi-pt_y),2))
         length += c
         xi = pt_x
