@@ -50,6 +50,19 @@ NSAffineTransformStruct = AppKit.NSAffineTransformStruct
 # from Foundation import *
 
 from nodebox.util import _copy_attr, _copy_attrs, makeunicode
+"""
+import nodebox.util
+_copy_attr = nodebox.util._copy_attr
+_copy_attrs = nodebox.util._copy_attrs
+makeunicode = nodebox.util.makeunicode
+"""
+
+# from nodebox.graphics import bezier
+"""
+import nodebox.graphics
+import nodebox.graphics.bezier
+bezier = nodebox.graphics.bezier
+"""
 
 try:
     import cPolymagic
@@ -423,8 +436,8 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         trans = self._transform.copy()
         if (self._transformmode == CENTER):
             (x, y), (w, h) = self.bounds
-            deltax = x+w/2
-            deltay = y+h/2
+            deltax = x + w / 2
+            deltay = y + h / 2
             t = Transform()
             t.translate(-deltax,-deltay)
             trans.prepend(t)
@@ -732,6 +745,7 @@ class Color(object):
 
     def _get_hue(self):
         return self._rgb.hueComponent()
+
     def _set_hue(self, val):
         val = self._normalize(val)
         h, s, b, a = self._rgb.getHue_saturation_brightness_alpha_(None, None, None, None)
@@ -746,28 +760,37 @@ class Color(object):
         h, s, b, a = self._rgb.getHue_saturation_brightness_alpha_(None, None, None, None)
         self._rgb = NSColor.colorWithDeviceHue_saturation_brightness_alpha_(h, val, b, a)
         self._updateCmyk()
-    s = saturation = property(_get_saturation, _set_saturation, doc="the saturation of the color")
+    s = saturation = property(_get_saturation,
+                              _set_saturation,
+                              doc="the saturation of the color")
 
     def _get_brightness(self):
         return self._rgb.brightnessComponent()
+
     def _set_brightness(self, val):
         val = self._normalize(val)
         h, s, b, a = self._rgb.getHue_saturation_brightness_alpha_(None, None, None, None)
         self._rgb = NSColor.colorWithDeviceHue_saturation_brightness_alpha_(h, s, val, a)
         self._updateCmyk()
-    v = brightness = property(_get_brightness, _set_brightness, doc="the brightness of the color")
+    v = brightness = property(_get_brightness,
+                              _set_brightness,
+                              doc="the brightness of the color")
 
     def _get_hsba(self):
         return self._rgb.getHue_saturation_brightness_alpha_(None, None, None, None)
+
     def _set_hsba(self, values):
         val = self._normalize(val)
         h, s, b, a = values
         self._rgb = NSColor.colorWithDeviceHue_saturation_brightness_alpha_(h, s, b, a)
         self._updateCmyk()
-    hsba = property(_get_hsba, _set_hsba, doc="the hue, saturation, brightness and alpha of the color")
+    hsba = property(_get_hsba,
+                    _set_hsba,
+                    doc="the hue, saturation, brightness and alpha of the color")
 
     def _get_red(self):
         return self._rgb.redComponent()
+
     def _set_red(self, val):
         val = self._normalize(val)
         r, g, b, a = self._rgb.getRed_green_blue_alpha_(None, None, None, None)
@@ -777,6 +800,7 @@ class Color(object):
 
     def _get_green(self):
         return self._rgb.greenComponent()
+
     def _set_green(self, val):
         val = self._normalize(val)
         r, g, b, a = self._rgb.getRed_green_blue_alpha_(None, None, None, None)
@@ -804,15 +828,19 @@ class Color(object):
 
     def _get_rgba(self):
         return self._rgb.getRed_green_blue_alpha_(None, None, None, None)
+
     def _set_rgba(self, val):
         val = self._normalizeList(val)
         r, g, b, a = val
         self._rgb = NSColor.colorWithDeviceRed_green_blue_alpha_(r, g, b, a)
         self._updateCmyk()
-    rgba = property(_get_rgba, _set_rgba, doc="the red, green, blue and alpha values of the color")
+    rgba = property(_get_rgba,
+                    _set_rgba,
+                    doc="the red, green, blue and alpha values of the color")
 
     def _get_cyan(self):
         return self._cmyk.cyanComponent()
+
     def _set_cyan(self, val):
         val = self._normalize(val)
         c, m, y, k, a = self.cmyka
@@ -822,30 +850,39 @@ class Color(object):
 
     def _get_magenta(self):
         return self._cmyk.magentaComponent()
+
     def _set_magenta(self, val):
         val = self._normalize(val)
         c, m, y, k, a = self.cmyka
         self._cmyk = NSColor.colorWithDeviceCyan_magenta_yellow_black_alpha_(c, val, y, k, a)
         self._updateRgb()
-    m = magenta = property(_get_magenta, _set_magenta, doc="the magenta component of the color")
+    m = magenta = property(_get_magenta,
+                           _set_magenta,
+                           doc="the magenta component of the color")
 
     def _get_yellow(self):
         return self._cmyk.yellowComponent()
+
     def _set_yellow(self, val):
         val = self._normalize(val)
         c, m, y, k, a = self.cmyka
         self._cmyk = NSColor.colorWithDeviceCyan_magenta_yellow_black_alpha_(c, m, val, k, a)
         self._updateRgb()
-    y = yellow = property(_get_yellow, _set_yellow, doc="the yellow component of the color")
+    y = yellow = property(_get_yellow,
+                          _set_yellow,
+                          doc="the yellow component of the color")
 
     def _get_black(self):
         return self._cmyk.blackComponent()
+
     def _set_black(self, val):
         val = self._normalize(val)
         c, m, y, k, a = self.cmyka
         self._cmyk = NSColor.colorWithDeviceCyan_magenta_yellow_black_alpha_(c, m, y, val, a)
         self._updateRgb()
-    k = black = property(_get_black, _set_black, doc="the black component of the color")
+    k = black = property(_get_black,
+                         _set_black,
+                         doc="the black component of the color")
 
     def _get_cmyka(self):
         return (self._cmyk.cyanComponent(),
@@ -866,13 +903,15 @@ class Color(object):
 
     def _normalize(self, v):
         """Bring the color into the 0-1 scale for the current colorrange"""
-        if self._ctx._colorrange == 1.0: return v
+        if self._ctx._colorrange == 1.0:
+            return v
         return v / self._ctx._colorrange
 
     def _normalizeList(self, lst):
         """Bring the color into the 0-1 scale for the current colorrange"""
         r = self._ctx._colorrange
-        if r == 1.0: return lst
+        if r == 1.0:
+            return lst
         return [v / r for v in lst]
 
 color = Color
@@ -914,7 +953,7 @@ class Transform(object):
 
     def __repr__(self):
         return "<%s [%.3f %.3f %.3f %.3f %.3f %.3f]>" % ((self.__class__.__name__,)
-                 + tuple(self))
+                                                          + tuple(self))
 
     def __iter__(self):
         for value in self._nsAffineTransform.transformStruct():
@@ -922,6 +961,7 @@ class Transform(object):
 
     def _get_matrix(self):
         return self._nsAffineTransform.transformStruct()
+
     def _set_matrix(self, value):
         self._nsAffineTransform.setTransformStruct_(value)
     matrix = property(_get_matrix, _set_matrix)
@@ -977,7 +1017,8 @@ class Image(Grob, TransformMixin):
     stateAttributes = ('_transform', '_transformmode')
     kwargs = ()
 
-    def __init__(self, ctx, path=None, x=0, y=0, width=None, height=None, alpha=1.0, image=None, data=None):
+    def __init__(self, ctx, path=None, x=0, y=0,
+                       width=None, height=None, alpha=1.0, image=None, data=None):
         """
         Parameters:
          - path: A path to a certain image on the local filesystem.
@@ -1033,13 +1074,15 @@ class Image(Grob, TransformMixin):
         self.debugImage = False
 
     def _get_image(self):
-        warnings.warn("The 'image' attribute is deprecated. Please use _nsImage instead.", DeprecationWarning, stacklevel=2)
+        w = "The 'image' attribute is deprecated. Please use _nsImage instead."
+        warnings.warn(w, DeprecationWarning, stacklevel=2)
         return self._nsImage
     image = property(_get_image)
 
     def copy(self):
         new = self.__class__(self._ctx)
-        _copy_attrs(self, new, ('image', 'x', 'y', 'width', 'height', '_transform', '_transformmode', 'alpha', 'debugImage'))
+        _copy_attrs(self, new, ('image', 'x', 'y', 'width', 'height',
+                                '_transform', '_transformmode', 'alpha', 'debugImage'))
         return new
 
     def getSize(self):
@@ -1065,17 +1108,21 @@ class Image(Grob, TransformMixin):
 
             # Center-mode transforms: translate to image center
             if self._transformmode == CENTER:
-                # This is the hardest case: center-mode transformations with given width or height.
+                # This is the hardest case: center-mode transformations with given
+                # width or height.
                 # Order is very important in this code.
 
-                # Set the position first, before any of the scaling or transformations are done.
-                # Context transformations might change the translation, and we don't want that.
+                # Set the position first, before any of the scaling or transformations
+                # are done.
+                # Context transformations might change the translation, and we don't
+                # want that.
                 t = Transform()
                 t.translate(self.x, self.y)
                 t.concat()
 
-                # Set new width and height factors. Note that no scaling is done yet: they're just here
-                # to set the new center of the image according to the scaling factors.
+                # Set new width and height factors. Note that no scaling is done yet:
+                # they're just here to set the new center of the image according to
+                # the scaling factors.
                 srcW = srcW * factor
                 srcH = srcH * factor
 
@@ -1114,7 +1161,8 @@ class Image(Grob, TransformMixin):
                 pt.rect(0, 0, srcW / factor, srcH / factor)
                 pt.fill()
             else:
-                self._nsImage.drawAtPoint_fromRect_operation_fraction_((0, 0), srcRect, NSCompositeSourceOver, self.alpha)
+                self._nsImage.drawAtPoint_fromRect_operation_fraction_((0, 0),
+                                            srcRect, NSCompositeSourceOver, self.alpha)
             _restore()
         # No width or height given
         else:
@@ -1153,7 +1201,8 @@ class Image(Grob, TransformMixin):
 
 class Text(Grob, TransformMixin, ColorMixin):
 
-    stateAttributes = ('_transform', '_transformmode', '_fillcolor', '_fontname', '_fontsize', '_align', '_lineheight')
+    stateAttributes = ('_transform', '_transformmode', '_fillcolor', '_fontname',
+                       '_fontsize', '_align', '_lineheight')
     kwargs = ('fill', 'font', 'fontsize', 'align', 'lineheight')
 
     __dummy_color = NSColor.blackColor()
@@ -1251,22 +1300,27 @@ class Text(Grob, TransformMixin, ColorMixin):
             layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange, (-deltaX-dx,-deltaY-dy))
         else:
             self._transform.concat()
-            layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange, (x-dx,y-dy-self.font.defaultLineHeightForFont()))
+            layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange,
+                                    (x-dx, y-dy-self.font.defaultLineHeightForFont()))
         _restore()
         return (w, h)
 
     def _get_metrics(self):
-        layoutManager, textContainer, textStorage = self._getLayoutManagerTextContainerTextStorage()
+        items = self._getLayoutManagerTextContainerTextStorage()
+        layoutManager, textContainer, textStorage = items
         glyphRange = layoutManager.glyphRangeForTextContainer_(textContainer)
-        (dx, dy), (w, h) = layoutManager.boundingRectForGlyphRange_inTextContainer_(glyphRange, textContainer)
+        (dx, dy), (w, h) = layoutManager.boundingRectForGlyphRange_inTextContainer_(
+                                                            glyphRange, textContainer)
         return w,h
     metrics = property(_get_metrics)
 
     def _get_path(self):
-        layoutManager, textContainer, textStorage = self._getLayoutManagerTextContainerTextStorage()
+        items = self._getLayoutManagerTextContainerTextStorage()
+        layoutManager, textContainer, textStorage = items
         x, y = self.x, self.y
         glyphRange = layoutManager.glyphRangeForTextContainer_(textContainer)
-        (dx, dy), (w, h) = layoutManager.boundingRectForGlyphRange_inTextContainer_(glyphRange, textContainer)
+        (dx, dy), (w, h) = layoutManager.boundingRectForGlyphRange_inTextContainer_(
+                                                            glyphRange, textContainer)
         preferredWidth, preferredHeight = textContainer.containerSize()
         if self.width is not None:
            if self._align == RIGHT:
@@ -1276,7 +1330,8 @@ class Text(Grob, TransformMixin, ColorMixin):
         length = layoutManager.numberOfGlyphs()
         path = NSBezierPath.bezierPath()
         for glyphIndex in range(length):
-            lineFragmentRect = layoutManager.lineFragmentRectForGlyphAtIndex_effectiveRange_(glyphIndex, None)
+            lineFragmentRect = layoutManager.lineFragmentRectForGlyphAtIndex_effectiveRange_(
+                                                                    glyphIndex, None)
             # HACK: PyObjc 2.0 and 2.2 are subtly different:
             #  - 2.0 (bundled with OS X 10.5) returns one argument: the rectangle.
             #  - 2.2 (bundled with OS X 10.6) returns two arguments: the rectangle and the range.
@@ -1284,12 +1339,15 @@ class Text(Grob, TransformMixin, ColorMixin):
             if isinstance(lineFragmentRect, tuple):
                 lineFragmentRect = lineFragmentRect[0]
             layoutPoint = layoutManager.locationForGlyphAtIndex_(glyphIndex)
-            # Here layoutLocation is the location (in container coordinates) where the glyph was laid out. 
+
+            # Here layoutLocation is the location (in container coordinates)
+            # where the glyph was laid out. 
             finalPoint = [lineFragmentRect[0][0],lineFragmentRect[0][1]]
             finalPoint[0] += layoutPoint[0] - dx
             finalPoint[1] += layoutPoint[1] - dy
             g = layoutManager.glyphAtIndex_(glyphIndex)
-            if g == 0: continue
+            if g == 0:
+                continue
             path.moveToPoint_((finalPoint[0], -finalPoint[1]))
             path.appendBezierPathWithGlyph_inFont_(g, self.font)
             path.closePath()
@@ -1359,7 +1417,8 @@ class Variable(object):
         return False
 
     def __repr__(self):
-        return "Variable(name=%s, type=%s, default=%s, min=%s, max=%s, value=%s)" % (self.name, self.type, self.default, self.min, self.max, self.value)
+        s = "Variable(name=%s, type=%s, default=%s, min=%s, max=%s, value=%s)"
+        return s % (self.name, self.type, self.default, self.min, self.max, self.value)
 
 class _PDFRenderView(NSView):
     
@@ -1434,7 +1493,8 @@ class Canvas(Grob):
     def draw(self):
         if self.background is not None:
             self.background.set()
-            NSRectFillUsingOperation(((0,0), (self.width, self.height)), NSCompositeSourceOver)
+            NSRectFillUsingOperation(((0,0), (self.width, self.height)),
+                                     NSCompositeSourceOver)
         for grob in self._grobs:
             grob._draw()
             
@@ -1461,7 +1521,8 @@ class Canvas(Grob):
                         "png":  NSPNGFileType,
                         "tiff": NSTIFFFileType}
             if format not in imgTypes:
-                raise NodeBoxError, "Filename should end in .pdf, .eps, .tiff, .gif, .jpg or .png"
+                e = "Filename should end in .pdf, .eps, .tiff, .gif, .jpg or .png"
+                raise NodeBoxError, e
             data = self._nsImage.TIFFRepresentation()
             if format != 'tiff':
                 imgType = imgTypes[format]
