@@ -28,19 +28,23 @@ __all__ = ('grid', 'random', 'choice', 'files', 'filelist', 'imagefiles',
 ### Utilities ###
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
-    if type(s) not in (unicode, NSMutableAttributedString,
-                       objc.pyobjc_unicode,
-                       NSMutableStringProxyForMutableAttributedString):
+    typ = type(s)
+    
+    # convert to str first; for number types etc.
+    if typ not in (str, unicode):
+        s = str(s)
+    if typ not in (unicode, NSMutableAttributedString, objc.pyobjc_unicode,
+                   NSMutableStringProxyForMutableAttributedString):
         try:
             s = unicode(s, srcencoding)
         except TypeError, err:
             print 
-            print err
+            print "makeunicode():", err
             print repr(s)
             print type(s)
             #pdb.set_trace()
             print
-    if type(s) in (unicode,):
+    if typ in (unicode,):
         s = unicodedata.normalize(normalizer, s)
     return s
 
