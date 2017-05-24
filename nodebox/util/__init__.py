@@ -1,24 +1,29 @@
+import os
+import datetime
+import glob
+
+
 import random as librandom
 choice = librandom.choice
 
-import glob
-
 import unicodedata
 import objc
+
 import pdb
+import pprint
+pp = pprint.pprint
+
 
 import Foundation
 NSMutableAttributedString = Foundation.NSMutableAttributedString
 NSMutableStringProxyForMutableAttributedString = Foundation.NSMutableStringProxyForMutableAttributedString
-#import kgp
-# import ottobot
-#import PyFontify
-#import QTSupport
-#import vdiff
 
-__all__ = ('grid', 'random', 'choice', 'files', 'autotext',
-           '_copy_attr', '_copy_attrs')
-            #'kgp', 'ottobot', 'PyFontify', 'QTSupport', 'vdiff' )
+import kgp
+
+
+
+__all__ = ('grid', 'random', 'choice', 'files', 'filelist', 'imagefiles',
+           'autotext', '_copy_attr', '_copy_attrs', 'makeunicode')
 
 ### Utilities ###
 
@@ -39,10 +44,29 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
         s = unicodedata.normalize(normalizer, s)
     return s
 
-def grid(cols, rows, colSize=1, rowSize=1, shuffled = False):
+
+def datestring(dt = None, dateonly=False, nospaces=True, nocolons=True):
+    """Make an ISO datestring."""
+    if not dt:
+        now = str(datetime.datetime.now())
+    else:
+        now = str(dt)
+    if not dateonly:
+        now = now[:19]
+    else:
+        now = now[:10]
+    if nospaces:
+        now = now.replace(" ", "_")
+    if nocolons:
+        now = now.replace(":", "")
+    return now
+
+
+def grid(cols, rows, colSize=1, rowSize=1, shuffled=False):
     """Returns an iterator that contains coordinate tuples.
     
-    The grid can be used to quickly create grid-like structures. A common way to use them is:
+    The grid can be used to quickly create grid-like structures.
+    A common way to use them is:
         for x, y in grid(10,10,12,12):
             rect(x,y, 10,10)
     """
@@ -71,7 +95,6 @@ def random(v1=None, v2=None):
     - If two values are given, random returns a value between the two; if two
       integers are given, the two boundaries are inclusive.
     """
-    # import random
     if v1 != None and v2 == None: # One value means 0 -> v1
         if isinstance(v1, float):
             return librandom.random() * v1
@@ -89,6 +112,7 @@ def random(v1=None, v2=None):
     else: # No values means 0.0 -> 1.0
         return librandom.random()
 
+
 def files(path="*"):
     """Returns a list of files.
     
@@ -100,10 +124,66 @@ def files(path="*"):
     return f
 
 
+def filelist( folderpath, pathonly=True ):
+    """Walk a folder and return paths for imagefiles."""
+
+    result = []
+    for root, dirs, files in os.walk( folderpath ):
+        root = makeunicode( root )
+
+        for thefile in files:
+            thefile = makeunicode( thefile )
+            basename, ext = os.path.splitext(thefile)
+
+            # exclude dotfiles
+            if thefile.startswith('.'):
+                continue
+            
+            # exclude that nasty OS trash
+            if thefile in (u"Thumbs.db", u"Icon\r"):
+                continue
+
+            # exclude the specials
+            for item in (u'\r', u'\n', u'\t'):
+                if item in thefile:
+                    continue
+
+            filepath = os.path.join( root, thefile )
+
+            record = filepath
+            if not pathonly:
+                info = os.stat( filepath )
+                lastmodified = datetime.datetime.fromtimestamp( info.st_mtime )
+                record = (filepath, info.st_size, lastmodified, oct(info.st_mode) )
+            # result.append( record )
+            yield record
+    # return result
+
+
+def imagefiles( folderpath, pathonly=True ):
+    result = []
+    filetuples = filelist( folderpath, pathonly=pathonly )
+    extensions = tuple(".pdf .eps .tif .tiff .gif .jpg .jpeg .png".split())
+    for filetuple in filetuples:
+        path = filetuple
+        if not pathonly:
+            path = filetuple[0]
+        _, ext = os.path.splitext( path )
+        if ext.lower() not in extensions:
+            continue
+        if pathonly:
+            # result.append( path )
+            yield path
+        else:
+            # result.append( filetuple )
+            yield filetuple
+    #return result
+
+
 def autotext(sourceFile):
-    from nodebox.util.kgp import KantGenerator
-    k = KantGenerator(sourceFile)
+    k = kgp.KantGenerator(sourceFile)
     return k.output()
+
 
 def _copy_attr(v):
     if v is None:
@@ -122,3 +202,4 @@ def _copy_attr(v):
 def _copy_attrs(source, target, attrs):
     for attr in attrs:
         setattr(target, attr, _copy_attr(getattr(source, attr)))
+
