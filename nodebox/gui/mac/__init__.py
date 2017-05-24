@@ -8,7 +8,12 @@ import random
 import signal
 import atexit
 
+import pprint
+pp = pprint.pprint
+
 import pdb
+kwdbg = False
+kwlog = False
 
 import Foundation
 import AppKit
@@ -436,12 +441,21 @@ class NodeBoxDocument(NSDocument):
                              "exec")
 
     def _initNamespace(self):
+
         self.namespace.clear()
         # Add everything from the namespace
         for name in graphics.__all__:
             self.namespace[name] = getattr(graphics, name)
         for name in util.__all__:
             self.namespace[name] = getattr(util, name)
+
+        # debug print all collected keywords
+        if kwlog:
+            print "util.__all__:"
+            pp(util.__all__)
+            print "graphics.__all__:"
+            pp(graphics.__all__)
+
         # Add everything from the context object
         self.namespace["_ctx"] = self.context
         for attrName in dir(self.context):
@@ -494,8 +508,11 @@ class NodeBoxDocument(NSDocument):
         os.chdir(curDir)
         sys.path.insert(0, curDir)
         output = []
-        sys.stdout = OutputFile(output, False)
-        sys.stderr = OutputFile(output, True)
+        
+        # for pdb debugging in terminal this needs to be switched off
+        if not kwdbg:
+            sys.stdout = OutputFile(output, False)
+            sys.stderr = OutputFile(output, True)
         self._scriptDone = False
         try:
             if self.animationTimer is None:
