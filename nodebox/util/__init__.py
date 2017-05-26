@@ -22,8 +22,9 @@ import kgp
 
 
 
-__all__ = ('grid', 'random', 'choice', 'files', 'filelist', 'imagefiles',
-           'autotext', '_copy_attr', '_copy_attrs', 'makeunicode')
+__all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
+           'datestring','makeunicode', 'filelist', 'imagefiles')
+
 
 ### Utilities ###
 
@@ -50,7 +51,9 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
 
 
 def datestring(dt = None, dateonly=False, nospaces=True, nocolons=True):
-    """Make an ISO datestring."""
+    """Make an ISO datestring. The defaults are good for using the result of
+    'datestring()' in a filename.
+    """
     if not dt:
         now = str(datetime.datetime.now())
     else:
@@ -159,9 +162,7 @@ def filelist( folderpath, pathonly=True ):
                 info = os.stat( filepath )
                 lastmodified = datetime.datetime.fromtimestamp( info.st_mtime )
                 record = (filepath, info.st_size, lastmodified, oct(info.st_mode) )
-            # result.append( record )
             yield record
-    # return result
 
 
 def imagefiles( folderpath, pathonly=True ):
