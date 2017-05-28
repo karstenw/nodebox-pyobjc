@@ -31,6 +31,14 @@ Differences from the official version:
 
 1.  Has some additional examples. See folders `Escher` and `geometry/Convex Hull`.
 
+1.  New function filelist( folder or list of folders, pathonly=True )
+	1. Returns a path generator
+	1. If pathonly is False, it returns a (path, size, lastmodifieddatetime, oct(mode)) generator
+	1. The Following filenames are ignored: any name starting with '.', any name containing any of: '\r\n\t'.
+
+1.  New function imagefiles( folder or list of folders, pathonly=True )
+	1.  Same parameters and restrictions as filelist plus:
+	1.  filters file extensions for ".pdf .eps .tif .tiff .gif .jpg .jpeg .png"
 
 
 The adapted Nodebox library is available here: [Library](https://github.com/karstenw/Library). Download as zip, unpack, rename to 'NodeBox' and move it to ~/Library/Application Support/.
@@ -39,6 +47,10 @@ The adapted Nodebox library is available here: [Library](https://github.com/kars
 
 Latest changes
 --------------
+
+2017-05-28 Version 1.9.19. Added setup_console.py. If all needed libraries are installed, NodeBox can be installed as a standard Python lib. Scripts can be executed without the app.
+
+2017-05-22 Version 1.9.18. Added filelist and imagefiles generators.
 
 2017-05-20 Version 1.9.17. Added zipfile for support of patched color library. [Shoebot zipped color library patch](https://github.com/shoebot/shoebot/commit/b2b9c43b28acb9312ca2a0557cc8728fc49a47bb).
 
@@ -54,6 +66,7 @@ Latest changes
 
 
 The original README:
+--------------------
 
 
 NodeBox
