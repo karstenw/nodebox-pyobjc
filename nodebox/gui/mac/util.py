@@ -9,3 +9,4 @@ def errorAlert(msgText, infoText):
     alert.setAlertStyle_(AppKit.NSCriticalAlertStyle)
     btn = alert.addButtonWithTitle_("OK")
     return alert.runModal()
+
