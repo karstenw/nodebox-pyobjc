@@ -8,8 +8,8 @@ except ImportError:
     nodebox_dir = os.path.dirname(os.path.abspath(__file__))
     sys.path.append(os.path.dirname(nodebox_dir))
 
-import modebox.graphics
-graphics = modebox.graphics
+import nodebox.graphics
+graphics = nodebox.graphics
 
 import nodebox.util
 util = nodebox.util
