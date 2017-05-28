@@ -87,9 +87,11 @@ __all__ = [
 
 DEFAULT_WIDTH, DEFAULT_HEIGHT = 1000, 1000
 
-inch = 72
-cm = 28.3465
-mm = 2.8346
+# unused
+inch = 72.0
+cm = inch / 2.54
+mm = cm * 10.0
+
 
 RGB = "rgb"
 HSB = "hsb"
@@ -122,6 +124,7 @@ TEXT = 2
 BOOLEAN = 3
 BUTTON = 4
 
+# unused
 KEY_UP = 126
 KEY_DOWN = 125
 KEY_LEFT = 123
@@ -866,7 +869,8 @@ class Color(object):
     def _set_yellow(self, val):
         val = self._normalize(val)
         c, m, y, k, a = self.cmyka
-        self._cmyk = NSColor.colorWithDeviceCyan_magenta_yellow_black_alpha_(c, m, val, k, a)
+        self._cmyk = NSColor.colorWithDeviceCyan_magenta_yellow_black_alpha_(
+                                                                c, m, val, k, a)
         self._updateRgb()
     y = yellow = property(_get_yellow,
                           _set_yellow,
@@ -878,7 +882,8 @@ class Color(object):
     def _set_black(self, val):
         val = self._normalize(val)
         c, m, y, k, a = self.cmyka
-        self._cmyk = NSColor.colorWithDeviceCyan_magenta_yellow_black_alpha_(c, m, y, val, a)
+        self._cmyk = NSColor.colorWithDeviceCyan_magenta_yellow_black_alpha_(
+                                                                c, m, y, val, a)
         self._updateRgb()
     k = black = property(_get_black,
                          _set_black,
@@ -1187,16 +1192,19 @@ class Image(Grob, TransformMixin):
                 pt.fill()
             else:
                 # The following code avoids a nasty bug in Cocoa/PyObjC.
-                # Apparently, EPS files are put on a different position when drawn with a certain position.
-                # However, this only happens when the alpha value is set to 1.0: set it to something lower
-                # and the positioning is the same as a bitmap file.
-                # I could of course make every EPS image have an alpha value of 0.9999, but this solution 
-                # is better: always use zero coordinates for drawAtPoint and use a transform to set the
-                # final position.
+                # Apparently, EPS files are put on a different position when drawn
+                # with a certain position.
+                # However, this only happens when the alpha value is set to 1.0: set
+                # it to something lower and the positioning is the same as a bitmap
+                # file.
+                # I could of course make every EPS image have an alpha value of
+                # 0.9999, but this solution is better: always use zero coordinates for
+                # drawAtPoint and use a transform to set the final position.
                 t = Transform()
                 t.translate(x,y)
                 t.concat()
-                self._nsImage.drawAtPoint_fromRect_operation_fraction_((0,0), srcRect, NSCompositeSourceOver, self.alpha)
+                self._nsImage.drawAtPoint_fromRect_operation_fraction_(
+                                (0,0), srcRect, NSCompositeSourceOver, self.alpha)
             _restore()
 
 class Text(Grob, TransformMixin, ColorMixin):
