@@ -5,19 +5,9 @@
 # Refer to the "Use" section on http://nodebox.net/code
 # Thanks to Dr. Florimond De Smedt at the Free University of Brussels for the math routines.
 
-from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point, MOVETO, LINETO, CURVETO, CLOSE
-"""
-import nodebox.graphics
 
-BezierPath = nodebox.graphics.BezierPath
-PathElement = nodebox.graphics.PathElement
-NodeBoxError = nodebox.graphics.NodeBoxError
-Point = nodebox.graphics.Point
-MOVETO = nodebox.graphics.MOVETO
-LINETO = nodebox.graphics.LINETO
-CURVETO = nodebox.graphics.CURVETO
-CLOSE = nodebox.graphics.CLOSE
-"""
+from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point, MOVETO, LINETO, CURVETO, CLOSE
+
 
 try:
     import cPathmatics
