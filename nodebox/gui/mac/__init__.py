@@ -12,7 +12,11 @@ import pprint
 pp = pprint.pprint
 
 import pdb
+
+# set to true to have stdio on the terminal
 kwdbg = False
+
+# if true print out some debug info on stdout
 kwlog = False
 
 import Foundation
@@ -101,8 +105,13 @@ VERY_LIGHT_GRAY = black.blendedColorWithFraction_ofColor_(0.95,
 DARKER_GRAY = black.blendedColorWithFraction_ofColor_(0.8,
                                                       NSColor.whiteColor())
 
-from nodebox.gui.mac.dashboard import *
-from nodebox.gui.mac.progressbar import ProgressBarController
+# from nodebox.gui.mac.dashboard import *
+# from nodebox.gui.mac.progressbar import ProgressBarController
+import dashboard
+DashboardController = dashboard.DashboardController
+
+import progressbar
+ProgressBarController = progressbar.ProgressBarController
 
 class ExportCommand(NSScriptCommand):
     pass    
