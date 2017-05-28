@@ -9,17 +9,9 @@ choice = librandom.choice
 import unicodedata
 import objc
 
-import pdb
-import pprint
-pp = pprint.pprint
-
-
 import Foundation
-NSMutableAttributedString = Foundation.NSMutableAttributedString
-NSMutableStringProxyForMutableAttributedString = Foundation.NSMutableStringProxyForMutableAttributedString
 
 import kgp
-
 
 
 __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
@@ -34,8 +26,8 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     # convert to str first; for number types etc.
     if typ not in (str, unicode):
         s = str(s)
-    if typ not in (unicode, NSMutableAttributedString, objc.pyobjc_unicode,
-                   NSMutableStringProxyForMutableAttributedString):
+    if typ not in (unicode, Foundation.NSMutableAttributedString, objc.pyobjc_unicode,
+                   Foundation.NSMutableStringProxyForMutableAttributedString):
         try:
             s = unicode(s, srcencoding)
         except TypeError, err:
@@ -43,7 +35,6 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
             print "makeunicode():", err
             print repr(s)
             print type(s)
-            #pdb.set_trace()
             print
     if typ in (unicode,):
         s = unicodedata.normalize(normalizer, s)
@@ -131,43 +122,46 @@ def files(path="*"):
     return f
 
 
-def filelist( folderpath, pathonly=True ):
-    """Walk a folder and return paths for imagefiles."""
+def filelist( folderpathorlist, pathonly=True ):
+    """Walk a folder or a list of folders and return
+    paths or ((filepath, size, lastmodified, mode) tuples..
+    """
 
+    folders = folderpathorlist
+    if type(folderpathorlist) in (str, unicode):
+        folders = [folderpathorlist]
     result = []
-    for root, dirs, files in os.walk( folderpath ):
-        root = makeunicode( root )
+    for folder in folders:
+        for root, dirs, files in os.walk( folder ):
+            root = makeunicode( root )
 
-        for thefile in files:
-            thefile = makeunicode( thefile )
-            basename, ext = os.path.splitext(thefile)
+            for thefile in files:
+                thefile = makeunicode( thefile )
+                basename, ext = os.path.splitext(thefile)
 
-            # exclude dotfiles
-            if thefile.startswith('.'):
-                continue
-            
-            # exclude that nasty OS trash
-            if thefile in (u"Thumbs.db", u"Icon\r"):
-                continue
-
-            # exclude the specials
-            for item in (u'\r', u'\n', u'\t'):
-                if item in thefile:
+                # exclude dotfiles
+                if thefile.startswith('.'):
                     continue
 
-            filepath = os.path.join( root, thefile )
+                # exclude the specials
+                for item in (u'\r', u'\n', u'\t'):
+                    if item in thefile:
+                        continue
 
-            record = filepath
-            if not pathonly:
-                info = os.stat( filepath )
-                lastmodified = datetime.datetime.fromtimestamp( info.st_mtime )
-                record = (filepath, info.st_size, lastmodified, oct(info.st_mode) )
-            yield record
+                filepath = os.path.join( root, thefile )
+
+                record = filepath
+                if not pathonly:
+                    info = os.stat( filepath )
+                    lastmodified = datetime.datetime.fromtimestamp( info.st_mtime )
+                    record = (filepath, info.st_size, lastmodified, oct(info.st_mode) )
+                yield record
 
 
-def imagefiles( folderpath, pathonly=True ):
+def imagefiles( folderpathorlist, pathonly=True ):
+    """Use filelist to extract all imagefiles"""
     result = []
-    filetuples = filelist( folderpath, pathonly=pathonly )
+    filetuples = filelist( folderpathorlist, pathonly=pathonly )
     extensions = tuple(".pdf .eps .tif .tiff .gif .jpg .jpeg .png".split())
     for filetuple in filetuples:
         path = filetuple
@@ -177,12 +171,9 @@ def imagefiles( folderpath, pathonly=True ):
         if ext.lower() not in extensions:
             continue
         if pathonly:
-            # result.append( path )
             yield path
         else:
-            # result.append( filetuple )
             yield filetuple
-    #return result
 
 
 def autotext(sourceFile):
