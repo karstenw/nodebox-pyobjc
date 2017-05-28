@@ -40,6 +40,7 @@ import nodebox.geo
 import nodebox.graphics
 #import nodebox.graphics.bezier
 #import nodebox.graphics.cocoa
+
 import nodebox.gui
 import nodebox.gui.mac
 
