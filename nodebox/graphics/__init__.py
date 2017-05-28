@@ -1,45 +1,19 @@
-#from nodebox.graphics.cocoa import *
-
-#import nodebox
-#import nodebox.graphics
-#import nodebox.graphics.cocoa
+import cocoa
+graphics_impl = cocoa
 
 import AppKit
 
-import cocoa
-# import graphics
-# from nodebox.graphics import cocoa as graphics_impl
-graphics_impl = cocoa
-
-
-# I despise it but cocoa.py has an __all__...
-# from nodebox.graphics.cocoa import *
+# I really dont like it but cocoa.py has an __all__...
 from cocoa import *
-# Canvas = graphics_impl.Canvas
-# RGB = graphics_impl.RGB
-# Color = graphics_impl.Color
-# BUTT = graphics_impl.BUTT
-# CENTER = graphics_impl.CENTER
-# CORNER = graphics_impl.CORNER
-# LEFT = graphics_impl.LEFT
-# BUTT = graphics_impl.BUTT
-# ROUND = graphics_impl.ROUND
-# SQUARE = graphics_impl.SQUARE
-# MITER = graphics_impl.MITER
-# 
-# Transform = graphics_impl.Transform
-
-
-
 
 # from nodebox.util import _copy_attr, _copy_attrs
 import nodebox.util
 _copy_attr = nodebox.util._copy_attr
 _copy_attrs = nodebox.util._copy_attrs
 
-
 import nodebox.geo
 
+# add graphics commands from cocoa
 __all__ = list(graphics_impl.__all__)
 __all__.extend(['Context'])
 
@@ -100,6 +74,7 @@ class Context(object):
         self._vars = []
 
     def ximport(self, libName):
+        
         lib = __import__(libName)
         self._ns[libName] = lib
         lib._ctx = self
