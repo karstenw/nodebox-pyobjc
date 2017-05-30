@@ -10,19 +10,20 @@ import unicodedata
 import objc
 
 import Foundation
+import AppKit
 
 import kgp
 
 
 __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
-           'datestring','makeunicode', 'filelist', 'imagefiles')
+           'datestring','makeunicode', 'filelist', 'imagefiles',
+           'fontnames', 'fontfamilies')
 
 
 ### Utilities ###
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     typ = type(s)
-    
     # convert to str first; for number types etc.
     if typ not in (str, unicode):
         s = str(s)
@@ -132,6 +133,8 @@ def filelist( folderpathorlist, pathonly=True ):
         folders = [folderpathorlist]
     result = []
     for folder in folders:
+        folder = os.path.expanduser( folder )
+        folder = os.path.abspath( folder )
         for root, dirs, files in os.walk( folder ):
             root = makeunicode( root )
 
@@ -175,6 +178,79 @@ def imagefiles( folderpathorlist, pathonly=True ):
         else:
             yield filetuple
 
+def fontnames():
+    fm = AppKit.NSFontManager.sharedFontManager()
+    l = fm.availableFonts()
+    result = []
+    for i in l:
+        result.append( makeunicode(i) )
+    return result
+
+def fontfamilies(flat=False):
+    """
+        NSItalicFontMask = 0x00000001,
+        NSBoldFontMask = 0x00000002,
+        NSUnboldFontMask = 0x00000004,
+        NSNonStandardCharacterSetFontMask = 0x00000008,
+        NSNarrowFontMask = 0x00000010,
+        NSExpandedFontMask = 0x00000020,
+        NSCondensedFontMask = 0x00000040,
+        NSSmallCapsFontMask = 0x00000080,
+        NSPosterFontMask = 0x00000100,
+        NSCompressedFontMask = 0x00000200,
+        NSFixedPitchFontMask = 0x00000400,
+        NSUnitalicFontMask = 0x01000000 
+    """
+    fm = AppKit.NSFontManager.sharedFontManager()
+    l = fm.availableFontFamilies()
+
+    def makeTraitsList( traits ):
+        appleTraits = {
+            0x00000001: u"italic",
+            0x00000002: u"bold",
+            0x00000004: u"unbold",
+            0x00000008: u"nonstandardcharacterset",
+            0x00000010: u"narrow",
+            0x00000020: u"expanded",
+            0x00000040: u"condensed",
+            0x00000080: u"smallcaps",
+            0x00000100: u"poster",
+            0x00000200: u"compressed",
+            0x00000400: u"fixedpitch",
+            0x01000000: u"unitalic"}
+        result = []
+        keys = appleTraits.keys()
+        for key in keys:
+            if traits & key == key:
+                result.append( appleTraits[key])
+        return result
+
+    def makeFontRecord(fnt):
+        psname, styl, weight, traits = fnt
+        psname = makeunicode(psname)
+        styl = makeunicode(styl)
+        weight = float( weight )
+        traits = int(traits)
+        traitNames = makeTraitsList( traits )
+        return (psname, familyName, styl, weight, traits, traitNames)
+        
+    if flat:
+        result = []
+    else:
+        result = {}
+    for fn in l:
+        familyName = makeunicode( fn )
+        if not flat:
+            result[familyName] = famfonts = {}
+
+        subs = fm.availableMembersOfFontFamily_( familyName )
+        for fnt in subs:
+            fontRec = makeFontRecord( fnt )
+            if not flat:
+                famfonts[styl] = fontRec
+            else:
+                result.append( fontRec )
+    return result
 
 def autotext(sourceFile):
     k = kgp.KantGenerator(sourceFile)
