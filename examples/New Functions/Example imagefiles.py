@@ -1,17 +1,12 @@
 print "The Pictures folder with paths:"
 
-myimages = filelist( "~/Pictures")
+myimages = filelist( "/Library/Desktop Pictures")
+
+# for the choice later.
+myimages = list(myimages)
 
 for f in myimages:
     print f
 
-print 
-print '-' * 40
-print 
-
-print "The Pictures folder with file tuples:"
-
-myimages = filelist( "~/Pictures", pathonly=False)
-
-for f in myimages:
-    print f
+# display a random image
+image(choice(myimages), 30,200)
