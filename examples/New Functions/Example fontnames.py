@@ -1,3 +1,6 @@
 import pprint
 
-pprint.pprint(fontnames())
+
+fonts = fontnames()
+pprint.pprint(fonts)
+print "Fonts:", len(fonts)
