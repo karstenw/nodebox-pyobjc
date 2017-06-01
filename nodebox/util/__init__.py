@@ -138,6 +138,11 @@ def filelist( folderpathorlist, pathonly=True ):
         for root, dirs, files in os.walk( folder ):
             root = makeunicode( root )
 
+            # skip if dir starts with '.'
+            _, parentfolder = os.path.split(root)
+            if parentfolder[0] == u".":
+                continue
+
             for thefile in files:
                 thefile = makeunicode( thefile )
                 basename, ext = os.path.splitext(thefile)
@@ -155,9 +160,14 @@ def filelist( folderpathorlist, pathonly=True ):
 
                 record = filepath
                 if not pathonly:
-                    info = os.stat( filepath )
+                    islink = os.path.islink( filepath )
+                    if islink:
+                        info = os.lstat( filepath )
+                    else:
+                        info = os.stat( filepath )
                     lastmodified = datetime.datetime.fromtimestamp( info.st_mtime )
-                    record = (filepath, info.st_size, lastmodified, oct(info.st_mode) )
+                    record = (filepath, info.st_size, lastmodified,
+                              oct(info.st_mode), islink )
                 yield record
 
 
@@ -186,21 +196,23 @@ def fontnames():
         result.append( makeunicode(i) )
     return result
 
+
+class FontRecord:
+    def __init__(self, psname, familyname, style, weight, traits, traitnames):
+        self.psname = psname
+        self.familyname = familyname
+        self.style = style
+        self.weight = weight
+        self.traits = traits
+        self.traitnames = traitnames
+    def __repr__(self):
+        return (u'FontRecord( psname="%s", familyname="%s", style="%s", '
+                u'weight=%.2f, traits="%s", traitnames=%s)') % (
+                            self.psname, self.familyname, self.style,
+                            self.weight, self.traits, self.traitnames)
+
+
 def fontfamilies(flat=False):
-    """
-        NSItalicFontMask = 0x00000001,
-        NSBoldFontMask = 0x00000002,
-        NSUnboldFontMask = 0x00000004,
-        NSNonStandardCharacterSetFontMask = 0x00000008,
-        NSNarrowFontMask = 0x00000010,
-        NSExpandedFontMask = 0x00000020,
-        NSCondensedFontMask = 0x00000040,
-        NSSmallCapsFontMask = 0x00000080,
-        NSPosterFontMask = 0x00000100,
-        NSCompressedFontMask = 0x00000200,
-        NSFixedPitchFontMask = 0x00000400,
-        NSUnitalicFontMask = 0x01000000 
-    """
     fm = AppKit.NSFontManager.sharedFontManager()
     l = fm.availableFontFamilies()
 
@@ -232,7 +244,7 @@ def fontfamilies(flat=False):
         weight = float( weight )
         traits = int(traits)
         traitNames = makeTraitsList( traits )
-        return (psname, familyName, styl, weight, traits, traitNames)
+        return FontRecord(psname, familyName, styl, weight, traits, traitNames)
         
     if flat:
         result = []
@@ -247,7 +259,7 @@ def fontfamilies(flat=False):
         for fnt in subs:
             fontRec = makeFontRecord( fnt )
             if not flat:
-                famfonts[styl] = fontRec
+                result[familyName][fontRec.style] = fontRec
             else:
                 result.append( fontRec )
     return result
