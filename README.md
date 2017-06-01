@@ -29,16 +29,35 @@ Differences from the official version:
 
 1.  Uses a different and bigger icon (512px)
 
-1.  Has some additional examples. See folders `Escher` and `geometry/Convex Hull`.
+1.  Has some additional examples. See folders `Escher`, `geometry/Convex Hull` and `New Functions` .
 
 1.  New function filelist( folder or list of folders, pathonly=True )
-	1. Returns a path generator
-	1. If pathonly is False, it returns a (path, size, lastmodifieddatetime, oct(mode)) generator
-	1. The Following filenames are ignored: any name starting with '.', any name containing any of: '\r\n\t'.
+	- Returns a path generator
+	- If pathonly is False, it returns a (path, size, lastmodifieddatetime, oct(mode)) generator
+	- The Following filenames are ignored: any name starting with '.', any name containing any of: '\r\n\t'.
 
 1.  New function imagefiles( folder or list of folders, pathonly=True )
-	1.  Same parameters and restrictions as filelist plus:
-	1.  filters file extensions for ".pdf .eps .tif .tiff .gif .jpg .jpeg .png"
+	-  Same parameters and restrictions as filelist plus:
+	-  filters file extensions for ".pdf .eps .tif .tiff .gif .jpg .jpeg .png"
+
+1.  New function fontnames()
+	-  Returns a unfiltered list of names from NSFontManager.sharedFontManager().availableFonts()
+
+1.  New function fontfamilies(flat=False)
+	-  Return a dict with [FontFamily][STYLE]-> FontRecord
+	-  if parameter flat=True returns a list of FontRecord
+	-  A FontRecord has the following attributes:
+		-  psname - the postscript name, which can be used for font()
+		-  familyname - the font family name
+		-  style - the style name
+		-  weight - the font weight
+		-  traits - an int that represents the fonts traits
+		-  traitnames - the traits converted to a list of names: (italic, bold, unbold,
+			nonstandardcharacterset", narrow, expanded, condensed, smallcaps,
+			poster, compressed, fixedpitch, unitalic)
+
+1.  New Examples subfolder "New Functions" which contains examples for the new functions.
+
 
 
 The adapted Nodebox library is available here: [Library](https://github.com/karstenw/Library). Download as zip, unpack, rename to 'NodeBox' and move it to ~/Library/Application Support/.
