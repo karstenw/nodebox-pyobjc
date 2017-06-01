@@ -381,8 +381,12 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         self._segment_cache = None
         self._nsBezierPath.appendBezierPathWithOvalInRect_( ((x, y),
                                                              (width, height)) )
-    
     ellipse = oval
+    
+    def arc(self, x, y, r, startAngle, endAngle):
+        self._segment_cache = None
+        self._nsBezierPath.appendBezierPathWithArcWithCenter_radius_startAngle_endAngle_(
+                                            (x,y), r, startAngle, endAngle)
         
     def line(self, x1, y1, x2, y2):
         self._segment_cache = None

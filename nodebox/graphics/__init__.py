@@ -208,6 +208,15 @@ class Context(object):
 
     ellipse = oval
 
+    def arc(self, x, y, r, startAngle, endAngle, draw=True, **kwargs):
+        BezierPath.checkKwargs(kwargs)
+        path = self.BezierPath(**kwargs)
+        path.arc(x, y, r, startAngle, endAngle)
+        path.inheritFromContext(kwargs.keys())
+        if draw:
+            path.draw()
+        return path
+
     def line(self, x1, y1, x2, y2, draw=True, **kwargs):
         BezierPath.checkKwargs(kwargs)
         p = self.BezierPath(**kwargs)
@@ -546,8 +555,8 @@ class Context(object):
         return nodebox.geo.distance( x0, y0, x1, y1)
 
     def coordinates(self, x0, y0, distance, angle):
-        return nodebox.geo.coordinates(self, x0, y0, distance, angle)
+        return nodebox.geo.coordinates(x0, y0, distance, angle)
 
     def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
-        return nodebox.geo.reflect(self, x0, y0, x1, y1, d=1.0, a=180)
+        return nodebox.geo.reflect(x0, y0, x1, y1, d=1.0, a=180)
 
