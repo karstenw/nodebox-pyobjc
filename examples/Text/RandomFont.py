@@ -1,5 +1,5 @@
 size(1200, 650)
-var("textsize", NUMBER, 50.0, 0.0, 400.0)
+var("textsize", NUMBER, 50.0, 0.0, 600.0)
 # Demonstrate how to randomly select a font from a list.
 # In addition, it also demonstrates how to use variables
 # to set the textsize.

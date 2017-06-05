@@ -20,8 +20,12 @@ from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttri
 
 class LibraryFolder(object):
     def __init__(self):
-        prefpath = NSUserDefaults.standardUserDefaults().objectForKey_("libraryPath")
-
+        prefpath = ""
+        try:
+            prefpath = NSUserDefaults.standardUserDefaults().objectForKey_("libraryPath")
+        except Exception, err:
+            print "LibraryFolder: prefpath:", repr(prefpath)
+            prefpath = ""
         stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support",
                                "NodeBox")
 

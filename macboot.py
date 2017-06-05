@@ -36,19 +36,14 @@ from PyObjCTools import AppHelper
 
 import nodebox
 import nodebox.geo
-#import nodebox.geo.pathmatics
 import nodebox.graphics
-#import nodebox.graphics.bezier
-#import nodebox.graphics.cocoa
-
 import nodebox.gui
 import nodebox.gui.mac
 
-#import matplotlib
 
-#import sys
-#import pprint
-#pprint.pprint(sys.path)
+# these don't build yet
+#import scipy
+#import matplotlib
 
 
 #import PyObjCTools.Debugging
