@@ -547,6 +547,8 @@ class Context(object):
 
     
     ## cGeo
+    def isqrt( self, v):
+        return nodebox.geo.isqrt( v )
 
     def angle(self, x0, y0, x1, y1):
         return nodebox.geo.angle( x0, y0, x1, y1)
