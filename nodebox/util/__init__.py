@@ -25,7 +25,10 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     typ = type(s)
     # convert to str first; for number types etc.
-    if typ not in (str, unicode):
+    if typ not in (str, unicode, Foundation.NSMutableAttributedString,
+        objc.pyobjc_unicode, Foundation.NSMutableStringProxyForMutableAttributedString,
+        Foundation.NSString):
+        # print "makeunicode() convert:", typ
         s = str(s)
     if typ not in (unicode, Foundation.NSMutableAttributedString, objc.pyobjc_unicode,
                    Foundation.NSMutableStringProxyForMutableAttributedString):
