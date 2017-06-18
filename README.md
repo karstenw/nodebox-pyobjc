@@ -20,7 +20,7 @@ Differences from the official version:
 
 1. Different behaviour:
 	1.  `size(0,0)`  sets size to size of main screen
-	1.  Can open shoebot ('.bot') files.  Runs ca. 80% of the shoebot examples.
+	1.  Can open shoebot ('.bot') files.  Runs many of the shoebot examples. Incompatibilities exist.
 	1.  Colors can be hex strings. 
 		-  '#f00' or 'f00' for red
 		-  '#f008' or 'f008' for red with alpha=0.5
