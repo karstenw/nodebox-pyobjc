@@ -665,6 +665,7 @@ class Oval(BezierPath):
     def copy(self):
         raise NotImplementedError, "Please don't use Oval anymore"
 
+
 class Color(object):
 
     def __init__(self, ctx, *args):
@@ -685,6 +686,37 @@ class Color(object):
                 clr = args[0]._cmyk
         elif params == 1 and isinstance(args[0], NSColor):
             clr = args[0]
+        elif params == 1 and isinstance(args[0], (str,unicode)) and len(args[0]) in (3,4,5,6,7,8,9):
+            # hex param
+            try:
+                a = args[0]
+                # kill hash char
+                if a[0] == '#':
+                    a = a[1:]
+                alpha = 1.0
+                n = len(a)
+                if n in (3,4):
+                    div = 15.0
+                    if n == 3:
+                        r, g, b = a[:]
+                    else:
+                        r, g, b, alpha = a[:]
+                else:
+                    div = 255.0
+                    if n == 6:
+                        r, g, b = a[:2], a[2:4], a[4:6]
+                    else:
+                        r, g, b, alpha = a[:2], a[2:4], a[4:6], a[6:8]
+                r = int(r, 16) / div
+                g = int(g, 16) / div
+                b = int(b, 16) / div
+                if n in (4,8):
+                    alpha = int(alpha, 16) / div
+                clr = NSColor.colorWithDeviceRed_green_blue_alpha_(r, g, b, alpha)
+            except Exception, err:
+                print "Color parsing error:", err
+                clr = NSColor.colorWithDeviceWhite_alpha_(0, 1)
+
         elif params == 1: # Gray, no alpha
             args = self._normalizeList(args)
             g, = args
