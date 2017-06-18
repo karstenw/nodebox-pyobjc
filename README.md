@@ -17,6 +17,7 @@ Differences from the official version:
 	1.  distance(x0, y0, x1, y1)
 	1.  coordinates(x0, y0, distance, angle)
 	1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
+	1.  isqrt(n) = 1 / sqrt(n)
 
 1. Different behaviour:
 	1.  `size(0,0)`  sets size to size of main screen
@@ -68,13 +69,15 @@ Differences from the official version:
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
 
 
-
-The adapted Nodebox library is available here: [Library](https://github.com/karstenw/Library). Download as zip, unpack, rename to 'NodeBox' and move it to ~/Library/Application Support/.
-
+The adapted Nodebox library is now included in the [download](http://goo.gl/vkuBeV). Open Nodebox, go to preferences and set the Library folder to the included one "NodeBox-Library". The repository is here: [Library](https://github.com/karstenw/Library). 
 
 
 Latest changes
 --------------
+
+2017-06-18 Version 1.9.21 Added shoebot files to document types ('.bot'), color definitions can be hex strings. 
+
+2017-06-12 Version 1.9.20 Added License from origin, isqrt,
 
 2017-05-28 Version 1.9.19. Added setup_console.py. If all needed libraries are installed, NodeBox can be installed as a standard Python lib. Scripts can be executed without the app.
 
