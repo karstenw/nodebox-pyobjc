@@ -10,6 +10,7 @@ fontsize(fsize)
 stroke(0)
 strokewidth(1)
 
+transform(CORNER)
 
 # unicode from http://leancrew.com/all-this/2017/06/live-and-let-diaeresis/
 
@@ -21,35 +22,34 @@ t2 = "This is Spın̈al Tap!"
 
 # you dont want this
 t3 = "This is Sp\u0131n\u0308al Pap!"
-t3w = textwidth(t3, fontsize=72, font=f)
-print textmetrics(t2, fontsize=72, font=f)
 
-
-x, y = 50, 100
+x, y = 10, 100
 fill(0)
-text(t1, x, y)
+dx, dy, t1w, t1h = alltextmetrics(t1, fontsize=fsize, font=f)
+text(t1, x+dx, y+dy)
 
 nofill()
-t1w, t1h = textmetrics(t1, fontsize=fsize, font=f)
-rect(x, y-fsize, t1w, t1h)
+rect(x, y-fsize, t1w+dx, t1h+dy)
 
 
 y = 200
 fill(0)
-text(t2, x, y)
+dx, dy, t2w, t2h = alltextmetrics(t2, fontsize=fsize, font=f)
+text(t2, x+dx, y+dy)
 
 nofill()
-t2w, t2h = textmetrics(t2, fontsize=fsize, font=f)
-rect(x, y-fsize, t2w, t2h)
+rect(x, y-fsize, t2w+dx, t2h+dy)
 
 y = 300
 fill(0)
-text(t3, x, y)
+dx, dy, t3w, t3h = alltextmetrics(t3, fontsize=fsize, font=f)
+text(t3, x+dx, y+dy)
 
 nofill()
-t3w, t3h = textmetrics(t3, fontsize=fsize, font=f)
-rect(x, y-fsize, t3w, t3h)
+rect(x, y-fsize, t3w+dx, t3h+dy)
 
 
-# This script documents an error. The first two lines should match the frames
-
+# This script documents an error in unicode text display.
+#
+# The first and second line align only by manually correcting the x-offset with
+# the new and undocumented function alltextmetrics
