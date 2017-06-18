@@ -1324,7 +1324,6 @@ class Text(Grob, TransformMixin, ColorMixin):
         s = layoutManager.boundingRectForGlyphRange_inTextContainer_(glyphRange,
                                                                     textContainer)
         (dx, dy), (w, h) = s
-
         preferredWidth, preferredHeight = textContainer.containerSize()
         if self.width is not None:
             if self._align == RIGHT:
@@ -1349,12 +1348,18 @@ class Text(Grob, TransformMixin, ColorMixin):
         _restore()
         return (w, h)
 
-    def _get_metrics(self):
+    def _get_allmetrics(self):
         items = self._getLayoutManagerTextContainerTextStorage()
         layoutManager, textContainer, textStorage = items
         glyphRange = layoutManager.glyphRangeForTextContainer_(textContainer)
         (dx, dy), (w, h) = layoutManager.boundingRectForGlyphRange_inTextContainer_(
                                                             glyphRange, textContainer)
+        # print "metrics (dx,dy):", (dx,dy)
+        return dx,dy,w,h
+    allmetrics = property(_get_allmetrics)
+
+    def _get_metrics(self):
+        dx,dy,w,h = self._get_allmetrics()
         return w,h
     metrics = property(_get_metrics)
 
