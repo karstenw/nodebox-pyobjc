@@ -36,7 +36,8 @@ CLASSIFIERS = (
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
 )
 
-DESCRIPTION = u"Simple application for creating 2-dimensional graphics and animation using Python code"
+DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
+               u"using Python code")
 LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output
 with programming code. The application targets an audience of designers, with an easy set of state 
 commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
@@ -72,9 +73,6 @@ setup(
     url = URL,
     classifiers = CLASSIFIERS,
 
-
-    # data_files=["English.lproj"],
-
     app=[{
         'script': "macboot.py",
 
@@ -89,7 +87,7 @@ setup(
 
             'CFBundleDocumentTypes': [
                 {
-                    'CFBundleTypeExtensions': [ 'py' ],
+                    'CFBundleTypeExtensions': [ 'py', 'bot' ],
                     'CFBundleTypeIconFile': 'NodeBoxFile.icns',
                     'CFBundleTypeName': "Python File",
                     'CFBundleTypeOSTypes': [ '????', '****', 'utxt'],
@@ -126,31 +124,5 @@ setup(
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
             "excludes": ["TkInter", "scipy", "matplotlib"],
-
-#             "packages": [
-#                 'nodebox',
-#                 'nodebox.geo',
-#                 'nodebox.graphics',
-#                 'nodebox.gui',
-#                 'nodebox.gui.mac',
-#                 'nodebox.gui.mac.util',
-#                 'nodebox.util',
-#                 ],
-
-#             "includes": [
-#                 'nodebox.geo.pathmatics',
-#                 'nodebox.graphics.bezier',
-#                 'nodebox.graphics.cocoa',
-#                 'nodebox.gui.mac.AskString',
-#                 'nodebox.gui.mac.dashboard',
-#                 'nodebox.gui.mac.preferences',
-#                 'nodebox.gui.mac.progressbar',
-#                 'nodebox.gui.mac.PyDETextView',
-#                 'nodebox.gui.mac.ValueLadder',
-#                 'nodebox.util.kgp',
-#                 'nodebox.util.ottobot',
-#                 # 'nodebox.PyFontify'
-#                 # 'nodebox.util.QTSupport'
-#                 ]
         }
     } )
