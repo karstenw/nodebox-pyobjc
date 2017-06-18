@@ -527,6 +527,11 @@ class Context(object):
         txt.inheritFromContext(kwargs.keys())
         return txt.metrics
 
+    def alltextmetrics(self, txt, width=None, height=None, **kwargs):
+        txt = self.Text(txt, 0, 0, width, height, **kwargs)
+        txt.inheritFromContext(kwargs.keys())
+        return txt.allmetrics
+
     ### Image commands ###
 
     def image(self, path, x, y, width=None, height=None, alpha=1.0, data=None, draw=True, **kwargs):
