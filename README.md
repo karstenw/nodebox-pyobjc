@@ -20,6 +20,12 @@ Differences from the official version:
 
 1. Different behaviour:
 	1.  `size(0,0)`  sets size to size of main screen
+	1.  Can open shoebot ('.bot') files.  Runs ca. 80% of the shoebot examples.
+	1.  Colors can be hex strings. 
+		-  '#f00' or 'f00' for red
+		-  '#f008' or 'f008' for red with alpha=0.5
+		-  '#00ff00' or '00ff00'for green
+		-  '#00ff001a' or '00ff001a' for green with ca. 10% alpha
 
 1.  Uses Python 2.7.13 and PyObjC 3.2a1
 
@@ -55,6 +61,9 @@ Differences from the official version:
 		-  traitnames - the traits converted to a list of names: (italic, bold, unbold,
 			nonstandardcharacterset", narrow, expanded, condensed, smallcaps,
 			poster, compressed, fixedpitch, unitalic)
+
+1.  New graphics primitive `arc(self, x, y, r, startAngle, endAngle)`
+	-  Draws an arc between startAngle and endAngle with center at (x,y) and radius=r.
 
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
 
