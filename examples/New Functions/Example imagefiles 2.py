@@ -1,3 +1,6 @@
+size(1280, 1024)
+background( None )
+
 print "The Desktop Pictures folder with file tuples:"
 print
 
@@ -10,7 +13,7 @@ myimages = list(myimages)
 imagerecord = choice(myimages)
 
 
-image(imagerecord[0], 30,200)
+image(imagerecord[0], 0, 0)
 
 print "Image:", imagerecord[0]
 print "Size:", imagerecord[1]

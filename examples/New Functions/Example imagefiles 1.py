@@ -1,3 +1,6 @@
+size(1280, 1024)
+background( None )
+
 print "The Pictures folder with paths:"
 
 myimages = filelist( "/Library/Desktop Pictures")
@@ -9,4 +12,4 @@ for f in myimages:
     print f
 
 # display a random image
-image(choice(myimages), 30,200)
+image(choice(myimages), 0, 0)

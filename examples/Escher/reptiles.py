@@ -334,9 +334,10 @@ nofill()
 stroke(0)
 strokewidth(0.25)
 
-radius = 50
-frame = (100, 100,500,500 )
-x,y = frame[2] - frame[0], frame[3] - frame[1]
+radius = 60
+d = 2 * radius
+frame = (d, d, WIDTH-d, HEIGHT-d )
+x,y = d, d
 
 tileReptiles(x, y, 0, radius, 1, *frame)
 
