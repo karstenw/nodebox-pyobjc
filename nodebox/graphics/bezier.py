@@ -6,7 +6,8 @@
 # Thanks to Dr. Florimond De Smedt at the Free University of Brussels for the math routines.
 
 
-from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point, MOVETO, LINETO, CURVETO, CLOSE
+from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point
+from nodebox.graphics import MOVETO, LINETO, CURVETO, CLOSE
 
 
 try:
@@ -21,7 +22,6 @@ except:
     linelength = nodebox.geo.pathmatics.linelength
     curvepoint = nodebox.geo.pathmatics.curvepoint
     curvelength = nodebox.geo.pathmatics.curvelength
-
 
 
 def segment_lengths(path, relative=False, n=20):
@@ -45,7 +45,7 @@ def segment_lengths(path, relative=False, n=20):
     >>> path.moveto(1, 2)
     >>> path.curveto(3, 4, 5, 6, 7, 8)
     >>> segment_lengths(path)
-    [8.4852813742385695]
+    [8.48528137423857]
     """
 
     lengths = []
@@ -63,7 +63,8 @@ def segment_lengths(path, relative=False, n=20):
         elif el.cmd == LINETO:
             lengths.append(linelength(x0, y0, el.x, el.y))
         elif el.cmd == CURVETO:
-            x3, y3, x1, y1, x2, y2 = el.x, el.y, el.ctrl1.x, el.ctrl1.y, el.ctrl2.x, el.ctrl2.y
+            x3, y3, x1, y1, x2, y2 = (el.x, el.y, el.ctrl1.x, el.ctrl1.y,
+                                      el.ctrl2.x, el.ctrl2.y)
             lengths.append(curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n))
             
         if el.cmd != CLOSE:
@@ -74,7 +75,8 @@ def segment_lengths(path, relative=False, n=20):
         length = sum(lengths)
         try:
             return map(lambda l: l / length, lengths)
-        except ZeroDivisionError: # If the length is zero, just return zero for all segments
+        except ZeroDivisionError:
+            # If the length is zero, just return zero for all segments
             return [0.0] * len(lengths)
     else:
         return lengths
@@ -151,9 +153,9 @@ def _locate(path, t, segments=None):
     NodeBoxError: The given path is empty
     >>> path.lineto(100, 100)
     >>> _locate(path, 0.0)
-    (0, 0.0, Point(x=0.0, y=0.0))
+    (0, 0.0, Point(x=0.000, y=0.000))
     >>> _locate(path, 1.0)
-    (0, 1.0, Point(x=0.0, y=0.0))
+    (0, 1.0, Point(x=0.000, y=0.000))
     """
     
     if segments == None:
@@ -173,6 +175,7 @@ def _locate(path, t, segments=None):
     if i == len(segments)-1 and segments[i] == 0: i -= 1
     
     return (i, t, closeto)
+
 
 def point(path, t, segments=None):
 
@@ -203,9 +206,9 @@ def point(path, t, segments=None):
     NodeBoxError: The given path is empty
     >>> path.lineto(100, 0)
     >>> point(path, 0.0)
-    PathElement(LINETO, ((0.0, 0.0),))
+    PathElement(LINETO, ((0.000, 0.000),))
     >>> point(path, 0.1)
-    PathElement(LINETO, ((10.0, 0.0),))
+    PathElement(LINETO, ((10.000, 0.000),))
     """
 
     if len(path) == 0:
@@ -224,12 +227,15 @@ def point(path, t, segments=None):
         x, y = linepoint(t, x0, y0, x1, y1)
         return PathElement(LINETO, ((x, y),))
     elif p1.cmd == CURVETO:
-        x3, y3, x1, y1, x2, y2 = p1.x, p1.y, p1.ctrl1.x, p1.ctrl1.y, p1.ctrl2.x, p1.ctrl2.y
+        x3, y3, x1, y1, x2, y2 = (p1.x, p1.y,
+                                  p1.ctrl1.x, p1.ctrl1.y,
+                                  p1.ctrl2.x, p1.ctrl2.y)
         x, y, c1x, c1y, c2x, c2y = curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3)
         return PathElement(CURVETO, ((c1x, c1y), (c2x, c2y), (x, y)))
     else:
         raise NodeBoxError, "Unknown cmd for p1 %s" % p1
-        
+
+
 def points(path, amount=100):
     """Returns an iterator with a list of calculated points for the path.
     This method calls the point method <amount> times, increasing t,
@@ -247,7 +253,7 @@ def points(path, amount=100):
     NodeBoxError: The given path is empty
     >>> path.lineto(100, 0)
     >>> list(points(path, amount=4))
-    [PathElement(LINETO, ((0.0, 0.0),)), PathElement(LINETO, ((25.0, 0.0),)), PathElement(LINETO, ((50.0, 0.0),)), PathElement(LINETO, ((75.0, 0.0),))]
+    [PathElement(LINETO, ((0.000, 0.000),)), PathElement(LINETO, ((33.333, 0.000),)), PathElement(LINETO, ((66.667, 0.000),)), PathElement(LINETO, ((100.000, 0.000),))]
     """
 
     if len(path) == 0:
@@ -264,6 +270,7 @@ def points(path, amount=100):
 
     for i in xrange(amount):
         yield point(path, delta*i)
+
 
 def contours(path):
     """Returns a list of contours in the path.
@@ -319,7 +326,8 @@ def contours(path):
     if not empty:
         contours.append(current_contour)
     return contours
-    
+
+
 def findpath(points, curvature=1.0):
     
     """Constructs a path between the given list of points.
@@ -394,6 +402,7 @@ def findpath(points, curvature=1.0):
     
     return path
 
+
 def insert_point(path, t):
     
     """Returns a path copy with an extra point at t.
@@ -415,13 +424,13 @@ def insert_point(path, t):
     >>> len(path)
     3
     >>> path[1]
-    PathElement(LINETO, ((50.0, 25.0),))
+    PathElement(LINETO, ((50.000, 25.000),))
     >>> path = BezierPath(None)
     >>> path.moveto(0, 100)
     >>> path.curveto(0, 50, 100, 50, 100, 100)
     >>> path = insert_point(path, 0.5)
     >>> path[1]
-    PathElement(LINETO, ((25.0, 62.5), (0.0, 75.0), (50.0, 62.5))
+    PathElement(CURVETO, ((0.000, 75.000), (25.000, 62.5), (50.000, 62.500))
     """
     
     i, t, closeto = _locate(path, t)
@@ -429,7 +438,9 @@ def insert_point(path, t):
     x0 = path[i].x
     y0 = path[i].y
     p1 = path[i+1]
-    p1cmd, x3, y3, x1, y1, x2, y2 = p1.cmd, p1.x, p1.y, p1.ctrl1.x, p1.ctrl1.y, p1.ctrl2.x, p1.ctrl2.y
+    p1cmd, x3, y3, x1, y1, x2, y2 = (p1.cmd, p1.x, p1.y,
+                                             p1.ctrl1.x, p1.ctrl1.y,
+                                             p1.ctrl2.x, p1.ctrl2.y)
     
     if p1cmd == CLOSE:
         pt_cmd = LINETO
@@ -439,8 +450,8 @@ def insert_point(path, t):
         pt_x, pt_y = linepoint(t, x0, y0, x3, y3)
     elif p1cmd == CURVETO:
         pt_cmd = CURVETO
-        pt_x, pt_y, pt_c1x, pt_c1y, pt_c2x, pt_c2y, pt_h1x, pt_h1y, pt_h2x, pt_h2y = \
-            curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3, True)
+        s = curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3, True)
+        pt_x, pt_y, pt_c1x, pt_c1y, pt_c2x, pt_c2y, pt_h1x, pt_h1y, pt_h2x, pt_h2y = s
     else:
         raise NodeBoxError, "Locate should not return a MOVETO"
     
