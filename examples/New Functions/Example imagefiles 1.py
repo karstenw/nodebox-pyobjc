@@ -12,4 +12,4 @@ for f in myimages:
     print f
 
 # display a random image
-image(choice(myimages), 0, 0)
+image(choice(myimages), 0, 0, WIDTH)

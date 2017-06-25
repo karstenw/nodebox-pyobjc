@@ -13,7 +13,7 @@ myimages = list(myimages)
 imagerecord = choice(myimages)
 
 
-image(imagerecord[0], 0, 0)
+image(imagerecord[0], 0, 0, WIDTH)
 
 print "Image:", imagerecord[0]
 print "Size:", imagerecord[1]

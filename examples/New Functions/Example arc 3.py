@@ -1,13 +1,13 @@
 size(800,800)
 import math
 
-background(0.9)
+background( 0.95 )
 nofill()
 stroke(0)
 
-var("arcs", NUMBER, 4, 1, 80)
-var("radius", NUMBER, 200, 0, 400)
-var("strokesize", NUMBER, 8.0, 0.5, 60.0)
+var("arcs", NUMBER, 3, 1, 80)
+var("radius", NUMBER, 150, 0, 400)
+var("strokesize", NUMBER, 150.0, 0.5, 300.0)
 
 arcs = int(arcs)
 

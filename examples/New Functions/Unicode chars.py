@@ -1,9 +1,9 @@
 size(1200, 800)
 
 fonts = fontnames()
-f = "Arial" #choice( fonts )
+f = choice( fonts )
 fsize = 72
-# print "Font:", f
+print "Font:", f
 
 font( f )
 fontsize(fsize)
@@ -17,6 +17,8 @@ transform(CORNER)
 # The u"" notation is needed for unicode expansions
 t1 = u"This is Sp\u0131n\u0308al Tap!"
 
+
+# WARNING: This is not your standard Python!
 # no expansions, u"" not needed; 
 t2 = "This is Spın̈al Tap!"
 
