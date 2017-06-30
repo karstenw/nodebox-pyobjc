@@ -1,0 +1,79 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, total={18cm, 27cm}]{geometry}
+\usepackage{listings}
+\usepackage[scaled]{beramono}
+\renewcommand{\familydefault}{\ttdefault}
+
+\lstset{
+  language=Python,
+  showstringspaces=false,
+  showlines=false,
+  emptylines=1,
+  formfeed=\newpage,
+  tabsize=4,
+  commentstyle=\textit, %%\itshape,
+  numbers=left,
+  stepnumber=5,
+  numbersep=5pt,
+  firstnumber=1,
+  basicstyle=\ttfamily,
+  morekeywords={models, lambda, forms}
+}
+
+\newcommand{\code}[2]{
+  %%\hrulefill
+  \subsection*{#1}
+  \lstset{name=#1}
+  %%  title=#1}
+  \lstinputlisting{#2}
+  \vspace{2em}
+}
+
+\begin{document}
+
+\code{nodebox/\_\_init\_\_.py}{../nodebox/__init__.py}
+
+\code{nodebox/console.py}{../nodebox/console.py}
+
+\code{nodebox/PyFontify.py}{../nodebox/PyFontify.py}
+
+\code{nodebox/geo/\_\_init\_\_.py}{../nodebox/geo/__init__.py}
+
+\code{nodebox/geo/pathmatics.py}{../nodebox/geo/pathmatics.py}
+
+\code{nodebox/graphics/\_\_init\_\_.py}{../nodebox/graphics/__init__.py}
+
+\code{nodebox/graphics/bezier.py}{../nodebox/graphics/bezier.py}
+
+\code{nodebox/graphics/cocoa.py}{../nodebox/graphics/cocoa.py}
+
+\code{nodebox/gui/\_\_init\_\_.py}{../nodebox/gui/__init__.py}
+
+\code{nodebox/gui/mac/\_\_init\_\_.py}{../nodebox/gui/mac/__init__.py}
+
+\code{nodebox/gui/mac/AskString.py}{../nodebox/gui/mac/AskString.py}
+
+\code{nodebox/gui/mac/dashboard.py}{../nodebox/gui/mac/dashboard.py}
+
+\code{nodebox/gui/mac/preferences.py}{../nodebox/gui/mac/preferences.py}
+
+\code{nodebox/gui/mac/progressbar.py}{../nodebox/gui/mac/progressbar.py}
+
+\code{nodebox/gui/mac/PyDETextView.py}{../nodebox/gui/mac/PyDETextView.py}
+
+\code{nodebox/gui/mac/util.py}{../nodebox/gui/mac/util.py}
+
+\code{nodebox/gui/mac/ValueLadder.py}{../nodebox/gui/mac/ValueLadder.py}
+
+\code{nodebox/util/\_\_init\_\_.py}{../nodebox/util/__init__.py}
+
+\code{nodebox/util/kgp/\_\_init\_\_.py}{../nodebox/util/kgp/__init__.py}
+
+\code{nodebox/util/ottobot/\_\_init\_\_.py}{../nodebox/util/ottobot/__init__.py}
+
+\code{nodebox/util/QTSupport/\_\_init\_\_.py}{../nodebox/util/QTSupport/__init__.py}
+
+\code{nodebox/util/vdiff.py}{../nodebox/util/vdiff.py}
+
+\end{document}
