@@ -47,22 +47,7 @@ NSData = AppKit.NSData
 NSAffineTransformStruct = AppKit.NSAffineTransformStruct
 
 
-# from Foundation import *
-
 from nodebox.util import _copy_attr, _copy_attrs, makeunicode
-"""
-import nodebox.util
-_copy_attr = nodebox.util._copy_attr
-_copy_attrs = nodebox.util._copy_attrs
-makeunicode = nodebox.util.makeunicode
-"""
-
-# from nodebox.graphics import bezier
-"""
-import nodebox.graphics
-import nodebox.graphics.bezier
-bezier = nodebox.graphics.bezier
-"""
 
 try:
     import cPolymagic
@@ -686,7 +671,9 @@ class Color(object):
                 clr = args[0]._cmyk
         elif params == 1 and isinstance(args[0], NSColor):
             clr = args[0]
-        elif params == 1 and isinstance(args[0], (str,unicode)) and len(args[0]) in (3,4,5,6,7,8,9):
+        elif (    params == 1
+              and isinstance(args[0], (str,unicode))
+              and len(args[0]) in (3,4,5,6,7,8,9)):
             # hex param
             try:
                 a = args[0]
