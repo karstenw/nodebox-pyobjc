@@ -58,9 +58,12 @@ class ValueLadder:
         self.viewPoint = viewPoint
         (x,y),(self.width,self.height) = self.textView.bounds()
         self.originalString = self.textView.string()
-        self.backgroundColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(0.4,0.4,0.4,1.0)
-        self.strokeColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(0.1,0.1,0.1, 1.0)
-        self.textColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(1.,1.,1.,1.)
+        self.backgroundColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
+                                                                    0.4,0.4,0.4, 1.0)
+        self.strokeColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
+                                                                    0.1,0.1,0.1, 1.0)
+        self.textColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
+                                                                    1.0,1.0,1.0, 1.0)
         paraStyle = NSMutableParagraphStyle.alloc().init()
         paraStyle.setAlignment_(NSCenterTextAlignment)
         font = NSFont.fontWithName_size_("Monaco", 10)
@@ -72,7 +75,9 @@ class ValueLadder:
         # The number is replaced with a magic variable, that is set in the 
         # namespace when executing the code.
         begin,end = self.clickPos
-        self.patchedSource = self.originalString[:begin] + MAGICVAR + self.originalString[end:]
+        self.patchedSource = (self.originalString[:begin]
+                                + MAGICVAR
+                                + self.originalString[end:])
 
 
         #ast = parse(self.patchedSource + "\n\n")
