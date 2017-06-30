@@ -83,7 +83,7 @@ setup(
             "CFBundleSignature": creator,
             "CFBundleShortVersionString": VERSION,
             "CFBundleGetInfoString": DESCRIPTION,
-            # "NSHumanReadableCopyright": "",
+            "NSHumanReadableCopyright": "Copyright (c) 2015 Frederik De Bleser",
 
             'CFBundleDocumentTypes': [
                 {
