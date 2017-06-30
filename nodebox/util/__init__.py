@@ -178,7 +178,9 @@ def imagefiles( folderpathorlist, pathonly=True ):
     """Use filelist to extract all imagefiles"""
     result = []
     filetuples = filelist( folderpathorlist, pathonly=pathonly )
-    extensions = tuple(".pdf .eps .tif .tiff .gif .jpg .jpeg .png".split())
+
+    # 2017-06-23 - kw .eps dismissed
+    extensions = tuple(".pdf .tif .tiff .gif .jpg .jpeg .png".split())
     for filetuple in filetuples:
         path = filetuple
         if not pathonly:
