@@ -121,7 +121,8 @@ class PyDETextView(NSTextView):
         self.valueLadder = None
 
         nc = NSNotificationCenter.defaultCenter()
-        nc.addObserver_selector_name_object_(self, "textFontChanged:", "PyDETextFontChanged", None)
+        nc.addObserver_selector_name_object_(self, "textFontChanged:",
+                                                   "PyDETextFontChanged", None)
 
     def drawRect_(self, rect):
         NSTextView.drawRect_(self, rect)
@@ -148,7 +149,8 @@ class PyDETextView(NSTextView):
     def mouseDown_(self, event):
         if event.modifierFlags() & NSCommandKeyMask:            
             screenPoint = NSEvent.mouseLocation()
-            viewPoint =   self.superview().convertPoint_fromView_(event.locationInWindow(), self.window().contentView())
+            viewPoint =   self.superview().convertPoint_fromView_(event.locationInWindow(),
+                                                        self.window().contentView())
 
             c = self.characterIndexForPoint_(screenPoint)
 
@@ -170,7 +172,10 @@ class PyDETextView(NSTextView):
                     except IndexError:
                         pass
                     end+=1
-                    self.valueLadder = ValueLadder(self, eval(txt[begin:end]), (begin,end), screenPoint, viewPoint)
+                    self.valueLadder = ValueLadder(self,
+                                                   eval(txt[begin:end]),
+                                                   (begin,end),
+                                                   screenPoint, viewPoint)
             except IndexError:
                 pass        
         else:
@@ -234,7 +239,8 @@ class PyDETextView(NSTextView):
         basicAttrs = getBasicTextAttributes()
         self.setTypingAttributes_(basicAttrs)
         # Somehow the next line is needed, we crash otherwise :(
-        self.layoutManager().invalidateDisplayForCharacterRange_((0, self._string.length()))
+        self.layoutManager().invalidateDisplayForCharacterRange_(
+                                                        (0, self._string.length()))
         self._storageDelegate.textFontChanged_(notification)
 
     def setTextStorage_str_tabs_(self, storage, string, usesTabs):
@@ -275,10 +281,14 @@ class PyDETextView(NSTextView):
 
     def balanceParens_(self, index):
         rng = (index, 1)
-        oldAttrs, effRng = self.textStorage().attributesAtIndex_effectiveRange_(index, None)
-        balancingAttrs = {NSBackgroundColorAttributeName: NSColor.selectedTextBackgroundColor()}
+        oldAttrs, effRng = self.textStorage().attributesAtIndex_effectiveRange_(index,
+                                                                                None)
+        balancingAttrs = {
+            NSBackgroundColorAttributeName: NSColor.selectedTextBackgroundColor()
+        }
         # Must use temp attrs otherwise the attrs get reset right away due to colorizing.
-        self.layoutManager().setTemporaryAttributes_forCharacterRange_(balancingAttrs, rng)
+        self.layoutManager().setTemporaryAttributes_forCharacterRange_(balancingAttrs,
+                                                                                rng)
         self.performSelector_withObject_afterDelay_("resetBalanceParens:",
                 (oldAttrs, effRng), 0.2)
 
@@ -531,7 +541,8 @@ class PyDETextStorageDelegate(NSObject):
         rng = self._storage.editedRange()
         # make darn sure we don't get infected with return chars
         s = self._string
-        s.replaceOccurrencesOfString_withString_options_range_("\r", "\n", NSLiteralSearch , rng)
+        s.replaceOccurrencesOfString_withString_options_range_("\r", "\n",
+                                                            NSLiteralSearch , rng)
 
     def textStorageDidProcessEditing_(self, notification):
         if not self._storage.editedMask() & NSTextStorageEditedCharacters:
@@ -698,7 +709,8 @@ class LineTracker(object):
         lineIndex -= 1
         start = self.lineStarts[lineIndex]
         line = self.lines[lineIndex]
-        if line[-1:] == "\n" and not (start <= charIndex < start + self.lineLengths[lineIndex]):
+        if (    line[-1:] == "\n"
+            and not (start <= charIndex < start + self.lineLengths[lineIndex])):
             lineIndex += 1
         return lineIndex
 
@@ -728,7 +740,8 @@ _BASICATTRS = {NSFontAttributeName: _basicFont,
                NSLigatureAttributeName: 0}
 _SYNTAXCOLORS = {
     "keyword": {NSForegroundColorAttributeName: NSColor.blueColor()},
-    "identifier": {NSForegroundColorAttributeName: NSColor.redColor().shadowWithLevel_(0.2)},
+    "identifier": {
+        NSForegroundColorAttributeName: NSColor.redColor().shadowWithLevel_(0.2)},
     "string": {NSForegroundColorAttributeName: NSColor.magentaColor()},
     "comment": {NSForegroundColorAttributeName: NSColor.grayColor()},
 }
@@ -760,7 +773,8 @@ def packAttrs(d):
         if key == NSFontAttributeName:
             value = {"name": value.fontName(), "size": value.pointSize()}
         elif key in (NSForegroundColorAttributeName, NSBackgroundColorAttributeName):
-            channels = value.colorUsingColorSpaceName_(NSCalibratedRGBColorSpace).getRed_green_blue_alpha_(None, None, None, None)
+            col = value.colorUsingColorSpaceName_(NSCalibratedRGBColorSpace)
+            channels = col.getRed_green_blue_alpha_(None, None, None, None)
             value = " ".join(map(str, channels))
         elif isinstance(value, (dict, NSDictionary)):
             value = packAttrs(value)
