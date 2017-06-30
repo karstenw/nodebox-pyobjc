@@ -87,8 +87,8 @@ class NodeBoxRunner(object):
         
 def make_image(source_or_code, outputfile):
     
-    """Given a source string or code object, executes the scripts and saves the result as an image.
-    Supported image extensions: pdf, tiff, png, jpg, gif"""
+    """Given a source string or code object, executes the scripts and saves the result as
+    an image.  Supported image extensions: pdf, tiff, png, jpg, gif"""
     
     runner = NodeBoxRunner()
     runner.run(source_or_code)
@@ -96,7 +96,9 @@ def make_image(source_or_code, outputfile):
     
 def make_movie(source_or_code, outputfile, frames, fps=30):
 
-    """Given a source string or code object, executes the scripts and saves the result as a movie.
+    """Given a source string or code object, executes the scripts and saves the result as
+    a movie.
+    
     You also have to specify the number of frames to render.
     Supported movie extension: mov"""
 
@@ -141,7 +143,11 @@ def main():
 def test():
     # Creating the NodeBoxRunner class directly:
     runner = NodeBoxRunner()
-    runner.run('size(500,500)\nfor i in range(400):\n  oval(random(WIDTH),random(HEIGHT),50,50, fill=(random(), 0,0,random()))')
+    testscript = ('size(500,500)\n'
+                  'for i in range(400):\n'
+                  '  oval(random(WIDTH),random(HEIGHT),50,50, '
+                  'fill=(random(), 0,0,random()))')
+    runner.run(testscript)
     runner.canvas.save('console-test.pdf')
     runner.canvas.save('console-test.png')
     
