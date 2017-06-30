@@ -390,13 +390,13 @@ class NodeBoxDocument(NSDocument):
             window.makeFirstResponder_(self.currentView)
 
             # Start the timer
-            self.animationTimer = NSTimer.scheduledTimerWithTimeInterval_target_selector_userInfo_repeats_(
-                1.0 / self.speed,
-                self,
-                objc.selector(self.doFrame, signature="v@:@"),
-                None,
-                True)
-                
+            timer = NSTimer.scheduledTimerWithTimeInterval_target_selector_userInfo_repeats_
+            self.animationTimer = timer(1.0 / self.speed,
+                                        self,
+                                        objc.selector(self.doFrame, signature="v@:@"),
+                                        None,
+                                        True)
+
             # Start the spinner
             self.animationSpinner.startAnimation_(None)
 
