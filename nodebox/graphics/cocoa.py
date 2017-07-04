@@ -208,7 +208,7 @@ class TransformMixin(object):
     def _set_transform(self, transform):
         self._transform = Transform(transform)
     transform = property(_get_transform, _set_transform)
-    
+
     def _get_transformmode(self):
         return self._transformmode
     def _set_transformmode(self, mode):
@@ -254,13 +254,13 @@ class ColorMixin(object):
     def _set_fill(self, *args):
         self._fillcolor = Color(self._ctx, *args)
     fill = property(_get_fill, _set_fill)
-    
+
     def _get_stroke(self):
         return self._strokecolor
     def _set_stroke(self, *args):
         self._strokecolor = Color(self._ctx, *args)
     stroke = property(_get_stroke, _set_stroke)
-    
+
     def _get_strokewidth(self):
         return self._strokewidth
     def _set_strokewidth(self, strokewidth):
@@ -302,9 +302,9 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
 
     def copy(self):
         return self.__class__(self._ctx, self)
-    
+
     ### Cap and Join style ###
-    
+
     def _get_capstyle(self):
         return self._capstyle
     def _set_capstyle(self, style):
@@ -336,6 +336,14 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         self._nsBezierPath.curveToPoint_controlPoint1_controlPoint2_(
                                                 (x3, y3), (x1, y1), (x2, y2) )
 
+    # relativeMoveToPoint_( NSPoint )
+    # relativeLineToPoint_( NSPoint )
+    # relativeCurveToPoint:(NSPoint)aPoint controlPoint1:(NSPoint)controlPoint1 controlPoint2:(NSPoint)controlPoint2
+    # appendBezierPathWithOvalInRect_
+    # appendBezierPathWithArcFromPoint_(NSPoint)fromPoint toPoint_(NSPoint)toPoint radius:(CGFloat)
+    # appendBezierPathWithArcWithCenter:(NSPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle
+    # appendBezierPathWithArcWithCenter:(NSPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
+
     def closepath(self):
         self._segment_cache = None
         self._nsBezierPath.closePath()
@@ -356,7 +364,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return self._nsBezierPath.containsPoint_((x,y))
 
     ### Basic shapes ###
-    
+
     def rect(self, x, y, width, height):
         self._segment_cache = None
         self._nsBezierPath.appendBezierPathWithRect_( ((x, y),
@@ -367,7 +375,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         self._nsBezierPath.appendBezierPathWithOvalInRect_( ((x, y),
                                                              (width, height)) )
     ellipse = oval
-    
+
     def arc(self, x, y, r, startAngle, endAngle):
         self._segment_cache = None
         self._nsBezierPath.appendBezierPathWithArcWithCenter_radius_startAngle_endAngle_(
@@ -454,7 +462,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         _restore()
 
     ### Geometry ###
-    
+
     def fit(self, x=None, y=None, width=None, height=None, stretch=False):
 
         """Fits this path to the specified bounds.
@@ -493,7 +501,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         self._nsBezierPath = t.transformBezierPath(self)._nsBezierPath
 
     ### Mathematics ###
-    
+
     def segmentlengths(self, relative=False, n=10):
         import bezier
         if relative: # Use the opportunity to store the segment cache.
@@ -537,14 +545,14 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         self._segment_cache = None
 
     ### Clipping operations ###
-    
+
     def intersects(self, other):
         return cPolymagic.intersects(self._nsBezierPath, other._nsBezierPath)
         
     def union(self, other, flatness=0.6):
         return BezierPath(self._ctx, cPolymagic.union(self._nsBezierPath,
                                                     other._nsBezierPath, flatness))
-    
+
     def intersect(self, other, flatness=0.6):
         return BezierPath(self._ctx, cPolymagic.intersect(self._nsBezierPath,
                                                     other._nsBezierPath, flatness))
@@ -748,7 +756,7 @@ class Color(object):
 
     def set(self):
         self.nsColor.set()
-    
+
     def _get_nsColor(self):
         if self._ctx._outputmode == RGB:
             return self._rgb
@@ -969,7 +977,7 @@ class Transform(object):
         warnings.warn(s, DeprecationWarning, stacklevel=2)
         return self._nsAffineTransform
     transform = property(_get_transform)
-    
+
     def set(self):
         self._nsAffineTransform.set()
 
@@ -1395,7 +1403,7 @@ class Text(Grob, TransformMixin, ColorMixin):
         path.inheritFromContext()
         return path
     path = property(_get_path)
-    
+
 class Variable(object):
     def __init__(self, name, type, default=None, min=0, max=100, value=None):
         self.name = name
@@ -1542,7 +1550,7 @@ class Canvas(Grob):
         img.unlockFocus()
         return img
     _nsImage = property(_get_nsImage)
-    
+
     def _getImageData(self, format):
         if format == 'pdf':
             view = _PDFRenderView.alloc().initWithCanvas_(self)

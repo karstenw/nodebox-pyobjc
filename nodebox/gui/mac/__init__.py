@@ -196,7 +196,7 @@ class NodeBoxDocument(NSDocument):
         # this is None
         self.currentView = self.graphicsView
         return self
-    
+
     def autosavesInPlace(self):
         return True
 
@@ -825,7 +825,7 @@ class NodeBoxDocument(NSDocument):
         return True
         
     # Zoom commands, forwarding to the graphics view.
-    
+
     @objc.IBAction
     def zoomIn_(self, sender):
         if self.fullScreen is not None: return
@@ -1092,7 +1092,7 @@ class NodeBoxGraphicsView(NSView):
         if self.canvas:
             return self.canvas._getImageData('pdf')
     pdfData = property(_get_pdfData)
-    
+
     def _get_epsData(self):
         if self.canvas:
             return self.canvas._getImageData('eps')
@@ -1101,11 +1101,11 @@ class NodeBoxGraphicsView(NSView):
     def _get_tiffData(self):
         return self.canvas._getImageData('tiff')
     tiffData = property(_get_tiffData)
- 
+     
     def _get_pngData(self):
         return self.canvas._getImageData('png')
     pngData = property(_get_pngData)
-    
+
     def _get_gifData(self):
         return self.canvas._getImageData('gif')
     gifData = property(_get_gifData)

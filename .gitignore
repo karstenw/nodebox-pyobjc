@@ -16,8 +16,10 @@ nodebox/tests/vdiff/test-results.html
 examples/Escher/FG*
 examples/Images/Images*
 examples/Path/Spider-kw.py
-examples/zzz/
+examples/zzz_private/
 lib@appsupport
 packages_nodebox.png
 classes_nodebox.png
 examples/New Functions/documents.txt
++latex/*.aux
++latex/*.log

@@ -138,21 +138,21 @@ class Statistics(object):
     def _get_size(self):
         return self.width, self.height
     size = property(_get_size)
-    
+
     def _get_number_of_differences(self):
         return len(self.differences)
     number_of_differences = property(_get_number_of_differences)
-    
+
     def _get_comparison_image(self):
         if self._comparison_image is None:
             self._comparison_image = make_comparison_image(self.size, self.differences)
         return self._comparison_image
     comparison_image = property(_get_comparison_image)
-    
+
     def save_comparison_image(self, fname):
         self.comparison_image.save(fname)
         self.comparison_image_fname = fname
-    
+
     def __str__(self):
         return "<Statistics diff:%s total_delta:%s max_delta:%s mean:%.4f stdev:%.4f>" % (
             len(self.differences), self.total_delta, self.max_delta, self.mean, self.stdev)

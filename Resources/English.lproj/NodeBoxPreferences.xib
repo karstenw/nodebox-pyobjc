@@ -149,7 +149,6 @@
 											<string key="NSFrame">{{82, 21}, {114, 17}}</string>
 											<reference key="NSSuperview" ref="653020670"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="482641707">
 												<int key="NSCellFlags">67108864</int>

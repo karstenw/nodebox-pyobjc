@@ -105,7 +105,7 @@ class Context(object):
         return self.canvas.height
 
     HEIGHT = property(_get_height)
-    
+
     def speed(self, speed):
         self.canvas.speed = speed
         
@@ -121,6 +121,7 @@ class Context(object):
         if mode is not None:
             self._outputmode = mode
         return self._outputmode
+
 
     ### Variables ###
 
@@ -142,8 +143,9 @@ class Context(object):
                 return v
         return None
 
+
     ### Objects ####
-    
+
     def _makeInstance(self, clazz, args, kwargs):
         """Creates an instance of a class defined in this document.        
            This method sets the context of the object to the current context."""
@@ -171,16 +173,16 @@ class Context(object):
     def Text(self, *args, **kwargs):
         return self._makeInstance(Text, args, kwargs)
 
+
     ### Primitives ###
 
     def rect(self, x, y, width, height, roundness=0.0, draw=True, **kwargs):
         BezierPath.checkKwargs(kwargs)
+        p = self.BezierPath(**kwargs)
         if roundness == 0:
-            p = self.BezierPath(**kwargs)
             p.rect(x, y, width, height)
         else:
             curve = min(width*roundness, height*roundness)
-            p = self.BezierPath(**kwargs)
             p.moveto(x, y+curve)
             p.curveto(x, y, x, y, x+curve, y)
             p.lineto(x+width-curve, y)
@@ -308,6 +310,7 @@ class Context(object):
             p.draw()
         return p
 
+
     ### Path Commands ###
 
     def beginpath(self, x=None, y=None):
@@ -369,9 +372,10 @@ class Context(object):
         path._ctx = self
         path.inheritFromContext()
         return path
-    
+
+
     ### Clipping Commands ###
-    
+
     def beginclip(self, path):
         cp = self.ClippingPath(path)
         self.canvas.push(cp)
@@ -379,6 +383,7 @@ class Context(object):
 
     def endclip(self):
         self.canvas.pop()
+
 
     ### Transformation Commands ###
 
@@ -416,10 +421,11 @@ class Context(object):
     def skew(self, x=0, y=0):
         self._transform.skew(x,y)
 
+
     ### Color Commands ###
 
     color = Color
-    
+
     def colormode(self, mode=None, range=None):
         if mode is not None:
             self._colormode = mode
@@ -466,6 +472,7 @@ class Context(object):
                 raise NodeBoxError, 'Line join style should be MITER, ROUND or BEVEL.'
             self._joinstyle = style
         return self._joinstyle
+
 
     ### Font Commands ###
 
@@ -532,6 +539,7 @@ class Context(object):
         txt.inheritFromContext(kwargs.keys())
         return txt.allmetrics
 
+
     ### Image commands ###
 
     def image(self, path, x, y, width=None, height=None, alpha=1.0, data=None, draw=True, **kwargs):
@@ -545,13 +553,15 @@ class Context(object):
         img = self.Image(path, data=data)
         return img.size
         
+
     ### Canvas proxy ###
-    
+
     def save(self, fname, format=None):
         self.canvas.save(fname, format)
 
-    
+
     ## cGeo
+
     def isqrt( self, v):
         return nodebox.geo.isqrt( v )
 

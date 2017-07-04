@@ -29,7 +29,7 @@ class Context:
         
     def indent(self):
         self._indent += 1
-    
+
     def dedent(self):
         self._indent -= 1
         
