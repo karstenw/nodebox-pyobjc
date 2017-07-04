@@ -387,15 +387,24 @@ class Context(object):
 
     ### Transformation Commands ###
 
-    def push(self):
-        self._transformstack.insert(0, self._transform.matrix)
+    def push(self, all=False):
+        top = (self._transform.matrix,)
+        if all:
+            top = (self._align, self._autoclosepath, self._capstyle, self._colormode,
+                   self._fillcolor, self._fontname, self._fontsize, self._joinstyle,
+                   self._lineheight, self._outputmode, self._strokecolor,
+                   self._strokewidth, self._transformmode, self._transform.matrix)
+        self._transformstack.append(top)
 
     def pop(self):
         try:
-            self._transform = Transform(self._transformstack[0])
-            del self._transformstack[0]
+            top = self._transformstack.pop()
         except IndexError, e:
             raise NodeBoxError, "pop: too many pops!"
+        if len(top) > 1:
+            self._align, self._autoclosepath, self._capstyle, self._colormode, self._fillcolor, self._fontname, self._fontsize, self._joinstyle, self._lineheight, self._outputmode, self._strokecolor, self._strokewidth, self._transformmode, self._transform.matrix = top
+        else:
+            self._transform.matrix = top[0]
             
             
     def transform(self, mode=None):
