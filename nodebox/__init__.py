@@ -1,9 +1,4 @@
-__version__='1.9.21'
-
-# import geo
-# import graphics
-# import gui
-# import util
+__version__='1.9.22'
 
 def get_version():
     return __version__
