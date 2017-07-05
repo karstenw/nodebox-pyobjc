@@ -1,11 +1,13 @@
 __all__ = ["AskString"]
 
 import objc
-from Foundation import *
-from AppKit import *
 
+import Foundation
+
+import AppKit
+NSApp = AppKit.NSApp
 # class defined in AskString.xib
-class AskStringWindowController(NSWindowController):
+class AskStringWindowController(AppKit.NSWindowController):
     questionLabel = objc.IBOutlet()
     textField = objc.IBOutlet()
 
