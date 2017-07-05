@@ -31,8 +31,6 @@ sublist is not used, hence always None.
 __version__ = "0.5"
 
 import re
-# from nodebox import graphics
-# from nodebox import util
 import graphics
 import util
 
