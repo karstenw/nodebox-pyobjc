@@ -1,5 +1,7 @@
 from math import sqrt, pow
 
+# from nodebox.geo import distance
+
 def linepoint(t, x0, y0, x1, y1):
 
     """Returns coordinates for point at t on the line.
@@ -20,7 +22,7 @@ def linepoint(t, x0, y0, x1, y1):
 def linelength(x0, y0, x1, y1):
 
     """Returns the length of the line."""
-
+    #return distance(x0,y0, x1,y1)
     a = pow(abs(x0 - x1), 2)
     b = pow(abs(y0 - y1), 2)
     return sqrt(a+b)
