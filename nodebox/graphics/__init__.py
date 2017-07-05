@@ -387,9 +387,9 @@ class Context(object):
 
     ### Transformation Commands ###
 
-    def push(self, all=False):
+    def push(self): #, all=False):
         top = (self._transform.matrix,)
-        if all:
+        if False: # all:
             top = (self._align, self._autoclosepath, self._capstyle, self._colormode,
                    self._fillcolor, self._fontname, self._fontsize, self._joinstyle,
                    self._lineheight, self._outputmode, self._strokecolor,
