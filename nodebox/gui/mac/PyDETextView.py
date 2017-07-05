@@ -3,10 +3,7 @@ import re
 import objc
 super = objc.super
 
-#from Foundation import *
-#from AppKit import *
 import AppKit
-
 
 NSBackgroundColorAttributeName = AppKit.NSBackgroundColorAttributeName
 NSBeep = AppKit.NSBeep
@@ -33,28 +30,18 @@ NSCalibratedRGBColorSpace = AppKit.NSCalibratedRGBColorSpace
 NSUserDefaults = AppKit.NSUserDefaults
 
 
-
-
-
-
-#from PyObjCTools import NibClassBuilder
-# from nodebox.util.PyFontify import fontify
 import nodebox.PyFontify
 fontify = nodebox.PyFontify.fontify
 
 
 from nodebox.gui.mac.ValueLadder import ValueLadder
-# import nodebox.gui.mac.ValueLadder
-# ValueLadder = nodebox.gui.mac.ValueLadder.ValueLadder
 
 from nodebox.util import _copy_attr, _copy_attrs, makeunicode
-
 
 
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
 
-#NibClassBuilder.extractClasses("NodeBoxDocument")
 
 def findWhitespace(s, pos=0):
     m = whiteRE.match(s, pos)
