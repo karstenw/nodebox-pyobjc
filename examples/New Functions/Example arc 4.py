@@ -54,7 +54,7 @@ phiincrement = 1 / (2**(ringnumber-1) * 0.1)
 # use 0.9..0.1 for color
 lightgap = 0.8 / (ringnumber-1)
 
-var("alpha", NUMBER, 1.0, 0.01, 1.0)
+var("alpha", NUMBER, 0.5, 0.01, 1.0)
 
 
 rings = [

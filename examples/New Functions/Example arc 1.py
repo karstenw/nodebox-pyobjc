@@ -2,13 +2,15 @@
 nofill()
 stroke(0)
 
-radius = 200
+radius = 250
 startangle = 270
 endangle = 0
 
-arc( 210, 210, radius, startangle, endangle)
+x, y = 300, 400
 
-line(210, 210, 210, 10)
-line(210, 210, 410, 210)
+arc( x, y, radius, startangle, endangle)
 
-arc( 210, 210, radius, startangle-180, endangle-180)
+line(x, y, x, y-radius)
+line(x, y, x+radius, y)
+
+arc( x, y, radius, startangle-180, endangle-180)
