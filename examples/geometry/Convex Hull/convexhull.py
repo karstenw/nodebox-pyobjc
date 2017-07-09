@@ -8,8 +8,9 @@
 """
 
 # This is new with Nodebox 1.9.13; size(0,0) sets size to main screen size
-size(0, 0)
-if not WIDTH and not HEIGHT:
+try:
+    size(0, 0)
+except:
     # if we're running an older version, set some reasonable default
     size(800, 800)
 
