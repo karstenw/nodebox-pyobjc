@@ -1,0 +1,221 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXFileReference section */
+		8D8C60941F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = AskString.xib; sourceTree = "<group>"; };
+		8D8C60961F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ExportImageAccessory.xib; sourceTree = "<group>"; };
+		8D8C60981F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ExportMovieAccessory.xib; sourceTree = "<group>"; };
+		8D8C609A1F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
+		8D8C609C1F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = NodeBoxDocument.xib; sourceTree = "<group>"; };
+		8D8C609E1F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = NodeBoxPreferences.xib; sourceTree = "<group>"; };
+		8D8C60A01F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ProgressBarSheet.xib; sourceTree = "<group>"; };
+		8D8C60A21F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = AskStringWindowController.py; sourceTree = "<group>"; };
+		8D8C60A41F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = DashboardController.py; sourceTree = "<group>"; };
+		8D8C60A61F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = NodeBoxAppDelegate.py; sourceTree = "<group>"; };
+		8D8C60A81F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = NodeBoxDocument.py; sourceTree = "<group>"; };
+		8D8C60AA1F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = NodeBoxPreferencesController.py; sourceTree = "<group>"; };
+		8D8C60AC1F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = ProgressBarController.py; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		8D8C607A1F06729A00941B9D = {
+			isa = PBXGroup;
+			children = (
+				8D8C60921F0672F000941B9D /* Classes */,
+				8D8C608F1F0672D700941B9D /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		8D8C608F1F0672D700941B9D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D8C60931F0672FC00941B9D /* AskString.xib */,
+				8D8C60951F0672FC00941B9D /* ExportImageAccessory.xib */,
+				8D8C60971F0672FC00941B9D /* ExportMovieAccessory.xib */,
+				8D8C60991F0672FC00941B9D /* MainMenu.xib */,
+				8D8C609B1F0672FC00941B9D /* NodeBoxDocument.xib */,
+				8D8C609D1F0672FC00941B9D /* NodeBoxPreferences.xib */,
+				8D8C609F1F0672FC00941B9D /* ProgressBarSheet.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8D8C60921F0672F000941B9D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D8C60A11F06730900941B9D /* AskStringWindowController.py */,
+				8D8C60A31F06730900941B9D /* DashboardController.py */,
+				8D8C60A51F06730900941B9D /* NodeBoxAppDelegate.py */,
+				8D8C60A71F06730900941B9D /* NodeBoxDocument.py */,
+				8D8C60A91F06730900941B9D /* NodeBoxPreferencesController.py */,
+				8D8C60AB1F06730900941B9D /* ProgressBarController.py */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		8D8C607C1F06729A00941B9D /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 8D8C607F1F06729A00941B9D /* Build configuration list for PBXProject "Nodebox-Dummy" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 8D8C607A1F06729A00941B9D;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXVariantGroup section */
+		8D8C60931F0672FC00941B9D /* AskString.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60941F0672FC00941B9D /* English */,
+			);
+			name = AskString.xib;
+			sourceTree = "<group>";
+		};
+		8D8C60951F0672FC00941B9D /* ExportImageAccessory.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60961F0672FC00941B9D /* English */,
+			);
+			name = ExportImageAccessory.xib;
+			sourceTree = "<group>";
+		};
+		8D8C60971F0672FC00941B9D /* ExportMovieAccessory.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60981F0672FC00941B9D /* English */,
+			);
+			name = ExportMovieAccessory.xib;
+			sourceTree = "<group>";
+		};
+		8D8C60991F0672FC00941B9D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C609A1F0672FC00941B9D /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		8D8C609B1F0672FC00941B9D /* NodeBoxDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C609C1F0672FC00941B9D /* English */,
+			);
+			name = NodeBoxDocument.xib;
+			sourceTree = "<group>";
+		};
+		8D8C609D1F0672FC00941B9D /* NodeBoxPreferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C609E1F0672FC00941B9D /* English */,
+			);
+			name = NodeBoxPreferences.xib;
+			sourceTree = "<group>";
+		};
+		8D8C609F1F0672FC00941B9D /* ProgressBarSheet.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60A01F0672FC00941B9D /* English */,
+			);
+			name = ProgressBarSheet.xib;
+			sourceTree = "<group>";
+		};
+		8D8C60A11F06730900941B9D /* AskStringWindowController.py */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60A21F06730900941B9D /* English */,
+			);
+			name = AskStringWindowController.py;
+			sourceTree = "<group>";
+		};
+		8D8C60A31F06730900941B9D /* DashboardController.py */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60A41F06730900941B9D /* English */,
+			);
+			name = DashboardController.py;
+			sourceTree = "<group>";
+		};
+		8D8C60A51F06730900941B9D /* NodeBoxAppDelegate.py */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60A61F06730900941B9D /* English */,
+			);
+			name = NodeBoxAppDelegate.py;
+			sourceTree = "<group>";
+		};
+		8D8C60A71F06730900941B9D /* NodeBoxDocument.py */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60A81F06730900941B9D /* English */,
+			);
+			name = NodeBoxDocument.py;
+			sourceTree = "<group>";
+		};
+		8D8C60A91F06730900941B9D /* NodeBoxPreferencesController.py */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60AA1F06730900941B9D /* English */,
+			);
+			name = NodeBoxPreferencesController.py;
+			sourceTree = "<group>";
+		};
+		8D8C60AB1F06730900941B9D /* ProgressBarController.py */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D8C60AC1F06730900941B9D /* English */,
+			);
+			name = ProgressBarController.py;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8D8C607D1F06729A00941B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		8D8C607E1F06729A00941B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8D8C607F1F06729A00941B9D /* Build configuration list for PBXProject "Nodebox-Dummy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D8C607D1F06729A00941B9D /* Debug */,
+				8D8C607E1F06729A00941B9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8D8C607C1F06729A00941B9D /* Project object */;
+}
