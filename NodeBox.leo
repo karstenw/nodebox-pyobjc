@@ -21,21 +21,21 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
-<v t="karstenw.20170704104531.1" a="E"><vh>@clean nodebox/geo/__init__.py</vh>
+<v t="karstenw.20170704104453.1"><vh>geo</vh>
+<v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104618.2"><vh>reflect</vh></v>
 </v>
-<v t="karstenw.20170704104605.1" a="E"><vh>@clean nodebox/geo/pathmatics.py</vh>
+<v t="karstenw.20170704104605.1"><vh>@clean nodebox/geo/pathmatics.py</vh>
 <v t="karstenw.20170704104615.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104615.2"><vh>linepoint</vh></v>
 <v t="karstenw.20170704104615.3"><vh>linelength</vh></v>
@@ -44,21 +44,26 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
+<v t="karstenw.20170709143724.1"><vh>## Setup Methods ##</vh>
 <v t="karstenw.20170704104725.6"><vh>size</vh></v>
 <v t="karstenw.20170704104725.7"><vh>_get_width</vh></v>
 <v t="karstenw.20170704104725.8"><vh>_get_height</vh></v>
 <v t="karstenw.20170704104725.9"><vh>speed</vh></v>
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
+</v>
+<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
+</v>
+<v t="karstenw.20170709143242.1"><vh>## Objects ##</vh>
 <v t="karstenw.20170704104725.15"><vh>_makeInstance</vh></v>
 <v t="karstenw.20170704104725.16"><vh>BezierPath</vh></v>
 <v t="karstenw.20170704104725.17"><vh>ClippingPath</vh></v>
@@ -67,6 +72,8 @@
 <v t="karstenw.20170704104725.20"><vh>Color</vh></v>
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
+</v>
+<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
 <v t="karstenw.20170704104725.25"><vh>arc</vh></v>
@@ -75,6 +82,8 @@
 <v t="karstenw.20170704104725.28"><vh>arrow</vh></v>
 <v t="karstenw.20170704104725.29"><vh>_arrow</vh></v>
 <v t="karstenw.20170704104725.30"><vh>_arrow45</vh></v>
+</v>
+<v t="karstenw.20170709143318.1"><vh>## Path Commands ##</vh>
 <v t="karstenw.20170704104725.31"><vh>beginpath</vh></v>
 <v t="karstenw.20170704104725.32"><vh>moveto</vh></v>
 <v t="karstenw.20170704104725.33"><vh>lineto</vh></v>
@@ -84,8 +93,12 @@
 <v t="karstenw.20170704104725.37"><vh>drawpath</vh></v>
 <v t="karstenw.20170704104725.38"><vh>autoclosepath</vh></v>
 <v t="karstenw.20170704104725.39"><vh>findpath</vh></v>
+</v>
+<v t="karstenw.20170709143341.1"><vh>## Clipping Commands ##</vh>
 <v t="karstenw.20170704104725.40"><vh>beginclip</vh></v>
 <v t="karstenw.20170704104725.41"><vh>endclip</vh></v>
+</v>
+<v t="karstenw.20170709143354.1"><vh>## Transformation Commands ##</vh>
 <v t="karstenw.20170704104725.42"><vh>push</vh></v>
 <v t="karstenw.20170704104725.43"><vh>pop</vh></v>
 <v t="karstenw.20170704104725.44"><vh>transform</vh></v>
@@ -95,6 +108,8 @@
 <v t="karstenw.20170704104725.48"><vh>translate</vh></v>
 <v t="karstenw.20170704104726.1"><vh>scale</vh></v>
 <v t="karstenw.20170704104726.2"><vh>skew</vh></v>
+</v>
+<v t="karstenw.20170709143414.1"><vh>## Color Commands ##</vh>
 <v t="karstenw.20170704104726.3"><vh>colormode</vh></v>
 <v t="karstenw.20170704104726.4"><vh>colorrange</vh></v>
 <v t="karstenw.20170704104726.5"><vh>nofill</vh></v>
@@ -102,8 +117,12 @@
 <v t="karstenw.20170704104726.7"><vh>nostroke</vh></v>
 <v t="karstenw.20170704104726.8"><vh>stroke</vh></v>
 <v t="karstenw.20170704104726.9"><vh>strokewidth</vh></v>
+</v>
+<v t="karstenw.20170709143705.1"><vh>## Path Style Commands ##</vh>
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
+</v>
+<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -114,9 +133,15 @@
 <v t="karstenw.20170704104726.19"><vh>textpath</vh></v>
 <v t="karstenw.20170704104726.20"><vh>textmetrics</vh></v>
 <v t="karstenw.20170704104726.21"><vh>alltextmetrics</vh></v>
+</v>
+<v t="karstenw.20170709143553.1"><vh>## Image Commands ##</vh>
 <v t="karstenw.20170704104726.22"><vh>image</vh></v>
 <v t="karstenw.20170704104726.23"><vh>imagesize</vh></v>
+</v>
+<v t="karstenw.20170709143618.1"><vh>## Canvas Proxy ##</vh>
 <v t="karstenw.20170704104726.24"><vh>save</vh></v>
+</v>
+<v t="karstenw.20170709143636.1"><vh>## C-Extensions Interface ##</vh>
 <v t="karstenw.20170704104726.25"><vh>isqrt</vh></v>
 <v t="karstenw.20170704104726.26"><vh>angle</vh></v>
 <v t="karstenw.20170704104726.27"><vh>distance</vh></v>
@@ -124,7 +149,8 @@
 <v t="karstenw.20170704104726.29"><vh>reflect</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104730.1" a="E"><vh>@clean nodebox/graphics/bezier.py</vh>
+</v>
+<v t="karstenw.20170704104730.1"><vh>@clean nodebox/graphics/bezier.py</vh>
 <v t="karstenw.20170704104742.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104742.2"><vh>segment_lengths</vh></v>
 <v t="karstenw.20170704104742.3"><vh>length</vh></v>
@@ -312,7 +338,7 @@
 <v t="karstenw.20170704104751.161"><vh>_get_metrics</vh></v>
 <v t="karstenw.20170704104751.162"><vh>_get_path</vh></v>
 </v>
-<v t="karstenw.20170704104751.163"><vh>class Variable</vh>
+<v t="karstenw.20170704104751.163" a="E"><vh>class Variable</vh>
 <v t="karstenw.20170704104751.164"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.165"><vh>sanitize</vh></v>
 <v t="karstenw.20170704104751.166"><vh>compliesTo</vh></v>
@@ -366,6 +392,7 @@
 <v t="karstenw.20170704105032.17"><vh>cleanRun_newSeed_buildInterface_</vh></v>
 <v t="karstenw.20170704105032.18"><vh>prepareRun</vh></v>
 <v t="karstenw.20170704105032.19"><vh>fastRun_newSeed_</vh></v>
+<v t="karstenw.20170709154311.1"><vh>fastRun_newSeed_args_</vh></v>
 <v t="karstenw.20170704105032.20"><vh>runFullscreen_</vh></v>
 <v t="karstenw.20170704105032.21"><vh>runScript_</vh></v>
 <v t="karstenw.20170704105032.22"><vh>runScript</vh></v>
@@ -461,9 +488,9 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskString.py</vh>
+<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskString.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
+<v t="karstenw.20170704105043.2"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20170704105043.3"><vh>__new__</vh></v>
 <v t="karstenw.20170704105043.4"><vh>windowWillClose_</vh></v>
 <v t="karstenw.20170704105043.5"><vh>awakeFromNib</vh></v>
@@ -475,21 +502,23 @@
 </v>
 <v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
+<v t="karstenw.20170704105051.2" a="E"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
 <v t="karstenw.20170704105051.5"><vh>textChanged_</vh></v>
 <v t="karstenw.20170704105051.6"><vh>booleanChanged_</vh></v>
 <v t="karstenw.20170704105051.7"><vh>buttonClicked_</vh></v>
+<v t="karstenw.20170709145427.1"><vh>menuSelected_</vh></v>
 <v t="karstenw.20170704105051.8"><vh>buildInterface_</vh></v>
 <v t="karstenw.20170704105051.9"><vh>addLabel_y_c_</vh></v>
 <v t="karstenw.20170704105051.10"><vh>addSlider_y_c_</vh></v>
 <v t="karstenw.20170704105051.11"><vh>addTextField_y_c_</vh></v>
 <v t="karstenw.20170704105051.12"><vh>addSwitch_y_c_</vh></v>
 <v t="karstenw.20170704105051.13"><vh>addButton_y_c_</vh></v>
+<v t="karstenw.20170709145531.1"><vh>addMenu_y_c_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
@@ -506,11 +535,11 @@
 <v t="karstenw.20170704105106.13"><vh>textFontChanged_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104934.1" a="E"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
+<v t="karstenw.20170704104934.1"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
-<v t="karstenw.20170704105113.4" a="E"><vh>class PyDETextView</vh>
+<v t="karstenw.20170704105113.4"><vh>class PyDETextView</vh>
 <v t="karstenw.20170704105113.5"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105113.6"><vh>drawRect_</vh></v>
 <v t="karstenw.20170704105113.7"><vh>hideValueLadder</vh></v>
@@ -562,7 +591,7 @@
 <v t="karstenw.20170704105113.52"><vh>colorize</vh></v>
 <v t="karstenw.20170704105113.53"><vh>_colorize</vh></v>
 </v>
-<v t="karstenw.20170704105113.54" a="E"><vh>class LineTracker</vh>
+<v t="karstenw.20170704105113.54"><vh>class LineTracker</vh>
 <v t="karstenw.20170704105113.55"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.56"><vh>_makeLines</vh></v>
 <v t="karstenw.20170704105113.57"><vh>_update</vh></v>
@@ -578,13 +607,13 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -596,10 +625,10 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104503.1" a="E"><vh>tests</vh>
+<v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
 <v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
@@ -619,7 +648,7 @@
 <v t="karstenw.20170704105353.15"><vh>_copy_attr</vh></v>
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
 </v>
-<v t="karstenw.20170704105406.1" a="E"><vh>kgp</vh>
+<v t="karstenw.20170704105406.1"><vh>kgp</vh>
 <v t="karstenw.20170704105442.1"><vh>@clean nodebox/util/kgp/__init__.py</vh>
 <v t="karstenw.20170704105455.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105455.2"><vh>openAnything</vh></v>
@@ -647,7 +676,7 @@
 <v t="karstenw.20170704105455.23"><vh>main</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105534.1" a="E"><vh>ottobot</vh>
+<v t="karstenw.20170704105534.1"><vh>ottobot</vh>
 <v t="karstenw.20170704105412.1"><vh>@clean nodebox/util/ottobot/__init__.py</vh>
 <v t="karstenw.20170704105528.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105528.2"><vh>class Context</vh>
@@ -688,7 +717,7 @@
 <v t="karstenw.20170704105528.36"><vh>genProgram</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105416.1" a="E"><vh>QTSupport</vh>
+<v t="karstenw.20170704105416.1"><vh>QTSupport</vh>
 <v t="karstenw.20170704105551.1"><vh>@clean nodebox/util/QTSupport/__init__.py</vh>
 <v t="karstenw.20170704105603.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105603.2"><vh>class Movie</vh>
@@ -772,10 +801,9 @@ import nodebox.gui
 import nodebox.gui.mac
 
 
-# these don't build yet
-#import scipy
-#import matplotlib
-#import twyg
+import scipy
+import matplotlib
+import twyg
 
 
 </t>
@@ -914,7 +942,7 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "excludes": ["TkInter", "scipy", "matplotlib"],
+            "excludes": ["TkInter",], # "scipy", "matplotlib"],
         }
     } )
 </t>
@@ -2589,7 +2617,7 @@ __all__ = [
         "MITER", "ROUND", "BEVEL", "BUTT", "SQUARE",
         "LEFT", "RIGHT", "CENTER", "JUSTIFY",
         "NORMAL","FORTYFIVE",
-        "NUMBER", "TEXT", "BOOLEAN","BUTTON",
+        "NUMBER", "TEXT", "BOOLEAN","BUTTON", "MENU",
         "NodeBoxError",
         "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect", "Oval",
         "Color", "Transform", "Image", "Text",
@@ -2634,6 +2662,7 @@ NUMBER = 1
 TEXT = 2
 BOOLEAN = 3
 BUTTON = 4
+MENU = 5
 
 # unused
 KEY_UP = 126
@@ -3386,28 +3415,41 @@ path = property(_get_path)
 <t tx="karstenw.20170704104751.163">class Variable(object):
     @others
 </t>
-<t tx="karstenw.20170704104751.164">def __init__(self, name, type, default=None, min=0, max=100, value=None):
-    self.name = name
-    self.type = type or NUMBER
+<t tx="karstenw.20170704104751.164">def __init__(self, name, typ, default=None, minV=0, maxV=100, value=None):
+    self.name = makeunicode(name)
+    self.type = typ or NUMBER
+    self.default = default
+    self.min = minV
+    self.max = maxV
     if self.type == NUMBER:
         if default is None:
             self.default = 50
         else:
             self.default = default
-        self.min = min
-        self.max = max
+        self.min = minV
+        self.max = maxV
     elif self.type == TEXT:
         if default is None:
             self.default = "hello"
         else:
-            self.default = default
+            self.default = makeunicode(default)
     elif self.type == BOOLEAN:
         if default is None:
             self.default = True
         else:
             self.default = default
     elif self.type == BUTTON:
-        self.default = self.name
+        self.default = makeunicode(self.name)
+    elif self.type == MENU:
+        # value is list of menuitems
+        # default is name of function to call with selected menu item name
+        if default is not None:
+            self.dispatchfunction = default
+            self.default = None
+        if value is not None:
+            self.menuitems = [makeunicode(i) for i in value]
+            # set value to first entry
+            value = self.menuitems[0]
     self.value = value or self.default
 
 </t>
@@ -3445,7 +3487,7 @@ path = property(_get_path)
 
 </t>
 <t tx="karstenw.20170704104751.167">def __repr__(self):
-    s = "Variable(name=%s, type=%s, default=%s, min=%s, max=%s, value=%s)"
+    s = "Variable(name=%s, typ=%s, default=%s, min=%s, max=%s, value=%s)"
     return s % (self.name, self.type, self.default, self.min, self.max, self.value)
 
 </t>
@@ -4613,64 +4655,8 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.19">def fastRun_newSeed_(self, fn, newSeed = False):
-    # Check if there is code to run
-    if self._code is None:
-        return False
-
-    # Clear the canvas
-    self.canvas.clear()
-
-    # Generate a new seed, if needed
-    if newSeed:
-        self._seed = time.time()
-    random.seed(self._seed)
-
-    # Set the mouse position
-    
-    # kw fix
-    if not self.currentView:
-        self.currentView = self.graphicsView
-    window = self.currentView.window()
-    pt = window.mouseLocationOutsideOfEventStream()
-    mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
-    # Hack: mouse coordinates are flipped vertically in FullscreenView.
-    # This flips them back.
-    if isinstance(self.currentView, FullscreenView):
-        my = self.currentView.bounds()[1][1] - my
-    if self.fullScreen is None:
-        mx /= self.currentView.zoom
-        my /= self.currentView.zoom
-    self.namespace["MOUSEX"], self.namespace["MOUSEY"] = mx, my
-    self.namespace["mousedown"] = self.currentView.mousedown
-    self.namespace["keydown"] = self.currentView.keydown
-    self.namespace["key"] = self.currentView.key
-    self.namespace["keycode"] = self.currentView.keycode
-    self.namespace["scrollwheel"] = self.currentView.scrollwheel
-    self.namespace["wheeldelta"] = self.currentView.wheeldelta
-
-    # Reset the context
-    self.context._resetContext()
-
-    # Initalize the magicvar
-    self.namespace[MAGICVAR] = self.magicvar
-
-    # Set the pagenum
-    self.namespace['PAGENUM'] = self._pageNumber
-    
-    # Set the frame
-    self.namespace['FRAME'] = self._frame
-
-    # Run the script
-    success, output = self.boxedRun_args_(fn, [])
-    self.flushOutput_(output)
-    if not success:
-        return False
-
-    # Display the output of the script
-    self.currentView.setCanvas_(self.canvas)
-
-    return True
-    
+    """This is the old signature. Dispatching to the new with args"""
+    return self.fastRun_newSeed_args_( fn, newSeed, [])
 </t>
 <t tx="karstenw.20170704105032.2">class ExportCommand(NSScriptCommand):
     pass    
@@ -5714,7 +5700,11 @@ class AskStringWindowController(AppKit.NSWindowController):
 <t tx="karstenw.20170704105043.9">def AskString(question, resultCallback, default="", parentWindow=None):
     AskStringWindowController(question, resultCallback, default, parentWindow)
 </t>
-<t tx="karstenw.20170704105051.1">import AppKit
+<t tx="karstenw.20170704105051.1">import sys
+import os
+import pdb
+
+import AppKit
 
 NSObject = AppKit.NSObject
 NSFont = AppKit.NSFont
@@ -5729,6 +5719,7 @@ NSGraphiteControlTint = AppKit.NSGraphiteControlTint
 NSButton = AppKit.NSButton
 NSSwitchButton = AppKit.NSSwitchButton
 NSSmallControlSize = AppKit.NSSmallControlSize
+NSPopUpButton = AppKit.NSPopUpButton
 
 
 import objc
@@ -5838,8 +5829,8 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
     #self.document.runFunction_(var.name)
 
 </t>
-<t tx="karstenw.20170704105051.8">def buildInterface_(self, vars):
-    self.vars = vars
+<t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
+    self.vars = variables
     self.clearInterface()
     if len(self.vars) &gt; 0:
         self.panel.orderFront_(None)
@@ -5869,6 +5860,9 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
             self.addSwitch_y_c_(v, y, cnt)
         elif v.type == graphics.BUTTON:
             self.addButton_y_c_(v, y, cnt)
+        elif v.type == graphics.MENU:
+            self.addLabel_y_c_(v, y, cnt)
+            self.addMenu_y_c_(v, y, cnt)
         y -= 21
         cnt += 1
     self.panel.setFrame_display_animate_( ((px,py),(pw,ph)), True, True )
@@ -7537,6 +7531,9 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
     l = fm.availableFonts()
     result = []
     for i in l:
+        # filter out the weird fontnames
+        if i.startswith(u'.'):
+            continue
         result.append( makeunicode(i) )
     return result
 
@@ -8475,5 +8472,107 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     
 </t>
 <t tx="karstenw.20170704105701.1"></t>
+<t tx="karstenw.20170709143221.1"></t>
+<t tx="karstenw.20170709143242.1"></t>
+<t tx="karstenw.20170709143301.1"></t>
+<t tx="karstenw.20170709143318.1"></t>
+<t tx="karstenw.20170709143341.1"></t>
+<t tx="karstenw.20170709143354.1"></t>
+<t tx="karstenw.20170709143414.1"></t>
+<t tx="karstenw.20170709143458.1"></t>
+<t tx="karstenw.20170709143553.1"></t>
+<t tx="karstenw.20170709143618.1"></t>
+<t tx="karstenw.20170709143636.1"></t>
+<t tx="karstenw.20170709143705.1"></t>
+<t tx="karstenw.20170709143724.1"></t>
+<t tx="karstenw.20170709145427.1">def menuSelected_(self, sender):
+    var = self.document.vars[sender.tag()]
+    sel = sender.titleOfSelectedItem()
+    var.value = sel
+    fn = var.dispatchfunction
+    self.document.fastRun_newSeed_args_(fn, True, [sel,])
+    #self.document.runFunction_(var.name)
+
+</t>
+<t tx="karstenw.20170709145531.1">def addMenu_y_c_(self, v, y, cnt):
+    control = NSPopUpButton.alloc().init()
+    control.setFrame_( ((108, y-2),(172,16)) )
+    control.setPullsDown_( False )
+    control.removeAllItems()
+    for title in v.menuitems:
+        control.addItemWithTitle_( title )
+    control.setTitle_(v.value)
+    control.synchronizeTitleAndSelectedItem()
+    control.setBezelStyle_(1)
+    control.setFont_(SMALL_FONT)
+    control.cell().setControlSize_(NSMiniControlSize)
+    control.cell().setControlTint_(NSGraphiteControlTint)
+    control.setTarget_(self)
+    control.setTag_(cnt)
+    control.setAction_(objc.selector(self.menuSelected_, signature="v@:@@"))
+    self.panel.contentView().addSubview_(control)
+
+
+</t>
+<t tx="karstenw.20170709154311.1">def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
+    # Check if there is code to run
+    if self._code is None:
+        return False
+
+    # Clear the canvas
+    self.canvas.clear()
+
+    # Generate a new seed, if needed
+    if newSeed:
+        self._seed = time.time()
+    random.seed(self._seed)
+
+    # Set the mouse position
+    
+    # kw fix
+    if not self.currentView:
+        self.currentView = self.graphicsView
+    window = self.currentView.window()
+    pt = window.mouseLocationOutsideOfEventStream()
+    mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
+    # Hack: mouse coordinates are flipped vertically in FullscreenView.
+    # This flips them back.
+    if isinstance(self.currentView, FullscreenView):
+        my = self.currentView.bounds()[1][1] - my
+    if self.fullScreen is None:
+        mx /= self.currentView.zoom
+        my /= self.currentView.zoom
+    self.namespace["MOUSEX"], self.namespace["MOUSEY"] = mx, my
+    self.namespace["mousedown"] = self.currentView.mousedown
+    self.namespace["keydown"] = self.currentView.keydown
+    self.namespace["key"] = self.currentView.key
+    self.namespace["keycode"] = self.currentView.keycode
+    self.namespace["scrollwheel"] = self.currentView.scrollwheel
+    self.namespace["wheeldelta"] = self.currentView.wheeldelta
+
+    # Reset the context
+    self.context._resetContext()
+
+    # Initalize the magicvar
+    self.namespace[MAGICVAR] = self.magicvar
+
+    # Set the pagenum
+    self.namespace['PAGENUM'] = self._pageNumber
+    
+    # Set the frame
+    self.namespace['FRAME'] = self._frame
+
+    # Run the script
+    success, output = self.boxedRun_args_(fn, args)
+    self.flushOutput_(output)
+    if not success:
+        return False
+
+    # Display the output of the script
+    self.currentView.setCanvas_(self.canvas)
+
+    return True
+    
+</t>
 </tnodes>
 </leo_file>
