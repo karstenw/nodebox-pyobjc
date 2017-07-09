@@ -63,7 +63,7 @@ __all__ = [
         "MITER", "ROUND", "BEVEL", "BUTT", "SQUARE",
         "LEFT", "RIGHT", "CENTER", "JUSTIFY",
         "NORMAL","FORTYFIVE",
-        "NUMBER", "TEXT", "BOOLEAN","BUTTON",
+        "NUMBER", "TEXT", "BOOLEAN","BUTTON", "MENU",
         "NodeBoxError",
         "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect", "Oval",
         "Color", "Transform", "Image", "Text",
@@ -108,6 +108,7 @@ NUMBER = 1
 TEXT = 2
 BOOLEAN = 3
 BUTTON = 4
+MENU = 5
 
 # unused
 KEY_UP = 126
@@ -1405,28 +1406,41 @@ class Text(Grob, TransformMixin, ColorMixin):
     path = property(_get_path)
 
 class Variable(object):
-    def __init__(self, name, typ, default=None, min=0, max=100, value=None):
-        self.name = name
+    def __init__(self, name, typ, default=None, minV=0, maxV=100, value=None):
+        self.name = makeunicode(name)
         self.type = typ or NUMBER
+        self.default = default
+        self.min = minV
+        self.max = maxV
         if self.type == NUMBER:
             if default is None:
                 self.default = 50
             else:
                 self.default = default
-            self.min = min
-            self.max = max
+            self.min = minV
+            self.max = maxV
         elif self.type == TEXT:
             if default is None:
                 self.default = "hello"
             else:
-                self.default = default
+                self.default = makeunicode(default)
         elif self.type == BOOLEAN:
             if default is None:
                 self.default = True
             else:
                 self.default = default
         elif self.type == BUTTON:
-            self.default = self.name
+            self.default = makeunicode(self.name)
+        elif self.type == MENU:
+            # value is list of menuitems
+            # default is name of function to call with selected menu item name
+            if default is not None:
+                self.dispatchfunction = default
+                self.default = None
+            if value is not None:
+                self.menuitems = [makeunicode(i) for i in value]
+                # set value to first entry
+                value = self.menuitems[0]
         self.value = value or self.default
 
     def sanitize(self, val):
