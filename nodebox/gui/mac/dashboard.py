@@ -14,6 +14,7 @@ NSGraphiteControlTint = AppKit.NSGraphiteControlTint
 NSButton = AppKit.NSButton
 NSSwitchButton = AppKit.NSSwitchButton
 NSSmallControlSize = AppKit.NSSmallControlSize
+NSPopUpButton = AppKit.NSPopUpButton
 
 
 import objc
@@ -56,6 +57,14 @@ class DashboardController(NSObject):
         self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
         #self.document.runFunction_(var.name)
 
+    def menuSelected_(self, sender):
+        var = self.document.vars[sender.tag()]
+        sel = sender.titleOfSelectedItem()
+        var.value = sel
+        fn = var.dispatchfunction
+        self.document.fastRun_newSeed_args_(fn, True, [sel,])
+        #self.document.runFunction_(var.name)
+
     def buildInterface_(self, variables):
         self.vars = variables
         self.clearInterface()
@@ -87,6 +96,9 @@ class DashboardController(NSObject):
                 self.addSwitch_y_c_(v, y, cnt)
             elif v.type == graphics.BUTTON:
                 self.addButton_y_c_(v, y, cnt)
+            elif v.type == graphics.MENU:
+                self.addLabel_y_c_(v, y, cnt)
+                self.addMenu_y_c_(v, y, cnt)
             y -= 21
             cnt += 1
         self.panel.setFrame_display_animate_( ((px,py),(pw,ph)), True, True )
@@ -157,3 +169,22 @@ class DashboardController(NSObject):
         control.setTag_(cnt)
         control.setAction_(objc.selector(self.buttonClicked_, signature="v@:@@"))
         self.panel.contentView().addSubview_(control)
+    def addMenu_y_c_(self, v, y, cnt):
+        control = NSPopUpButton.alloc().init()
+        control.setFrame_( ((108, y-2),(172,16)) )
+        control.setPullsDown_( False )
+        control.removeAllItems()
+        for title in v.menuitems:
+            control.addItemWithTitle_( title )
+        control.setTitle_(v.value)
+        control.synchronizeTitleAndSelectedItem()
+        control.setBezelStyle_(1)
+        control.setFont_(SMALL_FONT)
+        control.cell().setControlSize_(NSMiniControlSize)
+        control.cell().setControlTint_(NSGraphiteControlTint)
+        control.setTarget_(self)
+        control.setTag_(cnt)
+        control.setAction_(objc.selector(self.menuSelected_, signature="v@:@@"))
+        self.panel.contentView().addSubview_(control)
+
+
