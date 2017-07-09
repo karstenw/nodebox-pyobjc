@@ -75,6 +75,8 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 Latest changes
 --------------
 
+2017-07-09 Version 1.9.22 New Variable type MENU. See example file. Included scipy and matplotlib in imports.
+
 2017-06-18 Version 1.9.21 Added shoebot files to document types ('.bot'), color definitions can be hex strings. 
 
 2017-06-12 Version 1.9.20 Added License from origin, isqrt,
