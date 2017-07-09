@@ -41,10 +41,9 @@ import nodebox.gui
 import nodebox.gui.mac
 
 
-# these don't build yet
-#import scipy
-#import matplotlib
-#import twyg
+import scipy
+import matplotlib
+import twyg
 
 
 #import PyObjCTools.Debugging
