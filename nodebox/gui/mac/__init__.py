@@ -284,6 +284,9 @@ class NodeBoxDocument(NSDocument):
         self.speed = self.canvas.speed = None
 
     def fastRun_newSeed_(self, fn, newSeed = False):
+        """This is the old signature. Dispatching to the new with args"""
+        return self.fastRun_newSeed_args_( fn, newSeed, [])
+    def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
         # Check if there is code to run
         if self._code is None:
             return False
@@ -332,7 +335,7 @@ class NodeBoxDocument(NSDocument):
         self.namespace['FRAME'] = self._frame
 
         # Run the script
-        success, output = self.boxedRun_args_(fn, [])
+        success, output = self.boxedRun_args_(fn, args)
         self.flushOutput_(output)
         if not success:
             return False
