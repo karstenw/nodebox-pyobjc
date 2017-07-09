@@ -56,8 +56,8 @@ class DashboardController(NSObject):
         self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
         #self.document.runFunction_(var.name)
 
-    def buildInterface_(self, vars):
-        self.vars = vars
+    def buildInterface_(self, variables):
+        self.vars = variables
         self.clearInterface()
         if len(self.vars) > 0:
             self.panel.orderFront_(None)
