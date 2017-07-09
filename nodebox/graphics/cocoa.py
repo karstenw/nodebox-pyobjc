@@ -1405,9 +1405,9 @@ class Text(Grob, TransformMixin, ColorMixin):
     path = property(_get_path)
 
 class Variable(object):
-    def __init__(self, name, type, default=None, min=0, max=100, value=None):
+    def __init__(self, name, typ, default=None, min=0, max=100, value=None):
         self.name = name
-        self.type = type or NUMBER
+        self.type = typ or NUMBER
         if self.type == NUMBER:
             if default is None:
                 self.default = 50
@@ -1461,7 +1461,7 @@ class Variable(object):
         return False
 
     def __repr__(self):
-        s = "Variable(name=%s, type=%s, default=%s, min=%s, max=%s, value=%s)"
+        s = "Variable(name=%s, typ=%s, default=%s, min=%s, max=%s, value=%s)"
         return s % (self.name, self.type, self.default, self.min, self.max, self.value)
 
 class _PDFRenderView(NSView):
