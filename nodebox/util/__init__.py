@@ -198,6 +198,9 @@ def fontnames():
     l = fm.availableFonts()
     result = []
     for i in l:
+        # filter out the weird fontnames
+        if i.startswith(u'.'):
+            continue
         result.append( makeunicode(i) )
     return result
 
