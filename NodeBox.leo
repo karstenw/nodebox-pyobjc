@@ -20,7 +20,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -751,12 +751,6 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170709201446.1" a="E"><vh>Recovered Nodes</vh>
-<v t="karstenw.20170709201446.2"><vh>Recovered node "Declarations" from dashboard.py</vh>
-<v t="karstenw.20170709201446.3"><vh>old:Declarations</vh></v>
-<v t="karstenw.20170709201446.4"><vh>new:Declarations</vh></v>
-</v>
-</v>
 </vnodes>
 <tnodes>
 <t tx="karstenw.20170704103618.1"></t>
@@ -809,7 +803,9 @@ import nodebox.gui.mac
 
 import scipy
 import matplotlib
-import twyg
+import cairo
+
+# import twyg
 
 
 </t>
@@ -1054,7 +1050,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.22'
+<t tx="karstenw.20170704104119.1">__version__='1.9.23'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -8575,99 +8571,6 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
 
     return True
     
-</t>
-<t tx="karstenw.20170709201446.1"></t>
-<t tx="karstenw.20170709201446.2">(uncached) karstenw.20170704105051.1
-Diff...
-+ import sys
-+ import os
-+ import pdb
-  
-  import AppKit
-  
-  NSObject = AppKit.NSObject
-  NSFont = AppKit.NSFont
-  NSMiniControlSize = AppKit.NSMiniControlSize
-  NSOnState = AppKit.NSOnState
-  NSOffState = AppKit.NSOffState
-  NSTextField = AppKit.NSTextField
-  NSRightTextAlignment = AppKit.NSRightTextAlignment
-  NSSlider = AppKit.NSSlider
-  NSMiniControlSize = AppKit.NSMiniControlSize
-  NSGraphiteControlTint = AppKit.NSGraphiteControlTint
-  NSButton = AppKit.NSButton
-  NSSwitchButton = AppKit.NSSwitchButton
-  NSSmallControlSize = AppKit.NSSmallControlSize
-  NSPopUpButton = AppKit.NSPopUpButton
-  
-  
-  import objc
-  
-  from nodebox import graphics
-  
-  SMALL_FONT = NSFont.systemFontOfSize_(NSFont.smallSystemFontSize())
-  MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMiniControlSize))
-  
-  # class defined in NodeBoxDocument.xib
-</t>
-<t tx="karstenw.20170709201446.3">import sys
-import os
-import pdb
-
-import AppKit
-
-NSObject = AppKit.NSObject
-NSFont = AppKit.NSFont
-NSMiniControlSize = AppKit.NSMiniControlSize
-NSOnState = AppKit.NSOnState
-NSOffState = AppKit.NSOffState
-NSTextField = AppKit.NSTextField
-NSRightTextAlignment = AppKit.NSRightTextAlignment
-NSSlider = AppKit.NSSlider
-NSMiniControlSize = AppKit.NSMiniControlSize
-NSGraphiteControlTint = AppKit.NSGraphiteControlTint
-NSButton = AppKit.NSButton
-NSSwitchButton = AppKit.NSSwitchButton
-NSSmallControlSize = AppKit.NSSmallControlSize
-NSPopUpButton = AppKit.NSPopUpButton
-
-
-import objc
-
-from nodebox import graphics
-
-SMALL_FONT = NSFont.systemFontOfSize_(NSFont.smallSystemFontSize())
-MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMiniControlSize))
-
-# class defined in NodeBoxDocument.xib
-</t>
-<t tx="karstenw.20170709201446.4">
-import AppKit
-
-NSObject = AppKit.NSObject
-NSFont = AppKit.NSFont
-NSMiniControlSize = AppKit.NSMiniControlSize
-NSOnState = AppKit.NSOnState
-NSOffState = AppKit.NSOffState
-NSTextField = AppKit.NSTextField
-NSRightTextAlignment = AppKit.NSRightTextAlignment
-NSSlider = AppKit.NSSlider
-NSMiniControlSize = AppKit.NSMiniControlSize
-NSGraphiteControlTint = AppKit.NSGraphiteControlTint
-NSButton = AppKit.NSButton
-NSSwitchButton = AppKit.NSSwitchButton
-NSSmallControlSize = AppKit.NSSmallControlSize
-NSPopUpButton = AppKit.NSPopUpButton
-
-
-import objc
-
-from nodebox import graphics
-
-SMALL_FONT = NSFont.systemFontOfSize_(NSFont.smallSystemFontSize())
-MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMiniControlSize))
-
-# class defined in NodeBoxDocument.xib
 </t>
 </tnodes>
 </leo_file>
