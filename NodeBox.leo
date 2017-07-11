@@ -751,6 +751,12 @@
 </v>
 </v>
 </v>
+<v t="karstenw.20170709201446.1" a="E"><vh>Recovered Nodes</vh>
+<v t="karstenw.20170709201446.2"><vh>Recovered node "Declarations" from dashboard.py</vh>
+<v t="karstenw.20170709201446.3"><vh>old:Declarations</vh></v>
+<v t="karstenw.20170709201446.4"><vh>new:Declarations</vh></v>
+</v>
+</v>
 </vnodes>
 <tnodes>
 <t tx="karstenw.20170704103618.1"></t>
@@ -4369,7 +4375,6 @@ h = hue = property(_get_hue, _set_hue, doc="the hue of the color")
 </t>
 <t tx="karstenw.20170704104918.1">@language python
 @tabwidth -4
-
 @others
 </t>
 <t tx="karstenw.20170704104926.1">@language python
@@ -5700,10 +5705,7 @@ class AskStringWindowController(AppKit.NSWindowController):
 <t tx="karstenw.20170704105043.9">def AskString(question, resultCallback, default="", parentWindow=None):
     AskStringWindowController(question, resultCallback, default, parentWindow)
 </t>
-<t tx="karstenw.20170704105051.1">import sys
-import os
-import pdb
-
+<t tx="karstenw.20170704105051.1">
 import AppKit
 
 NSObject = AppKit.NSObject
@@ -8573,6 +8575,99 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
 
     return True
     
+</t>
+<t tx="karstenw.20170709201446.1"></t>
+<t tx="karstenw.20170709201446.2">(uncached) karstenw.20170704105051.1
+Diff...
++ import sys
++ import os
++ import pdb
+  
+  import AppKit
+  
+  NSObject = AppKit.NSObject
+  NSFont = AppKit.NSFont
+  NSMiniControlSize = AppKit.NSMiniControlSize
+  NSOnState = AppKit.NSOnState
+  NSOffState = AppKit.NSOffState
+  NSTextField = AppKit.NSTextField
+  NSRightTextAlignment = AppKit.NSRightTextAlignment
+  NSSlider = AppKit.NSSlider
+  NSMiniControlSize = AppKit.NSMiniControlSize
+  NSGraphiteControlTint = AppKit.NSGraphiteControlTint
+  NSButton = AppKit.NSButton
+  NSSwitchButton = AppKit.NSSwitchButton
+  NSSmallControlSize = AppKit.NSSmallControlSize
+  NSPopUpButton = AppKit.NSPopUpButton
+  
+  
+  import objc
+  
+  from nodebox import graphics
+  
+  SMALL_FONT = NSFont.systemFontOfSize_(NSFont.smallSystemFontSize())
+  MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMiniControlSize))
+  
+  # class defined in NodeBoxDocument.xib
+</t>
+<t tx="karstenw.20170709201446.3">import sys
+import os
+import pdb
+
+import AppKit
+
+NSObject = AppKit.NSObject
+NSFont = AppKit.NSFont
+NSMiniControlSize = AppKit.NSMiniControlSize
+NSOnState = AppKit.NSOnState
+NSOffState = AppKit.NSOffState
+NSTextField = AppKit.NSTextField
+NSRightTextAlignment = AppKit.NSRightTextAlignment
+NSSlider = AppKit.NSSlider
+NSMiniControlSize = AppKit.NSMiniControlSize
+NSGraphiteControlTint = AppKit.NSGraphiteControlTint
+NSButton = AppKit.NSButton
+NSSwitchButton = AppKit.NSSwitchButton
+NSSmallControlSize = AppKit.NSSmallControlSize
+NSPopUpButton = AppKit.NSPopUpButton
+
+
+import objc
+
+from nodebox import graphics
+
+SMALL_FONT = NSFont.systemFontOfSize_(NSFont.smallSystemFontSize())
+MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMiniControlSize))
+
+# class defined in NodeBoxDocument.xib
+</t>
+<t tx="karstenw.20170709201446.4">
+import AppKit
+
+NSObject = AppKit.NSObject
+NSFont = AppKit.NSFont
+NSMiniControlSize = AppKit.NSMiniControlSize
+NSOnState = AppKit.NSOnState
+NSOffState = AppKit.NSOffState
+NSTextField = AppKit.NSTextField
+NSRightTextAlignment = AppKit.NSRightTextAlignment
+NSSlider = AppKit.NSSlider
+NSMiniControlSize = AppKit.NSMiniControlSize
+NSGraphiteControlTint = AppKit.NSGraphiteControlTint
+NSButton = AppKit.NSButton
+NSSwitchButton = AppKit.NSSwitchButton
+NSSmallControlSize = AppKit.NSSmallControlSize
+NSPopUpButton = AppKit.NSPopUpButton
+
+
+import objc
+
+from nodebox import graphics
+
+SMALL_FONT = NSFont.systemFontOfSize_(NSFont.smallSystemFontSize())
+MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMiniControlSize))
+
+# class defined in NodeBoxDocument.xib
 </t>
 </tnodes>
 </leo_file>

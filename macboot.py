@@ -43,7 +43,9 @@ import nodebox.gui.mac
 
 import scipy
 import matplotlib
-import twyg
+import cairo
+
+# import twyg
 
 
 #import PyObjCTools.Debugging
