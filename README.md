@@ -48,7 +48,8 @@ Differences from the official version:
 	-  filters file extensions for ".pdf .eps .tif .tiff .gif .jpg .jpeg .png"
 
 1.  New function fontnames()
-	-  Returns a unfiltered list of names from NSFontManager.sharedFontManager().availableFonts()
+	-  Returns a list of names from NSFontManager.sharedFontManager().availableFonts().
+		Fontnames starting with '.' are ignored.
 
 1.  New function fontfamilies(flat=False)
 	-  Return a dict with [FontFamily][STYLE]-> FontRecord
@@ -63,7 +64,7 @@ Differences from the official version:
 			nonstandardcharacterset", narrow, expanded, condensed, smallcaps,
 			poster, compressed, fixedpitch, unitalic)
 
-1.  New graphics primitive `arc(self, x, y, r, startAngle, endAngle)`
+1.  New graphics primitive `arc(x, y, r, startAngle, endAngle)`
 	-  Draws an arc between startAngle and endAngle with center at (x,y) and radius=r.
 
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
@@ -74,6 +75,8 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 
 Latest changes
 --------------
+
+2017-07-10 Version 1.9.23 Included [Twyg](http://www.johnnovak.net/twyg/) into the Library. Example files in examples/New Functions/twyg.
 
 2017-07-09 Version 1.9.22 New Variable type MENU. See example file. Included scipy and matplotlib in imports.
 
