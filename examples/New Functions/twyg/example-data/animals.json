@@ -1,0 +1,56 @@
+{
+    "Animals": [
+        {"Invertebrates": [
+            "Arthropods",
+            "Cnidarians",
+            "Echinoderms",
+            "Molluscs",
+            "Segmented Worms",
+            "Sponges"
+        ]},
+        {"Fish": [
+            "Bony Fish",
+            "Cartilaginous Fish"
+        ]},
+        {"Amphibians": [
+            "Newts and Salamanders",
+            "Frogs and Toads",
+            "Caecilians"
+        ]},
+        {"Reptiles": [
+            "Crocodilians",
+            "Squamates",
+            "Tuataras",
+            "Turtles"
+        ]},
+        {"Mammals": [
+            "Bats",
+            "Carnivores",
+            "Cetaceans",
+            "Elephants",
+            "Hares, Rabbits and Pikas",
+            {"Hoofed Mammals": [
+                "Even-Toed",
+                "Odd-Toed"
+            ]},
+            "Marsupials",
+            "Primates",
+            "Rodents",
+            "Seals and Sea Lions"
+        ]},
+        {"Birds": [
+            "Birds of Prey",
+            "Flamingos",
+            "Gamebirds",
+            "Herons, Storks and Relatives",
+            "Hummingbirds and Swifts",
+            "Kiwis",
+            "Loons",
+            "Owls",
+            "Parrots",
+            "Pelicans and Relatives",
+            "Penguins",
+            "Woodpeckers and Relatives"
+        ]}
+    ]
+}
