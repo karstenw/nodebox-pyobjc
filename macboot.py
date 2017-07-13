@@ -41,9 +41,9 @@ import nodebox.gui
 import nodebox.gui.mac
 
 
-import scipy
-import matplotlib
-import cairo
+# import scipy
+# import matplotlib
+# import cairo
 
 # import twyg
 

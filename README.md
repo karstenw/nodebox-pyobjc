@@ -6,11 +6,16 @@ This is a personal fork of NodeBox 1.
 
 Download the compiled app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV).
 
-
 As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue if you need one.
 
+Attention!
+==========
 
-Differences from the official version:
+###The download includes the NodeBox-Library. When first starting NodeBox, go to the preferences and set the Library folder to the included folder.
+
+###Due to recent new imports the compatibility with 10.6 is gone. I can't test 10.7-10.9. If you need an app for 10.6, write an issue.
+
+####Differences from the official version:
 
 1. Additional Commands (they were already in the original source but not active)
 	1.  angle(x0, y0, x1, y1)
@@ -75,6 +80,8 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 
 Latest changes
 --------------
+
+2017-07-13 Version 1.9.24 Bugfix in imports.
 
 2017-07-10 Version 1.9.23 Included [Twyg](http://www.johnnovak.net/twyg/) into the Library. Example files in examples/New Functions/twyg.
 
