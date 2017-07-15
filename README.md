@@ -1,3 +1,5 @@
+<!-- $theme: gaia -->
+
 ![](art/nodeboxlogo_big.png?raw=true)
 
 
@@ -18,11 +20,11 @@ Attention!
 ####Differences from the official version:
 
 1. Additional Commands (they were already in the original source but not active)
-	1.  angle(x0, y0, x1, y1)
-	1.  distance(x0, y0, x1, y1)
-	1.  coordinates(x0, y0, distance, angle)
-	1.  reflect(x0, y0, x1, y1, d=1.0, a=180)
-	1.  isqrt(n) = 1 / sqrt(n)
+	1.  `angle(x0, y0, x1, y1)`
+	1.  `distance(x0, y0, x1, y1)`
+	1.  `coordinates(x0, y0, distance, angle)`
+	1.  `reflect(x0, y0, x1, y1, d=1.0, a=180)`
+	1.  `isqrt(n)` = 1 / sqrt(n)
 
 1. Different behaviour:
 	1.  `size(0,0)`  sets size to size of main screen
@@ -37,13 +39,13 @@ Attention!
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
-1.  Builds without Xcode (python setup.py py2app)
+1.  Builds without Xcode ( `python setup.py py2app` )
 
 1.  Uses a different and bigger icon (512px)
 
 1.  Has some additional examples. See folders `Escher`, `geometry/Convex Hull` and `New Functions` .
 
-1.  New function filelist( folder or list of folders, pathonly=True )
+1.  New function `filelist( folder or list of folders, pathonly=True )`
 	- Returns a path generator
 	- If pathonly is False, it returns a (path, size, lastmodifieddatetime, oct(mode)) generator
 	- The Following filenames are ignored: any name starting with '.', any name containing any of: '\r\n\t'.
@@ -52,12 +54,12 @@ Attention!
 	-  Same parameters and restrictions as filelist plus:
 	-  filters file extensions for ".pdf .eps .tif .tiff .gif .jpg .jpeg .png"
 
-1.  New function fontnames()
+1.  New function `fontnames()`
 	-  Returns a list of names from NSFontManager.sharedFontManager().availableFonts().
 		Fontnames starting with '.' are ignored.
 
-1.  New function fontfamilies(flat=False)
-	-  Return a dict with [FontFamily][STYLE]-> FontRecord
+1.  New function `fontfamilies(flat=False)`
+ 	-  Return a dict with [FontFamily][STYLE]-> FontRecord
 	-  if parameter flat=True returns a list of FontRecord
 	-  A FontRecord has the following attributes:
 		-  psname - the postscript name, which can be used for font()
@@ -80,6 +82,7 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 
 Latest changes
 --------------
+2017-07-15 Version 1.9.25 Lots of example updates. No new functionality.
 
 2017-07-13 Version 1.9.24 Bugfix in imports.
 
