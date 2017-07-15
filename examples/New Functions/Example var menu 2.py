@@ -17,4 +17,4 @@ var('Fonts', MENU, default=menuhandler, value=fonts)
 
 var('Ein Button', BUTTON, value=buttonhandler )
 
-var('Á lâ Cartée', MENU, default=menuhandler, value=['Eins', 'Zwei', 'Drei', "Öhn", "Döö", "Droah"])
+var('À la carte', MENU, default=menuhandler, value=['Un', 'Deux', 'Trois', 'Eins', 'Zwei', 'Drei'])
