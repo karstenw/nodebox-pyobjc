@@ -40,11 +40,13 @@ import nodebox.graphics
 import nodebox.gui
 import nodebox.gui.mac
 
-
+# Do not import these here; they are in the app and are imported by scripts
+# If you import here, 10.6 breaks
 # import scipy
 # import matplotlib
 # import cairo
 
+# Twyg is in Library
 # import twyg
 
 
