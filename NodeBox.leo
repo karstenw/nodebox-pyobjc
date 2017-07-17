@@ -21,7 +21,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
@@ -5738,7 +5738,7 @@ class AskStringWindowController(AppKit.NSWindowController):
 <t tx="karstenw.20170704105043.9">def AskString(question, resultCallback, default="", parentWindow=None):
     AskStringWindowController(question, resultCallback, default, parentWindow)
 </t>
-<t tx="karstenw.20170704105051.1">
+<t tx="karstenw.20170704105051.1">import pdb
 import AppKit
 
 NSObject = AppKit.NSObject
@@ -5842,7 +5842,7 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
     var.value = sender.floatValue()
     if var.handler is not None:
         args = [var.value,var.name]
-        if len(var.handler.func_code.co_varnames) &lt; 2:
+        if var.handler.func_code.co_argcount &lt; 2:
             args = [var.value]
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
@@ -5855,7 +5855,7 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
     var.value = sender.stringValue()
     if var.handler is not None:
         args = [var.value,var.name]
-        if len(var.handler.func_code.co_varnames) &lt; 2:
+        if var.handler.func_code.co_argcount &lt; 2:
             args = [var.value]
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
@@ -5870,7 +5870,7 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
         var.value = False
     if var.handler is not None:
         args = [var.value,var.name]
-        if len(var.handler.func_code.co_varnames) &lt; 2:
+        if var.handler.func_code.co_argcount &lt; 2:
             args = [var.value]
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
@@ -5884,7 +5884,7 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
     #self.document.runFunction_(var.name)
     if var.handler is not None:
         args = ["",var.name]
-        if len(var.handler.func_code.co_varnames) &lt; 2:
+        if var.handler.func_code.co_argcount &lt; 2:
             args = [var.value]
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
@@ -8554,9 +8554,10 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     var.value = sel
     fn = var.handler
     if var.handler:
+        pdb.set_trace()
         args = [sel,var.name]
-        if len(var.handler.func_code.co_varnames) &lt; 2:
-            args = [var.value]
+        if var.handler.func_code.co_argcount &lt; 2:
+            args = [sel]
         self.document.fastRun_newSeed_args_(fn, False, args)
     #self.document.runFunction_(var.name)
 

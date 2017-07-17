@@ -1,4 +1,4 @@
-
+import pdb
 import AppKit
 
 NSObject = AppKit.NSObject
@@ -39,7 +39,7 @@ class DashboardController(NSObject):
         var.value = sender.floatValue()
         if var.handler is not None:
             args = [var.value,var.name]
-            if len(var.handler.func_code.co_varnames) < 2:
+            if var.handler.func_code.co_argcount < 2:
                 args = [var.value]
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
@@ -51,7 +51,7 @@ class DashboardController(NSObject):
         var.value = sender.stringValue()
         if var.handler is not None:
             args = [var.value,var.name]
-            if len(var.handler.func_code.co_varnames) < 2:
+            if var.handler.func_code.co_argcount < 2:
                 args = [var.value]
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
@@ -65,7 +65,7 @@ class DashboardController(NSObject):
             var.value = False
         if var.handler is not None:
             args = [var.value,var.name]
-            if len(var.handler.func_code.co_varnames) < 2:
+            if var.handler.func_code.co_argcount < 2:
                 args = [var.value]
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
@@ -78,7 +78,7 @@ class DashboardController(NSObject):
         #self.document.runFunction_(var.name)
         if var.handler is not None:
             args = ["",var.name]
-            if len(var.handler.func_code.co_varnames) < 2:
+            if var.handler.func_code.co_argcount < 2:
                 args = [var.value]
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
@@ -91,9 +91,10 @@ class DashboardController(NSObject):
         var.value = sel
         fn = var.handler
         if var.handler:
+            pdb.set_trace()
             args = [sel,var.name]
-            if len(var.handler.func_code.co_varnames) < 2:
-                args = [var.value]
+            if var.handler.func_code.co_argcount < 2:
+                args = [sel]
             self.document.fastRun_newSeed_args_(fn, False, args)
         #self.document.runFunction_(var.name)
 
