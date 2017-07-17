@@ -286,6 +286,8 @@ class NodeBoxDocument(NSDocument):
     def fastRun_newSeed_(self, fn, newSeed = False):
         """This is the old signature. Dispatching to the new with args"""
         return self.fastRun_newSeed_args_( fn, newSeed, [])
+
+
     def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
         # Check if there is code to run
         if self._code is None:

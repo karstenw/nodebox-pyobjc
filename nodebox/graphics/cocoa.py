@@ -1406,42 +1406,68 @@ class Text(Grob, TransformMixin, ColorMixin):
     path = property(_get_path)
 
 class Variable(object):
-    def __init__(self, name, typ, default=None, minV=0, maxV=100, value=None):
+    def __init__(self, name, typ,
+                       default=None, minV=0, maxV=100, value=None,
+                       handler=None, menuitems=None):
         self.name = makeunicode(name)
         self.type = typ or NUMBER
         self.default = default
         self.min = minV
         self.max = maxV
+
+        self.handler = None
+        if handler is not None:
+            self.handler = handler
+
+        self.menuitems = None
+        if menuitems is not None:
+            if type(menuitems) in (list, tuple):
+                self.menuitems = [makeunicode(i) for i in menuitems]
+        
         if self.type == NUMBER:
             if default is None:
                 self.default = 50
-            else:
-                self.default = default
             self.min = minV
             self.max = maxV
+
         elif self.type == TEXT:
             if default is None:
-                self.default = "hello"
+                self.default = makeunicode("hello")
             else:
                 self.default = makeunicode(default)
+
         elif self.type == BOOLEAN:
             if default is None:
                 self.default = True
             else:
-                self.default = default
+                self.default = bool(default)
+
         elif self.type == BUTTON:
             self.default = makeunicode(self.name)
+
         elif self.type == MENU:
             # value is list of menuitems
             # default is name of function to call with selected menu item name
-            if default is not None:
-                self.dispatchfunction = default
-                self.default = None
-            if value is not None:
+
+            # old interface
+            if type(value) in (list, tuple): # and type(default) in (function,):
+                # print "type(default)", type(default)
+                if default is not None:
+                    self.handler = default
                 self.menuitems = [makeunicode(i) for i in value]
-                # set value to first entry
-                value = self.menuitems[0]
+                default = None
+                value = ""
+                
+
+            if default is None:
+                if self.menuitems is not None:
+                    if len(self.menuitems) > 0:
+                        default = self.menuitems[0]
+                else:
+                    default = u""
+            self.default = default
         self.value = value or self.default
+
 
     def sanitize(self, val):
         """Given a Variable and a value, cleans it out"""
@@ -1475,8 +1501,10 @@ class Variable(object):
         return False
 
     def __repr__(self):
-        s = "Variable(name=%s, typ=%s, default=%s, min=%s, max=%s, value=%s)"
-        return s % (self.name, self.type, self.default, self.min, self.max, self.value)
+        s = ("Variable(name=%s, typ=%s, default=%s, min=%s, max=%s, value=%s, "
+             "handler=%s, menuitems=%s)")
+        return s % (self.name, self.type, self.default, self.min, self.max, self.value,
+                    repr(self.handler), repr(self.menuitems))
 
 class _PDFRenderView(NSView):
     

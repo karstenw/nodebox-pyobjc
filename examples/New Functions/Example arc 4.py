@@ -54,7 +54,14 @@ phiincrement = 1 / (2**(ringnumber-1) * 0.1)
 # use 0.9..0.1 for color
 lightgap = 0.8 / (ringnumber-1)
 
-var("alpha", NUMBER, 0.5, 0.01, 1.0)
+
+a = 0.5
+def handleAlpha(i):
+    global a
+    a = i
+
+var("alpha", NUMBER, 0.5, 0.01, 1.0, handler=handleAlpha)
+
 
 
 rings = [
@@ -72,6 +79,6 @@ def draw():
         o = phi * spd
         if i % 2 == 0:
             o = -o
-        drawArcedCircle(x,y,r,segments, c, segwidth, alpha, o)
+        drawArcedCircle(x,y,r,segments, c, segwidth, a, o)
     phi += phiincrement
 

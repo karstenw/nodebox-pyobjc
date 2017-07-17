@@ -20,7 +20,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -44,9 +44,9 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -58,7 +58,7 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
@@ -371,7 +371,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
 <v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
@@ -800,11 +800,13 @@ import nodebox.graphics
 import nodebox.gui
 import nodebox.gui.mac
 
+# Do not import these here; they are in the app and are imported by scripts
+# If you import here, 10.6 breaks
+# import scipy
+# import matplotlib
+# import cairo
 
-import scipy
-import matplotlib
-import cairo
-
+# Twyg is in Library
 # import twyg
 
 
@@ -1050,7 +1052,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.23'
+<t tx="karstenw.20170704104119.1">__version__='1.9.25'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -1372,7 +1374,8 @@ except ImportError:
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104725.1">import cocoa
+<t tx="karstenw.20170704104725.1"># import pdb
+import cocoa
 graphics_impl = cocoa
 
 import AppKit
@@ -1411,9 +1414,13 @@ __all__.extend(['Context'])
 </t>
 <t tx="karstenw.20170704104725.12">### Variables ###
 
-def var(self, name, type, default=None, min=0, max=100, value=None):
-    v = Variable(name, type, default, min, max, value)
+def var(self, name, type,
+        default=None, min=0, max=100, value=None,
+        handler=None, menuitems=None):
+    # pdb.set_trace()
+    v = Variable(name, type, default, min, max, value, handler, menuitems)
     v = self.addvar(v)
+
 
 </t>
 <t tx="karstenw.20170704104725.13">def addvar(self, v):
@@ -3417,42 +3424,68 @@ path = property(_get_path)
 <t tx="karstenw.20170704104751.163">class Variable(object):
     @others
 </t>
-<t tx="karstenw.20170704104751.164">def __init__(self, name, typ, default=None, minV=0, maxV=100, value=None):
+<t tx="karstenw.20170704104751.164">def __init__(self, name, typ,
+                   default=None, minV=0, maxV=100, value=None,
+                   handler=None, menuitems=None):
     self.name = makeunicode(name)
     self.type = typ or NUMBER
     self.default = default
     self.min = minV
     self.max = maxV
+
+    self.handler = None
+    if handler is not None:
+        self.handler = handler
+
+    self.menuitems = None
+    if menuitems is not None:
+        if type(menuitems) in (list, tuple):
+            self.menuitems = [makeunicode(i) for i in menuitems]
+    
     if self.type == NUMBER:
         if default is None:
             self.default = 50
-        else:
-            self.default = default
         self.min = minV
         self.max = maxV
+
     elif self.type == TEXT:
         if default is None:
-            self.default = "hello"
+            self.default = makeunicode("hello")
         else:
             self.default = makeunicode(default)
+
     elif self.type == BOOLEAN:
         if default is None:
             self.default = True
         else:
-            self.default = default
+            self.default = bool(default)
+
     elif self.type == BUTTON:
         self.default = makeunicode(self.name)
+
     elif self.type == MENU:
         # value is list of menuitems
         # default is name of function to call with selected menu item name
-        if default is not None:
-            self.dispatchfunction = default
-            self.default = None
-        if value is not None:
+
+        # old interface
+        if type(value) in (list, tuple): # and type(default) in (function,):
+            # print "type(default)", type(default)
+            if default is not None:
+                self.handler = default
             self.menuitems = [makeunicode(i) for i in value]
-            # set value to first entry
-            value = self.menuitems[0]
+            default = None
+            value = ""
+            
+
+        if default is None:
+            if self.menuitems is not None:
+                if len(self.menuitems) &gt; 0:
+                    default = self.menuitems[0]
+            else:
+                default = u""
+        self.default = default
     self.value = value or self.default
+
 
 </t>
 <t tx="karstenw.20170704104751.165">def sanitize(self, val):
@@ -3489,8 +3522,10 @@ path = property(_get_path)
 
 </t>
 <t tx="karstenw.20170704104751.167">def __repr__(self):
-    s = "Variable(name=%s, typ=%s, default=%s, min=%s, max=%s, value=%s)"
-    return s % (self.name, self.type, self.default, self.min, self.max, self.value)
+    s = ("Variable(name=%s, typ=%s, default=%s, min=%s, max=%s, value=%s, "
+         "handler=%s, menuitems=%s)")
+    return s % (self.name, self.type, self.default, self.min, self.max, self.value,
+                repr(self.handler), repr(self.menuitems))
 
 </t>
 <t tx="karstenw.20170704104751.168">class _PDFRenderView(NSView):
@@ -4658,6 +4693,8 @@ def showLibrary_(self, sender):
 <t tx="karstenw.20170704105032.19">def fastRun_newSeed_(self, fn, newSeed = False):
     """This is the old signature. Dispatching to the new with args"""
     return self.fastRun_newSeed_args_( fn, newSeed, [])
+
+
 </t>
 <t tx="karstenw.20170704105032.2">class ExportCommand(NSScriptCommand):
     pass    
@@ -5803,13 +5840,26 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
 <t tx="karstenw.20170704105051.4">def numberChanged_(self, sender):
     var = self.document.vars[sender.tag()]
     var.value = sender.floatValue()
-    self.document.runScript(compile=False, newSeed=False)
+    if var.handler is not None:
+        args = [var.value,var.name]
+        if len(var.handler.func_code.co_varnames) &lt; 2:
+            args = [var.value]
+        self.document.fastRun_newSeed_args_(var.handler, False, args)
+    else:
+        self.document.runScript(compile=False, newSeed=False)
+
 
 </t>
 <t tx="karstenw.20170704105051.5">def textChanged_(self, sender):
     var = self.document.vars[sender.tag()]
     var.value = sender.stringValue()
-    self.document.runScript(compile=False, newSeed=False)
+    if var.handler is not None:
+        args = [var.value,var.name]
+        if len(var.handler.func_code.co_varnames) &lt; 2:
+            args = [var.value]
+        self.document.fastRun_newSeed_args_(var.handler, False, args)
+    else:
+        self.document.runScript(compile=False, newSeed=False)
 
 </t>
 <t tx="karstenw.20170704105051.6">def booleanChanged_(self, sender):
@@ -5818,13 +5868,28 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
         var.value = True
     else:
         var.value = False
-    self.document.runScript(compile=False, newSeed=False)
+    if var.handler is not None:
+        args = [var.value,var.name]
+        if len(var.handler.func_code.co_varnames) &lt; 2:
+            args = [var.value]
+        self.document.fastRun_newSeed_args_(var.handler, False, args)
+    else:
+        self.document.runScript(compile=False, newSeed=False)
+
     
 </t>
 <t tx="karstenw.20170704105051.7">def buttonClicked_(self, sender):
     var = self.document.vars[sender.tag()]
-    self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
+    # self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
     #self.document.runFunction_(var.name)
+    if var.handler is not None:
+        args = ["",var.name]
+        if len(var.handler.func_code.co_varnames) &lt; 2:
+            args = [var.value]
+        self.document.fastRun_newSeed_args_(var.handler, False, args)
+    else:
+        self.document.runScript(compile=False, newSeed=False)
+
 
 </t>
 <t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
@@ -8487,9 +8552,14 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     var = self.document.vars[sender.tag()]
     sel = sender.titleOfSelectedItem()
     var.value = sel
-    fn = var.dispatchfunction
-    self.document.fastRun_newSeed_args_(fn, True, [sel,])
+    fn = var.handler
+    if var.handler:
+        args = [sel,var.name]
+        if len(var.handler.func_code.co_varnames) &lt; 2:
+            args = [var.value]
+        self.document.fastRun_newSeed_args_(fn, False, args)
     #self.document.runFunction_(var.name)
+
 
 </t>
 <t tx="karstenw.20170709145531.1">def addMenu_y_c_(self, v, y, cnt):
@@ -8497,8 +8567,9 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     control.setFrame_( ((108, y-2),(172,16)) )
     control.setPullsDown_( False )
     control.removeAllItems()
-    for title in v.menuitems:
-        control.addItemWithTitle_( title )
+    if v.menuitems is not None:
+        for title in v.menuitems:
+            control.addItemWithTitle_( title )
     control.setTitle_(v.value)
     control.synchronizeTitleAndSelectedItem()
     control.setBezelStyle_(1)

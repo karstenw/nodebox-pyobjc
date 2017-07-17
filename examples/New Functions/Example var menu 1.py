@@ -30,7 +30,7 @@ def selectFont( fontname ):
     global currentFont
     currentFont = fontname
 
-var("Font", MENU, default=selectFont, value=fontMenu)
+var("Font", MENU, handler=selectFont, menuitems=fontMenu)
 
 
 def setup():

@@ -1,10 +1,11 @@
-<!-- $theme: gaia -->
+<!-- $theme: default -->
 
 ![](art/nodeboxlogo_big.png?raw=true)
 
 
 This is a personal fork of NodeBox 1.
 
+The current version is 1.9.26
 
 Download the compiled app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV).
 
@@ -13,9 +14,9 @@ As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue i
 Attention!
 ==========
 
-###The download includes the NodeBox-Library. When first starting NodeBox, go to the preferences and set the Library folder to the included folder.
+### The download includes the NodeBox-Library. When first starting NodeBox, go to the preferences and set the Library folder to the included folder.
 
-###Due to recent new imports the compatibility with 10.6 is gone. I can't test 10.7-10.9. If you need an app for 10.6, write an issue.
+### Due to recent new imports the compatibility with 10.6 is gone. I can't test 10.7-10.9. If you need an app for 10.6, write an issue.
 
 ####Differences from the official version:
 
@@ -35,6 +36,17 @@ Attention!
 		-  '#00ff00' or '00ff00'for green
 		-  '#00ff001a' or '00ff001a' for green with ca. 10% alpha
 
+	1.  Variables
+		-  New var type: `MENU`
+		-  The `var` keyword has 2 new parameters: `handler=None` and `menuitems=None`
+		-  All var types now can have a handler: `NUMBER`, `TEXT`, `BUTTON`, `BOOLEAN`and `MENU`.
+		-  The difference is: When a handler is set, only that function is re-run. The whole script otherwise.
+		-  The `MENU` var needs a handler.
+		-  The handler=one-argument-function to be called. For `BUTTON`s no arguments.
+		-  menuitems = list or tuple of strings.
+		-  See example file `"examples/New Functions/Example var menu 2.py"`
+
+
 1.  Uses Python 2.7.13 and PyObjC 3.2a1
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
@@ -45,20 +57,20 @@ Attention!
 
 1.  Has some additional examples. See folders `Escher`, `geometry/Convex Hull` and `New Functions` .
 
-1.  New function `filelist( folder or list of folders, pathonly=True )`
+1.  New function `filelist( folder or list of folders, pathonly=True )` (v1.9.19)
 	- Returns a path generator
 	- If pathonly is False, it returns a (path, size, lastmodifieddatetime, oct(mode)) generator
 	- The Following filenames are ignored: any name starting with '.', any name containing any of: '\r\n\t'.
 
-1.  New function imagefiles( folder or list of folders, pathonly=True )
+1.  New function `imagefiles( folder or list of folders, pathonly=True )` (v1.9.19)
 	-  Same parameters and restrictions as filelist plus:
 	-  filters file extensions for ".pdf .eps .tif .tiff .gif .jpg .jpeg .png"
 
-1.  New function `fontnames()`
+1.  New function `fontnames()` (v1.9.20)
 	-  Returns a list of names from NSFontManager.sharedFontManager().availableFonts().
 		Fontnames starting with '.' are ignored.
 
-1.  New function `fontfamilies(flat=False)`
+1.  New function `fontfamilies(flat=False)` (v1.9.20)
  	-  Return a dict with [FontFamily][STYLE]-> FontRecord
 	-  if parameter flat=True returns a list of FontRecord
 	-  A FontRecord has the following attributes:
@@ -82,6 +94,8 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 
 Latest changes
 --------------
+2017-07-16 Version 1.9.26 Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`
+
 2017-07-15 Version 1.9.25 Lots of example updates. No new functionality.
 
 2017-07-13 Version 1.9.24 Bugfix in imports.
@@ -92,7 +106,7 @@ Latest changes
 
 2017-06-18 Version 1.9.21 Added shoebot files to document types ('.bot'), color definitions can be hex strings. 
 
-2017-06-12 Version 1.9.20 Added License from origin, isqrt,
+2017-06-12 Version 1.9.20 Added License from origin, isqrt(), fontnames() and fontfamilies()
 
 2017-05-28 Version 1.9.19. Added setup_console.py. If all needed libraries are installed, NodeBox can be installed as a standard Python lib. Scripts can be executed without the app.
 

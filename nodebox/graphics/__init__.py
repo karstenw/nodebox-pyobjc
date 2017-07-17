@@ -1,3 +1,4 @@
+# import pdb
 import cocoa
 graphics_impl = cocoa
 
@@ -125,9 +126,13 @@ class Context(object):
 
     ### Variables ###
 
-    def var(self, name, type, default=None, min=0, max=100, value=None):
-        v = Variable(name, type, default, min, max, value)
+    def var(self, name, type,
+            default=None, min=0, max=100, value=None,
+            handler=None, menuitems=None):
+        # pdb.set_trace()
+        v = Variable(name, type, default, min, max, value, handler, menuitems)
         v = self.addvar(v)
+
 
     def addvar(self, v):
         oldvar = self.findvar(v.name)

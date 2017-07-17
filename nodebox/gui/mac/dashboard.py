@@ -37,12 +37,25 @@ class DashboardController(NSObject):
     def numberChanged_(self, sender):
         var = self.document.vars[sender.tag()]
         var.value = sender.floatValue()
-        self.document.runScript(compile=False, newSeed=False)
+        if var.handler is not None:
+            args = [var.value,var.name]
+            if len(var.handler.func_code.co_varnames) < 2:
+                args = [var.value]
+            self.document.fastRun_newSeed_args_(var.handler, False, args)
+        else:
+            self.document.runScript(compile=False, newSeed=False)
+
 
     def textChanged_(self, sender):
         var = self.document.vars[sender.tag()]
         var.value = sender.stringValue()
-        self.document.runScript(compile=False, newSeed=False)
+        if var.handler is not None:
+            args = [var.value,var.name]
+            if len(var.handler.func_code.co_varnames) < 2:
+                args = [var.value]
+            self.document.fastRun_newSeed_args_(var.handler, False, args)
+        else:
+            self.document.runScript(compile=False, newSeed=False)
 
     def booleanChanged_(self, sender):
         var = self.document.vars[sender.tag()]
@@ -50,20 +63,40 @@ class DashboardController(NSObject):
             var.value = True
         else:
             var.value = False
-        self.document.runScript(compile=False, newSeed=False)
+        if var.handler is not None:
+            args = [var.value,var.name]
+            if len(var.handler.func_code.co_varnames) < 2:
+                args = [var.value]
+            self.document.fastRun_newSeed_args_(var.handler, False, args)
+        else:
+            self.document.runScript(compile=False, newSeed=False)
+
         
     def buttonClicked_(self, sender):
         var = self.document.vars[sender.tag()]
-        self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
+        # self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
         #self.document.runFunction_(var.name)
+        if var.handler is not None:
+            args = ["",var.name]
+            if len(var.handler.func_code.co_varnames) < 2:
+                args = [var.value]
+            self.document.fastRun_newSeed_args_(var.handler, False, args)
+        else:
+            self.document.runScript(compile=False, newSeed=False)
+
 
     def menuSelected_(self, sender):
         var = self.document.vars[sender.tag()]
         sel = sender.titleOfSelectedItem()
         var.value = sel
-        fn = var.dispatchfunction
-        self.document.fastRun_newSeed_args_(fn, True, [sel,])
+        fn = var.handler
+        if var.handler:
+            args = [sel,var.name]
+            if len(var.handler.func_code.co_varnames) < 2:
+                args = [var.value]
+            self.document.fastRun_newSeed_args_(fn, False, args)
         #self.document.runFunction_(var.name)
+
 
     def buildInterface_(self, variables):
         self.vars = variables
@@ -174,8 +207,9 @@ class DashboardController(NSObject):
         control.setFrame_( ((108, y-2),(172,16)) )
         control.setPullsDown_( False )
         control.removeAllItems()
-        for title in v.menuitems:
-            control.addItemWithTitle_( title )
+        if v.menuitems is not None:
+            for title in v.menuitems:
+                control.addItemWithTitle_( title )
         control.setTitle_(v.value)
         control.synchronizeTitleAndSelectedItem()
         control.setBezelStyle_(1)
