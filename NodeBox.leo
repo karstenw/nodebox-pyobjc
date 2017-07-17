@@ -1052,7 +1052,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.25'
+<t tx="karstenw.20170704104119.1">__version__='1.9.26'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
