@@ -91,7 +91,6 @@ class DashboardController(NSObject):
         var.value = sel
         fn = var.handler
         if var.handler:
-            pdb.set_trace()
             args = [sel,var.name]
             if var.handler.func_code.co_argcount < 2:
                 args = [sel]
