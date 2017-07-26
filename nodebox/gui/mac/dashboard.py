@@ -21,8 +21,12 @@ import objc
 
 from nodebox import graphics
 
-SMALL_FONT = NSFont.systemFontOfSize_(NSFont.smallSystemFontSize())
-MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMiniControlSize))
+# just to make the next lines print better
+smfontsize = NSFont.smallSystemFontSize()
+smctrlsize = NSFont.systemFontSizeForControlSize_(NSMiniControlSize)
+
+SMALL_FONT = NSFont.systemFontOfSize_(smfontsize)
+MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
 
 # class defined in NodeBoxDocument.xib
 class DashboardController(NSObject):
@@ -44,7 +48,6 @@ class DashboardController(NSObject):
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
             self.document.runScript(compile=False, newSeed=False)
-
 
     def textChanged_(self, sender):
         var = self.document.vars[sender.tag()]
@@ -71,7 +74,6 @@ class DashboardController(NSObject):
         else:
             self.document.runScript(compile=False, newSeed=False)
 
-        
     def buttonClicked_(self, sender):
         var = self.document.vars[sender.tag()]
         # self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
@@ -84,7 +86,6 @@ class DashboardController(NSObject):
         else:
             self.document.runScript(compile=False, newSeed=False)
 
-
     def menuSelected_(self, sender):
         var = self.document.vars[sender.tag()]
         sel = sender.titleOfSelectedItem()
@@ -96,7 +97,6 @@ class DashboardController(NSObject):
                 args = [sel]
             self.document.fastRun_newSeed_args_(fn, False, args)
         #self.document.runFunction_(var.name)
-
 
     def buildInterface_(self, variables):
         self.vars = variables
@@ -122,13 +122,17 @@ class DashboardController(NSObject):
             if v.type == graphics.NUMBER:
                 self.addLabel_y_c_(v, y, cnt)
                 self.addSlider_y_c_(v, y, cnt)
+
             elif v.type == graphics.TEXT:
                 self.addLabel_y_c_(v, y, cnt)
                 self.addTextField_y_c_(v, y, cnt)
+
             elif v.type == graphics.BOOLEAN:
                 self.addSwitch_y_c_(v, y, cnt)
+
             elif v.type == graphics.BUTTON:
                 self.addButton_y_c_(v, y, cnt)
+
             elif v.type == graphics.MENU:
                 self.addLabel_y_c_(v, y, cnt)
                 self.addMenu_y_c_(v, y, cnt)
@@ -202,6 +206,7 @@ class DashboardController(NSObject):
         control.setTag_(cnt)
         control.setAction_(objc.selector(self.buttonClicked_, signature="v@:@@"))
         self.panel.contentView().addSubview_(control)
+
     def addMenu_y_c_(self, v, y, cnt):
         control = NSPopUpButton.alloc().init()
         control.setFrame_( ((108, y-2),(172,16)) )
@@ -220,5 +225,4 @@ class DashboardController(NSObject):
         control.setTag_(cnt)
         control.setAction_(objc.selector(self.menuSelected_, signature="v@:@@"))
         self.panel.contentView().addSubview_(control)
-
 
