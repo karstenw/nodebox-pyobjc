@@ -589,5 +589,5 @@ class Context(object):
         return nodebox.geo.coordinates(x0, y0, distance, angle)
 
     def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
-        return nodebox.geo.reflect(x0, y0, x1, y1, d=1.0, a=180)
+        return nodebox.geo.reflect(x0, y0, x1, y1, d, a)
 
