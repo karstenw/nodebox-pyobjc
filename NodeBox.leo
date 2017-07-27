@@ -33,6 +33,9 @@
 <v t="karstenw.20170704104453.1"><vh>geo</vh>
 <v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
+<v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
+<v t="karstenw.20170726154315.1"><vh>C Functions</vh></v>
+<v t="karstenw.20170726133907.1"><vh>benchmark</vh></v>
 <v t="karstenw.20170704104618.2"><vh>reflect</vh></v>
 </v>
 <v t="karstenw.20170704104605.1"><vh>@clean nodebox/geo/pathmatics.py</vh>
@@ -421,10 +424,12 @@
 <v t="karstenw.20170704105032.45"><vh>printOperationDidRun_success_contextInfo_</vh></v>
 <v t="karstenw.20170704105032.46"><vh>buildInterface_</vh></v>
 <v t="karstenw.20170704105032.47"><vh>validateMenuItem_</vh></v>
+<v t="karstenw.20170727100220.1"><vh>ZOOM COMMANDS</vh>
 <v t="karstenw.20170704105032.48"><vh>zoomIn_</vh></v>
 <v t="karstenw.20170704105032.49"><vh>zoomOut_</vh></v>
 <v t="karstenw.20170704105032.50"><vh>zoomToTag_</vh></v>
 <v t="karstenw.20170704105032.51"><vh>zoomToFit_</vh></v>
+</v>
 </v>
 <v t="karstenw.20170704105032.52"><vh>class FullscreenWindow</vh>
 <v t="karstenw.20170704105032.53"><vh>initWithRect_</vh></v>
@@ -1255,9 +1260,12 @@ asRE = re.compile(r".*?\b(as)\b")
 
     """Returns the length of the line."""
     #return distance(x0,y0, x1,y1)
-    a = pow(abs(x0 - x1), 2)
-    b = pow(abs(y0 - y1), 2)
-    return sqrt(a+b)
+    
+    # fastest
+    return math.sqrt((x1-x0)**2 + (y1-y0)**2)
+    #a = pow(abs(x0 - x1), 2)
+    #b = pow(abs(y0 - y1), 2)
+    #return sqrt(a+b)
 
 </t>
 <t tx="karstenw.20170704104615.4">def curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3, handles=False):
@@ -1328,6 +1336,7 @@ asRE = re.compile(r".*?\b(as)\b")
                                                                    x1, y1,
                                                                    x2, y2,
                                                                    x3, y3)
+        # TBD: replace distance calculation
         c = sqrt(pow(abs(xi-pt_x),2) + pow(abs(yi-pt_y),2))
         length += c
         xi = pt_x
@@ -1336,32 +1345,6 @@ asRE = re.compile(r".*?\b(as)\b")
     return length
 </t>
 <t tx="karstenw.20170704104618.1">import math
-
-try:
-    # Faster C versions.
-    import cGeo
-    isqrt = inverse_sqrt = cGeo.fast_inverse_sqrt
-    angle = cGeo.angle
-    distance = cGeo.distance
-    coordinates = cGeo.coordinates
-
-except ImportError:
-    def inverse_sqrt(x):
-        return 1.0 / math.sqrt(x)
-    
-    isqrt = inverse_sqrt
-
-    def angle(x0, y0, x1, y1):
-        return math.degrees( math.atan2(y1-y0, x1-x0) )
-
-    def distance(x0, y0, x1, y1):
-        return math.sqrt(math.pow(x1-x0, 2) + math.pow(y1-y0, 2))
-    
-    def coordinates(x0, y0, distance, angle):
-        x1 = x0 + math.cos(math.radians(angle)) * distance
-        y1 = y0 + math.sin(math.radians(angle)) * distance
-        return x1, y1
-    
 </t>
 <t tx="karstenw.20170704104618.2">def reflect(x0, y0, x1, y1, d=1.0, a=180):
     d *= distance(x0, y0, x1, y1)
@@ -1998,7 +1981,7 @@ def isqrt( self, v):
 
 </t>
 <t tx="karstenw.20170704104726.29">def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
-    return nodebox.geo.reflect(x0, y0, x1, y1, d=1.0, a=180)
+    return nodebox.geo.reflect(x0, y0, x1, y1, d, a)
 
 </t>
 <t tx="karstenw.20170704104726.3">### Color Commands ###
@@ -4442,8 +4425,8 @@ pp = pprint.pprint
 
 import pdb
 
-# set to true to have stdio on the terminal
-kwdbg = False
+# set to true to have stdio on the terminal for pdb
+debugging = False
 
 # if true print out some debug info on stdout
 kwlog = False
@@ -4895,7 +4878,7 @@ def stopScript_(self, sender=None):
     output = []
     
     # for pdb debugging in terminal this needs to be switched off
-    if not kwdbg:
+    if not debugging:
         sys.stdout = OutputFile(output, False)
         sys.stderr = OutputFile(output, True)
     self._scriptDone = False
@@ -4931,9 +4914,12 @@ def stopScript_(self, sender=None):
         #self.flushOutput_()
     return True, output
 
-# from Mac/Tools/IDE/PyEdit.py
 </t>
-<t tx="karstenw.20170704105032.34">def _userCancelledMonitor(self):
+<t tx="karstenw.20170704105032.34"># UNUSED - Referenced in commented out Thread section of boxedRun_args_
+# Should be removed since Carbon is not available anymore
+
+# from Mac/Tools/IDE/PyEdit.py
+def _userCancelledMonitor(self):
     from Carbon import Evt
     while not self._scriptDone:
         if Evt.CheckEventQueueForUserCancel():
@@ -5125,6 +5111,7 @@ def exportAsMovie_(self, sender):
 
         if frames &lt;= 0 or fps &lt;= 0: return
         self.doExportAsMovie_frames_fps_(fname, frames, fps)
+
 qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
                                                       signature="v@:@ii")
 
@@ -5219,7 +5206,6 @@ def buildInterface_(self, sender):
         return self.canvas is not None
     return True
     
-# Zoom commands, forwarding to the graphics view.
 
 </t>
 <t tx="karstenw.20170704105032.48">@objc.IBAction
@@ -5761,10 +5747,13 @@ import objc
 
 from nodebox import graphics
 
-SMALL_FONT = NSFont.systemFontOfSize_(NSFont.smallSystemFontSize())
-MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMiniControlSize))
+# just to make the next lines print better
+smfontsize = NSFont.smallSystemFontSize()
+smctrlsize = NSFont.systemFontSizeForControlSize_(NSMiniControlSize)
 
-# class defined in NodeBoxDocument.xib
+SMALL_FONT = NSFont.systemFontOfSize_(smfontsize)
+MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
+
 </t>
 <t tx="karstenw.20170704105051.10">def addSlider_y_c_(self, v, y, cnt):
     control = NSSlider.alloc().init()
@@ -5824,8 +5813,10 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.buttonClicked_, signature="v@:@@"))
     self.panel.contentView().addSubview_(control)
+
 </t>
-<t tx="karstenw.20170704105051.2">class DashboardController(NSObject):
+<t tx="karstenw.20170704105051.2"># class defined in NodeBoxDocument.xib
+class DashboardController(NSObject):
     document = objc.IBOutlet()
     documentWindow = objc.IBOutlet()
     panel = objc.IBOutlet()
@@ -5847,7 +5838,6 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
         self.document.runScript(compile=False, newSeed=False)
-
 
 </t>
 <t tx="karstenw.20170704105051.5">def textChanged_(self, sender):
@@ -5876,7 +5866,6 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
     else:
         self.document.runScript(compile=False, newSeed=False)
 
-    
 </t>
 <t tx="karstenw.20170704105051.7">def buttonClicked_(self, sender):
     var = self.document.vars[sender.tag()]
@@ -5889,7 +5878,6 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
         self.document.runScript(compile=False, newSeed=False)
-
 
 </t>
 <t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
@@ -5916,13 +5904,17 @@ MINI_FONT = NSFont.systemFontOfSize_(NSFont.systemFontSizeForControlSize_(NSMini
         if v.type == graphics.NUMBER:
             self.addLabel_y_c_(v, y, cnt)
             self.addSlider_y_c_(v, y, cnt)
+
         elif v.type == graphics.TEXT:
             self.addLabel_y_c_(v, y, cnt)
             self.addTextField_y_c_(v, y, cnt)
+
         elif v.type == graphics.BOOLEAN:
             self.addSwitch_y_c_(v, y, cnt)
+
         elif v.type == graphics.BUTTON:
             self.addButton_y_c_(v, y, cnt)
+
         elif v.type == graphics.MENU:
             self.addLabel_y_c_(v, y, cnt)
             self.addMenu_y_c_(v, y, cnt)
@@ -8560,7 +8552,6 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
         self.document.fastRun_newSeed_args_(fn, False, args)
     #self.document.runFunction_(var.name)
 
-
 </t>
 <t tx="karstenw.20170709145531.1">def addMenu_y_c_(self, v, y, cnt):
     control = NSPopUpButton.alloc().init()
@@ -8581,7 +8572,6 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     control.setAction_(objc.selector(self.menuSelected_, signature="v@:@@"))
     self.panel.contentView().addSubview_(control)
 
-
 </t>
 <t tx="karstenw.20170709154311.1">def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
     # Check if there is code to run
@@ -8601,6 +8591,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     # kw fix
     if not self.currentView:
         self.currentView = self.graphicsView
+
     window = self.currentView.window()
     pt = window.mouseLocationOutsideOfEventStream()
     mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
@@ -8642,6 +8633,37 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
 
     return True
     
+</t>
+<t tx="karstenw.20170726133907.1">    isqrt = inverse_sqrt
+
+    def angle(x0, y0, x1, y1):
+        return math.degrees( math.atan2(y1-y0, x1-x0) )
+
+    def distance(x0, y0, x1, y1):
+        return math.sqrt(math.pow(x1-x0, 2) + math.pow(y1-y0, 2))
+    
+    def coordinates(x0, y0, distance, angle):
+        x1 = x0 + math.cos(math.radians(angle)) * distance
+        y1 = y0 + math.sin(math.radians(angle)) * distance
+        return x1, y1
+    
+</t>
+<t tx="karstenw.20170726154241.1">
+</t>
+<t tx="karstenw.20170726154315.1">try:
+    # Faster C versions.
+    import cGeo
+    isqrt = inverse_sqrt = cGeo.fast_inverse_sqrt
+    angle = cGeo.angle
+    distance = cGeo.distance
+    coordinates = cGeo.coordinates
+
+except ImportError:
+    def inverse_sqrt(x):
+        return 1.0 / math.sqrt(x)
+    
+</t>
+<t tx="karstenw.20170727100220.1"># Zoom commands, forwarding to the graphics view.
 </t>
 </tnodes>
 </leo_file>

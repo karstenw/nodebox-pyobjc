@@ -13,8 +13,8 @@ pp = pprint.pprint
 
 import pdb
 
-# set to true to have stdio on the terminal
-kwdbg = False
+# set to true to have stdio on the terminal for pdb
+debugging = False
 
 # if true print out some debug info on stdout
 kwlog = False
@@ -306,6 +306,7 @@ class NodeBoxDocument(NSDocument):
         # kw fix
         if not self.currentView:
             self.currentView = self.graphicsView
+
         window = self.currentView.window()
         pt = window.mouseLocationOutsideOfEventStream()
         mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
@@ -524,7 +525,7 @@ class NodeBoxDocument(NSDocument):
         output = []
         
         # for pdb debugging in terminal this needs to be switched off
-        if not kwdbg:
+        if not debugging:
             sys.stdout = OutputFile(output, False)
             sys.stderr = OutputFile(output, True)
         self._scriptDone = False
@@ -559,6 +560,9 @@ class NodeBoxDocument(NSDocument):
             sys.argv = saveArgv
             #self.flushOutput_()
         return True, output
+
+    # UNUSED - Referenced in commented out Thread section of boxedRun_args_
+    # Should be removed since Carbon is not available anymore
 
     # from Mac/Tools/IDE/PyEdit.py
     def _userCancelledMonitor(self):
@@ -740,6 +744,7 @@ class NodeBoxDocument(NSDocument):
 
             if frames <= 0 or fps <= 0: return
             self.doExportAsMovie_frames_fps_(fname, frames, fps)
+
     qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
                                                           signature="v@:@ii")
 
@@ -829,8 +834,8 @@ class NodeBoxDocument(NSDocument):
             return self.canvas is not None
         return True
         
-    # Zoom commands, forwarding to the graphics view.
 
+    # Zoom commands, forwarding to the graphics view.
     @objc.IBAction
     def zoomIn_(self, sender):
         if self.fullScreen is not None: return
