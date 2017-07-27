@@ -35,7 +35,11 @@ angle(PyObject *self, PyObject *args) {
 
 // DISTANCE
 void _distance(double x0, double y0, double x1, double y1, double *d) {
-    *d = 1.0 / _fast_inverse_sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
+    // this is not much faster but inaccurate
+    // *d = 1.0 / _fast_inverse_sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
+    // *d = sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
+    double dx = x1-x0, dy = y1-y0;
+    *d = sqrt(dx*dx + dy*dy);
 }
 static PyObject *
 distance(PyObject *self, PyObject *args) {
