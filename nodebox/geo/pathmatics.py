@@ -23,9 +23,12 @@ def linelength(x0, y0, x1, y1):
 
     """Returns the length of the line."""
     #return distance(x0,y0, x1,y1)
-    a = pow(abs(x0 - x1), 2)
-    b = pow(abs(y0 - y1), 2)
-    return sqrt(a+b)
+    
+    # fastest
+    return math.sqrt((x1-x0)**2 + (y1-y0)**2)
+    #a = pow(abs(x0 - x1), 2)
+    #b = pow(abs(y0 - y1), 2)
+    #return sqrt(a+b)
 
 def curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3, handles=False):
 
@@ -94,6 +97,7 @@ def curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n=20):
                                                                    x1, y1,
                                                                    x2, y2,
                                                                    x3, y3)
+        # TBD: replace distance calculation
         c = sqrt(pow(abs(xi-pt_x),2) + pow(abs(yi-pt_y),2))
         length += c
         xi = pt_x
