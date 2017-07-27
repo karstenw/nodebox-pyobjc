@@ -16,15 +16,17 @@ Attention!
 
 ### The download includes the NodeBox-Library. When first starting NodeBox, go to the preferences and set the Library folder to the included folder.
 
-### Due to recent new imports the compatibility with 10.6 is gone. I can't test 10.7-10.9. If you need an app for 10.6, write an issue.
-
 ####Differences from the official version:
 
 1. Additional Commands (they were already in the original source but not active)
 	1.  `angle(x0, y0, x1, y1)`
+		The angle of line (y0,y0,x1,y1) 
 	1.  `distance(x0, y0, x1, y1)`
+		The distance between points (x0,y0) and (x1,y1).
 	1.  `coordinates(x0, y0, distance, angle)`
-	1.  `reflect(x0, y0, x1, y1, d=1.0, a=180)`
+		The point at dintance and angle from point(x0,y0)
+	1.  `reflect(x0, y0, x1, y1, d=1.0, a=180)
+		Too complicated. Watch the example file _Example coordinates 1.py_
 	1.  `isqrt(n)` = 1 / sqrt(n)
 
 1. Different behaviour:
@@ -42,7 +44,7 @@ Attention!
 		-  All var types now can have a handler: `NUMBER`, `TEXT`, `BUTTON`, `BOOLEAN`and `MENU`.
 		-  The difference is: When a handler is set, only that function is re-run. The whole script otherwise.
 		-  The `MENU` var needs a handler.
-		-  The handler=one-argument-function to be called. For `BUTTON`s no arguments.
+		-  The handler=one or two argument-function to be called. If 1-arg: (value,). If 2-arg: (value, name). For `BUTTON`s no arguments.
 		-  menuitems = list or tuple of strings.
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
