@@ -106,7 +106,16 @@ class PyDETextView(NSTextView):
 
         # FDB: value ladder
         self.valueLadder = None
-
+        
+        # try:
+            # self.setAutomaticQuoteSubstitutionEnabled_( False )
+            # self.setAutomaticDashSubstitutionEnabled_( False )
+            # self.setAutomaticLinkDetectionEnabled_( True )
+        # except Exception, err:
+            # print "Text Engine Substitutions ERROR"
+            # print err
+            # print
+            
         nc = NSNotificationCenter.defaultCenter()
         nc.addObserver_selector_name_object_(self, "textFontChanged:",
                                                    "PyDETextFontChanged", None)
