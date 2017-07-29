@@ -10,17 +10,17 @@
 <find_panel_settings/>
 <vnodes>
 <v t="karstenw.20170704103618.1"><vh>NewHeadline</vh></v>
-<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -371,17 +371,17 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
 <v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -813,8 +813,7 @@ import nodebox.gui.mac
 
 # Twyg is in Library
 # import twyg
-
-
+# import sklearn
 </t>
 <t tx="karstenw.20170704103935.1">#import PyObjCTools.Debugging
 #PyObjCTools.Debugging.installVerboseExceptionHandler()
@@ -951,6 +950,18 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
+            "includes": [
+                "sklearn", "sklearn._isotonic", "sklearn.calibration", "sklearn.cluster",
+                "sklearn.covariance", "sklearn.cross_decomposition", "sklearn.cross_validation",
+                "sklearn.datasets", "sklearn.decomposition", "sklearn.discriminant_analysis",
+                "sklearn.dummy", "sklearn.ensemble", "sklearn.feature_extraction",
+                "sklearn.feature_selection", "sklearn.grid_search", "sklearn.isotonic",
+                "sklearn.kernel_approximation", "sklearn.kernel_ridge", "sklearn.kernel_curve",
+                "sklearn.linear_model", "sklearn.manifold", "sklearn.metrics", "sklearn.mixture",
+                "sklearn.model_selection", "sklearn.multioutput", "sklearn.naive_bayes",
+                "sklearn.neighbors", "sklearn.neural_network", "sklearn.pipeline",
+                "sklearn.random_projection", "sklearn.semi_supervised", "sklearn.svm",
+                "sklearn.tree"],
             "excludes": ["TkInter",], # "scipy", "matplotlib"],
         }
     } )
@@ -4621,6 +4632,19 @@ def showLibrary_(self, sender):
         self.readFromUTF8_(self.path)
     font = PyDETextView.getBasicTextAttributes()[NSFontAttributeName]
     self.outputView.setFont_(font)
+
+    try:
+        self.textView.setAutomaticQuoteSubstitutionEnabled_( False )
+        self.textView.setAutomaticDashSubstitutionEnabled_( False )
+        self.textView.setAutomaticLinkDetectionEnabled_( True )
+        self.outputView.setAutomaticQuoteSubstitutionEnabled_( False )
+        self.outputView.setAutomaticDashSubstitutionEnabled_( False )
+        self.outputView.setAutomaticLinkDetectionEnabled_( True )
+    except Exception, err:
+        print "Text Engine automatic substitutions disabling ERROR"
+        print err
+        print
+
     self.textView.window().makeFirstResponder_(self.textView)
     self.windowControllers()[0].setWindowFrameAutosaveName_("NodeBoxDocumentWindow")
 
@@ -5509,12 +5533,7 @@ def resetZoom_(self, sender):
     self._frame = 150
     self.fullScreen = None
     self._seed = time.time()
-    
-    # another debugging not completed
-    #if not self.graphicsView:
-    #    pdb.set_trace()
-    #    print
-    
+
     # this is None
     self.currentView = self.graphicsView
     return self
@@ -6640,7 +6659,16 @@ def uncomment_(self, sender):
 
     # FDB: value ladder
     self.valueLadder = None
-
+    
+    # try:
+        # self.setAutomaticQuoteSubstitutionEnabled_( False )
+        # self.setAutomaticDashSubstitutionEnabled_( False )
+        # self.setAutomaticLinkDetectionEnabled_( True )
+    # except Exception, err:
+        # print "Text Engine Substitutions ERROR"
+        # print err
+        # print
+        
     nc = NSNotificationCenter.defaultCenter()
     nc.addObserver_selector_name_object_(self, "textFontChanged:",
                                                "PyDETextFontChanged", None)
