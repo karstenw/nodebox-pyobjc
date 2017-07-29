@@ -187,12 +187,7 @@ class NodeBoxDocument(NSDocument):
         self._frame = 150
         self.fullScreen = None
         self._seed = time.time()
-        
-        # another debugging not completed
-        #if not self.graphicsView:
-        #    pdb.set_trace()
-        #    print
-        
+
         # this is None
         self.currentView = self.graphicsView
         return self
