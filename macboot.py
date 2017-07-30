@@ -40,6 +40,15 @@ import nodebox.graphics
 import nodebox.gui
 import nodebox.gui.mac
 
+# needed by matplotlib
+import six
+import pyparsing
+import cycler
+import requests
+import pymongo
+
+
+
 # Do not import these here; they are in the app and are imported by scripts
 # If you import here, 10.6 breaks
 # import scipy
