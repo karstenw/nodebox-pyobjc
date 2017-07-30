@@ -44,7 +44,7 @@ Attention!
 		-  All var types now can have a handler: `NUMBER`, `TEXT`, `BUTTON`, `BOOLEAN`and `MENU`.
 		-  The difference is: When a handler is set, only that function is re-run. The whole script otherwise.
 		-  The `MENU` var needs a handler.
-		-  The handler=one or two argument-function to be called. If 1-arg: (value,). If 2-arg: (value, name). For `BUTTON`s no arguments.
+		-  The handler=one or two argument-function to be called. If 1-arg: (value,). If 2-arg: (value, name).
 		-  menuitems = list or tuple of strings.
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
@@ -96,7 +96,7 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 
 Latest changes
 --------------
-2017-07-16 Version 1.9.26 Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`
+2017-07-29 Version 1.9.26 Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`, scipy and matplotlib have been moved to Library. Added scilit-learn and pandas to Library.
 
 2017-07-15 Version 1.9.25 Lots of example updates. No new functionality.
 
