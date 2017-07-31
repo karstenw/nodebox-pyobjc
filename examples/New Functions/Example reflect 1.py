@@ -55,7 +55,9 @@ def drawit(x1,y1,x2,y2,d,a):
     lx,ly = 50, 30
     fill(0)
     fontsize(14)
-    text("reflect(x0=%.1f, y0=%.1f, x1=%.1f, y1=%.1f, d=%.1f, a=%.1f) = (%.1f, %.1f)" % (x1,y1,x2,y2,d,a,x3,y3), lx, ly)
+    s = "reflect(x0=%.1f, y0=%.1f, x1=%.1f, y1=%.1f, d=%.1f, a=%.1f) = (%.1f, %.1f)" % (x1,y1,x2,y2,d,a,x3,y3)
+    text(s, lx, ly)
+    print s
 
 
 var("x1", NUMBER, default=300, min=0, max=600, handler=params)

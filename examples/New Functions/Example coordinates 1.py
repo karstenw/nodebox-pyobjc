@@ -48,8 +48,9 @@ def drawit(x0,y0,d,a):
     lx,ly = 50, 30
     fill(0)
     fontsize(14)
-    text("coordinates(x0=%.1f, y0=%.1f, d=%.1f, a=%.1f) = (%.1f, %.1f)" % (x0,y0,d,a,x1,y1), lx, ly)
-
+    s = "coordinates(x0=%.1f, y0=%.1f, d=%.1f, a=%.1f) = (%.1f, %.1f)" % (x0,y0,d,a,x1,y1)
+    text(s, lx, ly)
+    print s
 
 var("x0", NUMBER, default=200, min=10, max=400, handler=params)
 var("y0", NUMBER, default=200, min=10, max=400, handler=params)
