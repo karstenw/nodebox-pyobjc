@@ -20,7 +20,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -371,13 +371,13 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
@@ -805,6 +805,16 @@ import nodebox.graphics
 import nodebox.gui
 import nodebox.gui.mac
 
+# needed by matplotlib
+import six
+import pyparsing
+import cycler
+import requests
+import pymongo
+import dateutil
+
+
+
 # Do not import these here; they are in the app and are imported by scripts
 # If you import here, 10.6 breaks
 # import scipy
@@ -813,7 +823,8 @@ import nodebox.gui.mac
 
 # Twyg is in Library
 # import twyg
-# import sklearn
+
+
 </t>
 <t tx="karstenw.20170704103935.1">#import PyObjCTools.Debugging
 #PyObjCTools.Debugging.installVerboseExceptionHandler()
@@ -950,19 +961,9 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "includes": [
-                "sklearn", "sklearn._isotonic", "sklearn.calibration", "sklearn.cluster",
-                "sklearn.covariance", "sklearn.cross_decomposition", "sklearn.cross_validation",
-                "sklearn.datasets", "sklearn.decomposition", "sklearn.discriminant_analysis",
-                "sklearn.dummy", "sklearn.ensemble", "sklearn.feature_extraction",
-                "sklearn.feature_selection", "sklearn.grid_search", "sklearn.isotonic",
-                "sklearn.kernel_approximation", "sklearn.kernel_ridge", "sklearn.kernel_curve",
-                "sklearn.linear_model", "sklearn.manifold", "sklearn.metrics", "sklearn.mixture",
-                "sklearn.model_selection", "sklearn.multioutput", "sklearn.naive_bayes",
-                "sklearn.neighbors", "sklearn.neural_network", "sklearn.pipeline",
-                "sklearn.random_projection", "sklearn.semi_supervised", "sklearn.svm",
-                "sklearn.tree"],
-            "excludes": ["TkInter",], # "scipy", "matplotlib"],
+            "packages": [ "numpy",],
+             # "sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
+            "excludes": ["TkInter","sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
         }
     } )
 </t>
@@ -4632,19 +4633,6 @@ def showLibrary_(self, sender):
         self.readFromUTF8_(self.path)
     font = PyDETextView.getBasicTextAttributes()[NSFontAttributeName]
     self.outputView.setFont_(font)
-
-    try:
-        self.textView.setAutomaticQuoteSubstitutionEnabled_( False )
-        self.textView.setAutomaticDashSubstitutionEnabled_( False )
-        self.textView.setAutomaticLinkDetectionEnabled_( True )
-        self.outputView.setAutomaticQuoteSubstitutionEnabled_( False )
-        self.outputView.setAutomaticDashSubstitutionEnabled_( False )
-        self.outputView.setAutomaticLinkDetectionEnabled_( True )
-    except Exception, err:
-        print "Text Engine automatic substitutions disabling ERROR"
-        print err
-        print
-
     self.textView.window().makeFirstResponder_(self.textView)
     self.windowControllers()[0].setWindowFrameAutosaveName_("NodeBoxDocumentWindow")
 
@@ -4824,6 +4812,7 @@ def stopScript_(self, sender=None):
 <t tx="karstenw.20170704105032.30">def _compileScript(self, source=None):
     if source is None:
         source = self.textView.string()
+    source = source.encode("utf-8")
     self._code = None
     self._code = compile(source + "\n\n",
                          self.scriptName.encode('ascii', 'ignore'),
@@ -5075,7 +5064,7 @@ def exportImageFormatChanged_(self, sender):
                     self.fastRun_newSeed_(self.namespace["setup"], False)
                 for i in range(pages):
                     self.fastRun_newSeed_(self.namespace["draw"], True)
-                    counterAsString = "-%5d" % self._pageNumber
+                    counterAsString = "-%5d" % i #self._pageNumber
                     counterAsString = counterAsString.replace(' ', '0')
                     exportName = basename + counterAsString + ext
                     self.canvas.save(exportName, format)
