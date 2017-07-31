@@ -45,5 +45,5 @@ plt.clf()
 plt.close('all')
 
 image(fname, 0, 0)
-print fname
-# os.remove( fname )
+# print fname
+os.remove( fname )
