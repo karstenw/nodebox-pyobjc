@@ -96,7 +96,7 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 
 Latest changes
 --------------
-2017-07-29 Version 1.9.26 Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`, scipy and matplotlib have been moved to Library. Added scilit-learn and pandas to Library.
+2017-07-29 Version 1.9.26 Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`, scipy and matplotlib have been moved to Library. Added scilit-learn and pandas to Library. Scripts can have an encoding line. Probably utf-8 only...
 
 2017-07-15 Version 1.9.25 Lots of example updates. No new functionality.
 
