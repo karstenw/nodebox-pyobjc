@@ -445,6 +445,7 @@ class NodeBoxDocument(NSDocument):
     def _compileScript(self, source=None):
         if source is None:
             source = self.textView.string()
+        source = source.encode("utf-8")
         self._code = None
         self._code = compile(source + "\n\n",
                              self.scriptName.encode('ascii', 'ignore'),
@@ -657,7 +658,8 @@ class NodeBoxDocument(NSDocument):
             pb = ProgressBarController.alloc().init()
             pb.begin_maxval_("Generating %s images..." % pages, pages)
             try:
-                if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
+                if not self.cleanRun_newSeed_buildInterface_(self._execScript,
+                                                                        True, True):
                     return
                 self._pageNumber = 1
                 self._frame = 1
@@ -681,7 +683,10 @@ class NodeBoxDocument(NSDocument):
                         self.fastRun_newSeed_(self.namespace["setup"], False)
                     for i in range(pages):
                         self.fastRun_newSeed_(self.namespace["draw"], True)
+                        # 1-based
                         counterAsString = "-%5d" % self._pageNumber
+                        # 0-based
+                        # counterAsString = "-%5d" % i 
                         counterAsString = counterAsString.replace(' ', '0')
                         exportName = basename + counterAsString + ext
                         self.canvas.save(exportName, format)
@@ -690,7 +695,8 @@ class NodeBoxDocument(NSDocument):
                         self._frame += 1
                         pb.inc()
                     if self.namespace.has_key("stop"):
-                        success, output = self.boxedRun_args_(self.namespace["stop"], [])
+                        success, output = self.boxedRun_args_(self.namespace["stop"],
+                                                              [])
                         self.flushOutput_(output)
             except KeyboardInterrupt:
                 pass
