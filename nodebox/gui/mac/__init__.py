@@ -445,7 +445,11 @@ class NodeBoxDocument(NSDocument):
     def _compileScript(self, source=None):
         if source is None:
             source = self.textView.string()
-        source = source.encode("utf-8")
+
+        # if this is activated, all unicode carrying scripts NEED a "encoding" line
+        # OTOH if this is on, NB accepts scripts with an encoding line.
+        # currently an error
+        # source = source.encode("utf-8")
         self._code = None
         self._code = compile(source + "\n\n",
                              self.scriptName.encode('ascii', 'ignore'),
