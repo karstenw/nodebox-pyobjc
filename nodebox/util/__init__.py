@@ -17,7 +17,7 @@ import kgp
 
 __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
            'datestring','makeunicode', 'filelist', 'imagefiles',
-           'fontnames', 'fontfamilies')
+           'fontnames', 'fontfamilies', 'voices', 'say')
 
 
 ### Utilities ###
@@ -275,6 +275,23 @@ def fontfamilies(flat=False):
 def autotext(sourceFile):
     k = kgp.KantGenerator(sourceFile)
     return k.output()
+
+
+def voices():
+    vcs = AppKit.NSSpeechSynthesizer.availableVoices()
+    vcs = [str(t) for t in vcs]
+    vcs = [x.replace("com.apple.speech.synthesis.voice.", "") for x in vcs]
+    return vcs
+
+
+def say(txt, voice=None):
+    if voice and voice in voices():
+        voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
+    else:
+        voice = AppKit.NSSpeechSynthesizer.defaultVoice()
+    speaker = AppKit.NSSpeechSynthesizer.alloc().initWithVoice_(voice)
+    if speaker:
+        speaker.startSpeakingString_(txt)
 
 
 def _copy_attr(v):
