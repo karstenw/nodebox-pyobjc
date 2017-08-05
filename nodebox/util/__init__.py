@@ -11,16 +11,20 @@ import objc
 
 import Foundation
 import AppKit
+import PyObjCTools.Conversion
 
 import kgp
 
 
 __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
            'datestring','makeunicode', 'filelist', 'imagefiles',
-           'fontnames', 'fontfamilies', 'voices', 'say')
+           'fontnames', 'fontfamilies', 'voices', 'voiceattributes', 'anySpeakers', 'say')
 
 
 ### Utilities ###
+
+
+g_voicetrash = []
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     typ = type(s)
@@ -278,20 +282,49 @@ def autotext(sourceFile):
 
 
 def voices():
+    """Return a list of voice names."""
     vcs = AppKit.NSSpeechSynthesizer.availableVoices()
-    vcs = [str(t) for t in vcs]
-    vcs = [x.replace("com.apple.speech.synthesis.voice.", "") for x in vcs]
+    vcs = [makeunicode(t) for t in vcs]
+    vcs = [x.replace(u"com.apple.speech.synthesis.voice.", u"") for x in vcs]
     return vcs
 
 
-def say(txt, voice=None):
+def voiceattributes(voice):
+    """Return a dict with attributes for voice.
+    
+    voice is passed without the 'com.apple.speech.synthesis.voice.' prefix, e.g.
+    'Albert' or 'petra.premium'.
+    """
+    result = {}
+    if voice and voice in voices():
+        voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
+        attrs = AppKit.NSSpeechSynthesizer.attributesForVoice_( voice )
+        result = PyObjCTools.Conversion.pythonCollectionFromPropertyList(attrs)
+        keys = attrs.keys()
+    return result
+
+
+def anySpeakers():
+    """Return if ANY application is currently speaking."""
+    return bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
+
+def say(txt, voice=None, outputurl=None):
+    """Say txt with a voice."""
+    # clean up previous talks
+    #for talker in g_voicetrash:
+    #    if not talker.speaking():
+    #        talker.release()
+    #        del talker
+
     if voice and voice in voices():
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
     else:
         voice = AppKit.NSSpeechSynthesizer.defaultVoice()
     speaker = AppKit.NSSpeechSynthesizer.alloc().initWithVoice_(voice)
     if speaker:
+        g_voicetrash.append( speaker )
         speaker.startSpeakingString_(txt)
+        return speaker
 
 
 def _copy_attr(v):
