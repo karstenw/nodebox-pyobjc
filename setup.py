@@ -11,7 +11,7 @@ import py2app
 
 import nodebox
 
-NAME = 'NodeBox'
+NAME = 'NodeBox_ext'
 VERSION = nodebox.__version__
 
 
@@ -123,8 +123,8 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy",],
+            "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits"],
              # "sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
-            "excludes": ["TkInter","sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
+            "excludes": ["TkInter","sklearn",  "pandas"],
         }
     } )
