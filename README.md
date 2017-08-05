@@ -7,7 +7,7 @@ This is a personal fork of NodeBox 1.
 
 The current version is 1.9.26
 
-Download the compiled app from my dropbox: [http://goo.gl/vkuBeV](http://goo.gl/vkuBeV).
+Download the compiled app from my [dropbox](http://goo.gl/vkuBeV).
 
 As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue if you need one.
 
@@ -57,20 +57,23 @@ Attention!
 
 1.  Uses a different and bigger icon (512px)
 
-1.  Has some additional examples. See folders `Escher`, `geometry/Convex Hull` and `New Functions` .
+1.  Has many additional examples. See folders `Escher`, `geometry/Convex Hull` and `New Functions` .
 
 1.  New function `filelist( folder or list of folders, pathonly=True )` (v1.9.19)
 	- Returns a path generator
 	- If pathonly is False, it returns a (path, size, lastmodifieddatetime, oct(mode)) generator
 	- The Following filenames are ignored: any name starting with '.', any name containing any of: '\r\n\t'.
 
+
 1.  New function `imagefiles( folder or list of folders, pathonly=True )` (v1.9.19)
 	-  Same parameters and restrictions as filelist plus:
 	-  filters file extensions for ".pdf .eps .tif .tiff .gif .jpg .jpeg .png"
 
+
 1.  New function `fontnames()` (v1.9.20)
 	-  Returns a list of names from NSFontManager.sharedFontManager().availableFonts().
 		Fontnames starting with '.' are ignored.
+
 
 1.  New function `fontfamilies(flat=False)` (v1.9.20)
  	-  Return a dict with [FontFamily][STYLE]-> FontRecord
@@ -85,10 +88,25 @@ Attention!
 			nonstandardcharacterset", narrow, expanded, condensed, smallcaps,
 			poster, compressed, fixedpitch, unitalic)
 
+
 1.  New graphics primitive `arc(x, y, r, startAngle, endAngle)`
 	-  Draws an arc between startAngle and endAngle with center at (x,y) and radius=r.
 
+
+1.  New function `say(txt, voice=None)`.
+		Say txt in voice. If voice is None, the default voice is used.
+
+
+1.  New function `voices()`.
+		List all voices in a format for `say()`.
+
+
+1.  New function `voiceattributes( voice )`.
+		return a dict with all atrributes about that voice.
+
+
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
+
 
 
 The adapted Nodebox library is now included in the [download](http://goo.gl/vkuBeV). Open Nodebox, go to preferences and set the Library folder to the included one "NodeBox-Library". The repository is here: [Library](https://github.com/karstenw/Library). 
@@ -96,7 +114,7 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 
 Latest changes
 --------------
-2017-07-29 Version 1.9.26 Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`, scipy and matplotlib have been moved to Library. Added scilit-learn and pandas to Library. Scripts can have an encoding line. Probably utf-8 only...
+2017-08-05 Version 1.9.26 New functions: `say(txt, voice)`, `voices()` and `voiceattributes( voice )`. Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`. Added scikit-learn, pandas and pattern to Library.
 
 2017-07-15 Version 1.9.25 Lots of example updates. No new functionality.
 

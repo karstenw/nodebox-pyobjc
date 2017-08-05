@@ -10,17 +10,20 @@
 <find_panel_settings/>
 <vnodes>
 <v t="karstenw.20170704103618.1"><vh>NewHeadline</vh></v>
-<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
+</v>
+<v t="karstenw.20170804151930.1"><vh>@clean setup_small.py</vh>
+<v t="karstenw.20170804152129.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -49,7 +52,7 @@
 <v t="karstenw.20170704104455.1"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -61,7 +64,7 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
@@ -371,13 +374,13 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
@@ -612,7 +615,7 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
@@ -633,9 +636,10 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
+<v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
 <v t="karstenw.20170704105353.4"><vh>grid</vh></v>
@@ -650,6 +654,10 @@
 </v>
 <v t="karstenw.20170704105353.13"><vh>fontfamilies</vh></v>
 <v t="karstenw.20170704105353.14"><vh>autotext</vh></v>
+<v t="karstenw.20170801052347.1"><vh>voices</vh></v>
+<v t="karstenw.20170804122600.1"><vh>voiceattributes</vh></v>
+<v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
+<v t="karstenw.20170801052423.1"><vh>say</vh></v>
 <v t="karstenw.20170704105353.15"><vh>_copy_attr</vh></v>
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
 </v>
@@ -766,6 +774,10 @@
 # This just imports everything from the nodebox.gui.mac module
 # and works from there
 
+import os
+import operator
+import warnings
+
 # for the libraries
 @others
 </t>
@@ -780,6 +792,28 @@ import base64
 import re
 import pickle
 import UserList
+
+# needed by matplotlib et al.
+import six
+import pyparsing
+import cycler
+import requests
+import pymongo
+import dateutil
+import copy
+import csv
+import functools
+import itertools
+import gzip
+import io
+import httplib
+import http
+import http.client
+import http.server
+import urllib
+import urlparse
+import decimal
+import gettext
 
 
 # PIL / Pillow support
@@ -805,13 +839,9 @@ import nodebox.graphics
 import nodebox.gui
 import nodebox.gui.mac
 
-# needed by matplotlib
-import six
-import pyparsing
-import cycler
-import requests
-import pymongo
-import dateutil
+# pattern
+import xml.etree
+import xml.etree.cElementTree
 
 
 
@@ -849,7 +879,7 @@ import py2app
 
 import nodebox
 
-NAME = 'NodeBox'
+NAME = 'NodeBox_ext'
 VERSION = nodebox.__version__
 
 
@@ -961,9 +991,9 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy",],
+            "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits"],
              # "sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
-            "excludes": ["TkInter","sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
+            "excludes": ["TkInter","sklearn",  "pandas"],
         }
     } )
 </t>
@@ -4812,7 +4842,11 @@ def stopScript_(self, sender=None):
 <t tx="karstenw.20170704105032.30">def _compileScript(self, source=None):
     if source is None:
         source = self.textView.string()
-    source = source.encode("utf-8")
+
+    # if this is activated, all unicode carrying scripts NEED a "encoding" line
+    # OTOH if this is on, NB accepts scripts with an encoding line.
+    # currently an error
+    # source = source.encode("utf-8")
     self._code = None
     self._code = compile(source + "\n\n",
                          self.scriptName.encode('ascii', 'ignore'),
@@ -5040,7 +5074,8 @@ def exportImageFormatChanged_(self, sender):
         pb = ProgressBarController.alloc().init()
         pb.begin_maxval_("Generating %s images..." % pages, pages)
         try:
-            if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
+            if not self.cleanRun_newSeed_buildInterface_(self._execScript,
+                                                                    True, True):
                 return
             self._pageNumber = 1
             self._frame = 1
@@ -5064,7 +5099,10 @@ def exportImageFormatChanged_(self, sender):
                     self.fastRun_newSeed_(self.namespace["setup"], False)
                 for i in range(pages):
                     self.fastRun_newSeed_(self.namespace["draw"], True)
-                    counterAsString = "-%5d" % i #self._pageNumber
+                    # 1-based
+                    counterAsString = "-%5d" % self._pageNumber
+                    # 0-based
+                    # counterAsString = "-%5d" % i 
                     counterAsString = counterAsString.replace(' ', '0')
                     exportName = basename + counterAsString + ext
                     self.canvas.save(exportName, format)
@@ -5073,7 +5111,8 @@ def exportImageFormatChanged_(self, sender):
                     self._frame += 1
                     pb.inc()
                 if self.namespace.has_key("stop"):
-                    success, output = self.boxedRun_args_(self.namespace["stop"], [])
+                    success, output = self.boxedRun_args_(self.namespace["stop"],
+                                                          [])
                     self.flushOutput_(output)
         except KeyboardInterrupt:
             pass
@@ -7310,13 +7349,14 @@ import objc
 
 import Foundation
 import AppKit
+import PyObjCTools.Conversion
 
 import kgp
 
 
 __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
            'datestring','makeunicode', 'filelist', 'imagefiles',
-           'fontnames', 'fontfamilies')
+           'fontnames', 'fontfamilies', 'voices', 'voiceattributes', 'anySpeakers', 'say')
 
 
 ### Utilities ###
@@ -8681,6 +8721,195 @@ except ImportError:
     
 </t>
 <t tx="karstenw.20170727100220.1"># Zoom commands, forwarding to the graphics view.
+</t>
+<t tx="karstenw.20170801052347.1">def voices():
+    """Return a list of voice names."""
+    vcs = AppKit.NSSpeechSynthesizer.availableVoices()
+    vcs = [makeunicode(t) for t in vcs]
+    vcs = [x.replace(u"com.apple.speech.synthesis.voice.", u"") for x in vcs]
+    return vcs
+
+
+</t>
+<t tx="karstenw.20170801052423.1">def say(txt, voice=None, outputurl=None):
+    """Say txt with a voice."""
+    # clean up previous talks
+    #for talker in g_voicetrash:
+    #    if not talker.speaking():
+    #        talker.release()
+    #        del talker
+
+    if voice and voice in voices():
+        voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
+    else:
+        voice = AppKit.NSSpeechSynthesizer.defaultVoice()
+    speaker = AppKit.NSSpeechSynthesizer.alloc().initWithVoice_(voice)
+    if speaker:
+        g_voicetrash.append( speaker )
+        speaker.startSpeakingString_(txt)
+        return speaker
+
+
+</t>
+<t tx="karstenw.20170804122600.1">def voiceattributes(voice):
+    """Return a dict with attributes for voice.
+    
+    voice is passed without the 'com.apple.speech.synthesis.voice.' prefix, e.g.
+    'Albert' or 'petra.premium'.
+    """
+    result = {}
+    if voice and voice in voices():
+        voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
+        attrs = AppKit.NSSpeechSynthesizer.attributesForVoice_( voice )
+        result = PyObjCTools.Conversion.pythonCollectionFromPropertyList(attrs)
+        keys = attrs.keys()
+    return result
+
+
+</t>
+<t tx="karstenw.20170804122614.1">
+g_voicetrash = []
+
+</t>
+<t tx="karstenw.20170804123557.1">def anySpeakers():
+    """Return if ANY application is currently speaking."""
+    return bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
+
+</t>
+<t tx="karstenw.20170804151930.1">@language python
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20170804152129.1">"""
+Script for building NodeBox
+
+Usage:
+    python setup.py py2app
+"""
+from distutils.core import setup
+from setuptools.extension import Extension
+
+import py2app
+
+import nodebox
+
+NAME = 'NodeBox'
+VERSION = nodebox.__version__
+
+
+AUTHOR = "Frederik De Bleser",
+AUTHOR_EMAIL = "frederik@pandora.be",
+URL = "http://nodebox.net/",
+CLASSIFIERS = (
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: MacOS X :: Cocoa",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python",
+    "Topic :: Artistic Software",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Multimedia :: Graphics :: Editors :: Vector-Based",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: Text Editors :: Integrated Development Environments (IDE)",
+)
+
+DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
+               u"using Python code")
+LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output
+with programming code. The application targets an audience of designers, with an easy set of state 
+commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
+
+The current version features:
+
+* State-based graphics context
+* Extensive reference documentation and tutorials
+* PDF export for graphics
+* QuickTime export for animations
+* Manipulate every numeric variable in a script by command-dragging it, even during animation
+* Creating simple user interfaces using text fields, sliders, and buttons
+* Stop a running script by typing command-period
+* Universal Binary
+* Integrated bezier mathematics and boolean operations
+* Command-line interface
+* Zooming
+"""
+
+
+
+creator = 'NdBx'
+bundleID = "net.nodebox.NodeBox"
+
+setup(
+    
+    name = NAME,
+    version = VERSION,
+    description = DESCRIPTION,
+    long_description = LONG_DESCRIPTION,
+    author = AUTHOR,
+    author_email = AUTHOR_EMAIL,
+    url = URL,
+    classifiers = CLASSIFIERS,
+
+    app=[{
+        'script': "macboot.py",
+
+        "plist": {
+            "NSPrincipalClass": 'NSApplication',
+            "CFBundleIdentifier": bundleID,
+            "CFBundleName": NAME,
+            "CFBundleSignature": creator,
+            "CFBundleShortVersionString": VERSION,
+            "CFBundleGetInfoString": DESCRIPTION,
+            "NSHumanReadableCopyright": "Copyright (c) 2015 Frederik De Bleser",
+
+            'CFBundleDocumentTypes': [
+                {
+                    'CFBundleTypeExtensions': [ 'py', 'bot' ],
+                    'CFBundleTypeIconFile': 'NodeBoxFile.icns',
+                    'CFBundleTypeName': "Python File",
+                    'CFBundleTypeOSTypes': [ '????', '****', 'utxt'],
+                    'CFBundleTypeRole': 'Editor',
+                    'NSDocumentClass': u'NodeBoxDocument',
+                }
+            ]
+        }
+    }],
+
+    data_files=[
+        "Resources/English.lproj/AskString.xib",
+        "Resources/English.lproj/Credits.rtf",
+        "Resources/English.lproj/ExportImageAccessory.xib",
+        "Resources/English.lproj/ExportMovieAccessory.xib",
+        "Resources/English.lproj/MainMenu.xib",
+        "Resources/English.lproj/NodeBoxDocument.xib",
+        "Resources/English.lproj/NodeBoxPreferences.xib",
+        "Resources/English.lproj/ProgressBarSheet.xib",
+        "Resources/NodeBox.icns",
+        "Resources/NodeBoxFile.icns",
+        "Resources/zoombig.png",
+        "Resources/zoomsmall.png"
+        ],
+
+    ext_modules=[
+        Extension('cGeo', ['libs/cGeo/cGeo.c']),
+        Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
+        Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
+                extra_link_args=['-framework', 'AppKit', '-framework', 'Foundation'])
+    ],
+
+    options={
+        "py2app": {
+            "iconfile": "Resources/NodeBox.icns",
+            "packages": [ "numpy", ],
+             # "sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
+            "excludes": ["TkInter", "scipy", "matplotlib", "mpl_toolkits", "sklearn",  "pandas"],
+        }
+    } )
 </t>
 </tnodes>
 </leo_file>

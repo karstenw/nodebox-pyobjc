@@ -11,7 +11,7 @@ import py2app
 
 import nodebox
 
-NAME = 'NodeBox_ext'
+NAME = 'NodeBox'
 VERSION = nodebox.__version__
 
 
@@ -38,9 +38,10 @@ CLASSIFIERS = (
 
 DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
                u"using Python code")
-LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output
-with programming code. The application targets an audience of designers, with an easy set of state 
-commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
+LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create
+visual output with programming code. The application targets an audience of designers,
+with an easy set of state commands that is both intuitive and creative. It is essentially
+a learning environment and an automation tool.
 
 The current version features:
 
@@ -124,7 +125,6 @@ setup(
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
             "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits"],
-             # "sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
             "excludes": ["TkInter","sklearn",  "pandas"],
         }
     } )

@@ -131,7 +131,8 @@ class Context(object):
             handler=None, menuitems=None):
         # pdb.set_trace()
         v = Variable(name, type, default, min, max, value, handler, menuitems)
-        v = self.addvar(v)
+        self.addvar(v)
+        return v
 
 
     def addvar(self, v):
