@@ -66,6 +66,11 @@ import nodebox.graphics
 import nodebox.gui
 import nodebox.gui.mac
 
+# pattern
+import xml.etree
+import xml.etree.cElementTree
+
+
 
 # Do not import these here; they are in the app and are imported by scripts
 # If you import here, 10.6 breaks
