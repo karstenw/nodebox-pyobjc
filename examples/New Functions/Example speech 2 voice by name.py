@@ -37,3 +37,4 @@ voicename = name
 
 v = var("Voice Name", MENU, default=voicename, handler=dovoice, menuitems=v)
 
+dovoice(voicename, "")
