@@ -233,6 +233,22 @@ class NodeBoxDocument(NSDocument):
         self.textView.window().makeFirstResponder_(self.textView)
         self.windowControllers()[0].setWindowFrameAutosaveName_("NodeBoxDocumentWindow")
 
+        # switch off automatic substitutions
+        try:
+            self.textView.setAutomaticQuoteSubstitutionEnabled_( False )
+            self.textView.setAutomaticDashSubstitutionEnabled_( False )
+
+            # This does not work well with syntax coloring
+            #self.textView.setAutomaticLinkDetectionEnabled_( True )
+            #self.textView.setDisplaysLinkToolTips_( True )
+
+            self.outputView.setAutomaticQuoteSubstitutionEnabled_( False )
+            self.outputView.setAutomaticDashSubstitutionEnabled_( False )
+            #self.outputView.setAutomaticLinkDetectionEnabled_( True )
+            #self.outputView.setDisplaysLinkToolTips_( True )
+        except Exception, err:
+            pass
+
     def readFromUTF8_(self, path):
         f = file(path)
         text = unicode(f.read(), "utf_8")

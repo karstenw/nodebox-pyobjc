@@ -23,7 +23,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -52,7 +52,7 @@
 <v t="karstenw.20170704104455.1"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -64,7 +64,7 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
@@ -374,17 +374,17 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
 <v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -615,7 +615,7 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
@@ -636,8 +636,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
@@ -879,7 +879,7 @@ import py2app
 
 import nodebox
 
-NAME = 'NodeBox_ext'
+NAME = 'NodeBox'
 VERSION = nodebox.__version__
 
 
@@ -906,9 +906,10 @@ CLASSIFIERS = (
 
 DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
                u"using Python code")
-LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output
-with programming code. The application targets an audience of designers, with an easy set of state 
-commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
+LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create
+visual output with programming code. The application targets an audience of designers,
+with an easy set of state commands that is both intuitive and creative. It is essentially
+a learning environment and an automation tool.
 
 The current version features:
 
@@ -991,9 +992,10 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits"],
-             # "sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
-            "excludes": ["TkInter","sklearn",  "pandas"],
+            # "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits"],
+            "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits","sklearn",  "pandas"],
+            # "excludes": ["TkInter","sklearn",  "pandas"],
+            "excludes": ["TkInter",],
         }
     } )
 </t>
@@ -1444,7 +1446,8 @@ def var(self, name, type,
         handler=None, menuitems=None):
     # pdb.set_trace()
     v = Variable(name, type, default, min, max, value, handler, menuitems)
-    v = self.addvar(v)
+    self.addvar(v)
+    return v
 
 
 </t>
@@ -4666,6 +4669,19 @@ def showLibrary_(self, sender):
     self.textView.window().makeFirstResponder_(self.textView)
     self.windowControllers()[0].setWindowFrameAutosaveName_("NodeBoxDocumentWindow")
 
+    try:
+        self.textView.setAutomaticQuoteSubstitutionEnabled_( False )
+        self.textView.setAutomaticDashSubstitutionEnabled_( False )
+        self.textView.setAutomaticLinkDetectionEnabled_( True )
+        
+        self.outputView.setAutomaticQuoteSubstitutionEnabled_( False )
+        self.outputView.setAutomaticDashSubstitutionEnabled_( False )
+        self.outputView.setAutomaticLinkDetectionEnabled_( True )
+    except Exception, err:
+        print "Text Engine Substitutions ERROR"
+        print err
+        print
+        
 </t>
 <t tx="karstenw.20170704105032.16">def readFromUTF8_(self, path):
     f = file(path)
@@ -6688,15 +6704,6 @@ def uncomment_(self, sender):
     # FDB: value ladder
     self.valueLadder = None
     
-    # try:
-        # self.setAutomaticQuoteSubstitutionEnabled_( False )
-        # self.setAutomaticDashSubstitutionEnabled_( False )
-        # self.setAutomaticLinkDetectionEnabled_( True )
-    # except Exception, err:
-        # print "Text Engine Substitutions ERROR"
-        # print err
-        # print
-        
     nc = NSNotificationCenter.defaultCenter()
     nc.addObserver_selector_name_object_(self, "textFontChanged:",
                                                "PyDETextFontChanged", None)
