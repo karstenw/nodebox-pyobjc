@@ -4,13 +4,16 @@
 # and works from there
 
 import os
-import operator
-import warnings
+#import operator
+#import warnings
 
 # for the libraries
-import sgmllib
+#import sgmllib
 import bs4
-import numpy
+
+# moved to Lubrary
+# import numpy
+
 import sqlite3
 import zipfile
 
@@ -18,29 +21,29 @@ import hashlib
 import base64
 import re
 import pickle
-import UserList
+#import UserList
 
 # needed by matplotlib et al.
-import six
-import pyparsing
-import cycler
-import requests
-import pymongo
-import dateutil
-import copy
-import csv
-import functools
-import itertools
-import gzip
-import io
-import httplib
-import http
-import http.client
-import http.server
-import urllib
-import urlparse
-import decimal
-import gettext
+# import six
+# import pyparsing
+# import cycler
+# import requests
+# import pymongo
+# import dateutil
+# import copy
+# import csv
+# import functools
+# import itertools
+# import gzip
+# import io
+# import httplib
+# import http
+# import http.client
+# import http.server
+# import urllib
+# import urlparse
+# import decimal
+# import gettext
 
 
 # PIL / Pillow support
@@ -67,8 +70,8 @@ import nodebox.gui
 import nodebox.gui.mac
 
 # pattern
-import xml.etree
-import xml.etree.cElementTree
+# import xml.etree
+# import xml.etree.cElementTree
 
 
 
