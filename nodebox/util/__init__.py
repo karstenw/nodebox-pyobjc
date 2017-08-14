@@ -119,6 +119,11 @@ def random(v1=None, v2=None):
         return librandom.random()
 
 
+def autotext(sourceFile):
+    k = kgp.KantGenerator(sourceFile)
+    return k.output()
+
+
 def files(path="*"):
     """Returns a list of files.
     
@@ -276,11 +281,6 @@ def fontfamilies(flat=False):
                 result.append( fontRec )
     return result
 
-def autotext(sourceFile):
-    k = kgp.KantGenerator(sourceFile)
-    return k.output()
-
-
 def voices():
     """Return a list of voice names."""
     vcs = AppKit.NSSpeechSynthesizer.availableVoices()
@@ -308,7 +308,7 @@ def anySpeakers():
     """Return if ANY application is currently speaking."""
     return bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
 
-def say(txt, voice=None, outputurl=None):
+def say(txt, voice=None, outfile=None):
     """Say txt with a voice."""
     # clean up previous talks
     #for talker in g_voicetrash:
@@ -320,7 +320,23 @@ def say(txt, voice=None, outputurl=None):
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
     else:
         voice = AppKit.NSSpeechSynthesizer.defaultVoice()
+    
+    # outfile is a path to an AIFF file to be exported to
+    # if the containing folder does not exist, abort
+    path = url = None
+    if outfile:
+        path = os.path.abspath( makeunicode(outfile) )
+        folder, filename = os.path.split( path )
+        if not os.path.exists( folder ):
+            path = None
+    if path:
+        url = Foundation.NSURL.fileURLWithPath_isDirectory_( path, False )
     speaker = AppKit.NSSpeechSynthesizer.alloc().initWithVoice_(voice)
+
+    if speaker and url:
+        g_voicetrash.append( speaker )
+        speaker.startSpeakingString_toURL_(txt, url)
+        return speaker
     if speaker:
         g_voicetrash.append( speaker )
         speaker.startSpeakingString_(txt)
