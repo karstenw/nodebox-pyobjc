@@ -3,9 +3,9 @@
 ![](art/nodeboxlogo_big.png?raw=true)
 
 
-This is a personal fork of NodeBox 1.
+This is a fork of (NodeBox 1)[https://github.com/nodebox/nodebox-pyobjc].
 
-The current version is 1.9.26
+The current version is 1.9.27
 
 Download the compiled app from my [dropbox](http://goo.gl/vkuBeV).
 
@@ -93,15 +93,16 @@ Attention!
 	-  Draws an arc between startAngle and endAngle with center at (x,y) and radius=r.
 
 
-1.  New function `say(txt, voice=None, outfile=None)`.
-		Say txt in voice. If voice is None, the default voice is used. If outfile is a valid path, the text will be saved as an AIFF file.
+1.  New function `say(txt, voice=None, outfile=None)` (1.9.26).
+		Say txt in voice. If voice is None, the default voice is used.
+		If outfile is a valid path, the text will be saved as an AIFF file (1.9.27).
 
 
-1.  New function `voices()`.
+1.  New function `voices()`(1.9.26).
 		List all voices in a format that can be used by `say()`.
 
 
-1.  New function `voiceattributes( voice )`.
+1.  New function `voiceattributes( voice )` (1.9.26).
 		return a dict with all attributes about that voice.
 
 
@@ -109,13 +110,13 @@ Attention!
 
 
 
-The adapted Nodebox library is now included in the [download](http://goo.gl/vkuBeV). Open Nodebox, go to preferences and set the Library folder to the included one "NodeBox-Library". The repository is here: [Library](https://github.com/karstenw/Library). 
+Since 1.9.21 the adapted Nodebox library is now included in the [download](http://goo.gl/vkuBeV). Open Nodebox, go to preferences and set the Library folder to the included one "NodeBox-Library". The repository is here: [Library](https://github.com/karstenw/Library). 
 
 
 Latest changes
 --------------
 
-2017-08-14 Version 1.9.27 Repackaging: scipy, matplotlib, sklearn, pandas, sympy, pattern moved to separate archive which can be downloaded but the folders are removed from repositories. These are compiled folders. numpy has made it back into the app. I hope this configuration tango is over...
+2017-08-14 Version 1.9.27 Repackaging: scipy, matplotlib, sklearn, pandas, sympy, pattern moved to a separate archive file which can be downloaded. The folders were removed from the `Library` repository. These are compiled packages. numpy has made it back into the app. I hope this configuration tango is over...
 
 2017-08-05 Version 1.9.26 New functions: `say(txt, voice)`, `voices()` and `voiceattributes( voice )`. Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`. Added scikit-learn, pandas and pattern to Library.
 
