@@ -93,16 +93,16 @@ Attention!
 	-  Draws an arc between startAngle and endAngle with center at (x,y) and radius=r.
 
 
-1.  New function `say(txt, voice=None)`.
-		Say txt in voice. If voice is None, the default voice is used.
+1.  New function `say(txt, voice=None, outfile=None)`.
+		Say txt in voice. If voice is None, the default voice is used. If outfile is a valid path, the text will be saved as an AIFF file.
 
 
 1.  New function `voices()`.
-		List all voices in a format for `say()`.
+		List all voices in a format that can be used by `say()`.
 
 
 1.  New function `voiceattributes( voice )`.
-		return a dict with all atrributes about that voice.
+		return a dict with all attributes about that voice.
 
 
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
