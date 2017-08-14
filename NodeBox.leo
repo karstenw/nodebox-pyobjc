@@ -24,7 +24,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
@@ -384,7 +384,7 @@
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -615,7 +615,7 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
@@ -636,28 +636,34 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
 <v t="karstenw.20170704105353.4"><vh>grid</vh></v>
 <v t="karstenw.20170704105353.5"><vh>random</vh></v>
+<v t="karstenw.20170704105353.14"><vh>autotext</vh></v>
+<v t="karstenw.20170811141051.1"><vh>FILE FUNCTIONS</vh>
 <v t="karstenw.20170704105353.6"><vh>files</vh></v>
 <v t="karstenw.20170704105353.7"><vh>filelist</vh></v>
 <v t="karstenw.20170704105353.8"><vh>imagefiles</vh></v>
+</v>
+<v t="karstenw.20170811141102.1"><vh>FONT FUNCTIONS</vh>
 <v t="karstenw.20170704105353.9"><vh>fontnames</vh></v>
 <v t="karstenw.20170704105353.10"><vh>class FontRecord</vh>
 <v t="karstenw.20170704105353.11"><vh>__init__</vh></v>
 <v t="karstenw.20170704105353.12"><vh>__repr__</vh></v>
 </v>
 <v t="karstenw.20170704105353.13"><vh>fontfamilies</vh></v>
-<v t="karstenw.20170704105353.14"><vh>autotext</vh></v>
+</v>
+<v t="karstenw.20170811141113.1" a="E"><vh>SPEECH FUNCTIONS</vh>
 <v t="karstenw.20170801052347.1"><vh>voices</vh></v>
 <v t="karstenw.20170804122600.1"><vh>voiceattributes</vh></v>
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
+</v>
 <v t="karstenw.20170704105353.15"><vh>_copy_attr</vh></v>
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
 </v>
@@ -1101,7 +1107,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.26'
+<t tx="karstenw.20170704104119.1">__version__='1.9.27'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -4471,7 +4477,7 @@ pp = pprint.pprint
 import pdb
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = False
@@ -4669,19 +4675,22 @@ def showLibrary_(self, sender):
     self.textView.window().makeFirstResponder_(self.textView)
     self.windowControllers()[0].setWindowFrameAutosaveName_("NodeBoxDocumentWindow")
 
+    # switch off automatic substitutions
     try:
         self.textView.setAutomaticQuoteSubstitutionEnabled_( False )
         self.textView.setAutomaticDashSubstitutionEnabled_( False )
-        self.textView.setAutomaticLinkDetectionEnabled_( True )
-        
+
+        # This does not work well with syntax coloring
+        #self.textView.setAutomaticLinkDetectionEnabled_( True )
+        #self.textView.setDisplaysLinkToolTips_( True )
+
         self.outputView.setAutomaticQuoteSubstitutionEnabled_( False )
         self.outputView.setAutomaticDashSubstitutionEnabled_( False )
-        self.outputView.setAutomaticLinkDetectionEnabled_( True )
+        #self.outputView.setAutomaticLinkDetectionEnabled_( True )
+        #self.outputView.setDisplaysLinkToolTips_( True )
     except Exception, err:
-        print "Text Engine Substitutions ERROR"
-        print err
-        print
-        
+        pass
+
 </t>
 <t tx="karstenw.20170704105032.16">def readFromUTF8_(self, path):
     f = file(path)
@@ -8738,7 +8747,7 @@ except ImportError:
 
 
 </t>
-<t tx="karstenw.20170801052423.1">def say(txt, voice=None, outputurl=None):
+<t tx="karstenw.20170801052423.1">def say(txt, voice=None, outfile=None):
     """Say txt with a voice."""
     # clean up previous talks
     #for talker in g_voicetrash:
@@ -8750,7 +8759,23 @@ except ImportError:
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
     else:
         voice = AppKit.NSSpeechSynthesizer.defaultVoice()
+    
+    # outfile is a path to an AIFF file to be exported to
+    # if the containing folder does not exist, abort
+    path = url = None
+    if outfile:
+        path = os.path.abspath( makeunicode(outfile) )
+        folder, filename = os.path.split( path )
+        if not os.path.exists( folder ):
+            path = None
+    if path:
+        url = Foundation.NSURL.fileURLWithPath_isDirectory_( path, False )
     speaker = AppKit.NSSpeechSynthesizer.alloc().initWithVoice_(voice)
+
+    if speaker and url:
+        g_voicetrash.append( speaker )
+        speaker.startSpeakingString_toURL_(txt, url)
+        return speaker
     if speaker:
         g_voicetrash.append( speaker )
         speaker.startSpeakingString_(txt)
@@ -8918,5 +8943,8 @@ setup(
         }
     } )
 </t>
+<t tx="karstenw.20170811141051.1"></t>
+<t tx="karstenw.20170811141102.1"></t>
+<t tx="karstenw.20170811141113.1"></t>
 </tnodes>
 </leo_file>

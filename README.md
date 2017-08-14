@@ -114,6 +114,9 @@ The adapted Nodebox library is now included in the [download](http://goo.gl/vkuB
 
 Latest changes
 --------------
+
+2017-08-14 Version 1.9.27 Repackaging: scipy, matplotlib, sklearn, pandas, sympy, pattern moved to separate archive which can be downloaded but the folders are removed from repositories. These are compiled folders. numpy has made it back into the app. I hope this configuration tango is over...
+
 2017-08-05 Version 1.9.26 New functions: `say(txt, voice)`, `voices()` and `voiceattributes( voice )`. Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`. Added scikit-learn, pandas and pattern to Library.
 
 #### ATTENTION: scikit-learn does not run on 10.6. ####
