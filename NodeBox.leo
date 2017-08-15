@@ -28,7 +28,7 @@
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
@@ -1166,7 +1166,8 @@ keywordsList += ["None", "True", "False"]
 keywordsList += graphics.__all__
 keywordsList += util.__all__
 keywordsList += dir(graphics.Context)
-keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel", "wheeldelta"]
+keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel",
+                 "wheeldelta", "PAGENUM", "keycode", "FRAME", "canvas"]
 
 
 # Build up a regular expression which will match anything

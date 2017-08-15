@@ -40,7 +40,8 @@ keywordsList += ["None", "True", "False"]
 keywordsList += graphics.__all__
 keywordsList += util.__all__
 keywordsList += dir(graphics.Context)
-keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel", "wheeldelta"]
+keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel",
+                 "wheeldelta", "PAGENUM", "keycode", "FRAME", "canvas"]
 
 
 # Build up a regular expression which will match anything
