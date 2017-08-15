@@ -110,7 +110,6 @@ BOOLEAN = 3
 BUTTON = 4
 MENU = 5
 
-# unused
 KEY_UP = 126
 KEY_DOWN = 125
 KEY_LEFT = 123
