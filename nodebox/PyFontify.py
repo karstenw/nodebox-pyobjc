@@ -40,6 +40,8 @@ keywordsList += ["None", "True", "False"]
 keywordsList += graphics.__all__
 keywordsList += util.__all__
 keywordsList += dir(graphics.Context)
+
+# These keywords were not captured somehow
 keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel",
                  "wheeldelta", "PAGENUM", "keycode", "FRAME", "canvas"]
 
