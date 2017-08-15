@@ -49,10 +49,10 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -69,7 +69,7 @@
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
 </v>
-<v t="karstenw.20170709143242.1"><vh>## Objects ##</vh>
+<v t="karstenw.20170709143242.1" a="E"><vh>## Objects ##</vh>
 <v t="karstenw.20170704104725.15"><vh>_makeInstance</vh></v>
 <v t="karstenw.20170704104725.16"><vh>BezierPath</vh></v>
 <v t="karstenw.20170704104725.17"><vh>ClippingPath</vh></v>
@@ -89,7 +89,7 @@
 <v t="karstenw.20170704104725.29"><vh>_arrow</vh></v>
 <v t="karstenw.20170704104725.30"><vh>_arrow45</vh></v>
 </v>
-<v t="karstenw.20170709143318.1"><vh>## Path Commands ##</vh>
+<v t="karstenw.20170709143318.1" a="E"><vh>## Path Commands ##</vh>
 <v t="karstenw.20170704104725.31"><vh>beginpath</vh></v>
 <v t="karstenw.20170704104725.32"><vh>moveto</vh></v>
 <v t="karstenw.20170704104725.33"><vh>lineto</vh></v>
@@ -374,10 +374,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
 <v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
@@ -615,7 +615,7 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
@@ -636,8 +636,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
@@ -658,7 +658,7 @@
 </v>
 <v t="karstenw.20170704105353.13"><vh>fontfamilies</vh></v>
 </v>
-<v t="karstenw.20170811141113.1" a="E"><vh>SPEECH FUNCTIONS</vh>
+<v t="karstenw.20170811141113.1"><vh>SPEECH FUNCTIONS</vh>
 <v t="karstenw.20170801052347.1"><vh>voices</vh></v>
 <v t="karstenw.20170804122600.1"><vh>voiceattributes</vh></v>
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
@@ -781,15 +781,18 @@
 # and works from there
 
 import os
-import operator
-import warnings
+#import operator
+#import warnings
 
 # for the libraries
 @others
 </t>
-<t tx="karstenw.20170704103857.1">import sgmllib
+<t tx="karstenw.20170704103857.1">#import sgmllib
 import bs4
-import numpy
+
+# moved to Lubrary
+# import numpy
+
 import sqlite3
 import zipfile
 
@@ -797,29 +800,29 @@ import hashlib
 import base64
 import re
 import pickle
-import UserList
+#import UserList
 
 # needed by matplotlib et al.
-import six
-import pyparsing
-import cycler
-import requests
-import pymongo
-import dateutil
-import copy
-import csv
-import functools
-import itertools
-import gzip
-import io
-import httplib
-import http
-import http.client
-import http.server
-import urllib
-import urlparse
-import decimal
-import gettext
+# import six
+# import pyparsing
+# import cycler
+# import requests
+# import pymongo
+# import dateutil
+# import copy
+# import csv
+# import functools
+# import itertools
+# import gzip
+# import io
+# import httplib
+# import http
+# import http.client
+# import http.server
+# import urllib
+# import urlparse
+# import decimal
+# import gettext
 
 
 # PIL / Pillow support
@@ -846,8 +849,8 @@ import nodebox.gui
 import nodebox.gui.mac
 
 # pattern
-import xml.etree
-import xml.etree.cElementTree
+# import xml.etree
+# import xml.etree.cElementTree
 
 
 
@@ -998,9 +1001,8 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            # "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits"],
-            "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits","sklearn",  "pandas"],
-            # "excludes": ["TkInter","sklearn",  "pandas"],
+            "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits","sklearn",
+                          "pandas", "sympy"],
             "excludes": ["TkInter",],
         }
     } )
@@ -1107,7 +1109,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.27'
+<t tx="karstenw.20170704104119.1">__version__='1.9.28a0'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -1164,6 +1166,8 @@ keywordsList += ["None", "True", "False"]
 keywordsList += graphics.__all__
 keywordsList += util.__all__
 keywordsList += dir(graphics.Context)
+keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel", "wheeldelta"]
+
 
 # Build up a regular expression which will match anything
 # interesting, including multi-line triple-quoted strings.
@@ -2707,7 +2711,6 @@ BOOLEAN = 3
 BUTTON = 4
 MENU = 5
 
-# unused
 KEY_UP = 126
 KEY_DOWN = 125
 KEY_LEFT = 123
@@ -4477,7 +4480,7 @@ pp = pprint.pprint
 import pdb
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = False
 
 # if true print out some debug info on stdout
 kwlog = False
