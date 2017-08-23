@@ -3,7 +3,7 @@
 ![](art/nodeboxlogo_big.png?raw=true)
 
 
-This is a fork of (NodeBox 1)[https://github.com/nodebox/nodebox-pyobjc].
+This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
 The current version is 1.9.27
 
@@ -116,9 +116,9 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 Latest changes
 --------------
 
-2017-08-14 Version 1.9.27 Repackaging: scipy, matplotlib, sklearn, pandas, sympy, pattern moved to a separate archive file which can be downloaded. The folders were removed from the `Library` repository. These are compiled packages. numpy has made it back into the app. I hope this configuration tango is over...
+2017-08-14 Version 1.9.27 Repackaging: scipy, matplotlib, sklearn, sympy, pattern moved to a separate archive file which can be downloaded. The folders were removed from the `Library` repository. These are compiled packages. numpy has made it back into the app. I hope this configuration tango is over...
 
-2017-08-05 Version 1.9.26 New functions: `say(txt, voice)`, `voices()` and `voiceattributes( voice )`. Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`. Added scikit-learn, pandas and pattern to Library.
+2017-08-05 Version 1.9.26 New functions: `say(txt, voice)`, `voices()` and `voiceattributes( voice )`. Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`. Added scikit-learn and pattern to Library.
 
 #### ATTENTION: scikit-learn does not run on 10.6. ####
 
