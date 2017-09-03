@@ -106,11 +106,10 @@ class Segment(object):
             n = len(self.points)
 
             # check for a closed polygon
+            close = False
             if L[0] == L[-1]:
                 close = True
                 L.pop()
-            else:
-                close = False
             autoclosepath( close )
 
             beginpath()
