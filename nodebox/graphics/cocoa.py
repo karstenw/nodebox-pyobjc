@@ -600,7 +600,7 @@ class PathElement(object):
         elif self.cmd == LINETO:
             return "PathElement(LINETO, ((%.3f, %.3f),))" % (self.x, self.y)
         elif self.cmd == CURVETO:
-            s = "PathElement(CURVETO, ((%.3f, %.3f), (%.3f, %s), (%.3f, %.3f))"
+            s = "PathElement(CURVETO, ((%.3f, %.3f), (%.3f, %.3f), (%.3f, %.3f))"
             return s % (self.ctrl1.x, self.ctrl1.y,
                         self.ctrl2.x, self.ctrl2.y,
                         self.x, self.y)
