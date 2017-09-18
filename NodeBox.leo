@@ -14,10 +14,10 @@
 <v t="karstenw.20170704103857.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170804151930.1"><vh>@clean setup_small.py</vh>
+<v t="karstenw.20170804151930.1" a="E"><vh>@clean setup_large.py</vh>
 <v t="karstenw.20170804152129.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
@@ -1001,9 +1001,9 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", "scipy", "matplotlib", "mpl_toolkits","sklearn",
-                          "pandas", "sympy"],
-            "excludes": ["TkInter",],
+            "packages": [ "numpy", ],
+            "excludes": ["TkInter", "scipy", "matplotlib", "mpl_toolkits", "sklearn", 
+                         "pandas"],
         }
     } )
 </t>
@@ -1109,7 +1109,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.28a0'
+<t tx="karstenw.20170704104119.1">__version__='1.9.28'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -4210,7 +4210,7 @@ length = property(_get_length)
     elif self.cmd == LINETO:
         return "PathElement(LINETO, ((%.3f, %.3f),))" % (self.x, self.y)
     elif self.cmd == CURVETO:
-        s = "PathElement(CURVETO, ((%.3f, %.3f), (%.3f, %s), (%.3f, %.3f))"
+        s = "PathElement(CURVETO, ((%.3f, %.3f), (%.3f, %.3f), (%.3f, %.3f))"
         return s % (self.ctrl1.x, self.ctrl1.y,
                     self.ctrl2.x, self.ctrl2.y,
                     self.x, self.y)
@@ -8943,9 +8943,9 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", ],
-             # "sklearn", "scipy", "matplotlib", "mpl_toolkits", "pandas"],
-            "excludes": ["TkInter", "scipy", "matplotlib", "mpl_toolkits", "sklearn",  "pandas"],
+            "packages": [ "numpy", "scipy", "matplotlib", "pattern",
+                          "mpl_toolkits", "sklearn", "sympy", "pandas"],
+            "excludes": ["TkInter",],
         }
     } )
 </t>
