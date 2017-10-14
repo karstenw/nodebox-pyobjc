@@ -116,6 +116,8 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 Latest changes
 --------------
 
+2017-09-20 Version 1.9.28 Another Repackaging. Now by making 2 apps. One standart, one with many extra libs. Python is now 2.7.14, PyObjc 3.3a0.
+
 2017-08-14 Version 1.9.27 Repackaging: scipy, matplotlib, sklearn, sympy, pattern moved to a separate archive file which can be downloaded. The folders were removed from the `Library` repository. These are compiled packages. numpy has made it back into the app. I hope this configuration tango is over...
 
 2017-08-05 Version 1.9.26 New functions: `say(txt, voice)`, `voices()` and `voiceattributes( voice )`. Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`. Added scikit-learn and pattern to Library.
