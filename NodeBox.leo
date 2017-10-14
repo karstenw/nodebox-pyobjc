@@ -9,26 +9,25 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103618.1"><vh>NewHeadline</vh></v>
 <v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170804151930.1" a="E"><vh>@clean setup_large.py</vh>
+<v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
 <v t="karstenw.20170804152129.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
@@ -49,7 +48,7 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
@@ -772,7 +771,6 @@
 </v>
 </vnodes>
 <tnodes>
-<t tx="karstenw.20170704103618.1"></t>
 <t tx="karstenw.20170704103837.1">@language python
 @tabwidth -4
 # Startup file for the NodeBox OS X application
@@ -8943,7 +8941,7 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", "scipy", "matplotlib", "pattern",
+            "packages": [ "numpy", "scipy", "matplotlib",
                           "mpl_toolkits", "sklearn", "sympy", "pandas"],
             "excludes": ["TkInter",],
         }

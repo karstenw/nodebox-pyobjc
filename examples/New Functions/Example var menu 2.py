@@ -36,7 +36,7 @@ var("number1", NUMBER, 0, -200, 200)
 var("number2", NUMBER, 0, -200, 200, handler=numberHandler)
 
 var("text1", TEXT, "A text - Old style")
-var("text2", TEXT, "A text - Old style", handler=textHandler)
+var("text2", TEXT, "A text - New style", handler=textHandler)
 
 
 
