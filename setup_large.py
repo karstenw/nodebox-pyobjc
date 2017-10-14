@@ -123,7 +123,7 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", "scipy", "matplotlib", "pattern",
+            "packages": [ "numpy", "scipy", "matplotlib",
                           "mpl_toolkits", "sklearn", "sympy", "pandas"],
             "excludes": ["TkInter",],
         }
