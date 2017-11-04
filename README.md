@@ -122,8 +122,6 @@ Latest changes
 
 2017-08-05 Version 1.9.26 New functions: `say(txt, voice)`, `voices()` and `voiceattributes( voice )`. Extended var behaviour (handler) for `NUMBER`, `TEXT`, `BOOLEAN` and `BUTTON`. Added scikit-learn and pattern to Library.
 
-#### ATTENTION: scikit-learn does not run on 10.6. ####
-
 2017-07-15 Version 1.9.25 Lots of example updates. No new functionality.
 
 2017-07-13 Version 1.9.24 Bugfix in imports.
