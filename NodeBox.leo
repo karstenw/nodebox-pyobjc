@@ -9,17 +9,17 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
+<v t="karstenw.20170804151930.1" a="E"><vh>@clean setup_large.py</vh>
 <v t="karstenw.20170804152129.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
+<v t="karstenw.20170704104018.1" a="E"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
@@ -27,12 +27,12 @@
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1"><vh>geo</vh>
+<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
 <v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
@@ -48,8 +48,8 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
@@ -375,8 +375,8 @@
 </v>
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
 <v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
@@ -485,7 +485,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105032.103"><vh>showPreferencesPanel_</vh></v>
 <v t="karstenw.20170704105032.104"><vh>generateCode_</vh></v>
@@ -525,7 +525,7 @@
 <v t="karstenw.20170709145531.1"><vh>addMenu_y_c_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
@@ -542,7 +542,7 @@
 <v t="karstenw.20170704105106.13"><vh>textFontChanged_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104934.1"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
+<v t="karstenw.20170704104934.1" a="E"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
@@ -618,7 +618,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
@@ -632,7 +632,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104503.1"><vh>tests</vh>
+<v t="karstenw.20170704104503.1" a="E"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
 <v t="karstenw.20170704104508.1" a="E"><vh>util</vh>

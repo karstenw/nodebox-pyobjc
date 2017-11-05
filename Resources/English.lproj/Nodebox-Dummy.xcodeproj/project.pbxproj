@@ -20,6 +20,8 @@
 		8D8C60A81F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = NodeBoxDocument.py; sourceTree = "<group>"; };
 		8D8C60AA1F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = NodeBoxPreferencesController.py; sourceTree = "<group>"; };
 		8D8C60AC1F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = ProgressBarController.py; sourceTree = "<group>"; };
+		8DF274AF1FAF40AF00112D6B /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = Credits_extended.rtf; sourceTree = "<group>"; };
+		8DF274B11FAF40AF00112D6B /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -41,6 +43,8 @@
 				8D8C609B1F0672FC00941B9D /* NodeBoxDocument.xib */,
 				8D8C609D1F0672FC00941B9D /* NodeBoxPreferences.xib */,
 				8D8C609F1F0672FC00941B9D /* ProgressBarSheet.xib */,
+				8DF274AE1FAF40AF00112D6B /* Credits_extended.rtf */,
+				8DF274B01FAF40AF00112D6B /* Credits.rtf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -63,6 +67,8 @@
 /* Begin PBXProject section */
 		8D8C607C1F06729A00941B9D /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 8D8C607F1F06729A00941B9D /* Build configuration list for PBXProject "Nodebox-Dummy" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
@@ -184,6 +190,22 @@
 				8D8C60AC1F06730900941B9D /* English */,
 			);
 			name = ProgressBarController.py;
+			sourceTree = "<group>";
+		};
+		8DF274AE1FAF40AF00112D6B /* Credits_extended.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DF274AF1FAF40AF00112D6B /* English */,
+			);
+			name = Credits_extended.rtf;
+			sourceTree = "<group>";
+		};
+		8DF274B01FAF40AF00112D6B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DF274B11FAF40AF00112D6B /* English */,
+			);
+			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
