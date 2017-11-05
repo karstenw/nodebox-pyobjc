@@ -23,7 +23,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
@@ -49,9 +49,9 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -68,7 +68,7 @@
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
 </v>
-<v t="karstenw.20170709143242.1" a="E"><vh>## Objects ##</vh>
+<v t="karstenw.20170709143242.1"><vh>## Objects ##</vh>
 <v t="karstenw.20170704104725.15"><vh>_makeInstance</vh></v>
 <v t="karstenw.20170704104725.16"><vh>BezierPath</vh></v>
 <v t="karstenw.20170704104725.17"><vh>ClippingPath</vh></v>
@@ -88,7 +88,7 @@
 <v t="karstenw.20170704104725.29"><vh>_arrow</vh></v>
 <v t="karstenw.20170704104725.30"><vh>_arrow45</vh></v>
 </v>
-<v t="karstenw.20170709143318.1" a="E"><vh>## Path Commands ##</vh>
+<v t="karstenw.20170709143318.1"><vh>## Path Commands ##</vh>
 <v t="karstenw.20170704104725.31"><vh>beginpath</vh></v>
 <v t="karstenw.20170704104725.32"><vh>moveto</vh></v>
 <v t="karstenw.20170704104725.33"><vh>lineto</vh></v>
@@ -373,7 +373,7 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1"><vh>mac</vh>
 <v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
@@ -614,7 +614,7 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
@@ -635,8 +635,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
@@ -657,7 +657,7 @@
 </v>
 <v t="karstenw.20170704105353.13"><vh>fontfamilies</vh></v>
 </v>
-<v t="karstenw.20170811141113.1"><vh>SPEECH FUNCTIONS</vh>
+<v t="karstenw.20170811141113.1" a="E"><vh>SPEECH FUNCTIONS</vh>
 <v t="karstenw.20170801052347.1"><vh>voices</vh></v>
 <v t="karstenw.20170804122600.1"><vh>voiceattributes</vh></v>
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
@@ -785,7 +785,7 @@ import os
 # for the libraries
 @others
 </t>
-<t tx="karstenw.20170704103857.1">#import sgmllib
+<t tx="karstenw.20170704103857.1">import sgmllib
 import bs4
 
 # moved to Lubrary
@@ -1107,7 +1107,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.28'
+<t tx="karstenw.20170704104119.1">__version__='1.9.29'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -7357,6 +7357,7 @@ MAGICVAR = "__magic_var__"
 @others
 </t>
 <t tx="karstenw.20170704105353.1">import os
+import time
 import datetime
 import glob
 
@@ -7453,6 +7454,7 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
                 result.append( fontRec )
     return result
 
+
 </t>
 <t tx="karstenw.20170704105353.14">def autotext(sourceFile):
     k = kgp.KantGenerator(sourceFile)
@@ -7473,6 +7475,7 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
         return v
     else:
         raise NodeBoxError, "Don't know how to copy '%s'." % v
+
 
 </t>
 <t tx="karstenw.20170704105353.16">def _copy_attrs(source, target, attrs):
@@ -7544,6 +7547,7 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
     for y in rowRange:
         for x in colRange:
             yield (x*colSize,y*rowSize)
+
 
 </t>
 <t tx="karstenw.20170704105353.5">def random(v1=None, v2=None):
@@ -7656,6 +7660,7 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
             yield path
         else:
             yield filetuple
+
 
 </t>
 <t tx="karstenw.20170704105353.9">def fontnames():
@@ -8751,14 +8756,9 @@ except ImportError:
 
 
 </t>
-<t tx="karstenw.20170801052423.1">def say(txt, voice=None, outfile=None):
+<t tx="karstenw.20170801052423.1">def say(txt, voice=None, outfile=None, wait=True):
     """Say txt with a voice."""
-    # clean up previous talks
-    #for talker in g_voicetrash:
-    #    if not talker.speaking():
-    #        talker.release()
-    #        del talker
-
+    global g_voicetrash
     if voice and voice in voices():
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
     else:
@@ -8772,6 +8772,7 @@ except ImportError:
         folder, filename = os.path.split( path )
         if not os.path.exists( folder ):
             path = None
+
     if path:
         url = Foundation.NSURL.fileURLWithPath_isDirectory_( path, False )
     speaker = AppKit.NSSpeechSynthesizer.alloc().initWithVoice_(voice)
@@ -8780,7 +8781,13 @@ except ImportError:
         g_voicetrash.append( speaker )
         speaker.startSpeakingString_toURL_(txt, url)
         return speaker
+
     if speaker:
+        if wait:
+            while anySpeakers():
+                time.sleep(0.1)
+        # it is importatnt that speaker gets added AFTER anySpeakers()
+        # it does garbage collection
         g_voicetrash.append( speaker )
         speaker.startSpeakingString_(txt)
         return speaker
@@ -8798,7 +8805,9 @@ except ImportError:
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
         attrs = AppKit.NSSpeechSynthesizer.attributesForVoice_( voice )
         result = PyObjCTools.Conversion.pythonCollectionFromPropertyList(attrs)
-        keys = attrs.keys()
+        keys = result.keys()
+        for key  in keys:
+            result[key] = makeunicode(result[key])
     return result
 
 
@@ -8809,7 +8818,16 @@ g_voicetrash = []
 </t>
 <t tx="karstenw.20170804123557.1">def anySpeakers():
     """Return if ANY application is currently speaking."""
+    global g_voicetrash
+
+    b = bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
+    if not b:
+        # empty accumulated voices
+        while len(g_voicetrash) &gt; 0:
+            f = g_voicetrash.pop()
+            del f
     return bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
+
 
 </t>
 <t tx="karstenw.20170804151930.1">@language python

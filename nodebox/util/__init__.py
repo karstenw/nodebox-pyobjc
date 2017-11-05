@@ -1,4 +1,5 @@
 import os
+import time
 import datetime
 import glob
 
@@ -88,6 +89,7 @@ def grid(cols, rows, colSize=1, rowSize=1, shuffled=False):
     for y in rowRange:
         for x in colRange:
             yield (x*colSize,y*rowSize)
+
 
 def random(v1=None, v2=None):
     """Returns a random value.
@@ -202,6 +204,7 @@ def imagefiles( folderpathorlist, pathonly=True ):
         else:
             yield filetuple
 
+
 def fontnames():
     fm = AppKit.NSFontManager.sharedFontManager()
     l = fm.availableFonts()
@@ -281,6 +284,7 @@ def fontfamilies(flat=False):
                 result.append( fontRec )
     return result
 
+
 def voices():
     """Return a list of voice names."""
     vcs = AppKit.NSSpeechSynthesizer.availableVoices()
@@ -300,22 +304,28 @@ def voiceattributes(voice):
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
         attrs = AppKit.NSSpeechSynthesizer.attributesForVoice_( voice )
         result = PyObjCTools.Conversion.pythonCollectionFromPropertyList(attrs)
-        keys = attrs.keys()
+        keys = result.keys()
+        for key  in keys:
+            result[key] = makeunicode(result[key])
     return result
 
 
 def anySpeakers():
     """Return if ANY application is currently speaking."""
+    global g_voicetrash
+
+    b = bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
+    if not b:
+        # empty accumulated voices
+        while len(g_voicetrash) > 0:
+            f = g_voicetrash.pop()
+            del f
     return bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
 
-def say(txt, voice=None, outfile=None):
-    """Say txt with a voice."""
-    # clean up previous talks
-    #for talker in g_voicetrash:
-    #    if not talker.speaking():
-    #        talker.release()
-    #        del talker
 
+def say(txt, voice=None, outfile=None, wait=True):
+    """Say txt with a voice."""
+    global g_voicetrash
     if voice and voice in voices():
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
     else:
@@ -329,6 +339,7 @@ def say(txt, voice=None, outfile=None):
         folder, filename = os.path.split( path )
         if not os.path.exists( folder ):
             path = None
+
     if path:
         url = Foundation.NSURL.fileURLWithPath_isDirectory_( path, False )
     speaker = AppKit.NSSpeechSynthesizer.alloc().initWithVoice_(voice)
@@ -337,7 +348,13 @@ def say(txt, voice=None, outfile=None):
         g_voicetrash.append( speaker )
         speaker.startSpeakingString_toURL_(txt, url)
         return speaker
+
     if speaker:
+        if wait:
+            while anySpeakers():
+                time.sleep(0.1)
+        # it is importatnt that speaker gets added AFTER anySpeakers()
+        # it does garbage collection
         g_voicetrash.append( speaker )
         speaker.startSpeakingString_(txt)
         return speaker
@@ -356,6 +373,7 @@ def _copy_attr(v):
         return v
     else:
         raise NodeBoxError, "Don't know how to copy '%s'." % v
+
 
 def _copy_attrs(source, target, attrs):
     for attr in attrs:
