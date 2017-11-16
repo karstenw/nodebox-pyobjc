@@ -15,15 +15,47 @@ from matplotlib.animation import FuncAnimation
 # Fixing random state for reproducibility
 np.random.seed(19680801)
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
 
 # Create new Figure and an Axes which fills it.
-fig = plt.figure(figsize=(7, 7))
+fig = plt.figure(figsize=(8, 12))
 ax = fig.add_axes([0, 0, 1, 1], frameon=False)
 ax.set_xlim(0, 1), ax.set_xticks([])
 ax.set_ylim(0, 1), ax.set_yticks([])
 
 # Create rain data
-n_drops = 50
+n_drops = 150
 rain_drops = np.zeros(n_drops, dtype=[('position', float, 2),
                                       ('size',     float, 1),
                                       ('growth',   float, 1),
@@ -67,5 +99,6 @@ def update(frame_number):
 
 # Construct the animation, using the update function as the animation
 # director.
-animation = FuncAnimation(fig, update, interval=10)
-plt.show()
+animation = FuncAnimation(fig, update, interval=30)
+animation.save("rain.mp4")
+pltshow(plt)

@@ -9,6 +9,39 @@ import matplotlib.pyplot as plt
 
 from matplotlib.ticker import NullFormatter  # useful for `logit` scale
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
+
 # Fixing random state for reproducibility
 np.random.seed(19680801)
 
@@ -58,4 +91,4 @@ plt.gca().yaxis.set_minor_formatter(NullFormatter())
 plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.25,
                     wspace=0.35)
 
-plt.show()
+pltshow(plt)

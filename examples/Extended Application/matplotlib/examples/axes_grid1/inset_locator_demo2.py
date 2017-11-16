@@ -11,6 +11,38 @@ from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 
 import numpy as np
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
 
 def get_demo_image():
     from matplotlib.cbook import get_sample_data
@@ -52,4 +84,4 @@ plt.yticks(visible=False)
 mark_inset(ax, axins, loc1=2, loc2=4, fc="none", ec="0.5")
 
 plt.draw()
-plt.show()
+pltshow(plt)

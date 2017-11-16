@@ -14,6 +14,38 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
 
 def update_line(num, data, line):
     line.set_data(data[..., :num])
@@ -51,4 +83,5 @@ for add in np.arange(15):
 
 im_ani = animation.ArtistAnimation(fig2, ims, interval=50, repeat_delay=3000,
                                    blit=True)
-im_ani.save('im.mp4', writer=writer)
+im_ani.save('basic_example_writer_sgskip.mp4', writer=writer)
+pltshow(plt)

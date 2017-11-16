@@ -1,6 +1,11 @@
 import os
 import pprint
 
+"""Let all the voices on your computer speak their demo sentence at the same time ;-)
+"""
+
+
+
 voicename=None
 
 # get all voice names

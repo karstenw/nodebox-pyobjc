@@ -50,6 +50,39 @@ import matplotlib.dates as mdates
 import numpy as np
 import matplotlib.pyplot as plt
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
+
 with cbook.get_sample_data('goog.npz') as datafile:
     r = np.load(datafile)['price_data'].view(np.recarray)
 
@@ -88,3 +121,5 @@ ax.set_title('fig.autofmt_xdate fixes the labels')
 ###############################################################################
 # Now when you hover your mouse over the plotted data, you'll see date
 # format strings like 2004-12-01 in the toolbar.
+
+pltshow(plt)

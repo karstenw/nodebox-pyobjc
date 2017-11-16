@@ -15,6 +15,38 @@ import matplotlib.pyplot as plt
 import scipy.stats as ss
 from matplotlib.animation import FuncAnimation
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
 
 class UpdateDist(object):
     def __init__(self, ax, prob=0.5):
@@ -59,4 +91,5 @@ fig, ax = plt.subplots()
 ud = UpdateDist(ax, prob=0.7)
 anim = FuncAnimation(fig, ud, frames=np.arange(100), init_func=ud.init,
                      interval=100, blit=True)
-plt.show()
+anim.save("bayes_update_sgskip.mp4")
+pltshow(plt)

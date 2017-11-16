@@ -8,6 +8,38 @@ import matplotlib.pyplot as plt
 
 from mpl_toolkits.axes_grid1 import Divider, LocatableAxes, Size
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
 
 def demo_fixed_size_axes():
     fig1 = plt.figure(1, (6, 6))
@@ -47,8 +79,8 @@ def demo_fixed_pad_axes():
     ax.plot([1, 2, 3])
 
 
-if __name__ == "__main__":
+if 1: # __name__ == "__main__":
     demo_fixed_size_axes()
     demo_fixed_pad_axes()
 
-    plt.show()
+    pltshow(plt)

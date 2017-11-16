@@ -18,6 +18,39 @@ import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.cbook as cbook
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
+
 # load up some sample financial data
 with cbook.get_sample_data('goog.npz') as datafile:
     r = np.load(datafile)['price_data'].view(np.recarray)
@@ -134,3 +167,5 @@ ax.grid()
 # functions :meth:`~matplotlib.axes.Axes.axhspan` and
 # :meth:`~matplotlib.axes.Axes.axvspan` and example
 # :ref:`sphx_glr_gallery_subplots_axes_and_figures_axhspan_demo.py`.
+
+pltshow(plt)

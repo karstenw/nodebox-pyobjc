@@ -1,5 +1,8 @@
 import pprint
 
+"""Select a voice and it says it's demo text."""
+
+
 voicename=None
 
 # get all voice names
@@ -15,7 +18,7 @@ def dovoice(v, n):
     name = attr[ u'VoiceName' ]
 
     # say my line
-    say(txt, v)
+    say(txt, v, wait=True)
     
     # print some voice stuff
     print "Name:", attr[ u'VoiceName' ]

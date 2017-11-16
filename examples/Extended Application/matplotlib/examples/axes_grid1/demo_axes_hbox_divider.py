@@ -9,6 +9,38 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1.axes_divider import HBoxDivider
 import mpl_toolkits.axes_grid1.axes_size as Size
 
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
 
 def make_heights_equal(fig, rect, ax1, ax2, pad):
     # pad in inches
@@ -27,7 +59,7 @@ def make_heights_equal(fig, rect, ax1, ax2, pad):
     ax2.set_axes_locator(my_divider.new_locator(2))
 
 
-if __name__ == "__main__":
+if 1: #__name__ == "__main__":
 
     arr1 = np.arange(20).reshape((4, 5))
     arr2 = np.arange(20).reshape((5, 4))
@@ -52,4 +84,4 @@ if __name__ == "__main__":
                  xycoords="axes fraction", va="center", ha="center",
                  bbox=dict(boxstyle="round, pad=1", fc="w"))
 
-    plt.show()
+    pltshow(plt)

@@ -1,12 +1,4 @@
 import math
-import pdb
-
-
-def coordinatespy(x0, y0, distance, angle):
-    x1 = x0 + math.cos(math.radians(angle)) * distance
-    y1 = y0 + math.sin(math.radians(angle)) * distance
-    return x1, y1
-
 
 
 def params(val, name):
@@ -21,9 +13,7 @@ def params(val, name):
         d = val
     elif name == "a":
         a = val
-    
     drawit(x0,y0,d,a)
-
 
 
 def drawit(x0,y0,d,a):
@@ -51,6 +41,7 @@ def drawit(x0,y0,d,a):
     s = "coordinates(x0=%.1f, y0=%.1f, d=%.1f, a=%.1f) = (%.1f, %.1f)" % (x0,y0,d,a,x1,y1)
     text(s, lx, ly)
     print s
+
 
 var("x0", NUMBER, default=200, min=10, max=400, handler=params)
 var("y0", NUMBER, default=200, min=10, max=400, handler=params)
