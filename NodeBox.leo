@@ -9,25 +9,25 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170804151930.1" a="E"><vh>@clean setup_large.py</vh>
+<v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
 <v t="karstenw.20170804152129.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104018.1" a="E"><vh>@clean setup_console.py</vh>
+<v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
@@ -49,7 +49,7 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
@@ -375,7 +375,7 @@
 </v>
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
 <v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -636,7 +636,7 @@
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
 <v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
@@ -657,7 +657,7 @@
 </v>
 <v t="karstenw.20170704105353.13"><vh>fontfamilies</vh></v>
 </v>
-<v t="karstenw.20170811141113.1" a="E"><vh>SPEECH FUNCTIONS</vh>
+<v t="karstenw.20170811141113.1"><vh>SPEECH FUNCTIONS</vh>
 <v t="karstenw.20170801052347.1"><vh>voices</vh></v>
 <v t="karstenw.20170804122600.1"><vh>voiceattributes</vh></v>
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
@@ -4893,10 +4893,12 @@ def stopScript_(self, sender=None):
 
     # debug print all collected keywords
     if kwlog:
-        print "util.__all__:"
-        pp(util.__all__)
-        print "graphics.__all__:"
-        pp(graphics.__all__)
+        #print "util.__all__:"
+        #pp(util.__all__)
+        #print "graphics.__all__:"
+        #pp(graphics.__all__)
+        print "namespace.keys():"
+        pp(namespace.keys())
 
     # Add everything from the context object
     self.namespace["_ctx"] = self.context
@@ -8821,12 +8823,12 @@ g_voicetrash = []
     global g_voicetrash
 
     b = bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
-    if not b:
+    if b == False:
         # empty accumulated voices
         while len(g_voicetrash) &gt; 0:
             f = g_voicetrash.pop()
             del f
-    return bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
+    return b
 
 
 </t>
