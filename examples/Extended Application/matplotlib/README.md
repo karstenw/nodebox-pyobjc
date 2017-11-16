@@ -1,56 +1,52 @@
-#### How to use the integrated matplotlib
+#### How the matplotlib examples were adapted:
 
-##### Step 1: Do your imports
+##### Step 1: Insert helper snippet after import
+
+###### It is important that the import line is the same as here.
 
 ```
-import sys
-import os
-import tempfile
-fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
-fname = fob.name
-fob.close()
-import numpy as np
-import scipy
-
-import matplotlib
 import matplotlib.pyplot as plt
+
+# nodebox section
+if __name__ == '__builtin__':
+    # were in nodebox
+    import os
+    import tempfile
+    W = 800
+    inset = 20
+    size(W, 600)
+    plt.cla()
+    plt.clf()
+    plt.close('all')
+    def tempimage():
+        fob = tempfile.NamedTemporaryFile(mode='w+b', suffix='.png', delete=False)
+        fname = fob.name
+        fob.close()
+        return fname
+    imgx = 20
+    imgy = 0
+    def pltshow(plt, dpi=150):
+        global imgx, imgy
+        temppath = tempimage()
+        plt.savefig(temppath, dpi=dpi)
+        dx,dy = imagesize(temppath)
+        w = min(W,dx)
+        image(temppath,imgx,imgy,width=w)
+        imgy = imgy + dy + 20
+        os.remove(temppath)
+        size(W, HEIGHT+dy+40)
+else:
+    def pltshow(mplpyplot):
+        mplpyplot.show()
+# nodebox section end
+
 ```
 
-Lines 3-6 prepare for a temp file which will be ``ìmage```'d at the end of the script.
-
-
-
-##### Step 2: Do some fancy matplotlib stuff (or go through a tutorial)
+##### Step 2: Replace all `plt.show()` with `pltshow(plt)`
 
 ```
-X = np.linspace(-np.pi, np.pi, 256, endpoint=True)
-C, S = np.cos(X), np.sin(X)
-
-
-
-plt.plot(X, C)
-plt.plot(X, S)
+# plt.show()
+pltshow(plt)
 
 ```
 
-
-##### Step 3: Conclude the script
-
-```
-# save the plot and load it as an image...
-plt.savefig(fname, dpi=150)
-
-# clear last plot
-# pyplots overlap between runs. If that's a desired feature,
-# comment the following three lines.
-plt.cla()
-plt.clf()
-plt.close('all')
-
-image(fname, 0, 0)
-os.remove( fname )
-```
-
-This saves the plot in the temp file, cleares the figure cache, displays the generated image in NodeBox-land and deletes the temp file.
-
-The figure cache clearing is necessary since matplotlib caches generated plots and accumulates them.
