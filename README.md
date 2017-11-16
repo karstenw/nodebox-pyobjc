@@ -93,7 +93,7 @@ Attention!
 	-  Draws an arc between startAngle and endAngle with center at (x,y) and radius=r.
 
 
-1.  New function `say(txt, voice=None, outfile=None)` (1.9.26).
+1.  New function `say(txt, voice=None, outfile=None, wait=True)` (1.9.26).
 		Say txt in voice. If voice is None, the default voice is used.
 		If outfile is a valid path, the text will be saved as an AIFF file (1.9.27).
 
@@ -115,6 +115,8 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+
+2017-11-05 Version 1.9.29 say() has now a wait=True optional parameter to make it wait untill the other voices have spoken. Many more adapted examples for the extended app.
 
 2017-09-20 Version 1.9.28 Another Repackaging. Now by making 2 apps. One standart, one with many extra libs. Python is now 2.7.14, PyObjc 3.3a0.
 
