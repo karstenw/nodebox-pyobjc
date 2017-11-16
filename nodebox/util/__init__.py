@@ -315,12 +315,12 @@ def anySpeakers():
     global g_voicetrash
 
     b = bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
-    if not b:
+    if b == False:
         # empty accumulated voices
         while len(g_voicetrash) > 0:
             f = g_voicetrash.pop()
             del f
-    return bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
+    return b
 
 
 def say(txt, voice=None, outfile=None, wait=True):

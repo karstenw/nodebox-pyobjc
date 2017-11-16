@@ -482,10 +482,12 @@ class NodeBoxDocument(NSDocument):
 
         # debug print all collected keywords
         if kwlog:
-            print "util.__all__:"
-            pp(util.__all__)
-            print "graphics.__all__:"
-            pp(graphics.__all__)
+            #print "util.__all__:"
+            #pp(util.__all__)
+            #print "graphics.__all__:"
+            #pp(graphics.__all__)
+            print "namespace.keys():"
+            pp(namespace.keys())
 
         # Add everything from the context object
         self.namespace["_ctx"] = self.context
