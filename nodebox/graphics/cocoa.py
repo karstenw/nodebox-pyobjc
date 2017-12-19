@@ -47,7 +47,11 @@ NSData = AppKit.NSData
 NSAffineTransformStruct = AppKit.NSAffineTransformStruct
 
 
-from nodebox.util import _copy_attr, _copy_attrs, makeunicode
+import nodebox.util
+_copy_attr = nodebox.util._copy_attr
+_copy_attrs = nodebox.util._copy_attrs
+makeunicode = nodebox.util.makeunicode
+
 
 try:
     import cPolymagic
@@ -134,13 +138,18 @@ _STATE_NAMES = {
     '_lineheight':    'lineheight',
 }
 
+
 def _save():
     NSGraphicsContext.currentContext().saveGraphicsState()
+
 
 def _restore():
     NSGraphicsContext.currentContext().restoreGraphicsState()
 
-class NodeBoxError(Exception): pass
+
+class NodeBoxError(Exception):
+    pass
+
 
 class Point(object):
 
@@ -163,6 +172,7 @@ class Point(object):
         
     def __ne__(self, other):
         return not self.__eq__(other)
+
 
 class Grob(object):
     """A GRaphic OBject is the base class for all DrawingPrimitives."""
@@ -190,6 +200,7 @@ class Grob(object):
         if remaining:
             raise NodeBoxError, "Unknown argument(s) '%s'" % ", ".join(remaining)
     checkKwargs = classmethod(checkKwargs)
+
 
 class TransformMixin(object):
 
@@ -338,11 +349,22 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
 
     # relativeMoveToPoint_( NSPoint )
     # relativeLineToPoint_( NSPoint )
-    # relativeCurveToPoint:(NSPoint)aPoint controlPoint1:(NSPoint)controlPoint1 controlPoint2:(NSPoint)controlPoint2
+    # relativeCurveToPoint:(NSPoint)aPoint
+    #           controlPoint1:(NSPoint)controlPoint1
+    #           controlPoint2:(NSPoint)controlPoint2
     # appendBezierPathWithOvalInRect_
-    # appendBezierPathWithArcFromPoint_(NSPoint)fromPoint toPoint_(NSPoint)toPoint radius:(CGFloat)
-    # appendBezierPathWithArcWithCenter:(NSPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle
-    # appendBezierPathWithArcWithCenter:(NSPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
+    # appendBezierPathWithArcFromPoint_(NSPoint)fromPoint
+    #                          toPoint_(NSPoint)toPoint
+    #                           radius_(CGFloat)radius
+    # appendBezierPathWithArcWithCenter:(NSPoint)center
+    #                            radius:(CGFloat)radius
+    #                        startAngle:(CGFloat)startAngle
+    #                          endAngle:(CGFloat)endAngle
+    # appendBezierPathWithArcWithCenter:(NSPoint)center
+    #                            radius:(CGFloat)radius
+    #                        startAngle:(CGFloat)startAngle
+    #                          endAngle:(CGFloat)endAngle
+    #                         clockwise:(BOOL)clockwise
 
     def closepath(self):
         self._segment_cache = None
@@ -565,6 +587,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return BezierPath(self._ctx, cPolymagic.xor(self._nsBezierPath,
                                                     other._nsBezierPath, flatness))
 
+
 class PathElement(object):
 
     def __init__(self, cmd=None, pts=None):
@@ -616,6 +639,7 @@ class PathElement(object):
     def __ne__(self, other):
         return not self.__eq__(other)
 
+
 class ClippingPath(Grob):
 
     def __init__(self, ctx, path):
@@ -634,6 +658,7 @@ class ClippingPath(Grob):
             grob._draw()
         _restore()
 
+
 class Rect(BezierPath):
 
     def __init__(self, ctx, x, y, width, height, **kwargs):
@@ -645,6 +670,7 @@ class Rect(BezierPath):
 
     def copy(self):
         raise NotImplementedError, "Please don't use Rect anymore"
+
 
 class Oval(BezierPath):
 
@@ -949,8 +975,8 @@ class Color(object):
         if r == 1.0:
             return lst
         return [v / r for v in lst]
-
 color = Color
+
 
 class Transform(object):
 
@@ -1048,6 +1074,7 @@ class Transform(object):
         path._nsBezierPath = self._nsAffineTransform.transformBezierPath_(path._nsBezierPath)
         return path
 
+
 class Image(Grob, TransformMixin):
 
     stateAttributes = ('_transform', '_transformmode')
@@ -1070,6 +1097,7 @@ class Image(Grob, TransformMixin):
         """
         super(Image, self).__init__(ctx)
         TransformMixin.__init__(self)
+
         if data is not None:
             if not isinstance(data, NSData):
                 data = NSData.dataWithBytes_length_(data, len(data))
@@ -1078,12 +1106,14 @@ class Image(Grob, TransformMixin):
                 raise NodeBoxError, "can't read image %r" % path
             self._nsImage.setFlipped_(True)
             self._nsImage.setCacheMode_(NSImageCacheNever)
+
         elif image is not None:
             if isinstance(image, NSImage):
                 self._nsImage = image
                 self._nsImage.setFlipped_(True)
             else:
                 raise NodeBoxError, "Don't know what to do with %s." % image
+
         elif path is not None:
             if not os.path.exists(path):
                 raise NodeBoxError, 'Image "%s" not found.' % path
@@ -1238,6 +1268,7 @@ class Image(Grob, TransformMixin):
                                 (0,0), srcRect, NSCompositeSourceOver, self.alpha)
             _restore()
 
+
 class Text(Grob, TransformMixin, ColorMixin):
 
     stateAttributes = ('_transform', '_transformmode', '_fillcolor', '_fontname',
@@ -1335,7 +1366,8 @@ class Text(Grob, TransformMixin, ColorMixin):
             t.translate(x+deltaX, y-self.font.defaultLineHeightForFont()+deltaY)
             t.concat()
             self._transform.concat()
-            layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange, (-deltaX-dx,-deltaY-dy))
+            layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange,
+                                                           (-deltaX-dx,-deltaY-dy))
         else:
             self._transform.concat()
             layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange,
@@ -1404,6 +1436,7 @@ class Text(Grob, TransformMixin, ColorMixin):
         return path
     path = property(_get_path)
 
+
 class Variable(object):
     def __init__(self, name, typ,
                        default=None, minV=0, maxV=100, value=None,
@@ -1467,7 +1500,6 @@ class Variable(object):
             self.default = default
         self.value = value or self.default
 
-
     def sanitize(self, val):
         """Given a Variable and a value, cleans it out"""
         if self.type == NUMBER:
@@ -1505,6 +1537,7 @@ class Variable(object):
         return s % (self.name, self.type, self.default, self.min, self.max, self.value,
                     repr(self.handler), repr(self.menuitems))
 
+
 class _PDFRenderView(NSView):
     
     # This view was created to provide PDF data.
@@ -1532,6 +1565,7 @@ class _PDFRenderView(NSView):
 
     def isFlipped(self):
         return True
+
 
 class Canvas(Grob):
 
