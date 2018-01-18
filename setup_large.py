@@ -11,7 +11,7 @@ import py2app
 
 import nodebox
 
-NAME = 'NodeBox'
+NAME = 'NodeBox extended'
 VERSION = nodebox.__version__
 
 
@@ -114,6 +114,7 @@ setup(
         ],
 
     ext_modules=[
+        Extension('atkinsondither', ['libs/atkinsondither/atkinsondither.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
