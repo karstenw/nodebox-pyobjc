@@ -13,5 +13,5 @@ for fmname in keys:
     famMembers = fontFamilies[fmname]
     for member in famMembers:
         print "    ", member
-        print "        ", fontFamilies[fmname][member]
+        # print "        ", fontFamilies[fmname][member]
     print
