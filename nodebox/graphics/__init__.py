@@ -174,6 +174,7 @@ class Context(object):
         return self._makeInstance(Color, args, kwargs)
 
     def Image(self, *args, **kwargs):
+        # this creates a cocoa.Image instance. Devious.
         return self._makeInstance(Image, args, kwargs)
 
     def Text(self, *args, **kwargs):
@@ -591,4 +592,9 @@ class Context(object):
 
     def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
         return nodebox.geo.reflect(x0, y0, x1, y1, d, a)
+
+    ## 
+
+    def atkinson(self, imagebytes, w, h, threshhold):
+        return nodebox.geo.atkinson(imagebytes, w, h, threshhold)
 
