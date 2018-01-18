@@ -3,13 +3,17 @@ import time
 import datetime
 import glob
 
-
 import random as librandom
 choice = librandom.choice
 
 import unicodedata
-import objc
 
+import pdb
+
+import PIL
+import numpy as np
+
+import objc
 import Foundation
 import AppKit
 import PyObjCTools.Conversion
@@ -19,13 +23,16 @@ import kgp
 
 __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
            'datestring','makeunicode', 'filelist', 'imagefiles',
-           'fontnames', 'fontfamilies', 'voices', 'voiceattributes', 'anySpeakers', 'say')
+           'fontnames', 'fontfamilies',
+           'voices', 'voiceattributes', 'anySpeakers', 'say',
+           'imagepalette')
 
 
 ### Utilities ###
 
 
 g_voicetrash = []
+
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     typ = type(s)
@@ -358,6 +365,58 @@ def say(txt, voice=None, outfile=None, wait=True):
         g_voicetrash.append( speaker )
         speaker.startSpeakingString_(txt)
         return speaker
+
+
+def palette(pilimage, mask):
+    """
+    Return palette in descending order of frequency
+    """
+    result = []
+    arr = np.asarray(pilimage)
+    if mask != None:
+        if 0 <= mask <= 255:
+            arr = arr & int(mask)
+    palette, index = np.unique(asvoid(arr).ravel(), return_inverse=True)
+    palette = palette.view(arr.dtype).reshape(-1, arr.shape[-1])
+    count = np.bincount(index)
+    order = np.argsort(count)
+    
+    p = palette[order[::-1]]
+
+    for col in p:
+        r,g,b = col
+        
+        result.append( (r / 255.0, g / 255.0, b / 255.0) )
+    return result
+
+
+def asvoid(arr):
+    """View the array as dtype np.void (bytes)
+    This collapses ND-arrays to 1D-arrays, so you can perform 1D operations on them.
+    http://stackoverflow.com/a/16216866/190597 (Jaime)
+    http://stackoverflow.com/a/16840350/190597 (Jaime)
+    Warning:
+    >>> asvoid([-0.]) == asvoid([0.])
+    array([False], dtype=bool)
+    """
+    arr = np.ascontiguousarray(arr)
+    result = arr.view(np.dtype((np.void, arr.dtype.itemsize * arr.shape[-1])))
+    return result
+
+
+def imagepalette( pathorimg, mask=None ):
+    t = type(pathorimg)
+    result = []
+    if t in (str, unicode):
+        f = PIL.Image.open( pathorimg )
+        f = f.convert("RGB")
+        result = palette( f, mask )
+    else:
+        try:
+            result = palette( pathorimg, mask )
+        except Exception, err:
+            pass
+    return result
 
 
 def _copy_attr(v):
