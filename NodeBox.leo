@@ -23,7 +23,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
@@ -32,7 +32,7 @@
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
+<v t="karstenw.20170704104453.1"><vh>geo</vh>
 <v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
@@ -49,7 +49,7 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
@@ -373,10 +373,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
 <v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
@@ -485,7 +485,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105032.103"><vh>showPreferencesPanel_</vh></v>
 <v t="karstenw.20170704105032.104"><vh>generateCode_</vh></v>
@@ -525,7 +525,7 @@
 <v t="karstenw.20170709145531.1"><vh>addMenu_y_c_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
@@ -542,7 +542,7 @@
 <v t="karstenw.20170704105106.13"><vh>textFontChanged_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104934.1" a="E"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
+<v t="karstenw.20170704104934.1"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
@@ -614,11 +614,11 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
@@ -632,11 +632,11 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104503.1" a="E"><vh>tests</vh>
+<v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
 <v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
@@ -662,6 +662,10 @@
 <v t="karstenw.20170804122600.1"><vh>voiceattributes</vh></v>
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
+</v>
+<v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20171218183032.1"><vh>palette</vh></v>
+<v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
 </v>
 <v t="karstenw.20170704105353.15"><vh>_copy_attr</vh></v>
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
@@ -850,8 +854,6 @@ import nodebox.gui.mac
 # import xml.etree
 # import xml.etree.cElementTree
 
-
-
 # Do not import these here; they are in the app and are imported by scripts
 # If you import here, 10.6 breaks
 # import scipy
@@ -990,6 +992,7 @@ setup(
         ],
 
     ext_modules=[
+        Extension('atkinsondither', ['libs/atkinsondither/atkinsondither.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
@@ -1071,6 +1074,7 @@ The current version features:
 
 
 ext_modules=[
+    Extension('atkinsondither', ['libs/atkinsondither/atkinsondither.c']),
     Extension('cGeo', ['libs/cGeo/cGeo.c']),
     Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
     Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
@@ -1107,7 +1111,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.29'
+<t tx="karstenw.20170704104119.1">__version__='1.9.30'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -1525,6 +1529,7 @@ def _makeInstance(self, clazz, args, kwargs):
 
 </t>
 <t tx="karstenw.20170704104725.21">def Image(self, *args, **kwargs):
+    # this creates a cocoa.Image instance. Devious.
     return self._makeInstance(Image, args, kwargs)
 
 </t>
@@ -2038,6 +2043,11 @@ def isqrt( self, v):
 </t>
 <t tx="karstenw.20170704104726.29">def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
     return nodebox.geo.reflect(x0, y0, x1, y1, d, a)
+
+## 
+
+def atkinson(self, imagebytes, w, h, threshhold):
+    return nodebox.geo.atkinson(imagebytes, w, h, threshhold)
 
 </t>
 <t tx="karstenw.20170704104726.3">### Color Commands ###
@@ -2649,7 +2659,11 @@ NSData = AppKit.NSData
 NSAffineTransformStruct = AppKit.NSAffineTransformStruct
 
 
-from nodebox.util import _copy_attr, _copy_attrs, makeunicode
+import nodebox.util
+_copy_attr = nodebox.util._copy_attr
+_copy_attrs = nodebox.util._copy_attrs
+makeunicode = nodebox.util.makeunicode
+
 
 try:
     import cPolymagic
@@ -2735,6 +2749,7 @@ _STATE_NAMES = {
     '_align':         'align',
     '_lineheight':    'lineheight',
 }
+
 
 </t>
 <t tx="karstenw.20170704104751.10">class Grob(object):
@@ -2942,7 +2957,6 @@ cmyka = property(_get_cmyka, doc="a tuple containing the CMYKA values for this c
     if r == 1.0:
         return lst
     return [v / r for v in lst]
-
 </t>
 <t tx="karstenw.20170704104751.128">class Transform(object):
 
@@ -3070,6 +3084,7 @@ matrix = property(_get_matrix, _set_matrix)
     path._nsBezierPath = self._nsAffineTransform.transformBezierPath_(path._nsBezierPath)
     return path
 
+
 </t>
 <t tx="karstenw.20170704104751.147">class Image(Grob, TransformMixin):
 
@@ -3095,6 +3110,7 @@ matrix = property(_get_matrix, _set_matrix)
     """
     super(Image, self).__init__(ctx)
     TransformMixin.__init__(self)
+
     if data is not None:
         if not isinstance(data, NSData):
             data = NSData.dataWithBytes_length_(data, len(data))
@@ -3103,12 +3119,14 @@ matrix = property(_get_matrix, _set_matrix)
             raise NodeBoxError, "can't read image %r" % path
         self._nsImage.setFlipped_(True)
         self._nsImage.setCacheMode_(NSImageCacheNever)
+
     elif image is not None:
         if isinstance(image, NSImage):
             self._nsImage = image
             self._nsImage.setFlipped_(True)
         else:
             raise NodeBoxError, "Don't know what to do with %s." % image
+
     elif path is not None:
         if not os.path.exists(path):
             raise NodeBoxError, 'Image "%s" not found.' % path
@@ -3147,6 +3165,7 @@ image = property(_get_image)
     if remaining:
         raise NodeBoxError, "Unknown argument(s) '%s'" % ", ".join(remaining)
 checkKwargs = classmethod(checkKwargs)
+
 
 </t>
 <t tx="karstenw.20170704104751.150">def copy(self):
@@ -3274,6 +3293,7 @@ size = property(getSize)
                             (0,0), srcRect, NSCompositeSourceOver, self.alpha)
         _restore()
 
+
 </t>
 <t tx="karstenw.20170704104751.153">class Text(Grob, TransformMixin, ColorMixin):
 
@@ -3379,7 +3399,8 @@ font = property(_get_font)
         t.translate(x+deltaX, y-self.font.defaultLineHeightForFont()+deltaY)
         t.concat()
         self._transform.concat()
-        layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange, (-deltaX-dx,-deltaY-dy))
+        layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange,
+                                                       (-deltaX-dx,-deltaY-dy))
     else:
         self._transform.concat()
         layoutManager.drawGlyphsForGlyphRange_atPoint_(glyphRange,
@@ -3458,6 +3479,7 @@ metrics = property(_get_metrics)
     return path
 path = property(_get_path)
 
+
 </t>
 <t tx="karstenw.20170704104751.163">class Variable(object):
     @others
@@ -3524,7 +3546,6 @@ path = property(_get_path)
         self.default = default
     self.value = value or self.default
 
-
 </t>
 <t tx="karstenw.20170704104751.165">def sanitize(self, val):
     """Given a Variable and a value, cleans it out"""
@@ -3565,6 +3586,7 @@ path = property(_get_path)
     return s % (self.name, self.type, self.default, self.min, self.max, self.value,
                 repr(self.handler), repr(self.menuitems))
 
+
 </t>
 <t tx="karstenw.20170704104751.168">class _PDFRenderView(NSView):
     
@@ -3602,6 +3624,7 @@ path = property(_get_path)
 </t>
 <t tx="karstenw.20170704104751.172">def isFlipped(self):
     return True
+
 
 </t>
 <t tx="karstenw.20170704104751.173">class Canvas(Grob):
@@ -3726,6 +3749,7 @@ _nsImage = property(_get_nsImage)
 <t tx="karstenw.20170704104751.2">def _save():
     NSGraphicsContext.currentContext().saveGraphicsState()
 
+
 </t>
 <t tx="karstenw.20170704104751.20">def _set_transform(self, transform):
     self._transform = Transform(transform)
@@ -3848,7 +3872,10 @@ strokewidth = property(_get_strokewidth, _set_strokewidth)
 path = property(_get_path)
 
 </t>
-<t tx="karstenw.20170704104751.4">class NodeBoxError(Exception): pass
+<t tx="karstenw.20170704104751.4">
+class NodeBoxError(Exception):
+    pass
+
 
 </t>
 <t tx="karstenw.20170704104751.40">def copy(self):
@@ -3896,11 +3923,22 @@ joinstyle = property(_get_joinstyle, _set_joinstyle)
 
 # relativeMoveToPoint_( NSPoint )
 # relativeLineToPoint_( NSPoint )
-# relativeCurveToPoint:(NSPoint)aPoint controlPoint1:(NSPoint)controlPoint1 controlPoint2:(NSPoint)controlPoint2
+# relativeCurveToPoint:(NSPoint)aPoint
+#           controlPoint1:(NSPoint)controlPoint1
+#           controlPoint2:(NSPoint)controlPoint2
 # appendBezierPathWithOvalInRect_
-# appendBezierPathWithArcFromPoint_(NSPoint)fromPoint toPoint_(NSPoint)toPoint radius:(CGFloat)
-# appendBezierPathWithArcWithCenter:(NSPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle
-# appendBezierPathWithArcWithCenter:(NSPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
+# appendBezierPathWithArcFromPoint_(NSPoint)fromPoint
+#                          toPoint_(NSPoint)toPoint
+#                           radius_(CGFloat)radius
+# appendBezierPathWithArcWithCenter:(NSPoint)center
+#                            radius:(CGFloat)radius
+#                        startAngle:(CGFloat)startAngle
+#                          endAngle:(CGFloat)endAngle
+# appendBezierPathWithArcWithCenter:(NSPoint)center
+#                            radius:(CGFloat)radius
+#                        startAngle:(CGFloat)startAngle
+#                          endAngle:(CGFloat)endAngle
+#                         clockwise:(BOOL)clockwise
 
 </t>
 <t tx="karstenw.20170704104751.48">def closepath(self):
@@ -4169,6 +4207,7 @@ length = property(_get_length)
     return BezierPath(self._ctx, cPolymagic.xor(self._nsBezierPath,
                                                 other._nsBezierPath, flatness))
 
+
 </t>
 <t tx="karstenw.20170704104751.75">class PathElement(object):
 
@@ -4226,6 +4265,7 @@ length = property(_get_length)
 <t tx="karstenw.20170704104751.79">def __ne__(self, other):
     return not self.__eq__(other)
 
+
 </t>
 <t tx="karstenw.20170704104751.8">def __eq__(self, other):
     if other is None: return False
@@ -4254,6 +4294,7 @@ length = property(_get_length)
         grob._draw()
     _restore()
 
+
 </t>
 <t tx="karstenw.20170704104751.84">class Rect(BezierPath):
 
@@ -4269,6 +4310,7 @@ length = property(_get_length)
 </t>
 <t tx="karstenw.20170704104751.86">def copy(self):
     raise NotImplementedError, "Please don't use Rect anymore"
+
 
 </t>
 <t tx="karstenw.20170704104751.87">class Oval(BezierPath):
@@ -4291,11 +4333,13 @@ length = property(_get_length)
 <t tx="karstenw.20170704104751.9">def __ne__(self, other):
     return not self.__eq__(other)
 
+
 </t>
 <t tx="karstenw.20170704104751.90">class Color(object):
 
     @others
 color = Color
+
 
 </t>
 <t tx="karstenw.20170704104751.91">def __init__(self, ctx, *args):
@@ -7363,13 +7407,17 @@ import time
 import datetime
 import glob
 
-
 import random as librandom
 choice = librandom.choice
 
 import unicodedata
-import objc
 
+import pdb
+
+import PIL
+import numpy as np
+
+import objc
 import Foundation
 import AppKit
 import PyObjCTools.Conversion
@@ -7379,7 +7427,9 @@ import kgp
 
 __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
            'datestring','makeunicode', 'filelist', 'imagefiles',
-           'fontnames', 'fontfamilies', 'voices', 'voiceattributes', 'anySpeakers', 'say')
+           'fontnames', 'fontfamilies',
+           'voices', 'voiceattributes', 'anySpeakers', 'say',
+           'imagepalette')
 
 
 ### Utilities ###
@@ -8730,7 +8780,17 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
         x1 = x0 + math.cos(math.radians(angle)) * distance
         y1 = y0 + math.sin(math.radians(angle)) * distance
         return x1, y1
-    
+
+
+try:
+    import atkinsondither
+    atkinson = atkinsondither.atkinson
+
+except ImportError:
+    def atkinson(*args):
+        print "You lost."
+
+
 </t>
 <t tx="karstenw.20170726154241.1">
 </t>
@@ -8817,6 +8877,7 @@ except ImportError:
 <t tx="karstenw.20170804122614.1">
 g_voicetrash = []
 
+
 </t>
 <t tx="karstenw.20170804123557.1">def anySpeakers():
     """Return if ANY application is currently speaking."""
@@ -8849,7 +8910,7 @@ import py2app
 
 import nodebox
 
-NAME = 'NodeBox'
+NAME = 'NodeBox extended'
 VERSION = nodebox.__version__
 
 
@@ -8952,6 +9013,7 @@ setup(
         ],
 
     ext_modules=[
+        Extension('atkinsondither', ['libs/atkinsondither/atkinsondither.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
@@ -8970,5 +9032,60 @@ setup(
 <t tx="karstenw.20170811141051.1"></t>
 <t tx="karstenw.20170811141102.1"></t>
 <t tx="karstenw.20170811141113.1"></t>
+<t tx="karstenw.20171218183025.1"></t>
+<t tx="karstenw.20171218183032.1">def palette(pilimage, mask):
+    """
+    Return palette in descending order of frequency
+    """
+    result = []
+    arr = np.asarray(pilimage)
+    if mask != None:
+        if 0 &lt;= mask &lt;= 255:
+            arr = arr &amp; int(mask)
+    palette, index = np.unique(asvoid(arr).ravel(), return_inverse=True)
+    palette = palette.view(arr.dtype).reshape(-1, arr.shape[-1])
+    count = np.bincount(index)
+    order = np.argsort(count)
+    
+    p = palette[order[::-1]]
+
+    for col in p:
+        r,g,b = col
+        
+        result.append( (r / 255.0, g / 255.0, b / 255.0) )
+    return result
+
+
+</t>
+<t tx="karstenw.20171218183048.1">def asvoid(arr):
+    """View the array as dtype np.void (bytes)
+    This collapses ND-arrays to 1D-arrays, so you can perform 1D operations on them.
+    http://stackoverflow.com/a/16216866/190597 (Jaime)
+    http://stackoverflow.com/a/16840350/190597 (Jaime)
+    Warning:
+    &gt;&gt;&gt; asvoid([-0.]) == asvoid([0.])
+    array([False], dtype=bool)
+    """
+    arr = np.ascontiguousarray(arr)
+    result = arr.view(np.dtype((np.void, arr.dtype.itemsize * arr.shape[-1])))
+    return result
+
+
+def imagepalette( pathorimg, mask=None ):
+    t = type(pathorimg)
+    result = []
+    if t in (str, unicode):
+        f = PIL.Image.open( pathorimg )
+        f = f.convert("RGB")
+        result = palette( f, mask )
+    else:
+        try:
+            result = palette( pathorimg, mask )
+        except Exception, err:
+            pass
+    return result
+
+
+</t>
 </tnodes>
 </leo_file>
