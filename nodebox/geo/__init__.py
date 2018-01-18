@@ -26,7 +26,17 @@ except ImportError:
         x1 = x0 + math.cos(math.radians(angle)) * distance
         y1 = y0 + math.sin(math.radians(angle)) * distance
         return x1, y1
-    
+
+
+try:
+    import atkinsondither
+    atkinson = atkinsondither.atkinson
+
+except ImportError:
+    def atkinson(*args):
+        print "You lost."
+
+
 def reflect(x0, y0, x1, y1, d=1.0, a=180):
     d *= distance(x0, y0, x1, y1)
     a += angle(x0, y0, x1, y1)
