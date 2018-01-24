@@ -23,11 +23,10 @@ atkinson(PyObject *self, PyObject *args) {
 	// calculated array index
     int idx;
 
-    int errors = 0, count, *errorBuffer;
+    float *errorBuffer, errdiv;
     const unsigned char *sourceImage;
     unsigned char *resultImage;
-    int newval;
-    int errval, errdiv;
+    int count, newval, errval;
     PyObject *result;
 
     if (!PyArg_ParseTuple(args, "s#iii", &sourceImage, &count, &w, &h, &treshhold)) {
@@ -36,12 +35,12 @@ atkinson(PyObject *self, PyObject *args) {
 
 	// create the buffers
 	resultImage = (unsigned char *)malloc( count );
-	errorBuffer = (unsigned char *)malloc( count*sizeof(int) );
+	errorBuffer = (float *)malloc( count*sizeof(float) );
 
 
 	// init & check the buffers
 	memcpy( (void *)resultImage, (const void *)sourceImage, count);
-	memset( errorBuffer, 0, count*sizeof(int));
+	memset( errorBuffer, 0, count*sizeof(float));
 
 	if (!resultImage) {
 		PyErr_NoMemory();
@@ -64,11 +63,11 @@ atkinson(PyObject *self, PyObject *args) {
 			// set pixel value
 			if (newval >= treshhold) {
 				errval = newval - 255;
-				errdiv = errval / 8;
+				errdiv = errval / 8.0;
 				resultImage[idx] = 255;
 			} else {
 				errval = newval;
-				errdiv = errval / 8;
+				errdiv = errval / 8.0;
 				resultImage[idx] = 0;
 			}
 			
