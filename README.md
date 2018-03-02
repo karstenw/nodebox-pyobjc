@@ -116,7 +116,7 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 Latest changes
 --------------
 
-2017-12-23 Version 1.9.30 New experimental commands `imagepalette()`, `atkinson()`. Unfinished yet.
+2017-12-23 Version 1.9.30 New experimental commands `imagepalette()`  `ditherimage()`, `aspectRatio()` 
 
 2017-11-05 Version 1.9.29 say() has now a wait=True optional parameter to make it wait untill the other voices have spoken. Many more adapted examples for the extended app.
 
