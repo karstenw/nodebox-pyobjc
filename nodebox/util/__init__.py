@@ -3,6 +3,8 @@ import time
 import datetime
 import glob
 
+import tempfile
+
 import random as librandom
 choice = librandom.choice
 
@@ -25,13 +27,24 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
            'datestring','makeunicode', 'filelist', 'imagefiles',
            'fontnames', 'fontfamilies',
            'voices', 'voiceattributes', 'anySpeakers', 'say',
-           'imagepalette')
-
-
-### Utilities ###
+           'imagepalette', 'aspectRatio', 'dithertypes')
 
 
 g_voicetrash = []
+
+_dithertypes = {
+    'atkinson': 1,
+    'floyd-steinberg': 2,
+    'jarvis-judice-ninke': 3,
+    'stucki': 4,
+    'burkes': 5,
+    'sierra-1': 6,
+    'sierra-2': 7,
+    'sierra-3': 8,
+}
+
+_ditherIDs = _dithertypes.values()
+
 
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
@@ -331,7 +344,9 @@ def anySpeakers():
 
 
 def say(txt, voice=None, outfile=None, wait=True):
-    """Say txt with a voice."""
+    """Say txt with a voice. Write AIFF file to outfile if parent(outfile) exists.
+    defer return if wait is True.
+    """
     global g_voicetrash
     if voice and voice in voices():
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
@@ -365,6 +380,36 @@ def say(txt, voice=None, outfile=None, wait=True):
         g_voicetrash.append( speaker )
         speaker.startSpeakingString_(txt)
         return speaker
+
+
+def aspectRatio(size, maxsize=None, maxw=None, maxh=None):
+    """scale a size tuple (w,h) to 
+        - maxsize (max w or h)
+        - or max width maxw
+        - or max height maxh."""
+    w, h = size
+    denom = maxcurrent = 1
+
+    if maxsize:
+        maxcurrent = max(size)
+        denom = maxsize
+    elif maxw:
+        maxcurrent = w
+        denom = maxw
+    elif maxh:
+        maxcurrent = h
+        denom = maxh
+
+    if maxcurrent == denom:
+        return size
+    elif maxsize == 0:
+        return size
+
+    ratio = maxcurrent / float(denom)
+
+    neww = int(round(w / ratio))
+    newh = int(round(h / ratio))
+    return neww, newh
 
 
 def palette(pilimage, mask):
@@ -404,19 +449,65 @@ def asvoid(arr):
     return result
 
 
-def imagepalette( pathorimg, mask=None ):
-    t = type(pathorimg)
+def imagepalette( pathOrPILimgage, mask=None ):
+    t = type(pathOrPILimgage)
     result = []
     if t in (str, unicode):
-        f = PIL.Image.open( pathorimg )
+        f = PIL.Image.open( pathOrPILimgage )
         f = f.convert("RGB")
         result = palette( f, mask )
     else:
         try:
-            result = palette( pathorimg, mask )
+            result = palette( pathOrPILimgage, mask )
         except Exception, err:
             pass
     return result
+
+
+def tempimagepath(mode='w+b', suffix='.png'):
+    """Create a temporary file with mode and suffix.
+    Returns pathstring."""
+    fob = tempfile.NamedTemporaryFile(mode=mode, suffix=suffix, delete=False)
+    fname = fob.name
+    fob.close()
+    return fname
+
+
+def dithertypes():
+    """Return names of all supported dither types."""
+    return _dithertypes.keys()
+
+
+def ditherimage(pathOrPILimgage, dithertype, threshhold):
+    t = type(pathOrPILimgage)
+
+    if dithertype in _dithertypes:
+        dithertype = _dithertypes.get( dithertype )
+    elif dithertype in ditherIDs:
+        pass
+    else:
+        dithertype = 0
+
+    if t in (str, unicode):
+        img = PIL.Image.open( pathOrPILimgage ).convert('L')
+    else:
+        img = pathOrPILimgage
+
+    w, h = img.size
+
+    bin = img.tobytes(encoder_name='raw')
+
+    result = dither(bin, w, h, dithertype, thresh)
+
+    out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
+
+    name = "dither_%s_%i.png" % (datestring(nocolons=True), dithertype)
+    out.convert('1').save(name, format="PNG")
+    del out, bin, result
+    if img != pathOrPILimgage:
+        del img
+    return os.path.abspath(name)
+
 
 
 def _copy_attr(v):

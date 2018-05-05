@@ -359,9 +359,17 @@ class NodeBoxDocument(NSDocument):
 
         return True
         
+
+    @objc.IBAction
+    def clearMessageArea_(self, sender):
+        # pp( dir(self.outputView.textStorage()))
+        self.outputView.textStorage().mutableString().setString_(u"")
+
     @objc.IBAction
     def runFullscreen_(self, sender):
-        if self.fullScreen is not None: return
+        if self.fullScreen is not None:
+            return
+        # self.clearMessageArea_( None )
         self.stopScript()
         self.currentView = FullscreenView.alloc().init()
         self.currentView.canvas = None
@@ -376,6 +384,7 @@ class NodeBoxDocument(NSDocument):
 
     @objc.IBAction
     def runScript_(self, sender):
+        # self.clearMessageArea_( None )
         self.runScript()
         
     def runScript(self, compile=True, newSeed=True):
@@ -487,7 +496,7 @@ class NodeBoxDocument(NSDocument):
             #print "graphics.__all__:"
             #pp(graphics.__all__)
             print "namespace.keys():"
-            pp(namespace.keys())
+            # pp(namespace.keys())
 
         # Add everything from the context object
         self.namespace["_ctx"] = self.context
@@ -1002,9 +1011,10 @@ class NodeBoxGraphicsView(NSView):
             w, h = self.canvas.size
             self.setFrameSize_([w*self._zoom, h*self._zoom])
         self.markDirty()
-        
+
     def getZoom(self):
         return self._zoom
+
     def setZoom_(self, zoom):
         self._zoom = zoom
         self.zoomLevel.setTitle_("%i%%" % (self._zoom * 100.0))

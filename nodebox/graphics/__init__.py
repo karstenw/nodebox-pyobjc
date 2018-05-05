@@ -593,8 +593,7 @@ class Context(object):
     def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
         return nodebox.geo.reflect(x0, y0, x1, y1, d, a)
 
-    ## 
+    def dither(self, imagebytes, w, h, typ, threshhold):
+        return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
 
-    def atkinson(self, imagebytes, w, h, threshhold):
-        return nodebox.geo.atkinson(imagebytes, w, h, threshhold)
 

@@ -29,11 +29,18 @@ except ImportError:
 
 
 try:
-    import atkinsondither
-    atkinson = atkinsondither.atkinson
+    import bwdithering
+    dither = bwdithering.dither
 
-except ImportError:
-    def atkinson(*args):
+except ImportError, err:
+    print
+    print '-' * 40
+    print
+    print err
+    print 
+    print '-' * 40
+    print
+    def dither(*args):
         print "You lost."
 
 

@@ -23,16 +23,16 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1"><vh>geo</vh>
+<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
 <v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
@@ -49,7 +49,7 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
@@ -152,6 +152,7 @@
 <v t="karstenw.20170704104726.27"><vh>distance</vh></v>
 <v t="karstenw.20170704104726.28"><vh>coordinates</vh></v>
 <v t="karstenw.20170704104726.29"><vh>reflect</vh></v>
+<v t="karstenw.20180202044929.1"><vh>dither</vh></v>
 </v>
 </v>
 </v>
@@ -373,7 +374,7 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1"><vh>mac</vh>
 <v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
@@ -632,17 +633,19 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104503.1"><vh>tests</vh>
+<v t="karstenw.20170704104503.1" a="E"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
 <v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
 <v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
+<v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
 <v t="karstenw.20170704105353.4"><vh>grid</vh></v>
 <v t="karstenw.20170704105353.5"><vh>random</vh></v>
+</v>
 <v t="karstenw.20170704105353.14"><vh>autotext</vh></v>
 <v t="karstenw.20170811141051.1"><vh>FILE FUNCTIONS</vh>
 <v t="karstenw.20170704105353.6"><vh>files</vh></v>
@@ -664,8 +667,13 @@
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
 </v>
 <v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20180202050130.1"><vh>aspectRatio</vh></v>
 <v t="karstenw.20171218183032.1"><vh>palette</vh></v>
 <v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
+<v t="karstenw.20180202044822.1"><vh>imagepalette</vh></v>
+<v t="karstenw.20180207131456.1"><vh>tempimagepath</vh></v>
+<v t="karstenw.20180207131514.1"><vh>dithertypes</vh></v>
+<v t="karstenw.20180202061109.1"><vh>ditherimage</vh></v>
 </v>
 <v t="karstenw.20170704105353.15"><vh>_copy_attr</vh></v>
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
@@ -770,6 +778,41 @@
 <v t="karstenw.20170704105642.16"><vh>statistics</vh></v>
 <v t="karstenw.20170704105642.17"><vh>test_vdiff</vh></v>
 <v t="karstenw.20170704105642.18"><vh>usage</vh></v>
+</v>
+</v>
+</v>
+<v t="karstenw.20180202040514.1"><vh>libs</vh>
+<v t="karstenw.20180202040520.1"><vh>bwdithering</vh>
+<v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
+<v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
+<v t="karstenw.20180202040628.1"><vh>int arrayindex</vh></v>
+<v t="karstenw.20180202040628.2"><vh>void distributeError(x, y, w, h, type, errval, destImage, errorBuffer)</vh></v>
+<v t="karstenw.20180202040628.3"><vh>static PyObject dither(self, args)</vh></v>
+<v t="karstenw.20180202040628.4"><vh>static PyMethodDef bwdither_methods[]</vh></v>
+<v t="karstenw.20180202040859.1"><vh>PyMODINIT_FUNC initbwdithering()</vh></v>
+<v t="karstenw.20180202040628.5"><vh>int main</vh></v>
+</v>
+<v t="karstenw.20180202041015.1"><vh>@clean libs/bwdithering/setup.py</vh>
+<v t="karstenw.20180202041040.1"><vh>Declarations</vh></v>
+</v>
+</v>
+<v t="karstenw.20180202044244.1"><vh>cGeo</vh>
+<v t="karstenw.20180202044248.1"><vh>@clean libs/cGeo/cGeo.c</vh>
+<v t="karstenw.20180202044341.1"><vh>inclides &amp; globals</vh></v>
+<v t="karstenw.20180202044313.1"><vh>float _fast_inverse_sqrt</vh></v>
+<v t="karstenw.20180202044313.2"><vh>static PyObject fast_inverse_sqrt(self, args)</vh></v>
+<v t="karstenw.20180202044313.3"><vh>void _angle(x0, y0, x1, y1, *a)</vh></v>
+<v t="karstenw.20180202044313.4"><vh>static PyObject angle(self, args)</vh></v>
+<v t="karstenw.20180202044313.5"><vh>void _distance(x0, y0, x1, y1, *d)</vh></v>
+<v t="karstenw.20180202044313.6"><vh>static PyObject distance(self, args)</vh></v>
+<v t="karstenw.20180202044313.7"><vh>void _coordinates(x0, y0, d, a, *x1, *y1)</vh></v>
+<v t="karstenw.20180202044313.8"><vh>static PyObject coordinates(self, args)</vh></v>
+<v t="karstenw.20180202044313.9"><vh>static PyMethodDef geometry_methods[]</vh></v>
+<v t="karstenw.20180202044624.1"><vh>PyMODINIT_FUNC initcGeo()</vh></v>
+<v t="karstenw.20180202044313.10"><vh>int main</vh></v>
+</v>
+<v t="karstenw.20180202044708.1"><vh>@clean libs/cGeo/setup.py</vh>
+<v t="karstenw.20180202044720.1"><vh>Declarations</vh></v>
 </v>
 </v>
 </v>
@@ -992,7 +1035,7 @@ setup(
         ],
 
     ext_modules=[
-        Extension('atkinsondither', ['libs/atkinsondither/atkinsondither.c']),
+        Extension('bwdithering', ['libs/bwdithering/bwdithering.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
@@ -1111,7 +1154,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.30'
+<t tx="karstenw.20170704104119.1">__version__='1.9.31'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -2043,11 +2086,6 @@ def isqrt( self, v):
 </t>
 <t tx="karstenw.20170704104726.29">def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
     return nodebox.geo.reflect(x0, y0, x1, y1, d, a)
-
-## 
-
-def atkinson(self, imagebytes, w, h, threshhold):
-    return nodebox.geo.atkinson(imagebytes, w, h, threshhold)
 
 </t>
 <t tx="karstenw.20170704104726.3">### Color Commands ###
@@ -4800,7 +4838,9 @@ def showLibrary_(self, sender):
 </t>
 <t tx="karstenw.20170704105032.20">@objc.IBAction
 def runFullscreen_(self, sender):
-    if self.fullScreen is not None: return
+    if self.fullScreen is not None:
+        return
+    # self.clearMessageArea_( None )
     self.stopScript()
     self.currentView = FullscreenView.alloc().init()
     self.currentView.canvas = None
@@ -4816,6 +4856,7 @@ def runFullscreen_(self, sender):
 </t>
 <t tx="karstenw.20170704105032.21">@objc.IBAction
 def runScript_(self, sender):
+    # self.clearMessageArea_( None )
     self.runScript()
     
 </t>
@@ -4942,7 +4983,7 @@ def stopScript_(self, sender=None):
         #print "graphics.__all__:"
         #pp(graphics.__all__)
         print "namespace.keys():"
-        pp(namespace.keys())
+        # pp(namespace.keys())
 
     # Add everything from the context object
     self.namespace["_ctx"] = self.context
@@ -5556,10 +5597,11 @@ def zoomToFit_(self, sender):
         w, h = self.canvas.size
         self.setFrameSize_([w*self._zoom, h*self._zoom])
     self.markDirty()
-    
+
 </t>
 <t tx="karstenw.20170704105032.72">def getZoom(self):
     return self._zoom
+
 </t>
 <t tx="karstenw.20170704105032.73">def setZoom_(self, zoom):
     self._zoom = zoom
@@ -7407,6 +7449,8 @@ import time
 import datetime
 import glob
 
+import tempfile
+
 import random as librandom
 choice = librandom.choice
 
@@ -7429,10 +7473,8 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
            'datestring','makeunicode', 'filelist', 'imagefiles',
            'fontnames', 'fontfamilies',
            'voices', 'voiceattributes', 'anySpeakers', 'say',
-           'imagepalette')
+           'imagepalette', 'aspectRatio', 'dithertypes')
 
-
-### Utilities ###
 
 </t>
 <t tx="karstenw.20170704105353.10">class FontRecord:
@@ -8767,6 +8809,12 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
 
     return True
     
+
+@objc.IBAction
+def clearMessageArea_(self, sender):
+    # pp( dir(self.outputView.textStorage()))
+    self.outputView.textStorage().mutableString().setString_(u"")
+
 </t>
 <t tx="karstenw.20170726133907.1">    isqrt = inverse_sqrt
 
@@ -8783,11 +8831,18 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
 
 
 try:
-    import atkinsondither
-    atkinson = atkinsondither.atkinson
+    import bwdithering
+    dither = bwdithering.dither
 
-except ImportError:
-    def atkinson(*args):
+except ImportError, err:
+    print
+    print '-' * 40
+    print
+    print err
+    print 
+    print '-' * 40
+    print
+    def dither(*args):
         print "You lost."
 
 
@@ -8819,7 +8874,9 @@ except ImportError:
 
 </t>
 <t tx="karstenw.20170801052423.1">def say(txt, voice=None, outfile=None, wait=True):
-    """Say txt with a voice."""
+    """Say txt with a voice. Write AIFF file to outfile if parent(outfile) exists.
+    defer return if wait is True.
+    """
     global g_voicetrash
     if voice and voice in voices():
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
@@ -8874,8 +8931,21 @@ except ImportError:
 
 
 </t>
-<t tx="karstenw.20170804122614.1">
-g_voicetrash = []
+<t tx="karstenw.20170804122614.1">g_voicetrash = []
+
+_dithertypes = {
+    'atkinson': 1,
+    'floyd-steinberg': 2,
+    'jarvis-judice-ninke': 3,
+    'stucki': 4,
+    'burkes': 5,
+    'sierra-1': 6,
+    'sierra-2': 7,
+    'sierra-3': 8,
+}
+
+_ditherIDs = _dithertypes.values()
+
 
 
 </t>
@@ -9013,7 +9083,7 @@ setup(
         ],
 
     ext_modules=[
-        Extension('atkinsondither', ['libs/atkinsondither/atkinsondither.c']),
+        Extension('bwdithering', ['libs/bwdithering/bwdithering.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
@@ -9022,9 +9092,10 @@ setup(
 
     options={
         "py2app": {
-            "iconfile": "Resources/NodeBox.icns",
+            "iconfile": "Resources/NodeBoxExtended.icns",
             "packages": [ "numpy", "scipy", "matplotlib",
-                          "mpl_toolkits", "sklearn", "sympy", "pandas"],
+                          "mpl_toolkits", "sklearn", "sympy", "pandas",
+                          "cv2", "dlib", "skimage"],
             "excludes": ["TkInter",],
         }
     } )
@@ -9071,19 +9142,830 @@ setup(
     return result
 
 
-def imagepalette( pathorimg, mask=None ):
-    t = type(pathorimg)
+</t>
+<t tx="karstenw.20180202040514.1"></t>
+<t tx="karstenw.20180202040520.1"></t>
+<t tx="karstenw.20180202040559.1">@language c
+@tabwidth -4
+
+
+@others
+</t>
+<t tx="karstenw.20180202040628.1">static int arrayindex(int x, int y, int w){
+    return (y * w + x);
+}
+
+
+</t>
+<t tx="karstenw.20180202040628.2">static void distributeError( int x, int y,
+                             int w, int h,
+                             int type,
+                             ERRBUFTYPE errval,
+                             unsigned char destImage[], ERRBUFTYPE errorBuffer[] ) {
+    /*
+     * Distribute the error to neighbouring pixels.
+     *
+     * The distributions have been taken from
+     * 
+     * http://www.tannerhelland.com/4660/dithering-eleven-algorithms-source-code/
+     *
+     *
+     * The errors are mine. kw 2018-01
+     */
+
+    ERRBUFTYPE errdiv1, errdiv2, errdiv3, errdiv4;
+    int idx;
+
+    if (type &lt; 0) {
+        type = 0;
+    }
+    if  (type &gt;= zzsentinel) {
+        type = zzsentinel-1;
+    }
+
+    switch (type){
+        case atkinsondither:
+            // distribute the error
+            // atkinson dithering divides by eight but distributes only 6/8
+            errdiv1 = errval / (UNIT * 8);
+            if ( x+1 &lt; w ) {
+                // x+1 ,y
+                idx = arrayindex(x+1, y, w);
+                errorBuffer[idx] += errdiv1;
+                if ( x+2 &lt; w ) {
+                    // x+2 ,y
+                    idx = arrayindex(x+2, y, w);
+                    errorBuffer[idx] += errdiv1;
+                }
+            }
+
+            if ( y+1 &lt; h ) {
+                // x ,y+1
+                idx = arrayindex(x, y+1, w);
+                errorBuffer[idx] += errdiv1;
+                if (x-1 &gt;= 0) {
+                    // x-1, y+1
+                    idx = arrayindex(x-1, y+1, w);
+                    errorBuffer[idx] += errdiv1;
+                }
+                if ( y+2 &lt; h ) {
+                    // x, y+2
+                    idx = arrayindex(x, y+2, w);
+                    errorBuffer[idx] += errdiv1;
+                }
+                if (x+1 &lt; w) {
+                    // x+1, y+1
+                    idx = arrayindex(x+1, y+1, w);
+                    errorBuffer[idx] += errdiv1;
+                }
+            }
+            break;
+
+        case floydsteinbergdither:
+            errdiv1 = errval / (UNIT * 16) * 7;
+            errdiv2 = errval / (UNIT * 16) * 3;
+            errdiv3 = errval / (UNIT * 16) * 5;
+            errdiv4 = errval / (UNIT * 16) * 1;
+
+            if ( x+1 &lt; w ) {
+                // x+1 ,y
+                idx = arrayindex(x+1, y, w);
+                // 7/16
+                errorBuffer[idx] += errdiv1;
+                if ( y+1 &lt; h ) {
+                    // x+1 ,y+1
+                    idx = arrayindex(x+1, y+1, w);
+                    // 1/16
+                    errorBuffer[idx] += errdiv4;
+                }
+            }
+            if ( y+1 &lt; h ) {
+                // x ,y+1
+                idx = arrayindex(x, y+1, w);
+                // 5/16
+                errorBuffer[idx] += errdiv3;
+                
+                if (x &gt; 0) {
+                    // x-1 ,y+1
+                    idx = arrayindex(x-1, y+1, w);
+                    // 3/16
+                    errorBuffer[idx] += errdiv2;
+                }
+            }
+
+            break;
+
+        case jarvisjudiceninkedithering:
+            errdiv1 = errval / (UNIT * 48) * 7;
+            errdiv2 = errval / (UNIT * 48) * 5;
+            errdiv3 = errval / (UNIT * 48) * 3;
+            errdiv4 = errval / (UNIT * 48) * 1;
+
+            if ( x+1 &lt; w ) {
+                // x+1 ,y
+                idx = arrayindex(x+1, y, w);
+                // 7/48
+                errorBuffer[idx] += errdiv1;
+                if ( y+1 &lt; h ) {
+                    // x+1 ,y+1
+                    idx = arrayindex(x+1, y+1, w);
+                    // 5/48
+                    errorBuffer[idx] += errdiv2;
+                }
+                if ( y+2 &lt; h ) {
+                    // x+1 ,y+2
+                    idx = arrayindex(x+1, y+2, w);
+                    // 3/48
+                    errorBuffer[idx] += errdiv3;
+                }
+
+                if ( x+2 &lt; w ) {
+                    // x+2 ,y
+                    idx = arrayindex(x+2, y, w);
+                    // 5/48
+                    errorBuffer[idx] += errdiv2;
+                    if ( y+1 &lt; h ) {
+                        // x+2 ,y+1
+                        idx = arrayindex(x+2, y+1, w);
+                        // 3/48
+                        errorBuffer[idx] += errdiv3;
+                    }
+                    if ( y+2 &lt; h ) {
+                        // x+2 ,y+2
+                        idx = arrayindex(x+2, y+2, w);
+                        // 1/48
+                        errorBuffer[idx] += errdiv4;
+                    }
+                }
+            }
+
+            if (y+1 &lt; h) {
+                // x, y+1
+                idx = arrayindex(x, y+1, w);
+                // 7/48
+                errorBuffer[idx] += errdiv1;
+            }
+            if (y+2 &lt; h) {
+                // x, y+2
+                idx = arrayindex(x, y+2, w);
+                // 5/48
+                errorBuffer[idx] += errdiv2;
+            }
+
+            if ( x-1 &gt; 0 ) {
+                if (y+1 &lt; h) {
+                    // x-1, y+1
+                    idx = arrayindex(x-1, y+1, w);
+                    // 5/48
+                    errorBuffer[idx] += errdiv2;
+                }
+                if (y+2 &lt; h) {
+                    // x-1, y+2
+                    idx = arrayindex(x-1, y+2, w);
+                    // 3/48
+                    errorBuffer[idx] += errdiv3;
+                }
+            }
+            if ( x-2 &gt; 0 ) {
+                if (y+1 &lt; h) {
+                    // x-2, y+1
+                    idx = arrayindex(x-2, y+1, w);
+                    // 3/48
+                    errorBuffer[idx] += errdiv3;
+                }
+                if (y+2 &lt; h) {
+                    // x-2, y+2
+                    idx = arrayindex(x-2, y+2, w);
+                    // 1/48
+                    errorBuffer[idx] += errdiv4;
+                }
+            }
+            break;
+
+        case stuckidithering:
+            errdiv1 = errval / (UNIT * 42) * 8;
+            errdiv2 = errval / (UNIT * 42) * 4;
+            errdiv3 = errval / (UNIT * 42) * 2;
+            errdiv4 = errval / (UNIT * 42) * 1;
+            if ( x+1 &lt; w ) {
+                // x+1 ,y
+                idx = arrayindex(x+1, y, w);
+                // 8/42
+                errorBuffer[idx] += errdiv1;
+                if ( y+1 &lt; h ) {
+                    // x+1, y+1
+                    idx = arrayindex(x+1, y+1, w);
+                    // 4/42
+                    errorBuffer[idx] += errdiv2;
+                }
+                if ( y+2 &lt; h ) {
+                    // x+1, y+2
+                    idx = arrayindex(x+1, y+2, w);
+                    // 2/42
+                    errorBuffer[idx] += errdiv3;
+                }
+                if ( x+2 &lt; w ) {
+                    // x+2 ,y
+                    idx = arrayindex(x+2, y, w);
+                    // 4/42
+                    errorBuffer[idx] += errdiv2;
+                    if ( y+1 &lt; h ) {
+                        // x+2, y+1
+                        idx = arrayindex(x+2, y+1, w);
+                        // 2/42
+                        errorBuffer[idx] += errdiv3;
+                    }
+                    if ( y+2 &lt; h ) {
+                        // x+2, y+2
+                        idx = arrayindex(x+2, y+2, w);
+                        // 1/42
+                        errorBuffer[idx] += errdiv4;
+                    }
+                }
+            }
+            if (y+1 &lt; h) {
+                if (x-2 &gt; 0) {
+                    idx = arrayindex(x-2, y+1, w);
+                    // 2/42
+                    errorBuffer[idx] += errdiv3;
+                }
+                if (x-1 &gt; 0) {
+                    idx = arrayindex(x-1, y+1, w);
+                    // 4/42
+                    errorBuffer[idx] += errdiv2;
+                }
+                idx = arrayindex(x, y+1, w);
+                // 8/42
+                errorBuffer[idx] += errdiv1;
+            }
+            if (y+2 &lt; h) {
+                if (x-2 &gt; 0) {
+                    idx = arrayindex(x-2, y+2, w);
+                    // 1/42
+                    errorBuffer[idx] += errdiv4;
+                }
+                if (x-1 &gt; 0) {
+                    idx = arrayindex(x-1, y+2, w);
+                    // 2/42
+                    errorBuffer[idx] += errdiv2;
+                }
+                idx = arrayindex(x, y+2, w);
+                // 4/42
+                errorBuffer[idx] += errdiv2;
+            }
+            break;
+
+        case burkesdithering:
+            errdiv1 = errval / (UNIT * 32) * 8;
+            errdiv2 = errval / (UNIT * 32) * 4;
+            errdiv3 = errval / (UNIT * 32) * 2;
+
+            if ( x+1 &lt; w ) {
+                // x+1 ,y
+                idx = arrayindex(x+1, y, w);
+                // 8/32
+                errorBuffer[idx] += errdiv1;
+                if ( y+1 &lt; h ) {
+                    // x+1, y+1
+                    idx = arrayindex(x+1, y+1, w);
+                    // 4/32
+                    errorBuffer[idx] += errdiv2;
+                }
+                if ( x+2 &lt; w ) {
+                    // x+2 ,y
+                    idx = arrayindex(x+2, y, w);
+                    // 4/32
+                    errorBuffer[idx] += errdiv2;
+                    if ( y+1 &lt; h ) {
+                        // x+2, y+1
+                        idx = arrayindex(x+2, y+1, w);
+                        // 2/32
+                        errorBuffer[idx] += errdiv3;
+                    }
+                }
+            }
+            if (y+1 &lt; h) {
+                if (x-2 &gt; 0) {
+                    idx = arrayindex(x-2, y+1, w);
+                    // 2/32
+                    errorBuffer[idx] += errdiv3;
+                }
+                if (x-1 &gt; 0) {
+                    idx = arrayindex(x-1, y+1, w);
+                    // 4/32
+                    errorBuffer[idx] += errdiv2;
+                }
+                idx = arrayindex(x, y+1, w);
+                // 8/32
+                errorBuffer[idx] += errdiv1;
+            }
+            break;
+
+        case sierra1dithering:
+            errdiv1 = errval / (UNIT * 32) * 5;
+            errdiv2 = errval / (UNIT * 32) * 4;
+            errdiv3 = errval / (UNIT * 32) * 3;
+            errdiv4 = errval / (UNIT * 32) * 2;
+            if ( x+1 &lt; w ) {
+                // x+1 ,y
+                idx = arrayindex(x+1, y, w);
+                // 5/32
+                errorBuffer[idx] += errdiv1;
+                if ( y+1 &lt; h ) {
+                    // x+1, y+1
+                    idx = arrayindex(x+1, y+1, w);
+                    // 4/32
+                    errorBuffer[idx] += errdiv2;
+                }
+                if ( y+2 &lt; h ) {
+                    // x+1, y+2
+                    idx = arrayindex(x+1, y+2, w);
+                    // 2/32
+                    errorBuffer[idx] += errdiv4;
+                }
+                if ( x+2 &lt; w ) {
+                    // x+2 ,y
+                    idx = arrayindex(x+2, y, w);
+                    // 3/16
+                    errorBuffer[idx] += errdiv3;
+                    if ( y+1 &lt; h ) {
+                        // x+2, y+1
+                        idx = arrayindex(x+2, y+1, w);
+                        // 2/16
+                        errorBuffer[idx] += errdiv4;
+                    }
+                }
+            }
+            if (y+1 &lt; h) {
+                if (x-2 &gt; 0) {
+                    idx = arrayindex(x-2, y+1, w);
+                    // 2/32
+                    errorBuffer[idx] += errdiv4;
+                }
+                if (x-1 &gt; 0) {
+                    idx = arrayindex(x-1, y+1, w);
+                    // 4/32
+                    errorBuffer[idx] += errdiv2;
+                }
+                idx = arrayindex(x, y+1, w);
+                // 5/32
+                errorBuffer[idx] += errdiv1;
+            }
+
+            if (y+2 &lt; h) {
+                if (x-1 &gt; 0) {
+                    idx = arrayindex(x-1, y+2, w);
+                    // 2/32
+                    errorBuffer[idx] += errdiv4;
+                }
+                if (x+1 &lt; w) {
+                    idx = arrayindex(x+1, y+2, w);
+                    // 2/32
+                    errorBuffer[idx] += errdiv4;
+                }
+                idx = arrayindex(x, y+2, w);
+                // 3/32
+                errorBuffer[idx] += errdiv3;
+            }
+
+
+            break;
+
+        case sierra2dithering:
+            errdiv1 = errval / (UNIT * 16) * 4;
+            errdiv2 = errval / (UNIT * 16) * 3;
+            errdiv3 = errval / (UNIT * 16) * 2;
+            errdiv4 = errval / (UNIT * 16) * 1;
+            if ( x+1 &lt; w ) {
+                // x+1 ,y
+                idx = arrayindex(x+1, y, w);
+                // 4/16
+                errorBuffer[idx] += errdiv1;
+                if ( y+1 &lt; h ) {
+                    // x+1, y+1
+                    idx = arrayindex(x+1, y+1, w);
+                    // 2/16
+                    errorBuffer[idx] += errdiv2;
+                }
+                if ( x+2 &lt; w ) {
+                    // x+2 ,y
+                    idx = arrayindex(x+2, y, w);
+                    // 3/16
+                    errorBuffer[idx] += errdiv2;
+                    if ( y+1 &lt; h ) {
+                        // x+2, y+1
+                        idx = arrayindex(x+2, y+1, w);
+                        // 1/16
+                        errorBuffer[idx] += errdiv4;
+                    }
+                }
+            }
+            if (y+1 &lt; h) {
+                if (x-2 &gt; 0) {
+                    idx = arrayindex(x-2, y+1, w);
+                    // 1/16
+                    errorBuffer[idx] += errdiv4;
+                }
+                if (x-1 &gt; 0) {
+                    idx = arrayindex(x-1, y+1, w);
+                    // 2/16
+                    errorBuffer[idx] += errdiv3;
+                }
+                idx = arrayindex(x, y+1, w);
+                // 3/16
+                errorBuffer[idx] += errdiv2;
+            }
+            break;
+
+        case sierra3dithering:
+            errdiv1 = errval / (UNIT * 4) * 2;
+            errdiv2 = errval / (UNIT * 4) * 1;
+
+            if ( x+1 &lt; w ) {
+                // x+1 ,y
+                idx = arrayindex(x+1, y, w);
+                // 2/4
+                errorBuffer[idx] += errdiv1;
+            }
+            if ( y+1 &lt; h ) {
+                // x, y+1
+                idx = arrayindex(x, y+1, w);
+                // 1/4
+                errorBuffer[idx] += errdiv2;
+                if ( x-1 &gt; 0 ) {
+                    // x-1, y+1
+                    idx = arrayindex(x-1, y+1, w);
+                    // 1/4
+                    errorBuffer[idx] += errdiv2;
+                }
+            }
+            break;
+    }
+}
+
+
+</t>
+<t tx="karstenw.20180202040628.3">static PyObject *
+dither(PyObject *self, PyObject *args) {
+    /*
+     * 
+     */
+    // params
+    int w, h, type, treshhold;
+
+    // iterators
+    int x, y;
+
+    // calculated array index
+    int idx;
+
+    
+
+    int count;
+    ERRBUFTYPE *errorBuffer, errdiv, newval, errval;
+    const unsigned char *sourceImage;
+    unsigned char *resultImage;
+    PyObject *result;
+
+    if (!PyArg_ParseTuple(args, "s#iiii", &amp;sourceImage, &amp;count, &amp;w, &amp;h, &amp;type, &amp;treshhold)) {
+        return (NULL);
+    }
+
+    // create the buffers
+    resultImage = (unsigned char *)malloc( count );
+    errorBuffer = (ERRBUFTYPE *)malloc( count*sizeof(ERRBUFTYPE));
+
+    // init &amp; check the buffers
+    memcpy( (void *)resultImage, (const void *)sourceImage, count);
+    memset( errorBuffer, 0, count*sizeof(ERRBUFTYPE));
+
+    if (!resultImage) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+
+    if (!errorBuffer) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+
+
+    // iterate over all pixels (x,y)
+    for (y = 0; y &lt; h; y++) {
+        for (x = 0; x &lt; w; x++) {
+            // calc array index for image and error buffers
+            idx = arrayindex(x, y, w);
+            newval = errorBuffer[idx] + resultImage[idx];
+            
+            // set pixel value
+            if (newval &gt;= treshhold) {
+                errval = newval - 255;
+                errdiv = errval / 8;
+                resultImage[idx] = 255;
+            } else {
+                errval = newval;
+                errdiv = errval / 8;
+                resultImage[idx] = 0;
+            }
+
+            // cut short if nothing to add			
+            if (errdiv == 0)
+                continue;
+            distributeError( x, y, w, h, type, errval, resultImage, errorBuffer);
+        }
+    }
+
+    // build the return value
+    result = Py_BuildValue("s#", resultImage, count);
+    free(errorBuffer);
+    free(resultImage);
+    return result;
+}
+
+
+</t>
+<t tx="karstenw.20180202040628.4">static PyMethodDef bwdither_methods[]={ 
+    { "dither", dither, METH_VARARGS },
+    { NULL, NULL }
+};
+
+
+
+</t>
+<t tx="karstenw.20180202040628.5">int main(int argc, char *argv[])
+{
+    Py_SetProgramName(argv[0]);
+    Py_Initialize();
+    initbwdithering();
+    return 0;
+}
+
+
+</t>
+<t tx="karstenw.20180202040658.1">#include &lt;stdlib.h&gt;
+#include &lt;Python.h&gt;
+
+// Karsten Wolf 2018-01-17
+
+// black &amp; white dither
+
+// type for the errorBuffer. Possible: int, short, float
+#define ERRBUFTYPE float
+#define UNIT 1.0
+
+enum {
+    atkinsondither=1,
+    floydsteinbergdither,
+    jarvisjudiceninkedithering,
+    stuckidithering,
+    burkesdithering,
+    sierra1dithering,
+    sierra2dithering,
+    sierra3dithering,
+    zzsentinel
+} dithertypes;
+
+</t>
+<t tx="karstenw.20180202040859.1">PyMODINIT_FUNC initbwdithering(void){ 
+    PyObject *m;
+    m = Py_InitModule("bwdithering", bwdither_methods);
+}
+
+
+</t>
+<t tx="karstenw.20180202041015.1">@language python
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20180202041040.1">from distutils.core import setup, Extension
+
+atkinsondither = Extension("bwdither", sources = ["bwdithering.c"])
+
+setup (name = "bwdither",
+       version = "0.1",
+       author = "Karsten Wolf",
+       description = "Atkinson, Floyd-Steinberg and other ditherings of grayscale images.",
+       ext_modules = [bwdithering])
+
+</t>
+<t tx="karstenw.20180202044244.1"></t>
+<t tx="karstenw.20180202044248.1">@language c
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20180202044313.1">float _fast_inverse_sqrt(float x) { 
+    float xhalf = 0.5f*x; 
+    int i = *(int*)&amp;x;
+    i = 0x5f3759df - (i&gt;&gt;1);
+    x = *(float*)&amp;i;
+    x = x*(1.5f-xhalf*x*x);
+    return x; 
+}
+</t>
+<t tx="karstenw.20180202044313.10">int main(int argc, char *argv[])
+{
+    Py_SetProgramName(argv[0]);
+    Py_Initialize();
+    initcGeo();
+    return 0;
+}
+</t>
+<t tx="karstenw.20180202044313.2">static PyObject *
+fast_inverse_sqrt(PyObject *self, PyObject *args) {
+    double x;   
+    if (!PyArg_ParseTuple(args, "d", &amp;x))
+        return NULL;
+    x = _fast_inverse_sqrt(x);
+    return Py_BuildValue("d", x);
+}
+
+// ANGLE
+</t>
+<t tx="karstenw.20180202044313.3">void _angle(double x0, double y0, double x1, double y1, double *a) {
+    *a = atan2(y1-y0, x1-x0) / M_PI * 180;
+}
+</t>
+<t tx="karstenw.20180202044313.4">static PyObject *
+angle(PyObject *self, PyObject *args) {
+    double x0, y0, x1, y1, a;    
+    if (!PyArg_ParseTuple(args, "dddd", &amp;x0, &amp;y0, &amp;x1, &amp;y1))
+        return NULL;
+    _angle(x0, y0, x1, y1, &amp;a);
+    return Py_BuildValue("d", a);
+}
+
+// DISTANCE
+</t>
+<t tx="karstenw.20180202044313.5">void _distance(double x0, double y0, double x1, double y1, double *d) {
+    // this is not much faster but inaccurate
+    // *d = 1.0 / _fast_inverse_sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
+    // *d = sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
+    double dx = x1-x0, dy = y1-y0;
+    *d = sqrt(dx*dx + dy*dy);
+}
+</t>
+<t tx="karstenw.20180202044313.6">static PyObject *
+distance(PyObject *self, PyObject *args) {
+    double x0, y0, x1, y1, d;   
+    if (!PyArg_ParseTuple(args, "dddd", &amp;x0, &amp;y0, &amp;x1, &amp;y1))
+        return NULL;
+    _distance(x0, y0, x1, y1, &amp;d);
+    return Py_BuildValue("d", d);
+}
+
+// COORDINATES
+</t>
+<t tx="karstenw.20180202044313.7">void _coordinates(double x0, double y0, double d, double a, double *x1, double *y1) {
+    *x1 = x0 + cos(a/180*M_PI) * d;
+    *y1 = y0 + sin(a/180*M_PI) * d;
+}
+</t>
+<t tx="karstenw.20180202044313.8">static PyObject *
+coordinates(PyObject *self, PyObject *args) {
+    double x0, y0, d, a, x1, y1;   
+    if (!PyArg_ParseTuple(args, "dddd", &amp;x0, &amp;y0, &amp;d, &amp;a))
+        return NULL;
+    _coordinates(x0, y0, d, a, &amp;x1, &amp;y1);
+    return Py_BuildValue("dd", x1, y1);
+}
+
+</t>
+<t tx="karstenw.20180202044313.9">static PyMethodDef geometry_methods[]={ 
+    { "fast_inverse_sqrt", fast_inverse_sqrt, METH_VARARGS },
+    { "angle", angle, METH_VARARGS }, 
+    { "distance", distance, METH_VARARGS }, 
+    { "coordinates", coordinates, METH_VARARGS },  
+    { NULL, NULL }
+};
+
+
+</t>
+<t tx="karstenw.20180202044341.1">#include &lt;Python.h&gt;
+#include &lt;math.h&gt;
+
+// FAST INVERSE SQRT
+// Chris Lomont, http://www.math.purdue.edu/~clomont/Math/Papers/2003/InvSqrt.pdf
+
+</t>
+<t tx="karstenw.20180202044624.1">PyMODINIT_FUNC initcGeo(void){ 
+    PyObject *m;
+    m = Py_InitModule("cGeo", geometry_methods);
+}
+
+</t>
+<t tx="karstenw.20180202044708.1">@language python
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20180202044720.1">from distutils.core import setup, Extension
+
+cGeo = Extension("cGeo", sources = ["cGeo.c"])
+
+setup (name = "cGeo",
+       version = "0.1",
+       author = "Tom De Smedt",
+       description = "Fast geometric functionality.",
+       ext_modules = [cGeo])
+</t>
+<t tx="karstenw.20180202044822.1">def imagepalette( pathOrPILimgage, mask=None ):
+    t = type(pathOrPILimgage)
     result = []
     if t in (str, unicode):
-        f = PIL.Image.open( pathorimg )
+        f = PIL.Image.open( pathOrPILimgage )
         f = f.convert("RGB")
         result = palette( f, mask )
     else:
         try:
-            result = palette( pathorimg, mask )
+            result = palette( pathOrPILimgage, mask )
         except Exception, err:
             pass
     return result
+
+
+</t>
+<t tx="karstenw.20180202044929.1">def dither(self, imagebytes, w, h, typ, threshhold):
+    return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
+
+
+</t>
+<t tx="karstenw.20180202045145.1"></t>
+<t tx="karstenw.20180202050130.1">def aspectRatio(size, maxsize=None, maxw=None, maxh=None):
+    """scale a size tuple (w,h) to 
+        - maxsize (max w or h)
+        - or max width maxw
+        - or max height maxh."""
+    w, h = size
+    denom = maxcurrent = 1
+
+    if maxsize:
+        maxcurrent = max(size)
+        denom = maxsize
+    elif maxw:
+        maxcurrent = w
+        denom = maxw
+    elif maxh:
+        maxcurrent = h
+        denom = maxh
+
+    if maxcurrent == denom:
+        return size
+    elif maxsize == 0:
+        return size
+
+    ratio = maxcurrent / float(denom)
+
+    neww = int(round(w / ratio))
+    newh = int(round(h / ratio))
+    return neww, newh
+
+
+</t>
+<t tx="karstenw.20180202061109.1">def ditherimage(pathOrPILimgage, dithertype, threshhold):
+    t = type(pathOrPILimgage)
+
+    if dithertype in _dithertypes:
+        dithertype = _dithertypes.get( dithertype )
+    elif dithertype in ditherIDs:
+        pass
+    else:
+        dithertype = 0
+
+    if t in (str, unicode):
+        img = PIL.Image.open( pathOrPILimgage ).convert('L')
+    else:
+        img = pathOrPILimgage
+
+    w, h = img.size
+
+    bin = img.tobytes(encoder_name='raw')
+
+    result = dither(bin, w, h, dithertype, thresh)
+
+    out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
+
+    name = "dither_%s_%i.png" % (datestring(nocolons=True), dithertype)
+    out.convert('1').save(name, format="PNG")
+    del out, bin, result
+    if img != pathOrPILimgage:
+        del img
+    return os.path.abspath(name)
+
+
+
+</t>
+<t tx="karstenw.20180207131456.1">def tempimagepath(mode='w+b', suffix='.png'):
+    """Create a temporary file with mode and suffix.
+    Returns pathstring."""
+    fob = tempfile.NamedTemporaryFile(mode=mode, suffix=suffix, delete=False)
+    fname = fob.name
+    fob.close()
+    return fname
+
+
+</t>
+<t tx="karstenw.20180207131514.1">def dithertypes():
+    """Return names of all supported dither types."""
+    return _dithertypes.keys()
 
 
 </t>

@@ -3,6 +3,7 @@
 
 // FAST INVERSE SQRT
 // Chris Lomont, http://www.math.purdue.edu/~clomont/Math/Papers/2003/InvSqrt.pdf
+
 float _fast_inverse_sqrt(float x) { 
     float xhalf = 0.5f*x; 
     int i = *(int*)&x;
@@ -71,6 +72,7 @@ static PyMethodDef geometry_methods[]={
     { "coordinates", coordinates, METH_VARARGS },  
     { NULL, NULL }
 };
+
 
 PyMODINIT_FUNC initcGeo(void){ 
     PyObject *m;

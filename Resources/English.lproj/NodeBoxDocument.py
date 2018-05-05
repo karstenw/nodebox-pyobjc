@@ -82,3 +82,5 @@ class NodeBoxDocument (NSDocument):
     @objc.IBAction
     def zoomToTag_(self, sender):
 
+    @objc.IBAction
+    def clearMessageArea_(self, sender):

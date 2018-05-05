@@ -8,8 +8,20 @@
 from Foundation import *
 from AppKit import *
 import objc
-class NodeBoxAppDelegate:
+class NodeBoxAppDelegate(NSDocument):
 
+    @objc.IBAction
+    def showHelp_(self, sender):
 
+    @objc.IBAction
+    def showLibrary_(self, sender):
 
+    @objc.IBAction
+    def generateCode_(self, sender):
+
+    @objc.IBAction
+    def showPreferencesPanel_(self, sender):
+
+    @objc.IBAction
+    def showSite_(self, sender):
 

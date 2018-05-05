@@ -5,9 +5,11 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.9.27
+The current version is 1.9.31
 
 Download the compiled app from my [dropbox](http://goo.gl/vkuBeV).
+
+As of 2018-05-05 and version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
 
 As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue if you need one.
 
@@ -49,7 +51,7 @@ Attention!
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
 
-1.  Uses Python 2.7.13 and PyObjC 3.2a1
+1.  Uses Python 2.7.15 and PyObjC 4.2
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
@@ -115,6 +117,7 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+2018-05-05 Version 1.9.31 First Version built on 10.12. Minimum OS is now 10.9.
 
 2017-12-23 Version 1.9.30 New experimental commands `imagepalette()`  `ditherimage()`, `aspectRatio()` 
 

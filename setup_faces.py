@@ -114,7 +114,7 @@ setup(
         ],
 
     ext_modules=[
-        Extension('atkinsondither', ['libs/atkinsondither/atkinsondither.c']),
+        Extension('bwdithering', ['libs/bwdithering/bwdithering.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
