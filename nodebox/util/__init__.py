@@ -27,7 +27,7 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
            'datestring','makeunicode', 'filelist', 'imagefiles',
            'fontnames', 'fontfamilies',
            'voices', 'voiceattributes', 'anySpeakers', 'say',
-           'imagepalette', 'aspectRatio', 'dithertypes')
+           'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage')
 
 
 g_voicetrash = []
@@ -479,11 +479,14 @@ def dithertypes():
 
 
 def ditherimage(pathOrPILimgage, dithertype, threshhold):
+    # argh, a circular import. Dang!
+    from nodebox.geo import dither
+
     t = type(pathOrPILimgage)
 
     if dithertype in _dithertypes:
         dithertype = _dithertypes.get( dithertype )
-    elif dithertype in ditherIDs:
+    elif dithertype in _ditherIDs:
         pass
     else:
         dithertype = 0
@@ -497,7 +500,7 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
 
     bin = img.tobytes(encoder_name='raw')
 
-    result = dither(bin, w, h, dithertype, thresh)
+    result = dither(bin, w, h, dithertype, threshhold)
 
     out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
 
