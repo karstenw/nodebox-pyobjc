@@ -24,7 +24,7 @@ var('Fonts', MENU, default=default, handler=menuhandler, menuitems=fonts)
 var('Ein Button', BUTTON, handler=buttonhandler )
 
 
-# old tsyle menu var - still works if only for compatibility
+# old syle menu var - still works if only for compatibility
 var('À la carte', MENU, default=menuhandler, value=['Un', 'Deux', 'Trois', 'Eins', 'Zwei', 'Drei'])
 
 
