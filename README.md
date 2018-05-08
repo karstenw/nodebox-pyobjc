@@ -7,7 +7,7 @@ This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
 The current version is 1.9.31
 
-Download the compiled app from my [dropbox](http://goo.gl/vkuBeV).
+Download the compiled app from my [dropbox](http://goo.gl/dZDic5).
 
 As of 2018-05-05 and version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
 
@@ -117,7 +117,7 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
-2018-05-05 Version 1.9.31 First Version built on 10.12. Minimum OS is now 10.9.
+2018-05-05 Version 1.9.31 First Version built on 10.12. Minimum OS is now 10.9. Fixed some bugs in ditherimage(). Added example for ditherimage().
 
 2017-12-23 Version 1.9.30 New experimental commands `imagepalette()`  `ditherimage()`, `aspectRatio()` 
 
