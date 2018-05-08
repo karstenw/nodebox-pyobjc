@@ -16,7 +16,7 @@ for t in filetuples:
     images.append( path )
     
 # aktivieren für wiederholbare zufalls folge
-rnd.seed(2)
+# rnd.seed(2)
 
 img = choice( images )
 
