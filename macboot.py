@@ -11,7 +11,7 @@ import os
 import sgmllib
 import bs4
 
-# moved to Lubrary
+# moved to Library
 # import numpy
 
 import sqlite3
