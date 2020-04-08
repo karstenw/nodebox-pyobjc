@@ -16,11 +16,15 @@ except:
 
 import time
 
-# how many points 1,000,000 takes about 5 min.
+# how many points 1,000,000 takes about 1 min.
 noOfPoints = 10000
 
 # inset from canvas size
-inset = 20
+inset = 25
+
+# marker cross size
+msize = 1.5
+
 
 
 def convex_hull(points):
@@ -70,23 +74,25 @@ def convex_hull(points):
 # Example: convex hull of a 10-by-10 grid.
 # assert convex_hull([(i//10, i%10) for i in range(100)]) == [(0, 0), (9, 0), (9, 9), (0, 9)]
 
-def mark( point, style="CROSS" ):
+def displayPoints( points ):
     """Mark a point with a cross or a rect."""
     push()
     
     fill( 0 )
     strokewidth( 1 )
-    stroke( 0.5, 0,0, 0.5 )
-    if style == "CROSS":
-        beginpath()
-        moveto( point[0]-2, point[1] )
-        lineto( point[0]+2, point[1] )
-        moveto( point[0]  , point[1]-2 )
-        lineto( point[0]  , point[1]+2 )
-        endpath(draw=1)
-    else:
-        rect(point[0],point[1], 1, 1)
+    stroke( 0 ) #0.5, 0,0, 0.5 )
+    beginpath()
+    for p in points:
+        x, y = p
+        #moveto( x    , y )
+        #lineto( x+1.0, y )
+        moveto( x-msize, y )
+        lineto( x+msize, y )
+        moveto( x  , y-msize )
+        lineto( x  , y+msize )
+    endpath(draw=1)
     pop()
+
 
 def createRandomPoints( count, width, height, inset):
     # create the random points
@@ -99,10 +105,7 @@ def createRandomPoints( count, width, height, inset):
     for i in xrange( count ):
         px = inset + random() * (width - inset * 2)
         py = inset + random() * (height - inset * 2)
-        points.append( (px,py) )
-        mark( (px,py), style="CROSS" )
-        # line(px-0.5,py,px+0.5,py)
-        # rect(px-0.5,py-0.5,1.0,1.0)
+        points.append( (px+0.5,py+0.5) )
     return points
 
 
@@ -138,22 +141,30 @@ t_start = time.time()
 points = createRandomPoints( noOfPoints, WIDTH, HEIGHT, inset)
 t_points = time.time()
 
+displayPoints( points )
+t_display = time.time()
+
 # calculate the hull points
 outline = convex_hull(points)
+t_calchull = time.time()
 
 noofhullpoints = len(outline)
 
-t_hull = time.time()
-
 # display the hull
 displayHullPoints( outline )
+t_displayhull = time.time()
 
-t_display = time.time()
 
 print
 print "#Total points:", len(points)
 print "#Hull points:", len(outline)
 
-print "Time creating and displaying points: %.3f sek." % (round(t_points - t_start, 3), )
-print "Time calculating hull: %.3f sek." % (round(t_hull - t_points, 3), )
-print "Time displaying hull: %.3f sek." % (round(t_display - t_hull, 3), )
+print "Time creating %i random points: %.4f sek." % (len(points), round(t_points - t_start, 4), )
+
+print "Time displaying %i points: %.4f sek." % (len(points), round(t_display - t_points, 4), )
+
+print "Time calculating hull: %.4f sek." % (round(t_calchull - t_display, 4), )
+print "Time displaying hull: %.4f sek." % (round(t_displayhull - t_calchull, 4), )
+
+print "\nTotal Time: %.4f sek." % (round(t_displayhull - t_start, 4), )
+
