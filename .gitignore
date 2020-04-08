@@ -2,18 +2,20 @@
 *.pyc
 build/
 dist/
++trash
+.gitignore
++current
 # Xcode user files
 project.xcworkspace
 xcuserdata
+NodeBox.egg-info
 nodebox/tests/graphics/_results/
 NodeBox.xcodeproj/*.mode1v3
 NodeBox.xcodeproj/*.pbxuser
 nodebox/tests/vdiff/images/*/_compare.png
 nodebox/tests/vdiff/test-results.html
-+trash
-.gitignore
-+current
-examples/Escher/FG*
+examples/Extended Application/matplotlib/+todo
+examples/Escher/*.png
 examples/Images/Images*
 examples/Path/Spider-kw.py
 examples/zzz_private/
@@ -23,3 +25,8 @@ classes_nodebox.png
 examples/New Functions/documents.txt
 +latex/*.aux
 +latex/*.log
+Resources/English.lproj/MainMenu Kopie.xib
+Resources/English.lproj/NodeBoxPreferences Kopie.xib
+Resources/English.lproj/PyDETextView.py
+Resources/English.lproj/NodeBoxGraphicsView.py
+README.html
