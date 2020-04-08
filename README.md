@@ -117,6 +117,7 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+
 2018-05-05 Version 1.9.31 First Version built on 10.12. Minimum OS is now 10.9. Fixed some bugs in ditherimage(). Added example for ditherimage().
 
 2017-12-23 Version 1.9.30 New experimental commands `imagepalette()`  `ditherimage()`, `aspectRatio()` 
