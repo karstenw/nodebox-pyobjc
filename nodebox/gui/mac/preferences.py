@@ -20,14 +20,14 @@ from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttri
 
 class LibraryFolder(object):
     def __init__(self):
+        self.libDir = ""
         prefpath = ""
         try:
             prefpath = NSUserDefaults.standardUserDefaults().objectForKey_("libraryPath")
         except Exception, err:
             print "LibraryFolder: prefpath:", repr(prefpath)
             prefpath = ""
-        stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support",
-                               "NodeBox")
+        stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support", "NodeBox")
 
         if prefpath and os.path.exists( prefpath ):
             self.libDir = prefpath
@@ -37,7 +37,7 @@ class LibraryFolder(object):
             self.libDir = stdpath
             try:
                 if not os.path.exists(self.libDir):
-                    os.mkdir(libDir)
+                    os.mkdir(self.libDir)
             except OSError:
                 pass
             except IOError:
