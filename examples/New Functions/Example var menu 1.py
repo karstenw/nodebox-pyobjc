@@ -1,4 +1,4 @@
-# size(0,0)
+size(800,700)
 background(0.7)
 
 speed( 2 )
@@ -93,9 +93,9 @@ def draw():
     else:
         f = currentFont
     char = zeichenquelle.next()
-    fontsize( 750 )
+    fontsize( 450 )
 
-    tp = textpath(char, 100, 850, width=WIDTH, font=f)
+    tp = textpath(char, 200, 500, width=WIDTH, font=f)
     fill(0.85,0.85,0.85, 0.5)
     stroke(0)
     strokewidth(0.5)
