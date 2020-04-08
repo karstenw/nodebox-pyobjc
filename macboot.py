@@ -4,15 +4,15 @@
 # and works from there
 
 import os
-#import operator
-#import warnings
+import operator
+import warnings
 
 # for the libraries
 import sgmllib
 import bs4
 
 # moved to Library
-# import numpy
+import numpy
 
 import sqlite3
 import zipfile
@@ -21,6 +21,27 @@ import hashlib
 import base64
 import re
 import pickle
+
+
+# pattern lib
+import new
+import csv
+import functools
+import itertools
+import httplib
+import codecs
+import calendar
+import types
+import MySQLdb
+
+import api
+import feed
+import oauth
+import json
+import locale
+
+
+
 #import UserList
 
 # needed by matplotlib et al.
@@ -31,12 +52,8 @@ import pickle
 # import pymongo
 # import dateutil
 # import copy
-# import csv
-# import functools
-# import itertools
 # import gzip
 # import io
-# import httplib
 # import http
 # import http.client
 # import http.server
