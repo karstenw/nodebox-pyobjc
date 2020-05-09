@@ -217,6 +217,17 @@ class Context(object):
 
     ellipse = oval
 
+
+    def circle(self, cx, cy, rx, ry=None, draw=True, **kwargs):
+        if ry == None:
+            ry = rx
+        width = 2 * rx
+        height = 2 * ry
+        x = cx - rx
+        y = cy - ry
+        self.oval( x, y, width, height, draw=draw, **kwargs )
+
+
     def arc(self, x, y, r, startAngle, endAngle, draw=True, **kwargs):
         BezierPath.checkKwargs(kwargs)
         path = self.BezierPath(**kwargs)

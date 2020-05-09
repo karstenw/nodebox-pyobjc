@@ -69,7 +69,8 @@ __all__ = [
         "NORMAL","FORTYFIVE",
         "NUMBER", "TEXT", "BOOLEAN","BUTTON", "MENU",
         "NodeBoxError",
-        "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect", "Oval",
+        "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect",
+        "Oval",
         "Color", "Transform", "Image", "Text",
         "Variable", "Canvas",
         ]
