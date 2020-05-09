@@ -32,13 +32,11 @@ import httplib
 import codecs
 import calendar
 import types
-import MySQLdb
 
-import api
-import feed
-import oauth
-import json
-import locale
+# currently not in py2
+# import MySQLdb # lib/pattern
+# import json
+# import locale
 
 
 
