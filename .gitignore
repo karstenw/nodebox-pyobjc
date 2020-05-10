@@ -14,7 +14,16 @@ NodeBox.xcodeproj/*.mode1v3
 NodeBox.xcodeproj/*.pbxuser
 nodebox/tests/vdiff/images/*/_compare.png
 nodebox/tests/vdiff/test-results.html
+
 examples/Extended Application/matplotlib/+todo
+examples/Extended Application/scipy/docs/
+examples/Extended Application/sympy/docs/
+examples/Extended Application/sympy/examples_kw
+examples/Extended Application/sklearn/doc/
+
+libs/fractal
+libs/polymagic/
+
 examples/Escher/*.png
 examples/Images/Images*
 examples/Path/Spider-kw.py
@@ -30,3 +39,13 @@ Resources/English.lproj/NodeBoxPreferences Kopie.xib
 Resources/English.lproj/PyDETextView.py
 Resources/English.lproj/NodeBoxGraphicsView.py
 README.html
+examples/Extended Application/matplotlib/examples/animation/unchained.mp4
+examples/Fun/sutcliffe.py
+examples/Fun/sutcliffe.rb
+examples/New Functions/Example shadow 1.py
+examples/New Functions/Example speech Badnews.py
+examples/New Functions/Image180208185835-4.png
+examples/New Functions/twyg/example-data/wind-instruments-large.json
+examples/Path/glyphpath_example-2.py
+examples/Path/glyphpath_example.py
+nodebox/geo/geo __init__ saved with benchmark.py
