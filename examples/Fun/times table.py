@@ -35,7 +35,7 @@ def params(val, name):
         val = round(val, 2)
         bg = val
     elif name == "factor":
-        val = round(val, 5)
+        val = round(val, 3)
         factor = val
     print name, val
     drawit(radius, n)
@@ -106,6 +106,6 @@ var("radius", NUMBER, default=340, min=50, max=850, handler=params)
 var("n", NUMBER, default=400, min=3, max=800, handler=params)
 var("r", NUMBER, default=1, min=1, max=5, handler=params)
 var("bg", NUMBER, default=0.067, min=0.0, max=1.0, handler=params)
-var("factor", NUMBER, default=2.0, min=0.00001, max=5.0, handler=params)
+var("factor", NUMBER, default=2.0, min=0.001, max=9.0, handler=params)
 
 drawit( radius, n )
