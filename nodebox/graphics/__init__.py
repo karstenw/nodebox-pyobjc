@@ -271,13 +271,19 @@ class Context(object):
             p.draw()
         return p
 
+
+    # a working arrow implementation shold be here
+
+
+
     def arrow(self, x, y, width=100, type=NORMAL, draw=True, **kwargs):
 
         """Draws an arrow.
 
         Draws an arrow at position x, y, with a default width of 100.
-        There are two different types of arrows: NORMAL and trendy FORTYFIVE degrees arrows.
-        When draw=False then the arrow's path is not ended, similar to endpath(draw=False)."""
+        There are two different types of arrows: NORMAL and trendy FORTYFIVE
+        degrees arrows.  When draw=False then the arrow's path is not ended,
+        similar to endpath(draw=False)."""
 
         BezierPath.checkKwargs(kwargs)
         if type==NORMAL:
@@ -285,7 +291,8 @@ class Context(object):
         elif type==FORTYFIVE:
             return self._arrow45(x, y, width, draw, **kwargs)
         else:
-            raise NodeBoxError("arrow: available types for arrow() are NORMAL and FORTYFIVE\n")
+            raise NodeBoxError( "arrow: available types for arrow() "
+                                "are NORMAL and FORTYFIVE\n")
 
     def _arrow(self, x, y, width, draw, **kwargs):
 
@@ -607,4 +614,6 @@ class Context(object):
     def dither(self, imagebytes, w, h, typ, threshhold):
         return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
 
+    def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
+        return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit)
 
