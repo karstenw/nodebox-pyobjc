@@ -21,7 +21,8 @@ class Blob:
         fill(self.color)
         stroke(0)
         strokewidth(1)
-        oval(self.x-self.radius, self.y-self.radius, self.radius*2, self.radius*2)
+        circle(self.x, self.y, self.radius)
+        # oval(self.x-self.radius, self.y-self.radius, self.radius*2, self.radius*2)
         
 
 
