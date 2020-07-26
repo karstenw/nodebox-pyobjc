@@ -36,8 +36,8 @@ CLASSIFIERS = (
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
 )
 
-DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
-               u"using Python code")
+DESCRIPTION = (u"Simple application for creating 2-dimensional graphics "
+               u"and animation using Python code")
 LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output
 with programming code. The application targets an audience of designers, with an easy set of state 
 commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
@@ -115,6 +115,7 @@ setup(
 
     ext_modules=[
         Extension('bwdithering', ['libs/bwdithering/bwdithering.c']),
+        Extension('fractal', ['libs/fractal/fractal.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
