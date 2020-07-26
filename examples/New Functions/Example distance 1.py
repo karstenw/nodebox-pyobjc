@@ -45,9 +45,9 @@ def triangle(x, y):
     text("y = %i" % y, lx, ly)
 
 
-    d = round(distance(x1, y1, x2, y2), 4)
+    d = round(distance(x1, y1, x2, y2), 3)
     lx,ly = x0, y0 -70
-    text("hypotenuse ≈ %.4f" % d, lx, ly)
+    text("hypotenuse ≈ %.3f" % d, lx, ly)
 
 
 var("x", NUMBER, default=50, min=10, max=300, handler=params)
