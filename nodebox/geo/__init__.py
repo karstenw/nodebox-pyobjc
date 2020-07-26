@@ -43,6 +43,20 @@ except ImportError, err:
     def dither(*args):
         print "You lost."
 
+try:
+    import fractal
+    fractalimage = fractal.fractalimage
+except ImportError, err:
+    print
+    print '-' * 40
+    print
+    print err
+    print 
+    print '-' * 40
+    print
+    def fractalimage(*args):
+        print "You lost."
+
 
 def reflect(x0, y0, x1, y1, d=1.0, a=180):
     d *= distance(x0, y0, x1, y1)
