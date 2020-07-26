@@ -5,7 +5,7 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.9.31
+The current version is 1.9.32
 
 Download the compiled app from my [dropbox](http://goo.gl/dZDic5).
 
@@ -117,6 +117,8 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+
+2020-07-20 Version 1.9.32 Added circle() for shoebot compatibility. Fractal C extension. See example code.
 
 2018-05-05 Version 1.9.31 First Version built on 10.12. Minimum OS is now 10.9. Fixed some bugs in ditherimage(). Added example for ditherimage().
 
