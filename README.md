@@ -118,7 +118,7 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 Latest changes
 --------------
 
-2020-07-20 Version 1.9.32 Added circle() for shoebot compatibility. Fractal C extension. See example code.
+2020-07-20 Version 1.9.32 Added circle(x,y,radiusx, radiusy=None) for shoebot compatibility. Fractal C extension fractal(clut, w, h, iterations, x1, y1, dx, dy, nreal, nimag, limit ). See example code.
 
 2018-05-05 Version 1.9.31 First Version built on 10.12. Minimum OS is now 10.9. Fixed some bugs in ditherimage(). Added example for ditherimage().
 
