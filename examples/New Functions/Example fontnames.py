@@ -1,6 +1,8 @@
-import pprint
-
 
 fonts = fontnames()
-pprint.pprint(fonts)
-print "Fonts:", len(fonts)
+
+fonts.sort()
+s = u"\n".join( fonts )
+
+print s
+print "\nFonts:", len(fonts)
