@@ -23,11 +23,14 @@ import PyObjCTools.Conversion
 import kgp
 
 
-__all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
-           'datestring','makeunicode', 'filelist', 'imagefiles',
-           'fontnames', 'fontfamilies',
-           'voices', 'voiceattributes', 'anySpeakers', 'say',
-           'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage')
+__all__ = (
+    'grid', 'random', 'choice', 'files', 'autotext',
+    '_copy_attr',
+    '_copy_attrs',
+    'datestring','makeunicode', 'filelist', 'imagefiles',
+    'fontnames', 'fontfamilies',
+    'voices', 'voiceattributes', 'anySpeakers', 'say',
+    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage')
 
 
 g_voicetrash = []
@@ -50,13 +53,19 @@ _ditherIDs = _dithertypes.values()
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     typ = type(s)
     # convert to str first; for number types etc.
-    if typ not in (str, unicode, Foundation.NSMutableAttributedString,
-        objc.pyobjc_unicode, Foundation.NSMutableStringProxyForMutableAttributedString,
-        Foundation.NSString):
+    if typ not in ( str,
+                    unicode,
+                    Foundation.NSMutableAttributedString,
+                    objc.pyobjc_unicode,
+                    Foundation.NSMutableStringProxyForMutableAttributedString,
+                    Foundation.NSString):
         # print "makeunicode() convert:", typ
         s = str(s)
-    if typ not in (unicode, Foundation.NSMutableAttributedString, objc.pyobjc_unicode,
-                   Foundation.NSMutableStringProxyForMutableAttributedString):
+    if typ not in (
+            unicode,
+            Foundation.NSMutableAttributedString,
+            objc.pyobjc_unicode,
+            Foundation.NSMutableStringProxyForMutableAttributedString):
         try:
             s = unicode(s, srcencoding)
         except TypeError, err:
@@ -485,9 +494,12 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
     t = type(pathOrPILimgage)
 
     if dithertype in _dithertypes:
-        dithertype = _dithertypes.get( dithertype )
+        dithername = dithertype
+        ditherid = _dithertypes.get( dithertype )
     elif dithertype in _ditherIDs:
-        pass
+        ditherid = dithertype
+        dithername = _dithertypes.get( dithertype )
+        # pass
     else:
         dithertype = 0
 

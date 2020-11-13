@@ -7,6 +7,8 @@ from AppKit import NSBitmapImageRep, NSDeviceRGBColorSpace
 
 colors = ximport("colors")
 
+PUREPYTHON = False
+
 
 def makeColorlookup( iterations ):
     #clr1 = colors.rgb(0.6, 0.8, 1.0)
@@ -66,15 +68,15 @@ def handlecoordinate(value, name):
 
 
 delta = 4.0
-var("fsize", NUMBER, 300, 300, 1100, handler=handlecoordinate)
-var("xpos", NUMBER, 0, -8.0, 8.0, handler=handlecoordinate)
+var("fsize", NUMBER, 400, 300, 1100, handler=handlecoordinate)
+var("xpos", NUMBER, 0.0, -6.0, 6.0, handler=handlecoordinate)
 var("ypos", NUMBER, 0, -3.5, 3.5, handler=handlecoordinate)
 # var("delta", NUMBER, 4.0, 0.0001, 20.0, handler=handlecoordinate)
 var("zoom", NUMBER, 0.25, 0.01, 20.0, handler=handlecoordinate)
-var("iterations", NUMBER, 64, 8, 512, handler=handlecoordinate)
-var("const_real", NUMBER, 0.0, 0.0, 2*3.1415, handler=handlecoordinate)
-var("const_imag", NUMBER, 0.0, 0.0, 2*3.1415, handler=handlecoordinate)
-var("limit", NUMBER, 2.0, 0.01, 50, handler=handlecoordinate)
+var("iterations", NUMBER, 64, 0, 256, handler=handlecoordinate)
+var("const_real", NUMBER, 0.0, 0.0, 2.0, handler=handlecoordinate)
+var("const_imag", NUMBER, 0.0, 0.0, 2.0, handler=handlecoordinate)
+var("limit", NUMBER, 2.0, 0.01, 6.00, handler=handlecoordinate)
 
 
 def makeImage( pixels, W, H ):
@@ -86,14 +88,36 @@ def makeImage( pixels, W, H ):
     return img.TIFFRepresentation()
 
 
+def mandelbrot(x, y, depth, cr, ci, l):
+    z = complex(x, y)
+    o = complex(0, 0)
+    for i in range(depth):
+        if abs(o) <= l:
+            o = o*o + z
+        else:
+            return( i )
+    return( 0 )
+
+
 def iterPixels(width, height, iterations, xpos, dx, ypos, dy, const_real, const_imag, clut, limit):
     pixels = numpy.zeros(width * height * 4, dtype=numpy.uint8)
     for y in xrange( height ):
         for x in xrange( width ):
             xc = xpos + float(x) / width * dx
             yc = ypos + float(y) / height * dy
-            v = mandelbrot(xc, yc, iterations, const_real, const_imag, limit)
-            idx = v * 4
+            # v = mandelbrot(xc, yc, iterations, const_real, const_imag, limit)
+
+            z = complex(xc, yc)
+            o = complex(0, 0)
+            res = 0
+            for i in xrange(iterations):
+                if abs(o) <= limit:
+                    o = o*o + z
+                else:
+                    res = i
+                    break
+            
+            idx = res * 4
             o = (y * width + x) * 4
             for z in range(4):
                 pixels[o+z] = clut[idx+z]
@@ -117,7 +141,11 @@ def render(fsize, xpos, ypos, d, i, const_real, const_imag, limit):
     size(W, H)
     n = W * H
     clut = makeColorlookup( i )
-    pixels = dofractal(W, H, i, left, d, top, d, const_real, const_imag, clut, limit)
+    if PUREPYTHON:
+        pixels = iterPixels(W, H, i, left, d, top, d, const_real, const_imag, clut, limit)
+    else:
+        pixels = dofractal(W, H, i, left, d, top, d, const_real, const_imag, clut, limit)
+    
     bytes = makeImage( pixels, W, H)
     image(None, 0, 0, data=bytes)
 
