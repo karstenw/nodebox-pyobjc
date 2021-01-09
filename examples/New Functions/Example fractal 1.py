@@ -1,13 +1,11 @@
 import pprint
 pp = pprint.pprint
 
-import numpy
-
 from AppKit import NSBitmapImageRep, NSDeviceRGBColorSpace
 
 colors = ximport("colors")
 
-PUREPYTHON = False
+PUREPYTHON = 0
 
 
 def makeColorlookup( iterations ):
@@ -17,7 +15,7 @@ def makeColorlookup( iterations ):
     g = colors.range(h=(0.0,1.0), s=(0.25,0.75), b=(0.0,1.0), a=(1.0,1.0), 
                      grayscale=False, name="", length=iterations)
 
-    colorcache = numpy.zeros(iterations * 4, dtype=numpy.uint8)
+    colorcache = bytearray( iterations * 4 )
     for i in range(iterations):
         idx = i * 4
         c = g[i]
@@ -31,7 +29,7 @@ def makeColorlookup( iterations ):
             colorcache[idx+1] = int(c.green * 255)
             colorcache[idx+2] = int(c.blue  * 255)
             colorcache[idx+3] = 255
-    return colorcache
+    return bytes( colorcache )
 
 
 
@@ -100,7 +98,7 @@ def mandelbrot(x, y, depth, cr, ci, l):
 
 
 def iterPixels(width, height, iterations, xpos, dx, ypos, dy, const_real, const_imag, clut, limit):
-    pixels = numpy.zeros(width * height * 4, dtype=numpy.uint8)
+    pixels = bytearray( width * height * 4 )
     for y in xrange( height ):
         for x in xrange( width ):
             xc = xpos + float(x) / width * dx
@@ -125,11 +123,7 @@ def iterPixels(width, height, iterations, xpos, dx, ypos, dy, const_real, const_
 
 
 def dofractal( width, height, iterations, xpos, dx, ypos, dy, const_real, const_imag, clut, limit ):
-
-    # clut = makeColorlookup( iterations )
     result = fractalimage(clut, width,height, iterations,xpos,ypos,dx,dy,const_real,const_imag,limit)
-    # out = PIL.Image.frombytes( 'RGBA', (w,h), result, decoder_name='raw')
-
     return result
 
 
