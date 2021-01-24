@@ -11,6 +11,8 @@ choice = librandom.choice
 import unicodedata
 
 import pdb
+import pprint
+pp = pprint.pprint
 
 import PIL
 import numpy as np
@@ -501,7 +503,8 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
         dithername = _dithertypes.get( dithertype )
         # pass
     else:
-        dithertype = 0
+        ditherid = 0
+        dithername = "unknown"
 
     if t in (str, unicode):
         img = PIL.Image.open( pathOrPILimgage ).convert('L')
@@ -509,20 +512,17 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
         img = pathOrPILimgage
 
     w, h = img.size
-
     bin = img.tobytes(encoder_name='raw')
-
-    result = dither(bin, w, h, dithertype, threshhold)
+    result = dither(bin, w, h, ditherid, threshhold)
 
     out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
 
-    name = "dither_%s_%i.png" % (datestring(nocolons=True), dithertype)
+    name = "dither_%s_%s.png" % (datestring(nocolons=True), dithername)
     out.convert('1').save(name, format="PNG")
     del out, bin, result
     if img != pathOrPILimgage:
         del img
     return os.path.abspath(name)
-
 
 
 def _copy_attr(v):
