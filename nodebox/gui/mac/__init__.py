@@ -13,6 +13,8 @@ pp = pprint.pprint
 
 import pdb
 
+kwdbg = False
+
 # set to true to have stdio on the terminal for pdb
 debugging = False
 
@@ -471,7 +473,8 @@ class NodeBoxDocument(NSDocument):
         if source is None:
             source = self.textView.string()
 
-        # if this is activated, all unicode carrying scripts NEED a "encoding" line
+        # if this is activated, all unicode carrying scripts NEED a "encoding"
+        # line
         # OTOH if this is on, NB accepts scripts with an encoding line.
         # currently an error
         # source = source.encode("utf-8")
