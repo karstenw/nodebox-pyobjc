@@ -51,7 +51,7 @@ Attention!
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
 
-1.  Uses Python 2.7.15 and PyObjC 4.2
+1.  Uses Python 2.7.16 and PyObjC 5.2
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
@@ -117,6 +117,8 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+
+2021-03-14 Version 1.9.33 Updated Library; bug fixes; enhanced photobot lib
 
 2020-07-20 Version 1.9.32 Added circle(x,y,radiusx, radiusy=None) for shoebot compatibility. Fractal C extension fractal(clut, w, h, iterations, x1, y1, dx, dy, nreal, nimag, limit ). See example code.
 
