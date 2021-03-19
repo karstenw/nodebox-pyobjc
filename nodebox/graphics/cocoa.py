@@ -55,7 +55,7 @@ makeunicode = nodebox.util.makeunicode
 
 try:
     import cPolymagic
-except ImportError, e:
+except ImportError as e:
     warnings.warn('Could not load cPolymagic: %s' % e)
 
 __all__ = [
@@ -162,7 +162,7 @@ class Point(object):
         elif len(args) == 0:
             self.x = self.y = 0.0
         else:
-            raise NodeBoxError, "Wrong initializer for Point object"
+            raise NodeBoxError("Wrong initializer for Point object")
 
     def __repr__(self):
         return "Point(x=%.3f, y=%.3f)" % (self.x, self.y)
@@ -189,7 +189,7 @@ class Grob(object):
         
     def copy(self):
         """Returns a deep copy of this grob."""
-        raise NotImplementedError, "Copy is not implemented on this Grob class."
+        raise NotImplementedError("Copy is not implemented on this Grob class.")
         
     def inheritFromContext(self, ignore=()):
         attrs_to_copy = list(self.__class__.stateAttributes)
@@ -199,7 +199,8 @@ class Grob(object):
     def checkKwargs(self, kwargs):
         remaining = [arg for arg in kwargs.keys() if arg not in self.kwargs]
         if remaining:
-            raise NodeBoxError, "Unknown argument(s) '%s'" % ", ".join(remaining)
+            err = "Unknown argument(s) '%s'" % ", ".join(remaining)
+            raise NodeBoxError(err)
     checkKwargs = classmethod(checkKwargs)
 
 
@@ -304,7 +305,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         elif isinstance(path, NSBezierPath):
             self._nsBezierPath = path
         else:
-            raise NodeBoxError, "Don't know what to do with %s." % path
+            raise NodeBoxError("Don't know what to do with %s." % path)
             
     def _get_path(self):
         s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
@@ -321,7 +322,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return self._capstyle
     def _set_capstyle(self, style):
         if style not in (BUTT, ROUND, SQUARE):
-            raise NodeBoxError, 'Line cap style should be BUTT, ROUND or SQUARE.'
+            raise NodeBoxError('Line cap style should be BUTT, ROUND or SQUARE.')
         self._capstyle = style
     capstyle = property(_get_capstyle, _set_capstyle)
 
@@ -329,7 +330,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return self._joinstyle
     def _set_joinstyle(self, style):
         if style not in (MITER, ROUND, BEVEL):
-            raise NodeBoxError, 'Line join style should be MITER, ROUND or BEVEL.'
+            raise NodeBoxError('Line join style should be MITER, ROUND or BEVEL.')
         self._joinstyle = style
     joinstyle = property(_get_joinstyle, _set_joinstyle)
 
@@ -435,7 +436,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             elif isinstance(el, PathElement):
                 self.append(el)
             else:
-                raise NodeBoxError, "Don't know how to handle %s" % el
+                raise NodeBoxError("Don't know how to handle %s" % el)
 
     def append(self, el):
         self._segment_cache = None
@@ -547,7 +548,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
     def points(self, amount=100):
         import bezier
         if len(self) == 0:
-            raise NodeBoxError, "The given path is empty"
+            raise NodeBoxError("The given path is empty")
 
         # The delta value is divided by amount - 1, because we also want the
         # last point (t=1.0)
@@ -670,7 +671,7 @@ class Rect(BezierPath):
                                         **kwargs)
 
     def copy(self):
-        raise NotImplementedError, "Please don't use Rect anymore"
+        raise NotImplementedError("Please don't use Rect anymore")
 
 
 class Oval(BezierPath):
@@ -683,7 +684,7 @@ class Oval(BezierPath):
                                         **kwargs)
 
     def copy(self):
-        raise NotImplementedError, "Please don't use Oval anymore"
+        raise NotImplementedError("Please don't use Oval anymore")
 
 
 class Color(object):
@@ -995,7 +996,7 @@ class Transform(object):
         elif isinstance(transform, NSAffineTransform):
             pass
         else:
-            raise NodeBoxError, "Don't know how to handle transform %s." % transform
+            raise NodeBoxError("Don't know how to handle transform %s." % transform)
         self._nsAffineTransform = transform
         
     def _get_transform(self):
@@ -1071,7 +1072,7 @@ class Transform(object):
         if isinstance(path, BezierPath):
             path = BezierPath(path._ctx, path)
         else:
-            raise NodeBoxError, "Can only transform BezierPaths"
+            raise NodeBoxError("Can only transform BezierPaths")
         path._nsBezierPath = self._nsAffineTransform.transformBezierPath_(path._nsBezierPath)
         return path
 
@@ -1104,7 +1105,7 @@ class Image(Grob, TransformMixin):
                 data = NSData.dataWithBytes_length_(data, len(data))
             self._nsImage = NSImage.alloc().initWithData_(data)
             if self._nsImage is None:
-                raise NodeBoxError, "can't read image %r" % path
+                raise NodeBoxError("can't read image %r" % path)
             self._nsImage.setFlipped_(True)
             self._nsImage.setCacheMode_(NSImageCacheNever)
 
@@ -1113,11 +1114,11 @@ class Image(Grob, TransformMixin):
                 self._nsImage = image
                 self._nsImage.setFlipped_(True)
             else:
-                raise NodeBoxError, "Don't know what to do with %s." % image
+                raise NodeBoxError("Don't know what to do with %s." % image)
 
         elif path is not None:
             if not os.path.exists(path):
-                raise NodeBoxError, 'Image "%s" not found.' % path
+                raise NodeBoxError('Image "%s" not found.' % path)
             curtime = os.path.getmtime(path)
             try:
                 image, lasttime = self._ctx._imagecache[path]
@@ -1128,7 +1129,7 @@ class Image(Grob, TransformMixin):
             if image is None:
                 image = NSImage.alloc().initWithContentsOfFile_(path)
                 if image is None:
-                    raise NodeBoxError, "Can't read image %r" % path
+                    raise NodeBoxError("Can't read image %r" % path)
                 image.setFlipped_(True)
                 image.setCacheMode_(NSImageCacheNever)
                 self._ctx._imagecache[path] = (image, curtime)
@@ -1607,8 +1608,8 @@ class Canvas(Grob):
         try:
             del self._grobstack[0]
             self._container = self._grobstack[0]
-        except IndexError, e:
-            raise NodeBoxError, "pop: too many canvas pops!"
+        except IndexError as e:
+            raise NodeBoxError("pop: too many canvas pops!")
 
     def draw(self):
         if self.background is not None:
@@ -1642,7 +1643,7 @@ class Canvas(Grob):
                         "tiff": NSTIFFFileType}
             if format not in imgTypes:
                 e = "Filename should end in .pdf, .eps, .tiff, .gif, .jpg or .png"
-                raise NodeBoxError, e
+                raise NodeBoxError(e)
             data = self._nsImage.TIFFRepresentation()
             if format != 'tiff':
                 imgType = imgTypes[format]

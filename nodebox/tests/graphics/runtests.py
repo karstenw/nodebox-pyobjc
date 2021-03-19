@@ -24,9 +24,9 @@ test_files = [file for file in all_python_files if test_re.match(file)]
 # Remove and re-create the results directory
 try:
     shutil.rmtree("_results")
-except OSError, e:
+except OSError as e:
     if e.errno != 2: # The directory doesn't exist yet
-        raise e
+        raise e()
 RESULTS_DIR = "_results"
 os.mkdir("_results")
 

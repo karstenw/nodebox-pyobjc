@@ -346,28 +346,28 @@ class Context(object):
 
     def moveto(self, x, y):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise NodeBoxError("No current path. Use beginpath() first.")
         self._path.moveto(x,y)
 
     def lineto(self, x, y):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise NodeBoxError("No current path. Use beginpath() first.")
         self._path.lineto(x, y)
 
     def curveto(self, x1, y1, x2, y2, x3, y3):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise(NodeBoxError, "No current path. Use beginpath() first.")
         self._path.curveto(x1, y1, x2, y2, x3, y3)
 
     def closepath(self):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise NodeBoxError("No current path. Use beginpath() first.")
         if not self._pathclosed:
             self._path.closepath()
 
     def endpath(self, draw=True):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise NodeBoxError("No current path. Use beginpath() first.")
         if self._autoclosepath:
             self.closepath()
         p = self._path
@@ -424,14 +424,16 @@ class Context(object):
     def pop(self):
         try:
             top = self._transformstack.pop()
-        except IndexError, e:
-            raise NodeBoxError, "pop: too many pops!"
+        except IndexError as e:
+            raise NodeBoxError( "pop: too many pops!" )
         if len(top) > 1:
-            self._align, self._autoclosepath, self._capstyle, self._colormode, self._fillcolor, self._fontname, self._fontsize, self._joinstyle, self._lineheight, self._outputmode, self._strokecolor, self._strokewidth, self._transformmode, self._transform.matrix = top
+            self._align, self._autoclosepath, self._capstyle, self._colormode,
+            self._fillcolor, self._fontname, self._fontsize, self._joinstyle,
+            self._lineheight, self._outputmode, self._strokecolor,
+            self._strokewidth, self._transformmode, self._transform.matrix = top
         else:
             self._transform.matrix = top[0]
-            
-            
+
     def transform(self, mode=None):
         if mode is not None:
             self._transformmode = mode
@@ -496,14 +498,16 @@ class Context(object):
     def capstyle(self, style=None):
         if style is not None:
             if style not in (BUTT, ROUND, SQUARE):
-                raise NodeBoxError, 'Line cap style should be BUTT, ROUND or SQUARE.'
+                raise NodeBoxError( 'Line cap style should be BUTT,'
+                                    ' ROUND or SQUARE.')
             self._capstyle = style
         return self._capstyle
 
     def joinstyle(self, style=None):
         if style is not None:
             if style not in (MITER, ROUND, BEVEL):
-                raise NodeBoxError, 'Line join style should be MITER, ROUND or BEVEL.'
+                raise NodeBoxError( 'Line join style should be MITER,'
+                                    ' ROUND or BEVEL.')
             self._joinstyle = style
         return self._joinstyle
 
@@ -513,7 +517,7 @@ class Context(object):
     def font(self, fontname=None, fontsize = None):
         if fontname is not None:
             if not Text.font_exists(fontname):
-                raise NodeBoxError, 'Font "%s" not found.' % fontname
+                raise NodeBoxError('Font "%s" not found.' % fontname )
             else:
                 self._fontname = fontname
         if fontsize is not None:

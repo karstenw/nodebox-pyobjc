@@ -131,7 +131,7 @@ class KantGenerator:
         xrefs = xrefs.keys()
         standaloneXrefs = [e for e in self.refs.keys() if e not in xrefs]
         if not standaloneXrefs:
-            raise NoSourceError, "can't guess source, and no source specified"
+            raise NoSourceError("can't guess source, and no source specified")
         return '<xref id="%s"/>' % random.choice(standaloneXrefs)
         
     def reset(self):

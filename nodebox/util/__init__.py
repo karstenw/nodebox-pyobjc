@@ -70,7 +70,7 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
             Foundation.NSMutableStringProxyForMutableAttributedString):
         try:
             s = unicode(s, srcencoding)
-        except TypeError, err:
+        except TypeError as err:
             print 
             print "makeunicode():", err
             print repr(s)
@@ -537,7 +537,7 @@ def _copy_attr(v):
     elif isinstance(v, (int, str, unicode, float, bool, long)):
         return v
     else:
-        raise NodeBoxError, "Don't know how to copy '%s'." % v
+        raise NodeBoxError("Don't know how to copy '%s'." % v)
 
 
 def _copy_attrs(source, target, attrs):

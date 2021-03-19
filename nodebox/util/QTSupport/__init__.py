@@ -63,7 +63,7 @@ class Movie(object):
             finally:
                 try:
                     os.remove(self.tmpfname)
-                except OSError, err:
+                except OSError as err:
                     print err
                     # pass
         self.frame += 1

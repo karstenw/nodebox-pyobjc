@@ -3,12 +3,29 @@
 # This just imports everything from the nodebox.gui.mac module
 # and works from there
 
+from __future__ import print_function
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    puni = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    puni = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+
 import os
 import operator
 import warnings
 
 # for the libraries
-import sgmllib
+if not py3:
+    import sgmllib
+
 import bs4
 
 # moved to Library
@@ -24,11 +41,13 @@ import pickle
 
 
 # pattern lib
-import new
+if not py3:
+    import new
 import csv
 import functools
 import itertools
-import httplib
+if not py3:
+    import httplib
 import codecs
 import calendar
 import types
