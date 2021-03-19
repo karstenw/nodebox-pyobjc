@@ -115,8 +115,8 @@ def grid(cols, rows, colSize=1, rowSize=1, shuffled=False):
     if (shuffled):
         rowRange = list(rowRange)
         colRange = list(colRange)
-        shuffle(rowRange)
-        shuffle(colRange)
+        librandom.shuffle(rowRange)
+        librandom.shuffle(colRange)
     for y in rowRange:
         for x in colRange:
             yield (x*colSize,y*rowSize)
@@ -185,7 +185,7 @@ def filelist( folderpathorlist, pathonly=True ):
 
             # skip if dir starts with '.'
             _, parentfolder = os.path.split(root)
-            if parentfolder[0] == u".":
+            if parentfolder and parentfolder[0] == u".":
                 continue
 
             for thefile in files:
