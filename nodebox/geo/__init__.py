@@ -15,7 +15,7 @@ try:
 except ImportError:
     def inverse_sqrt(x):
         return 1.0 / math.sqrt(x)
-    
+
     isqrt = inverse_sqrt
 
     def angle(x0, y0, x1, y1):
