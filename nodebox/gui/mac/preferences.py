@@ -14,8 +14,14 @@ NSUserDefaults = AppKit.NSUserDefaults
 NSOpenPanel = AppKit.NSOpenPanel
 
 
-from PyDETextView import getBasicTextAttributes, getSyntaxTextAttributes
-from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttributes
+from . import PyDETextView
+getBasicTextAttributes = PyDETextView.getBasicTextAttributes
+getSyntaxTextAttributes = PyDETextView.getSyntaxTextAttributes
+setTextFont = PyDETextView.setTextFont
+setBasicTextAttributes = PyDETextView.setBasicTextAttributes
+setSyntaxTextAttributes = PyDETextView.setSyntaxTextAttributes
+#from PyDETextView import getBasicTextAttributes, getSyntaxTextAttributes
+#from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttributes
 
 
 class LibraryFolder(object):
@@ -24,8 +30,8 @@ class LibraryFolder(object):
         prefpath = ""
         try:
             prefpath = NSUserDefaults.standardUserDefaults().objectForKey_("libraryPath")
-        except Exception, err:
-            print "LibraryFolder: prefpath:", repr(prefpath)
+        except Exception as err:
+            print("LibraryFolder: prefpath: %s" % repr(prefpath))
             prefpath = ""
         stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support", "NodeBox")
 

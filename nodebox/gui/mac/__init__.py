@@ -67,16 +67,16 @@ NSBezierPath = AppKit.NSBezierPath
 import threading
 Thread = threading.Thread
 
-import ValueLadder
+from . import ValueLadder
 MAGICVAR = ValueLadder.MAGICVAR
 
-import PyDETextView
+from . import PyDETextView
 
-import preferences
+from . import preferences
 NodeBoxPreferencesController = preferences.NodeBoxPreferencesController
 LibraryFolder = preferences.LibraryFolder
 
-import util
+from . import util
 errorAlert = util.errorAlert
 
 
@@ -109,10 +109,10 @@ DARKER_GRAY = black.blendedColorWithFraction_ofColor_(0.8,
 
 # from nodebox.gui.mac.dashboard import *
 # from nodebox.gui.mac.progressbar import ProgressBarController
-import dashboard
+from . import dashboard
 DashboardController = dashboard.DashboardController
 
-import progressbar
+from . import progressbar
 ProgressBarController = progressbar.ProgressBarController
 
 class ExportCommand(NSScriptCommand):
@@ -248,7 +248,7 @@ class NodeBoxDocument(NSDocument):
             self.outputView.setAutomaticDashSubstitutionEnabled_( False )
             #self.outputView.setAutomaticLinkDetectionEnabled_( True )
             #self.outputView.setDisplaysLinkToolTips_( True )
-        except Exception, err:
+        except Exception as err:
             pass
 
     def readFromUTF8_(self, path):
@@ -498,7 +498,7 @@ class NodeBoxDocument(NSDocument):
             #pp(util.__all__)
             #print "graphics.__all__:"
             #pp(graphics.__all__)
-            print "namespace.keys():"
+            print("namespace.keys():")
             # pp(namespace.keys())
 
         # Add everything from the context object
@@ -518,7 +518,7 @@ class NodeBoxDocument(NSDocument):
         #    self.namespace[var.name] = var.value
 
     def _execScript(self):
-        exec self._code in self.namespace
+        exec(self._code, self.namespace)
         self.__doc__ = self.namespace.get("__doc__", self.__doc__)
 
     def boxedRun_args_(self, method, args):
@@ -668,9 +668,7 @@ class NodeBoxDocument(NSDocument):
             format = panel.requiredFileType()
             panel.close()
             self.doExportAsImage_fmt_pages_(fname, format, pages)
-    exportPanelDidEnd_returnCode_contextInfo_ = objc.selector(
-        exportPanelDidEnd_returnCode_contextInfo_,
-        signature="v@:@ii")
+    exportPanelDidEnd_returnCode_contextInfo_ = objc.selector( exportPanelDidEnd_returnCode_contextInfo_, signature=b"v@:@ii")
             
     @objc.IBAction
     def exportImageFormatChanged_(self, sender):
@@ -781,7 +779,7 @@ class NodeBoxDocument(NSDocument):
             self.doExportAsMovie_frames_fps_(fname, frames, fps)
 
     qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
-                                                          signature="v@:@ii")
+                                                          signature=b"v@:@ii")
 
     def doExportAsMovie_frames_fps_(self, fname, frames, fps):
         # Only load QTSupport when necessary. 
@@ -858,7 +856,7 @@ class NodeBoxDocument(NSDocument):
 
     printOperationDidRun_success_contextInfo_ = objc.selector(
                                             printOperationDidRun_success_contextInfo_,
-                                            signature="v@:@ci")
+                                            signature=b"v@:@ci")
 
     @objc.IBAction
     def buildInterface_(self, sender):

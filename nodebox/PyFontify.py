@@ -31,8 +31,9 @@ sublist is not used, hence always None.
 __version__ = "0.5"
 
 import re
-import graphics
-import util
+
+from . import graphics
+from . import util
 
 from keyword import kwlist as keywordsList
 keywordsList = keywordsList[:]
@@ -143,7 +144,7 @@ def test(path):
     text = f.read()
     f.close()
     for tag, start, end, sublist in fontify(text):
-        print tag, repr(text[start:end])
+        print( "%s  %s" % (tag, repr(text[start:end])))
 
 
 if __name__ == "__main__":

@@ -22,7 +22,7 @@ import Foundation
 import AppKit
 import PyObjCTools.Conversion
 
-import kgp
+from . import kgp
 
 
 __all__ = (
@@ -71,11 +71,11 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
         try:
             s = unicode(s, srcencoding)
         except TypeError as err:
-            print 
-            print "makeunicode():", err
-            print repr(s)
-            print type(s)
-            print
+            print() 
+            print("makeunicode(): %s" % err)
+            print(repr(s))
+            print(type(s))
+            print()
     if typ in (unicode,):
         s = unicodedata.normalize(normalizer, s)
     return s
@@ -470,7 +470,7 @@ def imagepalette( pathOrPILimgage, mask=None ):
     else:
         try:
             result = palette( pathOrPILimgage, mask )
-        except Exception, err:
+        except Exception as err:
             pass
     return result
 
@@ -543,4 +543,5 @@ def _copy_attr(v):
 def _copy_attrs(source, target, attrs):
     for attr in attrs:
         setattr(target, attr, _copy_attr(getattr(source, attr)))
+
 

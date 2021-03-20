@@ -1,11 +1,55 @@
 # import pdb
-import cocoa
-graphics_impl = cocoa
 
 import AppKit
 
-# I really dont like it but cocoa.py has an __all__...
-from cocoa import *
+from . import cocoa
+graphics_impl = cocoa
+
+BEVEL = cocoa.BEVEL
+BOOLEAN = cocoa.BOOLEAN
+BUTTON = cocoa.BUTTON
+BUTT = cocoa.BUTT
+BezierPath = cocoa.BezierPath
+CENTER = cocoa.CENTER
+CENTER = cocoa.CENTER
+CLOSE = cocoa.CLOSE
+CMYK = cocoa.CMYK
+CORNER = cocoa.CORNER
+CURVETO = cocoa.CURVETO
+Canvas = cocoa.Canvas
+ClippingPath = cocoa.ClippingPath
+Color = cocoa.Color
+DEFAULT_HEIGHT = cocoa.DEFAULT_HEIGHT
+DEFAULT_WIDTH = cocoa.DEFAULT_WIDTH
+Grob = cocoa.Grob
+HSB = cocoa.HSB
+Image = cocoa.Image
+JUSTIFY = cocoa.JUSTIFY
+LEFT = cocoa.LEFT
+LINETO = cocoa.LINETO
+MENU = cocoa.MENU
+MITER = cocoa.MITER
+MOVETO = cocoa.MOVETO
+NORMAL = cocoa.NORMAL
+FORTYFIVE = cocoa.FORTYFIVE
+NUMBER = cocoa.NUMBER
+NodeBoxError = cocoa.NodeBoxError
+Oval = cocoa.Oval
+PathElement = cocoa.PathElement
+Point = cocoa.Point
+RGB = cocoa.RGB
+RIGHT = cocoa.RIGHT
+ROUND = cocoa.ROUND
+Rect = cocoa.Rect
+SQUARE = cocoa.SQUARE
+TEXT = cocoa.TEXT
+Text = cocoa.Text
+Transform = cocoa.Transform
+Variable = cocoa.Variable
+cm = cocoa.cm
+inch = cocoa.inch
+mm = cocoa.mm
+
 
 # from nodebox.util import _copy_attr, _copy_attrs
 import nodebox.util

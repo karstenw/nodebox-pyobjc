@@ -279,7 +279,8 @@ class PyDETextView(NSTextView):
         self.performSelector_withObject_afterDelay_("resetBalanceParens:",
                 (oldAttrs, effRng), 0.2)
 
-    def resetBalanceParens_(self, (attrs, rng)):
+    def resetBalanceParens_(self, params):
+        attrs, rng = params
         self.layoutManager().setTemporaryAttributes_forCharacterRange_(attrs, rng)
 
     def iterLinesBackwards_maxChars_(self, end, maxChars):

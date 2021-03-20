@@ -1,13 +1,32 @@
 #from Foundation import *
 #from AppKit import *
 
-import compiler
-parse = compiler.parse
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    puni = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    puni = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
 
-import compiler.ast
-Sub = compiler.ast.Sub
-UnarySub = compiler.ast.UnarySub
-Add = compiler.ast.Add
+if py3:
+    import ast
+    parse = ast.parse
+    Sub = ast.Sub
+    UnarySub = ast.USub
+    Add = ast.Add
+else:
+    import compiler
+    parse = compiler.parse
+    import compiler.ast
+    Sub = compiler.ast.Sub
+    UnarySub = compiler.ast.UnarySub
+    Add = compiler.ast.Add
 
 
 import Foundation

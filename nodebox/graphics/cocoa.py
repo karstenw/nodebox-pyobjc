@@ -736,8 +736,8 @@ class Color(object):
                 if n in (4,8):
                     alpha = int(alpha, 16) / div
                 clr = NSColor.colorWithDeviceRed_green_blue_alpha_(r, g, b, alpha)
-            except Exception, err:
-                print "Color parsing error:", err
+            except Exception as err:
+                print("Color parsing error: %s" % err)
                 clr = NSColor.colorWithDeviceWhite_alpha_(0, 1)
 
         elif params == 1: # Gray, no alpha

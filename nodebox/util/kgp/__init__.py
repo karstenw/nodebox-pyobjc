@@ -21,16 +21,23 @@ experienced programmers.  Visit http://diveintopython.org/ for the
 latest version.
 """
 
+from __future__ import print_function
+
+import sys
+import urllib
+from xml.dom import minidom
+import random
+import getopt
+from io import StringIO
+
+
+
 __author__ = "Mark Pilgrim (f8dy@diveintopython.org)"
 __version__ = "$Revision: 1.3 $"
 __date__ = "$Date: 2002/05/28 17:05:23 $"
 __copyright__ = "Copyright (c) 2001 Mark Pilgrim"
 __license__ = "Python"
 
-from xml.dom import minidom
-import random
-import sys
-import getopt
 
 _debug = 0
 
@@ -60,11 +67,9 @@ def openAnything(source):
         return source
     
     if source == "-":
-        import sys
         return sys.stdin
 
     # try to open with urllib (if source is http, ftp, or file URL)
-    import urllib
     try:
         return urllib.urlopen(source)
     except (IOError, OSError):
@@ -77,7 +82,6 @@ def openAnything(source):
         pass
     
     # treat source as string
-    import StringIO
     return StringIO.StringIO(str(source))
 
 class NoSourceError(Exception): pass
@@ -269,7 +273,7 @@ class KantGenerator:
         self.parse(self.randomChildElement(node))
 
 def usage():
-    print __doc__
+    print(__doc__)
 
 def main(argv):
     grammar = "kant.xml"
@@ -290,7 +294,7 @@ def main(argv):
     
     source = "".join(args)
     k = KantGenerator(grammar, source)
-    print k.output()
+    print(k.output())
 
 if __name__ == "__main__":
     main(sys.argv[1:])
