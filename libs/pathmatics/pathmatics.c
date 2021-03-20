@@ -1,6 +1,21 @@
 #include <Python.h>
 #include <math.h>
 
+#if PY_MAJOR_VERSION >= 3
+  #define MOD_ERROR_VAL NULL
+  #define MOD_SUCCESS_VAL(val) val
+  #define MOD_INIT(name) PyMODINIT_FUNC PyInit_##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+          static struct PyModuleDef moduledef = { \
+            PyModuleDef_HEAD_INIT, name, doc, -1, methods, }; \
+          ob = PyModule_Create(&moduledef);
+#else
+  #define MOD_ERROR_VAL
+  #define MOD_SUCCESS_VAL(val)
+  #define MOD_INIT(name) void init##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+    ob = Py_InitModule(name, methods, doc);
+#endif
 void _linepoint(double t, double x0, double y0, double x1, double y1,
                 double *out_x, double *out_y
                 )
@@ -181,17 +196,21 @@ static PyMethodDef PathmaticsMethods[] = {
     {NULL, NULL, 0, NULL}        /* Sentinel */
 };
 
-PyMODINIT_FUNC
-initcPathmatics(void)
-{
+
+MOD_INIT(cPathmatics) {
     PyObject *m;
     
-    m = Py_InitModule("cPathmatics", PathmaticsMethods);
+    // m = Py_InitModule("cPathmatics", PathmaticsMethods);
+    MOD_DEF(m, "cPathmatics", "Some path stuff.", PathmaticsMethods)
     
     PathmaticsError = PyErr_NewException("cPathmatics.error", NULL, NULL);
     Py_INCREF(PathmaticsError);
     PyModule_AddObject(m, "error", PathmaticsError);
+#if PY_MAJOR_VERSION >= 3
+    return( m );
+#endif
 }
+
 
 int
 main(int argc, char *argv[])
@@ -203,7 +222,12 @@ main(int argc, char *argv[])
     Py_Initialize();
 
     /* Add a static module */
+#if PY_MAJOR_VERSION >= 3
+    PyInit_cPathmatics();
+#else
     initcPathmatics();
-    
+#endif
+
     return 0;
 }
+

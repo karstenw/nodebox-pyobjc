@@ -23,6 +23,21 @@ enum {
     zzsentinel
 } dithertypes;
 
+#if PY_MAJOR_VERSION >= 3
+  #define MOD_ERROR_VAL NULL
+  #define MOD_SUCCESS_VAL(val) val
+  #define MOD_INIT(name) PyMODINIT_FUNC PyInit_##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+          static struct PyModuleDef moduledef = { \
+            PyModuleDef_HEAD_INIT, name, doc, -1, methods, }; \
+          ob = PyModule_Create(&moduledef);
+#else
+  #define MOD_ERROR_VAL
+  #define MOD_SUCCESS_VAL(val)
+  #define MOD_INIT(name) void init##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+    ob = Py_InitModule(name, methods, doc);
+#endif
 static int arrayindex(int x, int y, int w){
     return (y * w + x);
 }
@@ -488,10 +503,8 @@ dither(PyObject *self, PyObject *args) {
 
     // calculated array index
     int idx;
-
-    
-
     int count;
+
     ERRBUFTYPE *errorBuffer, errdiv, newval, errval;
     const unsigned char *sourceImage;
     unsigned char *resultImage;
@@ -518,7 +531,6 @@ dither(PyObject *self, PyObject *args) {
         PyErr_NoMemory();
         return NULL;
     }
-
 
     // iterate over all pixels (x,y)
     for (y = 0; y < h; y++) {
@@ -559,18 +571,22 @@ static PyMethodDef bwdither_methods[]={
 };
 
 
-
-PyMODINIT_FUNC initbwdithering(void){ 
+MOD_INIT(bwdithering) { 
     PyObject *m;
-    m = Py_InitModule("bwdithering", bwdither_methods);
+    // m = Py_InitModule("bwdithering", bwdither_methods);
+    MOD_DEF(m, "bwdithering", "A bw dithering extension.", bwdither_methods)
+    return(MOD_SUCCESS_VAL(m));
 }
-
 
 int main(int argc, char *argv[])
 {
     Py_SetProgramName(argv[0]);
     Py_Initialize();
+#if PY_MAJOR_VERSION >= 3
+    PyInit_bwdithering();
+#else
     initbwdithering();
+#endif
     return 0;
 }
 
