@@ -17,7 +17,7 @@
   #define MOD_SUCCESS_VAL(val)
   #define MOD_INIT(name) void init##name(void)
   #define MOD_DEF(ob, name, doc, methods) \
-    ob = Py_InitModule(name, methods, doc);
+    ob = Py_InitModule3(name, methods, doc);
 #endif
 float _fast_inverse_sqrt(float x) { 
     float xhalf = 0.5f*x; 

@@ -35,6 +35,19 @@ __all__ = (
     'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage')
 
 
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+
 g_voicetrash = []
 
 _dithertypes = {
@@ -53,30 +66,34 @@ _ditherIDs = _dithertypes.values()
 
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
-    typ = type(s)
-    # convert to str first; for number types etc.
-    if typ not in ( str,
-                    unicode,
+
+    if type(s) not in ( pstr,
+                    punicode,
                     Foundation.NSMutableAttributedString,
                     objc.pyobjc_unicode,
                     Foundation.NSMutableStringProxyForMutableAttributedString,
                     Foundation.NSString):
-        # print "makeunicode() convert:", typ
         s = str(s)
-    if typ not in (
-            unicode,
-            Foundation.NSMutableAttributedString,
-            objc.pyobjc_unicode,
-            Foundation.NSMutableStringProxyForMutableAttributedString):
+    if type(s) not in (
+            punicode,
+            #Foundation.NSMutableAttributedString,
+            #objc.pyobjc_unicode,
+            #Foundation.NSMutableStringProxyForMutableAttributedString
+            ):
         try:
-            s = unicode(s, srcencoding)
+            s = punicode(s, srcencoding)
         except TypeError as err:
             print() 
             print("makeunicode(): %s" % err)
             print(repr(s))
             print(type(s))
             print()
-    if typ in (unicode,):
+    if type(s) in ( punicode,
+                    #Foundation.NSMutableAttributedString,
+                    #objc.pyobjc_unicode,
+                    #Foundation.NSMutableStringProxyForMutableAttributedString,
+                    #Foundation.NSString
+                    ):
         s = unicodedata.normalize(normalizer, s)
     return s
 

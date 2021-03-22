@@ -16,7 +16,7 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = False
@@ -115,6 +115,19 @@ DashboardController = dashboard.DashboardController
 from . import progressbar
 ProgressBarController = progressbar.ProgressBarController
 
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+
 class ExportCommand(NSScriptCommand):
     pass    
 
@@ -125,17 +138,19 @@ class OutputFile(object):
         self.isErr = isErr
 
     def write(self, data):
-        if isinstance(data, str):
+        if isinstance(data, pstr):
             try:
-                data = unicode(data, "utf_8", "replace")
+                # data = unicode(data, "utf_8", "replace")
+                data = makeunicode( data )
             except UnicodeDecodeError:
                 data = "XXX " + repr(data)
-        self.data.append((self.isErr, data))
+        self.data.append( (self.isErr, data) )
 
 
 
-# class defined in NodeBoxDocument.xib
+
 class NodeBoxDocument(NSDocument):
+    # class defined in NodeBoxDocument.xib
 
     graphicsView = objc.IBOutlet()
     outputView = objc.IBOutlet() 
@@ -252,8 +267,10 @@ class NodeBoxDocument(NSDocument):
             pass
 
     def readFromUTF8_(self, path):
-        f = file(path)
-        text = unicode(f.read(), "utf_8")
+        f = open(path)
+        s = f.read()
+        f.close()
+        text = makeunicode( s )
         f.close()
         self.textView.setString_(text)
         self.textView.usesTabs = "\t" in text
@@ -377,6 +394,7 @@ class NodeBoxDocument(NSDocument):
         self.currentView.canvas = None
         fullRect = NSScreen.mainScreen().frame()
         self.fullScreen = FullscreenWindow.alloc().initWithRect_(fullRect)
+        # self.fullScreen.oneShot = True
         self.fullScreen.setContentView_(self.currentView)
         self.fullScreen.makeKeyAndOrderFront_(self)
         self.fullScreen.makeFirstResponder_(self.currentView)
@@ -457,13 +475,17 @@ class NodeBoxDocument(NSDocument):
             success, output = self.boxedRun_args_(self.namespace["stop"], [])
             self.flushOutput_(output)
         self.animationSpinner.stopAnimation_(None)
+
         if self.animationTimer is not None:
             self.animationTimer.invalidate()
             self.animationTimer = None
+
         if self.fullScreen is not None:
             self.currentView = self.graphicsView
+            self.fullScreen.orderOut_(None)
             self.fullScreen = None
-            NSMenu.setMenuBarVisible_(True)
+            
+        NSMenu.setMenuBarVisible_(True)
         NSCursor.unhide()
         self.textView.hideValueLadder()
         window = self.textView.window()
@@ -889,6 +911,7 @@ class NodeBoxDocument(NSDocument):
         if self.fullScreen is not None: return
         self.graphicsView.zoomToFit_(sender)
         
+
 class FullscreenWindow(NSWindow):
     def initWithRect_(self, fullRect):
         objc.super(FullscreenWindow,

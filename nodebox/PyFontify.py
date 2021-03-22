@@ -89,7 +89,25 @@ idKeyPat = "[ \t]*([A-Za-z_][A-Za-z_0-9.]*)"	# Ident w. leading whitespace.
 idRE = re.compile(idKeyPat)
 asRE = re.compile(r".*?\b(as)\b")
 
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+
 def fontify(pytext, searchfrom=0, searchto=None):
+    #import pdb
+    #pdb.set_trace()
+    #pytext = util.makeunicode( pytext )
+    #print "PYTEXT:", type(pytext)
+
     if searchto is None:
         searchto = len(pytext)
     # Cache a few attributes for quicker reference.

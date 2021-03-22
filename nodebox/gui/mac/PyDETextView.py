@@ -520,7 +520,7 @@ class PyDETextStorageDelegate(NSObject):
 
     def getSource(self):
         if self._source is None:
-            self._source = unicode(self._string)
+            self._source = makeunicode(self._string)
         return self._source
 
     def textStorageWillProcessEditing_(self, notification):

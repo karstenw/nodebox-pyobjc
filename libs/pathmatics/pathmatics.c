@@ -14,7 +14,7 @@
   #define MOD_SUCCESS_VAL(val)
   #define MOD_INIT(name) void init##name(void)
   #define MOD_DEF(ob, name, doc, methods) \
-    ob = Py_InitModule(name, methods, doc);
+    ob = Py_InitModule3(name, methods, doc);
 #endif
 void _linepoint(double t, double x0, double y0, double x1, double y1,
                 double *out_x, double *out_y

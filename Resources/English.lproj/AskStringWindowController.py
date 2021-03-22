@@ -9,13 +9,16 @@ from Foundation import *
 from AppKit import *
 import objc
 class AskStringWindowController (NSWindowController):
+
     questionLabel = objc.IBOutlet()
 
     textField = objc.IBOutlet()
 
     @objc.IBAction
     def cancel_(self, sender):
+        pass
 
     @objc.IBAction
     def ok_(self, sender):
+        pass
 

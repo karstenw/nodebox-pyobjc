@@ -36,7 +36,7 @@ enum {
   #define MOD_SUCCESS_VAL(val)
   #define MOD_INIT(name) void init##name(void)
   #define MOD_DEF(ob, name, doc, methods) \
-    ob = Py_InitModule(name, methods, doc);
+    ob = Py_InitModule3(name, methods, doc);
 #endif
 static int arrayindex(int x, int y, int w){
     return (y * w + x);
@@ -575,7 +575,11 @@ MOD_INIT(bwdithering) {
     PyObject *m;
     // m = Py_InitModule("bwdithering", bwdither_methods);
     MOD_DEF(m, "bwdithering", "A bw dithering extension.", bwdither_methods)
+#if PY_MAJOR_VERSION >= 3
     return(MOD_SUCCESS_VAL(m));
+#else
+	MOD_SUCCESS_VAL(m)
+#endif
 }
 
 int main(int argc, char *argv[])

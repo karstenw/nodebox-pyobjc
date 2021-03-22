@@ -5,26 +5,12 @@
 
 from __future__ import print_function
 
-# py3 stuff
-py3 = False
-try:
-    unicode('')
-    puni = unicode
-    pstr = str
-    punichr = unichr
-except NameError:
-    puni = str
-    pstr = bytes
-    py3 = True
-    punichr = chr
 
 import os
 import operator
 import warnings
 
 # for the libraries
-if not py3:
-    import sgmllib
 
 import bs4
 
@@ -41,13 +27,9 @@ import pickle
 
 
 # pattern lib
-if not py3:
-    import new
 import csv
 import functools
 import itertools
-if not py3:
-    import httplib
 import codecs
 import calendar
 import types
@@ -96,6 +78,8 @@ import Foundation
 import AppKit
 
 from PyObjCTools import AppHelper
+#import PyObjCTools.Debugging
+#PyObjCTools.Debugging.installVerboseExceptionHandler()
 
 import nodebox
 import nodebox.geo
@@ -117,8 +101,24 @@ import nodebox.gui.mac
 # import twyg
 
 
-#import PyObjCTools.Debugging
-#PyObjCTools.Debugging.installVerboseExceptionHandler()
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+
+if not py3:
+    import sgmllib
+    import new
+    import httplib
+
 
 
 AppHelper.runEventLoop()

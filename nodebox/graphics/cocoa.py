@@ -140,6 +140,19 @@ _STATE_NAMES = {
 }
 
 
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+
 def _save():
     NSGraphicsContext.currentContext().saveGraphicsState()
 
@@ -708,7 +721,7 @@ class Color(object):
         elif params == 1 and isinstance(args[0], NSColor):
             clr = args[0]
         elif (    params == 1
-              and isinstance(args[0], (str,unicode))
+              and isinstance(args[0], (pstr,punicode))
               and len(args[0]) in (3,4,5,6,7,8,9)):
             # hex param
             try:
@@ -1322,7 +1335,7 @@ class Text(Grob, TransformMixin, ColorMixin):
             NSFontAttributeName:            self.font
         }
 
-        t = unicode(self.text)
+        t = makeunicode( self.text )
         textStorage = NSTextStorage.alloc().initWithString_attributes_(t, d)
         try:
             textStorage.setFont_(self.font)
@@ -1510,13 +1523,16 @@ class Variable(object):
             except ValueError:
                 return 0.0
         elif self.type == TEXT:
-            return unicode(str(val), "utf_8", "replace")
+            # return unicode(str(val), "utf_8", "replace")
+            return makeunicode( val )
             try:
-                return unicode(str(val), "utf_8", "replace")
+                # return unicode(str(val), "utf_8", "replace")
+                return makeunicode( val )
             except:
                 return ""
         elif self.type == BOOLEAN:
-            if unicode(val).lower() in ("true", "1", "yes"):
+            v = makeunicode( val )
+            if v.lower() in (u"true", u"1", u"yes"):
                 return True
             else:
                 return False

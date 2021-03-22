@@ -10,7 +10,9 @@
 <find_panel_settings/>
 <vnodes>
 <v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
-<v t="karstenw.20170704103857.1"><vh>Declarations</vh></v>
+<v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
+<v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
+<v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
 <v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
@@ -22,13 +24,14 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
@@ -48,7 +51,7 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
@@ -170,6 +173,7 @@
 </v>
 <v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
 <v t="karstenw.20170704104751.3"><vh>_restore</vh></v>
 <v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
@@ -374,17 +378,18 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
 <v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -427,18 +432,18 @@
 <v t="karstenw.20170704105032.45"><vh>printOperationDidRun_success_contextInfo_</vh></v>
 <v t="karstenw.20170704105032.46"><vh>buildInterface_</vh></v>
 <v t="karstenw.20170704105032.47"><vh>validateMenuItem_</vh></v>
-<v t="karstenw.20170727100220.1"><vh>ZOOM COMMANDS</vh>
+<v t="karstenw.20170727100220.1" a="E"><vh>ZOOM COMMANDS</vh>
 <v t="karstenw.20170704105032.48"><vh>zoomIn_</vh></v>
 <v t="karstenw.20170704105032.49"><vh>zoomOut_</vh></v>
 <v t="karstenw.20170704105032.50"><vh>zoomToTag_</vh></v>
 <v t="karstenw.20170704105032.51"><vh>zoomToFit_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105032.52"><vh>class FullscreenWindow</vh>
+<v t="karstenw.20170704105032.52" a="E"><vh>class FullscreenWindow</vh>
 <v t="karstenw.20170704105032.53"><vh>initWithRect_</vh></v>
 <v t="karstenw.20170704105032.54"><vh>canBecomeKeyWindow</vh></v>
 </v>
-<v t="karstenw.20170704105032.55"><vh>class FullscreenView</vh>
+<v t="karstenw.20170704105032.55" a="E"><vh>class FullscreenView</vh>
 <v t="karstenw.20170704105032.56"><vh>init</vh></v>
 <v t="karstenw.20170704105032.57"><vh>setCanvas_</vh></v>
 <v t="karstenw.20170704105032.58"><vh>drawRect_</vh></v>
@@ -486,7 +491,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105032.103"><vh>showPreferencesPanel_</vh></v>
 <v t="karstenw.20170704105032.104"><vh>generateCode_</vh></v>
@@ -496,9 +501,9 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskString.py</vh>
+<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskString.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105043.2"><vh>class AskStringWindowController</vh>
+<v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20170704105043.3"><vh>__new__</vh></v>
 <v t="karstenw.20170704105043.4"><vh>windowWillClose_</vh></v>
 <v t="karstenw.20170704105043.5"><vh>awakeFromNib</vh></v>
@@ -526,12 +531,12 @@
 <v t="karstenw.20170709145531.1"><vh>addMenu_y_c_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
 </v>
-<v t="karstenw.20170704105106.4"><vh>class NodeBoxPreferencesController</vh>
+<v t="karstenw.20170704105106.4" a="E"><vh>class NodeBoxPreferencesController</vh>
 <v t="karstenw.20170704105106.5"><vh>init</vh></v>
 <v t="karstenw.20170704105106.6"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105106.7"><vh>windowWillClose_</vh></v>
@@ -543,7 +548,7 @@
 <v t="karstenw.20170704105106.13"><vh>textFontChanged_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104934.1"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
+<v t="karstenw.20170704104934.1" a="E"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
@@ -583,7 +588,7 @@
 <v t="karstenw.20170704105113.37"><vh>uncomment_</vh></v>
 <v t="karstenw.20170704105113.38"><vh>filterLines_</vh></v>
 </v>
-<v t="karstenw.20170704105113.39"><vh>class PyDETextStorageDelegate</vh>
+<v t="karstenw.20170704105113.39" a="E"><vh>class PyDETextStorageDelegate</vh>
 <v t="karstenw.20170704105113.40"><vh>__new__</vh></v>
 <v t="karstenw.20170704105113.41"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.42"><vh>textFontChanged_</vh></v>
@@ -599,7 +604,7 @@
 <v t="karstenw.20170704105113.52"><vh>colorize</vh></v>
 <v t="karstenw.20170704105113.53"><vh>_colorize</vh></v>
 </v>
-<v t="karstenw.20170704105113.54"><vh>class LineTracker</vh>
+<v t="karstenw.20170704105113.54" a="E"><vh>class LineTracker</vh>
 <v t="karstenw.20170704105113.55"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.56"><vh>_makeLines</vh></v>
 <v t="karstenw.20170704105113.57"><vh>_update</vh></v>
@@ -619,7 +624,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
@@ -636,11 +641,12 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
-<v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
+<v t="karstenw.20180202045145.1" a="E"><vh>UTILITIES</vh>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
 <v t="karstenw.20170704105353.4"><vh>grid</vh></v>
@@ -781,9 +787,9 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20180202040514.1" a="E"><vh>libs</vh>
-<v t="karstenw.20180202040520.1"><vh>bwdithering</vh>
-<v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
+<v t="karstenw.20180202040514.1"><vh>libs</vh>
+<v t="karstenw.20180202040520.1" a="E"><vh>bwdithering</vh>
+<v t="karstenw.20180202040559.1" a="E"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
 <v t="karstenw.20210320110747.1"><vh>py2/3 defs</vh></v>
 <v t="karstenw.20180202040628.1"><vh>int arrayindex</vh></v>
@@ -817,8 +823,8 @@
 <v t="karstenw.20180202044720.1"><vh>Declarations</vh></v>
 </v>
 </v>
-<v t="karstenw.20210320115101.1"><vh>fractal</vh>
-<v t="karstenw.20210320115106.1"><vh>@clean libs/fractal/fractal.c</vh>
+<v t="karstenw.20210320115101.1" a="E"><vh>fractal</vh>
+<v t="karstenw.20210320115106.1" a="E"><vh>@clean libs/fractal/fractal.c</vh>
 <v t="karstenw.20210320115212.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320110747.1"></v>
 <v t="karstenw.20210320115155.1"><vh>static PyObject</vh></v>
@@ -829,8 +835,8 @@
 <v t="karstenw.20210320115153.1"><vh>Declarations</vh></v>
 </v>
 </v>
-<v t="karstenw.20210320120737.1" a="E"><vh>pathmatics</vh>
-<v t="karstenw.20210320120859.1" a="E"><vh>@clean libs/pathmatics/pathmatics.c</vh>
+<v t="karstenw.20210320120737.1"><vh>pathmatics</vh>
+<v t="karstenw.20210320120859.1"><vh>@clean libs/pathmatics/pathmatics.c</vh>
 <v t="karstenw.20210320121857.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320110747.1"></v>
 <v t="karstenw.20210320120941.1"><vh>void _linepoint</vh></v>
@@ -917,12 +923,8 @@
 <v t="karstenw.20210320110747.1"></v>
 <v t="karstenw.20210320130456.1"><vh>kib functionl</vh></v>
 <v t="karstenw.20210320131240.1"><vh>objc stuff</vh></v>
-<v t="karstenw.20210320131126.1"><vh>newHeadline</vh></v>
-<v t="karstenw.20210320131127.1"><vh>newHeadline</vh></v>
-<v t="karstenw.20210320131127.2"><vh>newHeadline</vh></v>
-<v t="karstenw.20210320131127.3"><vh>newHeadline</vh></v>
-<v t="karstenw.20210320131127.4"><vh>newHeadline</vh></v>
-<v t="karstenw.20210320131128.1"><vh>newHeadline</vh></v>
+<v t="karstenw.20210320131126.1"><vh>PyMethodDef</vh></v>
+<v t="karstenw.20210320133430.1"><vh>main</vh></v>
 </v>
 <v t="karstenw.20210320123652.1"><vh>@clean libs/polymagic/setup.py</vh>
 <v t="karstenw.20210320123819.1"><vh>Declarations</vh></v>
@@ -933,35 +935,21 @@
 <tnodes>
 <t tx="karstenw.20170704103837.1">@language python
 @tabwidth -4
-# Startup file for the NodeBox OS X application
+@others
+</t>
+<t tx="karstenw.20170704103857.1"># Startup file for the NodeBox OS X application
 # PyObjC requires the startup file to be in the root folder.
 # This just imports everything from the nodebox.gui.mac module
 # and works from there
 
 from __future__ import print_function
 
-# py3 stuff
-py3 = False
-try:
-    unicode('')
-    puni = unicode
-    pstr = str
-    punichr = unichr
-except NameError:
-    puni = str
-    pstr = bytes
-    py3 = True
-    punichr = chr
 
 import os
 import operator
 import warnings
 
 # for the libraries
-@others
-</t>
-<t tx="karstenw.20170704103857.1">if not py3:
-    import sgmllib
 
 import bs4
 
@@ -978,13 +966,9 @@ import pickle
 
 
 # pattern lib
-if not py3:
-    import new
 import csv
 import functools
 import itertools
-if not py3:
-    import httplib
 import codecs
 import calendar
 import types
@@ -1033,6 +1017,8 @@ import Foundation
 import AppKit
 
 from PyObjCTools import AppHelper
+#import PyObjCTools.Debugging
+#PyObjCTools.Debugging.installVerboseExceptionHandler()
 
 import nodebox
 import nodebox.geo
@@ -1055,10 +1041,7 @@ import nodebox.gui.mac
 
 
 </t>
-<t tx="karstenw.20170704103935.1">#import PyObjCTools.Debugging
-#PyObjCTools.Debugging.installVerboseExceptionHandler()
-
-
+<t tx="karstenw.20170704103935.1">
 AppHelper.runEventLoop()
 </t>
 <t tx="karstenw.20170704103951.1">@language python
@@ -1410,6 +1393,11 @@ asRE = re.compile(r".*?\b(as)\b")
 
 </t>
 <t tx="karstenw.20170704104209.2">def fontify(pytext, searchfrom=0, searchto=None):
+    #import pdb
+    #pdb.set_trace()
+    #pytext = util.makeunicode( pytext )
+    #print "PYTEXT:", type(pytext)
+
     if searchto is None:
         searchto = len(pytext)
     # Cache a few attributes for quicker reference.
@@ -3609,7 +3597,7 @@ font = property(_get_font)
         NSFontAttributeName:            self.font
     }
 
-    t = unicode(self.text)
+    t = makeunicode( self.text )
     textStorage = NSTextStorage.alloc().initWithString_attributes_(t, d)
     try:
         textStorage.setFont_(self.font)
@@ -3812,13 +3800,16 @@ path = property(_get_path)
         except ValueError:
             return 0.0
     elif self.type == TEXT:
-        return unicode(str(val), "utf_8", "replace")
+        # return unicode(str(val), "utf_8", "replace")
+        return makeunicode( val )
         try:
-            return unicode(str(val), "utf_8", "replace")
+            # return unicode(str(val), "utf_8", "replace")
+            return makeunicode( val )
         except:
             return ""
     elif self.type == BOOLEAN:
-        if unicode(val).lower() in ("true", "1", "yes"):
+        v = makeunicode( val )
+        if v.lower() in (u"true", u"1", u"yes"):
             return True
         else:
             return False
@@ -4618,7 +4609,7 @@ color = Color
     elif params == 1 and isinstance(args[0], NSColor):
         clr = args[0]
     elif (    params == 1
-          and isinstance(args[0], (str,unicode))
+          and isinstance(args[0], (pstr,punicode))
           and len(args[0]) in (3,4,5,6,7,8,9)):
         # hex param
         try:
@@ -4784,7 +4775,7 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = False
@@ -5000,8 +4991,10 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.16">def readFromUTF8_(self, path):
-    f = file(path)
-    text = unicode(f.read(), "utf_8")
+    f = open(path)
+    s = f.read()
+    f.close()
+    text = makeunicode( s )
     f.close()
     self.textView.setString_(text)
     self.textView.usesTabs = "\t" in text
@@ -5067,6 +5060,7 @@ def runFullscreen_(self, sender):
     self.currentView.canvas = None
     fullRect = NSScreen.mainScreen().frame()
     self.fullScreen = FullscreenWindow.alloc().initWithRect_(fullRect)
+    # self.fullScreen.oneShot = True
     self.fullScreen.setContentView_(self.currentView)
     self.fullScreen.makeKeyAndOrderFront_(self)
     self.fullScreen.makeFirstResponder_(self.currentView)
@@ -5156,13 +5150,17 @@ def stopScript_(self, sender=None):
         success, output = self.boxedRun_args_(self.namespace["stop"], [])
         self.flushOutput_(output)
     self.animationSpinner.stopAnimation_(None)
+
     if self.animationTimer is not None:
         self.animationTimer.invalidate()
         self.animationTimer = None
+
     if self.fullScreen is not None:
         self.currentView = self.graphicsView
+        self.fullScreen.orderOut_(None)
         self.fullScreen = None
-        NSMenu.setMenuBarVisible_(True)
+        
+    NSMenu.setMenuBarVisible_(True)
     NSCursor.unhide()
     self.textView.hideValueLadder()
     window = self.textView.window()
@@ -5172,7 +5170,7 @@ def stopScript_(self, sender=None):
 <t tx="karstenw.20170704105032.3">class OutputFile(object):
 
     @others
-# class defined in NodeBoxDocument.xib
+
 </t>
 <t tx="karstenw.20170704105032.30">def _compileScript(self, source=None):
     if source is None:
@@ -5609,12 +5607,13 @@ def zoomOut_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.5">def write(self, data):
-    if isinstance(data, str):
+    if isinstance(data, pstr):
         try:
-            data = unicode(data, "utf_8", "replace")
+            # data = unicode(data, "utf_8", "replace")
+            data = makeunicode( data )
         except UnicodeDecodeError:
             data = "XXX " + repr(data)
-    self.data.append((self.isErr, data))
+    self.data.append( (self.isErr, data) )
 
 
 
@@ -5698,6 +5697,7 @@ def zoomToFit_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.6">class NodeBoxDocument(NSDocument):
+    # class defined in NodeBoxDocument.xib
 
     graphicsView = objc.IBOutlet()
     outputView = objc.IBOutlet() 
@@ -5733,6 +5733,7 @@ def zoomToFit_(self, sender):
     movie = None
 
     @others
+
 </t>
 <t tx="karstenw.20170704105032.60">def mouseDown_(self, event):
     self.mousedown = True
@@ -6988,7 +6989,7 @@ def uncomment_(self, sender):
 </t>
 <t tx="karstenw.20170704105113.48">def getSource(self):
     if self._source is None:
-        self._source = unicode(self._string)
+        self._source = makeunicode(self._string)
     return self._source
 
 </t>
@@ -7830,30 +7831,34 @@ __all__ = (
 
 </t>
 <t tx="karstenw.20170704105353.2">def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
-    typ = type(s)
-    # convert to str first; for number types etc.
-    if typ not in ( str,
-                    unicode,
+
+    if type(s) not in ( pstr,
+                    punicode,
                     Foundation.NSMutableAttributedString,
                     objc.pyobjc_unicode,
                     Foundation.NSMutableStringProxyForMutableAttributedString,
                     Foundation.NSString):
-        # print "makeunicode() convert:", typ
         s = str(s)
-    if typ not in (
-            unicode,
-            Foundation.NSMutableAttributedString,
-            objc.pyobjc_unicode,
-            Foundation.NSMutableStringProxyForMutableAttributedString):
+    if type(s) not in (
+            punicode,
+            #Foundation.NSMutableAttributedString,
+            #objc.pyobjc_unicode,
+            #Foundation.NSMutableStringProxyForMutableAttributedString
+            ):
         try:
-            s = unicode(s, srcencoding)
+            s = punicode(s, srcencoding)
         except TypeError as err:
             print() 
             print("makeunicode(): %s" % err)
             print(repr(s))
             print(type(s))
             print()
-    if typ in (unicode,):
+    if type(s) in ( punicode,
+                    #Foundation.NSMutableAttributedString,
+                    #objc.pyobjc_unicode,
+                    #Foundation.NSMutableStringProxyForMutableAttributedString,
+                    #Foundation.NSString
+                    ):
         s = unicodedata.normalize(normalizer, s)
     return s
 
@@ -10007,7 +10012,11 @@ enum {
     PyObject *m;
     // m = Py_InitModule("bwdithering", bwdither_methods);
     MOD_DEF(m, "bwdithering", "A bw dithering extension.", bwdither_methods)
+#if PY_MAJOR_VERSION &gt;= 3
     return(MOD_SUCCESS_VAL(m));
+#else
+	MOD_SUCCESS_VAL(m)
+#endif
 }
 
 </t>
@@ -10274,7 +10283,7 @@ def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
   #define MOD_SUCCESS_VAL(val)
   #define MOD_INIT(name) void init##name(void)
   #define MOD_DEF(ob, name, doc, methods) \
-    ob = Py_InitModule(name, methods, doc);
+    ob = Py_InitModule3(name, methods, doc);
 #endif
 </t>
 <t tx="karstenw.20210320115101.1"></t>
@@ -13351,7 +13360,9 @@ Copyright: (C) Advanced Interfaces Group,
 ===========================================================================
                            Public Data Types
 ===========================================================================
-*/</t>
+*/
+
+</t>
 <t tx="karstenw.20210320125621.1">/*
 ===========================================================================
 
@@ -13733,67 +13744,20 @@ static PyMethodDef PolymagicMethods[] = {
     {NULL, NULL, 0, NULL}        //  Sentinel
 };
 
-PyMODINIT_FUNC
-initcPolymagic(void)
-{
+MOD_INIT(cPolymagic) {
     PyObject *m;
     
-    m = Py_InitModule("cPolymagic", PolymagicMethods);
-    
+    // m = Py_InitModule("cPolymagic", PolymagicMethods);
+    MOD_DEF(m, "cPolymagic", "C-Polymagic.", PolymagicMethods)
     PolymagicError = PyErr_NewException("cPolymagic.error", NULL, NULL);
     Py_INCREF(PolymagicError);
     PyModule_AddObject(m, "error", PolymagicError);
+#if PY_MAJOR_VERSION &gt;= 3
+    return( m );
+#endif
 }
 
-int
-main(int argc, char *argv[])
-{
-    // Pass argv[0] to the Python interpreter
-    Py_SetProgramName(argv[0]);
-
-    // Initialize the Python interpreter.  Required.
-    Py_Initialize();
-
-    // Add a static module
-    initcPolymagic();
-    
-    return 0;
-}
-/*
-int xmain(int argc, char *argv[])
-{
-    [[NSAutoreleasePool alloc] init];
-    NSBezierPath *p1, *p2;
-    NSFont *helveticaFont;
-    //NSGlyph *aGlpyh;
-    //p1 = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(0, 0, 100, 100)];
-    //p2 = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(50, 72, 100, 100)]; // x=50 intersects
-
-    helveticaFont = [NSFont fontWithName:@"Helvetica" size:24];
-    p1 = [NSBezierPath bezierPath];
-    [p1 moveToPoint:NSMakePoint(68, 100)];
-    [p1 appendBezierPathWithGlyph:68 inFont:helveticaFont];
-    p2 = [NSBezierPath bezierPath];
-    [p2 moveToPoint:NSMakePoint(70, 100)];
-    [p2 appendBezierPathWithGlyph:68 inFont:helveticaFont];
-    
-    printf("p1: %i\n", [p1 elementCount]);
-    if (intersects_path(p1, p2)) {
-        printf("INTERSECTS\n");
-    } else {
-        printf("Doesn't intersect.\n");
-    }
-    [p1 release];
-    [p2 release];
-    return 0;
-}
-
-*/</t>
-<t tx="karstenw.20210320131127.1"></t>
-<t tx="karstenw.20210320131127.2"></t>
-<t tx="karstenw.20210320131127.3"></t>
-<t tx="karstenw.20210320131127.4"></t>
-<t tx="karstenw.20210320131128.1"></t>
+</t>
 <t tx="karstenw.20210320131240.1">typedef struct {
     PyObject_HEAD
     id        objc_object;
@@ -13935,6 +13899,77 @@ cPolymagic_xor(PyObject *self, PyObject *args)
 {
     return cPolymagic_operation(self, args, GPC_XOR);
 }
+
+</t>
+<t tx="karstenw.20210320133430.1">int
+main(int argc, char *argv[])
+{
+    // Pass argv[0] to the Python interpreter
+    Py_SetProgramName(argv[0]);
+
+    // Initialize the Python interpreter.  Required.
+    Py_Initialize();
+
+    // Add a static module
+#if PY_MAJOR_VERSION &gt;= 3
+    PyInit_cPolymagic();
+#else
+    initcPolymagic();
+#endif
+
+    return 0;
+}
+/*
+int xmain(int argc, char *argv[])
+{
+    [[NSAutoreleasePool alloc] init];
+    NSBezierPath *p1, *p2;
+    NSFont *helveticaFont;
+    //NSGlyph *aGlpyh;
+    //p1 = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(0, 0, 100, 100)];
+    //p2 = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(50, 72, 100, 100)]; // x=50 intersects
+
+    helveticaFont = [NSFont fontWithName:@"Helvetica" size:24];
+    p1 = [NSBezierPath bezierPath];
+    [p1 moveToPoint:NSMakePoint(68, 100)];
+    [p1 appendBezierPathWithGlyph:68 inFont:helveticaFont];
+    p2 = [NSBezierPath bezierPath];
+    [p2 moveToPoint:NSMakePoint(70, 100)];
+    [p2 appendBezierPathWithGlyph:68 inFont:helveticaFont];
+    
+    printf("p1: %i\n", [p1 elementCount]);
+    if (intersects_path(p1, p2)) {
+        printf("INTERSECTS\n");
+    } else {
+        printf("Doesn't intersect.\n");
+    }
+    [p1 release];
+    [p2 release];
+    return 0;
+}
+
+*/
+
+</t>
+<t tx="karstenw.20210322113242.1"># py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+
+</t>
+<t tx="karstenw.20210322113320.1">if not py3:
+    import sgmllib
+    import new
+    import httplib
+
 
 </t>
 </tnodes>
