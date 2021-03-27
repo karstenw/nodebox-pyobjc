@@ -4,8 +4,10 @@ Script for building NodeBox
 Usage:
     python setup.py py2app
 """
-from distutils.core import setup
+
+import setuptools, distutils
 from setuptools.extension import Extension
+from distutils.core import setup
 
 import py2app
 
@@ -36,12 +38,9 @@ CLASSIFIERS = (
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
 )
 
-DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
-               u"using Python code")
-LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create
-visual output with programming code. The application targets an audience of designers,
-with an easy set of state commands that is both intuitive and creative. It is essentially
-a learning environment and an automation tool.
+DESCRIPTION = (u"Simple application for creating 2-dimensional graphics "
+               u"and animation using Python code")
+LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output with programming code. The application targets an audience of designers, with an easy set of state commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
 
 The current version features:
 
@@ -78,7 +77,7 @@ setup(
         'script': "macboot.py",
 
         "plist": {
-            "NSPrincipalClass": 'NSApplication',
+            "NSPrincipalClass": 'NodeBoxApplication',
             "CFBundleIdentifier": bundleID,
             "CFBundleName": NAME,
             "CFBundleSignature": creator,
