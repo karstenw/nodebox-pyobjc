@@ -83,11 +83,13 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
         try:
             s = punicode(s, srcencoding)
         except TypeError as err:
-            print() 
-            print("makeunicode(): %s" % err)
-            print(repr(s))
-            print(type(s))
-            print()
+            
+            #print() 
+            #print("makeunicode(): %s" % err)
+            #print(repr(s))
+            #print(type(s))
+            #print()
+            pass
     if type(s) in ( punicode,
                     #Foundation.NSMutableAttributedString,
                     #objc.pyobjc_unicode,
