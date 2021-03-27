@@ -32,6 +32,7 @@
 <v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210323114020.1"><vh>init</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
@@ -381,7 +382,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -501,7 +502,7 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskString.py</vh>
+<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskString.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20170704105043.3"><vh>__new__</vh></v>
@@ -531,7 +532,7 @@
 <v t="karstenw.20170709145531.1"><vh>addMenu_y_c_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
@@ -604,7 +605,7 @@
 <v t="karstenw.20170704105113.52"><vh>colorize</vh></v>
 <v t="karstenw.20170704105113.53"><vh>_colorize</vh></v>
 </v>
-<v t="karstenw.20170704105113.54" a="E"><vh>class LineTracker</vh>
+<v t="karstenw.20170704105113.54"><vh>class LineTracker</vh>
 <v t="karstenw.20170704105113.55"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.56"><vh>_makeLines</vh></v>
 <v t="karstenw.20170704105113.57"><vh>_update</vh></v>
@@ -624,7 +625,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
@@ -666,7 +667,7 @@
 </v>
 <v t="karstenw.20170704105353.13"><vh>fontfamilies</vh></v>
 </v>
-<v t="karstenw.20170811141113.1"><vh>SPEECH FUNCTIONS</vh>
+<v t="karstenw.20170811141113.1" a="E"><vh>SPEECH FUNCTIONS</vh>
 <v t="karstenw.20170801052347.1"><vh>voices</vh></v>
 <v t="karstenw.20170804122600.1"><vh>voiceattributes</vh></v>
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
@@ -1086,12 +1087,9 @@ CLASSIFIERS = (
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
 )
 
-DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
-               u"using Python code")
-LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create
-visual output with programming code. The application targets an audience of designers,
-with an easy set of state commands that is both intuitive and creative. It is essentially
-a learning environment and an automation tool.
+DESCRIPTION = (u"Simple application for creating 2-dimensional graphics "
+               u"and animation using Python code")
+LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output with programming code. The application targets an audience of designers, with an easy set of state commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
 
 The current version features:
 
@@ -1128,7 +1126,7 @@ setup(
         'script': "macboot.py",
 
         "plist": {
-            "NSPrincipalClass": 'NSApplication',
+            "NSPrincipalClass": 'NodeBoxApplication',
             "CFBundleIdentifier": bundleID,
             "CFBundleName": NAME,
             "CFBundleSignature": creator,
@@ -1337,67 +1335,11 @@ import re
 from . import graphics
 from . import util
 
-from keyword import kwlist as keywordsList
-keywordsList = keywordsList[:]
-keywordsList += ["None", "True", "False"]
-keywordsList += graphics.__all__
-keywordsList += util.__all__
-keywordsList += dir(graphics.Context)
-
-# These keywords were not captured somehow
-keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel",
-                 "wheeldelta", "PAGENUM", "keycode", "FRAME", "canvas"]
-
-
-# Build up a regular expression which will match anything
-# interesting, including multi-line triple-quoted strings.
-commentPat = r"#[^\n]*"
-
-pat = r"[uU]?[rR]?q[^\\q\n]*(\\[\000-\377][^\\q\n]*)*q?"
-quotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
-
-# Way to go, Tim!
-pat = r"""
-    [uU]?[rR]?
-    qqq
-    [^\\q]*
-    (
-        (	\\[\000-\377]
-        |	q
-            (	\\[\000-\377]
-            |	[^\q]
-            |	q
-                (	\\[\000-\377]
-                |	[^\\q]
-                )
-            )
-        )
-        [^\\q]*
-    )*
-    (qqq)?
-"""
-pat = "".join(pat.split())	# get rid of whitespace
-tripleQuotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
-
-# Build up a regular expression which matches all and only
-# Python keywords. This will let us skip the uninteresting
-# identifier references.
-keyPat = r"\b(" + "|".join(keywordsList) + r")\b"
-
-matchPat = commentPat + "|" + keyPat + "|(" + tripleQuotePat + "|" + quotePat + ")"
-matchRE = re.compile(matchPat)
-
-idKeyPat = "[ \t]*([A-Za-z_][A-Za-z_0-9.]*)"	# Ident w. leading whitespace.
-idRE = re.compile(idKeyPat)
-asRE = re.compile(r".*?\b(as)\b")
+import Foundation
+import objc
 
 </t>
 <t tx="karstenw.20170704104209.2">def fontify(pytext, searchfrom=0, searchto=None):
-    #import pdb
-    #pdb.set_trace()
-    #pytext = util.makeunicode( pytext )
-    #print "PYTEXT:", type(pytext)
-
     if searchto is None:
         searchto = len(pytext)
     # Cache a few attributes for quicker reference.
@@ -4785,6 +4727,7 @@ import AppKit
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSScriptCommand = AppKit.NSScriptCommand
+NSApplication = AppKit.NSApplication
 
 NSDocument = AppKit.NSDocument
 NSDocumentController = AppKit.NSDocumentController
@@ -4883,15 +4826,17 @@ ProgressBarController = progressbar.ProgressBarController
 <t tx="karstenw.20170704105032.100">def acceptsFirstResponder(self):
     return True
 
+
+
 </t>
 <t tx="karstenw.20170704105032.101">class NodeBoxAppDelegate(NSObject):
 
     @others
 </t>
 <t tx="karstenw.20170704105032.102">def awakeFromNib(self):
+    print("AppDelegate.awakeFromNib")
     self._prefsController = None
     libpath = LibraryFolder()
-
 
 </t>
 <t tx="karstenw.20170704105032.103">@objc.IBAction
@@ -5616,6 +5561,14 @@ def zoomOut_(self, sender):
     self.data.append( (self.isErr, data) )
 
 
+\\-4.# modified NSApplication object
+\\-4.class NodeBoxApplication(NSApplication):
+def awakeFromNib(self):
+    print("AppClass.awakeFromNib()")
+    objc.super(NodeBoxApplication, self).awakeFromNib()
+def finishLaunching(self):
+    print("AppClass.finishLaunching()")
+    objc.super(NodeBoxApplication, self).finishLaunching()
 
 </t>
 <t tx="karstenw.20170704105032.50">@objc.IBAction
@@ -6043,14 +5996,15 @@ jpegData = property(_get_jpegData)
     return True
 
 </t>
-<t tx="karstenw.20170704105043.1">__all__ = ["AskString"]
+<t tx="karstenw.20170704105043.1">__all__ = ["AskStringWindowController", "AskString"]
 
 import objc
 
 import Foundation
 
-import AppKit
-NSApp = AppKit.NSApp
+#import AppKit
+#NSApp = AppKit.NSApplication
+
 </t>
 <t tx="karstenw.20170704105043.2"># class defined in AskString.xib
 class AskStringWindowController(AppKit.NSWindowController):
@@ -6070,8 +6024,9 @@ class AskStringWindowController(AppKit.NSWindowController):
         self.setWindowFrameAutosaveName_("AskStringPanel")
         self.showWindow_(self)
     else:
-        NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_(
-            self.window(), self.parentWindow, None, None, 0)
+        #NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_( self.window(), self.parentWindow, None, None, 0)
+        self.parentWindow().beginSheet_completionHandler_( self.window(), None )
+        # (void)beginSheet_completionHandler_(NSWindow *)sheetWindow  completionHandler:(void (^)(NSModalResponse returnCode))handler;
     self.retain()
     return self
 
@@ -6090,15 +6045,18 @@ class AskStringWindowController(AppKit.NSWindowController):
         self.close()
     else:
         sheet = self.window()
-        NSApp().endSheet_(sheet)
+        # NSApp().endSheet_(sheet)
+        sheet.endSheet_(self)
         sheet.orderOut_(self)
 
+@objc.IBAction
 </t>
 <t tx="karstenw.20170704105043.7">def ok_(self, sender):
     value = self.textField.stringValue()
     self.done()
     self.resultCallback(value)
 
+@objc.IBAction
 </t>
 <t tx="karstenw.20170704105043.8">def cancel_(self, sender):
     self.done()
@@ -6989,7 +6947,8 @@ def uncomment_(self, sender):
 </t>
 <t tx="karstenw.20170704105113.48">def getSource(self):
     if self._source is None:
-        self._source = makeunicode(self._string)
+        # self._source = makeunicode(self._string)
+        self._source = self._string
     return self._source
 
 </t>
@@ -7091,6 +7050,7 @@ def uncomment_(self, sender):
         return
     storage = self._storage
     source = self.getSource()
+    source = source.copy()
     sourceLen = len(source)
     dirtyStart = self._dirty.pop()
 
@@ -7102,6 +7062,11 @@ def uncomment_(self, sender):
     lastEnd = end = dirtyStart
     count = 0
     sameCount = 0
+    
+    #plainlength = source.length
+    #(void)getCharacters:(unsigned short*)arg1 range:(NSRange)arg2
+    #plaintext = source.mutableAttributedString.mutableString
+    #for tag, start, end, sublist in fontify(plaintext, dirtyStart):
     for tag, start, end, sublist in fontify(source, dirtyStart):
         end = min(end, sourceLen)
         rng = (start, end - start)
@@ -7848,11 +7813,13 @@ __all__ = (
         try:
             s = punicode(s, srcencoding)
         except TypeError as err:
-            print() 
-            print("makeunicode(): %s" % err)
-            print(repr(s))
-            print(type(s))
-            print()
+            
+            #print() 
+            #print("makeunicode(): %s" % err)
+            #print(repr(s))
+            #print(type(s))
+            #print()
+            pass
     if type(s) in ( punicode,
                     #Foundation.NSMutableAttributedString,
                     #objc.pyobjc_unicode,
@@ -13970,6 +13937,62 @@ except NameError:
     import new
     import httplib
 
+
+</t>
+<t tx="karstenw.20210323114020.1">from keyword import kwlist as keywordsList
+keywordsList = keywordsList[:]
+keywordsList += ["None", "True", "False"]
+keywordsList += graphics.__all__
+keywordsList += util.__all__
+keywordsList += dir(graphics.Context)
+
+# These keywords were not captured somehow
+keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key",
+                 "scrollwheel", "wheeldelta", "PAGENUM", "keycode",
+                 "FRAME", "canvas"]
+
+
+# Build up a regular expression which will match anything
+# interesting, including multi-line triple-quoted strings.
+commentPat = r"#[^\n]*"
+
+pat = r"[uU]?[rR]?q[^\\q\n]*(\\[\000-\377][^\\q\n]*)*q?"
+quotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
+
+# Way to go, Tim!
+pat = r"""
+    [uU]?[rR]?
+    qqq
+    [^\\q]*
+    (
+        (	\\[\000-\377]
+        |	q
+            (	\\[\000-\377]
+            |	[^\q]
+            |	q
+                (	\\[\000-\377]
+                |	[^\\q]
+                )
+            )
+        )
+        [^\\q]*
+    )*
+    (qqq)?
+"""
+pat = "".join(pat.split())  # get rid of whitespace
+tripleQuotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
+
+# Build up a regular expression which matches all and only
+# Python keywords. This will let us skip the uninteresting
+# identifier references.
+keyPat = r"\b(" + "|".join(keywordsList) + r")\b"
+
+matchPat = commentPat + "|" + keyPat + "|(" + tripleQuotePat + "|" + quotePat + ")"
+matchRE = re.compile(matchPat)
+
+idKeyPat = "[ \t]*([A-Za-z_][A-Za-z_0-9.]*)"	# Ident w. leading whitespace.
+idRE = re.compile(idKeyPat)
+asRE = re.compile(r".*?\b(as)\b")
 
 </t>
 </tnodes>
