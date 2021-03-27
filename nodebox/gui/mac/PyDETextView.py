@@ -520,7 +520,8 @@ class PyDETextStorageDelegate(NSObject):
 
     def getSource(self):
         if self._source is None:
-            self._source = makeunicode(self._string)
+            # self._source = makeunicode(self._string)
+            self._source = self._string
         return self._source
 
     def textStorageWillProcessEditing_(self, notification):
@@ -582,6 +583,7 @@ class PyDETextStorageDelegate(NSObject):
             return
         storage = self._storage
         source = self.getSource()
+        source = source.copy()
         sourceLen = len(source)
         dirtyStart = self._dirty.pop()
 
@@ -593,6 +595,11 @@ class PyDETextStorageDelegate(NSObject):
         lastEnd = end = dirtyStart
         count = 0
         sameCount = 0
+        
+        #plainlength = source.length
+        #(void)getCharacters:(unsigned short*)arg1 range:(NSRange)arg2
+        #plaintext = source.mutableAttributedString.mutableString
+        #for tag, start, end, sublist in fontify(plaintext, dirtyStart):
         for tag, start, end, sublist in fontify(source, dirtyStart):
             end = min(end, sourceLen)
             rng = (start, end - start)
