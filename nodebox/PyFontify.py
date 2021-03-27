@@ -35,6 +35,22 @@ import re
 from . import graphics
 from . import util
 
+import Foundation
+import objc
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+
 from keyword import kwlist as keywordsList
 keywordsList = keywordsList[:]
 keywordsList += ["None", "True", "False"]
@@ -43,8 +59,9 @@ keywordsList += util.__all__
 keywordsList += dir(graphics.Context)
 
 # These keywords were not captured somehow
-keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel",
-                 "wheeldelta", "PAGENUM", "keycode", "FRAME", "canvas"]
+keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key",
+                 "scrollwheel", "wheeldelta", "PAGENUM", "keycode",
+                 "FRAME", "canvas"]
 
 
 # Build up a regular expression which will match anything
@@ -74,7 +91,7 @@ pat = r"""
     )*
     (qqq)?
 """
-pat = "".join(pat.split())	# get rid of whitespace
+pat = "".join(pat.split())  # get rid of whitespace
 tripleQuotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
 
 # Build up a regular expression which matches all and only
@@ -89,25 +106,7 @@ idKeyPat = "[ \t]*([A-Za-z_][A-Za-z_0-9.]*)"	# Ident w. leading whitespace.
 idRE = re.compile(idKeyPat)
 asRE = re.compile(r".*?\b(as)\b")
 
-# py3 stuff
-py3 = False
-try:
-    unicode('')
-    punicode = unicode
-    pstr = str
-    punichr = unichr
-except NameError:
-    punicode = str
-    pstr = bytes
-    py3 = True
-    punichr = chr
-
 def fontify(pytext, searchfrom=0, searchto=None):
-    #import pdb
-    #pdb.set_trace()
-    #pytext = util.makeunicode( pytext )
-    #print "PYTEXT:", type(pytext)
-
     if searchto is None:
         searchto = len(pytext)
     # Cache a few attributes for quicker reference.
