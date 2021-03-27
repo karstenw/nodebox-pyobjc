@@ -8,6 +8,11 @@
 from Foundation import *
 from AppKit import *
 import objc
+
+class NodeBoxApplication(NSApplication):
+
+
+
 class NodeBoxAppDelegate(NSObject):
 
     @objc.IBAction
