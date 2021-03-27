@@ -26,6 +26,7 @@ import AppKit
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSScriptCommand = AppKit.NSScriptCommand
+NSApplication = AppKit.NSApplication
 
 NSDocument = AppKit.NSDocument
 NSDocumentController = AppKit.NSDocumentController
@@ -147,6 +148,14 @@ class OutputFile(object):
         self.data.append( (self.isErr, data) )
 
 
+# modified NSApplication object
+class NodeBoxApplication(NSApplication):
+    def awakeFromNib(self):
+        print("AppClass.awakeFromNib()")
+        objc.super(NodeBoxApplication, self).awakeFromNib()
+    def finishLaunching(self):
+        print("AppClass.finishLaunching()")
+        objc.super(NodeBoxApplication, self).finishLaunching()
 
 
 class NodeBoxDocument(NSDocument):
@@ -1208,12 +1217,14 @@ class NodeBoxGraphicsView(NSView):
     def acceptsFirstResponder(self):
         return True
 
+
+
 class NodeBoxAppDelegate(NSObject):
 
     def awakeFromNib(self):
+        print("AppDelegate.awakeFromNib")
         self._prefsController = None
         libpath = LibraryFolder()
-
 
     @objc.IBAction
     def showPreferencesPanel_(self, sender):
