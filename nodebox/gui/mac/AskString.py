@@ -1,11 +1,12 @@
-__all__ = ["AskString"]
+__all__ = ["AskStringWindowController", "AskString"]
 
 import objc
 
 import Foundation
 
-import AppKit
-NSApp = AppKit.NSApp
+#import AppKit
+#NSApp = AppKit.NSApplication
+
 # class defined in AskString.xib
 class AskStringWindowController(AppKit.NSWindowController):
     questionLabel = objc.IBOutlet()
@@ -22,8 +23,9 @@ class AskStringWindowController(AppKit.NSWindowController):
             self.setWindowFrameAutosaveName_("AskStringPanel")
             self.showWindow_(self)
         else:
-            NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_(
-                self.window(), self.parentWindow, None, None, 0)
+            #NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_( self.window(), self.parentWindow, None, None, 0)
+            self.parentWindow().beginSheet_completionHandler_( self.window(), None )
+            # (void)beginSheet_completionHandler_(NSWindow *)sheetWindow  completionHandler:(void (^)(NSModalResponse returnCode))handler;
         self.retain()
         return self
 
@@ -39,14 +41,17 @@ class AskStringWindowController(AppKit.NSWindowController):
             self.close()
         else:
             sheet = self.window()
-            NSApp().endSheet_(sheet)
+            # NSApp().endSheet_(sheet)
+            sheet.endSheet_(self)
             sheet.orderOut_(self)
 
+    @objc.IBAction
     def ok_(self, sender):
         value = self.textField.stringValue()
         self.done()
         self.resultCallback(value)
 
+    @objc.IBAction
     def cancel_(self, sender):
         self.done()
         self.resultCallback(None)
