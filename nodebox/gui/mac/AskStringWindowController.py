@@ -1,10 +1,10 @@
-__all__ = ["AskStringWindowController", "AskString"]
+# __all__ = ["AskStringWindowController", "AskString"]
 
 import objc
 
 import Foundation
 
-#import AppKit
+import AppKit
 #NSApp = AppKit.NSApplication
 
 # class defined in AskString.xib
