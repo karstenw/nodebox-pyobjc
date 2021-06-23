@@ -16,9 +16,7 @@ class AskStringWindowController (NSWindowController):
 
     @objc.IBAction
     def cancel_(self, sender):
-        pass
 
     @objc.IBAction
     def ok_(self, sender):
-        pass
 

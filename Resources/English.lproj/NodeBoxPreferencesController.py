@@ -26,18 +26,14 @@ class NodeBoxPreferencesController (NSWindowController):
 
     @objc.IBAction
     def updateColors_(self, sender):
-        pass
 
     @objc.IBAction
     def chooseFont_(self, sender):
-        pass
 
     @objc.IBAction
     def chooseLibrary_(self, sender):
-        pass
 
     @objc.IBAction
     def changeFont_(self, sender):
-        pass
 
 

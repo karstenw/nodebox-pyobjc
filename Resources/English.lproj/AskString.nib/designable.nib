@@ -74,6 +74,7 @@ DQ
             <connections>
                 <outlet property="delegate" destination="-2" id="hSP-Ni-if2"/>
             </connections>
+            <point key="canvasLocation" x="-57" y="-151"/>
         </window>
     </objects>
 </document>
