@@ -1,4 +1,4 @@
-# __all__ = ["AskStringWindowController", "AskString"]
+__all__ = ["AskStringWindowController",]
 
 import objc
 
@@ -57,5 +57,3 @@ class AskStringWindowController(AppKit.NSWindowController):
         self.resultCallback(None)
 
 
-def AskString(question, resultCallback, default="", parentWindow=None):
-    AskStringWindowController(question, resultCallback, default, parentWindow)

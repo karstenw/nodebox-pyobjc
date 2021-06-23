@@ -55,7 +55,7 @@
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -82,7 +82,7 @@
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
 </v>
-<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
+<v t="karstenw.20170709143301.1" a="E"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
 <v t="karstenw.20170704104725.25"><vh>arc</vh></v>
@@ -92,7 +92,7 @@
 <v t="karstenw.20170704104725.29"><vh>_arrow</vh></v>
 <v t="karstenw.20170704104725.30"><vh>_arrow45</vh></v>
 </v>
-<v t="karstenw.20170709143318.1"><vh>## Path Commands ##</vh>
+<v t="karstenw.20170709143318.1" a="E"><vh>## Path Commands ##</vh>
 <v t="karstenw.20170704104725.31"><vh>beginpath</vh></v>
 <v t="karstenw.20170704104725.32"><vh>moveto</vh></v>
 <v t="karstenw.20170704104725.33"><vh>lineto</vh></v>
@@ -107,7 +107,7 @@
 <v t="karstenw.20170704104725.40"><vh>beginclip</vh></v>
 <v t="karstenw.20170704104725.41"><vh>endclip</vh></v>
 </v>
-<v t="karstenw.20170709143354.1"><vh>## Transformation Commands ##</vh>
+<v t="karstenw.20170709143354.1" a="E"><vh>## Transformation Commands ##</vh>
 <v t="karstenw.20170704104725.42"><vh>push</vh></v>
 <v t="karstenw.20170704104725.43"><vh>pop</vh></v>
 <v t="karstenw.20170704104725.44"><vh>transform</vh></v>
@@ -127,11 +127,11 @@
 <v t="karstenw.20170704104726.8"><vh>stroke</vh></v>
 <v t="karstenw.20170704104726.9"><vh>strokewidth</vh></v>
 </v>
-<v t="karstenw.20170709143705.1"><vh>## Path Style Commands ##</vh>
+<v t="karstenw.20170709143705.1" a="E"><vh>## Path Style Commands ##</vh>
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -150,13 +150,14 @@
 <v t="karstenw.20170709143618.1"><vh>## Canvas Proxy ##</vh>
 <v t="karstenw.20170704104726.24"><vh>save</vh></v>
 </v>
-<v t="karstenw.20170709143636.1"><vh>## C-Extensions Interface ##</vh>
+<v t="karstenw.20170709143636.1" a="E"><vh>## C-Extensions Interface ##</vh>
 <v t="karstenw.20170704104726.25"><vh>isqrt</vh></v>
 <v t="karstenw.20170704104726.26"><vh>angle</vh></v>
 <v t="karstenw.20170704104726.27"><vh>distance</vh></v>
 <v t="karstenw.20170704104726.28"><vh>coordinates</vh></v>
 <v t="karstenw.20170704104726.29"><vh>reflect</vh></v>
 <v t="karstenw.20180202044929.1"><vh>dither</vh></v>
+<v t="karstenw.20210623195428.1"><vh>fractalimage</vh></v>
 </v>
 </v>
 </v>
@@ -172,7 +173,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -349,7 +350,7 @@
 <v t="karstenw.20170704104751.161"><vh>_get_metrics</vh></v>
 <v t="karstenw.20170704104751.162"><vh>_get_path</vh></v>
 </v>
-<v t="karstenw.20170704104751.163"><vh>class Variable</vh>
+<v t="karstenw.20170704104751.163" a="E"><vh>class Variable</vh>
 <v t="karstenw.20170704104751.164"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.165"><vh>sanitize</vh></v>
 <v t="karstenw.20170704104751.166"><vh>compliesTo</vh></v>
@@ -379,16 +380,20 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
 <v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
+</v>
+<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
+<v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
 <v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
@@ -440,11 +445,11 @@
 <v t="karstenw.20170704105032.51"><vh>zoomToFit_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105032.52" a="E"><vh>class FullscreenWindow</vh>
+<v t="karstenw.20170704105032.52"><vh>class FullscreenWindow</vh>
 <v t="karstenw.20170704105032.53"><vh>initWithRect_</vh></v>
 <v t="karstenw.20170704105032.54"><vh>canBecomeKeyWindow</vh></v>
 </v>
-<v t="karstenw.20170704105032.55" a="E"><vh>class FullscreenView</vh>
+<v t="karstenw.20170704105032.55"><vh>class FullscreenView</vh>
 <v t="karstenw.20170704105032.56"><vh>init</vh></v>
 <v t="karstenw.20170704105032.57"><vh>setCanvas_</vh></v>
 <v t="karstenw.20170704105032.58"><vh>drawRect_</vh></v>
@@ -502,7 +507,7 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskString.py</vh>
+<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20170704105043.3"><vh>__new__</vh></v>
@@ -512,7 +517,6 @@
 <v t="karstenw.20170704105043.7"><vh>ok_</vh></v>
 <v t="karstenw.20170704105043.8"><vh>cancel_</vh></v>
 </v>
-<v t="karstenw.20170704105043.9"><vh>AskString</vh></v>
 </v>
 <v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
@@ -605,7 +609,7 @@
 <v t="karstenw.20170704105113.52"><vh>colorize</vh></v>
 <v t="karstenw.20170704105113.53"><vh>_colorize</vh></v>
 </v>
-<v t="karstenw.20170704105113.54"><vh>class LineTracker</vh>
+<v t="karstenw.20170704105113.54" a="E"><vh>class LineTracker</vh>
 <v t="karstenw.20170704105113.55"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.56"><vh>_makeLines</vh></v>
 <v t="karstenw.20170704105113.57"><vh>_update</vh></v>
@@ -621,13 +625,14 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -654,7 +659,7 @@
 <v t="karstenw.20170704105353.5"><vh>random</vh></v>
 </v>
 <v t="karstenw.20170704105353.14"><vh>autotext</vh></v>
-<v t="karstenw.20170811141051.1"><vh>FILE FUNCTIONS</vh>
+<v t="karstenw.20170811141051.1" a="E"><vh>FILE FUNCTIONS</vh>
 <v t="karstenw.20170704105353.6"><vh>files</vh></v>
 <v t="karstenw.20170704105353.7"><vh>filelist</vh></v>
 <v t="karstenw.20170704105353.8"><vh>imagefiles</vh></v>
@@ -673,7 +678,7 @@
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
 </v>
-<v t="karstenw.20171218183025.1"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
 <v t="karstenw.20180202050130.1"><vh>aspectRatio</vh></v>
 <v t="karstenw.20171218183032.1"><vh>palette</vh></v>
 <v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
@@ -1056,9 +1061,11 @@ Usage:
     python setup.py py2app
 """
 
-import setuptools, distutils
+#import setuptools, distutils
+#from setuptools.extension import Extension
+# from distutils.core import setup, Extension
+from setuptools import setup
 from setuptools.extension import Extension
-from distutils.core import setup
 
 import py2app
 
@@ -1150,14 +1157,14 @@ setup(
     }],
 
     data_files=[
-        "Resources/English.lproj/AskString.xib",
+        "Resources/English.lproj/AskString.nib",
         "Resources/English.lproj/Credits.rtf",
-        "Resources/English.lproj/ExportImageAccessory.xib",
-        "Resources/English.lproj/ExportMovieAccessory.xib",
-        "Resources/English.lproj/MainMenu.xib",
-        "Resources/English.lproj/NodeBoxDocument.xib",
-        "Resources/English.lproj/NodeBoxPreferences.xib",
-        "Resources/English.lproj/ProgressBarSheet.xib",
+        "Resources/English.lproj/ExportImageAccessory.nib",
+        "Resources/English.lproj/ExportMovieAccessory.nib",
+        "Resources/English.lproj/MainMenu.nib",
+        "Resources/English.lproj/NodeBoxDocument.nib",
+        "Resources/English.lproj/NodeBoxPreferences.nib",
+        "Resources/English.lproj/ProgressBarSheet.nib",
         "Resources/NodeBox.icns",
         "Resources/NodeBoxFile.icns",
         "Resources/zoombig.png",
@@ -4719,7 +4726,7 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = False
@@ -5034,7 +5041,7 @@ def runScript_(self, sender):
 
     # Check whether we are dealing with animation
     if self.canvas.speed is not None:
-        if not self.namespace.has_key("draw"):
+        if not "draw" in self.namespace:
             errorAlert("Not a proper NodeBox animation",
                 "NodeBox animations should have at least a draw() method.")
             return
@@ -5046,7 +5053,7 @@ def runScript_(self, sender):
         self.speed = self.canvas.speed
 
         # Run setup routine
-        if self.namespace.has_key("setup"):
+        if "setup" in self.namespace:
             self.fastRun_newSeed_(self.namespace["setup"], False)
         window = self.currentView.window()
         window.makeFirstResponder_(self.currentView)
@@ -5093,7 +5100,7 @@ def stopScript_(self, sender=None):
     
 </t>
 <t tx="karstenw.20170704105032.29">def stopScript(self):
-    if self.namespace.has_key("stop"):
+    if "stop" in self.namespace:
         success, output = self.boxedRun_args_(self.namespace["stop"], [])
         self.flushOutput_(output)
     self.animationSpinner.stopAnimation_(None)
@@ -5376,7 +5383,7 @@ def exportImageFormatChanged_(self, sender):
                     self._frame += 1
                     pb.inc()
             else:
-                if self.namespace.has_key("setup"):
+                if "setup" in self.namespace:
                     self.fastRun_newSeed_(self.namespace["setup"], False)
                 for i in range(pages):
                     self.fastRun_newSeed_(self.namespace["draw"], True)
@@ -5391,7 +5398,7 @@ def exportImageFormatChanged_(self, sender):
                     self._pageNumber += 1
                     self._frame += 1
                     pb.inc()
-                if self.namespace.has_key("stop"):
+                if "stop" in self.namespace:
                     success, output = self.boxedRun_args_(self.namespace["stop"],
                                                           [])
                     self.flushOutput_(output)
@@ -5490,7 +5497,7 @@ qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_c
                 self._pageNumber += 1
                 self._frame += 1
         else:
-            if self.namespace.has_key("setup"):
+            if "setup" in self.namespace:
                 self.fastRun_newSeed_(self.namespace["setup"], False)
             for i in range(frames):
                 self.fastRun_newSeed_(self.namespace["draw"], True)
@@ -5499,7 +5506,7 @@ qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_c
                 pb.inc()
                 self._pageNumber += 1
                 self._frame += 1
-            if self.namespace.has_key("stop"):
+            if "stop" in self.namespace:
                 success, output = self.boxedRun_args_(self.namespace["stop"], [])
                 self.flushOutput_(output)
     except KeyboardInterrupt:
@@ -5562,15 +5569,6 @@ def zoomOut_(self, sender):
             data = "XXX " + repr(data)
     self.data.append( (self.isErr, data) )
 
-
-\\-4.# modified NSApplication object
-\\-4.class NodeBoxApplication(NSApplication):
-def awakeFromNib(self):
-    print("AppClass.awakeFromNib()")
-    objc.super(NodeBoxApplication, self).awakeFromNib()
-def finishLaunching(self):
-    print("AppClass.finishLaunching()")
-    objc.super(NodeBoxApplication, self).finishLaunching()
 
 </t>
 <t tx="karstenw.20170704105032.50">@objc.IBAction
@@ -5998,13 +5996,13 @@ jpegData = property(_get_jpegData)
     return True
 
 </t>
-<t tx="karstenw.20170704105043.1">__all__ = ["AskStringWindowController", "AskString"]
+<t tx="karstenw.20170704105043.1">__all__ = ["AskStringWindowController",]
 
 import objc
 
 import Foundation
 
-#import AppKit
+import AppKit
 #NSApp = AppKit.NSApplication
 
 </t>
@@ -6065,9 +6063,6 @@ class AskStringWindowController(AppKit.NSWindowController):
     self.resultCallback(None)
 
 
-</t>
-<t tx="karstenw.20170704105043.9">def AskString(question, resultCallback, default="", parentWindow=None):
-    AskStringWindowController(question, resultCallback, default, parentWindow)
 </t>
 <t tx="karstenw.20170704105051.1">import pdb
 import AppKit
@@ -6475,7 +6470,9 @@ import nodebox.PyFontify
 fontify = nodebox.PyFontify.fontify
 
 
+import pdb
 from nodebox.gui.mac.ValueLadder import ValueLadder
+from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
 
 from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 
@@ -6483,6 +6480,9 @@ from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
 
+
+def AskString(question, resultCallback, default="", parentWindow=None):
+    AskStringWindowController(question, resultCallback, default, parentWindow)
 
 </t>
 <t tx="karstenw.20170704105113.10">def mouseDown_(self, event):
@@ -6555,7 +6555,7 @@ commentRE = re.compile(r"[ \t]*(#)")
 </t>
 <t tx="karstenw.20170704105113.15">@objc.IBAction
 def jumpToLine_(self, sender):
-    from nodebox.gui.mac.AskString import AskString
+    # from nodebox.gui.mac.AskString import AskString
     AskString("Jump to line number:", self.jumpToLineCallback_,
               parentWindow=self.window())
 
@@ -7341,20 +7341,7 @@ NSUserDefaults.standardUserDefaults().registerDefaults_(_defaultUserDefaults)
     return alert.runModal()
 
 </t>
-<t tx="karstenw.20170704105126.1"># py3 stuff
-py3 = False
-try:
-    unicode('')
-    puni = unicode
-    pstr = str
-    punichr = unichr
-except NameError:
-    puni = str
-    pstr = bytes
-    py3 = True
-    punichr = chr
-
-if py3:
+<t tx="karstenw.20170704105126.1">if py3:
     import ast
     parse = ast.parse
     Sub = ast.Sub
@@ -7784,7 +7771,7 @@ __all__ = (
         return list(v)
     elif isinstance(v, tuple):
         return tuple(v)
-    elif isinstance(v, (int, str, unicode, float, bool, long)):
+    elif isinstance(v, (int, pstr, punicode, float, bool, long)):
         return v
     else:
         raise NodeBoxError("Don't know how to copy '%s'." % v)
@@ -7925,7 +7912,7 @@ __all__ = (
     """
 
     folders = folderpathorlist
-    if type(folderpathorlist) in (str, unicode):
+    if type(folderpathorlist) in (pstr, punicode):
         folders = [folderpathorlist]
     result = []
     for folder in folders:
@@ -10134,7 +10121,7 @@ setup (name = "cGeo",
 <t tx="karstenw.20180202044822.1">def imagepalette( pathOrPILimgage, mask=None ):
     t = type(pathOrPILimgage)
     result = []
-    if t in (str, unicode):
+    if t in (pstr, punicode):
         f = PIL.Image.open( pathOrPILimgage )
         f = f.convert("RGB")
         result = palette( f, mask )
@@ -10149,9 +10136,6 @@ setup (name = "cGeo",
 </t>
 <t tx="karstenw.20180202044929.1">def dither(self, imagebytes, w, h, typ, threshhold):
     return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
-
-def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
-    return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit)
 
 </t>
 <t tx="karstenw.20180202045145.1"></t>
@@ -10203,7 +10187,7 @@ def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
         ditherid = 0
         dithername = "unknown"
 
-    if t in (str, unicode):
+    if t in (pstr, punicode):
         img = PIL.Image.open( pathOrPILimgage ).convert('L')
     else:
         img = pathOrPILimgage
@@ -13932,6 +13916,8 @@ except NameError:
     pstr = bytes
     py3 = True
     punichr = chr
+    long = int
+    xrange = range
 
 </t>
 <t tx="karstenw.20210322113320.1">if not py3:
@@ -13995,6 +13981,25 @@ matchRE = re.compile(matchPat)
 idKeyPat = "[ \t]*([A-Za-z_][A-Za-z_0-9.]*)"	# Ident w. leading whitespace.
 idRE = re.compile(idKeyPat)
 asRE = re.compile(r".*?\b(as)\b")
+
+</t>
+<t tx="karstenw.20210623180227.1"># modified NSApplication object
+class NodeBoxApplication(NSApplication):
+
+    @others
+
+
+</t>
+<t tx="karstenw.20210623180253.1">def awakeFromNib(self):
+    print("AppClass.awakeFromNib()")
+    objc.super(NodeBoxApplication, self).awakeFromNib()
+</t>
+<t tx="karstenw.20210623180302.1">def finishLaunching(self):
+    print("AppClass.finishLaunching()")
+    objc.super(NodeBoxApplication, self).finishLaunching()
+</t>
+<t tx="karstenw.20210623195428.1">def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
+    return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit)
 
 </t>
 </tnodes>

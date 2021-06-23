@@ -113,6 +113,8 @@ except NameError:
     pstr = bytes
     py3 = True
     punichr = chr
+    long = int
+    xrange = range
 
 if not py3:
     import sgmllib

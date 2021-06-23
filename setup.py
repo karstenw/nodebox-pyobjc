@@ -5,9 +5,11 @@ Usage:
     python setup.py py2app
 """
 
-import setuptools, distutils
+#import setuptools, distutils
+#from setuptools.extension import Extension
+# from distutils.core import setup, Extension
+from setuptools import setup
 from setuptools.extension import Extension
-from distutils.core import setup
 
 import py2app
 
@@ -99,14 +101,14 @@ setup(
     }],
 
     data_files=[
-        "Resources/English.lproj/AskString.xib",
+        "Resources/English.lproj/AskString.nib",
         "Resources/English.lproj/Credits.rtf",
-        "Resources/English.lproj/ExportImageAccessory.xib",
-        "Resources/English.lproj/ExportMovieAccessory.xib",
-        "Resources/English.lproj/MainMenu.xib",
-        "Resources/English.lproj/NodeBoxDocument.xib",
-        "Resources/English.lproj/NodeBoxPreferences.xib",
-        "Resources/English.lproj/ProgressBarSheet.xib",
+        "Resources/English.lproj/ExportImageAccessory.nib",
+        "Resources/English.lproj/ExportMovieAccessory.nib",
+        "Resources/English.lproj/MainMenu.nib",
+        "Resources/English.lproj/NodeBoxDocument.nib",
+        "Resources/English.lproj/NodeBoxPreferences.nib",
+        "Resources/English.lproj/ProgressBarSheet.nib",
         "Resources/NodeBox.icns",
         "Resources/NodeBoxFile.icns",
         "Resources/zoombig.png",

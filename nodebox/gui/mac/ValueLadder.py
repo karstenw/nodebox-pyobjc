@@ -5,14 +5,16 @@
 py3 = False
 try:
     unicode('')
-    puni = unicode
+    punicode = unicode
     pstr = str
     punichr = unichr
 except NameError:
-    puni = str
+    punicode = str
     pstr = bytes
     py3 = True
     punichr = chr
+    long = int
+    xrange = range
 
 if py3:
     import ast

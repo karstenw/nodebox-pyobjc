@@ -34,7 +34,9 @@ import nodebox.PyFontify
 fontify = nodebox.PyFontify.fontify
 
 
+import pdb
 from nodebox.gui.mac.ValueLadder import ValueLadder
+from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
 
 from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 
@@ -42,6 +44,9 @@ from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
 
+
+def AskString(question, resultCallback, default="", parentWindow=None):
+    AskStringWindowController(question, resultCallback, default, parentWindow)
 
 def findWhitespace(s, pos=0):
     m = whiteRE.match(s, pos)
@@ -198,7 +203,7 @@ class PyDETextView(NSTextView):
 
     @objc.IBAction
     def jumpToLine_(self, sender):
-        from nodebox.gui.mac.AskString import AskString
+        # from nodebox.gui.mac.AskString import AskString
         AskString("Jump to line number:", self.jumpToLineCallback_,
                   parentWindow=self.window())
 

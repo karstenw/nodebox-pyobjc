@@ -47,6 +47,8 @@ except NameError:
     pstr = bytes
     py3 = True
     punichr = chr
+    long = int
+    xrange = range
 
 g_voicetrash = []
 
@@ -193,7 +195,7 @@ def filelist( folderpathorlist, pathonly=True ):
     """
 
     folders = folderpathorlist
-    if type(folderpathorlist) in (str, unicode):
+    if type(folderpathorlist) in (pstr, punicode):
         folders = [folderpathorlist]
     result = []
     for folder in folders:
@@ -482,7 +484,7 @@ def asvoid(arr):
 def imagepalette( pathOrPILimgage, mask=None ):
     t = type(pathOrPILimgage)
     result = []
-    if t in (str, unicode):
+    if t in (pstr, punicode):
         f = PIL.Image.open( pathOrPILimgage )
         f = f.convert("RGB")
         result = palette( f, mask )
@@ -525,7 +527,7 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
         ditherid = 0
         dithername = "unknown"
 
-    if t in (str, unicode):
+    if t in (pstr, punicode):
         img = PIL.Image.open( pathOrPILimgage ).convert('L')
     else:
         img = pathOrPILimgage
@@ -553,7 +555,7 @@ def _copy_attr(v):
         return list(v)
     elif isinstance(v, tuple):
         return tuple(v)
-    elif isinstance(v, (int, str, unicode, float, bool, long)):
+    elif isinstance(v, (int, pstr, punicode, float, bool, long)):
         return v
     else:
         raise NodeBoxError("Don't know how to copy '%s'." % v)

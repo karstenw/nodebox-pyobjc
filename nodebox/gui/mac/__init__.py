@@ -128,6 +128,8 @@ except NameError:
     pstr = bytes
     py3 = True
     punichr = chr
+    long = int
+    xrange = range
 
 class ExportCommand(NSScriptCommand):
     pass    
@@ -148,8 +150,10 @@ class OutputFile(object):
         self.data.append( (self.isErr, data) )
 
 
+
 # modified NSApplication object
 class NodeBoxApplication(NSApplication):
+
     def awakeFromNib(self):
         print("AppClass.awakeFromNib()")
         objc.super(NodeBoxApplication, self).awakeFromNib()
@@ -427,7 +431,7 @@ class NodeBoxDocument(NSDocument):
 
         # Check whether we are dealing with animation
         if self.canvas.speed is not None:
-            if not self.namespace.has_key("draw"):
+            if not "draw" in self.namespace:
                 errorAlert("Not a proper NodeBox animation",
                     "NodeBox animations should have at least a draw() method.")
                 return
@@ -439,7 +443,7 @@ class NodeBoxDocument(NSDocument):
             self.speed = self.canvas.speed
 
             # Run setup routine
-            if self.namespace.has_key("setup"):
+            if "setup" in self.namespace:
                 self.fastRun_newSeed_(self.namespace["setup"], False)
             window = self.currentView.window()
             window.makeFirstResponder_(self.currentView)
@@ -480,7 +484,7 @@ class NodeBoxDocument(NSDocument):
         self.stopScript()
         
     def stopScript(self):
-        if self.namespace.has_key("stop"):
+        if "stop" in self.namespace:
             success, output = self.boxedRun_args_(self.namespace["stop"], [])
             self.flushOutput_(output)
         self.animationSpinner.stopAnimation_(None)
@@ -742,7 +746,7 @@ class NodeBoxDocument(NSDocument):
                         self._frame += 1
                         pb.inc()
                 else:
-                    if self.namespace.has_key("setup"):
+                    if "setup" in self.namespace:
                         self.fastRun_newSeed_(self.namespace["setup"], False)
                     for i in range(pages):
                         self.fastRun_newSeed_(self.namespace["draw"], True)
@@ -757,7 +761,7 @@ class NodeBoxDocument(NSDocument):
                         self._pageNumber += 1
                         self._frame += 1
                         pb.inc()
-                    if self.namespace.has_key("stop"):
+                    if "stop" in self.namespace:
                         success, output = self.boxedRun_args_(self.namespace["stop"],
                                                               [])
                         self.flushOutput_(output)
@@ -853,7 +857,7 @@ class NodeBoxDocument(NSDocument):
                     self._pageNumber += 1
                     self._frame += 1
             else:
-                if self.namespace.has_key("setup"):
+                if "setup" in self.namespace:
                     self.fastRun_newSeed_(self.namespace["setup"], False)
                 for i in range(frames):
                     self.fastRun_newSeed_(self.namespace["draw"], True)
@@ -862,7 +866,7 @@ class NodeBoxDocument(NSDocument):
                     pb.inc()
                     self._pageNumber += 1
                     self._frame += 1
-                if self.namespace.has_key("stop"):
+                if "stop" in self.namespace:
                     success, output = self.boxedRun_args_(self.namespace["stop"], [])
                     self.flushOutput_(output)
         except KeyboardInterrupt:

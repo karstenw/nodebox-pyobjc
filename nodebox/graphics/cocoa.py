@@ -152,6 +152,8 @@ except NameError:
     pstr = bytes
     py3 = True
     punichr = chr
+    long = int
+    xrange = range
 
 def _save():
     NSGraphicsContext.currentContext().saveGraphicsState()
