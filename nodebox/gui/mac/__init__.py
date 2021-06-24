@@ -13,13 +13,13 @@ pp = pprint.pprint
 
 import pdb
 
-kwdbg = False
+kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
 debugging = True
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import Foundation
 import AppKit
@@ -227,6 +227,13 @@ class NodeBoxDocument(NSDocument):
 
     def close(self):
         self.stopScript()
+        try:
+            if len(self.vars) > 0:
+                self.dashboardController.panel.close()
+        except Wxception as err:
+            if kwlog:
+                print("ERROR window.close()")
+                print( err )
         super(NodeBoxDocument, self).close()
 
     def __del__(self):
@@ -277,7 +284,10 @@ class NodeBoxDocument(NSDocument):
             #self.outputView.setAutomaticLinkDetectionEnabled_( True )
             #self.outputView.setDisplaysLinkToolTips_( True )
         except Exception as err:
-            pass
+            if kwlog:
+                print("ERROR windowControllerDidLoadNib_()")
+                print( err )
+
 
     def readFromUTF8_(self, path):
         f = open(path)

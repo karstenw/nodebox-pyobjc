@@ -206,7 +206,7 @@
 <v t="karstenw.20170704104751.27"><vh>scale</vh></v>
 <v t="karstenw.20170704104751.28"><vh>skew</vh></v>
 </v>
-<v t="karstenw.20170704104751.29" a="E"><vh>class ColorMixin</vh>
+<v t="karstenw.20170704104751.29"><vh>class ColorMixin</vh>
 <v t="karstenw.20170704104751.30"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.31"><vh>_get_fill</vh></v>
 <v t="karstenw.20170704104751.32"><vh>_set_fill</vh></v>
@@ -215,7 +215,7 @@
 <v t="karstenw.20170704104751.35"><vh>_get_strokewidth</vh></v>
 <v t="karstenw.20170704104751.36"><vh>_set_strokewidth</vh></v>
 </v>
-<v t="karstenw.20170704104751.37" a="E"><vh>class BezierPath</vh>
+<v t="karstenw.20170704104751.37"><vh>class BezierPath</vh>
 <v t="karstenw.20170704104751.38"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.39"><vh>_get_path</vh></v>
 <v t="karstenw.20170704104751.40"><vh>copy</vh></v>
@@ -273,7 +273,7 @@
 <v t="karstenw.20170704104751.88"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.89"><vh>copy</vh></v>
 </v>
-<v t="karstenw.20170704104751.90" a="E"><vh>class Color</vh>
+<v t="karstenw.20170704104751.90"><vh>class Color</vh>
 <v t="karstenw.20170704104751.91"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.92"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.93"><vh>set</vh></v>
@@ -332,14 +332,14 @@
 <v t="karstenw.20170704104751.145"><vh>transformPoint</vh></v>
 <v t="karstenw.20170704104751.146"><vh>transformBezierPath</vh></v>
 </v>
-<v t="karstenw.20170704104751.147" a="E"><vh>class Image</vh>
+<v t="karstenw.20170704104751.147"><vh>class Image</vh>
 <v t="karstenw.20170704104751.148"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.149"><vh>_get_image</vh></v>
 <v t="karstenw.20170704104751.150"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.151"><vh>getSize</vh></v>
 <v t="karstenw.20170704104751.152"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20170704104751.153" a="E"><vh>class Text</vh>
+<v t="karstenw.20170704104751.153"><vh>class Text</vh>
 <v t="karstenw.20170704104751.154"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.155"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.156"><vh>font_exists</vh></v>
@@ -350,7 +350,7 @@
 <v t="karstenw.20170704104751.161"><vh>_get_metrics</vh></v>
 <v t="karstenw.20170704104751.162"><vh>_get_path</vh></v>
 </v>
-<v t="karstenw.20170704104751.163" a="E"><vh>class Variable</vh>
+<v t="karstenw.20170704104751.163"><vh>class Variable</vh>
 <v t="karstenw.20170704104751.164"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.165"><vh>sanitize</vh></v>
 <v t="karstenw.20170704104751.166"><vh>compliesTo</vh></v>
@@ -362,7 +362,7 @@
 <v t="karstenw.20170704104751.171"><vh>isOpaque</vh></v>
 <v t="karstenw.20170704104751.172"><vh>isFlipped</vh></v>
 </v>
-<v t="karstenw.20170704104751.173" a="E"><vh>class Canvas</vh>
+<v t="karstenw.20170704104751.173"><vh>class Canvas</vh>
 <v t="karstenw.20170704104751.174"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.175"><vh>clear</vh></v>
 <v t="karstenw.20170704104751.176"><vh>_get_size</vh></v>
@@ -387,11 +387,11 @@
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
@@ -438,7 +438,7 @@
 <v t="karstenw.20170704105032.45"><vh>printOperationDidRun_success_contextInfo_</vh></v>
 <v t="karstenw.20170704105032.46"><vh>buildInterface_</vh></v>
 <v t="karstenw.20170704105032.47"><vh>validateMenuItem_</vh></v>
-<v t="karstenw.20170727100220.1" a="E"><vh>ZOOM COMMANDS</vh>
+<v t="karstenw.20170727100220.1"><vh>ZOOM COMMANDS</vh>
 <v t="karstenw.20170704105032.48"><vh>zoomIn_</vh></v>
 <v t="karstenw.20170704105032.49"><vh>zoomOut_</vh></v>
 <v t="karstenw.20170704105032.50"><vh>zoomToTag_</vh></v>
@@ -497,7 +497,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105032.103"><vh>showPreferencesPanel_</vh></v>
 <v t="karstenw.20170704105032.104"><vh>generateCode_</vh></v>
@@ -4727,13 +4727,13 @@ pp = pprint.pprint
 
 import pdb
 
-kwdbg = False
+kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
 debugging = True
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import Foundation
 import AppKit
@@ -4833,6 +4833,13 @@ ProgressBarController = progressbar.ProgressBarController
 </t>
 <t tx="karstenw.20170704105032.10">def close(self):
     self.stopScript()
+    try:
+        if len(self.vars) &gt; 0:
+            self.dashboardController.panel.close()
+    except Wxception as err:
+        if kwlog:
+            print("ERROR window.close()")
+            print( err )
     super(NodeBoxDocument, self).close()
 
 </t>
@@ -4945,7 +4952,10 @@ def showLibrary_(self, sender):
         #self.outputView.setAutomaticLinkDetectionEnabled_( True )
         #self.outputView.setDisplaysLinkToolTips_( True )
     except Exception as err:
-        pass
+        if kwlog:
+            print("ERROR windowControllerDidLoadNib_()")
+            print( err )
+
 
 </t>
 <t tx="karstenw.20170704105032.16">def readFromUTF8_(self, path):
@@ -6226,6 +6236,7 @@ class DashboardController(NSObject):
 
 </t>
 <t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
+    pdb.set_trace()
     self.vars = variables
     self.clearInterface()
     if len(self.vars) &gt; 0:

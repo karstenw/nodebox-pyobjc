@@ -99,6 +99,7 @@ class DashboardController(NSObject):
         #self.document.runFunction_(var.name)
 
     def buildInterface_(self, variables):
+        pdb.set_trace()
         self.vars = variables
         self.clearInterface()
         if len(self.vars) > 0:
