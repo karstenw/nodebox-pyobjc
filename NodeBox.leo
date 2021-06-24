@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
@@ -29,15 +29,15 @@
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210323114020.1"><vh>init</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1"><vh>geo</vh>
-<v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
+<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
+<v t="karstenw.20170704104531.1" a="E"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
 <v t="karstenw.20170726154315.1"><vh>C Functions</vh></v>
@@ -161,7 +161,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104730.1"><vh>@clean nodebox/graphics/bezier.py</vh>
+<v t="karstenw.20170704104730.1" a="E"><vh>@clean nodebox/graphics/bezier.py</vh>
 <v t="karstenw.20170704104742.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104742.2"><vh>segment_lengths</vh></v>
 <v t="karstenw.20170704104742.3"><vh>length</vh></v>
@@ -2471,13 +2471,17 @@ except:
     for i, el in enumerate(path):
         if i == 0 or el.cmd == MOVETO:
             closeto = Point(el.x, el.y)
-        if t &lt;= segments[i] or i == len(segments)-1: break
+        if t &lt;= segments[i] or i == len(segments)-1:
+            break
         else: t -= segments[i]
 
-    try: t /= segments[i]
-    except ZeroDivisionError: pass
-    if i == len(segments)-1 and segments[i] == 0: i -= 1
-    
+    try:
+        t /= segments[i]
+    except ZeroDivisionError:
+        pass
+    if i == len(segments)-1 and segments[i] == 0:
+        i -= 1
+
     return (i, t, closeto)
 
 
