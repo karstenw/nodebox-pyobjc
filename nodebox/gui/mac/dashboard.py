@@ -142,7 +142,7 @@ class DashboardController(NSObject):
 
     def addLabel_y_c_(self, v, y, cnt):
         control = NSTextField.alloc().init()
-        control.setFrame_(((0,y),(100,13)))
+        control.setFrame_( ((0,y),(100,13)) )
         control.setStringValue_(v.name + ":")
         control.setAlignment_(NSRightTextAlignment)
         control.setEditable_(False)

@@ -29,7 +29,7 @@
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210323114020.1"><vh>init</vh></v>
@@ -37,7 +37,7 @@
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
 <v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
-<v t="karstenw.20170704104531.1" a="E"><vh>@clean nodebox/geo/__init__.py</vh>
+<v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
 <v t="karstenw.20170726154315.1"><vh>C Functions</vh></v>
@@ -53,9 +53,9 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -161,7 +161,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104730.1" a="E"><vh>@clean nodebox/graphics/bezier.py</vh>
+<v t="karstenw.20170704104730.1"><vh>@clean nodebox/graphics/bezier.py</vh>
 <v t="karstenw.20170704104742.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104742.2"><vh>segment_lengths</vh></v>
 <v t="karstenw.20170704104742.3"><vh>length</vh></v>
@@ -206,7 +206,7 @@
 <v t="karstenw.20170704104751.27"><vh>scale</vh></v>
 <v t="karstenw.20170704104751.28"><vh>skew</vh></v>
 </v>
-<v t="karstenw.20170704104751.29"><vh>class ColorMixin</vh>
+<v t="karstenw.20170704104751.29" a="E"><vh>class ColorMixin</vh>
 <v t="karstenw.20170704104751.30"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.31"><vh>_get_fill</vh></v>
 <v t="karstenw.20170704104751.32"><vh>_set_fill</vh></v>
@@ -215,7 +215,7 @@
 <v t="karstenw.20170704104751.35"><vh>_get_strokewidth</vh></v>
 <v t="karstenw.20170704104751.36"><vh>_set_strokewidth</vh></v>
 </v>
-<v t="karstenw.20170704104751.37"><vh>class BezierPath</vh>
+<v t="karstenw.20170704104751.37" a="E"><vh>class BezierPath</vh>
 <v t="karstenw.20170704104751.38"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.39"><vh>_get_path</vh></v>
 <v t="karstenw.20170704104751.40"><vh>copy</vh></v>
@@ -273,7 +273,7 @@
 <v t="karstenw.20170704104751.88"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.89"><vh>copy</vh></v>
 </v>
-<v t="karstenw.20170704104751.90"><vh>class Color</vh>
+<v t="karstenw.20170704104751.90" a="E"><vh>class Color</vh>
 <v t="karstenw.20170704104751.91"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.92"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.93"><vh>set</vh></v>
@@ -332,14 +332,14 @@
 <v t="karstenw.20170704104751.145"><vh>transformPoint</vh></v>
 <v t="karstenw.20170704104751.146"><vh>transformBezierPath</vh></v>
 </v>
-<v t="karstenw.20170704104751.147"><vh>class Image</vh>
+<v t="karstenw.20170704104751.147" a="E"><vh>class Image</vh>
 <v t="karstenw.20170704104751.148"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.149"><vh>_get_image</vh></v>
 <v t="karstenw.20170704104751.150"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.151"><vh>getSize</vh></v>
 <v t="karstenw.20170704104751.152"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20170704104751.153"><vh>class Text</vh>
+<v t="karstenw.20170704104751.153" a="E"><vh>class Text</vh>
 <v t="karstenw.20170704104751.154"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.155"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.156"><vh>font_exists</vh></v>
@@ -362,7 +362,7 @@
 <v t="karstenw.20170704104751.171"><vh>isOpaque</vh></v>
 <v t="karstenw.20170704104751.172"><vh>isFlipped</vh></v>
 </v>
-<v t="karstenw.20170704104751.173"><vh>class Canvas</vh>
+<v t="karstenw.20170704104751.173" a="E"><vh>class Canvas</vh>
 <v t="karstenw.20170704104751.174"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.175"><vh>clear</vh></v>
 <v t="karstenw.20170704104751.176"><vh>_get_size</vh></v>
@@ -380,7 +380,7 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
 <v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
@@ -518,9 +518,9 @@
 <v t="karstenw.20170704105043.8"><vh>cancel_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
+<v t="karstenw.20170704105051.2" a="E"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
 <v t="karstenw.20170704105051.5"><vh>textChanged_</vh></v>
@@ -5034,7 +5034,8 @@ def runScript_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.22">def runScript(self, compile=True, newSeed=True):
-    if self.fullScreen is not None: return
+    if self.fullScreen is not None:
+        return
     self.currentView = self.graphicsView
     self._runScript(compile, newSeed)
 
@@ -6269,7 +6270,7 @@ class DashboardController(NSObject):
 </t>
 <t tx="karstenw.20170704105051.9">def addLabel_y_c_(self, v, y, cnt):
     control = NSTextField.alloc().init()
-    control.setFrame_(((0,y),(100,13)))
+    control.setFrame_( ((0,y),(100,13)) )
     control.setStringValue_(v.name + ":")
     control.setAlignment_(NSRightTextAlignment)
     control.setEditable_(False)

@@ -421,7 +421,8 @@ class NodeBoxDocument(NSDocument):
         self.runScript()
         
     def runScript(self, compile=True, newSeed=True):
-        if self.fullScreen is not None: return
+        if self.fullScreen is not None:
+            return
         self.currentView = self.graphicsView
         self._runScript(compile, newSeed)
 
