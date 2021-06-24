@@ -167,13 +167,17 @@ def _locate(path, t, segments=None):
     for i, el in enumerate(path):
         if i == 0 or el.cmd == MOVETO:
             closeto = Point(el.x, el.y)
-        if t <= segments[i] or i == len(segments)-1: break
+        if t <= segments[i] or i == len(segments)-1:
+            break
         else: t -= segments[i]
 
-    try: t /= segments[i]
-    except ZeroDivisionError: pass
-    if i == len(segments)-1 and segments[i] == 0: i -= 1
-    
+    try:
+        t /= segments[i]
+    except ZeroDivisionError:
+        pass
+    if i == len(segments)-1 and segments[i] == 0:
+        i -= 1
+
     return (i, t, closeto)
 
 
