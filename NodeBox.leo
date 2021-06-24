@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
@@ -36,7 +36,7 @@
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
+<v t="karstenw.20170704104453.1"><vh>geo</vh>
 <v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
@@ -67,7 +67,7 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
@@ -173,7 +173,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -350,7 +350,7 @@
 <v t="karstenw.20170704104751.161"><vh>_get_metrics</vh></v>
 <v t="karstenw.20170704104751.162"><vh>_get_path</vh></v>
 </v>
-<v t="karstenw.20170704104751.163"><vh>class Variable</vh>
+<v t="karstenw.20170704104751.163" a="E"><vh>class Variable</vh>
 <v t="karstenw.20170704104751.164"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.165"><vh>sanitize</vh></v>
 <v t="karstenw.20170704104751.166"><vh>compliesTo</vh></v>
@@ -387,7 +387,7 @@
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
@@ -410,6 +410,7 @@
 <v t="karstenw.20170704105032.18"><vh>prepareRun</vh></v>
 <v t="karstenw.20170704105032.19"><vh>fastRun_newSeed_</vh></v>
 <v t="karstenw.20170709154311.1"><vh>fastRun_newSeed_args_</vh></v>
+<v t="karstenw.20210624121624.1"><vh>clearMessageArea_</vh></v>
 <v t="karstenw.20170704105032.20"><vh>runFullscreen_</vh></v>
 <v t="karstenw.20170704105032.21"><vh>runScript_</vh></v>
 <v t="karstenw.20170704105032.22"><vh>runScript</vh></v>
@@ -507,9 +508,9 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
+<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
+<v t="karstenw.20170704105043.2"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20170704105043.3"><vh>__new__</vh></v>
 <v t="karstenw.20170704105043.4"><vh>windowWillClose_</vh></v>
 <v t="karstenw.20170704105043.5"><vh>awakeFromNib</vh></v>
@@ -528,20 +529,20 @@
 <v t="karstenw.20170704105051.7"><vh>buttonClicked_</vh></v>
 <v t="karstenw.20170709145427.1"><vh>menuSelected_</vh></v>
 <v t="karstenw.20170704105051.8"><vh>buildInterface_</vh></v>
-<v t="karstenw.20170704105051.9"><vh>addLabel_y_c_</vh></v>
-<v t="karstenw.20170704105051.10"><vh>addSlider_y_c_</vh></v>
-<v t="karstenw.20170704105051.11"><vh>addTextField_y_c_</vh></v>
-<v t="karstenw.20170704105051.12"><vh>addSwitch_y_c_</vh></v>
-<v t="karstenw.20170704105051.13"><vh>addButton_y_c_</vh></v>
-<v t="karstenw.20170709145531.1"><vh>addMenu_y_c_</vh></v>
+<v t="karstenw.20170704105051.9"><vh>addLabel_y_ctrl_width_</vh></v>
+<v t="karstenw.20170704105051.10"><vh>addSlider_y_ctrl_width_</vh></v>
+<v t="karstenw.20170704105051.11"><vh>addTextField_y_ctrl_width_</vh></v>
+<v t="karstenw.20170704105051.12"><vh>addSwitch_y_ctrl_width_</vh></v>
+<v t="karstenw.20170704105051.13"><vh>addButton_y_ctrl_width_</vh></v>
+<v t="karstenw.20170709145531.1"><vh>addMenu_y_ctrl_width_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
 </v>
-<v t="karstenw.20170704105106.4" a="E"><vh>class NodeBoxPreferencesController</vh>
+<v t="karstenw.20170704105106.4"><vh>class NodeBoxPreferencesController</vh>
 <v t="karstenw.20170704105106.5"><vh>init</vh></v>
 <v t="karstenw.20170704105106.6"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105106.7"><vh>windowWillClose_</vh></v>
@@ -553,7 +554,7 @@
 <v t="karstenw.20170704105106.13"><vh>textFontChanged_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104934.1" a="E"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
+<v t="karstenw.20170704104934.1"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
@@ -593,7 +594,7 @@
 <v t="karstenw.20170704105113.37"><vh>uncomment_</vh></v>
 <v t="karstenw.20170704105113.38"><vh>filterLines_</vh></v>
 </v>
-<v t="karstenw.20170704105113.39" a="E"><vh>class PyDETextStorageDelegate</vh>
+<v t="karstenw.20170704105113.39"><vh>class PyDETextStorageDelegate</vh>
 <v t="karstenw.20170704105113.40"><vh>__new__</vh></v>
 <v t="karstenw.20170704105113.41"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.42"><vh>textFontChanged_</vh></v>
@@ -609,7 +610,7 @@
 <v t="karstenw.20170704105113.52"><vh>colorize</vh></v>
 <v t="karstenw.20170704105113.53"><vh>_colorize</vh></v>
 </v>
-<v t="karstenw.20170704105113.54" a="E"><vh>class LineTracker</vh>
+<v t="karstenw.20170704105113.54"><vh>class LineTracker</vh>
 <v t="karstenw.20170704105113.55"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.56"><vh>_makeLines</vh></v>
 <v t="karstenw.20170704105113.57"><vh>_update</vh></v>
@@ -629,10 +630,10 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -652,14 +653,14 @@
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
-<v t="karstenw.20180202045145.1" a="E"><vh>UTILITIES</vh>
+<v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
 <v t="karstenw.20170704105353.4"><vh>grid</vh></v>
 <v t="karstenw.20170704105353.5"><vh>random</vh></v>
 </v>
 <v t="karstenw.20170704105353.14"><vh>autotext</vh></v>
-<v t="karstenw.20170811141051.1" a="E"><vh>FILE FUNCTIONS</vh>
+<v t="karstenw.20170811141051.1"><vh>FILE FUNCTIONS</vh>
 <v t="karstenw.20170704105353.6"><vh>files</vh></v>
 <v t="karstenw.20170704105353.7"><vh>filelist</vh></v>
 <v t="karstenw.20170704105353.8"><vh>imagefiles</vh></v>
@@ -672,13 +673,13 @@
 </v>
 <v t="karstenw.20170704105353.13"><vh>fontfamilies</vh></v>
 </v>
-<v t="karstenw.20170811141113.1" a="E"><vh>SPEECH FUNCTIONS</vh>
+<v t="karstenw.20170811141113.1"><vh>SPEECH FUNCTIONS</vh>
 <v t="karstenw.20170801052347.1"><vh>voices</vh></v>
 <v t="karstenw.20170804122600.1"><vh>voiceattributes</vh></v>
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
 </v>
-<v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20171218183025.1"><vh>IMAGE FUNCTIONS</vh>
 <v t="karstenw.20180202050130.1"><vh>aspectRatio</vh></v>
 <v t="karstenw.20171218183032.1"><vh>palette</vh></v>
 <v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
@@ -1631,9 +1632,7 @@ __all__.extend(['Context'])
 
 
 </t>
-<t tx="karstenw.20170704104725.12">### Variables ###
-
-def var(self, name, type,
+<t tx="karstenw.20170704104725.12">def var(self, name, type,
         default=None, min=0, max=100, value=None,
         handler=None, menuitems=None):
     # pdb.set_trace()
@@ -3745,6 +3744,8 @@ path = property(_get_path)
                 default = u""
         self.default = default
     self.value = value or self.default
+    self.control = None
+
 
 </t>
 <t tx="karstenw.20170704104751.165">def sanitize(self, val):
@@ -5171,8 +5172,9 @@ def stopScript_(self, sender=None):
         #pp(util.__all__)
         #print "graphics.__all__:"
         #pp(graphics.__all__)
-        print("namespace.keys():")
+        # print("namespace.keys():")
         # pp(namespace.keys())
+        pass
 
     # Add everything from the context object
     self.namespace["_ctx"] = self.context
@@ -5553,6 +5555,7 @@ printOperationDidRun_success_contextInfo_ = objc.selector(
 </t>
 <t tx="karstenw.20170704105032.46">@objc.IBAction
 def buildInterface_(self, sender):
+    print( "NIB.buildInterface_() klicked. %s" % repr(sender) )
     self.dashboardController.buildInterface_(self.vars)
 
 </t>
@@ -5576,10 +5579,12 @@ def zoomOut_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.5">def write(self, data):
-    if isinstance(data, pstr):
+    t = type( data )
+    if t in (pstr, punicode):
         try:
-            # data = unicode(data, "utf_8", "replace")
             data = makeunicode( data )
+            if not py3:
+                data = data.encode( "utf-8" )
         except UnicodeDecodeError:
             data = "XXX " + repr(data)
     self.data.append( (self.isErr, data) )
@@ -6079,7 +6084,10 @@ class AskStringWindowController(AppKit.NSWindowController):
 
 
 </t>
-<t tx="karstenw.20170704105051.1">import pdb
+<t tx="karstenw.20170704105051.1">
+
+from __future__ import print_function
+import pdb
 import AppKit
 
 NSObject = AppKit.NSObject
@@ -6110,7 +6118,7 @@ SMALL_FONT = NSFont.systemFontOfSize_(smfontsize)
 MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
 
 </t>
-<t tx="karstenw.20170704105051.10">def addSlider_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.10">def addSlider_y_ctrl_width_(self, v, y, cnt, width):
     control = NSSlider.alloc().init()
     control.setMaxValue_(v.max)
     control.setMinValue_(v.min)
@@ -6123,9 +6131,11 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.numberChanged_, signature="v@:@@"))
     self.panel.contentView().addSubview_(control)
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
+    return control
 
 </t>
-<t tx="karstenw.20170704105051.11">def addTextField_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.11">def addTextField_y_ctrl_width_(self, v, y, cnt, width):
     control = NSTextField.alloc().init()
     control.setStringValue_(v.value)
     control.setFrame_(((108,y-2),(172,15)))
@@ -6136,9 +6146,11 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.textChanged_, signature="v@:@@"))
     self.panel.contentView().addSubview_(control)
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
+    return control
 
 </t>
-<t tx="karstenw.20170704105051.12">def addSwitch_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.12">def addSwitch_y_ctrl_width_(self, v, y, cnt, width):
     control = NSButton.alloc().init()
     control.setButtonType_(NSSwitchButton)
     if v.value:
@@ -6154,9 +6166,11 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.booleanChanged_, signature="v@:@@"))
     self.panel.contentView().addSubview_(control)
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
+    return control
     
 </t>
-<t tx="karstenw.20170704105051.13">def addButton_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.13">def addButton_y_ctrl_width_(self, v, y, cnt, width):
     control = NSButton.alloc().init()
     control.setFrame_(((108, y-2),(172,16)))
     control.setTitle_(v.name)
@@ -6168,6 +6182,8 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.buttonClicked_, signature="v@:@@"))
     self.panel.contentView().addSubview_(control)
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
+    return control
 
 </t>
 <t tx="karstenw.20170704105051.2"># class defined in NodeBoxDocument.xib
@@ -6236,7 +6252,16 @@ class DashboardController(NSObject):
 
 </t>
 <t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
-    pdb.set_trace()
+    ctrlheight = 26
+    ctrltop = 5
+    ctrlheader = 11
+    ctrlfooter = 38
+    ctrlheaderfooter = ctrlheader + ctrlfooter
+    ncontrols = len( variables )
+    varsheight = ncontrols * ctrlheight
+
+    ctrlfluff = ctrltop + ctrlheader + ctrlfooter
+
     self.vars = variables
     self.clearInterface()
     if len(self.vars) &gt; 0:
@@ -6245,41 +6270,62 @@ class DashboardController(NSObject):
         self.panel.orderOut_(None)
         return
 
+    # pdb.set_trace()
+
     # Set the title of the parameter panel to the title of the window
     self.panel.setTitle_(self.documentWindow.title())
 
     (px,py),(pw,ph) = self.panel.frame()
+    # self.panel.setFrame_display_( ((px,py),(300,97)), True )
+    self.panel.setContentSize_( (300,97) )
+    (px,py),(pw,ph) = self.panel.frame()
+
     # Height of the window. Each element has a height of 21.
     # The extra "fluff" is 38 pixels.
-    ph = len(self.vars) * 21 + 54
+    # ph = len(self.vars) * 21 + 54
+    ph = varsheight + ctrlfluff
+    print("panelheight: ", ph )
+
     # Start of first element
     # First element is the height minus the fluff.
-    y = ph - 49
+    # y = ph - 49
+    y = ph - ( ctrlheader + ctrlfooter )
     cnt = 0
+    widthlabel = 0
+    widthctrl = 0
+
+    # NUMBER = 1 TEXT = 2 BOOLEAN = 3 BUTTON = 4 MENU = 5
     for v in self.vars:
         if v.type == graphics.NUMBER:
-            self.addLabel_y_c_(v, y, cnt)
-            self.addSlider_y_c_(v, y, cnt)
+            l = self.addLabel_y_ctrl_width_(v, y, cnt, widthlabel)
+            c = self.addSlider_y_ctrl_width_(v, y, cnt, widthctrl)
+            v.control = (l,c)
 
         elif v.type == graphics.TEXT:
-            self.addLabel_y_c_(v, y, cnt)
-            self.addTextField_y_c_(v, y, cnt)
+            l = self.addLabel_y_ctrl_width_(v, y, cnt, widthlabel)
+            c = self.addTextField_y_ctrl_width_(v, y, cnt, widthctrl)
+            v.control = (l,c)
 
         elif v.type == graphics.BOOLEAN:
-            self.addSwitch_y_c_(v, y, cnt)
+            l = "switch"
+            c = self.addSwitch_y_ctrl_width_(v, y, cnt, widthctrl)
+            v.control = (l,c)
 
         elif v.type == graphics.BUTTON:
-            self.addButton_y_c_(v, y, cnt)
+            l = "button"
+            c = self.addButton_y_ctrl_width_(v, y, cnt, widthctrl)
+            v.control = (l,c)
 
         elif v.type == graphics.MENU:
-            self.addLabel_y_c_(v, y, cnt)
-            self.addMenu_y_c_(v, y, cnt)
-        y -= 21
+            l = self.addLabel_y_ctrl_width_(v, y, cnt, widthlabel)
+            c = self.addMenu_y_ctrl_width_(v, y, cnt, widthctrl)
+            v.control = (l,c)
+        y -= ctrlheight
         cnt += 1
-    self.panel.setFrame_display_animate_( ((px,py),(pw,ph)), True, True )
+    self.panel.setFrame_display_animate_( ((px,py),(pw,ph)), True, 0 )
 
 </t>
-<t tx="karstenw.20170704105051.9">def addLabel_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.9">def addLabel_y_ctrl_width_(self, v, y, cnt, width):
     control = NSTextField.alloc().init()
     control.setFrame_( ((0,y),(100,13)) )
     control.setStringValue_(v.name + ":")
@@ -6289,6 +6335,8 @@ class DashboardController(NSObject):
     control.setDrawsBackground_(False)
     control.setFont_(SMALL_FONT)
     self.panel.contentView().addSubview_(control)
+    control.setAutoresizingMask_( AppKit.NSViewMaxYMargin )
+    return control
 
 </t>
 <t tx="karstenw.20170704105106.1">import sys
@@ -8942,7 +8990,9 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     
 </t>
 <t tx="karstenw.20170704105701.1"></t>
-<t tx="karstenw.20170709143221.1"></t>
+<t tx="karstenw.20170709143221.1">### Variables ###
+
+</t>
 <t tx="karstenw.20170709143242.1"></t>
 <t tx="karstenw.20170709143301.1"></t>
 <t tx="karstenw.20170709143318.1"></t>
@@ -8968,7 +9018,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     #self.document.runFunction_(var.name)
 
 </t>
-<t tx="karstenw.20170709145531.1">def addMenu_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170709145531.1">def addMenu_y_ctrl_width_(self, v, y, cnt, width):
     control = NSPopUpButton.alloc().init()
     control.setFrame_( ((108, y-2),(172,16)) )
     control.setPullsDown_( False )
@@ -8986,6 +9036,8 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.menuSelected_, signature="v@:@@"))
     self.panel.contentView().addSubview_(control)
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
+    return control
 
 </t>
 <t tx="karstenw.20170709154311.1">def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
@@ -9010,6 +9062,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     window = self.currentView.window()
     pt = window.mouseLocationOutsideOfEventStream()
     mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
+
     # Hack: mouse coordinates are flipped vertically in FullscreenView.
     # This flips them back.
     if isinstance(self.currentView, FullscreenView):
@@ -9017,7 +9070,8 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     if self.fullScreen is None:
         mx /= self.currentView.zoom
         my /= self.currentView.zoom
-    self.namespace["MOUSEX"], self.namespace["MOUSEY"] = mx, my
+    self.namespace["MOUSEX"] = mx
+    self.namespace["MOUSEY"] = my
     self.namespace["mousedown"] = self.currentView.mousedown
     self.namespace["keydown"] = self.currentView.keydown
     self.namespace["key"] = self.currentView.key
@@ -9048,11 +9102,6 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
 
     return True
     
-
-@objc.IBAction
-def clearMessageArea_(self, sender):
-    # pp( dir(self.outputView.textStorage()))
-    self.outputView.textStorage().mutableString().setString_(u"")
 
 </t>
 <t tx="karstenw.20170726133907.1">try:
@@ -14016,6 +14065,12 @@ class NodeBoxApplication(NSApplication):
 </t>
 <t tx="karstenw.20210623195428.1">def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
     return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit)
+
+</t>
+<t tx="karstenw.20210624121624.1">@objc.IBAction
+def clearMessageArea_(self, sender):
+    # pp( dir(self.outputView.textStorage()))
+    self.outputView.textStorage().mutableString().setString_(u"")
 
 </t>
 </tnodes>

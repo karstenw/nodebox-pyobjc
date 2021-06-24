@@ -141,10 +141,12 @@ class OutputFile(object):
         self.isErr = isErr
 
     def write(self, data):
-        if isinstance(data, pstr):
+        t = type( data )
+        if t in (pstr, punicode):
             try:
-                # data = unicode(data, "utf_8", "replace")
                 data = makeunicode( data )
+                if not py3:
+                    data = data.encode( "utf-8" )
             except UnicodeDecodeError:
                 data = "XXX " + repr(data)
         self.data.append( (self.isErr, data) )
@@ -363,6 +365,7 @@ class NodeBoxDocument(NSDocument):
         window = self.currentView.window()
         pt = window.mouseLocationOutsideOfEventStream()
         mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
+
         # Hack: mouse coordinates are flipped vertically in FullscreenView.
         # This flips them back.
         if isinstance(self.currentView, FullscreenView):
@@ -370,7 +373,8 @@ class NodeBoxDocument(NSDocument):
         if self.fullScreen is None:
             mx /= self.currentView.zoom
             my /= self.currentView.zoom
-        self.namespace["MOUSEX"], self.namespace["MOUSEY"] = mx, my
+        self.namespace["MOUSEX"] = mx
+        self.namespace["MOUSEY"] = my
         self.namespace["mousedown"] = self.currentView.mousedown
         self.namespace["keydown"] = self.currentView.keydown
         self.namespace["key"] = self.currentView.key
@@ -544,8 +548,9 @@ class NodeBoxDocument(NSDocument):
             #pp(util.__all__)
             #print "graphics.__all__:"
             #pp(graphics.__all__)
-            print("namespace.keys():")
+            # print("namespace.keys():")
             # pp(namespace.keys())
+            pass
 
         # Add everything from the context object
         self.namespace["_ctx"] = self.context
@@ -906,6 +911,7 @@ class NodeBoxDocument(NSDocument):
 
     @objc.IBAction
     def buildInterface_(self, sender):
+        print( "NIB.buildInterface_() klicked. %s" % repr(sender) )
         self.dashboardController.buildInterface_(self.vars)
 
     def validateMenuItem_(self, menuItem):

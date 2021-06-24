@@ -1516,6 +1516,8 @@ class Variable(object):
                     default = u""
             self.default = default
         self.value = value or self.default
+        self.control = None
+
 
     def sanitize(self, val):
         """Given a Variable and a value, cleans it out"""
