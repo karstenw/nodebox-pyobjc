@@ -911,7 +911,7 @@ class NodeBoxDocument(NSDocument):
 
     @objc.IBAction
     def buildInterface_(self, sender):
-        print( "NIB.buildInterface_() klicked. %s" % repr(sender) )
+        # print( "NIB.buildInterface_() klicked. %s" % repr(sender) )
         self.dashboardController.buildInterface_(self.vars)
 
     def validateMenuItem_(self, menuItem):
