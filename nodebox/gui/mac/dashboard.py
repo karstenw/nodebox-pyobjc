@@ -152,32 +152,36 @@ class DashboardController(NSObject):
         # First element is the height minus the fluff.
         # y = panelheight - 49
         y = panelheight - ( ctrlheader + ctrlfooter )
+        
         cnt = 0
         widthlabel = 0
         widthctrl = 0
-
+        y = panelheight - (ctrltop + ctrlheight + 20)
         for v in self.vars:
+            leftframe =  ( (  0, y), (100, ctrlheight) )
+            rightframe = ( (108, y), (172, ctrlheight) )
+
             if v.type == graphics.NUMBER:
-                l = self.addLabel_y_ctrl_width_(v, y, cnt, widthlabel)
-                c = self.addSlider_y_ctrl_width_(v, y, cnt, widthctrl)
+                l = self.addLabel_y_ctrl_width_(v, y, cnt, leftframe)
+                c = self.addSlider_y_ctrl_width_(v, y, cnt, rightframe)
                 v.control = (l,c)
 
             elif v.type == graphics.TEXT:
-                l = self.addLabel_y_ctrl_width_(v, y, cnt, widthlabel)
-                c = self.addTextField_y_ctrl_width_(v, y, cnt, widthctrl)
+                l = self.addLabel_y_ctrl_width_(v, y, cnt, leftframe)
+                c = self.addTextField_y_ctrl_width_(v, y, cnt, rightframe)
                 v.control = (l,c)
 
             elif v.type == graphics.BOOLEAN:
-                c = self.addSwitch_y_ctrl_width_(v, y, cnt, widthctrl)
+                c = self.addSwitch_y_ctrl_width_(v, y, cnt, rightframe)
                 v.control = (None,c)
 
             elif v.type == graphics.BUTTON:
-                c = self.addButton_y_ctrl_width_(v, y, cnt, widthctrl)
+                c = self.addButton_y_ctrl_width_(v, y, cnt, rightframe)
                 v.control = (None,c)
 
             elif v.type == graphics.MENU:
-                l = self.addLabel_y_ctrl_width_(v, y, cnt, widthlabel)
-                c = self.addMenu_y_ctrl_width_(v, y, cnt, widthctrl)
+                l = self.addLabel_y_ctrl_width_(v, y, cnt, leftframe)
+                c = self.addMenu_y_ctrl_width_(v, y, cnt, rightframe)
                 v.control = (l,c)
             print("cnt/y  %i   %i" % (cnt, y) )
             y -= ctrlheight
@@ -192,9 +196,10 @@ class DashboardController(NSObject):
                 print( (i,c.frame()) )
 
 
-    def addLabel_y_ctrl_width_(self, v, y, cnt, width):
+    def addLabel_y_ctrl_width_(self, v, y, cnt, frame):
+        (x,y),(w,h) = frame
         control = NSTextField.alloc().init()
-        control.setFrame_( ((0,y),(100,16)) )
+        control.setFrame_( frame ) #((0,y),(100,16)) )
         control.setStringValue_(v.name + ":")
         control.setAlignment_(NSRightTextAlignment)
         control.setEditable_(False)
@@ -205,12 +210,13 @@ class DashboardController(NSObject):
         self.panel.contentView().addSubview_(control)
         return control
 
-    def addSlider_y_ctrl_width_(self, v, y, cnt, width):
+    def addSlider_y_ctrl_width_(self, v, y, cnt, frame):
+        (x,y),(w,h) = frame
         control = NSSlider.alloc().init()
         control.setMaxValue_(v.max)
         control.setMinValue_(v.min)
         control.setFloatValue_(v.value)
-        control.setFrame_(((108,y-1),(172,16)))
+        control.setFrame_( frame ) #((108,y-1),(172,16)))
         control.cell().setControlSize_(NSMiniControlSize)
         control.cell().setControlTint_(NSGraphiteControlTint)
         control.setContinuous_(True)
@@ -221,10 +227,11 @@ class DashboardController(NSObject):
         self.panel.contentView().addSubview_(control)
         return control
 
-    def addTextField_y_ctrl_width_(self, v, y, cnt, width):
+    def addTextField_y_ctrl_width_(self, v, y, cnt, frame):
+        (x,y),(w,h) = frame
         control = NSTextField.alloc().init()
         control.setStringValue_(v.value)
-        control.setFrame_(((108,y-2),(172,16)))
+        control.setFrame_( frame ) #((108,y-2),(172,16)))
         control.cell().setControlSize_(NSMiniControlSize)
         control.cell().setControlTint_(NSGraphiteControlTint)
         control.setFont_(MINI_FONT)
@@ -235,14 +242,15 @@ class DashboardController(NSObject):
         self.panel.contentView().addSubview_(control)
         return control
 
-    def addSwitch_y_ctrl_width_(self, v, y, cnt, width):
+    def addSwitch_y_ctrl_width_(self, v, y, cnt, frame):
+        (x,y),(w,h) = frame
         control = NSButton.alloc().init()
         control.setButtonType_(NSSwitchButton)
         if v.value:
             control.setState_(NSOnState)
         else:
             control.setState_(NSOffState)
-        control.setFrame_(((108,y-2),(172,16)))
+        control.setFrame_( frame ) #((108,y-2),(172,16)))
         control.setTitle_(v.name)
         control.setFont_(SMALL_FONT)
         control.cell().setControlSize_(NSSmallControlSize)
@@ -254,9 +262,10 @@ class DashboardController(NSObject):
         self.panel.contentView().addSubview_(control)
         return control
         
-    def addButton_y_ctrl_width_(self, v, y, cnt, width):
+    def addButton_y_ctrl_width_(self, v, y, cnt, frame):
+        (x,y),(w,h) = frame
         control = NSButton.alloc().init()
-        control.setFrame_(((108, y-2),(172,16)))
+        control.setFrame_( frame ) #((108, y-2),(172,16)))
         control.setTitle_(v.name)
         control.setBezelStyle_(1)
         control.setFont_(SMALL_FONT)
@@ -269,9 +278,11 @@ class DashboardController(NSObject):
         self.panel.contentView().addSubview_(control)
         return control
 
-    def addMenu_y_ctrl_width_(self, v, y, cnt, width):
+    def addMenu_y_ctrl_width_(self, v, y, cnt, frame):
+        (x,y),(w,h) = frame
+        
         control = NSPopUpButton.alloc().init()
-        control.setFrame_( ((108, y-2),(172,16)) )
+        control.setFrame_( frame ) #((108, y-2),(172,16)) )
         control.setPullsDown_( False )
         control.removeAllItems()
         if v.menuitems is not None:
