@@ -212,7 +212,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" id="198">
-                        <rect key="frame" x="-3" y="64" width="106" height="13"/>
+                        <rect key="frame" x="-2" y="62" width="104" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Text:" id="288">
                             <font key="font" metaFont="label"/>
@@ -221,7 +221,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="199">
-                        <rect key="frame" x="108" y="63" width="172" height="15"/>
+                        <rect key="frame" x="108" y="64" width="172" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="289">
                             <font key="font" metaFont="miniSystem"/>
@@ -232,7 +232,7 @@
                     <textField verticalHuggingPriority="750" id="200">
                         <rect key="frame" x="-3" y="43" width="106" height="13"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Number:" id="290">
+                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" alignment="right" title="Number:" id="290">
                             <font key="font" metaFont="label"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -246,7 +246,7 @@
                         </sliderCell>
                     </slider>
                     <button id="202">
-                        <rect key="frame" x="104" y="23" width="68" height="18"/>
+                        <rect key="frame" x="104" y="23" width="178" height="18"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Switch" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="mini" inset="2" id="292">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -255,7 +255,7 @@
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-105" y="-129"/>
+            <point key="canvasLocation" x="-105" y="-129.5"/>
         </window>
         <customObject id="170" userLabel="DashboardController" customClass="DashboardController">
             <connections>
