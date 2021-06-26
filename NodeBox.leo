@@ -52,7 +52,7 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
@@ -383,7 +383,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -508,7 +508,7 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
+<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105043.2"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20170704105043.3"><vh>__new__</vh></v>
@@ -537,7 +537,7 @@
 <v t="karstenw.20170709145531.1"><vh>addMenu_y_ctrl_width_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
@@ -626,7 +626,7 @@
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
-<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
@@ -648,8 +648,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
@@ -5555,7 +5555,7 @@ printOperationDidRun_success_contextInfo_ = objc.selector(
 </t>
 <t tx="karstenw.20170704105032.46">@objc.IBAction
 def buildInterface_(self, sender):
-    print( "NIB.buildInterface_() klicked. %s" % repr(sender) )
+    # print( "NIB.buildInterface_() klicked. %s" % repr(sender) )
     self.dashboardController.buildInterface_(self.vars)
 
 </t>
@@ -6123,30 +6123,30 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.setMaxValue_(v.max)
     control.setMinValue_(v.min)
     control.setFloatValue_(v.value)
-    control.setFrame_(((108,y-1),(172,13)))
+    control.setFrame_(((108,y-1),(172,16)))
     control.cell().setControlSize_(NSMiniControlSize)
     control.cell().setControlTint_(NSGraphiteControlTint)
     control.setContinuous_(True)
     control.setTarget_(self)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.numberChanged_, signature="v@:@@"))
+    # control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
-    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
     return control
 
 </t>
 <t tx="karstenw.20170704105051.11">def addTextField_y_ctrl_width_(self, v, y, cnt, width):
     control = NSTextField.alloc().init()
     control.setStringValue_(v.value)
-    control.setFrame_(((108,y-2),(172,15)))
+    control.setFrame_(((108,y-2),(172,16)))
     control.cell().setControlSize_(NSMiniControlSize)
     control.cell().setControlTint_(NSGraphiteControlTint)
     control.setFont_(MINI_FONT)
     control.setTarget_(self)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.textChanged_, signature="v@:@@"))
+    # control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
-    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
     return control
 
 </t>
@@ -6165,8 +6165,8 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.setTarget_(self)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.booleanChanged_, signature="v@:@@"))
+    # control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
-    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
     return control
     
 </t>
@@ -6181,8 +6181,8 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.setTarget_(self)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.buttonClicked_, signature="v@:@@"))
+    # control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
-    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
     return control
 
 </t>
@@ -6252,13 +6252,23 @@ class DashboardController(NSObject):
 
 </t>
 <t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
-    ctrlheight = 26
+    ctrlheight = 26 # 21
     ctrltop = 5
     ctrlheader = 11
     ctrlfooter = 38
     ctrlheaderfooter = ctrlheader + ctrlfooter
     ncontrols = len( variables )
     varsheight = ncontrols * ctrlheight
+    
+    sizes = dict(
+        # x, width, height
+        label=(       0, 100, 13),
+        slider=(    108, 172, 13),
+        textfield=( 108, 172, 15),
+        switch=(    108, 172, 16),
+        button=(    108, 172, 16),
+        menu=(      108, 172, 16)
+    )
 
     ctrlfluff = ctrltop + ctrlheader + ctrlfooter
 
@@ -6270,31 +6280,32 @@ class DashboardController(NSObject):
         self.panel.orderOut_(None)
         return
 
-    # pdb.set_trace()
 
     # Set the title of the parameter panel to the title of the window
     self.panel.setTitle_(self.documentWindow.title())
 
-    (px,py),(pw,ph) = self.panel.frame()
-    # self.panel.setFrame_display_( ((px,py),(300,97)), True )
-    self.panel.setContentSize_( (300,97) )
-    (px,py),(pw,ph) = self.panel.frame()
+    # pdb.set_trace()
 
-    # Height of the window. Each element has a height of 21.
+    # reset panel
+    self.panel.setContentSize_( (300,97) )
+    (panelx,panely),(panelwidth,panelheight) = self.panel.frame()
+
+    # Height of the window. Each element has a height of ctrlheight.
     # The extra "fluff" is 38 pixels.
-    # ph = len(self.vars) * 21 + 54
-    ph = varsheight + ctrlfluff
-    print("panelheight: ", ph )
+    # panelheight = len(self.vars) * 21 + 54
+    panelheight = varsheight + ctrlfluff
+    print("panelheight: ", panelheight )
+
+    # self.panel.setMinSize_( (300, panelheight) )
 
     # Start of first element
     # First element is the height minus the fluff.
-    # y = ph - 49
-    y = ph - ( ctrlheader + ctrlfooter )
+    # y = panelheight - 49
+    y = panelheight - ( ctrlheader + ctrlfooter )
     cnt = 0
     widthlabel = 0
     widthctrl = 0
 
-    # NUMBER = 1 TEXT = 2 BOOLEAN = 3 BUTTON = 4 MENU = 5
     for v in self.vars:
         if v.type == graphics.NUMBER:
             l = self.addLabel_y_ctrl_width_(v, y, cnt, widthlabel)
@@ -6307,35 +6318,42 @@ class DashboardController(NSObject):
             v.control = (l,c)
 
         elif v.type == graphics.BOOLEAN:
-            l = "switch"
             c = self.addSwitch_y_ctrl_width_(v, y, cnt, widthctrl)
-            v.control = (l,c)
+            v.control = (None,c)
 
         elif v.type == graphics.BUTTON:
-            l = "button"
             c = self.addButton_y_ctrl_width_(v, y, cnt, widthctrl)
-            v.control = (l,c)
+            v.control = (None,c)
 
         elif v.type == graphics.MENU:
             l = self.addLabel_y_ctrl_width_(v, y, cnt, widthlabel)
             c = self.addMenu_y_ctrl_width_(v, y, cnt, widthctrl)
             v.control = (l,c)
+        print("cnt/y  %i   %i" % (cnt, y) )
         y -= ctrlheight
         cnt += 1
-    self.panel.setFrame_display_animate_( ((px,py),(pw,ph)), True, 0 )
+
+    self.panel.setFrame_display_animate_( ((panelx,panely),(panelwidth,panelheight)), True, 0 )
+
+    # debug
+    if kwdbg:
+        for i,v in enumerate(self.vars):
+            l,c = v.control
+            print( (i,c.frame()) )
+
 
 </t>
 <t tx="karstenw.20170704105051.9">def addLabel_y_ctrl_width_(self, v, y, cnt, width):
     control = NSTextField.alloc().init()
-    control.setFrame_( ((0,y),(100,13)) )
+    control.setFrame_( ((0,y),(100,16)) )
     control.setStringValue_(v.name + ":")
     control.setAlignment_(NSRightTextAlignment)
     control.setEditable_(False)
     control.setBordered_(False)
     control.setDrawsBackground_(False)
     control.setFont_(SMALL_FONT)
+    # control.setAutoresizingMask_( AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
-    control.setAutoresizingMask_( AppKit.NSViewMaxYMargin )
     return control
 
 </t>
@@ -9035,8 +9053,8 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     control.setTarget_(self)
     control.setTag_(cnt)
     control.setAction_(objc.selector(self.menuSelected_, signature="v@:@@"))
+    # control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
-    control.setAutoresizingMask_( AppKit.NSViewWidthSizable + AppKit.NSViewMaxYMargin )
     return control
 
 </t>
