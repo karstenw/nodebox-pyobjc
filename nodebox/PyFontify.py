@@ -30,6 +30,7 @@ sublist is not used, hence always None.
 
 __version__ = "0.5"
 
+import io
 import re
 
 from . import graphics
@@ -159,7 +160,7 @@ def fontify(pytext, searchfrom=0, searchto=None):
 
 
 def test(path):
-    f = open(path)
+    f = io.open(path, 'r', encoding="utf-8")
     text = f.read()
     f.close()
     for tag, start, end, sublist in fontify(text):

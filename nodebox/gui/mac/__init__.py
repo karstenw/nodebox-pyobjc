@@ -1,5 +1,6 @@
 import sys
 import os
+import io
 import traceback, linecache
 import re
 import objc
@@ -204,6 +205,7 @@ class NodeBoxDocument(NSDocument):
         return "NodeBoxDocument"
 
     def init(self):
+        # pdb.set_trace()
         self = super(NodeBoxDocument, self).init()
         nc = NSNotificationCenter.defaultCenter()
         nc.addObserver_selector_name_object_(self,
@@ -249,6 +251,7 @@ class NodeBoxDocument(NSDocument):
         self.outputView.setFont_(font)
 
     def readFromFile_ofType_(self, path, tp):
+        # pdb.set_trace()
         if self.textView is None:
             # we're not yet fully loaded
             self.path = path
@@ -265,6 +268,7 @@ class NodeBoxDocument(NSDocument):
         return True
 
     def windowControllerDidLoadNib_(self, controller):
+        # pdb.set_trace()
         if self.path:
             self.readFromUTF8_(self.path)
         font = PyDETextView.getBasicTextAttributes()[NSFontAttributeName]
@@ -292,7 +296,8 @@ class NodeBoxDocument(NSDocument):
 
 
     def readFromUTF8_(self, path):
-        f = open(path)
+        # pdb.set_trace()
+        f = io.open(path, 'r', encoding="utf-8")
         s = f.read()
         f.close()
         text = makeunicode( s )
@@ -467,7 +472,7 @@ class NodeBoxDocument(NSDocument):
             timer = NSTimer.scheduledTimerWithTimeInterval_target_selector_userInfo_repeats_
             self.animationTimer = timer(1.0 / self.speed,
                                         self,
-                                        objc.selector(self.doFrame, signature="v@:@"),
+                                        objc.selector(self.doFrame, signature=b"v@:@"),
                                         None,
                                         True)
 
@@ -844,7 +849,7 @@ class NodeBoxDocument(NSDocument):
         except:
             pass
         try:
-            fp = open(fname, 'w')
+            fp = io.open(fname, 'wb')
             fp.close()
         except:
             errorAlert("File Error", ("Could not create file '%s'. "

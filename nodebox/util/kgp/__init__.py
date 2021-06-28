@@ -77,7 +77,8 @@ def openAnything(source):
     
     # try to open with native open function (if source is pathname)
     try:
-        return open(source)
+        pdb.set_trace()
+        return io.open(source, 'rb')
     except (IOError, OSError):
         pass
     
