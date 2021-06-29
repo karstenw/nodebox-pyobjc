@@ -17,7 +17,7 @@ import pdb
 kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = False
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -261,9 +261,10 @@ class NodeBoxDocument(NSDocument):
         return True
 
     def writeToFile_ofType_(self, path, tp):
-        f = file(path, "w")
+        # pdb.set_trace()
+        f = io.open(path, "wb")
         text = self.textView.string()
-        f.write(text.encode("utf8"))
+        f.write( text.encode("utf8") )
         f.close()
         return True
 
@@ -306,6 +307,7 @@ class NodeBoxDocument(NSDocument):
         self.textView.usesTabs = "\t" in text
         
     def cleanRun_newSeed_buildInterface_(self, fn, newSeed, buildInterface):
+        # pdb.set_trace()
         self.animationSpinner.startAnimation_(None)
 
         # Prepare everything for running the script
@@ -349,6 +351,7 @@ class NodeBoxDocument(NSDocument):
 
 
     def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
+        # pdb.set_trace()
         # Check if there is code to run
         if self._code is None:
             return False

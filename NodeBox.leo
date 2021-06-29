@@ -24,12 +24,12 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210323114020.1"><vh>init</vh></v>
@@ -52,8 +52,8 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
@@ -161,7 +161,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104730.1" a="E"><vh>@clean nodebox/graphics/bezier.py</vh>
+<v t="karstenw.20170704104730.1"><vh>@clean nodebox/graphics/bezier.py</vh>
 <v t="karstenw.20170704104742.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104742.2"><vh>segment_lengths</vh></v>
 <v t="karstenw.20170704104742.3"><vh>length</vh></v>
@@ -173,7 +173,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -380,10 +380,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -395,7 +395,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -523,7 +523,7 @@
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
-<v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
+<v t="karstenw.20170704105051.2" a="E"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
 <v t="karstenw.20170704105051.5"><vh>textChanged_</vh></v>
@@ -650,8 +650,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
@@ -693,7 +693,7 @@
 <v t="karstenw.20170704105353.15"><vh>_copy_attr</vh></v>
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
 </v>
-<v t="karstenw.20170704105406.1" a="E"><vh>kgp</vh>
+<v t="karstenw.20170704105406.1"><vh>kgp</vh>
 <v t="karstenw.20170704105442.1" a="E"><vh>@clean nodebox/util/kgp/__init__.py</vh>
 <v t="karstenw.20170704105455.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105455.2"><vh>openAnything</vh></v>
@@ -762,7 +762,7 @@
 <v t="karstenw.20170704105528.36"><vh>genProgram</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105416.1" a="E"><vh>QTSupport</vh>
+<v t="karstenw.20170704105416.1"><vh>QTSupport</vh>
 <v t="karstenw.20170704105551.1" a="E"><vh>@clean nodebox/util/QTSupport/__init__.py</vh>
 <v t="karstenw.20170704105603.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105603.2" a="E"><vh>class Movie</vh>
@@ -773,7 +773,7 @@
 <v t="karstenw.20170704105603.6"><vh>test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105619.1" a="E"><vh>@clean nodebox/util/vdiff.py</vh>
+<v t="karstenw.20170704105619.1"><vh>@clean nodebox/util/vdiff.py</vh>
 <v t="karstenw.20170704105642.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105642.2"><vh>format_stats</vh></v>
 <v t="karstenw.20170704105642.3"><vh>format_stats_list</vh></v>
@@ -1295,7 +1295,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.33'
+<t tx="karstenw.20170704104119.1">__version__='1.10.0a'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -4735,7 +4735,7 @@ import pdb
 kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = False
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -4929,9 +4929,10 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.14">def writeToFile_ofType_(self, path, tp):
-    f = file(path, "w")
+    # pdb.set_trace()
+    f = io.open(path, "wb")
     text = self.textView.string()
-    f.write(text.encode("utf8"))
+    f.write( text.encode("utf8") )
     f.close()
     return True
 
@@ -4977,6 +4978,7 @@ def showLibrary_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.17">def cleanRun_newSeed_buildInterface_(self, fn, newSeed, buildInterface):
+    # pdb.set_trace()
     self.animationSpinner.startAnimation_(None)
 
     # Prepare everything for running the script
@@ -8141,7 +8143,13 @@ latest version.
 from __future__ import print_function
 
 import sys
-import urllib
+
+try:
+    import urllib2
+    urlopen = urllib2.urlopen
+except ModuleNotFoundError:
+    import urllib.request
+    urlopen = urllib.request.urlopen
 from xml.dom import minidom
 import random
 import getopt
@@ -8302,13 +8310,13 @@ _debug = 0
 
     # try to open with urllib (if source is http, ftp, or file URL)
     try:
-        return urllib.urlopen(source)
+        return urlopen(source)
     except (IOError, OSError):
         pass
     
     # try to open with native open function (if source is pathname)
     try:
-        pdb.set_trace()
+        # pdb.set_trace()
         return io.open(source, 'rb')
     except (IOError, OSError):
         pass
@@ -9093,6 +9101,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
 
 </t>
 <t tx="karstenw.20170709154311.1">def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
+    # pdb.set_trace()
     # Check if there is code to run
     if self._code is None:
         return False

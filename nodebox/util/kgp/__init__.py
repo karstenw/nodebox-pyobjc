@@ -24,7 +24,13 @@ latest version.
 from __future__ import print_function
 
 import sys
-import urllib
+
+try:
+    import urllib2
+    urlopen = urllib2.urlopen
+except ModuleNotFoundError:
+    import urllib.request
+    urlopen = urllib.request.urlopen
 from xml.dom import minidom
 import random
 import getopt
@@ -71,13 +77,13 @@ def openAnything(source):
 
     # try to open with urllib (if source is http, ftp, or file URL)
     try:
-        return urllib.urlopen(source)
+        return urlopen(source)
     except (IOError, OSError):
         pass
     
     # try to open with native open function (if source is pathname)
     try:
-        pdb.set_trace()
+        # pdb.set_trace()
         return io.open(source, 'rb')
     except (IOError, OSError):
         pass
