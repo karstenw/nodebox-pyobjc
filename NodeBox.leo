@@ -55,7 +55,7 @@
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -651,7 +651,7 @@
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
 <v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
@@ -682,7 +682,7 @@
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
 </v>
-<v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20171218183025.1"><vh>IMAGE FUNCTIONS</vh>
 <v t="karstenw.20180202050130.1"><vh>aspectRatio</vh></v>
 <v t="karstenw.20171218183032.1"><vh>palette</vh></v>
 <v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
@@ -799,7 +799,7 @@
 </v>
 <v t="karstenw.20180202040514.1" a="E"><vh>libs</vh>
 <v t="karstenw.20180202040520.1" a="E"><vh>bwdithering</vh>
-<v t="karstenw.20180202040559.1" a="E"><vh>@clean libs/bwdithering/bwdithering.c</vh>
+<v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
 <v t="karstenw.20210320110747.1"><vh>py2/3 defs</vh></v>
 <v t="karstenw.20210630165621.1"><vh>py 2/3 format strings</vh></v>
@@ -835,7 +835,7 @@
 </v>
 </v>
 <v t="karstenw.20210320115101.1" a="E"><vh>fractal</vh>
-<v t="karstenw.20210320115106.1" a="E"><vh>@clean libs/fractal/fractal.c</vh>
+<v t="karstenw.20210320115106.1"><vh>@clean libs/fractal/fractal.c</vh>
 <v t="karstenw.20210320115212.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320110747.1"></v>
 <v t="karstenw.20210630171229.1"><vh>py 2/3 format strings</vh></v>
@@ -1298,7 +1298,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.10.0a'
+<t tx="karstenw.20170704104119.1">__version__='1.10.0b'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -2302,6 +2302,9 @@ def colormode(self, mode=None, range=None):
 # Refer to the "Use" section on http://nodebox.net/code
 # Thanks to Dr. Florimond De Smedt at the Free University of Brussels for the math routines.
 
+from __future__ import print_function
+
+import pdb
 
 @others
 if __name__=='__main__':
@@ -2467,9 +2470,10 @@ except:
     (0, 1.0, Point(x=0.000, y=0.000))
     """
     
+    
     if segments == None:
-        segments = path.segmentlengths(relative=True)
-        
+        segments = list( path.segmentlengths(relative=True) )
+    
     if len(segments) == 0:
         raise NodeBoxError("The given path is empty")
     
@@ -4342,7 +4346,8 @@ transform = property(_get_transform)
 
 </t>
 <t tx="karstenw.20170704104751.65">def segmentlengths(self, relative=False, n=10):
-    import bezier
+    # import bezier
+    from nodebox.graphics import bezier
     if relative: # Use the opportunity to store the segment cache.
         if self._segment_cache is None:
             self._segment_cache = bezier.segment_lengths(self,
@@ -4353,18 +4358,22 @@ transform = property(_get_transform)
 
 </t>
 <t tx="karstenw.20170704104751.66">def _get_length(self, segmented=False, n=10):
-    import bezier
+    # import bezier
+    from nodebox.graphics import bezier
     return bezier.length(self, segmented=segmented, n=n)
 length = property(_get_length)
     
 </t>
 <t tx="karstenw.20170704104751.67">def point(self, t):
-    import bezier
+    # import bezier
+    from nodebox.graphics import bezier
     return bezier.point(self, t)
     
 </t>
 <t tx="karstenw.20170704104751.68">def points(self, amount=100):
-    import bezier
+    # import bezier
+    from nodebox.graphics import bezier
+    # print( "bezier:", bezier.__file__ )
     if len(self) == 0:
         raise NodeBoxError("The given path is empty")
 
@@ -4383,7 +4392,8 @@ length = property(_get_length)
         
 </t>
 <t tx="karstenw.20170704104751.69">def addpoint(self, t):
-    import bezier
+    # import bezier
+    from nodebox.graphics import bezier
     self._nsBezierPath = bezier.insert_point(self, t)._nsBezierPath
     self._segment_cache = None
 
@@ -4735,10 +4745,10 @@ pp = pprint.pprint
 
 import pdb
 
-kwdbg = True
+kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = False
 
 # if true print out some debug info on stdout
 kwlog = True
