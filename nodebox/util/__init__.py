@@ -32,7 +32,8 @@ __all__ = (
     'datestring','makeunicode', 'filelist', 'imagefiles',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
-    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage')
+    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage',
+    'sortlistfunction')
 
 
 # py3 stuff
@@ -49,6 +50,33 @@ except NameError:
     punichr = chr
     long = int
     xrange = range
+
+def cmp_to_key(mycmp):
+    'Convert a cmp= function into a key= function'
+    class K:
+        def __init__(self, obj, *args):
+            self.obj = obj
+        def __lt__(self, other):
+            return mycmp(self.obj, other.obj) < 0
+        def __gt__(self, other):
+            return mycmp(self.obj, other.obj) > 0
+        def __eq__(self, other):
+            return mycmp(self.obj, other.obj) == 0
+        def __le__(self, other):
+            return mycmp(self.obj, other.obj) <= 0
+        def __ge__(self, other):
+            return mycmp(self.obj, other.obj) >= 0
+        def __ne__(self, other):
+            return mycmp(self.obj, other.obj) != 0
+    return K
+
+
+def sortlistfunction(thelist, thecompare):
+    if py3:
+        sortkeyfunction = cmp_to_key( thecompare )
+        thelist.sort( key=sortkeyfunction )
+    else:
+        thelist.sort( thecompare )
 
 g_voicetrash = []
 
@@ -507,7 +535,7 @@ def tempimagepath(mode='w+b', suffix='.png'):
 
 def dithertypes():
     """Return names of all supported dither types."""
-    return _dithertypes.keys()
+    return list(_dithertypes.keys())
 
 
 def ditherimage(pathOrPILimgage, dithertype, threshhold):
@@ -516,7 +544,7 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
 
     t = type(pathOrPILimgage)
 
-    if dithertype in _dithertypes:
+    if dithertype in list(_dithertypes):
         dithername = dithertype
         ditherid = _dithertypes.get( dithertype )
     elif dithertype in _ditherIDs:
@@ -532,9 +560,13 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
     else:
         img = pathOrPILimgage
 
+    # pdb.set_trace()
+
     w, h = img.size
     bin = img.tobytes(encoder_name='raw')
+    resultimg = bytearray( len(bin) )
     result = dither(bin, w, h, ditherid, threshhold)
+    # result = dither(bin, resultimg, w, h, ditherid, threshhold)
 
     out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
 

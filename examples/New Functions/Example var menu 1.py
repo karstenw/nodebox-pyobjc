@@ -1,3 +1,7 @@
+
+
+from __future__ import print_function
+
 size(800,700)
 background(0.7)
 
@@ -20,11 +24,6 @@ randomfont = "--RANDOM FONT--"
 fontMenu = [ randomfont ]
 fontMenu.extend( fonts )
 currentFont = randomfont
-
-
-# cycle through chars again and again
-zeichenquelle = itertools.cycle( chars )
-
 
 def selectFont( fontname ):
     global currentFont
@@ -84,15 +83,18 @@ def marker(p, style):
     strokewidth( oldstrokewidth )
     stroke( oldstroke )
 
-
+i = 0
 def draw():
+    global i
     background( 0.7 )
     
     if currentFont == randomfont:
         f = choice( fonts )
     else:
         f = currentFont
-    char = zeichenquelle.next()
+
+    char = chars[ i % len(chars) ]
+    i += 1
     fontsize( 450 )
 
     tp = textpath(char, 200, 500, width=WIDTH, font=f)
@@ -105,7 +107,7 @@ def draw():
     s = u"%s  %s" % (char, f)
     fill(1)
     text(s, 10, 35, outline=False)
-    print f
+    print( f )
 
     # remember last point
     currentpoint = (0,0)

@@ -5,6 +5,9 @@
 # Refer to the "Use" section on http://nodebox.net/code
 # Thanks to Dr. Florimond De Smedt at the Free University of Brussels for the math routines.
 
+from __future__ import print_function
+
+import pdb
 
 from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point
 from nodebox.graphics import MOVETO, LINETO, CURVETO, CLOSE
@@ -158,9 +161,10 @@ def _locate(path, t, segments=None):
     (0, 1.0, Point(x=0.000, y=0.000))
     """
     
+    
     if segments == None:
-        segments = path.segmentlengths(relative=True)
-        
+        segments = list( path.segmentlengths(relative=True) )
+    
     if len(segments) == 0:
         raise NodeBoxError("The given path is empty")
     

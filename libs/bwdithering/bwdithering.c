@@ -38,6 +38,13 @@ enum {
   #define MOD_DEF(ob, name, doc, methods) \
     ob = Py_InitModule3(name, methods, doc);
 #endif
+#if PY_MAJOR_VERSION >= 3
+  #define IN_FORMAT "y#iiii"
+  #define OUT_FORMAT "y#"
+#else
+  #define IN_FORMAT "s#iiii"
+  #define OUT_FORMAT "s#"
+#endif
 static int arrayindex(int x, int y, int w){
     return (y * w + x);
 }
@@ -508,10 +515,19 @@ dither(PyObject *self, PyObject *args) {
     ERRBUFTYPE *errorBuffer, errdiv, newval, errval;
     const unsigned char *sourceImage;
     unsigned char *resultImage;
+    // unsigned char *sourceImage, *resultImage;
     PyObject *result;
 
-    if (!PyArg_ParseTuple(args, "s#iiii", &sourceImage, &count, &w, &h, &type, &treshhold)) {
+    if (!PyArg_ParseTuple(args, IN_FORMAT, &sourceImage, &count, &w, &h, &type, &treshhold)) {
         return (NULL);
+    }
+    
+    if (!count) {
+        printf("count %d\n" , count);
+        printf("w %d\n" , w);
+        printf("h %d\n" , h);
+        printf("type %d\n" , type);
+        printf("treshhold %d\n" , treshhold);
     }
 
     // create the buffers
@@ -558,7 +574,7 @@ dither(PyObject *self, PyObject *args) {
     }
 
     // build the return value
-    result = Py_BuildValue("s#", resultImage, count);
+    result = Py_BuildValue(OUT_FORMAT, resultImage, count);
     free(errorBuffer);
     free(resultImage);
     return result;

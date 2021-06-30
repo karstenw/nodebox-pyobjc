@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import math
 import time
 
@@ -144,13 +147,13 @@ def handlecoordinate(value, name):
     elif name == "delta":
         delta = float(value)
         zoom = 1 / delta
-        #print "delta", delta
-        #print "zoom", zoom
+        #print( "delta", delta )
+        #print( "zoom", zoom )
     elif name == "zoom":
         zoom = float(value)
         delta = 1 / zoom
-        #print "delta", delta
-        #print "zoom", zoom
+        #print( "delta", delta )
+        #print( "zoom", zoom )
     elif name == "iterations":
         iterations = int( value )
     elif name == "const_real":
@@ -258,7 +261,7 @@ def render(fsize, xpos, ypos, d, i, const_real, const_imag, limit):
     bytes = makeImage( pixels, W, H)
     image(None, 0, 0, data=bytes)
 
-    print "%ix%i = %i pixel in %.4fs" % (W,H,W*H,time.time()-start )
+    print( "%ix%i = %i pixel in %.4fs" % (W,H,W*H,time.time()-start ) )
 
 
 render(fsize, xpos, ypos, delta, iterations, const_real, const_imag, limit)

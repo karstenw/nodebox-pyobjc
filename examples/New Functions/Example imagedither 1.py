@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import os
 import random as rnd
 import time
@@ -44,14 +47,14 @@ def convert(img, dithtype, threshhold):
     w,h = imagesize( path )
     size(w,h)
     image(path, 0,0)
-    print "IN:", img
-    print "OUT:", path
-    print "Dithertype:", Dithertype
-    print "Threshhold:", Threshhold
+    print( "IN:", img )
+    print( "OUT:", path )
+    print( "Dithertype:", Dithertype )
+    print( "Threshhold:", Threshhold )
     w,h = imagesize( img )
-    print "SIZE:", w, h
-    print "TIME: %.4f" % ( round(stoptime-starttime, 4) )
-    print
+    print( "SIZE:", w, h)
+    print( "TIME: %.4f" % ( round(stoptime-starttime, 4) ))
+    print()
     os.remove(path)
 
 convert(img, Dithertype, Threshhold)

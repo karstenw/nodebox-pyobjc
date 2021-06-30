@@ -1,8 +1,8 @@
+
+from __future__ import print_function
+
 import math
 import pdb
-
-
-
 
 
 # this function handles ALL var changes
@@ -38,9 +38,9 @@ def drawit(x1,y1,x2,y2,d,a):
 
     x3,y3 = reflect(x1,y1,x2,y2,d=d,a=a)
     if 0:
-        print "(x1,y1,x2,y2,d,a)", (x1,y1,x2,y2,d,a)
-        print "x3,y3", x3,y3
-        print
+        print( "(x1,y1,x2,y2,d,a)", (x1,y1,x2,y2,d,a) )
+        print( "x3,y3", x3,y3 )
+        print()
 
     # reflection marker
     stroke(1,0,0)
@@ -55,9 +55,9 @@ def drawit(x1,y1,x2,y2,d,a):
     lx,ly = 50, 30
     fill(0)
     fontsize(14)
-    s = "reflect(x0=%.1f, y0=%.1f, x1=%.1f, y1=%.1f, d=%.1f, a=%.1f) = (%.1f, %.1f)" % (x1,y1,x2,y2,d,a,x3,y3)
+    s = "reflect(x0=%.2f, y0=%.2f, x1=%.2f, y1=%.2f, d=%.2f, a=%.2f) = (%.2f, %.2f)" % (x1,y1,x2,y2,d,a,x3,y3)
     text(s, lx, ly)
-    print s
+    # print( s )
 
 
 var("x1", NUMBER, default=300, min=0, max=600, handler=params)

@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 # background(0.8)
 background(None)
 
@@ -71,8 +74,8 @@ def getsegment( segment, start, end, reverse):
     cosr = math.cos(r)
     sinr = math.sin(r)
 
-    #print "scale:", s
-    #print "angle:", a
+    #print("scale:", s)
+    #print("angle:", a)
     result = []
 
     for p in seg:
@@ -324,7 +327,7 @@ def generate(x,y,r,s, horver=True):
 
 def tileReptiles( x,y, orientation, radius, hexType, *rectangle):
     items = hexfill( x,y, orientation, radius, hexType, *rectangle)
-    print "#items:",len(items)
+    print("#items:",len(items))
     for item in items:
         px, py, ps = item
         rd = reptile( px, py, radius, 0, ps, hexType)

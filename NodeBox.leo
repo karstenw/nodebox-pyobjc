@@ -24,8 +24,8 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
@@ -36,15 +36,15 @@
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1"><vh>geo</vh>
-<v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
+<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
+<v t="karstenw.20170704104531.1" a="E"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
 <v t="karstenw.20170726154315.1"><vh>C Functions</vh></v>
 <v t="karstenw.20170726133907.1"><vh>benchmark</vh></v>
 <v t="karstenw.20170704104618.2"><vh>reflect</vh></v>
 </v>
-<v t="karstenw.20170704104605.1"><vh>@clean nodebox/geo/pathmatics.py</vh>
+<v t="karstenw.20170704104605.1" a="E"><vh>@clean nodebox/geo/pathmatics.py</vh>
 <v t="karstenw.20170704104615.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104615.2"><vh>linepoint</vh></v>
 <v t="karstenw.20170704104615.3"><vh>linelength</vh></v>
@@ -52,10 +52,10 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -67,7 +67,7 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
@@ -82,7 +82,7 @@
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
 </v>
-<v t="karstenw.20170709143301.1" a="E"><vh>## Primitives ##</vh>
+<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
 <v t="karstenw.20170704104725.25"><vh>arc</vh></v>
@@ -92,7 +92,7 @@
 <v t="karstenw.20170704104725.29"><vh>_arrow</vh></v>
 <v t="karstenw.20170704104725.30"><vh>_arrow45</vh></v>
 </v>
-<v t="karstenw.20170709143318.1" a="E"><vh>## Path Commands ##</vh>
+<v t="karstenw.20170709143318.1"><vh>## Path Commands ##</vh>
 <v t="karstenw.20170704104725.31"><vh>beginpath</vh></v>
 <v t="karstenw.20170704104725.32"><vh>moveto</vh></v>
 <v t="karstenw.20170704104725.33"><vh>lineto</vh></v>
@@ -107,7 +107,7 @@
 <v t="karstenw.20170704104725.40"><vh>beginclip</vh></v>
 <v t="karstenw.20170704104725.41"><vh>endclip</vh></v>
 </v>
-<v t="karstenw.20170709143354.1" a="E"><vh>## Transformation Commands ##</vh>
+<v t="karstenw.20170709143354.1"><vh>## Transformation Commands ##</vh>
 <v t="karstenw.20170704104725.42"><vh>push</vh></v>
 <v t="karstenw.20170704104725.43"><vh>pop</vh></v>
 <v t="karstenw.20170704104725.44"><vh>transform</vh></v>
@@ -127,11 +127,11 @@
 <v t="karstenw.20170704104726.8"><vh>stroke</vh></v>
 <v t="karstenw.20170704104726.9"><vh>strokewidth</vh></v>
 </v>
-<v t="karstenw.20170709143705.1" a="E"><vh>## Path Style Commands ##</vh>
+<v t="karstenw.20170709143705.1"><vh>## Path Style Commands ##</vh>
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -312,7 +312,7 @@
 <v t="karstenw.20170704104751.126"><vh>_normalize</vh></v>
 <v t="karstenw.20170704104751.127"><vh>_normalizeList</vh></v>
 </v>
-<v t="karstenw.20170704104751.128" a="E"><vh>class Transform</vh>
+<v t="karstenw.20170704104751.128"><vh>class Transform</vh>
 <v t="karstenw.20170704104751.129"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.130"><vh>_get_transform</vh></v>
 <v t="karstenw.20170704104751.131"><vh>set</vh></v>
@@ -332,7 +332,7 @@
 <v t="karstenw.20170704104751.145"><vh>transformPoint</vh></v>
 <v t="karstenw.20170704104751.146"><vh>transformBezierPath</vh></v>
 </v>
-<v t="karstenw.20170704104751.147" a="E"><vh>class Image</vh>
+<v t="karstenw.20170704104751.147"><vh>class Image</vh>
 <v t="karstenw.20170704104751.148"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.149"><vh>_get_image</vh></v>
 <v t="karstenw.20170704104751.150"><vh>copy</vh></v>
@@ -350,7 +350,7 @@
 <v t="karstenw.20170704104751.161"><vh>_get_metrics</vh></v>
 <v t="karstenw.20170704104751.162"><vh>_get_path</vh></v>
 </v>
-<v t="karstenw.20170704104751.163" a="E"><vh>class Variable</vh>
+<v t="karstenw.20170704104751.163"><vh>class Variable</vh>
 <v t="karstenw.20170704104751.164"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.165"><vh>sanitize</vh></v>
 <v t="karstenw.20170704104751.166"><vh>compliesTo</vh></v>
@@ -380,10 +380,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -395,7 +395,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -650,10 +650,11 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
@@ -796,11 +797,12 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20180202040514.1"><vh>libs</vh>
+<v t="karstenw.20180202040514.1" a="E"><vh>libs</vh>
 <v t="karstenw.20180202040520.1" a="E"><vh>bwdithering</vh>
 <v t="karstenw.20180202040559.1" a="E"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
 <v t="karstenw.20210320110747.1"><vh>py2/3 defs</vh></v>
+<v t="karstenw.20210630165621.1"><vh>py 2/3 format strings</vh></v>
 <v t="karstenw.20180202040628.1"><vh>int arrayindex</vh></v>
 <v t="karstenw.20180202040628.2"><vh>void distributeError(x, y, w, h, type, errval, destImage, errorBuffer)</vh></v>
 <v t="karstenw.20180202040628.3"><vh>static PyObject dither(self, args)</vh></v>
@@ -836,6 +838,7 @@
 <v t="karstenw.20210320115106.1" a="E"><vh>@clean libs/fractal/fractal.c</vh>
 <v t="karstenw.20210320115212.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320110747.1"></v>
+<v t="karstenw.20210630171229.1"><vh>py 2/3 format strings</vh></v>
 <v t="karstenw.20210320115155.1"><vh>static PyObject</vh></v>
 <v t="karstenw.20210320115155.2"><vh>static PyMethodDef</vh></v>
 <v t="karstenw.20210320115155.3"><vh>int main</vh></v>
@@ -871,7 +874,7 @@
 <v t="karstenw.20210320120934.1"><vh>Declarations</vh></v>
 </v>
 </v>
-<v t="karstenw.20210320120741.1" a="E"><vh>polymagic</vh>
+<v t="karstenw.20210320120741.1"><vh>polymagic</vh>
 <v t="karstenw.20210320123535.1"><vh>@clean libs/polymagic/gpc.h</vh>
 <v t="karstenw.20210320125516.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320123811.1"><vh>typedef enum</vh></v>
@@ -927,7 +930,7 @@
 <v t="karstenw.20210320123814.43"><vh>void gpc_polygon_to_tristrip</vh></v>
 <v t="karstenw.20210320123814.44"><vh>void gpc_tristrip_clip</vh></v>
 </v>
-<v t="karstenw.20210320123639.1" a="E"><vh>@clean libs/polymagic/polymagic.m</vh>
+<v t="karstenw.20210320123639.1"><vh>@clean libs/polymagic/polymagic.m</vh>
 <v t="karstenw.20210320131053.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320110747.1"></v>
 <v t="karstenw.20210320130456.1"><vh>kib functionl</vh></v>
@@ -4735,7 +4738,7 @@ import pdb
 kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -5018,7 +5021,7 @@ def showLibrary_(self, sender):
     self.speed = self.canvas.speed = None
 
 </t>
-<t tx="karstenw.20170704105032.19">def fastRun_newSeed_(self, fn, newSeed = False):
+<t tx="karstenw.20170704105032.19">def fastRun_newSeed_(self, fn, newSeed=False):
     """This is the old signature. Dispatching to the new with args"""
     return self.fastRun_newSeed_args_( fn, newSeed, [])
 
@@ -5219,6 +5222,8 @@ def stopScript_(self, sender=None):
          - A boolean indicating whether the run was successful
          - The OutputFile
     """
+
+    # pdb.set_trace()
 
     self.scriptName = self.fileName()
     libpath = LibraryFolder()
@@ -6097,7 +6102,11 @@ class AskStringWindowController(AppKit.NSWindowController):
 <t tx="karstenw.20170704105051.1">
 
 from __future__ import print_function
+
 import pdb
+kwdbg = False
+
+
 import AppKit
 
 NSObject = AppKit.NSObject
@@ -6316,7 +6325,7 @@ class DashboardController(NSObject):
     # The extra "fluff" is 38 pixels.
     # panelheight = len(self.vars) * 21 + 54
     panelheight = varsheight + ctrlfluff
-    print("panelheight: ", panelheight )
+    # print("panelheight: ", panelheight )
     self.panel.setMinSize_( (panelwidth, panelheight) )
 
     # Start of first element
@@ -6363,12 +6372,6 @@ class DashboardController(NSObject):
         cnt += 1
 
     self.panel.setFrame_display_animate_( ((panelx,panely),(panelwidth,panelheight)), True, 0 )
-
-    # debug
-    if kwdbg:
-        for i,v in enumerate(self.vars):
-            l,c = v.control
-            print( (i,c.frame()) )
 
 
 </t>
@@ -7793,7 +7796,8 @@ __all__ = (
     'datestring','makeunicode', 'filelist', 'imagefiles',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
-    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage')
+    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage',
+    'sortlistfunction')
 
 
 </t>
@@ -9987,10 +9991,19 @@ dither(PyObject *self, PyObject *args) {
     ERRBUFTYPE *errorBuffer, errdiv, newval, errval;
     const unsigned char *sourceImage;
     unsigned char *resultImage;
+    // unsigned char *sourceImage, *resultImage;
     PyObject *result;
 
-    if (!PyArg_ParseTuple(args, "s#iiii", &amp;sourceImage, &amp;count, &amp;w, &amp;h, &amp;type, &amp;treshhold)) {
+    if (!PyArg_ParseTuple(args, IN_FORMAT, &amp;sourceImage, &amp;count, &amp;w, &amp;h, &amp;type, &amp;treshhold)) {
         return (NULL);
+    }
+    
+    if (!count) {
+        printf("count %d\n" , count);
+        printf("w %d\n" , w);
+        printf("h %d\n" , h);
+        printf("type %d\n" , type);
+        printf("treshhold %d\n" , treshhold);
     }
 
     // create the buffers
@@ -10037,7 +10050,7 @@ dither(PyObject *self, PyObject *args) {
     }
 
     // build the return value
-    result = Py_BuildValue("s#", resultImage, count);
+    result = Py_BuildValue(OUT_FORMAT, resultImage, count);
     free(errorBuffer);
     free(resultImage);
     return result;
@@ -10302,7 +10315,7 @@ setup (name = "cGeo",
 
     t = type(pathOrPILimgage)
 
-    if dithertype in _dithertypes:
+    if dithertype in list(_dithertypes):
         dithername = dithertype
         ditherid = _dithertypes.get( dithertype )
     elif dithertype in _ditherIDs:
@@ -10318,9 +10331,13 @@ setup (name = "cGeo",
     else:
         img = pathOrPILimgage
 
+    # pdb.set_trace()
+
     w, h = img.size
     bin = img.tobytes(encoder_name='raw')
+    resultimg = bytearray( len(bin) )
     result = dither(bin, w, h, ditherid, threshhold)
+    # result = dither(bin, resultimg, w, h, ditherid, threshhold)
 
     out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
 
@@ -10345,7 +10362,7 @@ setup (name = "cGeo",
 </t>
 <t tx="karstenw.20180207131514.1">def dithertypes():
     """Return names of all supported dither types."""
-    return _dithertypes.keys()
+    return list(_dithertypes.keys())
 
 
 </t>
@@ -10408,7 +10425,7 @@ fractalimage(PyObject *self, PyObject *args) {
     PyObject *result;
 
     // s# -&gt; 2vars; d double; 
-    if (!PyArg_ParseTuple(args, "s#iiiddddddd",
+    if (!PyArg_ParseTuple(args, IN_FORMAT,
                           &amp;clut, &amp;clutsize,
                           &amp;w, &amp;h, &amp;iterations, 
                           &amp;x1, &amp;y1, &amp;dx, &amp;dy, &amp;nreal, &amp;nimag, &amp;limit )) {
@@ -10471,7 +10488,7 @@ fractalimage(PyObject *self, PyObject *args) {
     }
 
     // build the return value
-    result = Py_BuildValue("s#", pixels, count);
+    result = Py_BuildValue(OUT_FORMAT, pixels, count);
     free(pixels);
     return result;
 }
@@ -14142,6 +14159,50 @@ def clearMessageArea_(self, sender):
         return function.func_code.co_argcount
 
 
+</t>
+<t tx="karstenw.20210630133918.1">def cmp_to_key(mycmp):
+    'Convert a cmp= function into a key= function'
+    class K:
+        def __init__(self, obj, *args):
+            self.obj = obj
+        def __lt__(self, other):
+            return mycmp(self.obj, other.obj) &lt; 0
+        def __gt__(self, other):
+            return mycmp(self.obj, other.obj) &gt; 0
+        def __eq__(self, other):
+            return mycmp(self.obj, other.obj) == 0
+        def __le__(self, other):
+            return mycmp(self.obj, other.obj) &lt;= 0
+        def __ge__(self, other):
+            return mycmp(self.obj, other.obj) &gt;= 0
+        def __ne__(self, other):
+            return mycmp(self.obj, other.obj) != 0
+    return K
+
+
+def sortlistfunction(thelist, thecompare):
+    if py3:
+        sortkeyfunction = cmp_to_key( thecompare )
+        thelist.sort( key=sortkeyfunction )
+    else:
+        thelist.sort( thecompare )
+
+</t>
+<t tx="karstenw.20210630165621.1">#if PY_MAJOR_VERSION &gt;= 3
+  #define IN_FORMAT "y#iiii"
+  #define OUT_FORMAT "y#"
+#else
+  #define IN_FORMAT "s#iiii"
+  #define OUT_FORMAT "s#"
+#endif
+</t>
+<t tx="karstenw.20210630171229.1">#if PY_MAJOR_VERSION &gt;= 3
+  #define IN_FORMAT "y#iiiddddddd"
+  #define OUT_FORMAT "y#"
+#else
+  #define IN_FORMAT "s#iiiddddddd"
+  #define OUT_FORMAT "s#"
+#endif
 </t>
 </tnodes>
 </leo_file>

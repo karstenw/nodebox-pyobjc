@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 size(1350, 550)
 # BitBop -- a fun demonstration of path.contains.
 #
@@ -13,7 +16,7 @@ fill(0.1, 0.1, 0.2)
 fonts = fontnames()
 fsize = 300
 f = choice( fonts )
-print f
+print( f )
 font(f, fsize)
 align(LEFT)
 tp = textpath("NodeBox", 0, fsize+80, width=WIDTH)

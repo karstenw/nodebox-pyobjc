@@ -1,7 +1,11 @@
 
 
 from __future__ import print_function
+
 import pdb
+kwdbg = False
+
+
 import AppKit
 
 NSObject = AppKit.NSObject
@@ -176,7 +180,7 @@ class DashboardController(NSObject):
         # The extra "fluff" is 38 pixels.
         # panelheight = len(self.vars) * 21 + 54
         panelheight = varsheight + ctrlfluff
-        print("panelheight: ", panelheight )
+        # print("panelheight: ", panelheight )
         self.panel.setMinSize_( (panelwidth, panelheight) )
 
         # Start of first element
@@ -223,12 +227,6 @@ class DashboardController(NSObject):
             cnt += 1
 
         self.panel.setFrame_display_animate_( ((panelx,panely),(panelwidth,panelheight)), True, 0 )
-
-        # debug
-        if kwdbg:
-            for i,v in enumerate(self.vars):
-                l,c = v.control
-                print( (i,c.frame()) )
 
 
     def addLabel_idx_frame_(self, v, cnt, frame):

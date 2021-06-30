@@ -1,5 +1,9 @@
+
+from __future__ import print_function
+
 background( None )
 size(1100,900)
+
 
 """Create a Escher squarelimit drawing."""
 
@@ -568,7 +572,7 @@ if __name__ == '__builtin__':
     scale(2)
 
     # The actual call:
-    squarelimit(fishpicture, 3)
+    squarelimit(fishpicture, 1)
     # squarelimit(insettrianglepicture, 8)
 
-    print "#pictures rendered:", no_of_pictures
+    print("#pictures rendered:", no_of_pictures)

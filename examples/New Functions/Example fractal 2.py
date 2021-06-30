@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import time
 import numpy
 from AppKit import NSBitmapImageRep, NSDeviceRGBColorSpace
@@ -67,8 +70,8 @@ render(imgsize,imgsize,
        2.7,
        256, 0.0,0.0,4.0)
 end = time.time()
-print "%i pixel in %.3f sec" % (imgsize*imgsize, end-start)
-print "%.3f pixel/sec" % ((imgsize*imgsize) / (end-start))
-print
+print( "%i pixel in %.3f sec" % (imgsize*imgsize, end-start) )
+print( "%.3f pixel/sec" % ((imgsize*imgsize) / (end-start)) )
+print()
 
 

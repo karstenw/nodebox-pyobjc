@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import pprint
 
 
@@ -5,7 +8,7 @@ import pprint
 v = voices()
 
 for voice in v:
-    print voice
+    print( voice )
 
     # get all attributes for voice
     attrs = voiceattributes(voice)
@@ -17,8 +20,8 @@ for voice in v:
         attrs.pop( u'VoiceSupportedCharacters', None )
 
     for attr in attrs:
-        print attr.ljust(30),
-        print attrs[attr]
+        print( attr.ljust(30), )
+        print( attrs[attr] )
     # pprint.pprint(attr)
-    print "-" * 80
-    print
+    print( "-" * 80 )
+    print()

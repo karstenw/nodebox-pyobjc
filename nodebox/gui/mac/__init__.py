@@ -17,7 +17,7 @@ import pdb
 kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -345,7 +345,7 @@ class NodeBoxDocument(NSDocument):
 
         self.speed = self.canvas.speed = None
 
-    def fastRun_newSeed_(self, fn, newSeed = False):
+    def fastRun_newSeed_(self, fn, newSeed=False):
         """This is the old signature. Dispatching to the new with args"""
         return self.fastRun_newSeed_args_( fn, newSeed, [])
 
@@ -592,6 +592,8 @@ class NodeBoxDocument(NSDocument):
              - A boolean indicating whether the run was successful
              - The OutputFile
         """
+
+        # pdb.set_trace()
 
         self.scriptName = self.fileName()
         libpath = LibraryFolder()

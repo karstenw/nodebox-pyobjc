@@ -7,7 +7,7 @@ def buttonhandler(val, name):
 
 def menuhandler( menuitem, name ):
     s = u'A menu was selected:  %s   %s' % (menuitem, name)
-    print( s.encode("utf-8") )
+    print( s )
     
 def numberHandler( n, name ):
     print( u"And the number is:", n, name)

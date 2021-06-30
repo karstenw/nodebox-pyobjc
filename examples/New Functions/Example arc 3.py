@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 size(800,800)
 import math
 
@@ -43,16 +46,16 @@ else:
     stepsize = 360.0 / arcs
 
 arcsize = stepsize / 2.0
-#print "stepsize:", stepsize
+#print( "stepsize:", stepsize )
 
 n = int(360.0 / stepsize)
-#print "n:", n
-#print "arcs:", arcs
-#print "radius:", radius
+#print( "n:", n )
+#print( "arcs:", arcs )
+#print( "radius:", radius )
 for i in range(n):
-    #print "i:", i
+    #print( "i:", i )
     start = i * stepsize
-    #print "start:", start
+    #print( "start:", start )
     end = start + arcsize
-    #print "end:", end
+    #print( "end:", end )
     arc(x, y, radius, start, end)
