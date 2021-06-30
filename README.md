@@ -5,9 +5,11 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.9.32
+The current version is 1.10.0b
 
-Download the compiled app from my [dropbox](http://goo.gl/dZDic5).
+Download the compiled app from my [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
+
+As of 2021-06-20 a transition to Python3.8 is underway. I intend to keep the source py2/py3 compatible as long as possible or at least as long as I care.
 
 As of 2018-05-05 and version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
 
@@ -18,7 +20,7 @@ Attention!
 
 ### The download includes the NodeBox-Library. When first starting NodeBox, go to the preferences and set the Library folder to the included folder.
 
-####Differences from the official version:
+#### Differences from the official version:
 
 1. Additional Commands (they were already in the original source but not active)
 	1.  `angle(x0, y0, x1, y1)`
@@ -51,7 +53,7 @@ Attention!
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
 
-1.  Uses Python 2.7.16 and PyObjC 5.2
+1.  Uses Python 2.7.18 and PyObjC 5.2 or Python 3.8.7 and PyObjC 6.2.2
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
@@ -117,6 +119,10 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+
+2021-06-30 Version 1.10.0b Compiles with python3. About 85% of all scripts run. Saves. The C-extensions fractal and bwdither run again. Many small fixes.
+
+2021-06-28 Version 1.10.0a Compiles with python3. About 50% of all scripts run. No Save. No C-extensions.
 
 2021-03-14 Version 1.9.33 Updated Library; bug fixes; enhanced photobot lib
 
