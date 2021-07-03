@@ -276,7 +276,7 @@ def points(path, amount=100):
     except ZeroDivisionError:
         delta = 1.0
 
-    for i in xrange(amount):
+    for i in range(amount):
         yield point(path, delta*i)
 
 
