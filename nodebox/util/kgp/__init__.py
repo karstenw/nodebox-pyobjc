@@ -24,6 +24,9 @@ latest version.
 from __future__ import print_function
 
 import sys
+import os
+import unicodedata
+
 
 try:
     import urllib2
@@ -34,8 +37,8 @@ except ModuleNotFoundError:
 from xml.dom import minidom
 import random
 import getopt
-from io import StringIO
-
+import io
+StringIO = io.StringIO
 
 
 __author__ = "Mark Pilgrim (f8dy@diveintopython.org)"
@@ -46,6 +49,34 @@ __license__ = "Python"
 
 
 _debug = 0
+
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
+
+def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
+    if type(s) not in ( pstr, punicode):
+        s = str(s)
+    if type(s) not in ( punicode, ):
+        try:
+            s = punicode(s, srcencoding)
+        except TypeError as err:
+            pass
+    if type(s) in ( punicode, ):
+        s = unicodedata.normalize(normalizer, s)
+    return s
+
 
 def openAnything(source):
     """URI, filename, or string --> stream
@@ -68,7 +99,6 @@ def openAnything(source):
     >>> doc = minidom.parse(sock)
     >>> sock.close()
     """
-
     if hasattr(source, "read"):
         return source
     
@@ -78,18 +108,21 @@ def openAnything(source):
     # try to open with urllib (if source is http, ftp, or file URL)
     try:
         return urlopen(source)
-    except (IOError, OSError):
+    except (IOError, OSError, ValueError):
         pass
     
     # try to open with native open function (if source is pathname)
     try:
-        # pdb.set_trace()
-        return io.open(source, 'rb')
+        path = makeunicode( source )
+        path = os.path.abspath( path )
+        # return io.open(source, 'rb')
+        return io.open(path, 'rb')
+
     except (IOError, OSError):
         pass
     
     # treat source as string
-    return StringIO.StringIO(str(source))
+    return StringIO( makeunicode(source) )
 
 class NoSourceError(Exception): pass
 
