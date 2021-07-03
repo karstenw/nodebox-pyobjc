@@ -153,7 +153,6 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-    xrange = range
 
 def _save():
     NSGraphicsContext.currentContext().saveGraphicsState()
@@ -580,7 +579,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         except ZeroDivisionError:
             delta = 1.0
 
-        for i in xrange(amount):
+        for i in range(amount):
             yield self.point(delta*i)
             
     def addpoint(self, t):
