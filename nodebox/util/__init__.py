@@ -49,7 +49,6 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-    xrange = range
 
 def cmp_to_key(mycmp):
     'Convert a cmp= function into a key= function'
@@ -158,8 +157,8 @@ def grid(cols, rows, colSize=1, rowSize=1, shuffled=False):
             rect(x,y, 10,10)
     """
     # Prefer using generators.
-    rowRange = xrange(int(rows))
-    colRange = xrange(int(cols))
+    rowRange = range( int(rows) )
+    colRange = range( int(cols) )
     # Shuffled needs a real list, though.
     if (shuffled):
         rowRange = list(rowRange)
@@ -168,7 +167,7 @@ def grid(cols, rows, colSize=1, rowSize=1, shuffled=False):
         librandom.shuffle(colRange)
     for y in rowRange:
         for x in colRange:
-            yield (x*colSize,y*rowSize)
+            yield (x*colSize, y*rowSize)
 
 
 def random(v1=None, v2=None):

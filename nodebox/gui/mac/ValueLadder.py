@@ -14,7 +14,6 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-    xrange = range
 
 if py3:
     import ast

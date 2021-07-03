@@ -52,7 +52,6 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-    xrange = range
 
 from keyword import kwlist as keywordsList
 keywordsList = keywordsList[:]

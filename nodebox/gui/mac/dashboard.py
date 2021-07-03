@@ -48,7 +48,6 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-    xrange = range
 
 def getFunctionArgCount( function ):
     # pdb.set_trace()

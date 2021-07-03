@@ -14,10 +14,10 @@ pp = pprint.pprint
 
 import pdb
 
-kwdbg = False
+kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -130,7 +130,6 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-    xrange = range
 
 class ExportCommand(NSScriptCommand):
     pass    
