@@ -78,7 +78,7 @@ def visual_diff(img1, img2, threshold=0, stop_on_diff=False):
     data2 = img2.getdata()
     size = len(data1)
     differences = []
-    for i in xrange(size):
+    for i in range(size):
         delta = compare_pixel(data1[i], data2[i])
         if delta > threshold:
             x = i % w
