@@ -24,9 +24,10 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
 <v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
@@ -36,15 +37,15 @@
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
-<v t="karstenw.20170704104531.1" a="E"><vh>@clean nodebox/geo/__init__.py</vh>
+<v t="karstenw.20170704104453.1"><vh>geo</vh>
+<v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
 <v t="karstenw.20170726154315.1"><vh>C Functions</vh></v>
 <v t="karstenw.20170726133907.1"><vh>benchmark</vh></v>
 <v t="karstenw.20170704104618.2"><vh>reflect</vh></v>
 </v>
-<v t="karstenw.20170704104605.1" a="E"><vh>@clean nodebox/geo/pathmatics.py</vh>
+<v t="karstenw.20170704104605.1"><vh>@clean nodebox/geo/pathmatics.py</vh>
 <v t="karstenw.20170704104615.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104615.2"><vh>linepoint</vh></v>
 <v t="karstenw.20170704104615.3"><vh>linelength</vh></v>
@@ -52,8 +53,8 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
@@ -215,7 +216,7 @@
 <v t="karstenw.20170704104751.35"><vh>_get_strokewidth</vh></v>
 <v t="karstenw.20170704104751.36"><vh>_set_strokewidth</vh></v>
 </v>
-<v t="karstenw.20170704104751.37"><vh>class BezierPath</vh>
+<v t="karstenw.20170704104751.37" a="E"><vh>class BezierPath</vh>
 <v t="karstenw.20170704104751.38"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.39"><vh>_get_path</vh></v>
 <v t="karstenw.20170704104751.40"><vh>copy</vh></v>
@@ -380,9 +381,9 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
 <v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -519,7 +520,7 @@
 <v t="karstenw.20170704105043.8"><vh>cancel_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
@@ -632,7 +633,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
@@ -650,13 +651,13 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
 <v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
-<v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
+<v t="karstenw.20180202045145.1" a="E"><vh>UTILITIES</vh>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
 <v t="karstenw.20170704105353.4"><vh>grid</vh></v>
@@ -697,6 +698,8 @@
 <v t="karstenw.20170704105406.1"><vh>kgp</vh>
 <v t="karstenw.20170704105442.1" a="E"><vh>@clean nodebox/util/kgp/__init__.py</vh>
 <v t="karstenw.20170704105455.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210703124707.1"><vh>makeunicode double</vh></v>
 <v t="karstenw.20170704105455.2"><vh>openAnything</vh></v>
 <v t="karstenw.20170704105455.3"><vh>class NoSourceError</vh></v>
 <v t="karstenw.20170704105455.4" a="E"><vh>class KantGenerator</vh>
@@ -797,8 +800,8 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20180202040514.1" a="E"><vh>libs</vh>
-<v t="karstenw.20180202040520.1" a="E"><vh>bwdithering</vh>
+<v t="karstenw.20180202040514.1"><vh>libs</vh>
+<v t="karstenw.20180202040520.1"><vh>bwdithering</vh>
 <v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
 <v t="karstenw.20210320110747.1"><vh>py2/3 defs</vh></v>
@@ -834,7 +837,7 @@
 <v t="karstenw.20180202044720.1"><vh>Declarations</vh></v>
 </v>
 </v>
-<v t="karstenw.20210320115101.1" a="E"><vh>fractal</vh>
+<v t="karstenw.20210320115101.1"><vh>fractal</vh>
 <v t="karstenw.20210320115106.1"><vh>@clean libs/fractal/fractal.c</vh>
 <v t="karstenw.20210320115212.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320110747.1"></v>
@@ -1079,7 +1082,10 @@ import nodebox
 
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
-
+py3 = nodebox.py3
+BUNDLENAME = NAME + "-py27"
+if nodebox.py3:
+    BUNDLENAME = NAME + "-py38"
 
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
@@ -1143,7 +1149,7 @@ setup(
         "plist": {
             "NSPrincipalClass": 'NodeBoxApplication',
             "CFBundleIdentifier": bundleID,
-            "CFBundleName": NAME,
+            "CFBundleName": BUNDLENAME,
             "CFBundleSignature": creator,
             "CFBundleShortVersionString": VERSION,
             "CFBundleGetInfoString": DESCRIPTION,
@@ -2587,7 +2593,7 @@ except:
     except ZeroDivisionError:
         delta = 1.0
 
-    for i in xrange(amount):
+    for i in range(amount):
         yield point(path, delta*i)
 
 
@@ -4387,7 +4393,7 @@ length = property(_get_length)
     except ZeroDivisionError:
         delta = 1.0
 
-    for i in xrange(amount):
+    for i in range(amount):
         yield self.point(delta*i)
         
 </t>
@@ -4745,10 +4751,10 @@ pp = pprint.pprint
 
 import pdb
 
-kwdbg = False
+kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -7977,8 +7983,8 @@ __all__ = (
             rect(x,y, 10,10)
     """
     # Prefer using generators.
-    rowRange = xrange(int(rows))
-    colRange = xrange(int(cols))
+    rowRange = range( int(rows) )
+    colRange = range( int(cols) )
     # Shuffled needs a real list, though.
     if (shuffled):
         rowRange = list(rowRange)
@@ -7987,7 +7993,7 @@ __all__ = (
         librandom.shuffle(colRange)
     for y in rowRange:
         for x in colRange:
-            yield (x*colSize,y*rowSize)
+            yield (x*colSize, y*rowSize)
 
 
 </t>
@@ -8157,6 +8163,9 @@ latest version.
 from __future__ import print_function
 
 import sys
+import os
+import unicodedata
+
 
 try:
     import urllib2
@@ -8167,8 +8176,8 @@ except ModuleNotFoundError:
 from xml.dom import minidom
 import random
 import getopt
-from io import StringIO
-
+import io
+StringIO = io.StringIO
 
 
 __author__ = "Mark Pilgrim (f8dy@diveintopython.org)"
@@ -8179,6 +8188,7 @@ __license__ = "Python"
 
 
 _debug = 0
+
 
 </t>
 <t tx="karstenw.20170704105455.10">def reset(self):
@@ -8315,7 +8325,6 @@ _debug = 0
     &gt;&gt;&gt; doc = minidom.parse(sock)
     &gt;&gt;&gt; sock.close()
     """
-
     if hasattr(source, "read"):
         return source
     
@@ -8325,18 +8334,21 @@ _debug = 0
     # try to open with urllib (if source is http, ftp, or file URL)
     try:
         return urlopen(source)
-    except (IOError, OSError):
+    except (IOError, OSError, ValueError):
         pass
     
     # try to open with native open function (if source is pathname)
     try:
-        # pdb.set_trace()
-        return io.open(source, 'rb')
+        path = makeunicode( source )
+        path = os.path.abspath( path )
+        # return io.open(source, 'rb')
+        return io.open(path, 'rb')
+
     except (IOError, OSError):
         pass
     
     # treat source as string
-    return StringIO.StringIO(str(source))
+    return StringIO( makeunicode(source) )
 
 </t>
 <t tx="karstenw.20170704105455.20">def do_p(self, node):
@@ -9015,7 +9027,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     data2 = img2.getdata()
     size = len(data1)
     differences = []
-    for i in xrange(size):
+    for i in range(size):
         delta = compare_pixel(data1[i], data2[i])
         if delta &gt; threshold:
             x = i % w
@@ -14070,11 +14082,9 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-    xrange = range
 
 </t>
 <t tx="karstenw.20210322113320.1">if not py3:
-    import sgmllib
     import new
     import httplib
 
@@ -14213,6 +14223,20 @@ def sortlistfunction(thelist, thecompare):
   #define IN_FORMAT "s#iiiddddddd"
   #define OUT_FORMAT "s#"
 #endif
+</t>
+<t tx="karstenw.20210703124707.1">def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
+    if type(s) not in ( pstr, punicode):
+        s = str(s)
+    if type(s) not in ( punicode, ):
+        try:
+            s = punicode(s, srcencoding)
+        except TypeError as err:
+            pass
+    if type(s) in ( punicode, ):
+        s = unicodedata.normalize(normalizer, s)
+    return s
+
+
 </t>
 </tnodes>
 </leo_file>
