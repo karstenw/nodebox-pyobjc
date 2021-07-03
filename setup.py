@@ -17,7 +17,10 @@ import nodebox
 
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
-
+py3 = nodebox.py3
+BUNDLENAME = NAME + "-py27"
+if nodebox.py3:
+    BUNDLENAME = NAME + "-py38"
 
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
@@ -81,7 +84,7 @@ setup(
         "plist": {
             "NSPrincipalClass": 'NodeBoxApplication',
             "CFBundleIdentifier": bundleID,
-            "CFBundleName": NAME,
+            "CFBundleName": BUNDLENAME,
             "CFBundleSignature": creator,
             "CFBundleShortVersionString": VERSION,
             "CFBundleGetInfoString": DESCRIPTION,

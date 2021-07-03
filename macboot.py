@@ -114,10 +114,8 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-    xrange = range
 
 if not py3:
-    import sgmllib
     import new
     import httplib
 
