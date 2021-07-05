@@ -10,7 +10,6 @@ size(1100,900)
 
 import math
 
-
 # scale factor for next smaller picture
 smaller = 1 / math.sqrt(2)
 
@@ -301,7 +300,8 @@ def build_up_module(picture, doleft, doright, level):
     # function scope push
     push()
 
-    translate(pict_size_x / 2, pict_size_y / 2)
+
+    translate(pict_size_x // 2, pict_size_y // 2)
 
     if dbg_offset:
         translate(pict_size_x / offsetpart, pict_size_y / offsetpart)
@@ -314,7 +314,7 @@ def build_up_module(picture, doleft, doright, level):
     if True:
         # right quarter sized pictures
         push()
-        translate(pict_size_x / 2, pict_size_y / 2)
+        translate(pict_size_x // 2, pict_size_y // 2)
 
         if dbg_offset:
             translate(pict_size_x / offsetpart, pict_size_y / offsetpart)
@@ -348,7 +348,7 @@ def build_up_module(picture, doleft, doright, level):
     if True:
         # left quarter sized pictures
         push()
-        translate(pict_size_x / 2, pict_size_y / 2)
+        translate(pict_size_x // 2, pict_size_y // 2)
 
         if dbg_offset:
             translate(pict_size_x / offsetpart, pict_size_y / offsetpart)
@@ -401,7 +401,7 @@ def build_down_module(picture, doleft, doright, level):
     # function scope push
     push()
 
-    translate(pict_size_x / 2, pict_size_y / 2)
+    translate(pict_size_x // 2, pict_size_y // 2)
 
     if dbg_offset:
         translate(pict_size_x / offsetpart, pict_size_y / offsetpart)
@@ -414,7 +414,7 @@ def build_down_module(picture, doleft, doright, level):
     if True:
         # right quarter sized pictures
         push()
-        translate(pict_size_x / 2, pict_size_y / 2)
+        translate(pict_size_x // 2, pict_size_y // 2)
 
         if dbg_offset:
             translate(pict_size_x / offsetpart, pict_size_y / offsetpart)
@@ -448,7 +448,7 @@ def build_down_module(picture, doleft, doright, level):
     if True:
         # left quarter sized pictures
         push()
-        translate(pict_size_x / 2, pict_size_y / 2)
+        translate(pict_size_x // 2, pict_size_y // 2)
 
         if dbg_offset:
             translate(pict_size_x / offsetpart, pict_size_y / offsetpart)
@@ -546,7 +546,7 @@ def squarelimit(picture, depth, qstart=1, qstop=4):
         pop()
 
 
-if __name__ == '__builtin__':
+if 1: # __name__ == '__builtin__':
 
     #starting point
     px = py = 350
