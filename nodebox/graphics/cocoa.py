@@ -182,7 +182,8 @@ class Point(object):
         return "Point(x=%.3f, y=%.3f)" % (self.x, self.y)
         
     def __eq__(self, other):
-        if other is None: return False
+        if other is None:
+            return False
         return self.x == other.x and self.y == other.y
         
     def __ne__(self, other):
@@ -464,7 +465,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             self.closepath()
             
     def _get_contours(self):
-        from nodebox.graphics import bezier
+        from . import bezier
         return bezier.contours(self)
     contours = property(_get_contours)
 
@@ -542,7 +543,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
 
     def segmentlengths(self, relative=False, n=10):
         # import bezier
-        from nodebox.graphics import bezier
+        from . import bezier
         if relative: # Use the opportunity to store the segment cache.
             if self._segment_cache is None:
                 self._segment_cache = bezier.segment_lengths(self,
@@ -553,18 +554,19 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
 
     def _get_length(self, segmented=False, n=10):
         # import bezier
-        from nodebox.graphics import bezier
+        from . import bezier
         return bezier.length(self, segmented=segmented, n=n)
     length = property(_get_length)
         
     def point(self, t):
         # import bezier
-        from nodebox.graphics import bezier
+        from . import bezier
         return bezier.point(self, t)
         
     def points(self, amount=100):
         # import bezier
-        from nodebox.graphics import bezier
+        # from nodebox.graphics import bezier
+        from . import bezier
         # print( "bezier:", bezier.__file__ )
         if len(self) == 0:
             raise NodeBoxError("The given path is empty")
@@ -584,7 +586,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             
     def addpoint(self, t):
         # import bezier
-        from nodebox.graphics import bezier
+        from . import bezier
         self._nsBezierPath = bezier.insert_point(self, t)._nsBezierPath
         self._segment_cache = None
 
