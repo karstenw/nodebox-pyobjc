@@ -448,6 +448,7 @@ class NodeBoxDocument(NSDocument):
         self._runScript(compile, newSeed)
 
     def _runScript(self, compile=True, newSeed=True):
+        # pdb.set_trace()
         if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
             pass
 
