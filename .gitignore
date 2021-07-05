@@ -21,6 +21,8 @@ examples/Extended Application/sympy/docs/
 examples/Extended Application/sympy/examples_kw
 examples/Extended Application/sklearn/doc/
 
+examples/geometry/Voronoi
+
 libs/fractal
 libs/polymagic/
 
