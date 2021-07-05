@@ -7,6 +7,8 @@ This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
 The current version is 1.9.32
 
+The current branch is [py38](https://github.com/karstenw/nodebox-pyobjc/tree/py38) which handles the transition to python 3.
+
 Download the compiled app from my [dropbox](http://goo.gl/dZDic5).
 
 As of 2018-05-05 and version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
