@@ -24,8 +24,8 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -53,10 +53,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -132,7 +133,7 @@
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -151,7 +152,7 @@
 <v t="karstenw.20170709143618.1"><vh>## Canvas Proxy ##</vh>
 <v t="karstenw.20170704104726.24"><vh>save</vh></v>
 </v>
-<v t="karstenw.20170709143636.1" a="E"><vh>## C-Extensions Interface ##</vh>
+<v t="karstenw.20170709143636.1"><vh>## C-Extensions Interface ##</vh>
 <v t="karstenw.20170704104726.25"><vh>isqrt</vh></v>
 <v t="karstenw.20170704104726.26"><vh>angle</vh></v>
 <v t="karstenw.20170704104726.27"><vh>distance</vh></v>
@@ -174,7 +175,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -193,7 +194,7 @@
 <v t="karstenw.20170704104751.14"><vh>inheritFromContext</vh></v>
 <v t="karstenw.20170704104751.15"><vh>checkKwargs</vh></v>
 </v>
-<v t="karstenw.20170704104751.16"><vh>class TransformMixin</vh>
+<v t="karstenw.20170704104751.16" a="E"><vh>class TransformMixin</vh>
 <v t="karstenw.20170704104751.17"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.18"><vh>_reset</vh></v>
 <v t="karstenw.20170704104751.19"><vh>_get_transform</vh></v>
@@ -207,7 +208,7 @@
 <v t="karstenw.20170704104751.27"><vh>scale</vh></v>
 <v t="karstenw.20170704104751.28"><vh>skew</vh></v>
 </v>
-<v t="karstenw.20170704104751.29"><vh>class ColorMixin</vh>
+<v t="karstenw.20170704104751.29" a="E"><vh>class ColorMixin</vh>
 <v t="karstenw.20170704104751.30"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.31"><vh>_get_fill</vh></v>
 <v t="karstenw.20170704104751.32"><vh>_set_fill</vh></v>
@@ -216,7 +217,7 @@
 <v t="karstenw.20170704104751.35"><vh>_get_strokewidth</vh></v>
 <v t="karstenw.20170704104751.36"><vh>_set_strokewidth</vh></v>
 </v>
-<v t="karstenw.20170704104751.37" a="E"><vh>class BezierPath</vh>
+<v t="karstenw.20170704104751.37"><vh>class BezierPath</vh>
 <v t="karstenw.20170704104751.38"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.39"><vh>_get_path</vh></v>
 <v t="karstenw.20170704104751.40"><vh>copy</vh></v>
@@ -266,7 +267,7 @@
 <v t="karstenw.20170704104751.82"><vh>append</vh></v>
 <v t="karstenw.20170704104751.83"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20170704104751.84"><vh>class Rect</vh>
+<v t="karstenw.20170704104751.84" a="E"><vh>class Rect</vh>
 <v t="karstenw.20170704104751.85"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.86"><vh>copy</vh></v>
 </v>
@@ -381,9 +382,9 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
 <v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -520,11 +521,11 @@
 <v t="karstenw.20170704105043.8"><vh>cancel_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
-<v t="karstenw.20170704105051.2" a="E"><vh>class DashboardController</vh>
+<v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
 <v t="karstenw.20170704105051.5"><vh>textChanged_</vh></v>
@@ -633,7 +634,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
@@ -1562,7 +1563,7 @@ from __future__ import print_function
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104725.1"># import pdb
+<t tx="karstenw.20170704104725.1">import pdb
 
 import AppKit
 
@@ -1972,7 +1973,7 @@ def beginpath(self, x=None, y=None):
 
 </t>
 <t tx="karstenw.20170704104725.39">def findpath(self, points, curvature=1.0):
-    import bezier
+    from . import bezier
     path = bezier.findpath(points, curvature=curvature)
     path._ctx = self
     path.inheritFromContext()
@@ -2186,9 +2187,10 @@ def font(self, fontname=None, fontsize = None):
 
 </t>
 <t tx="karstenw.20170704104726.19">def textpath(self, txt, x, y, width=None, height=None, **kwargs):
+    # pdb.set_trace()
     Text.checkKwargs(kwargs)
     txt = self.Text(txt, x, y, width, height, **kwargs)
-    txt.inheritFromContext(kwargs.keys())
+    txt.inheritFromContext( list( kwargs.keys()) )
     return txt.path
 
 </t>
@@ -2310,13 +2312,13 @@ def colormode(self, mode=None, range=None):
 
 from __future__ import print_function
 
-import pdb
-
 @others
 if __name__=='__main__':
     _test()
 </t>
-<t tx="karstenw.20170704104742.1">from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point
+<t tx="karstenw.20170704104742.1">import pdb
+
+from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point
 from nodebox.graphics import MOVETO, LINETO, CURVETO, CLOSE
 
 
@@ -2476,7 +2478,8 @@ except:
     (0, 1.0, Point(x=0.000, y=0.000))
     """
     
-    
+    pdb.set_trace()
+
     if segments == None:
         segments = list( path.segmentlengths(relative=True) )
     
@@ -2488,7 +2491,8 @@ except:
             closeto = Point(el.x, el.y)
         if t &lt;= segments[i] or i == len(segments)-1:
             break
-        else: t -= segments[i]
+        else:
+            t -= segments[i]
 
     try:
         t /= segments[i]
@@ -2589,7 +2593,7 @@ except:
     # E.g. if amount = 4, I want point at t 0.0, 0.33, 0.66 and 1.0,
     # if amount = 2, I want point at t 0.0 and t 1.0
     try:
-        delta = 1.0/(amount-1)
+        delta = 1.0 / (amount-1)
     except ZeroDivisionError:
         delta = 1.0
 
@@ -2672,9 +2676,8 @@ except:
     # but it shouldn't crash on something straightforward
     # as someone supplying a list of (x,y)-tuples.
     
-    from types import TupleType
     for i, pt in enumerate(points):
-        if type(pt) == TupleType:
+        if type(pt) in (tuple,):
             points[i] = Point(pt[0], pt[1])
     
     if len(points) == 0: return None
@@ -2711,7 +2714,7 @@ except:
         ax[i] = -(points[i+1].x-points[i-1].x-ax[i-1]) * bi[i]
         ay[i] = -(points[i+1].y-points[i-1].y-ay[i-1]) * bi[i]
         
-    r = range(1, len(points)-1)
+    r = list( range(1, len(points)-1) )
     r.reverse()
     for i in r:
         dx[i] = ax[i] + dx[i+1] * bi[i]
@@ -4271,14 +4274,14 @@ ellipse = oval
         
 </t>
 <t tx="karstenw.20170704104751.61">def _get_contours(self):
-    from nodebox.graphics import bezier
+    from . import bezier
     return bezier.contours(self)
 contours = property(_get_contours)
 
-### Drawing methods ###
-
 </t>
-<t tx="karstenw.20170704104751.62">def _get_transform(self):
+<t tx="karstenw.20170704104751.62">### Drawing methods ###
+
+def _get_transform(self):
     trans = self._transform.copy()
     if (self._transformmode == CENTER):
         (x, y), (w, h) = self.bounds
@@ -4353,7 +4356,7 @@ transform = property(_get_transform)
 </t>
 <t tx="karstenw.20170704104751.65">def segmentlengths(self, relative=False, n=10):
     # import bezier
-    from nodebox.graphics import bezier
+    from . import bezier
     if relative: # Use the opportunity to store the segment cache.
         if self._segment_cache is None:
             self._segment_cache = bezier.segment_lengths(self,
@@ -4365,20 +4368,21 @@ transform = property(_get_transform)
 </t>
 <t tx="karstenw.20170704104751.66">def _get_length(self, segmented=False, n=10):
     # import bezier
-    from nodebox.graphics import bezier
+    from . import bezier
     return bezier.length(self, segmented=segmented, n=n)
 length = property(_get_length)
     
 </t>
 <t tx="karstenw.20170704104751.67">def point(self, t):
     # import bezier
-    from nodebox.graphics import bezier
+    from . import bezier
     return bezier.point(self, t)
     
 </t>
 <t tx="karstenw.20170704104751.68">def points(self, amount=100):
     # import bezier
-    from nodebox.graphics import bezier
+    # from nodebox.graphics import bezier
+    from . import bezier
     # print( "bezier:", bezier.__file__ )
     if len(self) == 0:
         raise NodeBoxError("The given path is empty")
@@ -4399,7 +4403,7 @@ length = property(_get_length)
 </t>
 <t tx="karstenw.20170704104751.69">def addpoint(self, t):
     # import bezier
-    from nodebox.graphics import bezier
+    from . import bezier
     self._nsBezierPath = bezier.insert_point(self, t)._nsBezierPath
     self._segment_cache = None
 
@@ -4494,7 +4498,8 @@ length = property(_get_length)
 
 </t>
 <t tx="karstenw.20170704104751.8">def __eq__(self, other):
-    if other is None: return False
+    if other is None:
+        return False
     return self.x == other.x and self.y == other.y
     
 </t>
@@ -5080,6 +5085,7 @@ def runScript_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.23">def _runScript(self, compile=True, newSeed=True):
+    # pdb.set_trace()
     if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
         pass
 

@@ -161,7 +161,8 @@ def _locate(path, t, segments=None):
     (0, 1.0, Point(x=0.000, y=0.000))
     """
     
-    
+    pdb.set_trace()
+
     if segments == None:
         segments = list( path.segmentlengths(relative=True) )
     
@@ -173,7 +174,8 @@ def _locate(path, t, segments=None):
             closeto = Point(el.x, el.y)
         if t <= segments[i] or i == len(segments)-1:
             break
-        else: t -= segments[i]
+        else:
+            t -= segments[i]
 
     try:
         t /= segments[i]
@@ -272,7 +274,7 @@ def points(path, amount=100):
     # E.g. if amount = 4, I want point at t 0.0, 0.33, 0.66 and 1.0,
     # if amount = 2, I want point at t 0.0 and t 1.0
     try:
-        delta = 1.0/(amount-1)
+        delta = 1.0 / (amount-1)
     except ZeroDivisionError:
         delta = 1.0
 
@@ -353,9 +355,8 @@ def findpath(points, curvature=1.0):
     # but it shouldn't crash on something straightforward
     # as someone supplying a list of (x,y)-tuples.
     
-    from types import TupleType
     for i, pt in enumerate(points):
-        if type(pt) == TupleType:
+        if type(pt) in (tuple,):
             points[i] = Point(pt[0], pt[1])
     
     if len(points) == 0: return None
@@ -392,7 +393,7 @@ def findpath(points, curvature=1.0):
         ax[i] = -(points[i+1].x-points[i-1].x-ax[i-1]) * bi[i]
         ay[i] = -(points[i+1].y-points[i-1].y-ay[i-1]) * bi[i]
         
-    r = range(1, len(points)-1)
+    r = list( range(1, len(points)-1) )
     r.reverse()
     for i in r:
         dx[i] = ax[i] + dx[i+1] * bi[i]

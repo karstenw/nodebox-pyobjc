@@ -1,4 +1,4 @@
-# import pdb
+import pdb
 
 import AppKit
 
@@ -62,6 +62,20 @@ import nodebox.geo
 __all__ = list(graphics_impl.__all__)
 __all__.extend(['Context'])
 
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
 
 class Context(object):
     
@@ -436,7 +450,7 @@ class Context(object):
         self._autoclosepath = close
 
     def findpath(self, points, curvature=1.0):
-        import bezier
+        from . import bezier
         path = bezier.findpath(points, curvature=curvature)
         path._ctx = self
         path.inheritFromContext()
@@ -606,9 +620,10 @@ class Context(object):
             return txt
 
     def textpath(self, txt, x, y, width=None, height=None, **kwargs):
+        # pdb.set_trace()
         Text.checkKwargs(kwargs)
         txt = self.Text(txt, x, y, width, height, **kwargs)
-        txt.inheritFromContext(kwargs.keys())
+        txt.inheritFromContext( list( kwargs.keys()) )
         return txt.path
 
     def textmetrics(self, txt, width=None, height=None, **kwargs):
