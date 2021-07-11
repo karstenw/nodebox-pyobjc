@@ -20,7 +20,7 @@ Attention!
 
 ### The download includes the NodeBox-Library. When first starting NodeBox, go to the preferences and set the Library folder to the included folder.
 
-####Differences from the official version:
+#### Differences from the official version:
 
 1. Additional Commands (they were already in the original source but not active)
 	1.  `angle(x0, y0, x1, y1)`
