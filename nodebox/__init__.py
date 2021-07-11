@@ -1,4 +1,4 @@
-__version__='1.10.0b'
+__version__='1.10.0'
 
 # py3 stuff
 py3 = False

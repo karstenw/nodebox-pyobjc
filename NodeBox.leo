@@ -53,7 +53,7 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -175,7 +175,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -194,7 +194,7 @@
 <v t="karstenw.20170704104751.14"><vh>inheritFromContext</vh></v>
 <v t="karstenw.20170704104751.15"><vh>checkKwargs</vh></v>
 </v>
-<v t="karstenw.20170704104751.16" a="E"><vh>class TransformMixin</vh>
+<v t="karstenw.20170704104751.16"><vh>class TransformMixin</vh>
 <v t="karstenw.20170704104751.17"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.18"><vh>_reset</vh></v>
 <v t="karstenw.20170704104751.19"><vh>_get_transform</vh></v>
@@ -208,7 +208,7 @@
 <v t="karstenw.20170704104751.27"><vh>scale</vh></v>
 <v t="karstenw.20170704104751.28"><vh>skew</vh></v>
 </v>
-<v t="karstenw.20170704104751.29" a="E"><vh>class ColorMixin</vh>
+<v t="karstenw.20170704104751.29"><vh>class ColorMixin</vh>
 <v t="karstenw.20170704104751.30"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.31"><vh>_get_fill</vh></v>
 <v t="karstenw.20170704104751.32"><vh>_set_fill</vh></v>
@@ -267,7 +267,7 @@
 <v t="karstenw.20170704104751.82"><vh>append</vh></v>
 <v t="karstenw.20170704104751.83"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20170704104751.84" a="E"><vh>class Rect</vh>
+<v t="karstenw.20170704104751.84"><vh>class Rect</vh>
 <v t="karstenw.20170704104751.85"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.86"><vh>copy</vh></v>
 </v>
@@ -382,10 +382,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -1305,7 +1305,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.10.0b'
+<t tx="karstenw.20170704104119.1">__version__='1.10.0'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
