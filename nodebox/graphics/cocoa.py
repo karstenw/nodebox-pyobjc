@@ -1,8 +1,6 @@
 import os
 import warnings
 
-import pdb
-
 # from random import choice, shuffle
 import random
 choice = random.choice
@@ -543,6 +541,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
 
     def segmentlengths(self, relative=False, n=10):
         # import bezier
+        
         from . import bezier
         if relative: # Use the opportunity to store the segment cache.
             if self._segment_cache is None:
@@ -564,10 +563,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return bezier.point(self, t)
         
     def points(self, amount=100):
-        # import bezier
-        # from nodebox.graphics import bezier
         from . import bezier
-        # print( "bezier:", bezier.__file__ )
         if len(self) == 0:
             raise NodeBoxError("The given path is empty")
 
@@ -576,13 +572,15 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         # If I wouldn't use amount - 1, I fall one point short of the end.
         # E.g. if amount = 4, I want point at t 0.0, 0.33, 0.66 and 1.0,
         # if amount = 2, I want point at t 0.0 and t 1.0
+        
+        amount = int( amount )
         try:
-            delta = 1.0/(amount-1)
+            delta = 1.0 / (amount-1)
         except ZeroDivisionError:
             delta = 1.0
 
         for i in range(amount):
-            yield self.point(delta*i)
+            yield self.point( delta*i )
             
     def addpoint(self, t):
         # import bezier
@@ -655,10 +653,12 @@ class PathElement(object):
             return "PathElement(CLOSE)"
             
     def __eq__(self, other):
-        if other is None: return False
-        if self.cmd != other.cmd: return False
-        return self.x == other.x and self.y == other.y \
-            and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2
+        if other is None:
+            return False
+        if self.cmd != other.cmd:
+            return False
+        return (    self.x == other.x and self.y == other.y
+                and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2 )
         
     def __ne__(self, other):
         return not self.__eq__(other)
