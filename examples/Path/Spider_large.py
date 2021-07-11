@@ -16,7 +16,7 @@ def calc_length(x1, y1, x2, y2):
 fonts = fontnames()
 f = choice( fonts )
 fsize = 250
-print f
+print( f )
 
 font(f, fsize)
 fontsize(fsize)
@@ -44,7 +44,7 @@ for contour in path.contours:
     # Get a list of 100 points on each contour, properly divided amongst
     # the path. This is different from the elements of the path, because
     # the points are evenly distributed along the path.
-    path_points = list(contour.points(100))
+    path_points = list(contour.points(200))
     
     # We want a certain amount of lines.
     for i in range(lines_per_contour):
