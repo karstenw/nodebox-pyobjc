@@ -17,7 +17,10 @@ def calc_length(x1, y1, x2, y2):
 
 # First, create a textpath that we will use further on.
 fontsize(150)
-path = textpath("SPIDER",20, 150)
+
+fontname = choice( fontnames() )
+print( fontname )
+path = textpath("SPIDER",20, 150, font=fontname)
 
 # Select a color for the lines.
 nofill()
@@ -38,12 +41,12 @@ lines_per_contour = 300
 # A path has a contours property that returns each seperate contours.
 # Note that "holes" in a letter (such as a P or D) are contours as well.
 for contour in path.contours:
-    print( contour )
+    #print( contour )
     # Get a list of 100 points on each contour, properly divided amongst
     # the path. This is different from the elements of the path, because
     # the points are evenly distributed along the path.
     path_points = list(contour.points(100))
-    pp( path_points )
+    #pp( path_points )
     
     # We want a certain amount of lines.
     for i in range(lines_per_contour):
@@ -64,6 +67,7 @@ for contour in path.contours:
             
         # Once we've found a second point, draw it. Use the mutation parameter to add a bit
         # of randomness to the position of the line.
-        line(pt1.x + random(-mutation, mutation), pt1.y + random(-mutation, mutation), \
+        line(pt1.x + random(-mutation, mutation), pt1.y + random(-mutation, mutation),
              pt2.x + random(-mutation, mutation), pt2.y + random(-mutation, mutation))
-        
+
+
