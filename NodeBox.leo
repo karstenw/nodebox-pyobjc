@@ -25,7 +25,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -53,7 +53,7 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -382,10 +382,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -397,7 +397,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -521,7 +521,7 @@
 <v t="karstenw.20170704105043.8"><vh>cancel_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
@@ -4756,13 +4756,13 @@ pp = pprint.pprint
 
 import pdb
 
-kwdbg = True
+kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = False
 
 # if true print out some debug info on stdout
-kwlog = True
+kwlog = False
 
 import Foundation
 import AppKit
