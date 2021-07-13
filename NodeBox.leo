@@ -25,7 +25,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -53,7 +53,7 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -382,10 +382,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -1305,7 +1305,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.10.0'
+<t tx="karstenw.20170704104119.1">__version__='1.10.0c0'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -2311,13 +2311,11 @@ def colormode(self, mode=None, range=None):
 # Thanks to Dr. Florimond De Smedt at the Free University of Brussels for the math routines.
 
 from __future__ import print_function
-
 @others
 if __name__=='__main__':
     _test()
 </t>
-<t tx="karstenw.20170704104742.1">import pdb
-
+<t tx="karstenw.20170704104742.1">
 from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point
 from nodebox.graphics import MOVETO, LINETO, CURVETO, CLOSE
 
@@ -2392,7 +2390,8 @@ except:
     if relative:
         length = sum(lengths)
         try:
-            return map(lambda l: l / length, lengths)
+            lengths = list( map(lambda l: l / length, lengths) )
+            return lengths
         except ZeroDivisionError:
             # If the length is zero, just return zero for all segments
             return [0.0] * len(lengths)
@@ -2478,7 +2477,6 @@ except:
     (0, 1.0, Point(x=0.000, y=0.000))
     """
     
-    pdb.set_trace()
 
     if segments == None:
         segments = list( path.segmentlengths(relative=True) )
@@ -2495,12 +2493,13 @@ except:
             t -= segments[i]
 
     try:
-        t /= segments[i]
+        t = t / segments[i]
     except ZeroDivisionError:
         pass
     if i == len(segments)-1 and segments[i] == 0:
         i -= 1
 
+    # print("_locate( ", i, t, closeto, " )")
     return (i, t, closeto)
 
 
@@ -2550,10 +2549,12 @@ except:
     if p1.cmd == CLOSE:
         x, y = linepoint(t, x0, y0, closeto.x, closeto.y)
         return PathElement(LINETO, ((x, y),))
+
     elif p1.cmd == LINETO:
         x1, y1 = p1.x, p1.y
         x, y = linepoint(t, x0, y0, x1, y1)
         return PathElement(LINETO, ((x, y),))
+
     elif p1.cmd == CURVETO:
         x3, y3, x1, y1, x2, y2 = (p1.x, p1.y,
                                   p1.ctrl1.x, p1.ctrl1.y,
@@ -2650,7 +2651,8 @@ except:
         elif el.cmd == CURVETO:
             empty = False
             current_contour.curveto(el.ctrl1.x, el.ctrl1.y,
-                el.ctrl2.x, el.ctrl2.y, el.x, el.y)
+                                    el.ctrl2.x, el.ctrl2.y,
+                                    el.x,       el.y)
         elif el.cmd == CLOSE:
             current_contour.closepath()
     if not empty:
@@ -2828,8 +2830,6 @@ if __name__=='__main__':
 </t>
 <t tx="karstenw.20170704104751.1">import os
 import warnings
-
-import pdb
 
 # from random import choice, shuffle
 import random
@@ -4356,6 +4356,7 @@ transform = property(_get_transform)
 </t>
 <t tx="karstenw.20170704104751.65">def segmentlengths(self, relative=False, n=10):
     # import bezier
+    
     from . import bezier
     if relative: # Use the opportunity to store the segment cache.
         if self._segment_cache is None:
@@ -4380,10 +4381,7 @@ length = property(_get_length)
     
 </t>
 <t tx="karstenw.20170704104751.68">def points(self, amount=100):
-    # import bezier
-    # from nodebox.graphics import bezier
     from . import bezier
-    # print( "bezier:", bezier.__file__ )
     if len(self) == 0:
         raise NodeBoxError("The given path is empty")
 
@@ -4392,13 +4390,15 @@ length = property(_get_length)
     # If I wouldn't use amount - 1, I fall one point short of the end.
     # E.g. if amount = 4, I want point at t 0.0, 0.33, 0.66 and 1.0,
     # if amount = 2, I want point at t 0.0 and t 1.0
+    
+    amount = int( amount )
     try:
-        delta = 1.0/(amount-1)
+        delta = 1.0 / (amount-1)
     except ZeroDivisionError:
         delta = 1.0
 
     for i in range(amount):
-        yield self.point(delta*i)
+        yield self.point( delta*i )
         
 </t>
 <t tx="karstenw.20170704104751.69">def addpoint(self, t):
@@ -4486,10 +4486,12 @@ length = property(_get_length)
         
 </t>
 <t tx="karstenw.20170704104751.78">def __eq__(self, other):
-    if other is None: return False
-    if self.cmd != other.cmd: return False
-    return self.x == other.x and self.y == other.y \
-        and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2
+    if other is None:
+        return False
+    if self.cmd != other.cmd:
+        return False
+    return (    self.x == other.x and self.y == other.y
+            and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2 )
     
 </t>
 <t tx="karstenw.20170704104751.79">def __ne__(self, other):
