@@ -187,6 +187,21 @@ class Point(object):
     def __ne__(self, other):
         return not self.__eq__(other)
 
+    def __lt__(self, other):
+        return (self.x < other.x) and (self.y < other.y)
+
+    def __le__(self, other):
+        return (self.x <= other.x) and (self.y <= other.y)
+
+    def __gt__(self, other):
+        return (self.x > other.x) and (self.y > other.y)
+
+    def __ge__(self, other):
+        return (self.x >= other.x) and (self.y >= other.y)
+
+    def __hash__( self ):
+        return hash( (self.x, self.y) )
+
 
 class Grob(object):
     """A GRaphic OBject is the base class for all DrawingPrimitives."""
@@ -660,8 +675,28 @@ class PathElement(object):
         return (    self.x == other.x and self.y == other.y
                 and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2 )
         
+    def __lt__(self, other):
+        return (    (self.x < other.x) and (self.y < other.y)
+                and (self.ctrl1 < other.ctrl1) and (self.ctrl2 < other.ctrl2) )
+
+    def __le__(self, other):
+        return (    (self.x <= other.x) and (self.y <= other.y)
+                and (self.ctrl1 <= other.ctrl1) and (self.ctrl2 <= other.ctrl2) )
+
+    def __gt__(self, other):
+        return (    (self.x > other.x) and (self.y > other.y)
+                and (self.ctrl1 > other.ctrl1) and (self.ctrl2 > other.ctrl2) )
+
+    def __ge__(self, other):
+        return (    (self.x >= other.x) and (self.y >= other.y)
+                and (self.ctrl1 >= other.ctrl1) and (self.ctrl2 >= other.ctrl2) ) 
+
+
     def __ne__(self, other):
         return not self.__eq__(other)
+
+    def __hash__(self):
+        return hash( (self.x, self.y, self.ctrl1, self.ctrl2) )
 
 
 class ClippingPath(Grob):

@@ -53,11 +53,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -133,7 +133,7 @@
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -175,17 +175,19 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
 <v t="karstenw.20170704104751.3"><vh>_restore</vh></v>
 <v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
-<v t="karstenw.20170704104751.5"><vh>class Point</vh>
+<v t="karstenw.20170704104751.5" a="E"><vh>class Point</vh>
 <v t="karstenw.20170704104751.6"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.7"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.8"><vh>__eq__</vh></v>
 <v t="karstenw.20170704104751.9"><vh>__ne__</vh></v>
+<v t="karstenw.20210714232702.1"><vh>__le__</vh></v>
+<v t="karstenw.20210714232606.1"><vh>__hash__</vh></v>
 </v>
 <v t="karstenw.20170704104751.10"><vh>class Grob</vh>
 <v t="karstenw.20170704104751.11"><vh>__init__</vh></v>
@@ -256,11 +258,16 @@
 <v t="karstenw.20170704104751.73"><vh>difference</vh></v>
 <v t="karstenw.20170704104751.74"><vh>xor</vh></v>
 </v>
-<v t="karstenw.20170704104751.75"><vh>class PathElement</vh>
+<v t="karstenw.20170704104751.75" a="E"><vh>class PathElement</vh>
 <v t="karstenw.20170704104751.76"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.77"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.78"><vh>__eq__</vh></v>
+<v t="karstenw.20210714234429.1"><vh>__lt__</vh></v>
+<v t="karstenw.20210714234443.1"><vh>__le__</vh></v>
+<v t="karstenw.20210714234451.1"><vh>__gt__</vh></v>
+<v t="karstenw.20210714234458.1"><vh>__ge__</vh></v>
 <v t="karstenw.20170704104751.79"><vh>__ne__</vh></v>
+<v t="karstenw.20210714232328.1"><vh>__hash__</vh></v>
 </v>
 <v t="karstenw.20170704104751.80"><vh>class ClippingPath</vh>
 <v t="karstenw.20170704104751.81"><vh>__init__</vh></v>
@@ -4497,7 +4504,6 @@ length = property(_get_length)
 <t tx="karstenw.20170704104751.79">def __ne__(self, other):
     return not self.__eq__(other)
 
-
 </t>
 <t tx="karstenw.20170704104751.8">def __eq__(self, other):
     if other is None:
@@ -4565,7 +4571,6 @@ length = property(_get_length)
 </t>
 <t tx="karstenw.20170704104751.9">def __ne__(self, other):
     return not self.__eq__(other)
-
 
 </t>
 <t tx="karstenw.20170704104751.90">class Color(object):
@@ -14243,6 +14248,50 @@ def sortlistfunction(thelist, thecompare):
     if type(s) in ( punicode, ):
         s = unicodedata.normalize(normalizer, s)
     return s
+
+
+</t>
+<t tx="karstenw.20210714232328.1">def __hash__(self):
+    return hash( (self.x, self.y, self.ctrl1, self.ctrl2) )
+
+
+</t>
+<t tx="karstenw.20210714232606.1">def __hash__( self ):
+    return hash( (self.x, self.y) )
+
+
+</t>
+<t tx="karstenw.20210714232702.1">def __lt__(self, other):
+    return (self.x &lt; other.x) and (self.y &lt; other.y)
+
+def __le__(self, other):
+    return (self.x &lt;= other.x) and (self.y &lt;= other.y)
+
+def __gt__(self, other):
+    return (self.x &gt; other.x) and (self.y &gt; other.y)
+
+def __ge__(self, other):
+    return (self.x &gt;= other.x) and (self.y &gt;= other.y)
+
+</t>
+<t tx="karstenw.20210714234429.1">def __lt__(self, other):
+    return (    (self.x &lt; other.x) and (self.y &lt; other.y)
+            and (self.ctrl1 &lt; other.ctrl1) and (self.ctrl2 &lt; other.ctrl2) )
+
+</t>
+<t tx="karstenw.20210714234443.1">def __le__(self, other):
+    return (    (self.x &lt;= other.x) and (self.y &lt;= other.y)
+            and (self.ctrl1 &lt;= other.ctrl1) and (self.ctrl2 &lt;= other.ctrl2) )
+
+</t>
+<t tx="karstenw.20210714234451.1">def __gt__(self, other):
+    return (    (self.x &gt; other.x) and (self.y &gt; other.y)
+            and (self.ctrl1 &gt; other.ctrl1) and (self.ctrl2 &gt; other.ctrl2) )
+
+</t>
+<t tx="karstenw.20210714234458.1">def __ge__(self, other):
+    return (    (self.x &gt;= other.x) and (self.y &gt;= other.y)
+            and (self.ctrl1 &gt;= other.ctrl1) and (self.ctrl2 &gt;= other.ctrl2) ) 
 
 
 </t>
