@@ -25,7 +25,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -181,7 +181,7 @@
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
 <v t="karstenw.20170704104751.3"><vh>_restore</vh></v>
 <v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
-<v t="karstenw.20170704104751.5" a="E"><vh>class Point</vh>
+<v t="karstenw.20170704104751.5"><vh>class Point</vh>
 <v t="karstenw.20170704104751.6"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.7"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.8"><vh>__eq__</vh></v>
@@ -258,7 +258,7 @@
 <v t="karstenw.20170704104751.73"><vh>difference</vh></v>
 <v t="karstenw.20170704104751.74"><vh>xor</vh></v>
 </v>
-<v t="karstenw.20170704104751.75" a="E"><vh>class PathElement</vh>
+<v t="karstenw.20170704104751.75"><vh>class PathElement</vh>
 <v t="karstenw.20170704104751.76"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.77"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.78"><vh>__eq__</vh></v>
@@ -282,9 +282,10 @@
 <v t="karstenw.20170704104751.88"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.89"><vh>copy</vh></v>
 </v>
-<v t="karstenw.20170704104751.90"><vh>class Color</vh>
+<v t="karstenw.20170704104751.90" a="E"><vh>class Color</vh>
 <v t="karstenw.20170704104751.91"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.92"><vh>__repr__</vh></v>
+<v t="karstenw.20210715171431.1"><vh>__hash__</vh></v>
 <v t="karstenw.20170704104751.93"><vh>set</vh></v>
 <v t="karstenw.20170704104751.94"><vh>_get_nsColor</vh></v>
 <v t="karstenw.20170704104751.95"><vh>copy</vh></v>
@@ -389,9 +390,9 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
 <v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -404,7 +405,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -528,7 +529,7 @@
 <v t="karstenw.20170704105043.8"><vh>cancel_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
@@ -4763,10 +4764,10 @@ pp = pprint.pprint
 
 import pdb
 
-kwdbg = False
+kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = False
@@ -14292,6 +14293,11 @@ def __ge__(self, other):
 <t tx="karstenw.20210714234458.1">def __ge__(self, other):
     return (    (self.x &gt;= other.x) and (self.y &gt;= other.y)
             and (self.ctrl1 &gt;= other.ctrl1) and (self.ctrl2 &gt;= other.ctrl2) ) 
+
+
+</t>
+<t tx="karstenw.20210715171431.1">def __hash__( self ):
+    return hash( (self.red, self.green, self.blue, self.alpha) )
 
 
 </t>
