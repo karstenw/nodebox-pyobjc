@@ -18,7 +18,7 @@ import nodebox
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
 py3 = nodebox.py3
-BUNDLENAME = NAME + "-py27"
+BUNDLENAME = NAME #+ "-py27"
 if nodebox.py3:
     BUNDLENAME = NAME + "-py38"
 
