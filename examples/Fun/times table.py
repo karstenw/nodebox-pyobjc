@@ -35,7 +35,7 @@ def params(val, name):
         val = round(val, 2)
         bg = val
     elif name == "factor":
-        val = round(val, 3)
+        val = round(val, 2)
         factor = val
     print( name, val )
     drawit(radius, n)

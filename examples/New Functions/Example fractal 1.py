@@ -182,7 +182,7 @@ def handlecoordinate(value, name):
 delta = 4.0 #0.5
 inity = -0.75 # -1.75
 
-var("fsize", NUMBER, 600, 300, 1200, handler=handlecoordinate)
+var("fsize", NUMBER, 320, 200, 1200, handler=handlecoordinate)
 var("xpos", NUMBER,  0.0, -6.0, 6.0, handler=handlecoordinate)
 var("ypos", NUMBER,  0.0, -3.5, 3.5, handler=handlecoordinate)
 # var("delta", NUMBER, 4.0, 0.0001, 20.0, handler=handlecoordinate)
