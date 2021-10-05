@@ -139,7 +139,7 @@ class PyDETextView(NSTextView):
             NSTextView.mouseDragged_(self, event)
 
     def mouseDown_(self, event):
-        if event.modifierFlags() & NSCommandKeyMask:            
+        if event.modifierFlags() & NSCommandKeyMask:
             screenPoint = NSEvent.mouseLocation()
             viewPoint =   self.superview().convertPoint_fromView_(event.locationInWindow(),
                                                         self.window().contentView())
@@ -156,20 +156,26 @@ class PyDETextView(NSTextView):
                     try:
                         while txt[begin-1] in "1234567890.":
                             begin-=1
-                    except IndexError:
-                        pass
+                    except IndexError as err:
+                        print( "PyDETextView.mouseDown_() failed to scan number 1." )
+                        print( err )
+                        # pass
                     try:
                         while txt[end+1] in "1234567890.":
                             end+=1
-                    except IndexError:
-                        pass
+                    except IndexError as err:
+                        print( "PyDETextView.mouseDown_() failed to scan number 2." )
+                        print( err )
+                        # pass
                     end+=1
                     self.valueLadder = ValueLadder(self,
                                                    eval(txt[begin:end]),
                                                    (begin,end),
                                                    screenPoint, viewPoint)
             except IndexError:
-                pass        
+                print( "PyDETextView.mouseDown_() failed to scan number 3." )
+                print( err )
+                # pass
         else:
             NSTextView.mouseDown_(self,event)
 
