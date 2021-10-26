@@ -1,6 +1,3 @@
-#from Foundation import *
-#from AppKit import *
-
 # py3 stuff
 py3 = False
 try:
@@ -15,7 +12,7 @@ except NameError:
     punichr = chr
     long = int
 
-if py3:
+if 1: #py3:
     import ast
     parse = ast.parse
     Sub = ast.Sub
@@ -28,7 +25,6 @@ else:
     Sub = compiler.ast.Sub
     UnarySub = compiler.ast.UnarySub
     Add = compiler.ast.Add
-
 
 
 kwdbg = 1
@@ -160,8 +156,8 @@ class ValueLadder:
         index = 0
 
         # Recursively check my children
-        for child in node.getChildNodes():
-            retVal = self._checkSigns(child)
+        for child in ast.iter_child_nodes( node ):
+            retVal = self._checkSigns( child )
             # Direct hit. The child I just searched contains the magicvar.
             # Check whether this node is one of the special cases.
             if retVal == 1:
