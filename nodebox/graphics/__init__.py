@@ -639,9 +639,10 @@ class Context(object):
 
     ### Image commands ###
 
-    def image(self, path, x, y, width=None, height=None, alpha=1.0, data=None, draw=True, **kwargs):
+    def image(self, path, x, y, width=None, height=None, alpha=1.0,
+                    data=None, draw=True, **kwargs):
         img = self.Image(path, x, y, width, height, alpha, data=data, **kwargs)
-        img.inheritFromContext(kwargs.keys())
+        img.inheritFromContext( kwargs.keys() )
         if draw:
             img.draw()
         return img
@@ -650,7 +651,6 @@ class Context(object):
         img = self.Image(path, data=data)
         return img.size
         
-
     ### Canvas proxy ###
 
     def save(self, fname, format=None):
@@ -678,5 +678,6 @@ class Context(object):
         return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
 
     def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
-        return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit)
+        return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,
+                                            dx,dy,nreal,nimag,limit)
 
