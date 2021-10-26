@@ -57,7 +57,7 @@
 <v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -152,7 +152,7 @@
 <v t="karstenw.20170709143618.1"><vh>## Canvas Proxy ##</vh>
 <v t="karstenw.20170704104726.24"><vh>save</vh></v>
 </v>
-<v t="karstenw.20170709143636.1"><vh>## C-Extensions Interface ##</vh>
+<v t="karstenw.20170709143636.1" a="E"><vh>## C-Extensions Interface ##</vh>
 <v t="karstenw.20170704104726.25"><vh>isqrt</vh></v>
 <v t="karstenw.20170704104726.26"><vh>angle</vh></v>
 <v t="karstenw.20170704104726.27"><vh>distance</vh></v>
@@ -393,19 +393,19 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -508,7 +508,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105032.103"><vh>showPreferencesPanel_</vh></v>
 <v t="karstenw.20170704105032.104"><vh>generateCode_</vh></v>
@@ -642,10 +642,11 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
+<v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
+<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -1092,7 +1093,7 @@ import nodebox
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
 py3 = nodebox.py3
-BUNDLENAME = NAME + "-py27"
+BUNDLENAME = NAME #+ "-py27"
 if nodebox.py3:
     BUNDLENAME = NAME + "-py38"
 
@@ -2222,9 +2223,10 @@ def font(self, fontname=None, fontsize = None):
 </t>
 <t tx="karstenw.20170704104726.22">### Image commands ###
 
-def image(self, path, x, y, width=None, height=None, alpha=1.0, data=None, draw=True, **kwargs):
+def image(self, path, x, y, width=None, height=None, alpha=1.0,
+                data=None, draw=True, **kwargs):
     img = self.Image(path, x, y, width, height, alpha, data=data, **kwargs)
-    img.inheritFromContext(kwargs.keys())
+    img.inheritFromContext( kwargs.keys() )
     if draw:
         img.draw()
     return img
@@ -2234,7 +2236,6 @@ def image(self, path, x, y, width=None, height=None, alpha=1.0, data=None, draw=
     img = self.Image(path, data=data)
     return img.size
     
-
 </t>
 <t tx="karstenw.20170704104726.24">### Canvas proxy ###
 
@@ -4763,14 +4764,13 @@ import pprint
 pp = pprint.pprint
 
 import pdb
-
-kwdbg = True
+kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
 debugging = True
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import Foundation
 import AppKit
@@ -6633,7 +6633,7 @@ def AskString(question, resultCallback, default="", parentWindow=None):
 
 </t>
 <t tx="karstenw.20170704105113.10">def mouseDown_(self, event):
-    if event.modifierFlags() &amp; NSCommandKeyMask:            
+    if event.modifierFlags() &amp; NSCommandKeyMask:
         screenPoint = NSEvent.mouseLocation()
         viewPoint =   self.superview().convertPoint_fromView_(event.locationInWindow(),
                                                     self.window().contentView())
@@ -6650,20 +6650,26 @@ def AskString(question, resultCallback, default="", parentWindow=None):
                 try:
                     while txt[begin-1] in "1234567890.":
                         begin-=1
-                except IndexError:
-                    pass
+                except IndexError as err:
+                    print( "PyDETextView.mouseDown_() failed to scan number 1." )
+                    print( err )
+                    # pass
                 try:
                     while txt[end+1] in "1234567890.":
                         end+=1
-                except IndexError:
-                    pass
+                except IndexError as err:
+                    print( "PyDETextView.mouseDown_() failed to scan number 2." )
+                    print( err )
+                    # pass
                 end+=1
                 self.valueLadder = ValueLadder(self,
                                                eval(txt[begin:end]),
                                                (begin,end),
                                                screenPoint, viewPoint)
         except IndexError:
-            pass        
+            print( "PyDETextView.mouseDown_() failed to scan number 3." )
+            print( err )
+            # pass
     else:
         NSTextView.mouseDown_(self,event)
 
@@ -7503,9 +7509,13 @@ else:
     Add = compiler.ast.Add
 
 
-import Foundation
-import AppKit
 
+kwdbg = 1
+import pdb
+
+import Foundation
+
+import AppKit
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
@@ -7523,11 +7533,6 @@ NSParagraphStyleAttributeName = AppKit.NSParagraphStyleAttributeName
 NSFontAttributeName = AppKit.NSFontAttributeName
 
 
-
-
-
-MAGICVAR = "__magic_var__"
-
 </t>
 <t tx="karstenw.20170704105126.2">class ValueLadder:
 
@@ -7542,6 +7547,8 @@ MAGICVAR = "__magic_var__"
     add = False
 
     @others
+
+
 </t>
 <t tx="karstenw.20170704105126.3">def __init__(self, textView, value, clickPos, screenPoint, viewPoint):
     self.textView = textView
@@ -7554,18 +7561,16 @@ MAGICVAR = "__magic_var__"
     self.viewPoint = viewPoint
     (x,y),(self.width,self.height) = self.textView.bounds()
     self.originalString = self.textView.string()
-    self.backgroundColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                0.4,0.4,0.4, 1.0)
-    self.strokeColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                0.1,0.1,0.1, 1.0)
-    self.textColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                1.0,1.0,1.0, 1.0)
+    self.backgroundColor = gBGCol 
+    self.strokeColor = gStrCol
+    self.textColor = gTxtCol
     paraStyle = NSMutableParagraphStyle.alloc().init()
     paraStyle.setAlignment_(NSCenterTextAlignment)
     font = NSFont.fontWithName_size_("Monaco", 10)
     self.textAttributes = {
         NSForegroundColorAttributeName: self.textColor,
-        NSParagraphStyleAttributeName:  paraStyle,NSFontAttributeName:font}
+        NSParagraphStyleAttributeName:  paraStyle,
+        NSFontAttributeName:            font}
 
     # To speed things up, the code is compiled only once. 
     # The number is replaced with a magic variable, that is set in the 
@@ -7574,7 +7579,6 @@ MAGICVAR = "__magic_var__"
     self.patchedSource = (self.originalString[:begin]
                             + MAGICVAR
                             + self.originalString[end:])
-
 
     #ast = parse(self.patchedSource + "\n\n")
     #self._checkSigns(ast)
@@ -7586,8 +7590,10 @@ MAGICVAR = "__magic_var__"
 
 </t>
 <t tx="karstenw.20170704105126.4">def _parseAndCompile(self):
-    ast = parse(self.patchedSource.encode('ascii', 'replace') + "\n\n")
-    self._checkSigns(ast)
+    s = self.patchedSource.encode('ascii', 'replace') + b"\n\n"
+    ast = parse( s )
+    # pdb.set_trace()
+    self._checkSigns( ast )
     self.textView.document._compileScript(self.patchedSource)
 
 </t>
@@ -7622,7 +7628,8 @@ MAGICVAR = "__magic_var__"
     # Check whether I am the correct node
     try:
         if node.name == MAGICVAR:
-            return 1 # If i am, return the "direct hit" code.
+            # If i am, return the "direct hit" code.
+            return 1
     except AttributeError:
         pass
 
@@ -7631,6 +7638,7 @@ MAGICVAR = "__magic_var__"
     # in the second part. ("a-10" has to change to "a+10", 
     # but "10-a" shouldn't change to "+10-a")
     index = 0
+
     # Recursively check my children
     for child in node.getChildNodes():
         retVal = self._checkSigns(child)
@@ -7681,11 +7689,15 @@ MAGICVAR = "__magic_var__"
 
     # Potentionally change the sign on the number.
     # The following cases are valid:
-    # - A subtraction where the value turned positive "random(5-8)" --&gt; "random(5+8)"
-    # - A unary subtraction where the value turned positive "random(-5)" --&gt; "random(5)"
+    # - A subtraction where the value turned positive
+    #       "random(5-8)" --&gt; "random(5+8)"
+    # - A unary subtraction where the value turned positive
+    #       "random(-5)" --&gt; "random(5)"
     #   Note that the sign dissapears here.
-    # - An addition where the second part turns negative "random(5+8)" --&gt; "random(5-8)"
-    # Note that the code replaces the sign on the place where it was, leaving the code intact.
+    # - An addition where the second part turns negative
+    #       "random(5+8)" --&gt; "random(5-8)"
+    # Note that the code replaces the sign on the place where it was,
+    # leaving the code intact.
 
     # Case 1: Negative numbers where the new value is negative as well.
     # This means the numbers turn positive.
@@ -7695,14 +7707,19 @@ MAGICVAR = "__magic_var__"
         notFound = True
         while True:
             if self.originalString[i] == '-':
-                if self.unary: # Unary subtractions will have the sign removed.
-                    # Re-create the string: the spaces between the value and the '-' + the value
-                    value = self.originalString[i+1:begin] + str(abs(self.value))
-                else: # Binary subtractions get a '+'                        
+                # Unary subtractions will have the sign removed.
+                if self.unary: 
+                    # Re-create the string: the spaces between
+                    # the value and the '-' + the value
+                    value = (  self.originalString[i+1:begin]
+                             + str(abs(self.value)) )
+                else:
+                    # Binary subtractions get a '+'                        
                     value = '+' + self.originalString[i+1:begin] + str(abs(self.value))
                 range = (i,end-i)
                 break
             i -= 1
+
     # Case 2: Additions (only additions where we are the second part
     # interests us, this is checked already on startup)
     elif self.add and self.value &lt; 0:
@@ -7786,6 +7803,7 @@ MAGICVAR = "__magic_var__"
     self.textView.document.magicvar = self.value
     self.textView.document.currentView.direct = True
     self.textView.document.runScriptFast()
+
 </t>
 <t tx="karstenw.20170704105258.1"></t>
 <t tx="karstenw.20170704105327.1">@language python
@@ -14168,15 +14186,20 @@ class NodeBoxApplication(NSApplication):
 
 </t>
 <t tx="karstenw.20210623180253.1">def awakeFromNib(self):
-    print("AppClass.awakeFromNib()")
+    if kwlog:
+        print("AppClass.awakeFromNib()")
     objc.super(NodeBoxApplication, self).awakeFromNib()
+
 </t>
 <t tx="karstenw.20210623180302.1">def finishLaunching(self):
-    print("AppClass.finishLaunching()")
+    if kwdbg:
+        print("AppClass.finishLaunching()")
     objc.super(NodeBoxApplication, self).finishLaunching()
+
 </t>
 <t tx="karstenw.20210623195428.1">def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
-    return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit)
+    return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,
+                                        dx,dy,nreal,nimag,limit)
 
 </t>
 <t tx="karstenw.20210624121624.1">@objc.IBAction
@@ -14237,6 +14260,7 @@ def sortlistfunction(thelist, thecompare):
   #define IN_FORMAT "s#iiiddddddd"
   #define OUT_FORMAT "s#"
 #endif
+
 </t>
 <t tx="karstenw.20210703124707.1">def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     if type(s) not in ( pstr, punicode):
@@ -14299,6 +14323,13 @@ def __ge__(self, other):
 <t tx="karstenw.20210715171431.1">def __hash__( self ):
     return hash( (self.red, self.green, self.blue, self.alpha) )
 
+
+</t>
+<t tx="karstenw.20211017190738.1">gBGCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.4,0.4,0.4, 1.0)
+gStrCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.1,0.1,0.1, 1.0)
+gTxtCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0,1.0,1.0, 1.0)
+
+MAGICVAR = "__magic_var__"
 
 </t>
 </tnodes>
