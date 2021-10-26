@@ -3,6 +3,7 @@
 build/
 dist/
 +trash
++private
 .gitignore
 +current
 # Xcode user files
