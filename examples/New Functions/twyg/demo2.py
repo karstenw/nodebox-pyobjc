@@ -1,11 +1,15 @@
+
+from __future__ import print_function
+
 import os
 twyg = ximport('twyg')
-reload(twyg)
+#reload(twyg)
 
 
 datafiles = list(filelist( os.path.abspath('example-data')))
 datafile = datafiles[0]
 datafiles = [os.path.split(i)[1] for i in datafiles]
+
 
 
 configs = [ 'boxes', 'bubbles', 'edge', 'flowchart', 'hive', 'ios', 'jellyfish',
@@ -26,23 +30,27 @@ margins = ['10%', '5%']
 def setcolorscheme( cs ):
     global colorscheme
     colorscheme = cs
+    #print("colorscheme:", colorscheme)
     run()
 
 def setconfig(cf):
     global config
     config = cf
+    #print("config:", config)
     run()
 
 def setdatafile( df ):
     global datafile
     fullpath = os.path.abspath(os.path.join('example-data', df))
     datafile = fullpath
+    # print("datafile:", datafile)
     run()
 
 
 def run():
-    if config and datafile and colorscheme:
-        twyg.generate_output_nodebox(datafile, config, colorscheme=colorscheme, margins=margins)
+    # if 1: #config and datafile and colorscheme:
+    res = twyg.generate_output_nodebox(datafile, config, colorscheme=colorscheme, margins=margins)
+    # print("result:", res)
     
 var("Config", MENU, default=setconfig, value=configs)
 var("Colorscheme", MENU, default=setcolorscheme, value=colorschemes)

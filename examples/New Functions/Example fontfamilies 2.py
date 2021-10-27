@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import pprint
 
 
@@ -12,12 +15,12 @@ for fontRec in flatFonts:
     if u'fixedpitch' in fontRec.traitnames:
         fixed.append( fontRec )
 
-print
-print "All fixed width fonts:"
-print
+print()
+print( "All fixed width fonts:" )
+print()
 pprint.pprint( fixed )
 
-print
-print "font families:", len(fontFamilies)
-print "fonts:", len(flatFonts)
-print "fixed width fonts:", len(fixed)
+print()
+print( "font families:", len(fontFamilies) )
+print( "fonts:", len(flatFonts) )
+print( "fixed width fonts:", len(fixed) )

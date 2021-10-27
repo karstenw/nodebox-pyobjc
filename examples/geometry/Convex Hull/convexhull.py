@@ -7,6 +7,10 @@
    Displaying a million points takes about 4-8 minutes
 """
 
+from __future__ import print_function
+
+
+
 # This is new with Nodebox 1.9.13; size(0,0) sets size to main screen size
 try:
     size(0, 0)
@@ -14,10 +18,15 @@ except:
     # if we're running an older version, set some reasonable default
     size(800, 800)
 
+try:
+    xrange
+except NameError:
+    xrange = range
+
 import time
 
 # how many points 1,000,000 takes about 1 min.
-noOfPoints = 10000
+noOfPoints = 100000
 
 # inset from canvas size
 inset = 25
@@ -155,16 +164,16 @@ displayHullPoints( outline )
 t_displayhull = time.time()
 
 
-print
-print "#Total points:", len(points)
-print "#Hull points:", len(outline)
+print()
+print( "#Total points:", len(points) )
+print( "#Hull points:", len(outline) )
 
-print "Time creating %i random points: %.4f sek." % (len(points), round(t_points - t_start, 4), )
+print( "Time creating %i random points: %.4f sek." % (len(points), round(t_points - t_start, 4), ))
 
-print "Time displaying %i points: %.4f sek." % (len(points), round(t_display - t_points, 4), )
+print( "Time displaying %i points: %.4f sek." % (len(points), round(t_display - t_points, 4), ))
 
-print "Time calculating hull: %.4f sek." % (round(t_calchull - t_display, 4), )
-print "Time displaying hull: %.4f sek." % (round(t_displayhull - t_calchull, 4), )
+print( "Time calculating hull: %.4f sek." % (round(t_calchull - t_display, 4), ) )
+print( "Time displaying hull: %.4f sek." % (round(t_displayhull - t_calchull, 4), ) )
 
-print "\nTotal Time: %.4f sek." % (round(t_displayhull - t_start, 4), )
+print( "\nTotal Time: %.4f sek." % (round(t_displayhull - t_start, 4), ) )
 

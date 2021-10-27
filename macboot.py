@@ -3,12 +3,15 @@
 # This just imports everything from the nodebox.gui.mac module
 # and works from there
 
+from __future__ import print_function
+
+
 import os
 import operator
 import warnings
 
 # for the libraries
-import sgmllib
+
 import bs4
 
 # moved to Library
@@ -24,20 +27,20 @@ import pickle
 
 
 # pattern lib
-import new
 import csv
 import functools
 import itertools
-import httplib
 import codecs
 import calendar
 import types
+
+import encodings
+import imagewells
 
 # currently not in py2
 # import MySQLdb # lib/pattern
 # import json
 # import locale
-
 
 
 #import UserList
@@ -77,6 +80,8 @@ import Foundation
 import AppKit
 
 from PyObjCTools import AppHelper
+#import PyObjCTools.Debugging
+#PyObjCTools.Debugging.installVerboseExceptionHandler()
 
 import nodebox
 import nodebox.geo
@@ -98,8 +103,24 @@ import nodebox.gui.mac
 # import twyg
 
 
-#import PyObjCTools.Debugging
-#PyObjCTools.Debugging.installVerboseExceptionHandler()
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
+
+if not py3:
+    import new
+    import httplib
+
 
 
 AppHelper.runEventLoop()

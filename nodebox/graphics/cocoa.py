@@ -1,8 +1,6 @@
 import os
 import warnings
 
-import pdb
-
 # from random import choice, shuffle
 import random
 choice = random.choice
@@ -55,7 +53,7 @@ makeunicode = nodebox.util.makeunicode
 
 try:
     import cPolymagic
-except ImportError, e:
+except ImportError as e:
     warnings.warn('Could not load cPolymagic: %s' % e)
 
 __all__ = [
@@ -140,6 +138,20 @@ _STATE_NAMES = {
 }
 
 
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
+
 def _save():
     NSGraphicsContext.currentContext().saveGraphicsState()
 
@@ -162,17 +174,33 @@ class Point(object):
         elif len(args) == 0:
             self.x = self.y = 0.0
         else:
-            raise NodeBoxError, "Wrong initializer for Point object"
+            raise NodeBoxError("Wrong initializer for Point object")
 
     def __repr__(self):
         return "Point(x=%.3f, y=%.3f)" % (self.x, self.y)
         
     def __eq__(self, other):
-        if other is None: return False
+        if other is None:
+            return False
         return self.x == other.x and self.y == other.y
         
     def __ne__(self, other):
         return not self.__eq__(other)
+
+    def __lt__(self, other):
+        return (self.x < other.x) and (self.y < other.y)
+
+    def __le__(self, other):
+        return (self.x <= other.x) and (self.y <= other.y)
+
+    def __gt__(self, other):
+        return (self.x > other.x) and (self.y > other.y)
+
+    def __ge__(self, other):
+        return (self.x >= other.x) and (self.y >= other.y)
+
+    def __hash__( self ):
+        return hash( (self.x, self.y) )
 
 
 class Grob(object):
@@ -189,7 +217,7 @@ class Grob(object):
         
     def copy(self):
         """Returns a deep copy of this grob."""
-        raise NotImplementedError, "Copy is not implemented on this Grob class."
+        raise NotImplementedError("Copy is not implemented on this Grob class.")
         
     def inheritFromContext(self, ignore=()):
         attrs_to_copy = list(self.__class__.stateAttributes)
@@ -199,7 +227,8 @@ class Grob(object):
     def checkKwargs(self, kwargs):
         remaining = [arg for arg in kwargs.keys() if arg not in self.kwargs]
         if remaining:
-            raise NodeBoxError, "Unknown argument(s) '%s'" % ", ".join(remaining)
+            err = "Unknown argument(s) '%s'" % ", ".join(remaining)
+            raise NodeBoxError(err)
     checkKwargs = classmethod(checkKwargs)
 
 
@@ -304,7 +333,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         elif isinstance(path, NSBezierPath):
             self._nsBezierPath = path
         else:
-            raise NodeBoxError, "Don't know what to do with %s." % path
+            raise NodeBoxError("Don't know what to do with %s." % path)
             
     def _get_path(self):
         s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
@@ -321,7 +350,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return self._capstyle
     def _set_capstyle(self, style):
         if style not in (BUTT, ROUND, SQUARE):
-            raise NodeBoxError, 'Line cap style should be BUTT, ROUND or SQUARE.'
+            raise NodeBoxError('Line cap style should be BUTT, ROUND or SQUARE.')
         self._capstyle = style
     capstyle = property(_get_capstyle, _set_capstyle)
 
@@ -329,7 +358,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return self._joinstyle
     def _set_joinstyle(self, style):
         if style not in (MITER, ROUND, BEVEL):
-            raise NodeBoxError, 'Line join style should be MITER, ROUND or BEVEL.'
+            raise NodeBoxError('Line join style should be MITER, ROUND or BEVEL.')
         self._joinstyle = style
     joinstyle = property(_get_joinstyle, _set_joinstyle)
 
@@ -435,7 +464,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             elif isinstance(el, PathElement):
                 self.append(el)
             else:
-                raise NodeBoxError, "Don't know how to handle %s" % el
+                raise NodeBoxError("Don't know how to handle %s" % el)
 
     def append(self, el):
         self._segment_cache = None
@@ -449,7 +478,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             self.closepath()
             
     def _get_contours(self):
-        from nodebox.graphics import bezier
+        from . import bezier
         return bezier.contours(self)
     contours = property(_get_contours)
 
@@ -526,7 +555,9 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
     ### Mathematics ###
 
     def segmentlengths(self, relative=False, n=10):
-        import bezier
+        # import bezier
+        
+        from . import bezier
         if relative: # Use the opportunity to store the segment cache.
             if self._segment_cache is None:
                 self._segment_cache = bezier.segment_lengths(self,
@@ -536,34 +567,39 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             return bezier.segment_lengths(self, relative=False, n=n)
 
     def _get_length(self, segmented=False, n=10):
-        import bezier
+        # import bezier
+        from . import bezier
         return bezier.length(self, segmented=segmented, n=n)
     length = property(_get_length)
         
     def point(self, t):
-        import bezier
+        # import bezier
+        from . import bezier
         return bezier.point(self, t)
         
     def points(self, amount=100):
-        import bezier
+        from . import bezier
         if len(self) == 0:
-            raise NodeBoxError, "The given path is empty"
+            raise NodeBoxError("The given path is empty")
 
         # The delta value is divided by amount - 1, because we also want the
         # last point (t=1.0)
         # If I wouldn't use amount - 1, I fall one point short of the end.
         # E.g. if amount = 4, I want point at t 0.0, 0.33, 0.66 and 1.0,
         # if amount = 2, I want point at t 0.0 and t 1.0
+        
+        amount = int( amount )
         try:
-            delta = 1.0/(amount-1)
+            delta = 1.0 / (amount-1)
         except ZeroDivisionError:
             delta = 1.0
 
-        for i in xrange(amount):
-            yield self.point(delta*i)
+        for i in range(amount):
+            yield self.point( delta*i )
             
     def addpoint(self, t):
-        import bezier
+        # import bezier
+        from . import bezier
         self._nsBezierPath = bezier.insert_point(self, t)._nsBezierPath
         self._segment_cache = None
 
@@ -632,13 +668,35 @@ class PathElement(object):
             return "PathElement(CLOSE)"
             
     def __eq__(self, other):
-        if other is None: return False
-        if self.cmd != other.cmd: return False
-        return self.x == other.x and self.y == other.y \
-            and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2
+        if other is None:
+            return False
+        if self.cmd != other.cmd:
+            return False
+        return (    self.x == other.x and self.y == other.y
+                and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2 )
         
+    def __lt__(self, other):
+        return (    (self.x < other.x) and (self.y < other.y)
+                and (self.ctrl1 < other.ctrl1) and (self.ctrl2 < other.ctrl2) )
+
+    def __le__(self, other):
+        return (    (self.x <= other.x) and (self.y <= other.y)
+                and (self.ctrl1 <= other.ctrl1) and (self.ctrl2 <= other.ctrl2) )
+
+    def __gt__(self, other):
+        return (    (self.x > other.x) and (self.y > other.y)
+                and (self.ctrl1 > other.ctrl1) and (self.ctrl2 > other.ctrl2) )
+
+    def __ge__(self, other):
+        return (    (self.x >= other.x) and (self.y >= other.y)
+                and (self.ctrl1 >= other.ctrl1) and (self.ctrl2 >= other.ctrl2) ) 
+
+
     def __ne__(self, other):
         return not self.__eq__(other)
+
+    def __hash__(self):
+        return hash( (self.x, self.y, self.ctrl1, self.ctrl2) )
 
 
 class ClippingPath(Grob):
@@ -670,7 +728,7 @@ class Rect(BezierPath):
                                         **kwargs)
 
     def copy(self):
-        raise NotImplementedError, "Please don't use Rect anymore"
+        raise NotImplementedError("Please don't use Rect anymore")
 
 
 class Oval(BezierPath):
@@ -683,7 +741,7 @@ class Oval(BezierPath):
                                         **kwargs)
 
     def copy(self):
-        raise NotImplementedError, "Please don't use Oval anymore"
+        raise NotImplementedError("Please don't use Oval anymore")
 
 
 class Color(object):
@@ -707,7 +765,7 @@ class Color(object):
         elif params == 1 and isinstance(args[0], NSColor):
             clr = args[0]
         elif (    params == 1
-              and isinstance(args[0], (str,unicode))
+              and isinstance(args[0], (pstr,punicode))
               and len(args[0]) in (3,4,5,6,7,8,9)):
             # hex param
             try:
@@ -735,8 +793,8 @@ class Color(object):
                 if n in (4,8):
                     alpha = int(alpha, 16) / div
                 clr = NSColor.colorWithDeviceRed_green_blue_alpha_(r, g, b, alpha)
-            except Exception, err:
-                print "Color parsing error:", err
+            except Exception as err:
+                print("Color parsing error: %s" % err)
                 clr = NSColor.colorWithDeviceWhite_alpha_(0, 1)
 
         elif params == 1: # Gray, no alpha
@@ -780,6 +838,10 @@ class Color(object):
     def __repr__(self):
         return "%s(%.3f, %.3f, %.3f, %.3f)" % (self.__class__.__name__, self.red,
                 self.green, self.blue, self.alpha)
+
+    def __hash__( self ):
+        return hash( (self.red, self.green, self.blue, self.alpha) )
+
 
     def set(self):
         self.nsColor.set()
@@ -995,7 +1057,7 @@ class Transform(object):
         elif isinstance(transform, NSAffineTransform):
             pass
         else:
-            raise NodeBoxError, "Don't know how to handle transform %s." % transform
+            raise NodeBoxError("Don't know how to handle transform %s." % transform)
         self._nsAffineTransform = transform
         
     def _get_transform(self):
@@ -1071,7 +1133,7 @@ class Transform(object):
         if isinstance(path, BezierPath):
             path = BezierPath(path._ctx, path)
         else:
-            raise NodeBoxError, "Can only transform BezierPaths"
+            raise NodeBoxError("Can only transform BezierPaths")
         path._nsBezierPath = self._nsAffineTransform.transformBezierPath_(path._nsBezierPath)
         return path
 
@@ -1104,7 +1166,7 @@ class Image(Grob, TransformMixin):
                 data = NSData.dataWithBytes_length_(data, len(data))
             self._nsImage = NSImage.alloc().initWithData_(data)
             if self._nsImage is None:
-                raise NodeBoxError, "can't read image %r" % path
+                raise NodeBoxError("can't read image %r" % path)
             self._nsImage.setFlipped_(True)
             self._nsImage.setCacheMode_(NSImageCacheNever)
 
@@ -1113,11 +1175,11 @@ class Image(Grob, TransformMixin):
                 self._nsImage = image
                 self._nsImage.setFlipped_(True)
             else:
-                raise NodeBoxError, "Don't know what to do with %s." % image
+                raise NodeBoxError("Don't know what to do with %s." % image)
 
         elif path is not None:
             if not os.path.exists(path):
-                raise NodeBoxError, 'Image "%s" not found.' % path
+                raise NodeBoxError('Image "%s" not found.' % path)
             curtime = os.path.getmtime(path)
             try:
                 image, lasttime = self._ctx._imagecache[path]
@@ -1128,7 +1190,7 @@ class Image(Grob, TransformMixin):
             if image is None:
                 image = NSImage.alloc().initWithContentsOfFile_(path)
                 if image is None:
-                    raise NodeBoxError, "Can't read image %r" % path
+                    raise NodeBoxError("Can't read image %r" % path)
                 image.setFlipped_(True)
                 image.setCacheMode_(NSImageCacheNever)
                 self._ctx._imagecache[path] = (image, curtime)
@@ -1321,7 +1383,7 @@ class Text(Grob, TransformMixin, ColorMixin):
             NSFontAttributeName:            self.font
         }
 
-        t = unicode(self.text)
+        t = makeunicode( self.text )
         textStorage = NSTextStorage.alloc().initWithString_attributes_(t, d)
         try:
             textStorage.setFont_(self.font)
@@ -1500,6 +1562,8 @@ class Variable(object):
                     default = u""
             self.default = default
         self.value = value or self.default
+        self.control = None
+
 
     def sanitize(self, val):
         """Given a Variable and a value, cleans it out"""
@@ -1509,13 +1573,16 @@ class Variable(object):
             except ValueError:
                 return 0.0
         elif self.type == TEXT:
-            return unicode(str(val), "utf_8", "replace")
+            # return unicode(str(val), "utf_8", "replace")
+            return makeunicode( val )
             try:
-                return unicode(str(val), "utf_8", "replace")
+                # return unicode(str(val), "utf_8", "replace")
+                return makeunicode( val )
             except:
                 return ""
         elif self.type == BOOLEAN:
-            if unicode(val).lower() in ("true", "1", "yes"):
+            v = makeunicode( val )
+            if v.lower() in (u"true", u"1", u"yes"):
                 return True
             else:
                 return False
@@ -1607,8 +1674,8 @@ class Canvas(Grob):
         try:
             del self._grobstack[0]
             self._container = self._grobstack[0]
-        except IndexError, e:
-            raise NodeBoxError, "pop: too many canvas pops!"
+        except IndexError as e:
+            raise NodeBoxError("pop: too many canvas pops!")
 
     def draw(self):
         if self.background is not None:
@@ -1642,7 +1709,7 @@ class Canvas(Grob):
                         "tiff": NSTIFFFileType}
             if format not in imgTypes:
                 e = "Filename should end in .pdf, .eps, .tiff, .gif, .jpg or .png"
-                raise NodeBoxError, e
+                raise NodeBoxError(e)
             data = self._nsImage.TIFFRepresentation()
             if format != 'tiff':
                 imgType = imgTypes[format]

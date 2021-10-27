@@ -21,18 +21,62 @@ experienced programmers.  Visit http://diveintopython.org/ for the
 latest version.
 """
 
+from __future__ import print_function
+
+import sys
+import os
+import unicodedata
+
+
+try:
+    import urllib2
+    urlopen = urllib2.urlopen
+except ModuleNotFoundError:
+    import urllib.request
+    urlopen = urllib.request.urlopen
+from xml.dom import minidom
+import random
+import getopt
+import io
+StringIO = io.StringIO
+
+
 __author__ = "Mark Pilgrim (f8dy@diveintopython.org)"
 __version__ = "$Revision: 1.3 $"
 __date__ = "$Date: 2002/05/28 17:05:23 $"
 __copyright__ = "Copyright (c) 2001 Mark Pilgrim"
 __license__ = "Python"
 
-from xml.dom import minidom
-import random
-import sys
-import getopt
 
 _debug = 0
+
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
+
+def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
+    if type(s) not in ( pstr, punicode):
+        s = str(s)
+    if type(s) not in ( punicode, ):
+        try:
+            s = punicode(s, srcencoding)
+        except TypeError as err:
+            pass
+    if type(s) in ( punicode, ):
+        s = unicodedata.normalize(normalizer, s)
+    return s
+
 
 def openAnything(source):
     """URI, filename, or string --> stream
@@ -55,30 +99,30 @@ def openAnything(source):
     >>> doc = minidom.parse(sock)
     >>> sock.close()
     """
-
     if hasattr(source, "read"):
         return source
     
     if source == "-":
-        import sys
         return sys.stdin
 
     # try to open with urllib (if source is http, ftp, or file URL)
-    import urllib
     try:
-        return urllib.urlopen(source)
-    except (IOError, OSError):
+        return urlopen(source)
+    except (IOError, OSError, ValueError):
         pass
     
     # try to open with native open function (if source is pathname)
     try:
-        return open(source)
+        path = makeunicode( source )
+        path = os.path.abspath( path )
+        # return io.open(source, 'rb')
+        return io.open(path, 'rb')
+
     except (IOError, OSError):
         pass
     
     # treat source as string
-    import StringIO
-    return StringIO.StringIO(str(source))
+    return StringIO( makeunicode(source) )
 
 class NoSourceError(Exception): pass
 
@@ -131,7 +175,7 @@ class KantGenerator:
         xrefs = xrefs.keys()
         standaloneXrefs = [e for e in self.refs.keys() if e not in xrefs]
         if not standaloneXrefs:
-            raise NoSourceError, "can't guess source, and no source specified"
+            raise NoSourceError("can't guess source, and no source specified")
         return '<xref id="%s"/>' % random.choice(standaloneXrefs)
         
     def reset(self):
@@ -269,7 +313,7 @@ class KantGenerator:
         self.parse(self.randomChildElement(node))
 
 def usage():
-    print __doc__
+    print(__doc__)
 
 def main(argv):
     grammar = "kant.xml"
@@ -290,7 +334,7 @@ def main(argv):
     
     source = "".join(args)
     k = KantGenerator(grammar, source)
-    print k.output()
+    print(k.output())
 
 if __name__ == "__main__":
     main(sys.argv[1:])

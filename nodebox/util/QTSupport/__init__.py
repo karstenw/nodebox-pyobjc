@@ -63,8 +63,8 @@ class Movie(object):
             finally:
                 try:
                     os.remove(self.tmpfname)
-                except OSError, err:
-                    print err
+                except OSError as err:
+                    print(err)
                     # pass
         self.frame += 1
                 
@@ -82,7 +82,7 @@ def test():
     w, h = 500, 300
     m = Movie("xx3.mov")
     for i in range(200):
-        print "Frame", i
+        print("Frame %i" % i)
         ctx = Context()
         ctx.size(w, h)
         ctx.rect(100.0+sin(i/10.0)*100.0,i/2.0,100,100)

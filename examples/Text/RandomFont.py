@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 size(1200, 650)
 var("textsize", NUMBER, 50.0, 0.0, 600.0)
 # Demonstrate how to randomly select a font from a list.
@@ -16,7 +19,7 @@ fill(1,0,0)
 # Select a font randomly from the list of names.
 fontname = choice(names)
 font(fontname)
-print fontname
+print( fontname )
 
 # textsize is a variable defined under Python > Variables.
 fontsize(textsize)

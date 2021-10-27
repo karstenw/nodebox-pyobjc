@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import math
 import time
 
@@ -113,12 +116,14 @@ def makeColorlookup( iterations ):
     for i in range(1, iterations):
         idx = i * 4
         
-        if 0:
+        if 1:
             r,g,b,a = paletteBlueish( i, iterations )
         elif False:
             r,g,b,a = paletteHLS( i, iterations )
         elif True:
             r,g,b,a = paletteOrange( i, iterations )
+        elif 0.0:
+            r,g,b,a = makeColorlookupOLD( i, iterations )
         else:
             r,g,b,a = paletteOther( i, iterations )
         colorcache[idx+0] = r
@@ -139,18 +144,19 @@ def handlecoordinate(value, name):
         fsize = int(value)
     elif name == "xpos":
         xpos = float(value)
+        print( "xpos", xpos )
     elif name == "ypos":
         ypos = float(value)
     elif name == "delta":
         delta = float(value)
         zoom = 1 / delta
-        #print "delta", delta
-        #print "zoom", zoom
+        #print( "delta", delta )
+        #print( "zoom", zoom )
     elif name == "zoom":
         zoom = float(value)
         delta = 1 / zoom
-        #print "delta", delta
-        #print "zoom", zoom
+        #print( "delta", delta )
+        #print( "zoom", zoom )
     elif name == "iterations":
         iterations = int( value )
     elif name == "const_real":
@@ -173,22 +179,22 @@ def handlecoordinate(value, name):
     render( fsize, xpos, ypos, delta, iterations, const_real, const_imag, limit )
 
 
-delta = 0.5
+delta = 4.0 #0.5
 inity = -0.75 # -1.75
 
-var("fsize", NUMBER, 600, 300, 1200, handler=handlecoordinate)
+var("fsize", NUMBER, 320, 200, 1200, handler=handlecoordinate)
 var("xpos", NUMBER,  0.0, -6.0, 6.0, handler=handlecoordinate)
-var("ypos", NUMBER,  inity, -3.5, 3.5, handler=handlecoordinate)
+var("ypos", NUMBER,  0.0, -3.5, 3.5, handler=handlecoordinate)
 # var("delta", NUMBER, 4.0, 0.0001, 20.0, handler=handlecoordinate)
 var("zoom", NUMBER, 1.0/delta, 0.01, 5.0, handler=handlecoordinate)
 var("iterations", NUMBER, 100, 0, 1000, handler=handlecoordinate)
 var("const_real", NUMBER, 0.0, 0.0, 2.0, handler=handlecoordinate)
 var("const_imag", NUMBER, 0.0, 0.0, 2.0, handler=handlecoordinate)
 var("limit", NUMBER, 4.0, 0.01, 6.00, handler=handlecoordinate)
-var("h", NUMBER, 0.5,  0.0, 1.00, handler=handlecoordinate)
-var("s", NUMBER, 0.5,  0.0, 1.00, handler=handlecoordinate)
+#var("h", NUMBER, 0.5,  0.0, 1.00, handler=handlecoordinate)
+#var("s", NUMBER, 0.5,  0.0, 1.00, handler=handlecoordinate)
 var("USE_C_EXT", BOOLEAN, True, False, True, handler=handlecoordinate)
-var("Palette", MENU, default="Blueish", handler=handlecoordinate, menuitems=["HLS", "Blueish", "Other", "Old"])
+#var("Palette", MENU, default="Blueish", handler=handlecoordinate, menuitems=["HLS", "Blueish", "Other", "Old"])
 
 
 def makeImage( pixels, W, H ):
@@ -213,8 +219,8 @@ def mandelbrot(x, y, depth, cr, ci, l):
 
 def iterPixels(width, height, iterations, xpos, dx, ypos, dy, const_real, const_imag, clut, limit):
     pixels = bytearray( width * height * 4 )
-    for y in xrange( height ):
-        for x in xrange( width ):
+    for y in range( height ):
+        for x in range( width ):
             xc = xpos + float(x) / width * dx
             yc = ypos + float(y) / height * dy
             # v = mandelbrot(xc, yc, iterations, const_real, const_imag, limit)
@@ -222,7 +228,7 @@ def iterPixels(width, height, iterations, xpos, dx, ypos, dy, const_real, const_
             z = complex(xc, yc)
             o = complex(0, 0)
             res = 0
-            for i in xrange(iterations):
+            for i in range(iterations):
                 if abs(o) <= limit:
                     o = o*o + z
                 else:
@@ -258,7 +264,7 @@ def render(fsize, xpos, ypos, d, i, const_real, const_imag, limit):
     bytes = makeImage( pixels, W, H)
     image(None, 0, 0, data=bytes)
 
-    print "%ix%i = %i pixel in %.4fs" % (W,H,W*H,time.time()-start )
+    print( "%ix%i = %i pixel in %.4fs" % (W,H,W*H,time.time()-start ) )
 
 
 render(fsize, xpos, ypos, delta, iterations, const_real, const_imag, limit)

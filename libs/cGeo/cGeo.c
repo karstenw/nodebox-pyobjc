@@ -4,6 +4,21 @@
 // FAST INVERSE SQRT
 // Chris Lomont, http://www.math.purdue.edu/~clomont/Math/Papers/2003/InvSqrt.pdf
 
+#if PY_MAJOR_VERSION >= 3
+  #define MOD_ERROR_VAL NULL
+  #define MOD_SUCCESS_VAL(val) val
+  #define MOD_INIT(name) PyMODINIT_FUNC PyInit_##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+          static struct PyModuleDef moduledef = { \
+            PyModuleDef_HEAD_INIT, name, doc, -1, methods, }; \
+          ob = PyModule_Create(&moduledef);
+#else
+  #define MOD_ERROR_VAL
+  #define MOD_SUCCESS_VAL(val)
+  #define MOD_INIT(name) void init##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+    ob = Py_InitModule3(name, methods, doc);
+#endif
 float _fast_inverse_sqrt(float x) { 
     float xhalf = 0.5f*x; 
     int i = *(int*)&x;
@@ -74,15 +89,23 @@ static PyMethodDef geometry_methods[]={
 };
 
 
-PyMODINIT_FUNC initcGeo(void){ 
+MOD_INIT(cGeo) { 
     PyObject *m;
-    m = Py_InitModule("cGeo", geometry_methods);
+    // m = Py_InitModule("cGeo", geometry_methods);
+    MOD_DEF(m, "cGeo", "angle, distance and coordinates.", geometry_methods)
+#if PY_MAJOR_VERSION >= 3
+    return( m );
+#endif
 }
 
 int main(int argc, char *argv[])
 {
     Py_SetProgramName(argv[0]);
     Py_Initialize();
+#if PY_MAJOR_VERSION >= 3
+    PyInit_cGeo();
+#else
     initcGeo();
+#endif
     return 0;
 }

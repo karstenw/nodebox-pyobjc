@@ -30,9 +30,28 @@ sublist is not used, hence always None.
 
 __version__ = "0.5"
 
+import io
 import re
-import graphics
-import util
+
+from . import graphics
+from . import util
+
+import Foundation
+import objc
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
 
 from keyword import kwlist as keywordsList
 keywordsList = keywordsList[:]
@@ -42,8 +61,9 @@ keywordsList += util.__all__
 keywordsList += dir(graphics.Context)
 
 # These keywords were not captured somehow
-keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel",
-                 "wheeldelta", "PAGENUM", "keycode", "FRAME", "canvas"]
+keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key",
+                 "scrollwheel", "wheeldelta", "PAGENUM", "keycode",
+                 "FRAME", "canvas"]
 
 
 # Build up a regular expression which will match anything
@@ -73,7 +93,7 @@ pat = r"""
     )*
     (qqq)?
 """
-pat = "".join(pat.split())	# get rid of whitespace
+pat = "".join(pat.split())  # get rid of whitespace
 tripleQuotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
 
 # Build up a regular expression which matches all and only
@@ -139,11 +159,11 @@ def fontify(pytext, searchfrom=0, searchto=None):
 
 
 def test(path):
-    f = open(path)
+    f = io.open(path, 'r', encoding="utf-8")
     text = f.read()
     f.close()
     for tag, start, end, sublist in fontify(text):
-        print tag, repr(text[start:end])
+        print( "%s  %s" % (tag, repr(text[start:end])))
 
 
 if __name__ == "__main__":

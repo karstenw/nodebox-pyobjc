@@ -23,6 +23,28 @@ enum {
     zzsentinel
 } dithertypes;
 
+#if PY_MAJOR_VERSION >= 3
+  #define MOD_ERROR_VAL NULL
+  #define MOD_SUCCESS_VAL(val) val
+  #define MOD_INIT(name) PyMODINIT_FUNC PyInit_##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+          static struct PyModuleDef moduledef = { \
+            PyModuleDef_HEAD_INIT, name, doc, -1, methods, }; \
+          ob = PyModule_Create(&moduledef);
+#else
+  #define MOD_ERROR_VAL
+  #define MOD_SUCCESS_VAL(val)
+  #define MOD_INIT(name) void init##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+    ob = Py_InitModule3(name, methods, doc);
+#endif
+#if PY_MAJOR_VERSION >= 3
+  #define IN_FORMAT "y#iiii"
+  #define OUT_FORMAT "y#"
+#else
+  #define IN_FORMAT "s#iiii"
+  #define OUT_FORMAT "s#"
+#endif
 static int arrayindex(int x, int y, int w){
     return (y * w + x);
 }
@@ -488,17 +510,24 @@ dither(PyObject *self, PyObject *args) {
 
     // calculated array index
     int idx;
-
-    
-
     int count;
+
     ERRBUFTYPE *errorBuffer, errdiv, newval, errval;
     const unsigned char *sourceImage;
     unsigned char *resultImage;
+    // unsigned char *sourceImage, *resultImage;
     PyObject *result;
 
-    if (!PyArg_ParseTuple(args, "s#iiii", &sourceImage, &count, &w, &h, &type, &treshhold)) {
+    if (!PyArg_ParseTuple(args, IN_FORMAT, &sourceImage, &count, &w, &h, &type, &treshhold)) {
         return (NULL);
+    }
+    
+    if (!count) {
+        printf("count %d\n" , count);
+        printf("w %d\n" , w);
+        printf("h %d\n" , h);
+        printf("type %d\n" , type);
+        printf("treshhold %d\n" , treshhold);
     }
 
     // create the buffers
@@ -518,7 +547,6 @@ dither(PyObject *self, PyObject *args) {
         PyErr_NoMemory();
         return NULL;
     }
-
 
     // iterate over all pixels (x,y)
     for (y = 0; y < h; y++) {
@@ -546,7 +574,7 @@ dither(PyObject *self, PyObject *args) {
     }
 
     // build the return value
-    result = Py_BuildValue("s#", resultImage, count);
+    result = Py_BuildValue(OUT_FORMAT, resultImage, count);
     free(errorBuffer);
     free(resultImage);
     return result;
@@ -559,18 +587,26 @@ static PyMethodDef bwdither_methods[]={
 };
 
 
-
-PyMODINIT_FUNC initbwdithering(void){ 
+MOD_INIT(bwdithering) { 
     PyObject *m;
-    m = Py_InitModule("bwdithering", bwdither_methods);
+    // m = Py_InitModule("bwdithering", bwdither_methods);
+    MOD_DEF(m, "bwdithering", "A bw dithering extension.", bwdither_methods)
+#if PY_MAJOR_VERSION >= 3
+    return(MOD_SUCCESS_VAL(m));
+#else
+	MOD_SUCCESS_VAL(m)
+#endif
 }
-
 
 int main(int argc, char *argv[])
 {
     Py_SetProgramName(argv[0]);
     Py_Initialize();
+#if PY_MAJOR_VERSION >= 3
+    PyInit_bwdithering();
+#else
     initbwdithering();
+#endif
     return 0;
 }
 

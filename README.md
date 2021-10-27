@@ -5,13 +5,15 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.9.32
+The current version is 1.10.0
 
 The current branch is [py38](https://github.com/karstenw/nodebox-pyobjc/tree/py38) which handles the transition to python 3.
 
-Download the compiled app from my [dropbox](http://goo.gl/dZDic5).
+Download the compiled app from my [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
 
-As of 2018-05-05 and version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
+2021-06-20 A transition to Python3.8 is underway. I intend to keep the source py2/py3 compatible as long as possible or at least as long as I care.
+
+2018-05-05 With version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
 
 As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue if you need one.
 
@@ -53,7 +55,7 @@ Attention!
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
 
-1.  Uses Python 2.7.16 and PyObjC 5.2
+1.  Uses Python 2.7.16 and PyObjC 5.3 or Python 3.8.12 and PyObjC 6.2.2
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
@@ -109,8 +111,13 @@ Attention!
 1.  New function `voiceattributes( voice )` (1.9.26).
 		return a dict with all attributes about that voice.
 
+1.	New function `anySpeakers()` anySpeakers():
+		Return a bool if ANY application is currently speaking.
 
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
+
+1.  New function `circle(cx, cy, rx, ry=None, draw=True)`
+		Draws a circle in current style with center = (cx, cy) and radii rx and ry. For better shoebot compatibility.
 
 
 
@@ -119,6 +126,10 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+
+2021-06-30 Version 1.10.0b Compiles with python3. About 85% of all scripts run. Saves. The C-extensions fractal and bwdither run again. Many small fixes.
+
+2021-06-28 Version 1.10.0a Compiles with python3. About 50% of all scripts run. No Save. No C-extensions.
 
 2021-03-14 Version 1.9.33 Updated Library; bug fixes; enhanced photobot lib
 

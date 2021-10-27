@@ -1,5 +1,6 @@
 import sys
 import os
+import io
 import traceback, linecache
 import re
 import objc
@@ -12,20 +13,20 @@ import pprint
 pp = pprint.pprint
 
 import pdb
-
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
 debugging = False
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import Foundation
 import AppKit
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSScriptCommand = AppKit.NSScriptCommand
+NSApplication = AppKit.NSApplication
 
 NSDocument = AppKit.NSDocument
 NSDocumentController = AppKit.NSDocumentController
@@ -67,16 +68,16 @@ NSBezierPath = AppKit.NSBezierPath
 import threading
 Thread = threading.Thread
 
-import ValueLadder
+from . import ValueLadder
 MAGICVAR = ValueLadder.MAGICVAR
 
-import PyDETextView
+from . import PyDETextView
 
-import preferences
+from . import preferences
 NodeBoxPreferencesController = preferences.NodeBoxPreferencesController
 LibraryFolder = preferences.LibraryFolder
 
-import util
+from . import util
 errorAlert = util.errorAlert
 
 
@@ -109,11 +110,25 @@ DARKER_GRAY = black.blendedColorWithFraction_ofColor_(0.8,
 
 # from nodebox.gui.mac.dashboard import *
 # from nodebox.gui.mac.progressbar import ProgressBarController
-import dashboard
+from . import dashboard
 DashboardController = dashboard.DashboardController
 
-import progressbar
+from . import progressbar
 ProgressBarController = progressbar.ProgressBarController
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
 
 class ExportCommand(NSScriptCommand):
     pass    
@@ -125,17 +140,35 @@ class OutputFile(object):
         self.isErr = isErr
 
     def write(self, data):
-        if isinstance(data, str):
+        t = type( data )
+        if t in (pstr, punicode):
             try:
-                data = unicode(data, "utf_8", "replace")
+                data = makeunicode( data )
+                if not py3:
+                    data = data.encode( "utf-8" )
             except UnicodeDecodeError:
                 data = "XXX " + repr(data)
-        self.data.append((self.isErr, data))
+        self.data.append( (self.isErr, data) )
 
 
 
-# class defined in NodeBoxDocument.xib
+# modified NSApplication object
+class NodeBoxApplication(NSApplication):
+
+    def awakeFromNib(self):
+        if kwlog:
+            print("AppClass.awakeFromNib()")
+        objc.super(NodeBoxApplication, self).awakeFromNib()
+
+    def finishLaunching(self):
+        if kwdbg:
+            print("AppClass.finishLaunching()")
+        objc.super(NodeBoxApplication, self).finishLaunching()
+
+
+
 class NodeBoxDocument(NSDocument):
+    # class defined in NodeBoxDocument.xib
 
     graphicsView = objc.IBOutlet()
     outputView = objc.IBOutlet() 
@@ -174,6 +207,7 @@ class NodeBoxDocument(NSDocument):
         return "NodeBoxDocument"
 
     def init(self):
+        # pdb.set_trace()
         self = super(NodeBoxDocument, self).init()
         nc = NSNotificationCenter.defaultCenter()
         nc.addObserver_selector_name_object_(self,
@@ -199,6 +233,13 @@ class NodeBoxDocument(NSDocument):
 
     def close(self):
         self.stopScript()
+        try:
+            if len(self.vars) > 0:
+                self.dashboardController.panel.close()
+        except Wxception as err:
+            if kwlog:
+                print("ERROR window.close()")
+                print( err )
         super(NodeBoxDocument, self).close()
 
     def __del__(self):
@@ -212,6 +253,7 @@ class NodeBoxDocument(NSDocument):
         self.outputView.setFont_(font)
 
     def readFromFile_ofType_(self, path, tp):
+        # pdb.set_trace()
         if self.textView is None:
             # we're not yet fully loaded
             self.path = path
@@ -221,13 +263,15 @@ class NodeBoxDocument(NSDocument):
         return True
 
     def writeToFile_ofType_(self, path, tp):
-        f = file(path, "w")
+        # pdb.set_trace()
+        f = io.open(path, "wb")
         text = self.textView.string()
-        f.write(text.encode("utf8"))
+        f.write( text.encode("utf8") )
         f.close()
         return True
 
     def windowControllerDidLoadNib_(self, controller):
+        # pdb.set_trace()
         if self.path:
             self.readFromUTF8_(self.path)
         font = PyDETextView.getBasicTextAttributes()[NSFontAttributeName]
@@ -248,17 +292,24 @@ class NodeBoxDocument(NSDocument):
             self.outputView.setAutomaticDashSubstitutionEnabled_( False )
             #self.outputView.setAutomaticLinkDetectionEnabled_( True )
             #self.outputView.setDisplaysLinkToolTips_( True )
-        except Exception, err:
-            pass
+        except Exception as err:
+            if kwlog:
+                print("ERROR windowControllerDidLoadNib_()")
+                print( err )
+
 
     def readFromUTF8_(self, path):
-        f = file(path)
-        text = unicode(f.read(), "utf_8")
+        # pdb.set_trace()
+        f = io.open(path, 'r', encoding="utf-8")
+        s = f.read()
+        f.close()
+        text = makeunicode( s )
         f.close()
         self.textView.setString_(text)
         self.textView.usesTabs = "\t" in text
         
     def cleanRun_newSeed_buildInterface_(self, fn, newSeed, buildInterface):
+        # pdb.set_trace()
         self.animationSpinner.startAnimation_(None)
 
         # Prepare everything for running the script
@@ -296,12 +347,13 @@ class NodeBoxDocument(NSDocument):
 
         self.speed = self.canvas.speed = None
 
-    def fastRun_newSeed_(self, fn, newSeed = False):
+    def fastRun_newSeed_(self, fn, newSeed=False):
         """This is the old signature. Dispatching to the new with args"""
         return self.fastRun_newSeed_args_( fn, newSeed, [])
 
 
     def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
+        # pdb.set_trace()
         # Check if there is code to run
         if self._code is None:
             return False
@@ -323,6 +375,7 @@ class NodeBoxDocument(NSDocument):
         window = self.currentView.window()
         pt = window.mouseLocationOutsideOfEventStream()
         mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
+
         # Hack: mouse coordinates are flipped vertically in FullscreenView.
         # This flips them back.
         if isinstance(self.currentView, FullscreenView):
@@ -330,7 +383,8 @@ class NodeBoxDocument(NSDocument):
         if self.fullScreen is None:
             mx /= self.currentView.zoom
             my /= self.currentView.zoom
-        self.namespace["MOUSEX"], self.namespace["MOUSEY"] = mx, my
+        self.namespace["MOUSEX"] = mx
+        self.namespace["MOUSEY"] = my
         self.namespace["mousedown"] = self.currentView.mousedown
         self.namespace["keydown"] = self.currentView.keydown
         self.namespace["key"] = self.currentView.key
@@ -377,6 +431,7 @@ class NodeBoxDocument(NSDocument):
         self.currentView.canvas = None
         fullRect = NSScreen.mainScreen().frame()
         self.fullScreen = FullscreenWindow.alloc().initWithRect_(fullRect)
+        # self.fullScreen.oneShot = True
         self.fullScreen.setContentView_(self.currentView)
         self.fullScreen.makeKeyAndOrderFront_(self)
         self.fullScreen.makeFirstResponder_(self.currentView)
@@ -390,17 +445,19 @@ class NodeBoxDocument(NSDocument):
         self.runScript()
         
     def runScript(self, compile=True, newSeed=True):
-        if self.fullScreen is not None: return
+        if self.fullScreen is not None:
+            return
         self.currentView = self.graphicsView
         self._runScript(compile, newSeed)
 
     def _runScript(self, compile=True, newSeed=True):
+        # pdb.set_trace()
         if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
             pass
 
         # Check whether we are dealing with animation
         if self.canvas.speed is not None:
-            if not self.namespace.has_key("draw"):
+            if not "draw" in self.namespace:
                 errorAlert("Not a proper NodeBox animation",
                     "NodeBox animations should have at least a draw() method.")
                 return
@@ -412,7 +469,7 @@ class NodeBoxDocument(NSDocument):
             self.speed = self.canvas.speed
 
             # Run setup routine
-            if self.namespace.has_key("setup"):
+            if "setup" in self.namespace:
                 self.fastRun_newSeed_(self.namespace["setup"], False)
             window = self.currentView.window()
             window.makeFirstResponder_(self.currentView)
@@ -421,7 +478,7 @@ class NodeBoxDocument(NSDocument):
             timer = NSTimer.scheduledTimerWithTimeInterval_target_selector_userInfo_repeats_
             self.animationTimer = timer(1.0 / self.speed,
                                         self,
-                                        objc.selector(self.doFrame, signature="v@:@"),
+                                        objc.selector(self.doFrame, signature=b"v@:@"),
                                         None,
                                         True)
 
@@ -453,17 +510,21 @@ class NodeBoxDocument(NSDocument):
         self.stopScript()
         
     def stopScript(self):
-        if self.namespace.has_key("stop"):
+        if "stop" in self.namespace:
             success, output = self.boxedRun_args_(self.namespace["stop"], [])
             self.flushOutput_(output)
         self.animationSpinner.stopAnimation_(None)
+
         if self.animationTimer is not None:
             self.animationTimer.invalidate()
             self.animationTimer = None
+
         if self.fullScreen is not None:
             self.currentView = self.graphicsView
+            self.fullScreen.orderOut_(None)
             self.fullScreen = None
-            NSMenu.setMenuBarVisible_(True)
+            
+        NSMenu.setMenuBarVisible_(True)
         NSCursor.unhide()
         self.textView.hideValueLadder()
         window = self.textView.window()
@@ -498,8 +559,9 @@ class NodeBoxDocument(NSDocument):
             #pp(util.__all__)
             #print "graphics.__all__:"
             #pp(graphics.__all__)
-            print "namespace.keys():"
+            # print("namespace.keys():")
             # pp(namespace.keys())
+            pass
 
         # Add everything from the context object
         self.namespace["_ctx"] = self.context
@@ -518,7 +580,7 @@ class NodeBoxDocument(NSDocument):
         #    self.namespace[var.name] = var.value
 
     def _execScript(self):
-        exec self._code in self.namespace
+        exec(self._code, self.namespace)
         self.__doc__ = self.namespace.get("__doc__", self.__doc__)
 
     def boxedRun_args_(self, method, args):
@@ -533,6 +595,8 @@ class NodeBoxDocument(NSDocument):
              - A boolean indicating whether the run was successful
              - The OutputFile
         """
+
+        # pdb.set_trace()
 
         self.scriptName = self.fileName()
         libpath = LibraryFolder()
@@ -668,9 +732,7 @@ class NodeBoxDocument(NSDocument):
             format = panel.requiredFileType()
             panel.close()
             self.doExportAsImage_fmt_pages_(fname, format, pages)
-    exportPanelDidEnd_returnCode_contextInfo_ = objc.selector(
-        exportPanelDidEnd_returnCode_contextInfo_,
-        signature="v@:@ii")
+    exportPanelDidEnd_returnCode_contextInfo_ = objc.selector( exportPanelDidEnd_returnCode_contextInfo_, signature=b"v@:@ii")
             
     @objc.IBAction
     def exportImageFormatChanged_(self, sender):
@@ -713,7 +775,7 @@ class NodeBoxDocument(NSDocument):
                         self._frame += 1
                         pb.inc()
                 else:
-                    if self.namespace.has_key("setup"):
+                    if "setup" in self.namespace:
                         self.fastRun_newSeed_(self.namespace["setup"], False)
                     for i in range(pages):
                         self.fastRun_newSeed_(self.namespace["draw"], True)
@@ -728,7 +790,7 @@ class NodeBoxDocument(NSDocument):
                         self._pageNumber += 1
                         self._frame += 1
                         pb.inc()
-                    if self.namespace.has_key("stop"):
+                    if "stop" in self.namespace:
                         success, output = self.boxedRun_args_(self.namespace["stop"],
                                                               [])
                         self.flushOutput_(output)
@@ -781,7 +843,7 @@ class NodeBoxDocument(NSDocument):
             self.doExportAsMovie_frames_fps_(fname, frames, fps)
 
     qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
-                                                          signature="v@:@ii")
+                                                          signature=b"v@:@ii")
 
     def doExportAsMovie_frames_fps_(self, fname, frames, fps):
         # Only load QTSupport when necessary. 
@@ -795,7 +857,7 @@ class NodeBoxDocument(NSDocument):
         except:
             pass
         try:
-            fp = open(fname, 'w')
+            fp = io.open(fname, 'wb')
             fp.close()
         except:
             errorAlert("File Error", ("Could not create file '%s'. "
@@ -824,7 +886,7 @@ class NodeBoxDocument(NSDocument):
                     self._pageNumber += 1
                     self._frame += 1
             else:
-                if self.namespace.has_key("setup"):
+                if "setup" in self.namespace:
                     self.fastRun_newSeed_(self.namespace["setup"], False)
                 for i in range(frames):
                     self.fastRun_newSeed_(self.namespace["draw"], True)
@@ -833,7 +895,7 @@ class NodeBoxDocument(NSDocument):
                     pb.inc()
                     self._pageNumber += 1
                     self._frame += 1
-                if self.namespace.has_key("stop"):
+                if "stop" in self.namespace:
                     success, output = self.boxedRun_args_(self.namespace["stop"], [])
                     self.flushOutput_(output)
         except KeyboardInterrupt:
@@ -858,10 +920,11 @@ class NodeBoxDocument(NSDocument):
 
     printOperationDidRun_success_contextInfo_ = objc.selector(
                                             printOperationDidRun_success_contextInfo_,
-                                            signature="v@:@ci")
+                                            signature=b"v@:@ci")
 
     @objc.IBAction
     def buildInterface_(self, sender):
+        # print( "NIB.buildInterface_() klicked. %s" % repr(sender) )
         self.dashboardController.buildInterface_(self.vars)
 
     def validateMenuItem_(self, menuItem):
@@ -891,6 +954,7 @@ class NodeBoxDocument(NSDocument):
         if self.fullScreen is not None: return
         self.graphicsView.zoomToFit_(sender)
         
+
 class FullscreenWindow(NSWindow):
     def initWithRect_(self, fullRect):
         objc.super(FullscreenWindow,
@@ -1187,12 +1251,14 @@ class NodeBoxGraphicsView(NSView):
     def acceptsFirstResponder(self):
         return True
 
+
+
 class NodeBoxAppDelegate(NSObject):
 
     def awakeFromNib(self):
+        print("AppDelegate.awakeFromNib")
         self._prefsController = None
         libpath = LibraryFolder()
-
 
     @objc.IBAction
     def showPreferencesPanel_(self, sender):

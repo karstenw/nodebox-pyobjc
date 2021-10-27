@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import pprint
 
 """Select a voice and it says it's demo text."""
@@ -21,11 +24,11 @@ def dovoice(v, n):
     say(txt, v, wait=True)
     
     # print some voice stuff
-    print "Name:", attr[ u'VoiceName' ]
-    print "Age: %s" % (attr.get(u'VoiceAge', ""))
-    print "Language: %s" % (attr.get( u'VoiceLanguage', ""))
-    print txt
-    print 
+    print( "Name:", attr[ u'VoiceName' ] )
+    print( "Age: %s" % (attr.get(u'VoiceAge', "")) )
+    print( "Language: %s" % (attr.get( u'VoiceLanguage', "")) )
+    print( txt )
+    print()
 
 
 # try to determine the default voice

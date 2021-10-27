@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import math
 
 
@@ -40,7 +43,7 @@ def drawit(x0,y0,d,a):
     fontsize(14)
     s = "coordinates(x0=%.1f, y0=%.1f, d=%.1f, a=%.1f) = (%.1f, %.1f)" % (x0,y0,d,a,x1,y1)
     text(s, lx, ly)
-    print s
+    print( s )
 
 
 var("x0", NUMBER, default=200, min=10, max=400, handler=params)

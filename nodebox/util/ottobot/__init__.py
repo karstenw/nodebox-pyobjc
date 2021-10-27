@@ -222,4 +222,4 @@ colormode(HSB)
     return s
 
 if __name__ == '__main__':
-    print genProgram()
+    print(genProgram())

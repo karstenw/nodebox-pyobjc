@@ -1,18 +1,19 @@
-
+from __future__ import print_function
 
 
 
 def buttonhandler(val, name):
-    print 'Oh, the button was pressed...', repr(val), name
+    print( u'Oh, the button was pressed...', repr(val), name)
 
 def menuhandler( menuitem, name ):
-    print 'A menu was selected:', menuitem, name
+    s = u'A menu was selected:  %s   %s' % (menuitem, name)
+    print( s )
     
 def numberHandler( n, name ):
-    print "And the number is:", n, name
+    print( u"And the number is:", n, name)
 
 def textHandler( s, name ):
-    print "And the text is: '%s'" % s, name
+    print( u"And the text is: '%s'" % s, name)
     
 
 fonts = fontnames()
@@ -40,5 +41,5 @@ var("text2", TEXT, "A text - New style", handler=textHandler)
 
 
 
-print "number1", number1
-print "text1", text1
+print("number1", number1)
+print("text1", text1)

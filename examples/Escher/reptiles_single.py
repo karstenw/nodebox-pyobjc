@@ -1,3 +1,7 @@
+
+
+from __future__ import print_function
+
 # background(0.8)
 size(400, 400)
 background(None)
@@ -328,7 +332,7 @@ def generate(x,y,r,s, horver=True):
 
 def tileReptiles( x,y, orientation, radius, hexType, *rectangle):
     items = hexfill( x,y, orientation, radius, hexType, *rectangle)
-    print "#items:",len(items)
+    print( "#items:",len(items) )
     for item in items:
         px, py, ps = item
         rd = reptile( px, py, radius, 0, ps, hexType)

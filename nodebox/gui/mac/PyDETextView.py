@@ -34,7 +34,9 @@ import nodebox.PyFontify
 fontify = nodebox.PyFontify.fontify
 
 
+import pdb
 from nodebox.gui.mac.ValueLadder import ValueLadder
+from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
 
 from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 
@@ -42,6 +44,9 @@ from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
 
+
+def AskString(question, resultCallback, default="", parentWindow=None):
+    AskStringWindowController(question, resultCallback, default, parentWindow)
 
 def findWhitespace(s, pos=0):
     m = whiteRE.match(s, pos)
@@ -134,7 +139,7 @@ class PyDETextView(NSTextView):
             NSTextView.mouseDragged_(self, event)
 
     def mouseDown_(self, event):
-        if event.modifierFlags() & NSCommandKeyMask:            
+        if event.modifierFlags() & NSCommandKeyMask:
             screenPoint = NSEvent.mouseLocation()
             viewPoint =   self.superview().convertPoint_fromView_(event.locationInWindow(),
                                                         self.window().contentView())
@@ -151,20 +156,26 @@ class PyDETextView(NSTextView):
                     try:
                         while txt[begin-1] in "1234567890.":
                             begin-=1
-                    except IndexError:
-                        pass
+                    except IndexError as err:
+                        print( "PyDETextView.mouseDown_() failed to scan number 1." )
+                        print( err )
+                        # pass
                     try:
                         while txt[end+1] in "1234567890.":
                             end+=1
-                    except IndexError:
-                        pass
+                    except IndexError as err:
+                        print( "PyDETextView.mouseDown_() failed to scan number 2." )
+                        print( err )
+                        # pass
                     end+=1
                     self.valueLadder = ValueLadder(self,
                                                    eval(txt[begin:end]),
                                                    (begin,end),
                                                    screenPoint, viewPoint)
             except IndexError:
-                pass        
+                print( "PyDETextView.mouseDown_() failed to scan number 3." )
+                print( err )
+                # pass
         else:
             NSTextView.mouseDown_(self,event)
 
@@ -198,7 +209,7 @@ class PyDETextView(NSTextView):
 
     @objc.IBAction
     def jumpToLine_(self, sender):
-        from nodebox.gui.mac.AskString import AskString
+        # from nodebox.gui.mac.AskString import AskString
         AskString("Jump to line number:", self.jumpToLineCallback_,
                   parentWindow=self.window())
 
@@ -279,7 +290,8 @@ class PyDETextView(NSTextView):
         self.performSelector_withObject_afterDelay_("resetBalanceParens:",
                 (oldAttrs, effRng), 0.2)
 
-    def resetBalanceParens_(self, (attrs, rng)):
+    def resetBalanceParens_(self, params):
+        attrs, rng = params
         self.layoutManager().setTemporaryAttributes_forCharacterRange_(attrs, rng)
 
     def iterLinesBackwards_maxChars_(self, end, maxChars):
@@ -519,7 +531,8 @@ class PyDETextStorageDelegate(NSObject):
 
     def getSource(self):
         if self._source is None:
-            self._source = unicode(self._string)
+            # self._source = makeunicode(self._string)
+            self._source = self._string
         return self._source
 
     def textStorageWillProcessEditing_(self, notification):
@@ -581,6 +594,7 @@ class PyDETextStorageDelegate(NSObject):
             return
         storage = self._storage
         source = self.getSource()
+        source = source.copy()
         sourceLen = len(source)
         dirtyStart = self._dirty.pop()
 
@@ -592,6 +606,11 @@ class PyDETextStorageDelegate(NSObject):
         lastEnd = end = dirtyStart
         count = 0
         sameCount = 0
+        
+        #plainlength = source.length
+        #(void)getCharacters:(unsigned short*)arg1 range:(NSRange)arg2
+        #plaintext = source.mutableAttributedString.mutableString
+        #for tag, start, end, sublist in fontify(plaintext, dirtyStart):
         for tag, start, end, sublist in fontify(source, dirtyStart):
             end = min(end, sourceLen)
             rng = (start, end - start)

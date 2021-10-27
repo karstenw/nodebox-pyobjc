@@ -22,7 +22,7 @@ import Foundation
 import AppKit
 import PyObjCTools.Conversion
 
-import kgp
+from . import kgp
 
 
 __all__ = (
@@ -32,8 +32,50 @@ __all__ = (
     'datestring','makeunicode', 'filelist', 'imagefiles',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
-    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage')
+    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage',
+    'sortlistfunction')
 
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
+
+def cmp_to_key(mycmp):
+    'Convert a cmp= function into a key= function'
+    class K:
+        def __init__(self, obj, *args):
+            self.obj = obj
+        def __lt__(self, other):
+            return mycmp(self.obj, other.obj) < 0
+        def __gt__(self, other):
+            return mycmp(self.obj, other.obj) > 0
+        def __eq__(self, other):
+            return mycmp(self.obj, other.obj) == 0
+        def __le__(self, other):
+            return mycmp(self.obj, other.obj) <= 0
+        def __ge__(self, other):
+            return mycmp(self.obj, other.obj) >= 0
+        def __ne__(self, other):
+            return mycmp(self.obj, other.obj) != 0
+    return K
+
+
+def sortlistfunction(thelist, thecompare):
+    if py3:
+        sortkeyfunction = cmp_to_key( thecompare )
+        thelist.sort( key=sortkeyfunction )
+    else:
+        thelist.sort( thecompare )
 
 g_voicetrash = []
 
@@ -53,30 +95,36 @@ _ditherIDs = _dithertypes.values()
 
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
-    typ = type(s)
-    # convert to str first; for number types etc.
-    if typ not in ( str,
-                    unicode,
+
+    if type(s) not in ( pstr,
+                    punicode,
                     Foundation.NSMutableAttributedString,
                     objc.pyobjc_unicode,
                     Foundation.NSMutableStringProxyForMutableAttributedString,
                     Foundation.NSString):
-        # print "makeunicode() convert:", typ
         s = str(s)
-    if typ not in (
-            unicode,
-            Foundation.NSMutableAttributedString,
-            objc.pyobjc_unicode,
-            Foundation.NSMutableStringProxyForMutableAttributedString):
+    if type(s) not in (
+            punicode,
+            #Foundation.NSMutableAttributedString,
+            #objc.pyobjc_unicode,
+            #Foundation.NSMutableStringProxyForMutableAttributedString
+            ):
         try:
-            s = unicode(s, srcencoding)
-        except TypeError, err:
-            print 
-            print "makeunicode():", err
-            print repr(s)
-            print type(s)
-            print
-    if typ in (unicode,):
+            s = punicode(s, srcencoding)
+        except TypeError as err:
+            
+            #print() 
+            #print("makeunicode(): %s" % err)
+            #print(repr(s))
+            #print(type(s))
+            #print()
+            pass
+    if type(s) in ( punicode,
+                    #Foundation.NSMutableAttributedString,
+                    #objc.pyobjc_unicode,
+                    #Foundation.NSMutableStringProxyForMutableAttributedString,
+                    #Foundation.NSString
+                    ):
         s = unicodedata.normalize(normalizer, s)
     return s
 
@@ -109,8 +157,8 @@ def grid(cols, rows, colSize=1, rowSize=1, shuffled=False):
             rect(x,y, 10,10)
     """
     # Prefer using generators.
-    rowRange = xrange(int(rows))
-    colRange = xrange(int(cols))
+    rowRange = range( int(rows) )
+    colRange = range( int(cols) )
     # Shuffled needs a real list, though.
     if (shuffled):
         rowRange = list(rowRange)
@@ -119,7 +167,7 @@ def grid(cols, rows, colSize=1, rowSize=1, shuffled=False):
         librandom.shuffle(colRange)
     for y in rowRange:
         for x in colRange:
-            yield (x*colSize,y*rowSize)
+            yield (x*colSize, y*rowSize)
 
 
 def random(v1=None, v2=None):
@@ -174,7 +222,7 @@ def filelist( folderpathorlist, pathonly=True ):
     """
 
     folders = folderpathorlist
-    if type(folderpathorlist) in (str, unicode):
+    if type(folderpathorlist) in (pstr, punicode):
         folders = [folderpathorlist]
     result = []
     for folder in folders:
@@ -463,14 +511,14 @@ def asvoid(arr):
 def imagepalette( pathOrPILimgage, mask=None ):
     t = type(pathOrPILimgage)
     result = []
-    if t in (str, unicode):
+    if t in (pstr, punicode):
         f = PIL.Image.open( pathOrPILimgage )
         f = f.convert("RGB")
         result = palette( f, mask )
     else:
         try:
             result = palette( pathOrPILimgage, mask )
-        except Exception, err:
+        except Exception as err:
             pass
     return result
 
@@ -486,7 +534,7 @@ def tempimagepath(mode='w+b', suffix='.png'):
 
 def dithertypes():
     """Return names of all supported dither types."""
-    return _dithertypes.keys()
+    return list(_dithertypes.keys())
 
 
 def ditherimage(pathOrPILimgage, dithertype, threshhold):
@@ -495,7 +543,7 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
 
     t = type(pathOrPILimgage)
 
-    if dithertype in _dithertypes:
+    if dithertype in list(_dithertypes):
         dithername = dithertype
         ditherid = _dithertypes.get( dithertype )
     elif dithertype in _ditherIDs:
@@ -506,14 +554,18 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
         ditherid = 0
         dithername = "unknown"
 
-    if t in (str, unicode):
+    if t in (pstr, punicode):
         img = PIL.Image.open( pathOrPILimgage ).convert('L')
     else:
         img = pathOrPILimgage
 
+    # pdb.set_trace()
+
     w, h = img.size
     bin = img.tobytes(encoder_name='raw')
+    resultimg = bytearray( len(bin) )
     result = dither(bin, w, h, ditherid, threshhold)
+    # result = dither(bin, resultimg, w, h, ditherid, threshhold)
 
     out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
 
@@ -534,13 +586,14 @@ def _copy_attr(v):
         return list(v)
     elif isinstance(v, tuple):
         return tuple(v)
-    elif isinstance(v, (int, str, unicode, float, bool, long)):
+    elif isinstance(v, (int, pstr, punicode, float, bool, long)):
         return v
     else:
-        raise NodeBoxError, "Don't know how to copy '%s'." % v
+        raise NodeBoxError("Don't know how to copy '%s'." % v)
 
 
 def _copy_attrs(source, target, attrs):
     for attr in attrs:
         setattr(target, attr, _copy_attr(getattr(source, attr)))
+
 

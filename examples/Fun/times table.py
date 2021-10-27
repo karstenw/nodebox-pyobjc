@@ -1,5 +1,16 @@
 # inspired by:
+# mathologer
+# Times Tables, Mandelbrot and the Heart of Mathematics
 # https://www.youtube.com/watch?v=qhbuKbxJsk8
+
+# referenced by:
+# http://blog.schockwellenreiter.de/2019/02/2019021402.html
+# Daniel Schiffman
+# https://youtu.be/bl3nc_a1nvs
+
+# Times Tables Cardioid Visualization
+
+
 
 import math
 
@@ -35,9 +46,9 @@ def params(val, name):
         val = round(val, 2)
         bg = val
     elif name == "factor":
-        val = round(val, 3)
+        val = round(val, 2)
         factor = val
-    print name, val
+    print( name, val )
     drawit(radius, n)
 
 

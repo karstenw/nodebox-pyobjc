@@ -9,6 +9,7 @@ from Foundation import *
 from AppKit import *
 import objc
 class AskStringWindowController (NSWindowController):
+
     questionLabel = objc.IBOutlet()
 
     textField = objc.IBOutlet()

@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 # Colors can now be defined as hex strings:
 #
 # Either
@@ -62,6 +65,6 @@ stroke( "#f80" )
 strokewidth( 5 )
 fill( "#08f" )
 f = choice(fontnames())
-print f
+print( f )
 font( f, 120 )
 text("Hello World!", 10, 520, outline=True)

@@ -1,9 +1,12 @@
+
+from __future__ import print_function
+
 size(1200, 800)
 
 fonts = fontnames()
 f = choice( fonts )
 fsize = 72
-print "Font:", f
+print( "Font:", f )
 
 font( f )
 fontsize(fsize)

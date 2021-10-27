@@ -16,7 +16,18 @@ for i in range(3000):
 # The bounds property returns the following: ( (x, y), (width, height) )
 # The lambda function thus compares the y positions against eachother.
 sorted_grobs = list(canvas)
-sorted_grobs.sort(lambda v1, v2: cmp(v1.bounds[0][1], v2.bounds[0][1]))
+# sorted_grobs.sort(lambda v1, v2: cmp(v1.bounds[0][1], v2.bounds[0][1]))
+
+def compare(a,b):
+    v1 = a.bounds[0][1]
+    v2 = b.bounds[0][1]
+    if v1 > v2:
+        return 1
+    elif v1 < v2:
+        return -1
+    return 0
+
+sortlistfunction( sorted_grobs, compare )
 
 # Now that we have all the graphic objects ("grobs") sorted,
 # traverse them in order and change their properties.
@@ -25,6 +36,9 @@ sorted_grobs.sort(lambda v1, v2: cmp(v1.bounds[0][1], v2.bounds[0][1]))
 t = 0.0
 # d is the delta amount added each step
 d = 1.0 / len(sorted_grobs)
+
+
+
 
 for grob in sorted_grobs:
     # Grobs will get bigger

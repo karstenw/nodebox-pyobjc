@@ -8,7 +8,12 @@
 from Foundation import *
 from AppKit import *
 import objc
-class NodeBoxAppDelegate(NSDocument):
+
+class NodeBoxApplication(NSApplication):
+
+
+
+class NodeBoxAppDelegate(NSObject):
 
     @objc.IBAction
     def showHelp_(self, sender):

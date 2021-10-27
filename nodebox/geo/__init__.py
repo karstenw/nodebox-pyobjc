@@ -1,5 +1,7 @@
 # Geometric functionality
 
+from __future__ import print_function
+
 import math
 
 try:
@@ -13,7 +15,7 @@ try:
 except ImportError:
     def inverse_sqrt(x):
         return 1.0 / math.sqrt(x)
-    
+
     isqrt = inverse_sqrt
 
     def angle(x0, y0, x1, y1):
@@ -32,30 +34,30 @@ try:
     import bwdithering
     dither = bwdithering.dither
 
-except ImportError, err:
-    print
-    print '-' * 40
-    print
-    print err
-    print 
-    print '-' * 40
-    print
+except ImportError as err:
+    print()
+    print( '-' * 40 )
+    print()
+    print( err )
+    print()
+    print( '-' * 40 )
+    print()
     def dither(*args):
-        print "You lost."
+        print( "You lost." )
 
 try:
     import fractal
     fractalimage = fractal.fractalimage
-except ImportError, err:
-    print
-    print '-' * 40
-    print
-    print err
-    print 
-    print '-' * 40
-    print
+except ImportError as err:
+    print()
+    print( '-' * 40 )
+    print()
+    print( err )
+    print()
+    print( '-' * 40 )
+    print()
     def fractalimage(*args):
-        print "You lost."
+        print( "You lost." )
 
 
 def reflect(x0, y0, x1, y1, d=1.0, a=180):

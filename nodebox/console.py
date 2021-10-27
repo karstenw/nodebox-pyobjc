@@ -112,11 +112,11 @@ def make_movie(source_or_code, outputfile, frames, fps=30):
 def usage(err=""):
     if len(err) > 0:
         err = '\n\nError: ' + str(err)
-    print """NodeBox console runner
+    print("""NodeBox console runner
 Usage: console.py sourcefile imagefile
    or: console.py sourcefile moviefile number_of_frames [fps]
 Supported image extensions: pdf, tiff, png, jpg, gif
-Supported movie extension:  mov""" + err
+Supported movie extension:  mov""" + err)
 
 def main():
     import sys, os

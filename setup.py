@@ -4,7 +4,11 @@ Script for building NodeBox
 Usage:
     python setup.py py2app
 """
-from distutils.core import setup
+
+#import setuptools, distutils
+#from setuptools.extension import Extension
+# from distutils.core import setup, Extension
+from setuptools import setup
 from setuptools.extension import Extension
 
 import py2app
@@ -13,7 +17,10 @@ import nodebox
 
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
-
+py3 = nodebox.py3
+BUNDLENAME = NAME + "_py27"
+if nodebox.py3:
+    BUNDLENAME = NAME + "_py38"
 
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
@@ -36,12 +43,9 @@ CLASSIFIERS = (
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
 )
 
-DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
-               u"using Python code")
-LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create
-visual output with programming code. The application targets an audience of designers,
-with an easy set of state commands that is both intuitive and creative. It is essentially
-a learning environment and an automation tool.
+DESCRIPTION = (u"Simple application for creating 2-dimensional graphics "
+               u"and animation using Python code")
+LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output with programming code. The application targets an audience of designers, with an easy set of state commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
 
 The current version features:
 
@@ -78,9 +82,9 @@ setup(
         'script': "macboot.py",
 
         "plist": {
-            "NSPrincipalClass": 'NSApplication',
+            "NSPrincipalClass": 'NodeBoxApplication',
             "CFBundleIdentifier": bundleID,
-            "CFBundleName": NAME,
+            "CFBundleName": BUNDLENAME,
             "CFBundleSignature": creator,
             "CFBundleShortVersionString": VERSION,
             "CFBundleGetInfoString": DESCRIPTION,
@@ -100,14 +104,14 @@ setup(
     }],
 
     data_files=[
-        "Resources/English.lproj/AskString.xib",
+        "Resources/English.lproj/AskString.nib",
         "Resources/English.lproj/Credits.rtf",
-        "Resources/English.lproj/ExportImageAccessory.xib",
-        "Resources/English.lproj/ExportMovieAccessory.xib",
-        "Resources/English.lproj/MainMenu.xib",
-        "Resources/English.lproj/NodeBoxDocument.xib",
-        "Resources/English.lproj/NodeBoxPreferences.xib",
-        "Resources/English.lproj/ProgressBarSheet.xib",
+        "Resources/English.lproj/ExportImageAccessory.nib",
+        "Resources/English.lproj/ExportMovieAccessory.nib",
+        "Resources/English.lproj/MainMenu.nib",
+        "Resources/English.lproj/NodeBoxDocument.nib",
+        "Resources/English.lproj/NodeBoxPreferences.nib",
+        "Resources/English.lproj/ProgressBarSheet.nib",
         "Resources/NodeBox.icns",
         "Resources/NodeBoxFile.icns",
         "Resources/zoombig.png",

@@ -8,8 +8,32 @@
 from Foundation import *
 from AppKit import *
 import objc
-class NodeBoxPreferencesController:
+
+class NodeBoxPreferencesController (NSWindowController):
+
+    commentsColorWell = objc.IBOutlet()
+
+    fontPreview = objc.IBOutlet()
+
+    libraryPath = objc.IBOutlet()
+
+    funcClassColorWell = objc.IBOutlet()
+
+    keywordsColorWell = objc.IBOutlet()
+
+    stringsColorWell = objc.IBOutlet()
 
 
+    @objc.IBAction
+    def updateColors_(self, sender):
+
+    @objc.IBAction
+    def chooseFont_(self, sender):
+
+    @objc.IBAction
+    def chooseLibrary_(self, sender):
+
+    @objc.IBAction
+    def changeFont_(self, sender):
 
 

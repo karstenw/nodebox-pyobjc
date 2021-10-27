@@ -1,6 +1,9 @@
+
+from __future__ import print_function
+
 import os
 twyg = ximport('twyg')
-reload(twyg)
+# reload(twyg)
 
 datafiles = list(filelist( os.path.abspath('example-data')))
 datafile = choice(datafiles)
@@ -21,8 +24,8 @@ colorscheme = choice(colorschemes)
 
 margins = ['10%', '5%']
 
-print config
-print colorscheme
-print os.path.basename(datafile)
-print
+print( config )
+print( colorscheme )
+print( os.path.basename(datafile) )
+print()
 twyg.generate_output_nodebox(datafile, config, colorscheme=colorscheme, margins=margins)

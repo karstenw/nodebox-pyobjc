@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 import os
 import pprint
 
@@ -32,7 +35,7 @@ for voice in v:
 for s in allspeakers:
     voice, txt, name, path = s
     say(txt, voice, wait=False)
-    print name
-    print txt.encode("utf-8")
-    print
+    print( name )
+    print( txt )
+    print()
 

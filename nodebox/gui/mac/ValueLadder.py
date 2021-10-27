@@ -1,18 +1,38 @@
-#from Foundation import *
-#from AppKit import *
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
 
-import compiler
-parse = compiler.parse
+if 1: #py3:
+    import ast
+    parse = ast.parse
+    Sub = ast.Sub
+    UnarySub = ast.USub
+    Add = ast.Add
+else:
+    import compiler
+    parse = compiler.parse
+    import compiler.ast
+    Sub = compiler.ast.Sub
+    UnarySub = compiler.ast.UnarySub
+    Add = compiler.ast.Add
 
-import compiler.ast
-Sub = compiler.ast.Sub
-UnarySub = compiler.ast.UnarySub
-Add = compiler.ast.Add
 
+kwdbg = 1
+import pdb
 
 import Foundation
-import AppKit
 
+import AppKit
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
@@ -30,8 +50,9 @@ NSParagraphStyleAttributeName = AppKit.NSParagraphStyleAttributeName
 NSFontAttributeName = AppKit.NSFontAttributeName
 
 
-
-
+gBGCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.4,0.4,0.4, 1.0)
+gStrCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.1,0.1,0.1, 1.0)
+gTxtCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0,1.0,1.0, 1.0)
 
 MAGICVAR = "__magic_var__"
 
@@ -58,18 +79,16 @@ class ValueLadder:
         self.viewPoint = viewPoint
         (x,y),(self.width,self.height) = self.textView.bounds()
         self.originalString = self.textView.string()
-        self.backgroundColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                    0.4,0.4,0.4, 1.0)
-        self.strokeColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                    0.1,0.1,0.1, 1.0)
-        self.textColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                    1.0,1.0,1.0, 1.0)
+        self.backgroundColor = gBGCol 
+        self.strokeColor = gStrCol
+        self.textColor = gTxtCol
         paraStyle = NSMutableParagraphStyle.alloc().init()
         paraStyle.setAlignment_(NSCenterTextAlignment)
         font = NSFont.fontWithName_size_("Monaco", 10)
         self.textAttributes = {
             NSForegroundColorAttributeName: self.textColor,
-            NSParagraphStyleAttributeName:  paraStyle,NSFontAttributeName:font}
+            NSParagraphStyleAttributeName:  paraStyle,
+            NSFontAttributeName:            font}
 
         # To speed things up, the code is compiled only once. 
         # The number is replaced with a magic variable, that is set in the 
@@ -78,7 +97,6 @@ class ValueLadder:
         self.patchedSource = (self.originalString[:begin]
                                 + MAGICVAR
                                 + self.originalString[end:])
-
 
         #ast = parse(self.patchedSource + "\n\n")
         #self._checkSigns(ast)
@@ -89,8 +107,10 @@ class ValueLadder:
             self.textView.document._flushOutput(output)
 
     def _parseAndCompile(self):
-        ast = parse(self.patchedSource.encode('ascii', 'replace') + "\n\n")
-        self._checkSigns(ast)
+        s = self.patchedSource.encode('ascii', 'replace') + b"\n\n"
+        ast = parse( s )
+        # pdb.set_trace()
+        self._checkSigns( ast )
         self.textView.document._compileScript(self.patchedSource)
 
     def _checkSigns(self, node):
@@ -124,7 +144,8 @@ class ValueLadder:
         # Check whether I am the correct node
         try:
             if node.name == MAGICVAR:
-                return 1 # If i am, return the "direct hit" code.
+                # If i am, return the "direct hit" code.
+                return 1
         except AttributeError:
             pass
 
@@ -133,9 +154,10 @@ class ValueLadder:
         # in the second part. ("a-10" has to change to "a+10", 
         # but "10-a" shouldn't change to "+10-a")
         index = 0
+
         # Recursively check my children
-        for child in node.getChildNodes():
-            retVal = self._checkSigns(child)
+        for child in ast.iter_child_nodes( node ):
+            retVal = self._checkSigns( child )
             # Direct hit. The child I just searched contains the magicvar.
             # Check whether this node is one of the special cases.
             if retVal == 1:
@@ -181,11 +203,15 @@ class ValueLadder:
 
         # Potentionally change the sign on the number.
         # The following cases are valid:
-        # - A subtraction where the value turned positive "random(5-8)" --> "random(5+8)"
-        # - A unary subtraction where the value turned positive "random(-5)" --> "random(5)"
+        # - A subtraction where the value turned positive
+        #       "random(5-8)" --> "random(5+8)"
+        # - A unary subtraction where the value turned positive
+        #       "random(-5)" --> "random(5)"
         #   Note that the sign dissapears here.
-        # - An addition where the second part turns negative "random(5+8)" --> "random(5-8)"
-        # Note that the code replaces the sign on the place where it was, leaving the code intact.
+        # - An addition where the second part turns negative
+        #       "random(5+8)" --> "random(5-8)"
+        # Note that the code replaces the sign on the place where it was,
+        # leaving the code intact.
 
         # Case 1: Negative numbers where the new value is negative as well.
         # This means the numbers turn positive.
@@ -195,14 +221,19 @@ class ValueLadder:
             notFound = True
             while True:
                 if self.originalString[i] == '-':
-                    if self.unary: # Unary subtractions will have the sign removed.
-                        # Re-create the string: the spaces between the value and the '-' + the value
-                        value = self.originalString[i+1:begin] + str(abs(self.value))
-                    else: # Binary subtractions get a '+'                        
+                    # Unary subtractions will have the sign removed.
+                    if self.unary: 
+                        # Re-create the string: the spaces between
+                        # the value and the '-' + the value
+                        value = (  self.originalString[i+1:begin]
+                                 + str(abs(self.value)) )
+                    else:
+                        # Binary subtractions get a '+'                        
                         value = '+' + self.originalString[i+1:begin] + str(abs(self.value))
                     range = (i,end-i)
                     break
                 i -= 1
+
         # Case 2: Additions (only additions where we are the second part
         # interests us, this is checked already on startup)
         elif self.add and self.value < 0:
@@ -284,3 +315,6 @@ class ValueLadder:
         self.textView.document.magicvar = self.value
         self.textView.document.currentView.direct = True
         self.textView.document.runScriptFast()
+
+
+

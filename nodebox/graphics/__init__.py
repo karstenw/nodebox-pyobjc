@@ -1,11 +1,55 @@
-# import pdb
-import cocoa
-graphics_impl = cocoa
+import pdb
 
 import AppKit
 
-# I really dont like it but cocoa.py has an __all__...
-from cocoa import *
+from . import cocoa
+graphics_impl = cocoa
+
+BEVEL = cocoa.BEVEL
+BOOLEAN = cocoa.BOOLEAN
+BUTTON = cocoa.BUTTON
+BUTT = cocoa.BUTT
+BezierPath = cocoa.BezierPath
+CENTER = cocoa.CENTER
+CENTER = cocoa.CENTER
+CLOSE = cocoa.CLOSE
+CMYK = cocoa.CMYK
+CORNER = cocoa.CORNER
+CURVETO = cocoa.CURVETO
+Canvas = cocoa.Canvas
+ClippingPath = cocoa.ClippingPath
+Color = cocoa.Color
+DEFAULT_HEIGHT = cocoa.DEFAULT_HEIGHT
+DEFAULT_WIDTH = cocoa.DEFAULT_WIDTH
+Grob = cocoa.Grob
+HSB = cocoa.HSB
+Image = cocoa.Image
+JUSTIFY = cocoa.JUSTIFY
+LEFT = cocoa.LEFT
+LINETO = cocoa.LINETO
+MENU = cocoa.MENU
+MITER = cocoa.MITER
+MOVETO = cocoa.MOVETO
+NORMAL = cocoa.NORMAL
+FORTYFIVE = cocoa.FORTYFIVE
+NUMBER = cocoa.NUMBER
+NodeBoxError = cocoa.NodeBoxError
+Oval = cocoa.Oval
+PathElement = cocoa.PathElement
+Point = cocoa.Point
+RGB = cocoa.RGB
+RIGHT = cocoa.RIGHT
+ROUND = cocoa.ROUND
+Rect = cocoa.Rect
+SQUARE = cocoa.SQUARE
+TEXT = cocoa.TEXT
+Text = cocoa.Text
+Transform = cocoa.Transform
+Variable = cocoa.Variable
+cm = cocoa.cm
+inch = cocoa.inch
+mm = cocoa.mm
+
 
 # from nodebox.util import _copy_attr, _copy_attrs
 import nodebox.util
@@ -18,6 +62,20 @@ import nodebox.geo
 __all__ = list(graphics_impl.__all__)
 __all__.extend(['Context'])
 
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
 
 class Context(object):
     
@@ -225,7 +283,7 @@ class Context(object):
         height = 2 * ry
         x = cx - rx
         y = cy - ry
-        self.oval( x, y, width, height, draw=draw, **kwargs )
+        return self.oval( x, y, width, height, draw=draw, **kwargs )
 
 
     def arc(self, x, y, r, startAngle, endAngle, draw=True, **kwargs):
@@ -346,28 +404,28 @@ class Context(object):
 
     def moveto(self, x, y):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise NodeBoxError("No current path. Use beginpath() first.")
         self._path.moveto(x,y)
 
     def lineto(self, x, y):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise NodeBoxError("No current path. Use beginpath() first.")
         self._path.lineto(x, y)
 
     def curveto(self, x1, y1, x2, y2, x3, y3):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise(NodeBoxError, "No current path. Use beginpath() first.")
         self._path.curveto(x1, y1, x2, y2, x3, y3)
 
     def closepath(self):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise NodeBoxError("No current path. Use beginpath() first.")
         if not self._pathclosed:
             self._path.closepath()
 
     def endpath(self, draw=True):
         if self._path is None:
-            raise NodeBoxError, "No current path. Use beginpath() first."
+            raise NodeBoxError("No current path. Use beginpath() first.")
         if self._autoclosepath:
             self.closepath()
         p = self._path
@@ -392,7 +450,7 @@ class Context(object):
         self._autoclosepath = close
 
     def findpath(self, points, curvature=1.0):
-        import bezier
+        from . import bezier
         path = bezier.findpath(points, curvature=curvature)
         path._ctx = self
         path.inheritFromContext()
@@ -424,14 +482,16 @@ class Context(object):
     def pop(self):
         try:
             top = self._transformstack.pop()
-        except IndexError, e:
-            raise NodeBoxError, "pop: too many pops!"
+        except IndexError as e:
+            raise NodeBoxError( "pop: too many pops!" )
         if len(top) > 1:
-            self._align, self._autoclosepath, self._capstyle, self._colormode, self._fillcolor, self._fontname, self._fontsize, self._joinstyle, self._lineheight, self._outputmode, self._strokecolor, self._strokewidth, self._transformmode, self._transform.matrix = top
+            self._align, self._autoclosepath, self._capstyle, self._colormode,
+            self._fillcolor, self._fontname, self._fontsize, self._joinstyle,
+            self._lineheight, self._outputmode, self._strokecolor,
+            self._strokewidth, self._transformmode, self._transform.matrix = top
         else:
             self._transform.matrix = top[0]
-            
-            
+
     def transform(self, mode=None):
         if mode is not None:
             self._transformmode = mode
@@ -496,14 +556,16 @@ class Context(object):
     def capstyle(self, style=None):
         if style is not None:
             if style not in (BUTT, ROUND, SQUARE):
-                raise NodeBoxError, 'Line cap style should be BUTT, ROUND or SQUARE.'
+                raise NodeBoxError( 'Line cap style should be BUTT,'
+                                    ' ROUND or SQUARE.')
             self._capstyle = style
         return self._capstyle
 
     def joinstyle(self, style=None):
         if style is not None:
             if style not in (MITER, ROUND, BEVEL):
-                raise NodeBoxError, 'Line join style should be MITER, ROUND or BEVEL.'
+                raise NodeBoxError( 'Line join style should be MITER,'
+                                    ' ROUND or BEVEL.')
             self._joinstyle = style
         return self._joinstyle
 
@@ -513,7 +575,7 @@ class Context(object):
     def font(self, fontname=None, fontsize = None):
         if fontname is not None:
             if not Text.font_exists(fontname):
-                raise NodeBoxError, 'Font "%s" not found.' % fontname
+                raise NodeBoxError('Font "%s" not found.' % fontname )
             else:
                 self._fontname = fontname
         if fontsize is not None:
@@ -558,9 +620,10 @@ class Context(object):
             return txt
 
     def textpath(self, txt, x, y, width=None, height=None, **kwargs):
+        # pdb.set_trace()
         Text.checkKwargs(kwargs)
         txt = self.Text(txt, x, y, width, height, **kwargs)
-        txt.inheritFromContext(kwargs.keys())
+        txt.inheritFromContext( list( kwargs.keys()) )
         return txt.path
 
     def textmetrics(self, txt, width=None, height=None, **kwargs):
@@ -576,9 +639,10 @@ class Context(object):
 
     ### Image commands ###
 
-    def image(self, path, x, y, width=None, height=None, alpha=1.0, data=None, draw=True, **kwargs):
+    def image(self, path, x, y, width=None, height=None, alpha=1.0,
+                    data=None, draw=True, **kwargs):
         img = self.Image(path, x, y, width, height, alpha, data=data, **kwargs)
-        img.inheritFromContext(kwargs.keys())
+        img.inheritFromContext( kwargs.keys() )
         if draw:
             img.draw()
         return img
@@ -587,7 +651,6 @@ class Context(object):
         img = self.Image(path, data=data)
         return img.size
         
-
     ### Canvas proxy ###
 
     def save(self, fname, format=None):
@@ -615,5 +678,6 @@ class Context(object):
         return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
 
     def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
-        return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit)
+        return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,
+                                            dx,dy,nreal,nimag,limit)
 

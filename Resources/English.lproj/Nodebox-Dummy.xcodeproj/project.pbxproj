@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXFileReference section */
-		8D8C60941F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = AskString.xib; sourceTree = "<group>"; };
-		8D8C60961F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ExportImageAccessory.xib; sourceTree = "<group>"; };
-		8D8C60981F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ExportMovieAccessory.xib; sourceTree = "<group>"; };
-		8D8C609A1F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
-		8D8C609C1F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = NodeBoxDocument.xib; sourceTree = "<group>"; };
-		8D8C609E1F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = NodeBoxPreferences.xib; sourceTree = "<group>"; };
-		8D8C60A01F0672FC00941B9D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = ProgressBarSheet.xib; sourceTree = "<group>"; };
+		8D764D12268347610076321A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = MainMenu.nib; sourceTree = "<group>"; };
+		8D764D14268347610076321A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = ExportImageAccessory.nib; sourceTree = "<group>"; };
+		8D764D16268347610076321A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = NodeBoxDocument.nib; sourceTree = "<group>"; };
+		8D764D18268347620076321A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = NodeBoxPreferences.nib; sourceTree = "<group>"; };
+		8D764D1A268347620076321A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = ProgressBarSheet.nib; sourceTree = "<group>"; };
+		8D764D1C268347620076321A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = AskString.nib; sourceTree = "<group>"; };
+		8D764D1E268347620076321A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = ExportMovieAccessory.nib; sourceTree = "<group>"; };
 		8D8C60A21F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = AskStringWindowController.py; sourceTree = "<group>"; };
 		8D8C60A41F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = DashboardController.py; sourceTree = "<group>"; };
 		8D8C60A61F06730900941B9D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = English; path = NodeBoxAppDelegate.py; sourceTree = "<group>"; };
@@ -35,13 +35,13 @@
 		8D8C608F1F0672D700941B9D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8D8C60931F0672FC00941B9D /* AskString.xib */,
-				8D8C60951F0672FC00941B9D /* ExportImageAccessory.xib */,
-				8D8C60971F0672FC00941B9D /* ExportMovieAccessory.xib */,
-				8D8C60991F0672FC00941B9D /* MainMenu.xib */,
-				8D8C609B1F0672FC00941B9D /* NodeBoxDocument.xib */,
-				8D8C609D1F0672FC00941B9D /* NodeBoxPreferences.xib */,
-				8D8C609F1F0672FC00941B9D /* ProgressBarSheet.xib */,
+				8D764D1B268347620076321A /* AskString.nib */,
+				8D764D13268347610076321A /* ExportImageAccessory.nib */,
+				8D764D1D268347620076321A /* ExportMovieAccessory.nib */,
+				8D764D11268347610076321A /* MainMenu.nib */,
+				8D764D15268347610076321A /* NodeBoxDocument.nib */,
+				8D764D17268347620076321A /* NodeBoxPreferences.nib */,
+				8D764D19268347620076321A /* ProgressBarSheet.nib */,
 				8DF274B01FAF40AF00112D6B /* Credits.rtf */,
 			);
 			name = Resources;
@@ -68,7 +68,7 @@
 			attributes = {
 			};
 			buildConfigurationList = 8D8C607F1F06729A00941B9D /* Build configuration list for PBXProject "Nodebox-Dummy" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -86,60 +86,60 @@
 /* End PBXProject section */
 
 /* Begin PBXVariantGroup section */
-		8D8C60931F0672FC00941B9D /* AskString.xib */ = {
+		8D764D11268347610076321A /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D8C60941F0672FC00941B9D /* English */,
+				8D764D12268347610076321A /* English */,
 			);
-			name = AskString.xib;
+			name = MainMenu.nib;
 			sourceTree = "<group>";
 		};
-		8D8C60951F0672FC00941B9D /* ExportImageAccessory.xib */ = {
+		8D764D13268347610076321A /* ExportImageAccessory.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D8C60961F0672FC00941B9D /* English */,
+				8D764D14268347610076321A /* English */,
 			);
-			name = ExportImageAccessory.xib;
+			name = ExportImageAccessory.nib;
 			sourceTree = "<group>";
 		};
-		8D8C60971F0672FC00941B9D /* ExportMovieAccessory.xib */ = {
+		8D764D15268347610076321A /* NodeBoxDocument.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D8C60981F0672FC00941B9D /* English */,
+				8D764D16268347610076321A /* English */,
 			);
-			name = ExportMovieAccessory.xib;
+			name = NodeBoxDocument.nib;
 			sourceTree = "<group>";
 		};
-		8D8C60991F0672FC00941B9D /* MainMenu.xib */ = {
+		8D764D17268347620076321A /* NodeBoxPreferences.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D8C609A1F0672FC00941B9D /* English */,
+				8D764D18268347620076321A /* English */,
 			);
-			name = MainMenu.xib;
+			name = NodeBoxPreferences.nib;
 			sourceTree = "<group>";
 		};
-		8D8C609B1F0672FC00941B9D /* NodeBoxDocument.xib */ = {
+		8D764D19268347620076321A /* ProgressBarSheet.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D8C609C1F0672FC00941B9D /* English */,
+				8D764D1A268347620076321A /* English */,
 			);
-			name = NodeBoxDocument.xib;
+			name = ProgressBarSheet.nib;
 			sourceTree = "<group>";
 		};
-		8D8C609D1F0672FC00941B9D /* NodeBoxPreferences.xib */ = {
+		8D764D1B268347620076321A /* AskString.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D8C609E1F0672FC00941B9D /* English */,
+				8D764D1C268347620076321A /* English */,
 			);
-			name = NodeBoxPreferences.xib;
+			name = AskString.nib;
 			sourceTree = "<group>";
 		};
-		8D8C609F1F0672FC00941B9D /* ProgressBarSheet.xib */ = {
+		8D764D1D268347620076321A /* ExportMovieAccessory.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D8C60A01F0672FC00941B9D /* English */,
+				8D764D1E268347620076321A /* English */,
 			);
-			name = ProgressBarSheet.xib;
+			name = ExportMovieAccessory.nib;
 			sourceTree = "<group>";
 		};
 		8D8C60A11F06730900941B9D /* AskStringWindowController.py */ = {

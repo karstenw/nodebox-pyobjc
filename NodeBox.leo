@@ -10,10 +10,12 @@
 <find_panel_settings/>
 <vnodes>
 <v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
-<v t="karstenw.20170704103857.1"><vh>Declarations</vh></v>
+<v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
+<v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
+<v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
@@ -23,16 +25,19 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
 <v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210323114020.1"><vh>init</vh></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
-<v t="karstenw.20170704104453.1" a="E"><vh>geo</vh>
+<v t="karstenw.20170704104453.1"><vh>geo</vh>
 <v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
@@ -49,9 +54,10 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -78,7 +84,7 @@
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
 </v>
-<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
+<v t="karstenw.20170709143301.1" a="E"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
 <v t="karstenw.20170704104725.25"><vh>arc</vh></v>
@@ -153,10 +159,11 @@
 <v t="karstenw.20170704104726.28"><vh>coordinates</vh></v>
 <v t="karstenw.20170704104726.29"><vh>reflect</vh></v>
 <v t="karstenw.20180202044929.1"><vh>dither</vh></v>
+<v t="karstenw.20210623195428.1"><vh>fractalimage</vh></v>
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104730.1"><vh>@clean nodebox/graphics/bezier.py</vh>
+<v t="karstenw.20170704104730.1" a="E"><vh>@clean nodebox/graphics/bezier.py</vh>
 <v t="karstenw.20170704104742.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104742.2"><vh>segment_lengths</vh></v>
 <v t="karstenw.20170704104742.3"><vh>length</vh></v>
@@ -170,6 +177,7 @@
 </v>
 <v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
 <v t="karstenw.20170704104751.3"><vh>_restore</vh></v>
 <v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
@@ -178,6 +186,8 @@
 <v t="karstenw.20170704104751.7"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.8"><vh>__eq__</vh></v>
 <v t="karstenw.20170704104751.9"><vh>__ne__</vh></v>
+<v t="karstenw.20210714232702.1"><vh>__le__</vh></v>
+<v t="karstenw.20210714232606.1"><vh>__hash__</vh></v>
 </v>
 <v t="karstenw.20170704104751.10"><vh>class Grob</vh>
 <v t="karstenw.20170704104751.11"><vh>__init__</vh></v>
@@ -252,7 +262,12 @@
 <v t="karstenw.20170704104751.76"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.77"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.78"><vh>__eq__</vh></v>
+<v t="karstenw.20210714234429.1"><vh>__lt__</vh></v>
+<v t="karstenw.20210714234443.1"><vh>__le__</vh></v>
+<v t="karstenw.20210714234451.1"><vh>__gt__</vh></v>
+<v t="karstenw.20210714234458.1"><vh>__ge__</vh></v>
 <v t="karstenw.20170704104751.79"><vh>__ne__</vh></v>
+<v t="karstenw.20210714232328.1"><vh>__hash__</vh></v>
 </v>
 <v t="karstenw.20170704104751.80"><vh>class ClippingPath</vh>
 <v t="karstenw.20170704104751.81"><vh>__init__</vh></v>
@@ -267,9 +282,10 @@
 <v t="karstenw.20170704104751.88"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.89"><vh>copy</vh></v>
 </v>
-<v t="karstenw.20170704104751.90"><vh>class Color</vh>
+<v t="karstenw.20170704104751.90" a="E"><vh>class Color</vh>
 <v t="karstenw.20170704104751.91"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.92"><vh>__repr__</vh></v>
+<v t="karstenw.20210715171431.1"><vh>__hash__</vh></v>
 <v t="karstenw.20170704104751.93"><vh>set</vh></v>
 <v t="karstenw.20170704104751.94"><vh>_get_nsColor</vh></v>
 <v t="karstenw.20170704104751.95"><vh>copy</vh></v>
@@ -374,15 +390,20 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1"><vh>mac</vh>
 <v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
 <v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
+</v>
+<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
+<v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
 <v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
@@ -399,6 +420,7 @@
 <v t="karstenw.20170704105032.18"><vh>prepareRun</vh></v>
 <v t="karstenw.20170704105032.19"><vh>fastRun_newSeed_</vh></v>
 <v t="karstenw.20170709154311.1"><vh>fastRun_newSeed_args_</vh></v>
+<v t="karstenw.20210624121624.1"><vh>clearMessageArea_</vh></v>
 <v t="karstenw.20170704105032.20"><vh>runFullscreen_</vh></v>
 <v t="karstenw.20170704105032.21"><vh>runScript_</vh></v>
 <v t="karstenw.20170704105032.22"><vh>runScript</vh></v>
@@ -496,7 +518,7 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskString.py</vh>
+<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105043.2"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20170704105043.3"><vh>__new__</vh></v>
@@ -506,10 +528,11 @@
 <v t="karstenw.20170704105043.7"><vh>ok_</vh></v>
 <v t="karstenw.20170704105043.8"><vh>cancel_</vh></v>
 </v>
-<v t="karstenw.20170704105043.9"><vh>AskString</vh></v>
 </v>
 <v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
 <v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
@@ -518,12 +541,12 @@
 <v t="karstenw.20170704105051.7"><vh>buttonClicked_</vh></v>
 <v t="karstenw.20170709145427.1"><vh>menuSelected_</vh></v>
 <v t="karstenw.20170704105051.8"><vh>buildInterface_</vh></v>
-<v t="karstenw.20170704105051.9"><vh>addLabel_y_c_</vh></v>
-<v t="karstenw.20170704105051.10"><vh>addSlider_y_c_</vh></v>
-<v t="karstenw.20170704105051.11"><vh>addTextField_y_c_</vh></v>
-<v t="karstenw.20170704105051.12"><vh>addSwitch_y_c_</vh></v>
-<v t="karstenw.20170704105051.13"><vh>addButton_y_c_</vh></v>
-<v t="karstenw.20170709145531.1"><vh>addMenu_y_c_</vh></v>
+<v t="karstenw.20170704105051.9"><vh>addLabel_idx_frame_</vh></v>
+<v t="karstenw.20170704105051.10"><vh>addSlider_idx_frame_</vh></v>
+<v t="karstenw.20170704105051.11"><vh>addTextField_idx_frame_</vh></v>
+<v t="karstenw.20170704105051.12"><vh>addSwitch_idx_frame_</vh></v>
+<v t="karstenw.20170704105051.13"><vh>addButton_y_ctrl_width_</vh></v>
+<v t="karstenw.20170709145531.1"><vh>addMenu_idx_frame_</vh></v>
 </v>
 </v>
 <v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
@@ -531,7 +554,7 @@
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
 </v>
-<v t="karstenw.20170704105106.4"><vh>class NodeBoxPreferencesController</vh>
+<v t="karstenw.20170704105106.4" a="E"><vh>class NodeBoxPreferencesController</vh>
 <v t="karstenw.20170704105106.5"><vh>init</vh></v>
 <v t="karstenw.20170704105106.6"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105106.7"><vh>windowWillClose_</vh></v>
@@ -619,9 +642,11 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
+<v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
+<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -633,14 +658,16 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104503.1" a="E"><vh>tests</vh>
+<v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
-<v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
+<v t="karstenw.20180202045145.1" a="E"><vh>UTILITIES</vh>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
 <v t="karstenw.20170704105353.4"><vh>grid</vh></v>
@@ -666,7 +693,7 @@
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
 </v>
-<v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20171218183025.1"><vh>IMAGE FUNCTIONS</vh>
 <v t="karstenw.20180202050130.1"><vh>aspectRatio</vh></v>
 <v t="karstenw.20171218183032.1"><vh>palette</vh></v>
 <v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
@@ -679,11 +706,13 @@
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
 </v>
 <v t="karstenw.20170704105406.1"><vh>kgp</vh>
-<v t="karstenw.20170704105442.1"><vh>@clean nodebox/util/kgp/__init__.py</vh>
+<v t="karstenw.20170704105442.1" a="E"><vh>@clean nodebox/util/kgp/__init__.py</vh>
 <v t="karstenw.20170704105455.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210703124707.1"><vh>makeunicode double</vh></v>
 <v t="karstenw.20170704105455.2"><vh>openAnything</vh></v>
 <v t="karstenw.20170704105455.3"><vh>class NoSourceError</vh></v>
-<v t="karstenw.20170704105455.4"><vh>class KantGenerator</vh>
+<v t="karstenw.20170704105455.4" a="E"><vh>class KantGenerator</vh>
 <v t="karstenw.20170704105455.5"><vh>__init__</vh></v>
 <v t="karstenw.20170704105455.6"><vh>_load</vh></v>
 <v t="karstenw.20170704105455.7"><vh>loadGrammar</vh></v>
@@ -748,9 +777,9 @@
 </v>
 </v>
 <v t="karstenw.20170704105416.1"><vh>QTSupport</vh>
-<v t="karstenw.20170704105551.1"><vh>@clean nodebox/util/QTSupport/__init__.py</vh>
+<v t="karstenw.20170704105551.1" a="E"><vh>@clean nodebox/util/QTSupport/__init__.py</vh>
 <v t="karstenw.20170704105603.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105603.2"><vh>class Movie</vh>
+<v t="karstenw.20170704105603.2" a="E"><vh>class Movie</vh>
 <v t="karstenw.20170704105603.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105603.4"><vh>add</vh></v>
 <v t="karstenw.20170704105603.5"><vh>save</vh></v>
@@ -766,7 +795,7 @@
 <v t="karstenw.20170704105642.5"><vh>visual_diff</vh></v>
 <v t="karstenw.20170704105642.6"><vh>make_comparison_image</vh></v>
 <v t="karstenw.20170704105642.7"><vh>isEqual</vh></v>
-<v t="karstenw.20170704105642.8"><vh>class Statistics</vh>
+<v t="karstenw.20170704105642.8" a="E"><vh>class Statistics</vh>
 <v t="karstenw.20170704105642.9"><vh>__init__</vh></v>
 <v t="karstenw.20170704105642.10"><vh>calculate</vh></v>
 <v t="karstenw.20170704105642.11"><vh>_get_size</vh></v>
@@ -785,6 +814,8 @@
 <v t="karstenw.20180202040520.1"><vh>bwdithering</vh>
 <v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
+<v t="karstenw.20210320110747.1"><vh>py2/3 defs</vh></v>
+<v t="karstenw.20210630165621.1"><vh>py 2/3 format strings</vh></v>
 <v t="karstenw.20180202040628.1"><vh>int arrayindex</vh></v>
 <v t="karstenw.20180202040628.2"><vh>void distributeError(x, y, w, h, type, errval, destImage, errorBuffer)</vh></v>
 <v t="karstenw.20180202040628.3"><vh>static PyObject dither(self, args)</vh></v>
@@ -798,7 +829,8 @@
 </v>
 <v t="karstenw.20180202044244.1"><vh>cGeo</vh>
 <v t="karstenw.20180202044248.1"><vh>@clean libs/cGeo/cGeo.c</vh>
-<v t="karstenw.20180202044341.1"><vh>inclides &amp; globals</vh></v>
+<v t="karstenw.20180202044341.1"><vh>includes &amp; globals</vh></v>
+<v t="karstenw.20210320110747.1"></v>
 <v t="karstenw.20180202044313.1"><vh>float _fast_inverse_sqrt</vh></v>
 <v t="karstenw.20180202044313.2"><vh>static PyObject fast_inverse_sqrt(self, args)</vh></v>
 <v t="karstenw.20180202044313.3"><vh>void _angle(x0, y0, x1, y1, *a)</vh></v>
@@ -815,28 +847,139 @@
 <v t="karstenw.20180202044720.1"><vh>Declarations</vh></v>
 </v>
 </v>
+<v t="karstenw.20210320115101.1"><vh>fractal</vh>
+<v t="karstenw.20210320115106.1"><vh>@clean libs/fractal/fractal.c</vh>
+<v t="karstenw.20210320115212.1"><vh>declarations</vh></v>
+<v t="karstenw.20210320110747.1"></v>
+<v t="karstenw.20210630171229.1"><vh>py 2/3 format strings</vh></v>
+<v t="karstenw.20210320115155.1"><vh>static PyObject</vh></v>
+<v t="karstenw.20210320115155.2"><vh>static PyMethodDef</vh></v>
+<v t="karstenw.20210320115155.3"><vh>int main</vh></v>
+</v>
+<v t="karstenw.20210320115144.1"><vh>@clean libs/fractal/setup.py</vh>
+<v t="karstenw.20210320115153.1"><vh>Declarations</vh></v>
+</v>
+</v>
+<v t="karstenw.20210320120737.1"><vh>pathmatics</vh>
+<v t="karstenw.20210320120859.1"><vh>@clean libs/pathmatics/pathmatics.c</vh>
+<v t="karstenw.20210320121857.1"><vh>declarations</vh></v>
+<v t="karstenw.20210320110747.1"></v>
+<v t="karstenw.20210320120941.1"><vh>void _linepoint</vh></v>
+<v t="karstenw.20210320120941.2"><vh>void _linelength</vh></v>
+<v t="karstenw.20210320120941.3"><vh>void _curvepoint</vh></v>
+<v t="karstenw.20210320120941.4"><vh>void _curvepoint_handles</vh></v>
+<v t="karstenw.20210320120941.5"><vh>void _curvelength</vh></v>
+<v t="karstenw.20210320120941.6"><vh>static PyObject</vh></v>
+<v t="karstenw.20210320120941.7"><vh>static PyObject</vh></v>
+<v t="karstenw.20210320120941.8"><vh>static PyObject</vh></v>
+<v t="karstenw.20210320120941.9"><vh>static PyObject</vh></v>
+<v t="karstenw.20210320120941.10"><vh>static PyMethodDef</vh></v>
+<v t="karstenw.20210320120941.11"><vh>int main</vh></v>
+</v>
+<v t="karstenw.20210320120918.1"><vh>@clean libs/pathmatics/pathmatics.py</vh>
+<v t="karstenw.20210320120938.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210320120938.2"><vh>linepoint</vh></v>
+<v t="karstenw.20210320120938.3"><vh>linelength</vh></v>
+<v t="karstenw.20210320120938.4"><vh>curvepoint</vh></v>
+<v t="karstenw.20210320120938.5"><vh>curvelength</vh></v>
+</v>
+<v t="karstenw.20210320120924.1"><vh>@clean libs/pathmatics/setup.py</vh>
+<v t="karstenw.20210320120934.1"><vh>Declarations</vh></v>
+</v>
+</v>
+<v t="karstenw.20210320120741.1"><vh>polymagic</vh>
+<v t="karstenw.20210320123535.1"><vh>@clean libs/polymagic/gpc.h</vh>
+<v t="karstenw.20210320125516.1"><vh>declarations</vh></v>
+<v t="karstenw.20210320123811.1"><vh>typedef enum</vh></v>
+<v t="karstenw.20210320123811.2"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123811.3"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123811.4"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123811.5"><vh>typedef struct</vh></v>
+</v>
+<v t="karstenw.20210320123635.1"><vh>@clean libs/polymagic/gpc.c</vh>
+<v t="karstenw.20210320125621.1"><vh>declarations</vh></v>
+<v t="karstenw.20210320123814.1"><vh>typedef enum</vh></v>
+<v t="karstenw.20210320123814.2"><vh>typedef enum</vh></v>
+<v t="karstenw.20210320123814.3"><vh>typedef enum</vh></v>
+<v t="karstenw.20210320123814.4"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123814.5"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123814.6"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123814.7"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123814.8"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123814.9"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123814.10"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123814.11"><vh>typedef struct</vh></v>
+<v t="karstenw.20210320123814.12"><vh>const h_state</vh></v>
+<v t="karstenw.20210320123814.13"><vh>void reset_it</vh></v>
+<v t="karstenw.20210320123814.14"><vh>void reset_lmt</vh></v>
+<v t="karstenw.20210320123814.15"><vh>void insert_bound</vh></v>
+<v t="karstenw.20210320123814.16"><vh>static edge_node</vh></v>
+<v t="karstenw.20210320123814.17"><vh>void add_to_sbtree</vh></v>
+<v t="karstenw.20210320123814.18"><vh>void build_sbt</vh></v>
+<v t="karstenw.20210320123814.19"><vh>void free_sbtree</vh></v>
+<v t="karstenw.20210320123814.20"><vh>int count_optimal_vertices</vh></v>
+<v t="karstenw.20210320123814.21"><vh>static edge_node</vh></v>
+<v t="karstenw.20210320123814.22"><vh>void add_edge_to_aet</vh></v>
+<v t="karstenw.20210320123814.23"><vh>void add_intersection</vh></v>
+<v t="karstenw.20210320123814.24"><vh>void add_st_edge</vh></v>
+<v t="karstenw.20210320123814.25"><vh>void build_intersection_table</vh></v>
+<v t="karstenw.20210320123814.26"><vh>int count_contours</vh></v>
+<v t="karstenw.20210320123814.27"><vh>void add_left</vh></v>
+<v t="karstenw.20210320123814.28"><vh>void merge_left</vh></v>
+<v t="karstenw.20210320123814.29"><vh>void add_right</vh></v>
+<v t="karstenw.20210320123814.30"><vh>void merge_right</vh></v>
+<v t="karstenw.20210320123814.31"><vh>void add_local_min</vh></v>
+<v t="karstenw.20210320123814.32"><vh>int count_tristrips</vh></v>
+<v t="karstenw.20210320123814.33"><vh>void add_vertex</vh></v>
+<v t="karstenw.20210320123814.34"><vh>void new_tristrip</vh></v>
+<v t="karstenw.20210320123814.35"><vh>static bbox</vh></v>
+<v t="karstenw.20210320123814.36"><vh>void minimax_test</vh></v>
+<v t="karstenw.20210320123814.37"><vh>void gpc_free_polygon</vh></v>
+<v t="karstenw.20210320123814.38"><vh>void gpc_read_polygon</vh></v>
+<v t="karstenw.20210320123814.39"><vh>void gpc_write_polygon</vh></v>
+<v t="karstenw.20210320123814.40"><vh>void gpc_add_contour</vh></v>
+<v t="karstenw.20210320123814.41"><vh>void gpc_polygon_clip</vh></v>
+<v t="karstenw.20210320123814.42"><vh>void gpc_free_tristrip</vh></v>
+<v t="karstenw.20210320123814.43"><vh>void gpc_polygon_to_tristrip</vh></v>
+<v t="karstenw.20210320123814.44"><vh>void gpc_tristrip_clip</vh></v>
+</v>
+<v t="karstenw.20210320123639.1"><vh>@clean libs/polymagic/polymagic.m</vh>
+<v t="karstenw.20210320131053.1"><vh>declarations</vh></v>
+<v t="karstenw.20210320110747.1"></v>
+<v t="karstenw.20210320130456.1"><vh>kib functionl</vh></v>
+<v t="karstenw.20210320131240.1"><vh>objc stuff</vh></v>
+<v t="karstenw.20210320131126.1"><vh>PyMethodDef</vh></v>
+<v t="karstenw.20210320133430.1"><vh>main</vh></v>
+</v>
+<v t="karstenw.20210320123652.1"><vh>@clean libs/polymagic/setup.py</vh>
+<v t="karstenw.20210320123819.1"><vh>Declarations</vh></v>
+</v>
+</v>
 </v>
 </vnodes>
 <tnodes>
 <t tx="karstenw.20170704103837.1">@language python
 @tabwidth -4
-# Startup file for the NodeBox OS X application
+@others
+</t>
+<t tx="karstenw.20170704103857.1"># Startup file for the NodeBox OS X application
 # PyObjC requires the startup file to be in the root folder.
 # This just imports everything from the nodebox.gui.mac module
 # and works from there
 
+from __future__ import print_function
+
+
 import os
-#import operator
-#import warnings
+import operator
+import warnings
 
 # for the libraries
-@others
-</t>
-<t tx="karstenw.20170704103857.1">import sgmllib
+
 import bs4
 
-# moved to Lubrary
-# import numpy
+# moved to Library
+import numpy
 
 import sqlite3
 import zipfile
@@ -845,6 +988,25 @@ import hashlib
 import base64
 import re
 import pickle
+
+
+# pattern lib
+import csv
+import functools
+import itertools
+import codecs
+import calendar
+import types
+
+import encodings
+import imagewells
+
+# currently not in py2
+# import MySQLdb # lib/pattern
+# import json
+# import locale
+
+
 #import UserList
 
 # needed by matplotlib et al.
@@ -855,12 +1017,8 @@ import pickle
 # import pymongo
 # import dateutil
 # import copy
-# import csv
-# import functools
-# import itertools
 # import gzip
 # import io
-# import httplib
 # import http
 # import http.client
 # import http.server
@@ -886,6 +1044,8 @@ import Foundation
 import AppKit
 
 from PyObjCTools import AppHelper
+#import PyObjCTools.Debugging
+#PyObjCTools.Debugging.installVerboseExceptionHandler()
 
 import nodebox
 import nodebox.geo
@@ -908,10 +1068,7 @@ import nodebox.gui.mac
 
 
 </t>
-<t tx="karstenw.20170704103935.1">#import PyObjCTools.Debugging
-#PyObjCTools.Debugging.installVerboseExceptionHandler()
-
-
+<t tx="karstenw.20170704103935.1">
 AppHelper.runEventLoop()
 </t>
 <t tx="karstenw.20170704103951.1">@language python
@@ -924,7 +1081,11 @@ Script for building NodeBox
 Usage:
     python setup.py py2app
 """
-from distutils.core import setup
+
+#import setuptools, distutils
+#from setuptools.extension import Extension
+# from distutils.core import setup, Extension
+from setuptools import setup
 from setuptools.extension import Extension
 
 import py2app
@@ -933,7 +1094,10 @@ import nodebox
 
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
-
+py3 = nodebox.py3
+BUNDLENAME = NAME + "_py27"
+if nodebox.py3:
+    BUNDLENAME = NAME + "_py38"
 
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
@@ -956,12 +1120,9 @@ CLASSIFIERS = (
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
 )
 
-DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
-               u"using Python code")
-LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create
-visual output with programming code. The application targets an audience of designers,
-with an easy set of state commands that is both intuitive and creative. It is essentially
-a learning environment and an automation tool.
+DESCRIPTION = (u"Simple application for creating 2-dimensional graphics "
+               u"and animation using Python code")
+LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output with programming code. The application targets an audience of designers, with an easy set of state commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
 
 The current version features:
 
@@ -998,9 +1159,9 @@ setup(
         'script': "macboot.py",
 
         "plist": {
-            "NSPrincipalClass": 'NSApplication',
+            "NSPrincipalClass": 'NodeBoxApplication',
             "CFBundleIdentifier": bundleID,
-            "CFBundleName": NAME,
+            "CFBundleName": BUNDLENAME,
             "CFBundleSignature": creator,
             "CFBundleShortVersionString": VERSION,
             "CFBundleGetInfoString": DESCRIPTION,
@@ -1020,14 +1181,14 @@ setup(
     }],
 
     data_files=[
-        "Resources/English.lproj/AskString.xib",
+        "Resources/English.lproj/AskString.nib",
         "Resources/English.lproj/Credits.rtf",
-        "Resources/English.lproj/ExportImageAccessory.xib",
-        "Resources/English.lproj/ExportMovieAccessory.xib",
-        "Resources/English.lproj/MainMenu.xib",
-        "Resources/English.lproj/NodeBoxDocument.xib",
-        "Resources/English.lproj/NodeBoxPreferences.xib",
-        "Resources/English.lproj/ProgressBarSheet.xib",
+        "Resources/English.lproj/ExportImageAccessory.nib",
+        "Resources/English.lproj/ExportMovieAccessory.nib",
+        "Resources/English.lproj/MainMenu.nib",
+        "Resources/English.lproj/NodeBoxDocument.nib",
+        "Resources/English.lproj/NodeBoxPreferences.nib",
+        "Resources/English.lproj/ProgressBarSheet.nib",
         "Resources/NodeBox.icns",
         "Resources/NodeBoxFile.icns",
         "Resources/zoombig.png",
@@ -1036,6 +1197,7 @@ setup(
 
     ext_modules=[
         Extension('bwdithering', ['libs/bwdithering/bwdithering.c']),
+        Extension('fractal', ['libs/fractal/fractal.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
@@ -1045,9 +1207,8 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", ],
-            "excludes": ["TkInter", "scipy", "matplotlib", "mpl_toolkits", "sklearn", 
-                         "pandas"],
+            "packages": [ "numpy", ], # , "numba", "llvmlite"
+            "excludes": ["TkInter", "scipy", "matplotlib", "mpl_toolkits", "sklearn", "pandas" ],
         }
     } )
 </t>
@@ -1117,7 +1278,8 @@ The current version features:
 
 
 ext_modules=[
-    Extension('atkinsondither', ['libs/atkinsondither/atkinsondither.c']),
+    Extension('bwdithering', ['libs/bwdithering/bwdithering.c']),
+    Extension('fractal', ['libs/fractal/fractal.c']),
     Extension('cGeo', ['libs/cGeo/cGeo.c']),
     Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
     Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
@@ -1154,7 +1316,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.9.31'
+<t tx="karstenw.20170704104119.1">__version__='1.10.0'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -1201,63 +1363,14 @@ sublist is not used, hence always None.
 
 __version__ = "0.5"
 
+import io
 import re
-import graphics
-import util
 
-from keyword import kwlist as keywordsList
-keywordsList = keywordsList[:]
-keywordsList += ["None", "True", "False"]
-keywordsList += graphics.__all__
-keywordsList += util.__all__
-keywordsList += dir(graphics.Context)
+from . import graphics
+from . import util
 
-# These keywords were not captured somehow
-keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key", "scrollwheel",
-                 "wheeldelta", "PAGENUM", "keycode", "FRAME", "canvas"]
-
-
-# Build up a regular expression which will match anything
-# interesting, including multi-line triple-quoted strings.
-commentPat = r"#[^\n]*"
-
-pat = r"[uU]?[rR]?q[^\\q\n]*(\\[\000-\377][^\\q\n]*)*q?"
-quotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
-
-# Way to go, Tim!
-pat = r"""
-    [uU]?[rR]?
-    qqq
-    [^\\q]*
-    (
-        (	\\[\000-\377]
-        |	q
-            (	\\[\000-\377]
-            |	[^\q]
-            |	q
-                (	\\[\000-\377]
-                |	[^\\q]
-                )
-            )
-        )
-        [^\\q]*
-    )*
-    (qqq)?
-"""
-pat = "".join(pat.split())	# get rid of whitespace
-tripleQuotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
-
-# Build up a regular expression which matches all and only
-# Python keywords. This will let us skip the uninteresting
-# identifier references.
-keyPat = r"\b(" + "|".join(keywordsList) + r")\b"
-
-matchPat = commentPat + "|" + keyPat + "|(" + tripleQuotePat + "|" + quotePat + ")"
-matchRE = re.compile(matchPat)
-
-idKeyPat = "[ \t]*([A-Za-z_][A-Za-z_0-9.]*)"	# Ident w. leading whitespace.
-idRE = re.compile(idKeyPat)
-asRE = re.compile(r".*?\b(as)\b")
+import Foundation
+import objc
 
 </t>
 <t tx="karstenw.20170704104209.2">def fontify(pytext, searchfrom=0, searchto=None):
@@ -1312,11 +1425,11 @@ asRE = re.compile(r".*?\b(as)\b")
 
 </t>
 <t tx="karstenw.20170704104209.3">def test(path):
-    f = open(path)
+    f = io.open(path, 'r', encoding="utf-8")
     text = f.read()
     f.close()
     for tag, start, end, sublist in fontify(text):
-        print tag, repr(text[start:end])
+        print( "%s  %s" % (tag, repr(text[start:end])))
 
 
 </t>
@@ -1328,6 +1441,8 @@ asRE = re.compile(r".*?\b(as)\b")
 <t tx="karstenw.20170704104531.1">@language python
 @tabwidth -4
 # Geometric functionality
+
+from __future__ import print_function
 
 @others
 </t>
@@ -1459,14 +1574,58 @@ asRE = re.compile(r".*?\b(as)\b")
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104725.1"># import pdb
-import cocoa
-graphics_impl = cocoa
+<t tx="karstenw.20170704104725.1">import pdb
 
 import AppKit
 
-# I really dont like it but cocoa.py has an __all__...
-from cocoa import *
+from . import cocoa
+graphics_impl = cocoa
+
+BEVEL = cocoa.BEVEL
+BOOLEAN = cocoa.BOOLEAN
+BUTTON = cocoa.BUTTON
+BUTT = cocoa.BUTT
+BezierPath = cocoa.BezierPath
+CENTER = cocoa.CENTER
+CENTER = cocoa.CENTER
+CLOSE = cocoa.CLOSE
+CMYK = cocoa.CMYK
+CORNER = cocoa.CORNER
+CURVETO = cocoa.CURVETO
+Canvas = cocoa.Canvas
+ClippingPath = cocoa.ClippingPath
+Color = cocoa.Color
+DEFAULT_HEIGHT = cocoa.DEFAULT_HEIGHT
+DEFAULT_WIDTH = cocoa.DEFAULT_WIDTH
+Grob = cocoa.Grob
+HSB = cocoa.HSB
+Image = cocoa.Image
+JUSTIFY = cocoa.JUSTIFY
+LEFT = cocoa.LEFT
+LINETO = cocoa.LINETO
+MENU = cocoa.MENU
+MITER = cocoa.MITER
+MOVETO = cocoa.MOVETO
+NORMAL = cocoa.NORMAL
+FORTYFIVE = cocoa.FORTYFIVE
+NUMBER = cocoa.NUMBER
+NodeBoxError = cocoa.NodeBoxError
+Oval = cocoa.Oval
+PathElement = cocoa.PathElement
+Point = cocoa.Point
+RGB = cocoa.RGB
+RIGHT = cocoa.RIGHT
+ROUND = cocoa.ROUND
+Rect = cocoa.Rect
+SQUARE = cocoa.SQUARE
+TEXT = cocoa.TEXT
+Text = cocoa.Text
+Transform = cocoa.Transform
+Variable = cocoa.Variable
+cm = cocoa.cm
+inch = cocoa.inch
+mm = cocoa.mm
+
 
 # from nodebox.util import _copy_attr, _copy_attrs
 import nodebox.util
@@ -1497,9 +1656,7 @@ __all__.extend(['Context'])
 
 
 </t>
-<t tx="karstenw.20170704104725.12">### Variables ###
-
-def var(self, name, type,
+<t tx="karstenw.20170704104725.12">def var(self, name, type,
         default=None, min=0, max=100, value=None,
         handler=None, menuitems=None):
     # pdb.set_trace()
@@ -1618,6 +1775,17 @@ def rect(self, x, y, width, height, roundness=0.0, draw=True, **kwargs):
 
 ellipse = oval
 
+
+def circle(self, cx, cy, rx, ry=None, draw=True, **kwargs):
+    if ry == None:
+        ry = rx
+    width = 2 * rx
+    height = 2 * ry
+    x = cx - rx
+    y = cy - ry
+    return self.oval( x, y, width, height, draw=draw, **kwargs )
+
+
 </t>
 <t tx="karstenw.20170704104725.25">def arc(self, x, y, r, startAngle, endAngle, draw=True, **kwargs):
     BezierPath.checkKwargs(kwargs)
@@ -1664,14 +1832,20 @@ ellipse = oval
         p.draw()
     return p
 
+
+# a working arrow implementation shold be here
+
+
+
 </t>
 <t tx="karstenw.20170704104725.28">def arrow(self, x, y, width=100, type=NORMAL, draw=True, **kwargs):
 
     """Draws an arrow.
 
     Draws an arrow at position x, y, with a default width of 100.
-    There are two different types of arrows: NORMAL and trendy FORTYFIVE degrees arrows.
-    When draw=False then the arrow's path is not ended, similar to endpath(draw=False)."""
+    There are two different types of arrows: NORMAL and trendy FORTYFIVE
+    degrees arrows.  When draw=False then the arrow's path is not ended,
+    similar to endpath(draw=False)."""
 
     BezierPath.checkKwargs(kwargs)
     if type==NORMAL:
@@ -1679,7 +1853,8 @@ ellipse = oval
     elif type==FORTYFIVE:
         return self._arrow45(x, y, width, draw, **kwargs)
     else:
-        raise NodeBoxError("arrow: available types for arrow() are NORMAL and FORTYFIVE\n")
+        raise NodeBoxError( "arrow: available types for arrow() "
+                            "are NORMAL and FORTYFIVE\n")
 
 </t>
 <t tx="karstenw.20170704104725.29">def _arrow(self, x, y, width, draw, **kwargs):
@@ -1756,32 +1931,32 @@ def beginpath(self, x=None, y=None):
 </t>
 <t tx="karstenw.20170704104725.32">def moveto(self, x, y):
     if self._path is None:
-        raise NodeBoxError, "No current path. Use beginpath() first."
+        raise NodeBoxError("No current path. Use beginpath() first.")
     self._path.moveto(x,y)
 
 </t>
 <t tx="karstenw.20170704104725.33">def lineto(self, x, y):
     if self._path is None:
-        raise NodeBoxError, "No current path. Use beginpath() first."
+        raise NodeBoxError("No current path. Use beginpath() first.")
     self._path.lineto(x, y)
 
 </t>
 <t tx="karstenw.20170704104725.34">def curveto(self, x1, y1, x2, y2, x3, y3):
     if self._path is None:
-        raise NodeBoxError, "No current path. Use beginpath() first."
+        raise(NodeBoxError, "No current path. Use beginpath() first.")
     self._path.curveto(x1, y1, x2, y2, x3, y3)
 
 </t>
 <t tx="karstenw.20170704104725.35">def closepath(self):
     if self._path is None:
-        raise NodeBoxError, "No current path. Use beginpath() first."
+        raise NodeBoxError("No current path. Use beginpath() first.")
     if not self._pathclosed:
         self._path.closepath()
 
 </t>
 <t tx="karstenw.20170704104725.36">def endpath(self, draw=True):
     if self._path is None:
-        raise NodeBoxError, "No current path. Use beginpath() first."
+        raise NodeBoxError("No current path. Use beginpath() first.")
     if self._autoclosepath:
         self.closepath()
     p = self._path
@@ -1809,7 +1984,7 @@ def beginpath(self, x=None, y=None):
 
 </t>
 <t tx="karstenw.20170704104725.39">def findpath(self, points, curvature=1.0):
-    import bezier
+    from . import bezier
     path = bezier.findpath(points, curvature=curvature)
     path._ctx = self
     path.inheritFromContext()
@@ -1869,14 +2044,16 @@ def push(self): #, all=False):
 <t tx="karstenw.20170704104725.43">def pop(self):
     try:
         top = self._transformstack.pop()
-    except IndexError, e:
-        raise NodeBoxError, "pop: too many pops!"
+    except IndexError as e:
+        raise NodeBoxError( "pop: too many pops!" )
     if len(top) &gt; 1:
-        self._align, self._autoclosepath, self._capstyle, self._colormode, self._fillcolor, self._fontname, self._fontsize, self._joinstyle, self._lineheight, self._outputmode, self._strokecolor, self._strokewidth, self._transformmode, self._transform.matrix = top
+        self._align, self._autoclosepath, self._capstyle, self._colormode,
+        self._fillcolor, self._fontname, self._fontsize, self._joinstyle,
+        self._lineheight, self._outputmode, self._strokecolor,
+        self._strokewidth, self._transformmode, self._transform.matrix = top
     else:
         self._transform.matrix = top[0]
-        
-        
+
 </t>
 <t tx="karstenw.20170704104725.44">def transform(self, mode=None):
     if mode is not None:
@@ -1948,7 +2125,8 @@ HEIGHT = property(_get_height)
 <t tx="karstenw.20170704104726.10">def capstyle(self, style=None):
     if style is not None:
         if style not in (BUTT, ROUND, SQUARE):
-            raise NodeBoxError, 'Line cap style should be BUTT, ROUND or SQUARE.'
+            raise NodeBoxError( 'Line cap style should be BUTT,'
+                                ' ROUND or SQUARE.')
         self._capstyle = style
     return self._capstyle
 
@@ -1956,7 +2134,8 @@ HEIGHT = property(_get_height)
 <t tx="karstenw.20170704104726.11">def joinstyle(self, style=None):
     if style is not None:
         if style not in (MITER, ROUND, BEVEL):
-            raise NodeBoxError, 'Line join style should be MITER, ROUND or BEVEL.'
+            raise NodeBoxError( 'Line join style should be MITER,'
+                                ' ROUND or BEVEL.')
         self._joinstyle = style
     return self._joinstyle
 
@@ -1967,7 +2146,7 @@ HEIGHT = property(_get_height)
 def font(self, fontname=None, fontsize = None):
     if fontname is not None:
         if not Text.font_exists(fontname):
-            raise NodeBoxError, 'Font "%s" not found.' % fontname
+            raise NodeBoxError('Font "%s" not found.' % fontname )
         else:
             self._fontname = fontname
     if fontsize is not None:
@@ -2019,9 +2198,10 @@ def font(self, fontname=None, fontsize = None):
 
 </t>
 <t tx="karstenw.20170704104726.19">def textpath(self, txt, x, y, width=None, height=None, **kwargs):
+    # pdb.set_trace()
     Text.checkKwargs(kwargs)
     txt = self.Text(txt, x, y, width, height, **kwargs)
-    txt.inheritFromContext(kwargs.keys())
+    txt.inheritFromContext( list( kwargs.keys()) )
     return txt.path
 
 </t>
@@ -2045,9 +2225,10 @@ def font(self, fontname=None, fontsize = None):
 </t>
 <t tx="karstenw.20170704104726.22">### Image commands ###
 
-def image(self, path, x, y, width=None, height=None, alpha=1.0, data=None, draw=True, **kwargs):
+def image(self, path, x, y, width=None, height=None, alpha=1.0,
+                data=None, draw=True, **kwargs):
     img = self.Image(path, x, y, width, height, alpha, data=data, **kwargs)
-    img.inheritFromContext(kwargs.keys())
+    img.inheritFromContext( kwargs.keys() )
     if draw:
         img.draw()
     return img
@@ -2057,7 +2238,6 @@ def image(self, path, x, y, width=None, height=None, alpha=1.0, data=None, draw=
     img = self.Image(path, data=data)
     return img.size
     
-
 </t>
 <t tx="karstenw.20170704104726.24">### Canvas proxy ###
 
@@ -2141,12 +2321,13 @@ def colormode(self, mode=None, range=None):
 # Refer to the "Use" section on http://nodebox.net/code
 # Thanks to Dr. Florimond De Smedt at the Free University of Brussels for the math routines.
 
-
+from __future__ import print_function
 @others
 if __name__=='__main__':
     _test()
 </t>
-<t tx="karstenw.20170704104742.1">from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point
+<t tx="karstenw.20170704104742.1">
+from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point
 from nodebox.graphics import MOVETO, LINETO, CURVETO, CLOSE
 
 
@@ -2220,7 +2401,8 @@ except:
     if relative:
         length = sum(lengths)
         try:
-            return map(lambda l: l / length, lengths)
+            lengths = list( map(lambda l: l / length, lengths) )
+            return lengths
         except ZeroDivisionError:
             # If the length is zero, just return zero for all segments
             return [0.0] * len(lengths)
@@ -2306,22 +2488,29 @@ except:
     (0, 1.0, Point(x=0.000, y=0.000))
     """
     
+
     if segments == None:
-        segments = path.segmentlengths(relative=True)
-        
+        segments = list( path.segmentlengths(relative=True) )
+    
     if len(segments) == 0:
-        raise NodeBoxError, "The given path is empty"
+        raise NodeBoxError("The given path is empty")
     
     for i, el in enumerate(path):
         if i == 0 or el.cmd == MOVETO:
             closeto = Point(el.x, el.y)
-        if t &lt;= segments[i] or i == len(segments)-1: break
-        else: t -= segments[i]
+        if t &lt;= segments[i] or i == len(segments)-1:
+            break
+        else:
+            t -= segments[i]
 
-    try: t /= segments[i]
-    except ZeroDivisionError: pass
-    if i == len(segments)-1 and segments[i] == 0: i -= 1
-    
+    try:
+        t = t / segments[i]
+    except ZeroDivisionError:
+        pass
+    if i == len(segments)-1 and segments[i] == 0:
+        i -= 1
+
+    # print("_locate( ", i, t, closeto, " )")
     return (i, t, closeto)
 
 
@@ -2361,7 +2550,7 @@ except:
     """
 
     if len(path) == 0:
-        raise NodeBoxError, "The given path is empty"
+        raise NodeBoxError("The given path is empty")
 
     i, t, closeto = _locate(path, t, segments=segments)
 
@@ -2371,10 +2560,12 @@ except:
     if p1.cmd == CLOSE:
         x, y = linepoint(t, x0, y0, closeto.x, closeto.y)
         return PathElement(LINETO, ((x, y),))
+
     elif p1.cmd == LINETO:
         x1, y1 = p1.x, p1.y
         x, y = linepoint(t, x0, y0, x1, y1)
         return PathElement(LINETO, ((x, y),))
+
     elif p1.cmd == CURVETO:
         x3, y3, x1, y1, x2, y2 = (p1.x, p1.y,
                                   p1.ctrl1.x, p1.ctrl1.y,
@@ -2382,7 +2573,7 @@ except:
         x, y, c1x, c1y, c2x, c2y = curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3)
         return PathElement(CURVETO, ((c1x, c1y), (c2x, c2y), (x, y)))
     else:
-        raise NodeBoxError, "Unknown cmd for p1 %s" % p1
+        raise NodeBoxError("Unknown cmd for p1 %s" % p1 )
 
 
 </t>
@@ -2407,18 +2598,18 @@ except:
     """
 
     if len(path) == 0:
-        raise NodeBoxError, "The given path is empty"
+        raise NodeBoxError("The given path is empty")
 
     # The delta value is divided by amount - 1, because we also want the last point (t=1.0)
     # If I wouldn't use amount - 1, I fall one point short of the end.
     # E.g. if amount = 4, I want point at t 0.0, 0.33, 0.66 and 1.0,
     # if amount = 2, I want point at t 0.0 and t 1.0
     try:
-        delta = 1.0/(amount-1)
+        delta = 1.0 / (amount-1)
     except ZeroDivisionError:
         delta = 1.0
 
-    for i in xrange(amount):
+    for i in range(amount):
         yield point(path, delta*i)
 
 
@@ -2471,7 +2662,8 @@ except:
         elif el.cmd == CURVETO:
             empty = False
             current_contour.curveto(el.ctrl1.x, el.ctrl1.y,
-                el.ctrl2.x, el.ctrl2.y, el.x, el.y)
+                                    el.ctrl2.x, el.ctrl2.y,
+                                    el.x,       el.y)
         elif el.cmd == CLOSE:
             current_contour.closepath()
     if not empty:
@@ -2497,9 +2689,8 @@ except:
     # but it shouldn't crash on something straightforward
     # as someone supplying a list of (x,y)-tuples.
     
-    from types import TupleType
     for i, pt in enumerate(points):
-        if type(pt) == TupleType:
+        if type(pt) in (tuple,):
             points[i] = Point(pt[0], pt[1])
     
     if len(points) == 0: return None
@@ -2536,7 +2727,7 @@ except:
         ax[i] = -(points[i+1].x-points[i-1].x-ax[i-1]) * bi[i]
         ay[i] = -(points[i+1].y-points[i-1].y-ay[i-1]) * bi[i]
         
-    r = range(1, len(points)-1)
+    r = list( range(1, len(points)-1) )
     r.reverse()
     for i in r:
         dx[i] = ax[i] + dx[i+1] * bi[i]
@@ -2606,7 +2797,7 @@ except:
         s = curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3, True)
         pt_x, pt_y, pt_c1x, pt_c1y, pt_c2x, pt_c2y, pt_h1x, pt_h1y, pt_h2x, pt_h2y = s
     else:
-        raise NodeBoxError, "Locate should not return a MOVETO"
+        raise NodeBoxError("Locate should not return a MOVETO")
     
     new_path = BezierPath(None)
     new_path.moveto(path[0].x, path[0].y)
@@ -2626,7 +2817,7 @@ except:
                 else:
                     new_path.closepath()
             else:
-                raise NodeBoxError, "Didn't expect pt_cmd %s here" % pt_cmd
+                raise NodeBoxError("Didn't expect pt_cmd %s here" % pt_cmd)
             
         else:
             if path[j].cmd == MOVETO:
@@ -2650,8 +2841,6 @@ if __name__=='__main__':
 </t>
 <t tx="karstenw.20170704104751.1">import os
 import warnings
-
-import pdb
 
 # from random import choice, shuffle
 import random
@@ -2705,7 +2894,7 @@ makeunicode = nodebox.util.makeunicode
 
 try:
     import cPolymagic
-except ImportError, e:
+except ImportError as e:
     warnings.warn('Could not load cPolymagic: %s' % e)
 
 __all__ = [
@@ -2719,7 +2908,8 @@ __all__ = [
         "NORMAL","FORTYFIVE",
         "NUMBER", "TEXT", "BOOLEAN","BUTTON", "MENU",
         "NodeBoxError",
-        "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect", "Oval",
+        "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect",
+        "Oval",
         "Color", "Transform", "Image", "Text",
         "Variable", "Canvas",
         ]
@@ -3014,13 +3204,13 @@ cmyka = property(_get_cmyka, doc="a tuple containing the CMYKA values for this c
     elif isinstance(transform, NSAffineTransform):
         pass
     else:
-        raise NodeBoxError, "Don't know how to handle transform %s." % transform
+        raise NodeBoxError("Don't know how to handle transform %s." % transform)
     self._nsAffineTransform = transform
     
 </t>
 <t tx="karstenw.20170704104751.13">def copy(self):
     """Returns a deep copy of this grob."""
-    raise NotImplementedError, "Copy is not implemented on this Grob class."
+    raise NotImplementedError("Copy is not implemented on this Grob class.")
     
 </t>
 <t tx="karstenw.20170704104751.130">def _get_transform(self):
@@ -3118,7 +3308,7 @@ matrix = property(_get_matrix, _set_matrix)
     if isinstance(path, BezierPath):
         path = BezierPath(path._ctx, path)
     else:
-        raise NodeBoxError, "Can only transform BezierPaths"
+        raise NodeBoxError("Can only transform BezierPaths")
     path._nsBezierPath = self._nsAffineTransform.transformBezierPath_(path._nsBezierPath)
     return path
 
@@ -3154,7 +3344,7 @@ matrix = property(_get_matrix, _set_matrix)
             data = NSData.dataWithBytes_length_(data, len(data))
         self._nsImage = NSImage.alloc().initWithData_(data)
         if self._nsImage is None:
-            raise NodeBoxError, "can't read image %r" % path
+            raise NodeBoxError("can't read image %r" % path)
         self._nsImage.setFlipped_(True)
         self._nsImage.setCacheMode_(NSImageCacheNever)
 
@@ -3163,11 +3353,11 @@ matrix = property(_get_matrix, _set_matrix)
             self._nsImage = image
             self._nsImage.setFlipped_(True)
         else:
-            raise NodeBoxError, "Don't know what to do with %s." % image
+            raise NodeBoxError("Don't know what to do with %s." % image)
 
     elif path is not None:
         if not os.path.exists(path):
-            raise NodeBoxError, 'Image "%s" not found.' % path
+            raise NodeBoxError('Image "%s" not found.' % path)
         curtime = os.path.getmtime(path)
         try:
             image, lasttime = self._ctx._imagecache[path]
@@ -3178,7 +3368,7 @@ matrix = property(_get_matrix, _set_matrix)
         if image is None:
             image = NSImage.alloc().initWithContentsOfFile_(path)
             if image is None:
-                raise NodeBoxError, "Can't read image %r" % path
+                raise NodeBoxError("Can't read image %r" % path)
             image.setFlipped_(True)
             image.setCacheMode_(NSImageCacheNever)
             self._ctx._imagecache[path] = (image, curtime)
@@ -3201,7 +3391,8 @@ image = property(_get_image)
 <t tx="karstenw.20170704104751.15">def checkKwargs(self, kwargs):
     remaining = [arg for arg in kwargs.keys() if arg not in self.kwargs]
     if remaining:
-        raise NodeBoxError, "Unknown argument(s) '%s'" % ", ".join(remaining)
+        err = "Unknown argument(s) '%s'" % ", ".join(remaining)
+        raise NodeBoxError(err)
 checkKwargs = classmethod(checkKwargs)
 
 
@@ -3390,7 +3581,7 @@ font = property(_get_font)
         NSFontAttributeName:            self.font
     }
 
-    t = unicode(self.text)
+    t = makeunicode( self.text )
     textStorage = NSTextStorage.alloc().initWithString_attributes_(t, d)
     try:
         textStorage.setFont_(self.font)
@@ -3583,6 +3774,8 @@ path = property(_get_path)
                 default = u""
         self.default = default
     self.value = value or self.default
+    self.control = None
+
 
 </t>
 <t tx="karstenw.20170704104751.165">def sanitize(self, val):
@@ -3593,13 +3786,16 @@ path = property(_get_path)
         except ValueError:
             return 0.0
     elif self.type == TEXT:
-        return unicode(str(val), "utf_8", "replace")
+        # return unicode(str(val), "utf_8", "replace")
+        return makeunicode( val )
         try:
-            return unicode(str(val), "utf_8", "replace")
+            # return unicode(str(val), "utf_8", "replace")
+            return makeunicode( val )
         except:
             return ""
     elif self.type == BOOLEAN:
-        if unicode(val).lower() in ("true", "1", "yes"):
+        v = makeunicode( val )
+        if v.lower() in (u"true", u"1", u"yes"):
             return True
         else:
             return False
@@ -3719,8 +3915,8 @@ size = property(_get_size)
     try:
         del self._grobstack[0]
         self._container = self._grobstack[0]
-    except IndexError, e:
-        raise NodeBoxError, "pop: too many canvas pops!"
+    except IndexError as e:
+        raise NodeBoxError("pop: too many canvas pops!")
 
 </t>
 <t tx="karstenw.20170704104751.183">def draw(self):
@@ -3757,7 +3953,7 @@ _nsImage = property(_get_nsImage)
                     "tiff": NSTIFFFileType}
         if format not in imgTypes:
             e = "Filename should end in .pdf, .eps, .tiff, .gif, .jpg or .png"
-            raise NodeBoxError, e
+            raise NodeBoxError(e)
         data = self._nsImage.TIFFRepresentation()
         if format != 'tiff':
             imgType = imgTypes[format]
@@ -3900,7 +4096,7 @@ strokewidth = property(_get_strokewidth, _set_strokewidth)
     elif isinstance(path, NSBezierPath):
         self._nsBezierPath = path
     else:
-        raise NodeBoxError, "Don't know what to do with %s." % path
+        raise NodeBoxError("Don't know what to do with %s." % path)
         
 </t>
 <t tx="karstenw.20170704104751.39">def _get_path(self):
@@ -3927,7 +4123,7 @@ class NodeBoxError(Exception):
 </t>
 <t tx="karstenw.20170704104751.42">def _set_capstyle(self, style):
     if style not in (BUTT, ROUND, SQUARE):
-        raise NodeBoxError, 'Line cap style should be BUTT, ROUND or SQUARE.'
+        raise NodeBoxError('Line cap style should be BUTT, ROUND or SQUARE.')
     self._capstyle = style
 capstyle = property(_get_capstyle, _set_capstyle)
 
@@ -3937,7 +4133,7 @@ capstyle = property(_get_capstyle, _set_capstyle)
 </t>
 <t tx="karstenw.20170704104751.44">def _set_joinstyle(self, style):
     if style not in (MITER, ROUND, BEVEL):
-        raise NodeBoxError, 'Line join style should be MITER, ROUND or BEVEL.'
+        raise NodeBoxError('Line join style should be MITER, ROUND or BEVEL.')
     self._joinstyle = style
 joinstyle = property(_get_joinstyle, _set_joinstyle)
 
@@ -4062,7 +4258,7 @@ ellipse = oval
         elif isinstance(el, PathElement):
             self.append(el)
         else:
-            raise NodeBoxError, "Don't know how to handle %s" % el
+            raise NodeBoxError("Don't know how to handle %s" % el)
 
 </t>
 <t tx="karstenw.20170704104751.6">def __init__(self, *args):
@@ -4073,7 +4269,7 @@ ellipse = oval
     elif len(args) == 0:
         self.x = self.y = 0.0
     else:
-        raise NodeBoxError, "Wrong initializer for Point object"
+        raise NodeBoxError("Wrong initializer for Point object")
 
 </t>
 <t tx="karstenw.20170704104751.60">def append(self, el):
@@ -4089,14 +4285,14 @@ ellipse = oval
         
 </t>
 <t tx="karstenw.20170704104751.61">def _get_contours(self):
-    from nodebox.graphics import bezier
+    from . import bezier
     return bezier.contours(self)
 contours = property(_get_contours)
 
-### Drawing methods ###
-
 </t>
-<t tx="karstenw.20170704104751.62">def _get_transform(self):
+<t tx="karstenw.20170704104751.62">### Drawing methods ###
+
+def _get_transform(self):
     trans = self._transform.copy()
     if (self._transformmode == CENTER):
         (x, y), (w, h) = self.bounds
@@ -4170,7 +4366,9 @@ transform = property(_get_transform)
 
 </t>
 <t tx="karstenw.20170704104751.65">def segmentlengths(self, relative=False, n=10):
-    import bezier
+    # import bezier
+    
+    from . import bezier
     if relative: # Use the opportunity to store the segment cache.
         if self._segment_cache is None:
             self._segment_cache = bezier.segment_lengths(self,
@@ -4181,37 +4379,42 @@ transform = property(_get_transform)
 
 </t>
 <t tx="karstenw.20170704104751.66">def _get_length(self, segmented=False, n=10):
-    import bezier
+    # import bezier
+    from . import bezier
     return bezier.length(self, segmented=segmented, n=n)
 length = property(_get_length)
     
 </t>
 <t tx="karstenw.20170704104751.67">def point(self, t):
-    import bezier
+    # import bezier
+    from . import bezier
     return bezier.point(self, t)
     
 </t>
 <t tx="karstenw.20170704104751.68">def points(self, amount=100):
-    import bezier
+    from . import bezier
     if len(self) == 0:
-        raise NodeBoxError, "The given path is empty"
+        raise NodeBoxError("The given path is empty")
 
     # The delta value is divided by amount - 1, because we also want the
     # last point (t=1.0)
     # If I wouldn't use amount - 1, I fall one point short of the end.
     # E.g. if amount = 4, I want point at t 0.0, 0.33, 0.66 and 1.0,
     # if amount = 2, I want point at t 0.0 and t 1.0
+    
+    amount = int( amount )
     try:
-        delta = 1.0/(amount-1)
+        delta = 1.0 / (amount-1)
     except ZeroDivisionError:
         delta = 1.0
 
-    for i in xrange(amount):
-        yield self.point(delta*i)
+    for i in range(amount):
+        yield self.point( delta*i )
         
 </t>
 <t tx="karstenw.20170704104751.69">def addpoint(self, t):
-    import bezier
+    # import bezier
+    from . import bezier
     self._nsBezierPath = bezier.insert_point(self, t)._nsBezierPath
     self._segment_cache = None
 
@@ -4294,19 +4497,21 @@ length = property(_get_length)
         
 </t>
 <t tx="karstenw.20170704104751.78">def __eq__(self, other):
-    if other is None: return False
-    if self.cmd != other.cmd: return False
-    return self.x == other.x and self.y == other.y \
-        and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2
+    if other is None:
+        return False
+    if self.cmd != other.cmd:
+        return False
+    return (    self.x == other.x and self.y == other.y
+            and self.ctrl1 == other.ctrl1 and self.ctrl2 == other.ctrl2 )
     
 </t>
 <t tx="karstenw.20170704104751.79">def __ne__(self, other):
     return not self.__eq__(other)
 
-
 </t>
 <t tx="karstenw.20170704104751.8">def __eq__(self, other):
-    if other is None: return False
+    if other is None:
+        return False
     return self.x == other.x and self.y == other.y
     
 </t>
@@ -4347,7 +4552,7 @@ length = property(_get_length)
 
 </t>
 <t tx="karstenw.20170704104751.86">def copy(self):
-    raise NotImplementedError, "Please don't use Rect anymore"
+    raise NotImplementedError("Please don't use Rect anymore")
 
 
 </t>
@@ -4364,13 +4569,12 @@ length = property(_get_length)
 
 </t>
 <t tx="karstenw.20170704104751.89">def copy(self):
-    raise NotImplementedError, "Please don't use Oval anymore"
+    raise NotImplementedError("Please don't use Oval anymore")
 
 
 </t>
 <t tx="karstenw.20170704104751.9">def __ne__(self, other):
     return not self.__eq__(other)
-
 
 </t>
 <t tx="karstenw.20170704104751.90">class Color(object):
@@ -4399,7 +4603,7 @@ color = Color
     elif params == 1 and isinstance(args[0], NSColor):
         clr = args[0]
     elif (    params == 1
-          and isinstance(args[0], (str,unicode))
+          and isinstance(args[0], (pstr,punicode))
           and len(args[0]) in (3,4,5,6,7,8,9)):
         # hex param
         try:
@@ -4427,8 +4631,8 @@ color = Color
             if n in (4,8):
                 alpha = int(alpha, 16) / div
             clr = NSColor.colorWithDeviceRed_green_blue_alpha_(r, g, b, alpha)
-        except Exception, err:
-            print "Color parsing error:", err
+        except Exception as err:
+            print("Color parsing error: %s" % err)
             clr = NSColor.colorWithDeviceWhite_alpha_(0, 1)
 
     elif params == 1: # Gray, no alpha
@@ -4542,13 +4746,11 @@ h = hue = property(_get_hue, _set_hue, doc="the hue of the color")
 </t>
 <t tx="karstenw.20170704104953.1">@language python
 @tabwidth -4
-#from Foundation import *
-#from AppKit import *
-
 @others
 </t>
 <t tx="karstenw.20170704105032.1">import sys
 import os
+import io
 import traceback, linecache
 import re
 import objc
@@ -4561,18 +4763,20 @@ import pprint
 pp = pprint.pprint
 
 import pdb
+kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
 debugging = False
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import Foundation
 import AppKit
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSScriptCommand = AppKit.NSScriptCommand
+NSApplication = AppKit.NSApplication
 
 NSDocument = AppKit.NSDocument
 NSDocumentController = AppKit.NSDocumentController
@@ -4614,16 +4818,16 @@ NSBezierPath = AppKit.NSBezierPath
 import threading
 Thread = threading.Thread
 
-import ValueLadder
+from . import ValueLadder
 MAGICVAR = ValueLadder.MAGICVAR
 
-import PyDETextView
+from . import PyDETextView
 
-import preferences
+from . import preferences
 NodeBoxPreferencesController = preferences.NodeBoxPreferencesController
 LibraryFolder = preferences.LibraryFolder
 
-import util
+from . import util
 errorAlert = util.errorAlert
 
 
@@ -4656,20 +4860,29 @@ DARKER_GRAY = black.blendedColorWithFraction_ofColor_(0.8,
 
 # from nodebox.gui.mac.dashboard import *
 # from nodebox.gui.mac.progressbar import ProgressBarController
-import dashboard
+from . import dashboard
 DashboardController = dashboard.DashboardController
 
-import progressbar
+from . import progressbar
 ProgressBarController = progressbar.ProgressBarController
 
 </t>
 <t tx="karstenw.20170704105032.10">def close(self):
     self.stopScript()
+    try:
+        if len(self.vars) &gt; 0:
+            self.dashboardController.panel.close()
+    except Wxception as err:
+        if kwlog:
+            print("ERROR window.close()")
+            print( err )
     super(NodeBoxDocument, self).close()
 
 </t>
 <t tx="karstenw.20170704105032.100">def acceptsFirstResponder(self):
     return True
+
+
 
 </t>
 <t tx="karstenw.20170704105032.101">class NodeBoxAppDelegate(NSObject):
@@ -4677,9 +4890,9 @@ ProgressBarController = progressbar.ProgressBarController
     @others
 </t>
 <t tx="karstenw.20170704105032.102">def awakeFromNib(self):
+    print("AppDelegate.awakeFromNib")
     self._prefsController = None
     libpath = LibraryFolder()
-
 
 </t>
 <t tx="karstenw.20170704105032.103">@objc.IBAction
@@ -4736,6 +4949,7 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.13">def readFromFile_ofType_(self, path, tp):
+    # pdb.set_trace()
     if self.textView is None:
         # we're not yet fully loaded
         self.path = path
@@ -4746,14 +4960,16 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.14">def writeToFile_ofType_(self, path, tp):
-    f = file(path, "w")
+    # pdb.set_trace()
+    f = io.open(path, "wb")
     text = self.textView.string()
-    f.write(text.encode("utf8"))
+    f.write( text.encode("utf8") )
     f.close()
     return True
 
 </t>
 <t tx="karstenw.20170704105032.15">def windowControllerDidLoadNib_(self, controller):
+    # pdb.set_trace()
     if self.path:
         self.readFromUTF8_(self.path)
     font = PyDETextView.getBasicTextAttributes()[NSFontAttributeName]
@@ -4774,19 +4990,26 @@ def showLibrary_(self, sender):
         self.outputView.setAutomaticDashSubstitutionEnabled_( False )
         #self.outputView.setAutomaticLinkDetectionEnabled_( True )
         #self.outputView.setDisplaysLinkToolTips_( True )
-    except Exception, err:
-        pass
+    except Exception as err:
+        if kwlog:
+            print("ERROR windowControllerDidLoadNib_()")
+            print( err )
+
 
 </t>
 <t tx="karstenw.20170704105032.16">def readFromUTF8_(self, path):
-    f = file(path)
-    text = unicode(f.read(), "utf_8")
+    # pdb.set_trace()
+    f = io.open(path, 'r', encoding="utf-8")
+    s = f.read()
+    f.close()
+    text = makeunicode( s )
     f.close()
     self.textView.setString_(text)
     self.textView.usesTabs = "\t" in text
     
 </t>
 <t tx="karstenw.20170704105032.17">def cleanRun_newSeed_buildInterface_(self, fn, newSeed, buildInterface):
+    # pdb.set_trace()
     self.animationSpinner.startAnimation_(None)
 
     # Prepare everything for running the script
@@ -4826,7 +5049,7 @@ def showLibrary_(self, sender):
     self.speed = self.canvas.speed = None
 
 </t>
-<t tx="karstenw.20170704105032.19">def fastRun_newSeed_(self, fn, newSeed = False):
+<t tx="karstenw.20170704105032.19">def fastRun_newSeed_(self, fn, newSeed=False):
     """This is the old signature. Dispatching to the new with args"""
     return self.fastRun_newSeed_args_( fn, newSeed, [])
 
@@ -4846,6 +5069,7 @@ def runFullscreen_(self, sender):
     self.currentView.canvas = None
     fullRect = NSScreen.mainScreen().frame()
     self.fullScreen = FullscreenWindow.alloc().initWithRect_(fullRect)
+    # self.fullScreen.oneShot = True
     self.fullScreen.setContentView_(self.currentView)
     self.fullScreen.makeKeyAndOrderFront_(self)
     self.fullScreen.makeFirstResponder_(self.currentView)
@@ -4861,18 +5085,20 @@ def runScript_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.22">def runScript(self, compile=True, newSeed=True):
-    if self.fullScreen is not None: return
+    if self.fullScreen is not None:
+        return
     self.currentView = self.graphicsView
     self._runScript(compile, newSeed)
 
 </t>
 <t tx="karstenw.20170704105032.23">def _runScript(self, compile=True, newSeed=True):
+    # pdb.set_trace()
     if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
         pass
 
     # Check whether we are dealing with animation
     if self.canvas.speed is not None:
-        if not self.namespace.has_key("draw"):
+        if not "draw" in self.namespace:
             errorAlert("Not a proper NodeBox animation",
                 "NodeBox animations should have at least a draw() method.")
             return
@@ -4884,7 +5110,7 @@ def runScript_(self, sender):
         self.speed = self.canvas.speed
 
         # Run setup routine
-        if self.namespace.has_key("setup"):
+        if "setup" in self.namespace:
             self.fastRun_newSeed_(self.namespace["setup"], False)
         window = self.currentView.window()
         window.makeFirstResponder_(self.currentView)
@@ -4893,7 +5119,7 @@ def runScript_(self, sender):
         timer = NSTimer.scheduledTimerWithTimeInterval_target_selector_userInfo_repeats_
         self.animationTimer = timer(1.0 / self.speed,
                                     self,
-                                    objc.selector(self.doFrame, signature="v@:@"),
+                                    objc.selector(self.doFrame, signature=b"v@:@"),
                                     None,
                                     True)
 
@@ -4931,17 +5157,21 @@ def stopScript_(self, sender=None):
     
 </t>
 <t tx="karstenw.20170704105032.29">def stopScript(self):
-    if self.namespace.has_key("stop"):
+    if "stop" in self.namespace:
         success, output = self.boxedRun_args_(self.namespace["stop"], [])
         self.flushOutput_(output)
     self.animationSpinner.stopAnimation_(None)
+
     if self.animationTimer is not None:
         self.animationTimer.invalidate()
         self.animationTimer = None
+
     if self.fullScreen is not None:
         self.currentView = self.graphicsView
+        self.fullScreen.orderOut_(None)
         self.fullScreen = None
-        NSMenu.setMenuBarVisible_(True)
+        
+    NSMenu.setMenuBarVisible_(True)
     NSCursor.unhide()
     self.textView.hideValueLadder()
     window = self.textView.window()
@@ -4951,13 +5181,14 @@ def stopScript_(self, sender=None):
 <t tx="karstenw.20170704105032.3">class OutputFile(object):
 
     @others
-# class defined in NodeBoxDocument.xib
+
 </t>
 <t tx="karstenw.20170704105032.30">def _compileScript(self, source=None):
     if source is None:
         source = self.textView.string()
 
-    # if this is activated, all unicode carrying scripts NEED a "encoding" line
+    # if this is activated, all unicode carrying scripts NEED a "encoding"
+    # line
     # OTOH if this is on, NB accepts scripts with an encoding line.
     # currently an error
     # source = source.encode("utf-8")
@@ -4982,8 +5213,9 @@ def stopScript_(self, sender=None):
         #pp(util.__all__)
         #print "graphics.__all__:"
         #pp(graphics.__all__)
-        print "namespace.keys():"
+        # print("namespace.keys():")
         # pp(namespace.keys())
+        pass
 
     # Add everything from the context object
     self.namespace["_ctx"] = self.context
@@ -5003,7 +5235,7 @@ def stopScript_(self, sender=None):
 
 </t>
 <t tx="karstenw.20170704105032.32">def _execScript(self):
-    exec self._code in self.namespace
+    exec(self._code, self.namespace)
     self.__doc__ = self.namespace.get("__doc__", self.__doc__)
 
 </t>
@@ -5019,6 +5251,8 @@ def stopScript_(self, sender=None):
          - A boolean indicating whether the run was successful
          - The OutputFile
     """
+
+    # pdb.set_trace()
 
     self.scriptName = self.fileName()
     libpath = LibraryFolder()
@@ -5159,9 +5393,7 @@ def exportAsImage_(self, sender):
         format = panel.requiredFileType()
         panel.close()
         self.doExportAsImage_fmt_pages_(fname, format, pages)
-exportPanelDidEnd_returnCode_contextInfo_ = objc.selector(
-    exportPanelDidEnd_returnCode_contextInfo_,
-    signature="v@:@ii")
+exportPanelDidEnd_returnCode_contextInfo_ = objc.selector( exportPanelDidEnd_returnCode_contextInfo_, signature=b"v@:@ii")
         
 </t>
 <t tx="karstenw.20170704105032.39">@objc.IBAction
@@ -5211,7 +5443,7 @@ def exportImageFormatChanged_(self, sender):
                     self._frame += 1
                     pb.inc()
             else:
-                if self.namespace.has_key("setup"):
+                if "setup" in self.namespace:
                     self.fastRun_newSeed_(self.namespace["setup"], False)
                 for i in range(pages):
                     self.fastRun_newSeed_(self.namespace["draw"], True)
@@ -5226,7 +5458,7 @@ def exportImageFormatChanged_(self, sender):
                     self._pageNumber += 1
                     self._frame += 1
                     pb.inc()
-                if self.namespace.has_key("stop"):
+                if "stop" in self.namespace:
                     success, output = self.boxedRun_args_(self.namespace["stop"],
                                                           [])
                     self.flushOutput_(output)
@@ -5281,7 +5513,7 @@ def exportAsMovie_(self, sender):
         self.doExportAsMovie_frames_fps_(fname, frames, fps)
 
 qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
-                                                      signature="v@:@ii")
+                                                      signature=b"v@:@ii")
 
 </t>
 <t tx="karstenw.20170704105032.43">def doExportAsMovie_frames_fps_(self, fname, frames, fps):
@@ -5296,7 +5528,7 @@ qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_c
     except:
         pass
     try:
-        fp = open(fname, 'w')
+        fp = io.open(fname, 'wb')
         fp.close()
     except:
         errorAlert("File Error", ("Could not create file '%s'. "
@@ -5325,7 +5557,7 @@ qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_c
                 self._pageNumber += 1
                 self._frame += 1
         else:
-            if self.namespace.has_key("setup"):
+            if "setup" in self.namespace:
                 self.fastRun_newSeed_(self.namespace["setup"], False)
             for i in range(frames):
                 self.fastRun_newSeed_(self.namespace["draw"], True)
@@ -5334,7 +5566,7 @@ qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_c
                 pb.inc()
                 self._pageNumber += 1
                 self._frame += 1
-            if self.namespace.has_key("stop"):
+            if "stop" in self.namespace:
                 success, output = self.boxedRun_args_(self.namespace["stop"], [])
                 self.flushOutput_(output)
     except KeyboardInterrupt:
@@ -5361,11 +5593,12 @@ def printDocument_(self, sender):
 
 printOperationDidRun_success_contextInfo_ = objc.selector(
                                         printOperationDidRun_success_contextInfo_,
-                                        signature="v@:@ci")
+                                        signature=b"v@:@ci")
 
 </t>
 <t tx="karstenw.20170704105032.46">@objc.IBAction
 def buildInterface_(self, sender):
+    # print( "NIB.buildInterface_() klicked. %s" % repr(sender) )
     self.dashboardController.buildInterface_(self.vars)
 
 </t>
@@ -5389,13 +5622,15 @@ def zoomOut_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.5">def write(self, data):
-    if isinstance(data, str):
+    t = type( data )
+    if t in (pstr, punicode):
         try:
-            data = unicode(data, "utf_8", "replace")
+            data = makeunicode( data )
+            if not py3:
+                data = data.encode( "utf-8" )
         except UnicodeDecodeError:
             data = "XXX " + repr(data)
-    self.data.append((self.isErr, data))
-
+    self.data.append( (self.isErr, data) )
 
 
 </t>
@@ -5478,6 +5713,7 @@ def zoomToFit_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.6">class NodeBoxDocument(NSDocument):
+    # class defined in NodeBoxDocument.xib
 
     graphicsView = objc.IBOutlet()
     outputView = objc.IBOutlet() 
@@ -5513,6 +5749,7 @@ def zoomToFit_(self, sender):
     movie = None
 
     @others
+
 </t>
 <t tx="karstenw.20170704105032.60">def mouseDown_(self, event):
     self.mousedown = True
@@ -5663,6 +5900,7 @@ def resetZoom_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.8">def init(self):
+    # pdb.set_trace()
     self = super(NodeBoxDocument, self).init()
     nc = NSNotificationCenter.defaultCenter()
     nc.addObserver_selector_name_object_(self,
@@ -5822,14 +6060,15 @@ jpegData = property(_get_jpegData)
     return True
 
 </t>
-<t tx="karstenw.20170704105043.1">__all__ = ["AskString"]
+<t tx="karstenw.20170704105043.1">__all__ = ["AskStringWindowController",]
 
 import objc
 
 import Foundation
 
 import AppKit
-NSApp = AppKit.NSApp
+#NSApp = AppKit.NSApplication
+
 </t>
 <t tx="karstenw.20170704105043.2"># class defined in AskString.xib
 class AskStringWindowController(AppKit.NSWindowController):
@@ -5849,8 +6088,9 @@ class AskStringWindowController(AppKit.NSWindowController):
         self.setWindowFrameAutosaveName_("AskStringPanel")
         self.showWindow_(self)
     else:
-        NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_(
-            self.window(), self.parentWindow, None, None, 0)
+        #NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_( self.window(), self.parentWindow, None, None, 0)
+        self.parentWindow().beginSheet_completionHandler_( self.window(), None )
+        # (void)beginSheet_completionHandler_(NSWindow *)sheetWindow  completionHandler:(void (^)(NSModalResponse returnCode))handler;
     self.retain()
     return self
 
@@ -5869,15 +6109,18 @@ class AskStringWindowController(AppKit.NSWindowController):
         self.close()
     else:
         sheet = self.window()
-        NSApp().endSheet_(sheet)
+        # NSApp().endSheet_(sheet)
+        sheet.endSheet_(self)
         sheet.orderOut_(self)
 
+@objc.IBAction
 </t>
 <t tx="karstenw.20170704105043.7">def ok_(self, sender):
     value = self.textField.stringValue()
     self.done()
     self.resultCallback(value)
 
+@objc.IBAction
 </t>
 <t tx="karstenw.20170704105043.8">def cancel_(self, sender):
     self.done()
@@ -5885,10 +6128,14 @@ class AskStringWindowController(AppKit.NSWindowController):
 
 
 </t>
-<t tx="karstenw.20170704105043.9">def AskString(question, resultCallback, default="", parentWindow=None):
-    AskStringWindowController(question, resultCallback, default, parentWindow)
-</t>
-<t tx="karstenw.20170704105051.1">import pdb
+<t tx="karstenw.20170704105051.1">
+
+from __future__ import print_function
+
+import pdb
+kwdbg = False
+
+
 import AppKit
 
 NSObject = AppKit.NSObject
@@ -5919,55 +6166,65 @@ SMALL_FONT = NSFont.systemFontOfSize_(smfontsize)
 MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
 
 </t>
-<t tx="karstenw.20170704105051.10">def addSlider_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.10">def addSlider_idx_frame_(self, v, cnt, frame):
+    (x,y),(w,h) = frame
     control = NSSlider.alloc().init()
     control.setMaxValue_(v.max)
     control.setMinValue_(v.min)
     control.setFloatValue_(v.value)
-    control.setFrame_(((108,y-1),(172,13)))
+    control.setFrame_( frame ) #((108,y-1),(172,16)))
     control.cell().setControlSize_(NSMiniControlSize)
     control.cell().setControlTint_(NSGraphiteControlTint)
     control.setContinuous_(True)
     control.setTarget_(self)
     control.setTag_(cnt)
-    control.setAction_(objc.selector(self.numberChanged_, signature="v@:@@"))
+    control.setAction_(objc.selector(self.numberChanged_, signature=b"v@:@@"))
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) #+ AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
+    return control
 
 </t>
-<t tx="karstenw.20170704105051.11">def addTextField_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.11">def addTextField_idx_frame_(self, v, cnt, frame):
+    (x,y),(w,h) = frame
     control = NSTextField.alloc().init()
     control.setStringValue_(v.value)
-    control.setFrame_(((108,y-2),(172,15)))
+    control.setFrame_( frame ) #((108,y-2),(172,16)))
     control.cell().setControlSize_(NSMiniControlSize)
     control.cell().setControlTint_(NSGraphiteControlTint)
     control.setFont_(MINI_FONT)
     control.setTarget_(self)
     control.setTag_(cnt)
-    control.setAction_(objc.selector(self.textChanged_, signature="v@:@@"))
+    control.setAction_(objc.selector(self.textChanged_, signature=b"v@:@@"))
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) #+ AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
+    return control
 
 </t>
-<t tx="karstenw.20170704105051.12">def addSwitch_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.12">def addSwitch_idx_frame_(self, v, cnt, frame):
+    (x,y),(w,h) = frame
     control = NSButton.alloc().init()
     control.setButtonType_(NSSwitchButton)
     if v.value:
         control.setState_(NSOnState)
     else:
         control.setState_(NSOffState)
-    control.setFrame_(((108,y-2),(172,16)))
+    control.setFrame_( frame ) #((108,y-2),(172,16)))
     control.setTitle_(v.name)
     control.setFont_(SMALL_FONT)
     control.cell().setControlSize_(NSSmallControlSize)
     control.cell().setControlTint_(NSGraphiteControlTint)
     control.setTarget_(self)
     control.setTag_(cnt)
-    control.setAction_(objc.selector(self.booleanChanged_, signature="v@:@@"))
+    control.setAction_(objc.selector(self.booleanChanged_, signature=b"v@:@@"))
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) # + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
+    return control
     
 </t>
-<t tx="karstenw.20170704105051.13">def addButton_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.13">def addButton_idx_frame_(self, v, cnt, frame):
+    (x,y),(w,h) = frame
     control = NSButton.alloc().init()
-    control.setFrame_(((108, y-2),(172,16)))
+    control.setFrame_( frame ) #((108, y-2),(172,16)))
     control.setTitle_(v.name)
     control.setBezelStyle_(1)
     control.setFont_(SMALL_FONT)
@@ -5975,8 +6232,10 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.cell().setControlTint_(NSGraphiteControlTint)
     control.setTarget_(self)
     control.setTag_(cnt)
-    control.setAction_(objc.selector(self.buttonClicked_, signature="v@:@@"))
+    control.setAction_(objc.selector(self.buttonClicked_, signature=b"v@:@@"))
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) # + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
+    return control
 
 </t>
 <t tx="karstenw.20170704105051.2"># class defined in NodeBoxDocument.xib
@@ -5997,7 +6256,8 @@ class DashboardController(NSObject):
     var.value = sender.floatValue()
     if var.handler is not None:
         args = [var.value,var.name]
-        if var.handler.func_code.co_argcount &lt; 2:
+        argcount = getFunctionArgCount( var.handler )
+        if argcount &lt; 2:
             args = [var.value]
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
@@ -6009,7 +6269,8 @@ class DashboardController(NSObject):
     var.value = sender.stringValue()
     if var.handler is not None:
         args = [var.value,var.name]
-        if var.handler.func_code.co_argcount &lt; 2:
+        argcount = getFunctionArgCount( var.handler )
+        if argcount &lt; 2:
             args = [var.value]
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
@@ -6024,7 +6285,8 @@ class DashboardController(NSObject):
         var.value = False
     if var.handler is not None:
         args = [var.value,var.name]
-        if var.handler.func_code.co_argcount &lt; 2:
+        argcount = getFunctionArgCount( var.handler )
+        if argcount &lt; 2:
             args = [var.value]
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
@@ -6037,7 +6299,8 @@ class DashboardController(NSObject):
     #self.document.runFunction_(var.name)
     if var.handler is not None:
         args = ["",var.name]
-        if var.handler.func_code.co_argcount &lt; 2:
+        argcount = getFunctionArgCount( var.handler )
+        if argcount &lt; 2:
             args = [var.value]
         self.document.fastRun_newSeed_args_(var.handler, False, args)
     else:
@@ -6045,6 +6308,30 @@ class DashboardController(NSObject):
 
 </t>
 <t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
+    panelwidth = 300
+
+    label_x = 0
+    label_w = 100
+    ctrl_x = 108
+    ctrl_w = 172
+    ctrlheight = 26 # 21
+    ctrltop = 5
+    ctrlheader = 11
+    ctrlfooter = 38
+    ctrlheaderfooter = ctrlheader + ctrlfooter
+    ncontrols = len( variables )
+    varsheight = ncontrols * ctrlheight
+    
+    sizes = {
+        'label': 13,
+        graphics.NUMBER: 13,
+        graphics.TEXT: 15,
+        graphics.BOOLEAN: 16,
+        graphics.BUTTON: 16,
+        graphics.MENU: 16 }
+
+    ctrlfluff = ctrltop + ctrlheader + ctrlfooter
+
     self.vars = variables
     self.clearInterface()
     if len(self.vars) &gt; 0:
@@ -6053,50 +6340,85 @@ class DashboardController(NSObject):
         self.panel.orderOut_(None)
         return
 
+
     # Set the title of the parameter panel to the title of the window
     self.panel.setTitle_(self.documentWindow.title())
 
-    (px,py),(pw,ph) = self.panel.frame()
-    # Height of the window. Each element has a height of 21.
+    # pdb.set_trace()
+
+    # reset panel
+    self.panel.setContentSize_( (panelwidth, 97) )
+    (panelx,panely),(panelwidth,panelheight) = self.panel.frame()
+
+    # Height of the window. Each element has a height of ctrlheight.
     # The extra "fluff" is 38 pixels.
-    ph = len(self.vars) * 21 + 54
+    # panelheight = len(self.vars) * 21 + 54
+    panelheight = varsheight + ctrlfluff
+    # print("panelheight: ", panelheight )
+    self.panel.setMinSize_( (panelwidth, panelheight) )
+
     # Start of first element
     # First element is the height minus the fluff.
-    y = ph - 49
+    # y = panelheight - 49
+    y = panelheight - ( ctrlheader + ctrlfooter )
+    
     cnt = 0
+    widthlabel = 0
+    widthctrl = 0
+    y = panelheight - (ctrltop + ctrlheight + 20)
     for v in self.vars:
+        leftheight = sizes.get('label', ctrlheight)
+        rightheight = sizes.get(v.type, ctrlheight)
+        left_coord = (label_x, y)
+        right_coord = (ctrl_x, y)
+        leftframe =  ( ( label_x, y), (label_w, leftheight) )
+        rightframe = ( ( ctrl_x, y), (ctrl_w, rightheight) )
+
         if v.type == graphics.NUMBER:
-            self.addLabel_y_c_(v, y, cnt)
-            self.addSlider_y_c_(v, y, cnt)
+            l = self.addLabel_idx_frame_(v, cnt, leftframe)
+            c = self.addSlider_idx_frame_(v, cnt, rightframe)
+            v.control = (l,c)
 
         elif v.type == graphics.TEXT:
-            self.addLabel_y_c_(v, y, cnt)
-            self.addTextField_y_c_(v, y, cnt)
+            l = self.addLabel_idx_frame_(v, cnt, leftframe)
+            c = self.addTextField_idx_frame_(v, cnt, rightframe)
+            v.control = (l,c)
 
         elif v.type == graphics.BOOLEAN:
-            self.addSwitch_y_c_(v, y, cnt)
+            c = self.addSwitch_idx_frame_(v, cnt, rightframe)
+            v.control = (None,c)
 
         elif v.type == graphics.BUTTON:
-            self.addButton_y_c_(v, y, cnt)
+            c = self.addButton_idx_frame_(v, cnt, rightframe)
+            v.control = (None,c)
 
         elif v.type == graphics.MENU:
-            self.addLabel_y_c_(v, y, cnt)
-            self.addMenu_y_c_(v, y, cnt)
-        y -= 21
+            l = self.addLabel_idx_frame_(v, cnt, leftframe)
+            c = self.addMenu_idx_frame_(v, cnt, rightframe)
+            v.control = (l,c)
+        # print("cnt/y  %i   %i" % (cnt, y) )
+        y -= ctrlheight
         cnt += 1
-    self.panel.setFrame_display_animate_( ((px,py),(pw,ph)), True, True )
+
+    self.panel.setFrame_display_animate_( ((panelx,panely),(panelwidth,panelheight)), True, 0 )
+
 
 </t>
-<t tx="karstenw.20170704105051.9">def addLabel_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170704105051.9">def addLabel_idx_frame_(self, v, cnt, frame):
+    (x,y),(w,h) = frame
+    y += 3
+    frame = ((x,y),(w,h))
     control = NSTextField.alloc().init()
-    control.setFrame_(((0,y),(100,13)))
+    control.setFrame_( frame ) #((0,y),(100,16)) )
     control.setStringValue_(v.name + ":")
     control.setAlignment_(NSRightTextAlignment)
     control.setEditable_(False)
     control.setBordered_(False)
     control.setDrawsBackground_(False)
     control.setFont_(SMALL_FONT)
+    # control.setAutoresizingMask_( AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
+    return control
 
 </t>
 <t tx="karstenw.20170704105106.1">import sys
@@ -6115,8 +6437,14 @@ NSUserDefaults = AppKit.NSUserDefaults
 NSOpenPanel = AppKit.NSOpenPanel
 
 
-from PyDETextView import getBasicTextAttributes, getSyntaxTextAttributes
-from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttributes
+from . import PyDETextView
+getBasicTextAttributes = PyDETextView.getBasicTextAttributes
+getSyntaxTextAttributes = PyDETextView.getSyntaxTextAttributes
+setTextFont = PyDETextView.setTextFont
+setBasicTextAttributes = PyDETextView.setBasicTextAttributes
+setSyntaxTextAttributes = PyDETextView.setSyntaxTextAttributes
+#from PyDETextView import getBasicTextAttributes, getSyntaxTextAttributes
+#from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttributes
 
 
 </t>
@@ -6170,14 +6498,14 @@ def changeFont_(self, sender):
 # class defined in NodeBoxPreferences.xib
 </t>
 <t tx="karstenw.20170704105106.3">def __init__(self):
+    self.libDir = ""
     prefpath = ""
     try:
         prefpath = NSUserDefaults.standardUserDefaults().objectForKey_("libraryPath")
-    except Exception, err:
-        print "LibraryFolder: prefpath:", repr(prefpath)
+    except Exception as err:
+        print("LibraryFolder: prefpath: %s" % repr(prefpath))
         prefpath = ""
-    stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support",
-                           "NodeBox")
+    stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support", "NodeBox")
 
     if prefpath and os.path.exists( prefpath ):
         self.libDir = prefpath
@@ -6187,7 +6515,7 @@ def changeFont_(self, sender):
         self.libDir = stdpath
         try:
             if not os.path.exists(self.libDir):
-                os.mkdir(libDir)
+                os.mkdir(self.libDir)
         except OSError:
             pass
         except IOError:
@@ -6288,7 +6616,9 @@ import nodebox.PyFontify
 fontify = nodebox.PyFontify.fontify
 
 
+import pdb
 from nodebox.gui.mac.ValueLadder import ValueLadder
+from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
 
 from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 
@@ -6297,9 +6627,12 @@ whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
 
 
+def AskString(question, resultCallback, default="", parentWindow=None):
+    AskStringWindowController(question, resultCallback, default, parentWindow)
+
 </t>
 <t tx="karstenw.20170704105113.10">def mouseDown_(self, event):
-    if event.modifierFlags() &amp; NSCommandKeyMask:            
+    if event.modifierFlags() &amp; NSCommandKeyMask:
         screenPoint = NSEvent.mouseLocation()
         viewPoint =   self.superview().convertPoint_fromView_(event.locationInWindow(),
                                                     self.window().contentView())
@@ -6316,20 +6649,26 @@ commentRE = re.compile(r"[ \t]*(#)")
                 try:
                     while txt[begin-1] in "1234567890.":
                         begin-=1
-                except IndexError:
-                    pass
+                except IndexError as err:
+                    print( "PyDETextView.mouseDown_() failed to scan number 1." )
+                    print( err )
+                    # pass
                 try:
                     while txt[end+1] in "1234567890.":
                         end+=1
-                except IndexError:
-                    pass
+                except IndexError as err:
+                    print( "PyDETextView.mouseDown_() failed to scan number 2." )
+                    print( err )
+                    # pass
                 end+=1
                 self.valueLadder = ValueLadder(self,
                                                eval(txt[begin:end]),
                                                (begin,end),
                                                screenPoint, viewPoint)
         except IndexError:
-            pass        
+            print( "PyDETextView.mouseDown_() failed to scan number 3." )
+            print( err )
+            # pass
     else:
         NSTextView.mouseDown_(self,event)
 
@@ -6368,7 +6707,7 @@ commentRE = re.compile(r"[ \t]*(#)")
 </t>
 <t tx="karstenw.20170704105113.15">@objc.IBAction
 def jumpToLine_(self, sender):
-    from nodebox.gui.mac.AskString import AskString
+    # from nodebox.gui.mac.AskString import AskString
     AskString("Jump to line number:", self.jumpToLineCallback_,
               parentWindow=self.window())
 
@@ -6473,7 +6812,8 @@ def changeFont_(self, sender):
             (oldAttrs, effRng), 0.2)
 
 </t>
-<t tx="karstenw.20170704105113.26">def resetBalanceParens_(self, (attrs, rng)):
+<t tx="karstenw.20170704105113.26">def resetBalanceParens_(self, params):
+    attrs, rng = params
     self.layoutManager().setTemporaryAttributes_forCharacterRange_(attrs, rng)
 
 </t>
@@ -6761,7 +7101,8 @@ def uncomment_(self, sender):
 </t>
 <t tx="karstenw.20170704105113.48">def getSource(self):
     if self._source is None:
-        self._source = unicode(self._string)
+        # self._source = makeunicode(self._string)
+        self._source = self._string
     return self._source
 
 </t>
@@ -6863,6 +7204,7 @@ def uncomment_(self, sender):
         return
     storage = self._storage
     source = self.getSource()
+    source = source.copy()
     sourceLen = len(source)
     dirtyStart = self._dirty.pop()
 
@@ -6874,6 +7216,11 @@ def uncomment_(self, sender):
     lastEnd = end = dirtyStart
     count = 0
     sameCount = 0
+    
+    #plainlength = source.length
+    #(void)getCharacters:(unsigned short*)arg1 range:(NSRange)arg2
+    #plaintext = source.mutableAttributedString.mutableString
+    #for tag, start, end, sublist in fontify(plaintext, dirtyStart):
     for tag, start, end, sublist in fontify(source, dirtyStart):
         end = min(end, sourceLen)
         rng = (start, end - start)
@@ -7146,18 +7493,27 @@ NSUserDefaults.standardUserDefaults().registerDefaults_(_defaultUserDefaults)
     return alert.runModal()
 
 </t>
-<t tx="karstenw.20170704105126.1">import compiler
-parse = compiler.parse
+<t tx="karstenw.20170704105126.1">if 1: #py3:
+    import ast
+    parse = ast.parse
+    Sub = ast.Sub
+    UnarySub = ast.USub
+    Add = ast.Add
+else:
+    import compiler
+    parse = compiler.parse
+    import compiler.ast
+    Sub = compiler.ast.Sub
+    UnarySub = compiler.ast.UnarySub
+    Add = compiler.ast.Add
 
-import compiler.ast
-Sub = compiler.ast.Sub
-UnarySub = compiler.ast.UnarySub
-Add = compiler.ast.Add
 
+kwdbg = 1
+import pdb
 
 import Foundation
-import AppKit
 
+import AppKit
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
@@ -7175,11 +7531,6 @@ NSParagraphStyleAttributeName = AppKit.NSParagraphStyleAttributeName
 NSFontAttributeName = AppKit.NSFontAttributeName
 
 
-
-
-
-MAGICVAR = "__magic_var__"
-
 </t>
 <t tx="karstenw.20170704105126.2">class ValueLadder:
 
@@ -7194,6 +7545,8 @@ MAGICVAR = "__magic_var__"
     add = False
 
     @others
+
+
 </t>
 <t tx="karstenw.20170704105126.3">def __init__(self, textView, value, clickPos, screenPoint, viewPoint):
     self.textView = textView
@@ -7206,18 +7559,16 @@ MAGICVAR = "__magic_var__"
     self.viewPoint = viewPoint
     (x,y),(self.width,self.height) = self.textView.bounds()
     self.originalString = self.textView.string()
-    self.backgroundColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                0.4,0.4,0.4, 1.0)
-    self.strokeColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                0.1,0.1,0.1, 1.0)
-    self.textColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(
-                                                                1.0,1.0,1.0, 1.0)
+    self.backgroundColor = gBGCol 
+    self.strokeColor = gStrCol
+    self.textColor = gTxtCol
     paraStyle = NSMutableParagraphStyle.alloc().init()
     paraStyle.setAlignment_(NSCenterTextAlignment)
     font = NSFont.fontWithName_size_("Monaco", 10)
     self.textAttributes = {
         NSForegroundColorAttributeName: self.textColor,
-        NSParagraphStyleAttributeName:  paraStyle,NSFontAttributeName:font}
+        NSParagraphStyleAttributeName:  paraStyle,
+        NSFontAttributeName:            font}
 
     # To speed things up, the code is compiled only once. 
     # The number is replaced with a magic variable, that is set in the 
@@ -7226,7 +7577,6 @@ MAGICVAR = "__magic_var__"
     self.patchedSource = (self.originalString[:begin]
                             + MAGICVAR
                             + self.originalString[end:])
-
 
     #ast = parse(self.patchedSource + "\n\n")
     #self._checkSigns(ast)
@@ -7238,8 +7588,10 @@ MAGICVAR = "__magic_var__"
 
 </t>
 <t tx="karstenw.20170704105126.4">def _parseAndCompile(self):
-    ast = parse(self.patchedSource.encode('ascii', 'replace') + "\n\n")
-    self._checkSigns(ast)
+    s = self.patchedSource.encode('ascii', 'replace') + b"\n\n"
+    ast = parse( s )
+    # pdb.set_trace()
+    self._checkSigns( ast )
     self.textView.document._compileScript(self.patchedSource)
 
 </t>
@@ -7274,7 +7626,8 @@ MAGICVAR = "__magic_var__"
     # Check whether I am the correct node
     try:
         if node.name == MAGICVAR:
-            return 1 # If i am, return the "direct hit" code.
+            # If i am, return the "direct hit" code.
+            return 1
     except AttributeError:
         pass
 
@@ -7283,9 +7636,10 @@ MAGICVAR = "__magic_var__"
     # in the second part. ("a-10" has to change to "a+10", 
     # but "10-a" shouldn't change to "+10-a")
     index = 0
+
     # Recursively check my children
-    for child in node.getChildNodes():
-        retVal = self._checkSigns(child)
+    for child in ast.iter_child_nodes( node ):
+        retVal = self._checkSigns( child )
         # Direct hit. The child I just searched contains the magicvar.
         # Check whether this node is one of the special cases.
         if retVal == 1:
@@ -7333,11 +7687,15 @@ MAGICVAR = "__magic_var__"
 
     # Potentionally change the sign on the number.
     # The following cases are valid:
-    # - A subtraction where the value turned positive "random(5-8)" --&gt; "random(5+8)"
-    # - A unary subtraction where the value turned positive "random(-5)" --&gt; "random(5)"
+    # - A subtraction where the value turned positive
+    #       "random(5-8)" --&gt; "random(5+8)"
+    # - A unary subtraction where the value turned positive
+    #       "random(-5)" --&gt; "random(5)"
     #   Note that the sign dissapears here.
-    # - An addition where the second part turns negative "random(5+8)" --&gt; "random(5-8)"
-    # Note that the code replaces the sign on the place where it was, leaving the code intact.
+    # - An addition where the second part turns negative
+    #       "random(5+8)" --&gt; "random(5-8)"
+    # Note that the code replaces the sign on the place where it was,
+    # leaving the code intact.
 
     # Case 1: Negative numbers where the new value is negative as well.
     # This means the numbers turn positive.
@@ -7347,14 +7705,19 @@ MAGICVAR = "__magic_var__"
         notFound = True
         while True:
             if self.originalString[i] == '-':
-                if self.unary: # Unary subtractions will have the sign removed.
-                    # Re-create the string: the spaces between the value and the '-' + the value
-                    value = self.originalString[i+1:begin] + str(abs(self.value))
-                else: # Binary subtractions get a '+'                        
+                # Unary subtractions will have the sign removed.
+                if self.unary: 
+                    # Re-create the string: the spaces between
+                    # the value and the '-' + the value
+                    value = (  self.originalString[i+1:begin]
+                             + str(abs(self.value)) )
+                else:
+                    # Binary subtractions get a '+'                        
                     value = '+' + self.originalString[i+1:begin] + str(abs(self.value))
                 range = (i,end-i)
                 break
             i -= 1
+
     # Case 2: Additions (only additions where we are the second part
     # interests us, this is checked already on startup)
     elif self.add and self.value &lt; 0:
@@ -7438,6 +7801,7 @@ MAGICVAR = "__magic_var__"
     self.textView.document.magicvar = self.value
     self.textView.document.currentView.direct = True
     self.textView.document.runScriptFast()
+
 </t>
 <t tx="karstenw.20170704105258.1"></t>
 <t tx="karstenw.20170704105327.1">@language python
@@ -7457,6 +7821,8 @@ choice = librandom.choice
 import unicodedata
 
 import pdb
+import pprint
+pp = pprint.pprint
 
 import PIL
 import numpy as np
@@ -7466,14 +7832,18 @@ import Foundation
 import AppKit
 import PyObjCTools.Conversion
 
-import kgp
+from . import kgp
 
 
-__all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy_attrs',
-           'datestring','makeunicode', 'filelist', 'imagefiles',
-           'fontnames', 'fontfamilies',
-           'voices', 'voiceattributes', 'anySpeakers', 'say',
-           'imagepalette', 'aspectRatio', 'dithertypes')
+__all__ = (
+    'grid', 'random', 'choice', 'files', 'autotext',
+    '_copy_attr',
+    '_copy_attrs',
+    'datestring','makeunicode', 'filelist', 'imagefiles',
+    'fontnames', 'fontfamilies',
+    'voices', 'voiceattributes', 'anySpeakers', 'say',
+    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage',
+    'sortlistfunction')
 
 
 </t>
@@ -7565,10 +7935,10 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
         return list(v)
     elif isinstance(v, tuple):
         return tuple(v)
-    elif isinstance(v, (int, str, unicode, float, bool, long)):
+    elif isinstance(v, (int, pstr, punicode, float, bool, long)):
         return v
     else:
-        raise NodeBoxError, "Don't know how to copy '%s'." % v
+        raise NodeBoxError("Don't know how to copy '%s'." % v)
 
 
 </t>
@@ -7576,26 +7946,39 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
     for attr in attrs:
         setattr(target, attr, _copy_attr(getattr(source, attr)))
 
+
 </t>
 <t tx="karstenw.20170704105353.2">def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
-    typ = type(s)
-    # convert to str first; for number types etc.
-    if typ not in (str, unicode, Foundation.NSMutableAttributedString,
-        objc.pyobjc_unicode, Foundation.NSMutableStringProxyForMutableAttributedString,
-        Foundation.NSString):
-        # print "makeunicode() convert:", typ
+
+    if type(s) not in ( pstr,
+                    punicode,
+                    Foundation.NSMutableAttributedString,
+                    objc.pyobjc_unicode,
+                    Foundation.NSMutableStringProxyForMutableAttributedString,
+                    Foundation.NSString):
         s = str(s)
-    if typ not in (unicode, Foundation.NSMutableAttributedString, objc.pyobjc_unicode,
-                   Foundation.NSMutableStringProxyForMutableAttributedString):
+    if type(s) not in (
+            punicode,
+            #Foundation.NSMutableAttributedString,
+            #objc.pyobjc_unicode,
+            #Foundation.NSMutableStringProxyForMutableAttributedString
+            ):
         try:
-            s = unicode(s, srcencoding)
-        except TypeError, err:
-            print 
-            print "makeunicode():", err
-            print repr(s)
-            print type(s)
-            print
-    if typ in (unicode,):
+            s = punicode(s, srcencoding)
+        except TypeError as err:
+            
+            #print() 
+            #print("makeunicode(): %s" % err)
+            #print(repr(s))
+            #print(type(s))
+            #print()
+            pass
+    if type(s) in ( punicode,
+                    #Foundation.NSMutableAttributedString,
+                    #objc.pyobjc_unicode,
+                    #Foundation.NSMutableStringProxyForMutableAttributedString,
+                    #Foundation.NSString
+                    ):
         s = unicodedata.normalize(normalizer, s)
     return s
 
@@ -7630,17 +8013,17 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
             rect(x,y, 10,10)
     """
     # Prefer using generators.
-    rowRange = xrange(int(rows))
-    colRange = xrange(int(cols))
+    rowRange = range( int(rows) )
+    colRange = range( int(cols) )
     # Shuffled needs a real list, though.
     if (shuffled):
         rowRange = list(rowRange)
         colRange = list(colRange)
-        shuffle(rowRange)
-        shuffle(colRange)
+        librandom.shuffle(rowRange)
+        librandom.shuffle(colRange)
     for y in rowRange:
         for x in colRange:
-            yield (x*colSize,y*rowSize)
+            yield (x*colSize, y*rowSize)
 
 
 </t>
@@ -7693,7 +8076,7 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
     """
 
     folders = folderpathorlist
-    if type(folderpathorlist) in (str, unicode):
+    if type(folderpathorlist) in (pstr, punicode):
         folders = [folderpathorlist]
     result = []
     for folder in folders:
@@ -7704,7 +8087,7 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
 
             # skip if dir starts with '.'
             _, parentfolder = os.path.split(root)
-            if parentfolder[0] == u".":
+            if parentfolder and parentfolder[0] == u".":
                 continue
 
             for thefile in files:
@@ -7775,7 +8158,7 @@ __all__ = ('grid', 'random', 'choice', 'files', 'autotext', '_copy_attr', '_copy
 @tabwidth -4
 @others
 if __name__ == '__main__':
-    print genProgram()
+    print(genProgram())
 </t>
 <t tx="karstenw.20170704105416.1"></t>
 <t tx="karstenw.20170704105442.1">@language python
@@ -7807,18 +8190,35 @@ experienced programmers.  Visit http://diveintopython.org/ for the
 latest version.
 """
 
+from __future__ import print_function
+
+import sys
+import os
+import unicodedata
+
+
+try:
+    import urllib2
+    urlopen = urllib2.urlopen
+except ModuleNotFoundError:
+    import urllib.request
+    urlopen = urllib.request.urlopen
+from xml.dom import minidom
+import random
+import getopt
+import io
+StringIO = io.StringIO
+
+
 __author__ = "Mark Pilgrim (f8dy@diveintopython.org)"
 __version__ = "$Revision: 1.3 $"
 __date__ = "$Date: 2002/05/28 17:05:23 $"
 __copyright__ = "Copyright (c) 2001 Mark Pilgrim"
 __license__ = "Python"
 
-from xml.dom import minidom
-import random
-import sys
-import getopt
 
 _debug = 0
+
 
 </t>
 <t tx="karstenw.20170704105455.10">def reset(self):
@@ -7955,30 +8355,30 @@ _debug = 0
     &gt;&gt;&gt; doc = minidom.parse(sock)
     &gt;&gt;&gt; sock.close()
     """
-
     if hasattr(source, "read"):
         return source
     
     if source == "-":
-        import sys
         return sys.stdin
 
     # try to open with urllib (if source is http, ftp, or file URL)
-    import urllib
     try:
-        return urllib.urlopen(source)
-    except (IOError, OSError):
+        return urlopen(source)
+    except (IOError, OSError, ValueError):
         pass
     
     # try to open with native open function (if source is pathname)
     try:
-        return open(source)
+        path = makeunicode( source )
+        path = os.path.abspath( path )
+        # return io.open(source, 'rb')
+        return io.open(path, 'rb')
+
     except (IOError, OSError):
         pass
     
     # treat source as string
-    import StringIO
-    return StringIO.StringIO(str(source))
+    return StringIO( makeunicode(source) )
 
 </t>
 <t tx="karstenw.20170704105455.20">def do_p(self, node):
@@ -8015,7 +8415,7 @@ _debug = 0
 
 </t>
 <t tx="karstenw.20170704105455.22">def usage():
-    print __doc__
+    print(__doc__)
 
 </t>
 <t tx="karstenw.20170704105455.23">def main(argv):
@@ -8037,7 +8437,7 @@ _debug = 0
     
     source = "".join(args)
     k = KantGenerator(grammar, source)
-    print k.output()
+    print(k.output())
 
 </t>
 <t tx="karstenw.20170704105455.3">class NoSourceError(Exception): pass
@@ -8098,7 +8498,7 @@ _debug = 0
     xrefs = xrefs.keys()
     standaloneXrefs = [e for e in self.refs.keys() if e not in xrefs]
     if not standaloneXrefs:
-        raise NoSourceError, "can't guess source, and no source specified"
+        raise NoSourceError("can't guess source, and no source specified")
     return '&lt;xref id="%s"/&gt;' % random.choice(standaloneXrefs)
     
 </t>
@@ -8438,8 +8838,8 @@ QTMovieFlatten = QTKit.QTMovieFlatten
         finally:
             try:
                 os.remove(self.tmpfname)
-            except OSError, err:
-                print err
+            except OSError as err:
+                print(err)
                 # pass
     self.frame += 1
             
@@ -8459,7 +8859,7 @@ QTMovieFlatten = QTKit.QTMovieFlatten
     w, h = 500, 300
     m = Movie("xx3.mov")
     for i in range(200):
-        print "Frame", i
+        print("Frame %i" % i)
         ctx = Context()
         ctx.size(w, h)
         ctx.rect(100.0+sin(i/10.0)*100.0,i/2.0,100,100)
@@ -8657,7 +9057,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     data2 = img2.getdata()
     size = len(data1)
     differences = []
-    for i in xrange(size):
+    for i in range(size):
         delta = compare_pixel(data1[i], data2[i])
         if delta &gt; threshold:
             x = i % w
@@ -8703,7 +9103,9 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     
 </t>
 <t tx="karstenw.20170704105701.1"></t>
-<t tx="karstenw.20170709143221.1"></t>
+<t tx="karstenw.20170709143221.1">### Variables ###
+
+</t>
 <t tx="karstenw.20170709143242.1"></t>
 <t tx="karstenw.20170709143301.1"></t>
 <t tx="karstenw.20170709143318.1"></t>
@@ -8723,15 +9125,18 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     fn = var.handler
     if var.handler:
         args = [sel,var.name]
-        if var.handler.func_code.co_argcount &lt; 2:
+        argcount = getFunctionArgCount( var.handler )
+        if argcount &lt; 2:
             args = [sel]
         self.document.fastRun_newSeed_args_(fn, False, args)
     #self.document.runFunction_(var.name)
 
 </t>
-<t tx="karstenw.20170709145531.1">def addMenu_y_c_(self, v, y, cnt):
+<t tx="karstenw.20170709145531.1">def addMenu_idx_frame_(self, v, cnt, frame):
+    (x,y),(w,h) = frame
+    
     control = NSPopUpButton.alloc().init()
-    control.setFrame_( ((108, y-2),(172,16)) )
+    control.setFrame_( frame ) #((108, y-2),(172,16)) )
     control.setPullsDown_( False )
     control.removeAllItems()
     if v.menuitems is not None:
@@ -8745,11 +9150,14 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     control.cell().setControlTint_(NSGraphiteControlTint)
     control.setTarget_(self)
     control.setTag_(cnt)
-    control.setAction_(objc.selector(self.menuSelected_, signature="v@:@@"))
+    control.setAction_(objc.selector(self.menuSelected_, signature=b"v@:@@"))
+    control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) # + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
+    return control
 
 </t>
 <t tx="karstenw.20170709154311.1">def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
+    # pdb.set_trace()
     # Check if there is code to run
     if self._code is None:
         return False
@@ -8771,6 +9179,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     window = self.currentView.window()
     pt = window.mouseLocationOutsideOfEventStream()
     mx, my = window.contentView().convertPoint_toView_(pt, self.currentView)
+
     # Hack: mouse coordinates are flipped vertically in FullscreenView.
     # This flips them back.
     if isinstance(self.currentView, FullscreenView):
@@ -8778,7 +9187,8 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     if self.fullScreen is None:
         mx /= self.currentView.zoom
         my /= self.currentView.zoom
-    self.namespace["MOUSEX"], self.namespace["MOUSEY"] = mx, my
+    self.namespace["MOUSEX"] = mx
+    self.namespace["MOUSEY"] = my
     self.namespace["mousedown"] = self.currentView.mousedown
     self.namespace["keydown"] = self.currentView.keydown
     self.namespace["key"] = self.currentView.key
@@ -8810,40 +9220,35 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     return True
     
 
-@objc.IBAction
-def clearMessageArea_(self, sender):
-    # pp( dir(self.outputView.textStorage()))
-    self.outputView.textStorage().mutableString().setString_(u"")
-
 </t>
-<t tx="karstenw.20170726133907.1">    isqrt = inverse_sqrt
-
-    def angle(x0, y0, x1, y1):
-        return math.degrees( math.atan2(y1-y0, x1-x0) )
-
-    def distance(x0, y0, x1, y1):
-        return math.sqrt(math.pow(x1-x0, 2) + math.pow(y1-y0, 2))
-    
-    def coordinates(x0, y0, distance, angle):
-        x1 = x0 + math.cos(math.radians(angle)) * distance
-        y1 = y0 + math.sin(math.radians(angle)) * distance
-        return x1, y1
-
-
-try:
+<t tx="karstenw.20170726133907.1">try:
     import bwdithering
     dither = bwdithering.dither
 
-except ImportError, err:
-    print
-    print '-' * 40
-    print
-    print err
-    print 
-    print '-' * 40
-    print
+except ImportError as err:
+    print()
+    print( '-' * 40 )
+    print()
+    print( err )
+    print()
+    print( '-' * 40 )
+    print()
     def dither(*args):
-        print "You lost."
+        print( "You lost." )
+
+try:
+    import fractal
+    fractalimage = fractal.fractalimage
+except ImportError as err:
+    print()
+    print( '-' * 40 )
+    print()
+    print( err )
+    print()
+    print( '-' * 40 )
+    print()
+    def fractalimage(*args):
+        print( "You lost." )
 
 
 </t>
@@ -8860,7 +9265,21 @@ except ImportError, err:
 except ImportError:
     def inverse_sqrt(x):
         return 1.0 / math.sqrt(x)
+
+    isqrt = inverse_sqrt
+
+    def angle(x0, y0, x1, y1):
+        return math.degrees( math.atan2(y1-y0, x1-x0) )
+
+    def distance(x0, y0, x1, y1):
+        return math.sqrt(math.pow(x1-x0, 2) + math.pow(y1-y0, 2))
     
+    def coordinates(x0, y0, distance, angle):
+        x1 = x0 + math.cos(math.radians(angle)) * distance
+        y1 = y0 + math.sin(math.radians(angle)) * distance
+        return x1, y1
+
+
 </t>
 <t tx="karstenw.20170727100220.1"># Zoom commands, forwarding to the graphics view.
 </t>
@@ -9005,8 +9424,8 @@ CLASSIFIERS = (
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
 )
 
-DESCRIPTION = (u"Simple application for creating 2-dimensional graphics and animation "
-               u"using Python code")
+DESCRIPTION = (u"Simple application for creating 2-dimensional graphics "
+               u"and animation using Python code")
 LONG_DESCRIPTION = u"""NodeBox is a Mac OS X application that allows you to create visual output
 with programming code. The application targets an audience of designers, with an easy set of state 
 commands that is both intuitive and creative. It is essentially a learning environment and an automation tool.
@@ -9084,6 +9503,7 @@ setup(
 
     ext_modules=[
         Extension('bwdithering', ['libs/bwdithering/bwdithering.c']),
+        Extension('fractal', ['libs/fractal/fractal.c']),
         Extension('cGeo', ['libs/cGeo/cGeo.c']),
         Extension('cPathmatics', ['libs/pathmatics/pathmatics.c']),
         Extension('cPolymagic', ['libs/polymagic/gpc.c', 'libs/polymagic/polymagic.m'],
@@ -9618,17 +10038,24 @@ dither(PyObject *self, PyObject *args) {
 
     // calculated array index
     int idx;
-
-    
-
     int count;
+
     ERRBUFTYPE *errorBuffer, errdiv, newval, errval;
     const unsigned char *sourceImage;
     unsigned char *resultImage;
+    // unsigned char *sourceImage, *resultImage;
     PyObject *result;
 
-    if (!PyArg_ParseTuple(args, "s#iiii", &amp;sourceImage, &amp;count, &amp;w, &amp;h, &amp;type, &amp;treshhold)) {
+    if (!PyArg_ParseTuple(args, IN_FORMAT, &amp;sourceImage, &amp;count, &amp;w, &amp;h, &amp;type, &amp;treshhold)) {
         return (NULL);
+    }
+    
+    if (!count) {
+        printf("count %d\n" , count);
+        printf("w %d\n" , w);
+        printf("h %d\n" , h);
+        printf("type %d\n" , type);
+        printf("treshhold %d\n" , treshhold);
     }
 
     // create the buffers
@@ -9648,7 +10075,6 @@ dither(PyObject *self, PyObject *args) {
         PyErr_NoMemory();
         return NULL;
     }
-
 
     // iterate over all pixels (x,y)
     for (y = 0; y &lt; h; y++) {
@@ -9676,7 +10102,7 @@ dither(PyObject *self, PyObject *args) {
     }
 
     // build the return value
-    result = Py_BuildValue("s#", resultImage, count);
+    result = Py_BuildValue(OUT_FORMAT, resultImage, count);
     free(errorBuffer);
     free(resultImage);
     return result;
@@ -9690,13 +10116,16 @@ dither(PyObject *self, PyObject *args) {
 };
 
 
-
 </t>
 <t tx="karstenw.20180202040628.5">int main(int argc, char *argv[])
 {
     Py_SetProgramName(argv[0]);
     Py_Initialize();
+#if PY_MAJOR_VERSION &gt;= 3
+    PyInit_bwdithering();
+#else
     initbwdithering();
+#endif
     return 0;
 }
 
@@ -9726,11 +10155,16 @@ enum {
 } dithertypes;
 
 </t>
-<t tx="karstenw.20180202040859.1">PyMODINIT_FUNC initbwdithering(void){ 
+<t tx="karstenw.20180202040859.1">MOD_INIT(bwdithering) { 
     PyObject *m;
-    m = Py_InitModule("bwdithering", bwdither_methods);
+    // m = Py_InitModule("bwdithering", bwdither_methods);
+    MOD_DEF(m, "bwdithering", "A bw dithering extension.", bwdither_methods)
+#if PY_MAJOR_VERSION &gt;= 3
+    return(MOD_SUCCESS_VAL(m));
+#else
+	MOD_SUCCESS_VAL(m)
+#endif
 }
-
 
 </t>
 <t tx="karstenw.20180202041015.1">@language python
@@ -9739,13 +10173,13 @@ enum {
 </t>
 <t tx="karstenw.20180202041040.1">from distutils.core import setup, Extension
 
-atkinsondither = Extension("bwdither", sources = ["bwdithering.c"])
+bwdither = Extension("bwdither", sources = ["bwdithering.c"])
 
 setup (name = "bwdither",
        version = "0.1",
        author = "Karsten Wolf",
        description = "Atkinson, Floyd-Steinberg and other ditherings of grayscale images.",
-       ext_modules = [bwdithering])
+       ext_modules = [bwdither])
 
 </t>
 <t tx="karstenw.20180202044244.1"></t>
@@ -9766,7 +10200,11 @@ setup (name = "bwdither",
 {
     Py_SetProgramName(argv[0]);
     Py_Initialize();
+#if PY_MAJOR_VERSION &gt;= 3
+    PyInit_cGeo();
+#else
     initcGeo();
+#endif
     return 0;
 }
 </t>
@@ -9847,9 +10285,13 @@ coordinates(PyObject *self, PyObject *args) {
 // Chris Lomont, http://www.math.purdue.edu/~clomont/Math/Papers/2003/InvSqrt.pdf
 
 </t>
-<t tx="karstenw.20180202044624.1">PyMODINIT_FUNC initcGeo(void){ 
+<t tx="karstenw.20180202044624.1">MOD_INIT(cGeo) { 
     PyObject *m;
-    m = Py_InitModule("cGeo", geometry_methods);
+    // m = Py_InitModule("cGeo", geometry_methods);
+    MOD_DEF(m, "cGeo", "angle, distance and coordinates.", geometry_methods)
+#if PY_MAJOR_VERSION &gt;= 3
+    return( m );
+#endif
 }
 
 </t>
@@ -9870,14 +10312,14 @@ setup (name = "cGeo",
 <t tx="karstenw.20180202044822.1">def imagepalette( pathOrPILimgage, mask=None ):
     t = type(pathOrPILimgage)
     result = []
-    if t in (str, unicode):
+    if t in (pstr, punicode):
         f = PIL.Image.open( pathOrPILimgage )
         f = f.convert("RGB")
         result = palette( f, mask )
     else:
         try:
             result = palette( pathOrPILimgage, mask )
-        except Exception, err:
+        except Exception as err:
             pass
     return result
 
@@ -9885,7 +10327,6 @@ setup (name = "cGeo",
 </t>
 <t tx="karstenw.20180202044929.1">def dither(self, imagebytes, w, h, typ, threshhold):
     return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
-
 
 </t>
 <t tx="karstenw.20180202045145.1"></t>
@@ -9921,35 +10362,43 @@ setup (name = "cGeo",
 
 </t>
 <t tx="karstenw.20180202061109.1">def ditherimage(pathOrPILimgage, dithertype, threshhold):
+    # argh, a circular import. Dang!
+    from nodebox.geo import dither
+
     t = type(pathOrPILimgage)
 
-    if dithertype in _dithertypes:
-        dithertype = _dithertypes.get( dithertype )
-    elif dithertype in ditherIDs:
-        pass
+    if dithertype in list(_dithertypes):
+        dithername = dithertype
+        ditherid = _dithertypes.get( dithertype )
+    elif dithertype in _ditherIDs:
+        ditherid = dithertype
+        dithername = _dithertypes.get( dithertype )
+        # pass
     else:
-        dithertype = 0
+        ditherid = 0
+        dithername = "unknown"
 
-    if t in (str, unicode):
+    if t in (pstr, punicode):
         img = PIL.Image.open( pathOrPILimgage ).convert('L')
     else:
         img = pathOrPILimgage
 
+    # pdb.set_trace()
+
     w, h = img.size
-
     bin = img.tobytes(encoder_name='raw')
-
-    result = dither(bin, w, h, dithertype, thresh)
+    resultimg = bytearray( len(bin) )
+    result = dither(bin, w, h, ditherid, threshhold)
+    # result = dither(bin, resultimg, w, h, ditherid, threshhold)
 
     out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
 
-    name = "dither_%s_%i.png" % (datestring(nocolons=True), dithertype)
+    name = "dither_%s_%s.png" % (datestring(nocolons=True), dithername)
     out.convert('1').save(name, format="PNG")
     del out, bin, result
     if img != pathOrPILimgage:
         del img
     return os.path.abspath(name)
-
 
 
 </t>
@@ -9965,8 +10414,3920 @@ setup (name = "cGeo",
 </t>
 <t tx="karstenw.20180207131514.1">def dithertypes():
     """Return names of all supported dither types."""
-    return _dithertypes.keys()
+    return list(_dithertypes.keys())
 
+
+</t>
+<t tx="karstenw.20210320110747.1">#if PY_MAJOR_VERSION &gt;= 3
+  #define MOD_ERROR_VAL NULL
+  #define MOD_SUCCESS_VAL(val) val
+  #define MOD_INIT(name) PyMODINIT_FUNC PyInit_##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+          static struct PyModuleDef moduledef = { \
+            PyModuleDef_HEAD_INIT, name, doc, -1, methods, }; \
+          ob = PyModule_Create(&amp;moduledef);
+#else
+  #define MOD_ERROR_VAL
+  #define MOD_SUCCESS_VAL(val)
+  #define MOD_INIT(name) void init##name(void)
+  #define MOD_DEF(ob, name, doc, methods) \
+    ob = Py_InitModule3(name, methods, doc);
+#endif
+</t>
+<t tx="karstenw.20210320115101.1"></t>
+<t tx="karstenw.20210320115106.1">@language c
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20210320115144.1">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20210320115153.1">from distutils.core import setup, Extension
+
+fractal = Extension("fractal", sources = ["fractal.c"])
+
+setup (name = "fractal",
+       version = "0.1",
+       author = "Karsten Wolf",
+       description = "Fractals in C.",
+       ext_modules = [fractal])
+
+</t>
+<t tx="karstenw.20210320115155.1">static PyObject *
+fractalimage(PyObject *self, PyObject *args) {
+    /*
+     * The errors are mine. kw 2020-06
+     */
+
+    int x, y;
+
+    // params
+    int clutsize, w, h, iterations;
+    double x1, y1, dx, dy, nreal, nimag, limit;
+    // double creal, cimag, 
+    unsigned char *pixels;
+    const unsigned char *clut;
+
+
+    int count = 0;
+    
+    int dbg = 0;
+
+    PyObject *result;
+
+    // s# -&gt; 2vars; d double; 
+    if (!PyArg_ParseTuple(args, IN_FORMAT,
+                          &amp;clut, &amp;clutsize,
+                          &amp;w, &amp;h, &amp;iterations, 
+                          &amp;x1, &amp;y1, &amp;dx, &amp;dy, &amp;nreal, &amp;nimag, &amp;limit )) {
+        return (NULL);
+    }
+
+    count = w * h * 4;
+
+    if (dbg)
+        printf("count: %d\n", count);
+
+    // create the buffers
+    pixels = (unsigned char *)malloc( count );
+    memset( pixels, 0, count);
+
+    if (!pixels) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+
+    double scalex = 1.0 / (double)w * dx;
+    double scaley = 1.0 / (double)h * dy;
+
+    // iterate over all pixels (x,y)
+    for (y=0; y &lt; h; y++) {
+        for (x=0; x &lt; w; x++) {
+            int v = 0, iter;
+
+            double xc = x1 + (double)x * scalex;
+            double yc = y1 + (double)y * scaley;
+            
+            double complex z = xc + yc * I;
+            double complex c = nreal + nimag * I;
+
+
+            // calc pixel value v
+            for (iter=0; iter &lt; iterations; iter++) {
+                if (cabs(c) &lt;= limit) {
+                    c = c*c + z;
+                } else {
+                    v = iter;
+                    break;
+                }
+            }
+            // copy clut values
+            int idx = v * 4;
+            int o = (y * w + x) * 4;
+            for (iter=0; iter &lt; 4; iter++) {
+                if ((o+iter &lt; count) &amp;&amp; (idx+iter &lt; clutsize))
+                    pixels[o+iter] = clut[idx+iter];
+                else if (dbg) {
+                    printf("BOUNDS crossed\n");
+                    if (o+iter &lt; count)
+                        printf("o+iter %d  count %d\n", o+iter, count);
+                    if (idx+iter &lt; clutsize)
+                        printf("idx+iter %d clutsize %d\n", o+iter, clutsize);
+                }
+            }
+        }
+    }
+
+    // build the return value
+    result = Py_BuildValue(OUT_FORMAT, pixels, count);
+    free(pixels);
+    return result;
+}
+
+
+</t>
+<t tx="karstenw.20210320115155.2">static PyMethodDef fractal_methods[]={ 
+    { "fractalimage", fractalimage, METH_VARARGS },
+    { NULL, NULL }
+};
+
+
+MOD_INIT(fractal) { 
+    PyObject *m;
+    //m = Py_InitModule("fractal", fractal_methods);
+    MOD_DEF(m, "fractal", "A mandelbrot renderer.", fractal_methods)
+#if PY_MAJOR_VERSION &gt;= 3
+    return( m );
+#endif
+}
+
+</t>
+<t tx="karstenw.20210320115155.3">int main(int argc, char *argv[])
+{
+    Py_SetProgramName(argv[0]);
+    Py_Initialize();
+#if PY_MAJOR_VERSION &gt;= 3
+    PyInit_fractal();
+#else
+    initfractal();
+#endif
+    return 0;
+}
+
+</t>
+<t tx="karstenw.20210320115212.1">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;complex.h&gt;
+#include &lt;Python.h&gt;
+
+// Karsten Wolf 2020-06-21
+
+// mandelbrot calculations
+
+</t>
+<t tx="karstenw.20210320120737.1"></t>
+<t tx="karstenw.20210320120741.1"></t>
+<t tx="karstenw.20210320120859.1">@language c
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20210320120918.1">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20210320120924.1">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20210320120934.1">from distutils.core import setup, Extension
+
+cPathmatics = Extension("cPathmatics", sources = ["pathmatics.c"])
+
+setup (name = "pathmatics",
+       version = "1.0",
+       author = "Tom De Smedt and Frederik De Bleser",
+       description = "Inner looping functions for calculating bezier operations.",
+       ext_modules = [cPathmatics])
+</t>
+<t tx="karstenw.20210320120938.1">from math import sqrt, pow
+
+</t>
+<t tx="karstenw.20210320120938.2">def linepoint(t, x0, y0, x1, y1):
+
+    """Returns coordinates for point at t on the line.
+
+    Calculates the coordinates of x and y for a point
+    at t on a straight line.
+
+    The t parameter is a number between 0.0 and 1.0,
+    x0 and y0 define the starting point of the line,
+    x1 and y1 the ending point of the line,    
+
+    """
+
+    out_x = x0 + t * (x1-x0)
+    out_y = y0 + t * (y1-y0)
+    return (out_x, out_y)
+
+</t>
+<t tx="karstenw.20210320120938.3">def linelength(x0, y0, x1, y1):
+
+    """Returns the length of the line."""
+
+    a = pow(abs(x0 - x1), 2)
+    b = pow(abs(y0 - y1), 2)
+    return sqrt(a+b)
+
+</t>
+<t tx="karstenw.20210320120938.4">def curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3, handles=False):
+
+    """Returns coordinates for point at t on the spline.
+
+    Calculates the coordinates of x and y for a point
+    at t on the cubic bezier spline, and its control points,
+    based on the de Casteljau interpolation algorithm.
+
+    The t parameter is a number between 0.0 and 1.0,
+    x0 and y0 define the starting point of the spline,
+    x1 and y1 its control point,
+    x3 and y3 the ending point of the spline,
+    x2 and y2 its control point.
+    
+    If the handles parameter is set,
+    returns not only the point at t,
+    but the modified control points of p0 and p3
+    should this point split the path as well.
+    """
+    
+    mint = 1 - t
+
+    x01   = x0 * mint + x1 * t
+    y01   = y0 * mint + y1 * t
+    x12   = x1 * mint + x2 * t
+    y12   = y1 * mint + y2 * t
+    x23   = x2 * mint + x3 * t
+    y23   = y2 * mint + y3 * t
+   
+    out_c1x = x01 * mint + x12 * t
+    out_c1y = y01 * mint + y12 * t
+    out_c2x = x12 * mint + x23 * t
+    out_c2y = y12 * mint + y23 * t
+    out_x = out_c1x * mint + out_c2x * t
+    out_y = out_c1y * mint + out_c2y * t
+    
+    if not handles:
+        return (out_x, out_y, out_c1x, out_c1y, out_c2x, out_c2y)
+    else:
+        return (out_x, out_y, out_c1x, out_c1y, out_c2x, out_c2y, x01, y01, x23, y23)
+
+</t>
+<t tx="karstenw.20210320120938.5">def curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n=20):
+
+    """Returns the length of the spline.
+
+    Integrates the estimated length of the cubic bezier spline
+    defined by x0, y0, ... x3, y3, by adding the lengths of
+    lineair lines between points at t.
+
+    The number of points is defined by n 
+    (n=10 would add the lengths of lines between 0.0 and 0.1, 
+    between 0.1 and 0.2, and so on).
+
+    The default n=20 is fine for most cases, usually
+    resulting in a deviation of less than 0.01.
+    """
+
+    length = 0
+    xi = x0
+    yi = y0
+
+    for i in range(n):
+        t = 1.0 * (i+1) / n
+        pt_x, pt_y, pt_c1x, pt_c1y, pt_c2x, pt_c2y = \
+            curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3)
+        c = sqrt(pow(abs(xi-pt_x),2) + pow(abs(yi-pt_y),2))
+        length += c
+        xi = pt_x
+        yi = pt_y
+        
+    return length
+</t>
+<t tx="karstenw.20210320120941.1">void _linepoint(double t, double x0, double y0, double x1, double y1,
+                double *out_x, double *out_y
+                )
+{
+    *out_x = x0 + t * (x1-x0);
+    *out_y = y0 + t * (y1-y0);
+}
+
+
+</t>
+<t tx="karstenw.20210320120941.10">static PyMethodDef PathmaticsMethods[] = {
+    {"linepoint",  cPathmatics_linepoint, METH_VARARGS, "Calculate linepoint."},
+    {"linelength",  cPathmatics_linelength, METH_VARARGS, "Calculate linelength."},
+    {"curvepoint",  cPathmatics_curvepoint, METH_VARARGS, "Calculate curvepoint."},
+    {"curvelength",  cPathmatics_curvelength, METH_VARARGS, "Calculate curvelength."},
+    {NULL, NULL, 0, NULL}        /* Sentinel */
+};
+
+
+MOD_INIT(cPathmatics) {
+    PyObject *m;
+    
+    // m = Py_InitModule("cPathmatics", PathmaticsMethods);
+    MOD_DEF(m, "cPathmatics", "Some path stuff.", PathmaticsMethods)
+    
+    PathmaticsError = PyErr_NewException("cPathmatics.error", NULL, NULL);
+    Py_INCREF(PathmaticsError);
+    PyModule_AddObject(m, "error", PathmaticsError);
+#if PY_MAJOR_VERSION &gt;= 3
+    return( m );
+#endif
+}
+
+
+</t>
+<t tx="karstenw.20210320120941.11">int
+main(int argc, char *argv[])
+{
+    /* Pass argv[0] to the Python interpreter */
+    Py_SetProgramName(argv[0]);
+
+    /* Initialize the Python interpreter.  Required. */
+    Py_Initialize();
+
+    /* Add a static module */
+#if PY_MAJOR_VERSION &gt;= 3
+    PyInit_cPathmatics();
+#else
+    initcPathmatics();
+#endif
+
+    return 0;
+}
+
+</t>
+<t tx="karstenw.20210320120941.2">void _linelength(double x0, double y0, double x1, double y1,
+                double *out_length
+                )
+{
+    double a, b;
+    a = pow(fabs(x0 - x1), 2);
+    b = pow(fabs(y0 - y1), 2);
+    *out_length = sqrt(a + b);
+}
+
+</t>
+<t tx="karstenw.20210320120941.3">void _curvepoint(double t, double x0, double y0, double x1, double y1, 
+                 double x2, double y2, double x3, double y3,
+                 double *out_x, double *out_y, 
+                 double *out_c1x, double *out_c1y, double *out_c2x, double *out_c2y
+                 )
+{
+    double mint, x01, y01, x12, y12, x23, y23;
+
+    mint  = 1 - t;
+    x01 = x0 * mint + x1 * t;
+    y01 = y0 * mint + y1 * t;
+    x12 = x1 * mint + x2 * t;
+    y12 = y1 * mint + y2 * t;
+    x23 = x2 * mint + x3 * t;
+    y23 = y2 * mint + y3 * t;
+    
+    *out_c1x = x01 * mint + x12 * t;
+    *out_c1y = y01 * mint + y12 * t;
+    *out_c2x = x12 * mint + x23 * t;
+    *out_c2y = y12 * mint + y23 * t;
+    *out_x = *out_c1x * mint + *out_c2x * t;
+    *out_y = *out_c1y * mint + *out_c2y * t;
+}
+
+</t>
+<t tx="karstenw.20210320120941.4">void _curvepoint_handles(double t, double x0, double y0, double x1, double y1, 
+                 double x2, double y2, double x3, double y3,
+                 double *out_x, double *out_y, 
+                 double *out_c1x, double *out_c1y, double *out_c2x, double *out_c2y,
+                 double *out_h1x, double *out_h1y, double *out_h2x, double *out_h2y
+                 )
+{
+    double mint, x01, y01, x12, y12, x23, y23;
+
+    mint  = 1 - t;
+    x01 = x0 * mint + x1 * t;
+    y01 = y0 * mint + y1 * t;
+    x12 = x1 * mint + x2 * t;
+    y12 = y1 * mint + y2 * t;
+    x23 = x2 * mint + x3 * t;
+    y23 = y2 * mint + y3 * t;
+    
+    *out_c1x = x01 * mint + x12 * t;
+    *out_c1y = y01 * mint + y12 * t;
+    *out_c2x = x12 * mint + x23 * t;
+    *out_c2y = y12 * mint + y23 * t;
+    *out_x = *out_c1x * mint + *out_c2x * t;
+    *out_y = *out_c1y * mint + *out_c2y * t;
+    *out_h1x = x01;
+    *out_h1y = y01;
+    *out_h2x = x23;
+    *out_h2y = y23;
+}
+
+</t>
+<t tx="karstenw.20210320120941.5">void _curvelength(double x0, double y0, double x1, double y1, 
+                  double x2, double y2, double x3, double y3, int n, 
+                  double *out_length
+                  )
+{
+    double xi, yi, t, c;
+    double pt_x, pt_y, pt_c1x, pt_c1y, pt_c2x, pt_c2y;
+    int i;
+    double length = 0;
+    
+    xi = x0;
+    yi = y0;
+    
+    for (i=0; i&lt;n; i++) {
+        t = 1.0 * (i+1.0) / (float) n;
+        
+        _curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3,
+                    &amp;pt_x, &amp;pt_y, &amp;pt_c1x, &amp;pt_c1y, &amp;pt_c2x, &amp;pt_c2y);
+        c = sqrt(pow(fabs(xi-pt_x), 2.0) + pow(fabs(yi-pt_y), 2.0));
+        length += c;
+        xi = pt_x;
+        yi = pt_y;
+    }
+    *out_length = length;
+}
+
+</t>
+<t tx="karstenw.20210320120941.6">static PyObject *
+cPathmatics_linepoint(PyObject *self, PyObject *args)
+{
+    double t, x0, y0, x1, y1;
+    double out_x, out_y;
+    
+    if (!PyArg_ParseTuple(args, "ddddd", &amp;t, &amp;x0, &amp;y0, &amp;x1, &amp;y1))
+        return NULL;
+        
+    _linepoint(t, x0, y0, x1, y1,
+               &amp;out_x, &amp;out_y);
+
+    return Py_BuildValue("dd", out_x, out_y);
+}
+
+</t>
+<t tx="karstenw.20210320120941.7">static PyObject *
+cPathmatics_linelength(PyObject *self, PyObject *args)
+{
+    double x0, y0, x1, y1;
+    double out_length;
+    
+    if (!PyArg_ParseTuple(args, "dddd", &amp;x0, &amp;y0, &amp;x1, &amp;y1))
+        return NULL;
+        
+    _linelength(x0, y0, x1, y1,
+                &amp;out_length);
+
+    return Py_BuildValue("d", out_length);
+}
+
+
+</t>
+<t tx="karstenw.20210320120941.8">static PyObject *
+cPathmatics_curvepoint(PyObject *self, PyObject *args)
+{
+    double t, x0, y0, x1, y1, x2, y2, x3, y3, handles = 0;
+    double out_x, out_y, out_c1x, out_c1y, out_c2x, out_c2y, out_h1x, out_h1y, out_h2x, out_h2y;
+    
+    if (!PyArg_ParseTuple(args, "ddddddddd|i", &amp;t, &amp;x0, &amp;y0, &amp;x1, &amp;y1, &amp;x2, &amp;y2, &amp;x3, &amp;y3, &amp;handles))
+        return NULL;
+        
+    if (!handles) {
+        _curvepoint(t, x0, y0, x1, y1, x2, y2, x3, y3,
+            &amp;out_x, &amp;out_y, &amp;out_c1x, &amp;out_c1y, &amp;out_c2x, &amp;out_c2y);
+
+        return Py_BuildValue("dddddd", out_x, out_y, out_c1x, out_c1y, out_c2x, out_c2y);
+
+    } else {
+        _curvepoint_handles(t, x0, y0, x1, y1, x2, y2, x3, y3,
+            &amp;out_x, &amp;out_y, &amp;out_c1x, &amp;out_c1y, &amp;out_c2x, &amp;out_c2y,
+            &amp;out_h1x, &amp;out_h1y, &amp;out_h2x, &amp;out_h2y);
+
+        return Py_BuildValue("dddddddddd", out_x, out_y, out_c1x, out_c1y, out_c2x, out_c2y,
+            out_h1x, out_h1y, out_h2x, out_h2y);
+    }
+}
+
+</t>
+<t tx="karstenw.20210320120941.9">static PyObject *
+cPathmatics_curvelength(PyObject *self, PyObject *args)
+{
+    double x0, y0, x1, y1, x2, y2, x3, y3;
+    int n = 20;
+    double out_length;
+    
+    if (!PyArg_ParseTuple(args, "dddddddd|i", &amp;x0, &amp;y0, &amp;x1, &amp;y1, &amp;x2, &amp;y2, &amp;x3, &amp;y3, &amp;n))
+        return NULL;
+
+    _curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n,
+                 &amp;out_length);
+
+    return Py_BuildValue("d", out_length);
+}
+
+static PyObject *PathmaticsError;
+
+</t>
+<t tx="karstenw.20210320121857.1">#include &lt;Python.h&gt;
+#include &lt;math.h&gt;
+
+</t>
+<t tx="karstenw.20210320123535.1">@language c
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20210320123635.1">@language c
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20210320123639.1">@language c
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20210320123652.1">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20210320123811.1">typedef enum                        /* Set operation type                */
+{
+  GPC_DIFF,                         /* Difference                        */
+  GPC_INT,                          /* Intersection                      */
+  GPC_XOR,                          /* Exclusive or                      */
+  GPC_UNION                         /* Union                             */
+} gpc_op;
+
+</t>
+<t tx="karstenw.20210320123811.2">typedef struct                      /* Polygon vertex structure          */
+{
+  double              x;            /* Vertex x component                */
+  double              y;            /* vertex y component                */
+} gpc_vertex;
+
+</t>
+<t tx="karstenw.20210320123811.3">typedef struct                      /* Vertex list structure             */
+{
+  int                 num_vertices; /* Number of vertices in list        */
+  gpc_vertex         *vertex;       /* Vertex array pointer              */
+} gpc_vertex_list;
+
+</t>
+<t tx="karstenw.20210320123811.4">typedef struct                      /* Polygon set structure             */
+{
+  int                 num_contours; /* Number of contours in polygon     */
+  int                *hole;         /* Hole / external contour flags     */
+  gpc_vertex_list    *contour;      /* Contour array pointer             */
+} gpc_polygon;
+
+</t>
+<t tx="karstenw.20210320123811.5">typedef struct                      /* Tristrip set structure            */
+{
+  int                 num_strips;   /* Number of tristrips               */
+  gpc_vertex_list    *strip;        /* Tristrip array pointer            */
+} gpc_tristrip;
+
+
+/*
+===========================================================================
+                       Public Function Prototypes
+===========================================================================
+*/
+
+void gpc_read_polygon        (FILE            *infile_ptr, 
+                              int              read_hole_flags,
+                              gpc_polygon     *polygon);
+
+void gpc_write_polygon       (FILE            *outfile_ptr,
+                              int              write_hole_flags,
+                              gpc_polygon     *polygon);
+
+void gpc_add_contour         (gpc_polygon     *polygon,
+                              gpc_vertex_list *contour,
+                              int              hole);
+
+void gpc_polygon_clip        (gpc_op           set_operation,
+                              gpc_polygon     *subject_polygon,
+                              gpc_polygon     *clip_polygon,
+                              gpc_polygon     *result_polygon);
+
+void gpc_tristrip_clip       (gpc_op           set_operation,
+                              gpc_polygon     *subject_polygon,
+                              gpc_polygon     *clip_polygon,
+                              gpc_tristrip    *result_tristrip);
+
+void gpc_polygon_to_tristrip (gpc_polygon     *polygon,
+                              gpc_tristrip    *tristrip);
+
+void gpc_free_polygon        (gpc_polygon     *polygon);
+
+void gpc_free_tristrip       (gpc_tristrip    *tristrip);
+
+#endif
+
+/*
+===========================================================================
+                           End of file: gpc.h
+===========================================================================
+*/
+</t>
+<t tx="karstenw.20210320123814.1">typedef enum                        /* Edge intersection classes         */
+{
+  NUL,                              /* Empty non-intersection            */
+  EMX,                              /* External maximum                  */
+  ELI,                              /* External left intermediate        */
+  TED,                              /* Top edge                          */
+  ERI,                              /* External right intermediate       */
+  RED,                              /* Right edge                        */
+  IMM,                              /* Internal maximum and minimum      */
+  IMN,                              /* Internal minimum                  */
+  EMN,                              /* External minimum                  */
+  EMM,                              /* External maximum and minimum      */
+  LED,                              /* Left edge                         */
+  ILI,                              /* Internal left intermediate        */
+  BED,                              /* Bottom edge                       */
+  IRI,                              /* Internal right intermediate       */
+  IMX,                              /* Internal maximum                  */
+  FUL                               /* Full non-intersection             */
+} vertex_type;
+
+</t>
+<t tx="karstenw.20210320123814.10">typedef struct st_shape             /* Sorted edge table                 */
+{
+  edge_node          *edge;         /* Pointer to AET edge               */
+  double              xb;           /* Scanbeam bottom x coordinate      */
+  double              xt;           /* Scanbeam top x coordinate         */
+  double              dx;           /* Change in x for a unit y increase */
+  struct st_shape    *prev;         /* Previous edge in sorted list      */
+} st_node;
+
+</t>
+<t tx="karstenw.20210320123814.11">typedef struct bbox_shape           /* Contour axis-aligned bounding box */
+{
+  double             xmin;          /* Minimum x coordinate              */
+  double             ymin;          /* Minimum y coordinate              */
+  double             xmax;          /* Maximum x coordinate              */
+  double             ymax;          /* Maximum y coordinate              */
+} bbox;
+
+
+/*
+===========================================================================
+                               Global Data
+===========================================================================
+*/
+
+/* Horizontal edge state transitions within scanbeam boundary */
+</t>
+<t tx="karstenw.20210320123814.12">const h_state next_h_state[3][6]=
+{
+  /*        ABOVE     BELOW     CROSS */
+  /*        L   R     L   R     L   R */  
+  /* NH */ {BH, TH,   TH, BH,   NH, NH},
+  /* BH */ {NH, NH,   NH, NH,   TH, TH},
+  /* TH */ {NH, NH,   NH, NH,   BH, BH}
+};
+
+
+/*
+===========================================================================
+                             Private Functions
+===========================================================================
+*/
+
+</t>
+<t tx="karstenw.20210320123814.13">static void reset_it(it_node **it)
+{
+  it_node *itn;
+
+  while (*it)
+  {
+    itn= (*it)-&gt;next;
+    FREE(*it);
+    *it= itn;
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.14">static void reset_lmt(lmt_node **lmt)
+{
+  lmt_node *lmtn;
+
+  while (*lmt)
+  {
+    lmtn= (*lmt)-&gt;next;
+    FREE(*lmt);
+    *lmt= lmtn;
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.15">static void insert_bound(edge_node **b, edge_node *e)
+{
+  edge_node *existing_bound;
+
+  if (!*b)
+  {
+    /* Link node e to the tail of the list */
+    *b= e;
+  }
+  else
+  {
+    /* Do primary sort on the x field */
+    if (e[0].bot.x &lt; (*b)[0].bot.x)
+    {
+      /* Insert a new node mid-list */
+      existing_bound= *b;
+      *b= e;
+      (*b)-&gt;next_bound= existing_bound;
+    }
+    else
+    {
+      if (e[0].bot.x == (*b)[0].bot.x)
+      {
+        /* Do secondary sort on the dx field */
+        if (e[0].dx &lt; (*b)[0].dx)
+        {
+          /* Insert a new node mid-list */
+          existing_bound= *b;
+          *b= e;
+          (*b)-&gt;next_bound= existing_bound;
+        }
+        else
+        {
+          /* Head further down the list */
+          insert_bound(&amp;((*b)-&gt;next_bound), e);
+        }
+      }
+      else
+      {
+        /* Head further down the list */
+        insert_bound(&amp;((*b)-&gt;next_bound), e);
+      }
+    }
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.16">static edge_node **bound_list(lmt_node **lmt, double y)
+{
+  lmt_node *existing_node;
+
+  if (!*lmt)
+  {
+    /* Add node onto the tail end of the LMT */
+    MALLOC(*lmt, sizeof(lmt_node), "LMT insertion", lmt_node);
+    (*lmt)-&gt;y= y;
+    (*lmt)-&gt;first_bound= NULL;
+    (*lmt)-&gt;next= NULL;
+    return &amp;((*lmt)-&gt;first_bound);
+  }
+  else
+    if (y &lt; (*lmt)-&gt;y)
+    {
+      /* Insert a new LMT node before the current node */
+      existing_node= *lmt;
+      MALLOC(*lmt, sizeof(lmt_node), "LMT insertion", lmt_node);
+      (*lmt)-&gt;y= y;
+      (*lmt)-&gt;first_bound= NULL;
+      (*lmt)-&gt;next= existing_node;
+      return &amp;((*lmt)-&gt;first_bound);
+    }
+    else
+      if (y &gt; (*lmt)-&gt;y)
+        /* Head further up the LMT */
+        return bound_list(&amp;((*lmt)-&gt;next), y);
+      else
+        /* Use this existing LMT node */
+        return &amp;((*lmt)-&gt;first_bound);
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.17">static void add_to_sbtree(int *entries, sb_tree **sbtree, double y)
+{
+  if (!*sbtree)
+  {
+    /* Add a new tree node here */
+    MALLOC(*sbtree, sizeof(sb_tree), "scanbeam tree insertion", sb_tree);
+    (*sbtree)-&gt;y= y;
+    (*sbtree)-&gt;less= NULL;
+    (*sbtree)-&gt;more= NULL;
+    (*entries)++;
+  }
+  else
+  {
+    if ((*sbtree)-&gt;y &gt; y)
+    {
+    /* Head into the 'less' sub-tree */
+      add_to_sbtree(entries, &amp;((*sbtree)-&gt;less), y);
+    }
+    else
+    {
+      if ((*sbtree)-&gt;y &lt; y)
+      {
+        /* Head into the 'more' sub-tree */
+        add_to_sbtree(entries, &amp;((*sbtree)-&gt;more), y);
+      }
+    }
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.18">static void build_sbt(int *entries, double *sbt, sb_tree *sbtree)
+{
+  if (sbtree-&gt;less)
+    build_sbt(entries, sbt, sbtree-&gt;less);
+  sbt[*entries]= sbtree-&gt;y;
+  (*entries)++;
+  if (sbtree-&gt;more)
+    build_sbt(entries, sbt, sbtree-&gt;more);
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.19">static void free_sbtree(sb_tree **sbtree)
+{
+  if (*sbtree)
+  {
+    free_sbtree(&amp;((*sbtree)-&gt;less));
+    free_sbtree(&amp;((*sbtree)-&gt;more));
+    FREE(*sbtree);
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.2">typedef enum                        /* Horizontal edge states            */
+{
+  NH,                               /* No horizontal edge                */
+  BH,                               /* Bottom horizontal edge            */
+  TH                                /* Top horizontal edge               */
+} h_state;
+
+</t>
+<t tx="karstenw.20210320123814.20">static int count_optimal_vertices(gpc_vertex_list c)
+{
+  int result= 0, i;
+
+  /* Ignore non-contributing contours */
+  if (c.num_vertices &gt; 0)
+  {
+    for (i= 0; i &lt; c.num_vertices; i++)
+      /* Ignore superfluous vertices embedded in horizontal edges */
+      if (OPTIMAL(c.vertex, i, c.num_vertices))
+        result++;
+  }
+  return result;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.21">static edge_node *build_lmt(lmt_node **lmt, sb_tree **sbtree,
+                            int *sbt_entries, gpc_polygon *p, int type,
+                            gpc_op op)
+{
+  int          c, i, min, max, num_edges, v, num_vertices;
+  int          total_vertices= 0, e_index=0;
+  edge_node   *e, *edge_table;
+
+  for (c= 0; c &lt; p-&gt;num_contours; c++)
+    total_vertices+= count_optimal_vertices(p-&gt;contour[c]);
+
+  /* Create the entire input polygon edge table in one go */
+  MALLOC(edge_table, total_vertices * sizeof(edge_node),
+       "edge table creation", edge_node);
+
+  for (c= 0; c &lt; p-&gt;num_contours; c++)
+  {
+    if (p-&gt;contour[c].num_vertices &lt; 0)
+    {
+      /* Ignore the non-contributing contour and repair the vertex count */
+      p-&gt;contour[c].num_vertices= -p-&gt;contour[c].num_vertices;
+    }
+    else
+    {
+      /* Perform contour optimisation */
+      num_vertices= 0;
+      for (i= 0; i &lt; p-&gt;contour[c].num_vertices; i++)
+        if (OPTIMAL(p-&gt;contour[c].vertex, i, p-&gt;contour[c].num_vertices))
+        {
+          edge_table[num_vertices].vertex.x= p-&gt;contour[c].vertex[i].x;
+          edge_table[num_vertices].vertex.y= p-&gt;contour[c].vertex[i].y;
+
+          /* Record vertex in the scanbeam table */
+          add_to_sbtree(sbt_entries, sbtree,
+                        edge_table[num_vertices].vertex.y);
+
+          num_vertices++;
+        }
+
+      /* Do the contour forward pass */
+      for (min= 0; min &lt; num_vertices; min++)
+      {
+        /* If a forward local minimum... */
+        if (FWD_MIN(edge_table, min, num_vertices))
+        {
+          /* Search for the next local maximum... */
+          num_edges= 1;
+          max= NEXT_INDEX(min, num_vertices);
+          while (NOT_FMAX(edge_table, max, num_vertices))
+          {
+            num_edges++;
+            max= NEXT_INDEX(max, num_vertices);
+          }
+
+          /* Build the next edge list */
+          e= &amp;edge_table[e_index];
+          e_index+= num_edges;
+          v= min;
+          e[0].bstate[BELOW]= UNBUNDLED;
+          e[0].bundle[BELOW][CLIP]= FALSE;
+          e[0].bundle[BELOW][SUBJ]= FALSE;
+          for (i= 0; i &lt; num_edges; i++)
+          {
+            e[i].xb= edge_table[v].vertex.x;
+            e[i].bot.x= edge_table[v].vertex.x;
+            e[i].bot.y= edge_table[v].vertex.y;
+
+            v= NEXT_INDEX(v, num_vertices);
+
+            e[i].top.x= edge_table[v].vertex.x;
+            e[i].top.y= edge_table[v].vertex.y;
+            e[i].dx= (edge_table[v].vertex.x - e[i].bot.x) /
+                       (e[i].top.y - e[i].bot.y);
+            e[i].type= type;
+            e[i].outp[ABOVE]= NULL;
+            e[i].outp[BELOW]= NULL;
+            e[i].next= NULL;
+            e[i].prev= NULL;
+            e[i].succ= ((num_edges &gt; 1) &amp;&amp; (i &lt; (num_edges - 1))) ?
+                       &amp;(e[i + 1]) : NULL;
+            e[i].pred= ((num_edges &gt; 1) &amp;&amp; (i &gt; 0)) ? &amp;(e[i - 1]) : NULL;
+            e[i].next_bound= NULL;
+            e[i].bside[CLIP]= (op == GPC_DIFF) ? RIGHT : LEFT;
+            e[i].bside[SUBJ]= LEFT;
+          }
+          insert_bound(bound_list(lmt, edge_table[min].vertex.y), e);
+        }
+      }
+
+      /* Do the contour reverse pass */
+      for (min= 0; min &lt; num_vertices; min++)
+      {
+      /* If a reverse local minimum... */
+        if (REV_MIN(edge_table, min, num_vertices))
+        {
+          /* Search for the previous local maximum... */
+          num_edges= 1;
+          max= PREV_INDEX(min, num_vertices);
+          while (NOT_RMAX(edge_table, max, num_vertices))
+          {
+            num_edges++;
+            max= PREV_INDEX(max, num_vertices);
+          }
+
+          /* Build the previous edge list */
+          e= &amp;edge_table[e_index];
+          e_index+= num_edges;
+          v= min;
+          e[0].bstate[BELOW]= UNBUNDLED;
+          e[0].bundle[BELOW][CLIP]= FALSE;
+          e[0].bundle[BELOW][SUBJ]= FALSE;
+          for (i= 0; i &lt; num_edges; i++)
+          {
+            e[i].xb= edge_table[v].vertex.x;
+            e[i].bot.x= edge_table[v].vertex.x;
+            e[i].bot.y= edge_table[v].vertex.y;
+
+            v= PREV_INDEX(v, num_vertices);
+
+            e[i].top.x= edge_table[v].vertex.x;
+            e[i].top.y= edge_table[v].vertex.y;
+            e[i].dx= (edge_table[v].vertex.x - e[i].bot.x) /
+                       (e[i].top.y - e[i].bot.y);
+            e[i].type= type;
+            e[i].outp[ABOVE]= NULL;
+            e[i].outp[BELOW]= NULL;
+            e[i].next= NULL;
+            e[i].prev= NULL;
+            e[i].succ= ((num_edges &gt; 1) &amp;&amp; (i &lt; (num_edges - 1))) ?
+                       &amp;(e[i + 1]) : NULL;
+            e[i].pred= ((num_edges &gt; 1) &amp;&amp; (i &gt; 0)) ? &amp;(e[i - 1]) : NULL;
+            e[i].next_bound= NULL;
+            e[i].bside[CLIP]= (op == GPC_DIFF) ? RIGHT : LEFT;
+            e[i].bside[SUBJ]= LEFT;
+          }
+          insert_bound(bound_list(lmt, edge_table[min].vertex.y), e);
+        }
+      }
+    }
+  }
+  return edge_table;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.22">static void add_edge_to_aet(edge_node **aet, edge_node *edge, edge_node *prev)
+{
+  if (!*aet)
+  {
+    /* Append edge onto the tail end of the AET */
+    *aet= edge;
+    edge-&gt;prev= prev;
+    edge-&gt;next= NULL;
+  }
+  else
+  {
+    /* Do primary sort on the xb field */
+    if (edge-&gt;xb &lt; (*aet)-&gt;xb)
+    {
+      /* Insert edge here (before the AET edge) */
+      edge-&gt;prev= prev;
+      edge-&gt;next= *aet;
+      (*aet)-&gt;prev= edge;
+      *aet= edge;
+    }
+    else
+    {
+      if (edge-&gt;xb == (*aet)-&gt;xb)
+      {
+        /* Do secondary sort on the dx field */
+        if (edge-&gt;dx &lt; (*aet)-&gt;dx)
+        {
+          /* Insert edge here (before the AET edge) */
+          edge-&gt;prev= prev;
+          edge-&gt;next= *aet;
+          (*aet)-&gt;prev= edge;
+          *aet= edge;
+        }
+        else
+        {
+          /* Head further into the AET */
+          add_edge_to_aet(&amp;((*aet)-&gt;next), edge, *aet);
+        }
+      }
+      else
+      {
+        /* Head further into the AET */
+        add_edge_to_aet(&amp;((*aet)-&gt;next), edge, *aet);
+      }
+    }
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.23">static void add_intersection(it_node **it, edge_node *edge0, edge_node *edge1,
+                             double x, double y)
+{
+  it_node *existing_node;
+
+  if (!*it)
+  {
+    /* Append a new node to the tail of the list */
+    MALLOC(*it, sizeof(it_node), "IT insertion", it_node);
+    (*it)-&gt;ie[0]= edge0;
+    (*it)-&gt;ie[1]= edge1;
+    (*it)-&gt;point.x= x;
+    (*it)-&gt;point.y= y;
+    (*it)-&gt;next= NULL;
+  }
+  else
+  {
+    if ((*it)-&gt;point.y &gt; y)
+    {
+      /* Insert a new node mid-list */
+      existing_node= *it;
+      MALLOC(*it, sizeof(it_node), "IT insertion", it_node);
+      (*it)-&gt;ie[0]= edge0;
+      (*it)-&gt;ie[1]= edge1;
+      (*it)-&gt;point.x= x;
+      (*it)-&gt;point.y= y;
+      (*it)-&gt;next= existing_node;
+    }
+    else
+      /* Head further down the list */
+      add_intersection(&amp;((*it)-&gt;next), edge0, edge1, x, y);
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.24">static void add_st_edge(st_node **st, it_node **it, edge_node *edge,
+                        double dy)
+{
+  st_node *existing_node;
+  double   den, r, x, y;
+
+  if (!*st)
+  {
+    /* Append edge onto the tail end of the ST */
+    MALLOC(*st, sizeof(st_node), "ST insertion", st_node);
+    (*st)-&gt;edge= edge;
+    (*st)-&gt;xb= edge-&gt;xb;
+    (*st)-&gt;xt= edge-&gt;xt;
+    (*st)-&gt;dx= edge-&gt;dx;
+    (*st)-&gt;prev= NULL;
+  }
+  else
+  {
+    den= ((*st)-&gt;xt - (*st)-&gt;xb) - (edge-&gt;xt - edge-&gt;xb);
+
+    /* If new edge and ST edge don't cross */
+    if ((edge-&gt;xt &gt;= (*st)-&gt;xt) || (edge-&gt;dx == (*st)-&gt;dx) || 
+        (fabs(den) &lt;= DBL_EPSILON))
+    {
+      /* No intersection - insert edge here (before the ST edge) */
+      existing_node= *st;
+      MALLOC(*st, sizeof(st_node), "ST insertion", st_node);
+      (*st)-&gt;edge= edge;
+      (*st)-&gt;xb= edge-&gt;xb;
+      (*st)-&gt;xt= edge-&gt;xt;
+      (*st)-&gt;dx= edge-&gt;dx;
+      (*st)-&gt;prev= existing_node;
+    }
+    else
+    {
+      /* Compute intersection between new edge and ST edge */
+      r= (edge-&gt;xb - (*st)-&gt;xb) / den;
+      x= (*st)-&gt;xb + r * ((*st)-&gt;xt - (*st)-&gt;xb);
+      y= r * dy;
+
+      /* Insert the edge pointers and the intersection point in the IT */
+      add_intersection(it, (*st)-&gt;edge, edge, x, y);
+
+      /* Head further into the ST */
+      add_st_edge(&amp;((*st)-&gt;prev), it, edge, dy);
+    }
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.25">static void build_intersection_table(it_node **it, edge_node *aet, double dy)
+{
+  st_node   *st, *stp;
+  edge_node *edge;
+
+  /* Build intersection table for the current scanbeam */
+  reset_it(it);
+  st= NULL;
+
+  /* Process each AET edge */
+  for (edge= aet; edge; edge= edge-&gt;next)
+  {
+    if ((edge-&gt;bstate[ABOVE] == BUNDLE_HEAD) ||
+         edge-&gt;bundle[ABOVE][CLIP] || edge-&gt;bundle[ABOVE][SUBJ])
+      add_st_edge(&amp;st, it, edge, dy);
+  }
+
+  /* Free the sorted edge table */
+  while (st)
+  {
+    stp= st-&gt;prev;
+    FREE(st);
+    st= stp;
+  }
+}
+
+</t>
+<t tx="karstenw.20210320123814.26">static int count_contours(polygon_node *polygon)
+{
+  int          nc, nv;
+  vertex_node *v, *nextv;
+
+  for (nc= 0; polygon; polygon= polygon-&gt;next)
+    if (polygon-&gt;active)
+    {
+      /* Count the vertices in the current contour */
+      nv= 0;
+      for (v= polygon-&gt;proxy-&gt;v[LEFT]; v; v= v-&gt;next)
+        nv++;
+
+      /* Record valid vertex counts in the active field */
+      if (nv &gt; 2)
+      {
+        polygon-&gt;active= nv;
+        nc++;
+      }
+      else
+      {
+        /* Invalid contour: just free the heap */
+        for (v= polygon-&gt;proxy-&gt;v[LEFT]; v; v= nextv)
+        {
+          nextv= v-&gt;next;
+          FREE(v);
+        }
+        polygon-&gt;active= 0;
+      }
+    }
+  return nc;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.27">static void add_left(polygon_node *p, double x, double y)
+{
+  vertex_node *nv;
+
+  /* Create a new vertex node and set its fields */
+  MALLOC(nv, sizeof(vertex_node), "vertex node creation", vertex_node);
+  nv-&gt;x= x;
+  nv-&gt;y= y;
+
+  /* Add vertex nv to the left end of the polygon's vertex list */
+  nv-&gt;next= p-&gt;proxy-&gt;v[LEFT];
+
+  /* Update proxy-&gt;[LEFT] to point to nv */
+  p-&gt;proxy-&gt;v[LEFT]= nv;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.28">static void merge_left(polygon_node *p, polygon_node *q, polygon_node *list)
+{
+  polygon_node *target;
+
+  /* Label contour as a hole */
+  q-&gt;proxy-&gt;hole= TRUE;
+
+  if (p-&gt;proxy != q-&gt;proxy)
+  {
+    /* Assign p's vertex list to the left end of q's list */
+    p-&gt;proxy-&gt;v[RIGHT]-&gt;next= q-&gt;proxy-&gt;v[LEFT];
+    q-&gt;proxy-&gt;v[LEFT]= p-&gt;proxy-&gt;v[LEFT];
+
+    /* Redirect any p-&gt;proxy references to q-&gt;proxy */
+    
+    for (target= p-&gt;proxy; list; list= list-&gt;next)
+    {
+      if (list-&gt;proxy == target)
+      {
+        list-&gt;active= FALSE;
+        list-&gt;proxy= q-&gt;proxy;
+      }
+    }
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.29">static void add_right(polygon_node *p, double x, double y)
+{
+  vertex_node *nv;
+
+  /* Create a new vertex node and set its fields */
+  MALLOC(nv, sizeof(vertex_node), "vertex node creation", vertex_node);
+  nv-&gt;x= x;
+  nv-&gt;y= y;
+  nv-&gt;next= NULL;
+
+  /* Add vertex nv to the right end of the polygon's vertex list */
+  p-&gt;proxy-&gt;v[RIGHT]-&gt;next= nv;
+
+  /* Update proxy-&gt;v[RIGHT] to point to nv */
+  p-&gt;proxy-&gt;v[RIGHT]= nv;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.3">typedef enum                        /* Edge bundle state                 */
+{
+  UNBUNDLED,                        /* Isolated edge not within a bundle */
+  BUNDLE_HEAD,                      /* Bundle head node                  */
+  BUNDLE_TAIL                       /* Passive bundle tail node          */
+} bundle_state;
+
+</t>
+<t tx="karstenw.20210320123814.30">static void merge_right(polygon_node *p, polygon_node *q, polygon_node *list)
+{
+  polygon_node *target;
+
+  /* Label contour as external */
+  q-&gt;proxy-&gt;hole= FALSE;
+
+  if (p-&gt;proxy != q-&gt;proxy)
+  {
+    /* Assign p's vertex list to the right end of q's list */
+    q-&gt;proxy-&gt;v[RIGHT]-&gt;next= p-&gt;proxy-&gt;v[LEFT];
+    q-&gt;proxy-&gt;v[RIGHT]= p-&gt;proxy-&gt;v[RIGHT];
+
+    /* Redirect any p-&gt;proxy references to q-&gt;proxy */
+    for (target= p-&gt;proxy; list; list= list-&gt;next)
+    {
+      if (list-&gt;proxy == target)
+      {
+        list-&gt;active= FALSE;
+        list-&gt;proxy= q-&gt;proxy;
+      }
+    }
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.31">static void add_local_min(polygon_node **p, edge_node *edge,
+                          double x, double y)
+{
+  polygon_node *existing_min;
+  vertex_node  *nv;
+
+  existing_min= *p;
+
+  MALLOC(*p, sizeof(polygon_node), "polygon node creation", polygon_node);
+
+  /* Create a new vertex node and set its fields */
+  MALLOC(nv, sizeof(vertex_node), "vertex node creation", vertex_node);
+  nv-&gt;x= x;
+  nv-&gt;y= y;
+  nv-&gt;next= NULL;
+
+  /* Initialise proxy to point to p itself */
+  (*p)-&gt;proxy= (*p);
+  (*p)-&gt;active= TRUE;
+  (*p)-&gt;next= existing_min;
+
+  /* Make v[LEFT] and v[RIGHT] point to new vertex nv */
+  (*p)-&gt;v[LEFT]= nv;
+  (*p)-&gt;v[RIGHT]= nv;
+
+  /* Assign polygon p to the edge */
+  edge-&gt;outp[ABOVE]= *p;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.32">static int count_tristrips(polygon_node *tn)
+{
+  int total;
+
+  for (total= 0; tn; tn= tn-&gt;next)
+    if (tn-&gt;active &gt; 2)
+      total++;
+  return total;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.33">static void add_vertex(vertex_node **t, double x, double y)
+{
+  if (!(*t))
+  {
+    MALLOC(*t, sizeof(vertex_node), "tristrip vertex creation", vertex_node);
+    (*t)-&gt;x= x;
+    (*t)-&gt;y= y;
+    (*t)-&gt;next= NULL;
+  }
+  else
+    /* Head further down the list */
+    add_vertex(&amp;((*t)-&gt;next), x, y);
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.34">static void new_tristrip(polygon_node **tn, edge_node *edge,
+                         double x, double y)
+{
+  if (!(*tn))
+  {
+    MALLOC(*tn, sizeof(polygon_node), "tristrip node creation", polygon_node);
+    (*tn)-&gt;next= NULL;
+    (*tn)-&gt;v[LEFT]= NULL;
+    (*tn)-&gt;v[RIGHT]= NULL;
+    (*tn)-&gt;active= 1;
+    add_vertex(&amp;((*tn)-&gt;v[LEFT]), x, y); 
+    edge-&gt;outp[ABOVE]= *tn;
+  }
+  else
+    /* Head further down the list */
+    new_tristrip(&amp;((*tn)-&gt;next), edge, x, y);
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.35">static bbox *create_contour_bboxes(gpc_polygon *p)
+{
+  bbox *box;
+  int   c, v;
+
+  MALLOC(box, p-&gt;num_contours * sizeof(bbox), "Bounding box creation", bbox);
+
+  /* Construct contour bounding boxes */
+  for (c= 0; c &lt; p-&gt;num_contours; c++)
+  {
+    /* Initialise bounding box extent */
+    box[c].xmin= DBL_MAX;
+    box[c].ymin= DBL_MAX;
+    box[c].xmax= -DBL_MAX;
+    box[c].ymax= -DBL_MAX;
+
+    for (v= 0; v &lt; p-&gt;contour[c].num_vertices; v++)
+    {
+      /* Adjust bounding box */
+      if (p-&gt;contour[c].vertex[v].x &lt; box[c].xmin)
+        box[c].xmin= p-&gt;contour[c].vertex[v].x;
+      if (p-&gt;contour[c].vertex[v].y &lt; box[c].ymin)
+        box[c].ymin= p-&gt;contour[c].vertex[v].y;
+      if (p-&gt;contour[c].vertex[v].x &gt; box[c].xmax)
+        box[c].xmax= p-&gt;contour[c].vertex[v].x;
+      if (p-&gt;contour[c].vertex[v].y &gt; box[c].ymax)
+          box[c].ymax= p-&gt;contour[c].vertex[v].y;
+    }
+  }
+  return box;  
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.36">static void minimax_test(gpc_polygon *subj, gpc_polygon *clip, gpc_op op)
+{
+  bbox *s_bbox, *c_bbox;
+  int   s, c, *o_table, overlap;
+
+  s_bbox= create_contour_bboxes(subj);
+  c_bbox= create_contour_bboxes(clip);
+
+  MALLOC(o_table, subj-&gt;num_contours * clip-&gt;num_contours * sizeof(int),
+         "overlap table creation", int);
+
+  /* Check all subject contour bounding boxes against clip boxes */
+  for (s= 0; s &lt; subj-&gt;num_contours; s++)
+    for (c= 0; c &lt; clip-&gt;num_contours; c++)
+      o_table[c * subj-&gt;num_contours + s]=
+             (!((s_bbox[s].xmax &lt; c_bbox[c].xmin) ||
+                (s_bbox[s].xmin &gt; c_bbox[c].xmax))) &amp;&amp;
+             (!((s_bbox[s].ymax &lt; c_bbox[c].ymin) ||
+                (s_bbox[s].ymin &gt; c_bbox[c].ymax)));
+
+  /* For each clip contour, search for any subject contour overlaps */
+  for (c= 0; c &lt; clip-&gt;num_contours; c++)
+  {
+    overlap= 0;
+    for (s= 0; (!overlap) &amp;&amp; (s &lt; subj-&gt;num_contours); s++)
+      overlap= o_table[c * subj-&gt;num_contours + s];
+
+    if (!overlap)
+      /* Flag non contributing status by negating vertex count */
+      clip-&gt;contour[c].num_vertices = -clip-&gt;contour[c].num_vertices;
+  }  
+
+  if (op == GPC_INT)
+  {  
+    /* For each subject contour, search for any clip contour overlaps */
+    for (s= 0; s &lt; subj-&gt;num_contours; s++)
+    {
+      overlap= 0;
+      for (c= 0; (!overlap) &amp;&amp; (c &lt; clip-&gt;num_contours); c++)
+        overlap= o_table[c * subj-&gt;num_contours + s];
+
+      if (!overlap)
+        /* Flag non contributing status by negating vertex count */
+        subj-&gt;contour[s].num_vertices = -subj-&gt;contour[s].num_vertices;
+    }  
+  }
+
+  FREE(s_bbox);
+  FREE(c_bbox);
+  FREE(o_table);
+}
+
+
+/*
+===========================================================================
+                             Public Functions
+===========================================================================
+*/
+
+</t>
+<t tx="karstenw.20210320123814.37">void gpc_free_polygon(gpc_polygon *p)
+{
+  int c;
+
+  for (c= 0; c &lt; p-&gt;num_contours; c++)
+    FREE(p-&gt;contour[c].vertex);
+  // FDB: pointer being freed was not allocated
+  // This causes a memory leak, but better than crashing.
+  // FREE(p-&gt;hole);
+  FREE(p-&gt;contour);
+  p-&gt;num_contours= 0;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.38">void gpc_read_polygon(FILE *fp, int read_hole_flags, gpc_polygon *p)
+{
+  int c, v;
+
+  fscanf(fp, "%d", &amp;(p-&gt;num_contours));
+  MALLOC(p-&gt;hole, p-&gt;num_contours * sizeof(int),
+         "hole flag array creation", int);
+  MALLOC(p-&gt;contour, p-&gt;num_contours
+         * sizeof(gpc_vertex_list), "contour creation", gpc_vertex_list);
+  for (c= 0; c &lt; p-&gt;num_contours; c++)
+  {
+    fscanf(fp, "%d", &amp;(p-&gt;contour[c].num_vertices));
+
+    if (read_hole_flags)
+      fscanf(fp, "%d", &amp;(p-&gt;hole[c]));
+    else
+      p-&gt;hole[c]= FALSE; /* Assume all contours to be external */
+
+    MALLOC(p-&gt;contour[c].vertex, p-&gt;contour[c].num_vertices
+           * sizeof(gpc_vertex), "vertex creation", gpc_vertex);
+    for (v= 0; v &lt; p-&gt;contour[c].num_vertices; v++)
+      fscanf(fp, "%lf %lf", &amp;(p-&gt;contour[c].vertex[v].x),
+                            &amp;(p-&gt;contour[c].vertex[v].y));
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.39">void gpc_write_polygon(FILE *fp, int write_hole_flags, gpc_polygon *p)
+{
+  int c, v;
+
+  fprintf(fp, "%d\n", p-&gt;num_contours);
+  for (c= 0; c &lt; p-&gt;num_contours; c++)
+  {
+    fprintf(fp, "%d\n", p-&gt;contour[c].num_vertices);
+
+    if (write_hole_flags)
+      fprintf(fp, "%d\n", p-&gt;hole[c]);
+    
+    for (v= 0; v &lt; p-&gt;contour[c].num_vertices; v++)
+      fprintf(fp, "% .*lf % .*lf\n",
+              DBL_DIG, p-&gt;contour[c].vertex[v].x,
+              DBL_DIG, p-&gt;contour[c].vertex[v].y);
+  }
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.4">typedef struct v_shape              /* Internal vertex list datatype     */
+{
+  double              x;            /* X coordinate component            */
+  double              y;            /* Y coordinate component            */
+  struct v_shape     *next;         /* Pointer to next vertex in list    */
+} vertex_node;
+
+</t>
+<t tx="karstenw.20210320123814.40">void gpc_add_contour(gpc_polygon *p, gpc_vertex_list *new_contour, int hole)
+{
+  int             *extended_hole, c, v;
+  gpc_vertex_list *extended_contour;
+
+  /* Create an extended hole array */
+  MALLOC(extended_hole, (p-&gt;num_contours + 1)
+         * sizeof(int), "contour hole addition", int);
+
+  /* Create an extended contour array */
+  MALLOC(extended_contour, (p-&gt;num_contours + 1)
+         * sizeof(gpc_vertex_list), "contour addition", gpc_vertex_list);
+
+  /* Copy the old contour and hole data into the extended arrays */
+  for (c= 0; c &lt; p-&gt;num_contours; c++)
+  {
+    extended_hole[c]= p-&gt;hole[c];
+    extended_contour[c]= p-&gt;contour[c];
+  }
+
+  /* Copy the new contour and hole onto the end of the extended arrays */
+  c= p-&gt;num_contours;
+  extended_hole[c]= hole;
+  extended_contour[c].num_vertices= new_contour-&gt;num_vertices;
+  MALLOC(extended_contour[c].vertex, new_contour-&gt;num_vertices
+         * sizeof(gpc_vertex), "contour addition", gpc_vertex);
+  for (v= 0; v &lt; new_contour-&gt;num_vertices; v++)
+    extended_contour[c].vertex[v]= new_contour-&gt;vertex[v];
+
+  /* Dispose of the old contour */
+  FREE(p-&gt;contour);
+  FREE(p-&gt;hole);
+
+  /* Update the polygon information */
+  p-&gt;num_contours++;
+  p-&gt;hole= extended_hole;
+  p-&gt;contour= extended_contour;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.41">void gpc_polygon_clip(gpc_op op, gpc_polygon *subj, gpc_polygon *clip,
+                      gpc_polygon *result)
+{
+  sb_tree       *sbtree= NULL;
+  it_node       *it= NULL, *intersect;
+  edge_node     *edge, *prev_edge, *next_edge, *succ_edge, *e0, *e1;
+  edge_node     *aet= NULL, *c_heap= NULL, *s_heap= NULL;
+  lmt_node      *lmt= NULL, *local_min;
+  polygon_node  *out_poly= NULL, *p, *q, *poly, *npoly, *cf= NULL;
+  vertex_node   *vtx, *nv;
+  h_state        horiz[2];
+  int            in[2], exists[2], parity[2]= {LEFT, LEFT};
+  int            c, v, contributing, search, scanbeam= 0, sbt_entries= 0;
+  int            vclass, bl, br, tl, tr;
+  double        *sbt= NULL, xb, px, yb, yt, dy, ix, iy;
+
+  /* Test for trivial NULL result cases */
+  if (((subj-&gt;num_contours == 0) &amp;&amp; (clip-&gt;num_contours == 0))
+   || ((subj-&gt;num_contours == 0) &amp;&amp; ((op == GPC_INT) || (op == GPC_DIFF)))
+   || ((clip-&gt;num_contours == 0) &amp;&amp;  (op == GPC_INT)))
+  {
+    result-&gt;num_contours= 0;
+    result-&gt;hole= NULL;
+    result-&gt;contour= NULL;
+    return;
+  }
+
+  /* Identify potentialy contributing contours */
+  if (((op == GPC_INT) || (op == GPC_DIFF))
+   &amp;&amp; (subj-&gt;num_contours &gt; 0) &amp;&amp; (clip-&gt;num_contours &gt; 0))
+    minimax_test(subj, clip, op);
+
+  /* Build LMT */
+  if (subj-&gt;num_contours &gt; 0)
+    s_heap= build_lmt(&amp;lmt, &amp;sbtree, &amp;sbt_entries, subj, SUBJ, op);
+  if (clip-&gt;num_contours &gt; 0)
+    c_heap= build_lmt(&amp;lmt, &amp;sbtree, &amp;sbt_entries, clip, CLIP, op);
+
+  /* Return a NULL result if no contours contribute */
+  if (lmt == NULL)
+  {
+    result-&gt;num_contours= 0;
+    result-&gt;hole= NULL;
+    result-&gt;contour= NULL;
+    reset_lmt(&amp;lmt);
+    FREE(s_heap);
+    FREE(c_heap);
+    return;
+  }
+
+  /* Build scanbeam table from scanbeam tree */
+  MALLOC(sbt, sbt_entries * sizeof(double), "sbt creation", double);
+  build_sbt(&amp;scanbeam, sbt, sbtree);
+  scanbeam= 0;
+  free_sbtree(&amp;sbtree);
+
+  /* Allow pointer re-use without causing memory leak */
+  if (subj == result)
+    gpc_free_polygon(subj);
+  if (clip == result)
+    gpc_free_polygon(clip);
+
+  /* Invert clip polygon for difference operation */
+  if (op == GPC_DIFF)
+    parity[CLIP]= RIGHT;
+
+  local_min= lmt;
+
+  /* Process each scanbeam */
+  while (scanbeam &lt; sbt_entries)
+  {
+    /* Set yb and yt to the bottom and top of the scanbeam */
+    yb= sbt[scanbeam++];
+    if (scanbeam &lt; sbt_entries)
+    {
+      yt= sbt[scanbeam];
+      dy= yt - yb;
+    }
+
+    /* === SCANBEAM BOUNDARY PROCESSING ================================ */
+
+    /* If LMT node corresponding to yb exists */
+    if (local_min)
+    {
+      if (local_min-&gt;y == yb)
+      {
+        /* Add edges starting at this local minimum to the AET */
+        for (edge= local_min-&gt;first_bound; edge; edge= edge-&gt;next_bound)
+          add_edge_to_aet(&amp;aet, edge, NULL);
+
+        local_min= local_min-&gt;next;
+      }
+    }
+
+    /* Set dummy previous x value */
+    px= -DBL_MAX;
+
+    /* Create bundles within AET */
+    e0= aet;
+    e1= aet;
+
+    /* Set up bundle fields of first edge */
+    aet-&gt;bundle[ABOVE][ aet-&gt;type]= (aet-&gt;top.y != yb);
+    aet-&gt;bundle[ABOVE][!aet-&gt;type]= FALSE;
+    aet-&gt;bstate[ABOVE]= UNBUNDLED;
+
+    for (next_edge= aet-&gt;next; next_edge; next_edge= next_edge-&gt;next)
+    {
+      /* Set up bundle fields of next edge */
+      next_edge-&gt;bundle[ABOVE][ next_edge-&gt;type]= (next_edge-&gt;top.y != yb);
+      next_edge-&gt;bundle[ABOVE][!next_edge-&gt;type]= FALSE;
+      next_edge-&gt;bstate[ABOVE]= UNBUNDLED;
+
+      /* Bundle edges above the scanbeam boundary if they coincide */
+      if (next_edge-&gt;bundle[ABOVE][next_edge-&gt;type])
+      {
+        if (EQ(e0-&gt;xb, next_edge-&gt;xb) &amp;&amp; EQ(e0-&gt;dx, next_edge-&gt;dx)
+     &amp;&amp; (e0-&gt;top.y != yb))
+        {
+          next_edge-&gt;bundle[ABOVE][ next_edge-&gt;type]^= 
+            e0-&gt;bundle[ABOVE][ next_edge-&gt;type];
+          next_edge-&gt;bundle[ABOVE][!next_edge-&gt;type]= 
+            e0-&gt;bundle[ABOVE][!next_edge-&gt;type];
+          next_edge-&gt;bstate[ABOVE]= BUNDLE_HEAD;
+          e0-&gt;bundle[ABOVE][CLIP]= FALSE;
+          e0-&gt;bundle[ABOVE][SUBJ]= FALSE;
+          e0-&gt;bstate[ABOVE]= BUNDLE_TAIL;
+        }
+        e0= next_edge;
+      }
+    }
+    
+    horiz[CLIP]= NH;
+    horiz[SUBJ]= NH;
+
+    /* Process each edge at this scanbeam boundary */
+    for (edge= aet; edge; edge= edge-&gt;next)
+    {
+      exists[CLIP]= edge-&gt;bundle[ABOVE][CLIP] + 
+                   (edge-&gt;bundle[BELOW][CLIP] &lt;&lt; 1);
+      exists[SUBJ]= edge-&gt;bundle[ABOVE][SUBJ] + 
+                   (edge-&gt;bundle[BELOW][SUBJ] &lt;&lt; 1);
+
+      if (exists[CLIP] || exists[SUBJ])
+      {
+        /* Set bundle side */
+        edge-&gt;bside[CLIP]= parity[CLIP];
+        edge-&gt;bside[SUBJ]= parity[SUBJ];
+
+        /* Determine contributing status and quadrant occupancies */
+        switch (op)
+        {
+        case GPC_DIFF:
+        case GPC_INT:
+          contributing= (exists[CLIP] &amp;&amp; (parity[SUBJ] || horiz[SUBJ]))
+                     || (exists[SUBJ] &amp;&amp; (parity[CLIP] || horiz[CLIP]))
+                     || (exists[CLIP] &amp;&amp; exists[SUBJ]
+                     &amp;&amp; (parity[CLIP] == parity[SUBJ]));
+          br= (parity[CLIP])
+           &amp;&amp; (parity[SUBJ]);
+          bl= (parity[CLIP] ^ edge-&gt;bundle[ABOVE][CLIP])
+           &amp;&amp; (parity[SUBJ] ^ edge-&gt;bundle[ABOVE][SUBJ]);
+          tr= (parity[CLIP] ^ (horiz[CLIP]!=NH))
+           &amp;&amp; (parity[SUBJ] ^ (horiz[SUBJ]!=NH));
+          tl= (parity[CLIP] ^ (horiz[CLIP]!=NH) ^ edge-&gt;bundle[BELOW][CLIP]) 
+           &amp;&amp; (parity[SUBJ] ^ (horiz[SUBJ]!=NH) ^ edge-&gt;bundle[BELOW][SUBJ]);
+          break;
+        case GPC_XOR:
+          contributing= exists[CLIP] || exists[SUBJ];
+          br= (parity[CLIP])
+            ^ (parity[SUBJ]);
+          bl= (parity[CLIP] ^ edge-&gt;bundle[ABOVE][CLIP])
+            ^ (parity[SUBJ] ^ edge-&gt;bundle[ABOVE][SUBJ]);
+          tr= (parity[CLIP] ^ (horiz[CLIP]!=NH))
+            ^ (parity[SUBJ] ^ (horiz[SUBJ]!=NH));
+          tl= (parity[CLIP] ^ (horiz[CLIP]!=NH) ^ edge-&gt;bundle[BELOW][CLIP]) 
+            ^ (parity[SUBJ] ^ (horiz[SUBJ]!=NH) ^ edge-&gt;bundle[BELOW][SUBJ]);
+          break;
+        case GPC_UNION:
+          contributing= (exists[CLIP] &amp;&amp; (!parity[SUBJ] || horiz[SUBJ]))
+                     || (exists[SUBJ] &amp;&amp; (!parity[CLIP] || horiz[CLIP]))
+                     || (exists[CLIP] &amp;&amp; exists[SUBJ]
+                     &amp;&amp; (parity[CLIP] == parity[SUBJ]));
+          br= (parity[CLIP])
+           || (parity[SUBJ]);
+          bl= (parity[CLIP] ^ edge-&gt;bundle[ABOVE][CLIP])
+           || (parity[SUBJ] ^ edge-&gt;bundle[ABOVE][SUBJ]);
+          tr= (parity[CLIP] ^ (horiz[CLIP]!=NH))
+           || (parity[SUBJ] ^ (horiz[SUBJ]!=NH));
+          tl= (parity[CLIP] ^ (horiz[CLIP]!=NH) ^ edge-&gt;bundle[BELOW][CLIP]) 
+           || (parity[SUBJ] ^ (horiz[SUBJ]!=NH) ^ edge-&gt;bundle[BELOW][SUBJ]);
+          break;
+        }
+
+        /* Update parity */
+        parity[CLIP]^= edge-&gt;bundle[ABOVE][CLIP];
+        parity[SUBJ]^= edge-&gt;bundle[ABOVE][SUBJ];
+
+        /* Update horizontal state */
+        if (exists[CLIP])         
+          horiz[CLIP]=
+            next_h_state[horiz[CLIP]]
+                        [((exists[CLIP] - 1) &lt;&lt; 1) + parity[CLIP]];
+        if (exists[SUBJ])         
+          horiz[SUBJ]=
+            next_h_state[horiz[SUBJ]]
+                        [((exists[SUBJ] - 1) &lt;&lt; 1) + parity[SUBJ]];
+
+        vclass= tr + (tl &lt;&lt; 1) + (br &lt;&lt; 2) + (bl &lt;&lt; 3);
+
+        if (contributing)
+        {
+          xb= edge-&gt;xb;
+
+          switch (vclass)
+          {
+          case EMN:
+          case IMN:
+            add_local_min(&amp;out_poly, edge, xb, yb);
+            px= xb;
+            cf= edge-&gt;outp[ABOVE];
+            break;
+          case ERI:
+            if (xb != px)
+            {
+              add_right(cf, xb, yb);
+              px= xb;
+            }
+            edge-&gt;outp[ABOVE]= cf;
+            cf= NULL;
+            break;
+          case ELI:
+            add_left(edge-&gt;outp[BELOW], xb, yb);
+            px= xb;
+            cf= edge-&gt;outp[BELOW];
+            break;
+          case EMX:
+            if (xb != px)
+            {
+              add_left(cf, xb, yb);
+              px= xb;
+            }
+            merge_right(cf, edge-&gt;outp[BELOW], out_poly);
+            cf= NULL;
+            break;
+          case ILI:
+            if (xb != px)
+            {
+              add_left(cf, xb, yb);
+              px= xb;
+            }
+            edge-&gt;outp[ABOVE]= cf;
+            cf= NULL;
+            break;
+          case IRI:
+            add_right(edge-&gt;outp[BELOW], xb, yb);
+            px= xb;
+            cf= edge-&gt;outp[BELOW];
+            edge-&gt;outp[BELOW]= NULL;
+            break;
+          case IMX:
+            if (xb != px)
+            {
+              add_right(cf, xb, yb);
+              px= xb;
+            }
+            merge_left(cf, edge-&gt;outp[BELOW], out_poly);
+            cf= NULL;
+            edge-&gt;outp[BELOW]= NULL;
+            break;
+          case IMM:
+            if (xb != px)
+        {
+              add_right(cf, xb, yb);
+              px= xb;
+        }
+            merge_left(cf, edge-&gt;outp[BELOW], out_poly);
+            edge-&gt;outp[BELOW]= NULL;
+            add_local_min(&amp;out_poly, edge, xb, yb);
+            cf= edge-&gt;outp[ABOVE];
+            break;
+          case EMM:
+            if (xb != px)
+        {
+              add_left(cf, xb, yb);
+              px= xb;
+        }
+            merge_right(cf, edge-&gt;outp[BELOW], out_poly);
+            edge-&gt;outp[BELOW]= NULL;
+            add_local_min(&amp;out_poly, edge, xb, yb);
+            cf= edge-&gt;outp[ABOVE];
+            break;
+          case LED:
+            if (edge-&gt;bot.y == yb)
+              add_left(edge-&gt;outp[BELOW], xb, yb);
+            edge-&gt;outp[ABOVE]= edge-&gt;outp[BELOW];
+            px= xb;
+            break;
+          case RED:
+            if (edge-&gt;bot.y == yb)
+              add_right(edge-&gt;outp[BELOW], xb, yb);
+            edge-&gt;outp[ABOVE]= edge-&gt;outp[BELOW];
+            px= xb;
+            break;
+          default:
+            break;
+          } /* End of switch */
+        } /* End of contributing conditional */
+      } /* End of edge exists conditional */
+    } /* End of AET loop */
+
+    /* Delete terminating edges from the AET, otherwise compute xt */
+    for (edge= aet; edge; edge= edge-&gt;next)
+    {
+      if (edge-&gt;top.y == yb)
+      {
+        prev_edge= edge-&gt;prev;
+        next_edge= edge-&gt;next;
+        if (prev_edge)
+          prev_edge-&gt;next= next_edge;
+        else
+          aet= next_edge;
+        if (next_edge)
+          next_edge-&gt;prev= prev_edge;
+
+        /* Copy bundle head state to the adjacent tail edge if required */
+        if ((edge-&gt;bstate[BELOW] == BUNDLE_HEAD) &amp;&amp; prev_edge)
+    {
+          if (prev_edge-&gt;bstate[BELOW] == BUNDLE_TAIL)
+          {
+            prev_edge-&gt;outp[BELOW]= edge-&gt;outp[BELOW];
+            prev_edge-&gt;bstate[BELOW]= UNBUNDLED;
+            if (prev_edge-&gt;prev)
+              if (prev_edge-&gt;prev-&gt;bstate[BELOW] == BUNDLE_TAIL)
+                prev_edge-&gt;bstate[BELOW]= BUNDLE_HEAD;
+      }
+    }
+      }
+      else
+      {
+        if (edge-&gt;top.y == yt)
+          edge-&gt;xt= edge-&gt;top.x;
+        else
+          edge-&gt;xt= edge-&gt;bot.x + edge-&gt;dx * (yt - edge-&gt;bot.y);
+      }
+    }
+
+    if (scanbeam &lt; sbt_entries)
+    {
+      /* === SCANBEAM INTERIOR PROCESSING ============================== */
+
+      build_intersection_table(&amp;it, aet, dy);
+
+      /* Process each node in the intersection table */
+      for (intersect= it; intersect; intersect= intersect-&gt;next)
+      {
+        e0= intersect-&gt;ie[0];
+        e1= intersect-&gt;ie[1];
+
+        /* Only generate output for contributing intersections */
+        if ((e0-&gt;bundle[ABOVE][CLIP] || e0-&gt;bundle[ABOVE][SUBJ])
+         &amp;&amp; (e1-&gt;bundle[ABOVE][CLIP] || e1-&gt;bundle[ABOVE][SUBJ]))
+    {
+          p= e0-&gt;outp[ABOVE];
+          q= e1-&gt;outp[ABOVE];
+          ix= intersect-&gt;point.x;
+          iy= intersect-&gt;point.y + yb;
+ 
+          in[CLIP]= ( e0-&gt;bundle[ABOVE][CLIP] &amp;&amp; !e0-&gt;bside[CLIP])
+                 || ( e1-&gt;bundle[ABOVE][CLIP] &amp;&amp;  e1-&gt;bside[CLIP])
+                 || (!e0-&gt;bundle[ABOVE][CLIP] &amp;&amp; !e1-&gt;bundle[ABOVE][CLIP]
+                     &amp;&amp; e0-&gt;bside[CLIP] &amp;&amp; e1-&gt;bside[CLIP]);
+          in[SUBJ]= ( e0-&gt;bundle[ABOVE][SUBJ] &amp;&amp; !e0-&gt;bside[SUBJ])
+                 || ( e1-&gt;bundle[ABOVE][SUBJ] &amp;&amp;  e1-&gt;bside[SUBJ])
+                 || (!e0-&gt;bundle[ABOVE][SUBJ] &amp;&amp; !e1-&gt;bundle[ABOVE][SUBJ]
+                     &amp;&amp; e0-&gt;bside[SUBJ] &amp;&amp; e1-&gt;bside[SUBJ]);
+       
+          /* Determine quadrant occupancies */
+          switch (op)
+          {
+          case GPC_DIFF:
+          case GPC_INT:
+            tr= (in[CLIP])
+             &amp;&amp; (in[SUBJ]);
+            tl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP])
+             &amp;&amp; (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ]);
+            br= (in[CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+             &amp;&amp; (in[SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            bl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+             &amp;&amp; (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            break;
+          case GPC_XOR:
+            tr= (in[CLIP])
+              ^ (in[SUBJ]);
+            tl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP])
+              ^ (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ]);
+            br= (in[CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+              ^ (in[SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            bl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+              ^ (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            break;
+          case GPC_UNION:
+            tr= (in[CLIP])
+             || (in[SUBJ]);
+            tl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP])
+             || (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ]);
+            br= (in[CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+             || (in[SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            bl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+             || (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            break;
+          }
+      
+          vclass= tr + (tl &lt;&lt; 1) + (br &lt;&lt; 2) + (bl &lt;&lt; 3);
+
+          switch (vclass)
+          {
+          case EMN:
+            add_local_min(&amp;out_poly, e0, ix, iy);
+            e1-&gt;outp[ABOVE]= e0-&gt;outp[ABOVE];
+            break;
+          case ERI:
+            if (p)
+            {
+              add_right(p, ix, iy);
+              e1-&gt;outp[ABOVE]= p;
+              e0-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case ELI:
+            if (q)
+            {
+              add_left(q, ix, iy);
+              e0-&gt;outp[ABOVE]= q;
+              e1-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case EMX:
+            if (p &amp;&amp; q)
+            {
+              add_left(p, ix, iy);
+              merge_right(p, q, out_poly);
+              e0-&gt;outp[ABOVE]= NULL;
+              e1-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case IMN:
+            add_local_min(&amp;out_poly, e0, ix, iy);
+            e1-&gt;outp[ABOVE]= e0-&gt;outp[ABOVE];
+            break;
+          case ILI:
+            if (p)
+            {
+              add_left(p, ix, iy);
+              e1-&gt;outp[ABOVE]= p;
+              e0-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case IRI:
+            if (q)
+            {
+              add_right(q, ix, iy);
+              e0-&gt;outp[ABOVE]= q;
+              e1-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case IMX:
+            if (p &amp;&amp; q)
+            {
+              add_right(p, ix, iy);
+              merge_left(p, q, out_poly);
+              e0-&gt;outp[ABOVE]= NULL;
+              e1-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case IMM:
+            if (p &amp;&amp; q)
+            {
+              add_right(p, ix, iy);
+              merge_left(p, q, out_poly);
+              add_local_min(&amp;out_poly, e0, ix, iy);
+              e1-&gt;outp[ABOVE]= e0-&gt;outp[ABOVE];
+            }
+            break;
+          case EMM:
+            if (p &amp;&amp; q)
+            {
+              add_left(p, ix, iy);
+              merge_right(p, q, out_poly);
+              add_local_min(&amp;out_poly, e0, ix, iy);
+              e1-&gt;outp[ABOVE]= e0-&gt;outp[ABOVE];
+            }
+            break;
+          default:
+            break;
+          } /* End of switch */
+    } /* End of contributing intersection conditional */
+
+        /* Swap bundle sides in response to edge crossing */
+        if (e0-&gt;bundle[ABOVE][CLIP])
+      e1-&gt;bside[CLIP]= !e1-&gt;bside[CLIP];
+        if (e1-&gt;bundle[ABOVE][CLIP])
+      e0-&gt;bside[CLIP]= !e0-&gt;bside[CLIP];
+        if (e0-&gt;bundle[ABOVE][SUBJ])
+      e1-&gt;bside[SUBJ]= !e1-&gt;bside[SUBJ];
+        if (e1-&gt;bundle[ABOVE][SUBJ])
+      e0-&gt;bside[SUBJ]= !e0-&gt;bside[SUBJ];
+
+        /* Swap e0 and e1 bundles in the AET */
+        prev_edge= e0-&gt;prev;
+        next_edge= e1-&gt;next;
+        if (next_edge)
+          next_edge-&gt;prev= e0;
+
+        if (e0-&gt;bstate[ABOVE] == BUNDLE_HEAD)
+        {
+          search= TRUE;
+          while (search)
+          {
+            prev_edge= prev_edge-&gt;prev;
+            if (prev_edge)
+            {
+              if (prev_edge-&gt;bstate[ABOVE] != BUNDLE_TAIL)
+                search= FALSE;
+            }
+            else
+              search= FALSE;
+          }
+        }
+        if (!prev_edge)
+        {
+          aet-&gt;prev= e1;
+          e1-&gt;next= aet;
+          aet= e0-&gt;next;
+        }
+        else
+        {
+          prev_edge-&gt;next-&gt;prev= e1;
+          e1-&gt;next= prev_edge-&gt;next;
+          prev_edge-&gt;next= e0-&gt;next;
+        }
+        e0-&gt;next-&gt;prev= prev_edge;
+        e1-&gt;next-&gt;prev= e1;
+        e0-&gt;next= next_edge;
+      } /* End of IT loop*/
+
+      /* Prepare for next scanbeam */
+      for (edge= aet; edge; edge= next_edge)
+      {
+        next_edge= edge-&gt;next;
+        succ_edge= edge-&gt;succ;
+
+        if ((edge-&gt;top.y == yt) &amp;&amp; succ_edge)
+        {
+          /* Replace AET edge by its successor */
+          succ_edge-&gt;outp[BELOW]= edge-&gt;outp[ABOVE];
+          succ_edge-&gt;bstate[BELOW]= edge-&gt;bstate[ABOVE];
+          succ_edge-&gt;bundle[BELOW][CLIP]= edge-&gt;bundle[ABOVE][CLIP];
+          succ_edge-&gt;bundle[BELOW][SUBJ]= edge-&gt;bundle[ABOVE][SUBJ];
+          prev_edge= edge-&gt;prev;
+          if (prev_edge)
+            prev_edge-&gt;next= succ_edge;
+          else
+            aet= succ_edge;
+          if (next_edge)
+            next_edge-&gt;prev= succ_edge;
+          succ_edge-&gt;prev= prev_edge;
+          succ_edge-&gt;next= next_edge;
+        }
+        else
+        {
+          /* Update this edge */
+          edge-&gt;outp[BELOW]= edge-&gt;outp[ABOVE];
+          edge-&gt;bstate[BELOW]= edge-&gt;bstate[ABOVE];
+          edge-&gt;bundle[BELOW][CLIP]= edge-&gt;bundle[ABOVE][CLIP];
+          edge-&gt;bundle[BELOW][SUBJ]= edge-&gt;bundle[ABOVE][SUBJ];
+          edge-&gt;xb= edge-&gt;xt;
+          }
+        edge-&gt;outp[ABOVE]= NULL;
+      }
+    }
+  } /* === END OF SCANBEAM PROCESSING ================================== */
+
+  /* Generate result polygon from out_poly */
+  result-&gt;contour= NULL;
+  result-&gt;hole= NULL;
+  result-&gt;num_contours= count_contours(out_poly);
+  if (result-&gt;num_contours &gt; 0)
+  {
+    MALLOC(result-&gt;hole, result-&gt;num_contours
+           * sizeof(int), "hole flag table creation", int);
+    MALLOC(result-&gt;contour, result-&gt;num_contours
+           * sizeof(gpc_vertex_list), "contour creation", gpc_vertex_list);
+
+    c= 0;
+    for (poly= out_poly; poly; poly= npoly)
+    {
+      npoly= poly-&gt;next;
+      if (poly-&gt;active)
+      {
+        result-&gt;hole[c]= poly-&gt;proxy-&gt;hole;
+        result-&gt;contour[c].num_vertices= poly-&gt;active;
+        MALLOC(result-&gt;contour[c].vertex,
+          result-&gt;contour[c].num_vertices * sizeof(gpc_vertex),
+          "vertex creation", gpc_vertex);
+      
+        v= result-&gt;contour[c].num_vertices - 1;
+        for (vtx= poly-&gt;proxy-&gt;v[LEFT]; vtx; vtx= nv)
+        {
+          nv= vtx-&gt;next;
+          result-&gt;contour[c].vertex[v].x= vtx-&gt;x;
+          result-&gt;contour[c].vertex[v].y= vtx-&gt;y;
+          FREE(vtx);
+          v--;
+        }
+        c++;
+      }
+      FREE(poly);
+    }
+  }
+  else
+  {
+    for (poly= out_poly; poly; poly= npoly)
+    {
+      npoly= poly-&gt;next;
+      FREE(poly);
+    }
+  }
+
+  /* Tidy up */
+  reset_it(&amp;it);
+  reset_lmt(&amp;lmt);
+  FREE(c_heap);
+  FREE(s_heap);
+  FREE(sbt);
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.42">void gpc_free_tristrip(gpc_tristrip *t)
+{
+  int s;
+
+  for (s= 0; s &lt; t-&gt;num_strips; s++)
+    FREE(t-&gt;strip[s].vertex);
+  FREE(t-&gt;strip);
+  t-&gt;num_strips= 0;
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.43">void gpc_polygon_to_tristrip(gpc_polygon *s, gpc_tristrip *t)
+{
+  gpc_polygon c;
+
+  c.num_contours= 0;
+  c.hole= NULL;
+  c.contour= NULL;
+  gpc_tristrip_clip(GPC_DIFF, s, &amp;c, t);
+}
+
+
+</t>
+<t tx="karstenw.20210320123814.44">void gpc_tristrip_clip(gpc_op op, gpc_polygon *subj, gpc_polygon *clip,
+                       gpc_tristrip *result)
+{
+  sb_tree       *sbtree= NULL;
+  it_node       *it= NULL, *intersect;
+  edge_node     *edge, *prev_edge, *next_edge, *succ_edge, *e0, *e1;
+  edge_node     *aet= NULL, *c_heap= NULL, *s_heap= NULL, *cf;
+  lmt_node      *lmt= NULL, *local_min;
+  polygon_node  *tlist= NULL, *tn, *tnn, *p, *q;
+  vertex_node   *lt, *ltn, *rt, *rtn;
+  h_state        horiz[2];
+  vertex_type    cft;
+  int            in[2], exists[2], parity[2]= {LEFT, LEFT};
+  int            s, v, contributing, search, scanbeam= 0, sbt_entries= 0;
+  int            vclass, bl, br, tl, tr;
+  double        *sbt= NULL, xb, px, nx, yb, yt, dy, ix, iy;
+
+  /* Test for trivial NULL result cases */
+  if (((subj-&gt;num_contours == 0) &amp;&amp; (clip-&gt;num_contours == 0))
+   || ((subj-&gt;num_contours == 0) &amp;&amp; ((op == GPC_INT) || (op == GPC_DIFF)))
+   || ((clip-&gt;num_contours == 0) &amp;&amp;  (op == GPC_INT)))
+  {
+    result-&gt;num_strips= 0;
+    result-&gt;strip= NULL;
+    return;
+  }
+
+  /* Identify potentialy contributing contours */
+  if (((op == GPC_INT) || (op == GPC_DIFF))
+   &amp;&amp; (subj-&gt;num_contours &gt; 0) &amp;&amp; (clip-&gt;num_contours &gt; 0))
+    minimax_test(subj, clip, op);
+
+  /* Build LMT */
+  if (subj-&gt;num_contours &gt; 0)
+    s_heap= build_lmt(&amp;lmt, &amp;sbtree, &amp;sbt_entries, subj, SUBJ, op);
+  if (clip-&gt;num_contours &gt; 0)
+    c_heap= build_lmt(&amp;lmt, &amp;sbtree, &amp;sbt_entries, clip, CLIP, op);
+
+  /* Return a NULL result if no contours contribute */
+  if (lmt == NULL)
+  {
+    result-&gt;num_strips= 0;
+    result-&gt;strip= NULL;
+    reset_lmt(&amp;lmt);
+    FREE(s_heap);
+    FREE(c_heap);
+    return;
+  }
+
+  /* Build scanbeam table from scanbeam tree */
+  MALLOC(sbt, sbt_entries * sizeof(double), "sbt creation", double);
+  build_sbt(&amp;scanbeam, sbt, sbtree);
+  scanbeam= 0;
+  free_sbtree(&amp;sbtree);
+
+  /* Invert clip polygon for difference operation */
+  if (op == GPC_DIFF)
+    parity[CLIP]= RIGHT;
+
+  local_min= lmt;
+
+  /* Process each scanbeam */
+  while (scanbeam &lt; sbt_entries)
+  {
+    /* Set yb and yt to the bottom and top of the scanbeam */
+    yb= sbt[scanbeam++];
+    if (scanbeam &lt; sbt_entries)
+    {
+      yt= sbt[scanbeam];
+      dy= yt - yb;
+    }
+
+    /* === SCANBEAM BOUNDARY PROCESSING ================================ */
+
+    /* If LMT node corresponding to yb exists */
+    if (local_min)
+    {
+      if (local_min-&gt;y == yb)
+      {
+        /* Add edges starting at this local minimum to the AET */
+        for (edge= local_min-&gt;first_bound; edge; edge= edge-&gt;next_bound)
+          add_edge_to_aet(&amp;aet, edge, NULL);
+
+        local_min= local_min-&gt;next;
+      }
+    }
+
+    /* Set dummy previous x value */
+    px= -DBL_MAX;
+
+    /* Create bundles within AET */
+    e0= aet;
+    e1= aet;
+
+    /* Set up bundle fields of first edge */
+    aet-&gt;bundle[ABOVE][ aet-&gt;type]= (aet-&gt;top.y != yb);
+    aet-&gt;bundle[ABOVE][!aet-&gt;type]= FALSE;
+    aet-&gt;bstate[ABOVE]= UNBUNDLED;
+
+    for (next_edge= aet-&gt;next; next_edge; next_edge= next_edge-&gt;next)
+    {
+      /* Set up bundle fields of next edge */
+      next_edge-&gt;bundle[ABOVE][ next_edge-&gt;type]= (next_edge-&gt;top.y != yb);
+      next_edge-&gt;bundle[ABOVE][!next_edge-&gt;type]= FALSE;
+      next_edge-&gt;bstate[ABOVE]= UNBUNDLED;
+
+      /* Bundle edges above the scanbeam boundary if they coincide */
+      if (next_edge-&gt;bundle[ABOVE][next_edge-&gt;type])
+      {
+        if (EQ(e0-&gt;xb, next_edge-&gt;xb) &amp;&amp; EQ(e0-&gt;dx, next_edge-&gt;dx)
+     &amp;&amp; (e0-&gt;top.y != yb))
+        {
+          next_edge-&gt;bundle[ABOVE][ next_edge-&gt;type]^= 
+            e0-&gt;bundle[ABOVE][ next_edge-&gt;type];
+          next_edge-&gt;bundle[ABOVE][!next_edge-&gt;type]= 
+            e0-&gt;bundle[ABOVE][!next_edge-&gt;type]; 
+          next_edge-&gt;bstate[ABOVE]= BUNDLE_HEAD;
+          e0-&gt;bundle[ABOVE][CLIP]= FALSE;
+          e0-&gt;bundle[ABOVE][SUBJ]= FALSE;
+          e0-&gt;bstate[ABOVE]= BUNDLE_TAIL;
+        }
+        e0= next_edge;
+      }
+    }
+
+    horiz[CLIP]= NH;
+    horiz[SUBJ]= NH;
+
+    /* Process each edge at this scanbeam boundary */
+    for (edge= aet; edge; edge= edge-&gt;next)
+    {
+      exists[CLIP]= edge-&gt;bundle[ABOVE][CLIP] + 
+                   (edge-&gt;bundle[BELOW][CLIP] &lt;&lt; 1);
+      exists[SUBJ]= edge-&gt;bundle[ABOVE][SUBJ] + 
+                   (edge-&gt;bundle[BELOW][SUBJ] &lt;&lt; 1);
+
+      if (exists[CLIP] || exists[SUBJ])
+      {
+        /* Set bundle side */
+        edge-&gt;bside[CLIP]= parity[CLIP];
+        edge-&gt;bside[SUBJ]= parity[SUBJ];
+
+        /* Determine contributing status and quadrant occupancies */
+        switch (op)
+        {
+        case GPC_DIFF:
+        case GPC_INT:
+          contributing= (exists[CLIP] &amp;&amp; (parity[SUBJ] || horiz[SUBJ]))
+                     || (exists[SUBJ] &amp;&amp; (parity[CLIP] || horiz[CLIP]))
+                     || (exists[CLIP] &amp;&amp; exists[SUBJ]
+                     &amp;&amp; (parity[CLIP] == parity[SUBJ]));
+          br= (parity[CLIP])
+           &amp;&amp; (parity[SUBJ]);
+          bl= (parity[CLIP] ^ edge-&gt;bundle[ABOVE][CLIP])
+           &amp;&amp; (parity[SUBJ] ^ edge-&gt;bundle[ABOVE][SUBJ]);
+          tr= (parity[CLIP] ^ (horiz[CLIP]!=NH))
+           &amp;&amp; (parity[SUBJ] ^ (horiz[SUBJ]!=NH));
+          tl= (parity[CLIP] ^ (horiz[CLIP]!=NH) ^ edge-&gt;bundle[BELOW][CLIP]) 
+           &amp;&amp; (parity[SUBJ] ^ (horiz[SUBJ]!=NH) ^ edge-&gt;bundle[BELOW][SUBJ]);
+          break;
+        case GPC_XOR:
+          contributing= exists[CLIP] || exists[SUBJ];
+          br= (parity[CLIP])
+            ^ (parity[SUBJ]);
+          bl= (parity[CLIP] ^ edge-&gt;bundle[ABOVE][CLIP])
+            ^ (parity[SUBJ] ^ edge-&gt;bundle[ABOVE][SUBJ]);
+          tr= (parity[CLIP] ^ (horiz[CLIP]!=NH))
+            ^ (parity[SUBJ] ^ (horiz[SUBJ]!=NH));
+          tl= (parity[CLIP] ^ (horiz[CLIP]!=NH) ^ edge-&gt;bundle[BELOW][CLIP])
+            ^ (parity[SUBJ] ^ (horiz[SUBJ]!=NH) ^ edge-&gt;bundle[BELOW][SUBJ]);
+          break;
+        case GPC_UNION:
+          contributing= (exists[CLIP] &amp;&amp; (!parity[SUBJ] || horiz[SUBJ]))
+                     || (exists[SUBJ] &amp;&amp; (!parity[CLIP] || horiz[CLIP]))
+                     || (exists[CLIP] &amp;&amp; exists[SUBJ]
+                     &amp;&amp; (parity[CLIP] == parity[SUBJ]));
+          br= (parity[CLIP])
+           || (parity[SUBJ]);
+          bl= (parity[CLIP] ^ edge-&gt;bundle[ABOVE][CLIP])
+           || (parity[SUBJ] ^ edge-&gt;bundle[ABOVE][SUBJ]);
+          tr= (parity[CLIP] ^ (horiz[CLIP]!=NH))
+           || (parity[SUBJ] ^ (horiz[SUBJ]!=NH));
+          tl= (parity[CLIP] ^ (horiz[CLIP]!=NH) ^ edge-&gt;bundle[BELOW][CLIP])
+           || (parity[SUBJ] ^ (horiz[SUBJ]!=NH) ^ edge-&gt;bundle[BELOW][SUBJ]);
+          break;
+        }
+
+        /* Update parity */
+        parity[CLIP]^= edge-&gt;bundle[ABOVE][CLIP];
+        parity[SUBJ]^= edge-&gt;bundle[ABOVE][SUBJ];
+
+        /* Update horizontal state */
+        if (exists[CLIP])         
+          horiz[CLIP]=
+            next_h_state[horiz[CLIP]]
+                        [((exists[CLIP] - 1) &lt;&lt; 1) + parity[CLIP]];
+        if (exists[SUBJ])         
+          horiz[SUBJ]=
+            next_h_state[horiz[SUBJ]]
+                        [((exists[SUBJ] - 1) &lt;&lt; 1) + parity[SUBJ]];
+        
+        vclass= tr + (tl &lt;&lt; 1) + (br &lt;&lt; 2) + (bl &lt;&lt; 3);
+
+        if (contributing)
+        {
+          xb= edge-&gt;xb;
+
+          switch (vclass)
+          {
+          case EMN:
+            new_tristrip(&amp;tlist, edge, xb, yb);
+            cf= edge;
+            break;
+          case ERI:
+            edge-&gt;outp[ABOVE]= cf-&gt;outp[ABOVE];
+            if (xb != cf-&gt;xb)
+              VERTEX(edge, ABOVE, RIGHT, xb, yb);
+            cf= NULL;
+            break;
+          case ELI:
+            VERTEX(edge, BELOW, LEFT, xb, yb);
+            edge-&gt;outp[ABOVE]= NULL;
+            cf= edge;
+            break;
+          case EMX:
+            if (xb != cf-&gt;xb)
+              VERTEX(edge, BELOW, RIGHT, xb, yb);
+            edge-&gt;outp[ABOVE]= NULL;
+            cf= NULL;
+            break;
+          case IMN:
+            if (cft == LED)
+        {
+              if (cf-&gt;bot.y != yb)
+                VERTEX(cf, BELOW, LEFT, cf-&gt;xb, yb);
+              new_tristrip(&amp;tlist, cf, cf-&gt;xb, yb);
+        }
+            edge-&gt;outp[ABOVE]= cf-&gt;outp[ABOVE];
+            VERTEX(edge, ABOVE, RIGHT, xb, yb);
+            break;
+          case ILI:
+            new_tristrip(&amp;tlist, edge, xb, yb);
+            cf= edge;
+            cft= ILI;
+            break;
+          case IRI:
+            if (cft == LED)
+        {
+              if (cf-&gt;bot.y != yb)
+                VERTEX(cf, BELOW, LEFT, cf-&gt;xb, yb);
+              new_tristrip(&amp;tlist, cf, cf-&gt;xb, yb);
+        }
+            VERTEX(edge, BELOW, RIGHT, xb, yb);
+            edge-&gt;outp[ABOVE]= NULL;
+            break;
+          case IMX:
+            VERTEX(edge, BELOW, LEFT, xb, yb);
+            edge-&gt;outp[ABOVE]= NULL;
+            cft= IMX;
+            break;
+      case IMM:
+            VERTEX(edge, BELOW, LEFT, xb, yb);
+            edge-&gt;outp[ABOVE]= cf-&gt;outp[ABOVE];
+            if (xb != cf-&gt;xb)
+              VERTEX(cf, ABOVE, RIGHT, xb, yb);
+            cf= edge;
+            break;
+          case EMM:
+            VERTEX(edge, BELOW, RIGHT, xb, yb);
+            edge-&gt;outp[ABOVE]= NULL;
+            new_tristrip(&amp;tlist, edge, xb, yb);
+            cf= edge;
+            break;
+          case LED:
+            if (edge-&gt;bot.y == yb)
+              VERTEX(edge, BELOW, LEFT, xb, yb);
+            edge-&gt;outp[ABOVE]= edge-&gt;outp[BELOW];
+            cf= edge;
+            cft= LED;
+            break;
+          case RED:
+            edge-&gt;outp[ABOVE]= cf-&gt;outp[ABOVE];
+            if (cft == LED)
+        {
+              if (cf-&gt;bot.y == yb)
+          {
+                VERTEX(edge, BELOW, RIGHT, xb, yb);
+          }
+              else
+          {
+                if (edge-&gt;bot.y == yb)
+        {
+                  VERTEX(cf, BELOW, LEFT, cf-&gt;xb, yb);
+                  VERTEX(edge, BELOW, RIGHT, xb, yb);
+        }
+          }
+        }
+            else
+        {
+              VERTEX(edge, BELOW, RIGHT, xb, yb);
+              VERTEX(edge, ABOVE, RIGHT, xb, yb);
+        }
+            cf= NULL;
+            break;
+          default:
+            break;
+          } /* End of switch */
+        } /* End of contributing conditional */
+      } /* End of edge exists conditional */
+    } /* End of AET loop */
+
+    /* Delete terminating edges from the AET, otherwise compute xt */
+    for (edge= aet; edge; edge= edge-&gt;next)
+    {
+      if (edge-&gt;top.y == yb)
+      {
+        prev_edge= edge-&gt;prev;
+        next_edge= edge-&gt;next;
+        if (prev_edge)
+          prev_edge-&gt;next= next_edge;
+        else
+          aet= next_edge;
+        if (next_edge)
+          next_edge-&gt;prev= prev_edge;
+
+        /* Copy bundle head state to the adjacent tail edge if required */
+        if ((edge-&gt;bstate[BELOW] == BUNDLE_HEAD) &amp;&amp; prev_edge)
+    {
+          if (prev_edge-&gt;bstate[BELOW] == BUNDLE_TAIL)
+          {
+            prev_edge-&gt;outp[BELOW]= edge-&gt;outp[BELOW];
+            prev_edge-&gt;bstate[BELOW]= UNBUNDLED;
+            if (prev_edge-&gt;prev)
+              if (prev_edge-&gt;prev-&gt;bstate[BELOW] == BUNDLE_TAIL)
+                prev_edge-&gt;bstate[BELOW]= BUNDLE_HEAD;
+      }
+    }
+      }
+      else
+      {
+        if (edge-&gt;top.y == yt)
+          edge-&gt;xt= edge-&gt;top.x;
+        else
+          edge-&gt;xt= edge-&gt;bot.x + edge-&gt;dx * (yt - edge-&gt;bot.y);
+      }
+    }
+
+    if (scanbeam &lt; sbt_entries)
+    {
+      /* === SCANBEAM INTERIOR PROCESSING ============================== */
+  
+      build_intersection_table(&amp;it, aet, dy);
+
+      /* Process each node in the intersection table */
+      for (intersect= it; intersect; intersect= intersect-&gt;next)
+      {
+        e0= intersect-&gt;ie[0];
+        e1= intersect-&gt;ie[1];
+
+        /* Only generate output for contributing intersections */
+        if ((e0-&gt;bundle[ABOVE][CLIP] || e0-&gt;bundle[ABOVE][SUBJ])
+         &amp;&amp; (e1-&gt;bundle[ABOVE][CLIP] || e1-&gt;bundle[ABOVE][SUBJ]))
+    {
+          p= e0-&gt;outp[ABOVE];
+          q= e1-&gt;outp[ABOVE];
+          ix= intersect-&gt;point.x;
+          iy= intersect-&gt;point.y + yb;
+
+          in[CLIP]= ( e0-&gt;bundle[ABOVE][CLIP] &amp;&amp; !e0-&gt;bside[CLIP])
+                 || ( e1-&gt;bundle[ABOVE][CLIP] &amp;&amp;  e1-&gt;bside[CLIP])
+                 || (!e0-&gt;bundle[ABOVE][CLIP] &amp;&amp; !e1-&gt;bundle[ABOVE][CLIP]
+                     &amp;&amp; e0-&gt;bside[CLIP] &amp;&amp; e1-&gt;bside[CLIP]);
+          in[SUBJ]= ( e0-&gt;bundle[ABOVE][SUBJ] &amp;&amp; !e0-&gt;bside[SUBJ])
+                 || ( e1-&gt;bundle[ABOVE][SUBJ] &amp;&amp;  e1-&gt;bside[SUBJ])
+                 || (!e0-&gt;bundle[ABOVE][SUBJ] &amp;&amp; !e1-&gt;bundle[ABOVE][SUBJ]
+                     &amp;&amp; e0-&gt;bside[SUBJ] &amp;&amp; e1-&gt;bside[SUBJ]);
+
+          /* Determine quadrant occupancies */
+          switch (op)
+          {
+          case GPC_DIFF:
+          case GPC_INT:
+            tr= (in[CLIP])
+             &amp;&amp; (in[SUBJ]);
+            tl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP])
+             &amp;&amp; (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ]);
+            br= (in[CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+             &amp;&amp; (in[SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            bl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+             &amp;&amp; (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            break;
+          case GPC_XOR:
+            tr= (in[CLIP])
+              ^ (in[SUBJ]);
+            tl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP])
+              ^ (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ]);
+            br= (in[CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+              ^ (in[SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            bl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+              ^ (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            break;
+          case GPC_UNION:
+            tr= (in[CLIP])
+             || (in[SUBJ]);
+            tl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP])
+             || (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ]);
+            br= (in[CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+             || (in[SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            bl= (in[CLIP] ^ e1-&gt;bundle[ABOVE][CLIP] ^ e0-&gt;bundle[ABOVE][CLIP])
+             || (in[SUBJ] ^ e1-&gt;bundle[ABOVE][SUBJ] ^ e0-&gt;bundle[ABOVE][SUBJ]);
+            break;
+          }
+
+          vclass= tr + (tl &lt;&lt; 1) + (br &lt;&lt; 2) + (bl &lt;&lt; 3);
+
+          switch (vclass)
+          {
+          case EMN:
+            new_tristrip(&amp;tlist, e1, ix, iy);
+            e0-&gt;outp[ABOVE]= e1-&gt;outp[ABOVE];
+            break;
+          case ERI:
+            if (p)
+            {
+              P_EDGE(prev_edge, e0, ABOVE, px, iy);
+              VERTEX(prev_edge, ABOVE, LEFT, px, iy);
+              VERTEX(e0, ABOVE, RIGHT, ix, iy);
+              e1-&gt;outp[ABOVE]= e0-&gt;outp[ABOVE];
+              e0-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case ELI:
+            if (q)
+            {
+              N_EDGE(next_edge, e1, ABOVE, nx, iy);
+              VERTEX(e1, ABOVE, LEFT, ix, iy);
+              VERTEX(next_edge, ABOVE, RIGHT, nx, iy);
+              e0-&gt;outp[ABOVE]= e1-&gt;outp[ABOVE];
+              e1-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case EMX:
+            if (p &amp;&amp; q)
+            {
+              VERTEX(e0, ABOVE, LEFT, ix, iy);
+              e0-&gt;outp[ABOVE]= NULL;
+              e1-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case IMN:
+            P_EDGE(prev_edge, e0, ABOVE, px, iy);
+            VERTEX(prev_edge, ABOVE, LEFT, px, iy);
+            N_EDGE(next_edge, e1, ABOVE, nx, iy);
+            VERTEX(next_edge, ABOVE, RIGHT, nx, iy);
+            new_tristrip(&amp;tlist, prev_edge, px, iy); 
+            e1-&gt;outp[ABOVE]= prev_edge-&gt;outp[ABOVE];
+            VERTEX(e1, ABOVE, RIGHT, ix, iy);
+            new_tristrip(&amp;tlist, e0, ix, iy);
+            next_edge-&gt;outp[ABOVE]= e0-&gt;outp[ABOVE];
+            VERTEX(next_edge, ABOVE, RIGHT, nx, iy);
+            break;
+          case ILI:
+            if (p)
+            {
+              VERTEX(e0, ABOVE, LEFT, ix, iy);
+              N_EDGE(next_edge, e1, ABOVE, nx, iy);
+              VERTEX(next_edge, ABOVE, RIGHT, nx, iy);
+              e1-&gt;outp[ABOVE]= e0-&gt;outp[ABOVE];
+              e0-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case IRI:
+            if (q)
+            {
+              VERTEX(e1, ABOVE, RIGHT, ix, iy);
+              P_EDGE(prev_edge, e0, ABOVE, px, iy);
+              VERTEX(prev_edge, ABOVE, LEFT, px, iy);
+              e0-&gt;outp[ABOVE]= e1-&gt;outp[ABOVE];
+              e1-&gt;outp[ABOVE]= NULL;
+            }
+            break;
+          case IMX:
+            if (p &amp;&amp; q)
+            {
+              VERTEX(e0, ABOVE, RIGHT, ix, iy);
+              VERTEX(e1, ABOVE, LEFT, ix, iy);
+              e0-&gt;outp[ABOVE]= NULL;
+              e1-&gt;outp[ABOVE]= NULL;
+              P_EDGE(prev_edge, e0, ABOVE, px, iy);
+              VERTEX(prev_edge, ABOVE, LEFT, px, iy);
+              new_tristrip(&amp;tlist, prev_edge, px, iy);
+              N_EDGE(next_edge, e1, ABOVE, nx, iy);
+              VERTEX(next_edge, ABOVE, RIGHT, nx, iy);
+              next_edge-&gt;outp[ABOVE]= prev_edge-&gt;outp[ABOVE];
+              VERTEX(next_edge, ABOVE, RIGHT, nx, iy);
+            }
+            break;
+          case IMM:
+            if (p &amp;&amp; q)
+            {
+              VERTEX(e0, ABOVE, RIGHT, ix, iy);
+              VERTEX(e1, ABOVE, LEFT, ix, iy);
+              P_EDGE(prev_edge, e0, ABOVE, px, iy);
+              VERTEX(prev_edge, ABOVE, LEFT, px, iy);
+              new_tristrip(&amp;tlist, prev_edge, px, iy);
+              N_EDGE(next_edge, e1, ABOVE, nx, iy);
+              VERTEX(next_edge, ABOVE, RIGHT, nx, iy);
+              e1-&gt;outp[ABOVE]= prev_edge-&gt;outp[ABOVE];
+              VERTEX(e1, ABOVE, RIGHT, ix, iy);
+              new_tristrip(&amp;tlist, e0, ix, iy);
+              next_edge-&gt;outp[ABOVE]= e0-&gt;outp[ABOVE];
+              VERTEX(next_edge, ABOVE, RIGHT, nx, iy);
+            }
+            break;
+          case EMM:
+            if (p &amp;&amp; q)
+            {
+              VERTEX(e0, ABOVE, LEFT, ix, iy);
+              new_tristrip(&amp;tlist, e1, ix, iy);
+              e0-&gt;outp[ABOVE]= e1-&gt;outp[ABOVE];
+            }
+            break;
+          default:
+            break;
+          } /* End of switch */
+    } /* End of contributing intersection conditional */
+
+        /* Swap bundle sides in response to edge crossing */
+        if (e0-&gt;bundle[ABOVE][CLIP])
+      e1-&gt;bside[CLIP]= !e1-&gt;bside[CLIP];
+        if (e1-&gt;bundle[ABOVE][CLIP])
+      e0-&gt;bside[CLIP]= !e0-&gt;bside[CLIP];
+        if (e0-&gt;bundle[ABOVE][SUBJ])
+      e1-&gt;bside[SUBJ]= !e1-&gt;bside[SUBJ];
+        if (e1-&gt;bundle[ABOVE][SUBJ])
+      e0-&gt;bside[SUBJ]= !e0-&gt;bside[SUBJ];
+
+        /* Swap e0 and e1 bundles in the AET */
+        prev_edge= e0-&gt;prev;
+        next_edge= e1-&gt;next;
+        if (e1-&gt;next)
+          e1-&gt;next-&gt;prev= e0;
+
+        if (e0-&gt;bstate[ABOVE] == BUNDLE_HEAD)
+        {
+          search= TRUE;
+          while (search)
+          {
+            prev_edge= prev_edge-&gt;prev;
+            if (prev_edge)
+            {
+              if (prev_edge-&gt;bundle[ABOVE][CLIP]
+               || prev_edge-&gt;bundle[ABOVE][SUBJ]
+               || (prev_edge-&gt;bstate[ABOVE] == BUNDLE_HEAD))
+                search= FALSE;
+            }
+            else
+              search= FALSE;
+          }
+        }
+        if (!prev_edge)
+        {
+           e1-&gt;next= aet;
+           aet= e0-&gt;next;
+        }
+        else
+        {
+          e1-&gt;next= prev_edge-&gt;next;
+          prev_edge-&gt;next= e0-&gt;next;
+        }
+        e0-&gt;next-&gt;prev= prev_edge;
+        e1-&gt;next-&gt;prev= e1;
+        e0-&gt;next= next_edge;
+      } /* End of IT loop*/
+
+      /* Prepare for next scanbeam */
+      for (edge= aet; edge; edge= next_edge)
+      {
+        next_edge= edge-&gt;next;
+        succ_edge= edge-&gt;succ;
+
+        if ((edge-&gt;top.y == yt) &amp;&amp; succ_edge)
+        {
+          /* Replace AET edge by its successor */
+          succ_edge-&gt;outp[BELOW]= edge-&gt;outp[ABOVE];
+          succ_edge-&gt;bstate[BELOW]= edge-&gt;bstate[ABOVE];
+          succ_edge-&gt;bundle[BELOW][CLIP]= edge-&gt;bundle[ABOVE][CLIP];
+          succ_edge-&gt;bundle[BELOW][SUBJ]= edge-&gt;bundle[ABOVE][SUBJ];
+          prev_edge= edge-&gt;prev;
+          if (prev_edge)
+            prev_edge-&gt;next= succ_edge;
+          else
+            aet= succ_edge;
+          if (next_edge)
+            next_edge-&gt;prev= succ_edge;
+          succ_edge-&gt;prev= prev_edge;
+          succ_edge-&gt;next= next_edge;
+        }
+        else
+        {
+          /* Update this edge */
+          edge-&gt;outp[BELOW]= edge-&gt;outp[ABOVE];
+          edge-&gt;bstate[BELOW]= edge-&gt;bstate[ABOVE];
+          edge-&gt;bundle[BELOW][CLIP]= edge-&gt;bundle[ABOVE][CLIP];
+          edge-&gt;bundle[BELOW][SUBJ]= edge-&gt;bundle[ABOVE][SUBJ];
+          edge-&gt;xb= edge-&gt;xt;
+        }
+        edge-&gt;outp[ABOVE]= NULL;
+      }
+    }
+  } /* === END OF SCANBEAM PROCESSING ================================== */
+
+  /* Generate result tristrip from tlist */
+  result-&gt;strip= NULL;
+  result-&gt;num_strips= count_tristrips(tlist);
+  if (result-&gt;num_strips &gt; 0)
+  {
+    MALLOC(result-&gt;strip, result-&gt;num_strips * sizeof(gpc_vertex_list),
+           "tristrip list creation", gpc_vertex_list);
+
+    s= 0;
+    for (tn= tlist; tn; tn= tnn)
+    {
+      tnn= tn-&gt;next;
+
+      if (tn-&gt;active &gt; 2)
+      {
+        /* Valid tristrip: copy the vertices and free the heap */
+        result-&gt;strip[s].num_vertices= tn-&gt;active;
+        MALLOC(result-&gt;strip[s].vertex, tn-&gt;active * sizeof(gpc_vertex),
+               "tristrip creation", gpc_vertex);
+        v= 0;
+        if (INVERT_TRISTRIPS)
+        {
+          lt= tn-&gt;v[RIGHT];
+          rt= tn-&gt;v[LEFT];
+        }
+        else
+        {
+          lt= tn-&gt;v[LEFT];
+          rt= tn-&gt;v[RIGHT];
+        }
+        while (lt || rt)
+        {
+          if (lt)
+          {
+            ltn= lt-&gt;next;
+            result-&gt;strip[s].vertex[v].x= lt-&gt;x;
+            result-&gt;strip[s].vertex[v].y= lt-&gt;y;
+            v++;
+            FREE(lt);
+            lt= ltn;
+          }
+          if (rt)
+          {
+            rtn= rt-&gt;next;
+            result-&gt;strip[s].vertex[v].x= rt-&gt;x;
+            result-&gt;strip[s].vertex[v].y= rt-&gt;y;
+            v++;
+            FREE(rt);
+            rt= rtn;
+          }
+        }
+        s++;
+      }
+      else
+      {
+        /* Invalid tristrip: just free the heap */
+        for (lt= tn-&gt;v[LEFT]; lt; lt= ltn)
+        {
+          ltn= lt-&gt;next;
+          FREE(lt);
+        }
+        for (rt= tn-&gt;v[RIGHT]; rt; rt=rtn)
+        {
+          rtn= rt-&gt;next;
+          FREE(rt);
+        }
+      }
+      FREE(tn);
+    }
+  }
+
+  /* Tidy up */
+  reset_it(&amp;it);
+  reset_lmt(&amp;lmt);
+  FREE(c_heap);
+  FREE(s_heap);
+  FREE(sbt);
+}
+
+/*
+===========================================================================
+                           End of file: gpc.c
+===========================================================================
+*/
+</t>
+<t tx="karstenw.20210320123814.5">typedef struct p_shape              /* Internal contour / tristrip type  */
+{
+  int                 active;       /* Active flag / vertex count        */
+  int                 hole;         /* Hole / external contour flag      */
+  vertex_node        *v[2];         /* Left and right vertex list ptrs   */
+  struct p_shape     *next;         /* Pointer to next polygon contour   */
+  struct p_shape     *proxy;        /* Pointer to actual structure used  */
+} polygon_node;
+
+</t>
+<t tx="karstenw.20210320123814.6">typedef struct edge_shape
+{
+  gpc_vertex          vertex;       /* Piggy-backed contour vertex data  */
+  gpc_vertex          bot;          /* Edge lower (x, y) coordinate      */
+  gpc_vertex          top;          /* Edge upper (x, y) coordinate      */
+  double              xb;           /* Scanbeam bottom x coordinate      */
+  double              xt;           /* Scanbeam top x coordinate         */
+  double              dx;           /* Change in x for a unit y increase */
+  int                 type;         /* Clip / subject edge flag          */
+  int                 bundle[2][2]; /* Bundle edge flags                 */
+  int                 bside[2];     /* Bundle left / right indicators    */
+  bundle_state        bstate[2];    /* Edge bundle state                 */
+  polygon_node       *outp[2];      /* Output polygon / tristrip pointer */
+  struct edge_shape  *prev;         /* Previous edge in the AET          */
+  struct edge_shape  *next;         /* Next edge in the AET              */
+  struct edge_shape  *pred;         /* Edge connected at the lower end   */
+  struct edge_shape  *succ;         /* Edge connected at the upper end   */
+  struct edge_shape  *next_bound;   /* Pointer to next bound in LMT      */
+} edge_node;
+
+</t>
+<t tx="karstenw.20210320123814.7">typedef struct lmt_shape            /* Local minima table                */
+{
+  double              y;            /* Y coordinate at local minimum     */
+  edge_node          *first_bound;  /* Pointer to bound list             */
+  struct lmt_shape   *next;         /* Pointer to next local minimum     */
+} lmt_node;
+
+</t>
+<t tx="karstenw.20210320123814.8">typedef struct sbt_t_shape          /* Scanbeam tree                     */
+{
+  double              y;            /* Scanbeam node y value             */
+  struct sbt_t_shape *less;         /* Pointer to nodes with lower y     */
+  struct sbt_t_shape *more;         /* Pointer to nodes with higher y    */
+} sb_tree;
+
+</t>
+<t tx="karstenw.20210320123814.9">typedef struct it_shape             /* Intersection table                */
+{
+  edge_node          *ie[2];        /* Intersecting edge (bundle) pair   */
+  gpc_vertex          point;        /* Point of intersection             */
+  struct it_shape    *next;         /* The next intersection table node  */
+} it_node;
+
+</t>
+<t tx="karstenw.20210320123819.1">from distutils.core import setup, Extension
+
+CFLAGS=[]
+
+cPolymagic = Extension("cPolymagic", sources = ["gpc.c", "polymagic.m"], extra_compile_args=CFLAGS)
+
+setup (name = "polymagic",
+       version = "0.1",
+       author = "Frederik De Bleser",
+       description = "Additional utility functions for NSBezierPath using GPC.",
+       ext_modules = [cPolymagic])
+</t>
+<t tx="karstenw.20210320125516.1">/*
+===========================================================================
+
+Project:   Generic Polygon Clipper
+
+           A new algorithm for calculating the difference, intersection,
+           exclusive-or or union of arbitrary polygon sets.
+
+File:      gpc.h
+Author:    Alan Murta (email: gpc@cs.man.ac.uk)
+Version:   2.32
+Date:      17th December 2004
+
+Copyright: (C) Advanced Interfaces Group,
+           University of Manchester.
+
+           This software is free for non-commercial use. It may be copied,
+           modified, and redistributed provided that this copyright notice
+           is preserved on all copies. The intellectual property rights of
+           the algorithms used reside with the University of Manchester
+           Advanced Interfaces Group.
+
+           You may not use this software, in whole or in part, in support
+           of any commercial product without the express consent of the
+           author.
+
+           There is no warranty or other guarantee of fitness of this
+           software for any purpose. It is provided solely "as is".
+
+===========================================================================
+*/
+
+#ifndef __gpc_h
+#define __gpc_h
+
+#include &lt;stdio.h&gt;
+
+
+/*
+===========================================================================
+                               Constants
+===========================================================================
+*/
+
+/* Increase GPC_EPSILON to encourage merging of near coincident edges    */
+
+#define GPC_EPSILON (DBL_EPSILON)
+
+#define GPC_VERSION "2.32"
+
+
+/*
+===========================================================================
+                           Public Data Types
+===========================================================================
+*/
+
+</t>
+<t tx="karstenw.20210320125621.1">/*
+===========================================================================
+
+Project:   Generic Polygon Clipper
+
+           A new algorithm for calculating the difference, intersection,
+           exclusive-or or union of arbitrary polygon sets.
+
+File:      gpc.c
+Author:    Alan Murta (email: gpc@cs.man.ac.uk)
+Version:   2.32
+Date:      17th December 2004
+
+Copyright: (C) Advanced Interfaces Group,
+           University of Manchester.
+
+           This software is free for non-commercial use. It may be copied,
+           modified, and redistributed provided that this copyright notice
+           is preserved on all copies. The intellectual property rights of
+           the algorithms used reside with the University of Manchester
+           Advanced Interfaces Group.
+
+           You may not use this software, in whole or in part, in support
+           of any commercial product without the express consent of the
+           author.
+
+           There is no warranty or other guarantee of fitness of this
+           software for any purpose. It is provided solely "as is".
+
+===========================================================================
+*/
+
+
+/*
+===========================================================================
+                                Includes
+===========================================================================
+*/
+
+#include "gpc.h"
+#include &lt;stdlib.h&gt;
+#include &lt;float.h&gt;
+#include &lt;math.h&gt;
+
+
+/*
+===========================================================================
+                                Constants
+===========================================================================
+*/
+
+#ifndef TRUE
+#define FALSE              0
+#define TRUE               1
+#endif
+
+#define LEFT               0
+#define RIGHT              1
+
+#define ABOVE              0
+#define BELOW              1
+
+#define CLIP               0
+#define SUBJ               1
+
+#define INVERT_TRISTRIPS   FALSE
+
+
+/*
+===========================================================================
+                                 Macros 
+===========================================================================
+*/
+
+#define EQ(a, b)           (fabs((a) - (b)) &lt;= GPC_EPSILON)
+
+#define PREV_INDEX(i, n)   ((i - 1 + n) % n)
+#define NEXT_INDEX(i, n)   ((i + 1    ) % n)
+
+#define OPTIMAL(v, i, n)   ((v[PREV_INDEX(i, n)].y != v[i].y) || \
+                            (v[NEXT_INDEX(i, n)].y != v[i].y))
+
+#define FWD_MIN(v, i, n)   ((v[PREV_INDEX(i, n)].vertex.y &gt;= v[i].vertex.y) \
+                         &amp;&amp; (v[NEXT_INDEX(i, n)].vertex.y &gt; v[i].vertex.y))
+
+#define NOT_FMAX(v, i, n)   (v[NEXT_INDEX(i, n)].vertex.y &gt; v[i].vertex.y)
+
+#define REV_MIN(v, i, n)   ((v[PREV_INDEX(i, n)].vertex.y &gt; v[i].vertex.y) \
+                         &amp;&amp; (v[NEXT_INDEX(i, n)].vertex.y &gt;= v[i].vertex.y))
+
+#define NOT_RMAX(v, i, n)   (v[PREV_INDEX(i, n)].vertex.y &gt; v[i].vertex.y)
+
+#define VERTEX(e,p,s,x,y)  {add_vertex(&amp;((e)-&gt;outp[(p)]-&gt;v[(s)]), x, y); \
+                            (e)-&gt;outp[(p)]-&gt;active++;}
+
+#define P_EDGE(d,e,p,i,j)  {(d)= (e); \
+                            do {(d)= (d)-&gt;prev;} while (!(d)-&gt;outp[(p)]); \
+                            (i)= (d)-&gt;bot.x + (d)-&gt;dx * ((j)-(d)-&gt;bot.y);}
+
+#define N_EDGE(d,e,p,i,j)  {(d)= (e); \
+                            do {(d)= (d)-&gt;next;} while (!(d)-&gt;outp[(p)]); \
+                            (i)= (d)-&gt;bot.x + (d)-&gt;dx * ((j)-(d)-&gt;bot.y);}
+
+#define MALLOC(p, b, s, t) {if ((b) &gt; 0) { \
+                            p= (t*)malloc(b); if (!(p)) { \
+                            fprintf(stderr, "gpc malloc failure: %s\n", s); \
+                            exit(0);}} else p= NULL;}
+
+#define FREE(p)            {if (p) {free(p); (p)= NULL;}}
+
+
+/*
+===========================================================================
+                            Private Data Types
+===========================================================================
+*/
+
+</t>
+<t tx="karstenw.20210320130456.1">// dumps poly structure to log for testing/debug
+
+static void
+logPoly( gpc_polygon* poly )
+{
+
+    printf("polygon &lt;contours: %i&gt;\n", poly-&gt;num_contours);
+    
+    int cont;
+    
+    for( cont = 0; cont &lt; poly-&gt;num_contours; ++cont )
+    {
+        printf("contour #%i: %i vertices: \n", cont, poly-&gt;contour[cont].num_vertices);
+        printf("drawpath([");
+
+        int vert;
+        for( vert = 0; vert &lt; poly-&gt;contour[cont].num_vertices; ++vert ) {
+            printf("(%.3f, %.3f),", poly-&gt;contour[cont].vertex[vert].x, poly-&gt;contour[cont].vertex[vert].y);
+            
+        }
+        printf("])");
+        printf("\n------ end of contour %i ------\n", cont);
+    }
+    printf("------ end of polygon ------\n");
+}
+
+static int
+contours_in_path(NSBezierPath *path)
+{
+    NSBezierPathElement    et;
+    int                    sp, i, ec = [path elementCount];
+    
+    sp = 0;
+    
+    for( i = 0; i &lt; ec; ++i )
+    {
+        et = [path elementAtIndex:i];
+        
+        if ( et == NSMoveToBezierPathElement )
+            ++sp;
+    }
+    
+    return sp;    
+}
+
+static int
+contours_in_path_from_el(NSBezierPath *path, int se)
+{
+    NSBezierPathElement    et;
+    int                    sp, i, ec = [path elementCount];
+    
+    sp = 1;
+    
+    for( i = se + 1; i &lt; ec; ++i )
+    {
+        et = [path elementAtIndex:i];
+        
+        if ( et == NSMoveToBezierPathElement )
+            break;
+            
+        ++sp;
+    }
+    
+    return sp;
+}
+
+static gpc_polygon*
+path_to_polygon(NSBezierPath *path, float flatness)
+{
+    [NSBezierPath setDefaultFlatness: flatness];
+    [path setFlatness: flatness];
+    //printf("setFlatness %.2f\n", flatness);
+    
+    NSBezierPath*            flat = [path bezierPathByFlatteningPath];
+    NSBezierPathElement      elem;
+    NSPoint                  ap[3];
+    int                      i, ec = [flat elementCount];
+    gpc_polygon*             poly;
+    
+    [flat setWindingRule:[path windingRule]];
+    
+    // allocate memory for the poly.
+    
+    poly = malloc( sizeof( gpc_polygon ));
+    
+    // how many contours do we need?
+    
+    poly-&gt;num_contours = contours_in_path(flat);
+    poly-&gt;contour = malloc( sizeof( gpc_vertex_list ) * poly-&gt;num_contours );
+    
+    // how many elements in each contour?
+    
+    int es = 0;
+    
+    for( i = 0; i &lt; poly-&gt;num_contours; ++i )
+    {
+        int spc = contours_in_path_from_el(flat, es);
+        //printf("contours_in_path_from_el: %i\n", spc);
+    
+        // allocate enough memory to hold this many points
+                
+        poly-&gt;contour[i].num_vertices = spc;
+        poly-&gt;contour[i].vertex = malloc( sizeof( gpc_vertex ) * spc );
+        
+        es += spc;
+    }
+    
+    // es will now keep track of which contour we are adding to; k is the element index within it.
+    
+    int k = 0;
+    es = -1;
+    NSPoint     spStart;
+    
+    for( i = 0; i &lt; ec; ++i )
+    {
+        elem = [flat elementAtIndex:i associatedPoints:ap];
+        
+        switch( elem )
+        {
+            case NSMoveToBezierPathElement:
+            // begins a new contour.
+            
+            if ( es != -1 )
+            {
+                // close the previous contour by adding a vertex with the subpath start
+                
+                poly-&gt;contour[es].vertex[k].x = spStart.x;
+                poly-&gt;contour[es].vertex[k].y = spStart.y;
+            }
+            // next contour:
+            ++es;
+            k = 0;
+            // keep a note of the start of the subpath so we can close it
+            spStart = ap[0];
+            
+            // sanity check es - must not exceed contour count - 1
+            
+            if ( es &gt;= poly-&gt;num_contours )
+            {
+                printf("discrepancy in contour count versus number of subpaths encountered - bailing\n");
+                
+                gpc_free_polygon( poly );
+                return NULL;
+            }
+            
+            // fall through to record the vertex for the moveto
+            
+            case NSLineToBezierPathElement:
+            // add a vertex to the list
+            poly-&gt;contour[es].vertex[k].x = ap[0].x;
+            poly-&gt;contour[es].vertex[k].y = ap[0].y;
+            ++k;
+            break;
+            
+            case NSCurveToBezierPathElement:
+                // should never happen - we have already converted the path to a flat version. Bail.
+                printf("Got a curveto unexpectedly - bailing.\n");
+                gpc_free_polygon( poly );
+                return NULL;
+                
+            case NSClosePathBezierPathElement:
+                // ignore
+            break;
+        }
+    }
+    
+    return poly;
+}
+
+static NSBezierPath *
+polygon_to_path(gpc_polygon *poly)
+{
+    // returns a new NSBezierPath object equivalent to the polygon passed to it. The caller is responsible for freeing
+    // the polygon. The returned path is autoreleased as per usual cocoa rules.
+    
+    NSBezierPath*    path = [NSBezierPath bezierPath];
+    NSPoint            p;
+    int                cont;
+    
+    for( cont = 0; cont &lt; poly-&gt;num_contours; ++cont )
+    {
+        p.x = poly-&gt;contour[cont].vertex[0].x;
+        p.y = poly-&gt;contour[cont].vertex[0].y;
+        [path moveToPoint:p];
+        
+        int vert;
+        
+        for( vert = 1; vert &lt; poly-&gt;contour[cont].num_vertices; ++vert )
+        {
+            p.x = poly-&gt;contour[cont].vertex[vert].x;
+            p.y = poly-&gt;contour[cont].vertex[vert].y;
+            [path lineToPoint:p];
+        }
+        
+        [path closePath];
+    }
+    
+    // set the default winding rule to be the one most useful for shapes
+    // with holes.
+    
+    [path setWindingRule:NSEvenOddWindingRule];
+    
+    return path;
+}
+
+static NSBezierPath *
+path_operation(NSBezierPath* p1, NSBezierPath* p2, gpc_op op, float flatness)
+{
+    NSBezierPath*    resultPath;
+    gpc_polygon        *poly1, *poly2, *resultPoly;
+    
+    poly1 = path_to_polygon(p1, flatness);
+    poly2 = path_to_polygon(p2, flatness);
+    
+    resultPoly = malloc( sizeof( gpc_polygon ));
+    
+    // this line does all the really hard work:
+    gpc_polygon_clip( op, poly1, poly2, resultPoly );
+
+    resultPath = polygon_to_path( resultPoly );
+    
+    gpc_free_polygon( poly1 );
+    gpc_free_polygon( poly2 );
+    gpc_free_polygon( resultPoly );
+    
+    return resultPath;
+}
+
+static bool
+intersects_path(NSBezierPath* p1, NSBezierPath* p2)
+{
+    NSRect        bbox = [p2 bounds];
+    if ( NSIntersectsRect( bbox, [p1 bounds]))
+    {
+        // bounds intersect, so it's a possibility - find the intersection and see if it's empty.
+        NSBezierPath* ip = path_operation(p1, p2, GPC_INT, 0.1);
+        return ![ip isEmpty];
+    }
+    else
+        return false;
+}
+
+</t>
+<t tx="karstenw.20210320131053.1">#import &lt;Cocoa/Cocoa.h&gt;
+#include &lt;Python.h&gt;
+
+#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+#include "gpc.h"
+
+
+</t>
+<t tx="karstenw.20210320131126.1">static PyObject *PolymagicError;
+
+static PyMethodDef PolymagicMethods[] = {
+    {"intersects",  cPolymagic_intersects, METH_VARARGS, "Check if two NSBezierPaths intersect."},
+    {"union",  cPolymagic_union, METH_VARARGS, "Calculates the union of two NSBezierPaths."},
+    {"intersect",  cPolymagic_intersect, METH_VARARGS, "Calculates the intersection of two NSBezierPaths."},
+    {"difference",  cPolymagic_difference, METH_VARARGS, "Calculates the difference of two NSBezierPaths."},
+    {"xor",  cPolymagic_xor, METH_VARARGS, "Calculates the exclusive or of two NSBezierPaths."},
+    {NULL, NULL, 0, NULL}        //  Sentinel
+};
+
+MOD_INIT(cPolymagic) {
+    PyObject *m;
+    
+    // m = Py_InitModule("cPolymagic", PolymagicMethods);
+    MOD_DEF(m, "cPolymagic", "C-Polymagic.", PolymagicMethods)
+    PolymagicError = PyErr_NewException("cPolymagic.error", NULL, NULL);
+    Py_INCREF(PolymagicError);
+    PyModule_AddObject(m, "error", PolymagicError);
+#if PY_MAJOR_VERSION &gt;= 3
+    return( m );
+#endif
+}
+
+</t>
+<t tx="karstenw.20210320131240.1">typedef struct {
+    PyObject_HEAD
+    id        objc_object;
+    int       flags;
+} PyObjCObject;
+
+static bool
+parse_double_path_args(PyObject *self, PyObject *args, NSBezierPath **path1, NSBezierPath **path2)
+{
+    PyObject *pyObject1, *pyObject2;
+    if (!PyArg_ParseTuple(args, "OO", &amp;pyObject1, &amp;pyObject2))
+        return false;
+
+    // Check if the two objects are NSBezierPaths.
+    if (strcmp("NSBezierPath", pyObject1-&gt;ob_type-&gt;tp_name) != 0) {
+        PyErr_SetString(PyExc_TypeError, "first argument is not a NSBezierPath");
+        return false;
+    }
+
+    if (strcmp("NSBezierPath", pyObject2-&gt;ob_type-&gt;tp_name) != 0) {
+        PyErr_SetString(PyExc_TypeError, "second argument is not a NSBezierPath");
+        return false;
+    }
+    
+    *path1 = ((PyObjCObject *) pyObject1)-&gt;objc_object;
+    *path2 = ((PyObjCObject *) pyObject2)-&gt;objc_object;
+
+    return true;
+}
+
+static PyObject *
+build_objc_instance(PyTypeObject *ob_type, id obj) {
+    // Because we don't want to include PyObjC on compilation,
+    // we hack around the object creation by making our own
+    // PyObjCObject_New.
+    PyObject *result;
+    result = ob_type-&gt;tp_alloc(ob_type, 0);
+    ((PyObjCObject*)result)-&gt;objc_object = obj;
+    ((PyObjCObject*)result)-&gt;flags = 0;
+    return result;
+}
+
+// Check if two NSBezierPaths intersect.
+static PyObject *
+cPolymagic_intersects(PyObject *self, PyObject *args)
+{
+    NSBezierPath *path1, *path2;
+    PyObject *result;
+
+    if (!parse_double_path_args(self, args, &amp;path1, &amp;path2))
+        return NULL;
+    
+    if (intersects_path(path1, path2)) {
+        Py_INCREF(Py_True);
+        result = Py_True;
+    } else {
+        Py_INCREF(Py_False);
+        result = Py_False;
+    }
+
+    return result;
+}
+
+static bool
+check_path_types(PyObject *pyObject1, PyObject *pyObject2) {
+    // Check if the two objects are NSBezierPaths.
+    if (strcmp("NSBezierPath", pyObject1-&gt;ob_type-&gt;tp_name) != 0) {
+        PyErr_SetString(PyExc_TypeError, "first argument is not a NSBezierPath");
+        return false;
+    }
+
+    if (strcmp("NSBezierPath", pyObject2-&gt;ob_type-&gt;tp_name) != 0) {
+        PyErr_SetString(PyExc_TypeError, "second argument is not a NSBezierPath");
+        return false;
+    }
+    return true;
+}
+
+
+static PyObject*
+cPolymagic_operation(PyObject *self, PyObject *args, int op)
+{
+    PyObject *pyObject1, *pyObject2;
+    NSBezierPath *path1, *path2, *pathResult;
+    PyObject *result;
+    PyTypeObject *cls_type;
+    float flatness = 0.6;
+    
+    if (!PyArg_ParseTuple(args, "OO|f", &amp;pyObject1, &amp;pyObject2, &amp;flatness))
+        return NULL;
+        
+    if (flatness &lt; 0.1) {
+        flatness = 0.1;
+    } else if (flatness &gt; 5.0) {
+        flatness = 5.0;
+    }
+
+    if (!check_path_types(pyObject1, pyObject2))
+        return NULL;
+
+    path1 = ((PyObjCObject *) pyObject1)-&gt;objc_object;
+    path2 = ((PyObjCObject *) pyObject2)-&gt;objc_object;
+
+    pathResult = path_operation(path1, path2, op, flatness);
+    [pathResult retain];
+    
+    // To get access to a NSBezierPath ObjC instance, we use an
+    // existing reference (that from pyObject1) to build our new
+    // object out of. I'm not sure if we have to indicate that 
+    // we borrow this reference. Currently, nothing of that sort
+    // happens.
+    return build_objc_instance(pyObject1-&gt;ob_type, pathResult);
+}
+
+// Returns the union of two NSBezierPaths as a new NSBezierPath.
+static PyObject *
+cPolymagic_union(PyObject *self, PyObject *args)
+{
+    return cPolymagic_operation(self, args, GPC_UNION);
+}
+
+// Returns the intersection of two NSBezierPaths as a new NSBezierPath.
+static PyObject *
+cPolymagic_intersect(PyObject *self, PyObject *args)
+{
+    return cPolymagic_operation(self, args, GPC_INT);
+}
+
+// Returns the difference of two NSBezierPaths as a new NSBezierPath.
+static PyObject *
+cPolymagic_difference(PyObject *self, PyObject *args)
+{
+    return cPolymagic_operation(self, args, GPC_DIFF);
+}
+
+// Returns the exclusive or of two NSBezierPaths as a new NSBezierPath.
+static PyObject *
+cPolymagic_xor(PyObject *self, PyObject *args)
+{
+    return cPolymagic_operation(self, args, GPC_XOR);
+}
+
+</t>
+<t tx="karstenw.20210320133430.1">int
+main(int argc, char *argv[])
+{
+    // Pass argv[0] to the Python interpreter
+    Py_SetProgramName(argv[0]);
+
+    // Initialize the Python interpreter.  Required.
+    Py_Initialize();
+
+    // Add a static module
+#if PY_MAJOR_VERSION &gt;= 3
+    PyInit_cPolymagic();
+#else
+    initcPolymagic();
+#endif
+
+    return 0;
+}
+/*
+int xmain(int argc, char *argv[])
+{
+    [[NSAutoreleasePool alloc] init];
+    NSBezierPath *p1, *p2;
+    NSFont *helveticaFont;
+    //NSGlyph *aGlpyh;
+    //p1 = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(0, 0, 100, 100)];
+    //p2 = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(50, 72, 100, 100)]; // x=50 intersects
+
+    helveticaFont = [NSFont fontWithName:@"Helvetica" size:24];
+    p1 = [NSBezierPath bezierPath];
+    [p1 moveToPoint:NSMakePoint(68, 100)];
+    [p1 appendBezierPathWithGlyph:68 inFont:helveticaFont];
+    p2 = [NSBezierPath bezierPath];
+    [p2 moveToPoint:NSMakePoint(70, 100)];
+    [p2 appendBezierPathWithGlyph:68 inFont:helveticaFont];
+    
+    printf("p1: %i\n", [p1 elementCount]);
+    if (intersects_path(p1, p2)) {
+        printf("INTERSECTS\n");
+    } else {
+        printf("Doesn't intersect.\n");
+    }
+    [p1 release];
+    [p2 release];
+    return 0;
+}
+
+*/
+
+</t>
+<t tx="karstenw.20210322113242.1"># py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
+
+</t>
+<t tx="karstenw.20210322113320.1">if not py3:
+    import new
+    import httplib
+
+
+</t>
+<t tx="karstenw.20210323114020.1">from keyword import kwlist as keywordsList
+keywordsList = keywordsList[:]
+keywordsList += ["None", "True", "False"]
+keywordsList += graphics.__all__
+keywordsList += util.__all__
+keywordsList += dir(graphics.Context)
+
+# These keywords were not captured somehow
+keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key",
+                 "scrollwheel", "wheeldelta", "PAGENUM", "keycode",
+                 "FRAME", "canvas"]
+
+
+# Build up a regular expression which will match anything
+# interesting, including multi-line triple-quoted strings.
+commentPat = r"#[^\n]*"
+
+pat = r"[uU]?[rR]?q[^\\q\n]*(\\[\000-\377][^\\q\n]*)*q?"
+quotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
+
+# Way to go, Tim!
+pat = r"""
+    [uU]?[rR]?
+    qqq
+    [^\\q]*
+    (
+        (	\\[\000-\377]
+        |	q
+            (	\\[\000-\377]
+            |	[^\q]
+            |	q
+                (	\\[\000-\377]
+                |	[^\\q]
+                )
+            )
+        )
+        [^\\q]*
+    )*
+    (qqq)?
+"""
+pat = "".join(pat.split())  # get rid of whitespace
+tripleQuotePat = pat.replace("q", "'") + "|" + pat.replace('q', '"')
+
+# Build up a regular expression which matches all and only
+# Python keywords. This will let us skip the uninteresting
+# identifier references.
+keyPat = r"\b(" + "|".join(keywordsList) + r")\b"
+
+matchPat = commentPat + "|" + keyPat + "|(" + tripleQuotePat + "|" + quotePat + ")"
+matchRE = re.compile(matchPat)
+
+idKeyPat = "[ \t]*([A-Za-z_][A-Za-z_0-9.]*)"	# Ident w. leading whitespace.
+idRE = re.compile(idKeyPat)
+asRE = re.compile(r".*?\b(as)\b")
+
+</t>
+<t tx="karstenw.20210623180227.1"># modified NSApplication object
+class NodeBoxApplication(NSApplication):
+
+    @others
+
+
+</t>
+<t tx="karstenw.20210623180253.1">def awakeFromNib(self):
+    if kwlog:
+        print("AppClass.awakeFromNib()")
+    objc.super(NodeBoxApplication, self).awakeFromNib()
+
+</t>
+<t tx="karstenw.20210623180302.1">def finishLaunching(self):
+    if kwdbg:
+        print("AppClass.finishLaunching()")
+    objc.super(NodeBoxApplication, self).finishLaunching()
+
+</t>
+<t tx="karstenw.20210623195428.1">def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
+    return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,
+                                        dx,dy,nreal,nimag,limit)
+
+</t>
+<t tx="karstenw.20210624121624.1">@objc.IBAction
+def clearMessageArea_(self, sender):
+    # pp( dir(self.outputView.textStorage()))
+    self.outputView.textStorage().mutableString().setString_(u"")
+
+</t>
+<t tx="karstenw.20210628212143.1">def getFunctionArgCount( function ):
+    # pdb.set_trace()
+    if py3:
+        return function.__code__.co_argcount
+    else:
+        return function.func_code.co_argcount
+
+
+</t>
+<t tx="karstenw.20210630133918.1">def cmp_to_key(mycmp):
+    'Convert a cmp= function into a key= function'
+    class K:
+        def __init__(self, obj, *args):
+            self.obj = obj
+        def __lt__(self, other):
+            return mycmp(self.obj, other.obj) &lt; 0
+        def __gt__(self, other):
+            return mycmp(self.obj, other.obj) &gt; 0
+        def __eq__(self, other):
+            return mycmp(self.obj, other.obj) == 0
+        def __le__(self, other):
+            return mycmp(self.obj, other.obj) &lt;= 0
+        def __ge__(self, other):
+            return mycmp(self.obj, other.obj) &gt;= 0
+        def __ne__(self, other):
+            return mycmp(self.obj, other.obj) != 0
+    return K
+
+
+def sortlistfunction(thelist, thecompare):
+    if py3:
+        sortkeyfunction = cmp_to_key( thecompare )
+        thelist.sort( key=sortkeyfunction )
+    else:
+        thelist.sort( thecompare )
+
+</t>
+<t tx="karstenw.20210630165621.1">#if PY_MAJOR_VERSION &gt;= 3
+  #define IN_FORMAT "y#iiii"
+  #define OUT_FORMAT "y#"
+#else
+  #define IN_FORMAT "s#iiii"
+  #define OUT_FORMAT "s#"
+#endif
+</t>
+<t tx="karstenw.20210630171229.1">#if PY_MAJOR_VERSION &gt;= 3
+  #define IN_FORMAT "y#iiiddddddd"
+  #define OUT_FORMAT "y#"
+#else
+  #define IN_FORMAT "s#iiiddddddd"
+  #define OUT_FORMAT "s#"
+#endif
+
+</t>
+<t tx="karstenw.20210703124707.1">def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
+    if type(s) not in ( pstr, punicode):
+        s = str(s)
+    if type(s) not in ( punicode, ):
+        try:
+            s = punicode(s, srcencoding)
+        except TypeError as err:
+            pass
+    if type(s) in ( punicode, ):
+        s = unicodedata.normalize(normalizer, s)
+    return s
+
+
+</t>
+<t tx="karstenw.20210714232328.1">def __hash__(self):
+    return hash( (self.x, self.y, self.ctrl1, self.ctrl2) )
+
+
+</t>
+<t tx="karstenw.20210714232606.1">def __hash__( self ):
+    return hash( (self.x, self.y) )
+
+
+</t>
+<t tx="karstenw.20210714232702.1">def __lt__(self, other):
+    return (self.x &lt; other.x) and (self.y &lt; other.y)
+
+def __le__(self, other):
+    return (self.x &lt;= other.x) and (self.y &lt;= other.y)
+
+def __gt__(self, other):
+    return (self.x &gt; other.x) and (self.y &gt; other.y)
+
+def __ge__(self, other):
+    return (self.x &gt;= other.x) and (self.y &gt;= other.y)
+
+</t>
+<t tx="karstenw.20210714234429.1">def __lt__(self, other):
+    return (    (self.x &lt; other.x) and (self.y &lt; other.y)
+            and (self.ctrl1 &lt; other.ctrl1) and (self.ctrl2 &lt; other.ctrl2) )
+
+</t>
+<t tx="karstenw.20210714234443.1">def __le__(self, other):
+    return (    (self.x &lt;= other.x) and (self.y &lt;= other.y)
+            and (self.ctrl1 &lt;= other.ctrl1) and (self.ctrl2 &lt;= other.ctrl2) )
+
+</t>
+<t tx="karstenw.20210714234451.1">def __gt__(self, other):
+    return (    (self.x &gt; other.x) and (self.y &gt; other.y)
+            and (self.ctrl1 &gt; other.ctrl1) and (self.ctrl2 &gt; other.ctrl2) )
+
+</t>
+<t tx="karstenw.20210714234458.1">def __ge__(self, other):
+    return (    (self.x &gt;= other.x) and (self.y &gt;= other.y)
+            and (self.ctrl1 &gt;= other.ctrl1) and (self.ctrl2 &gt;= other.ctrl2) ) 
+
+
+</t>
+<t tx="karstenw.20210715171431.1">def __hash__( self ):
+    return hash( (self.red, self.green, self.blue, self.alpha) )
+
+
+</t>
+<t tx="karstenw.20211017190738.1">gBGCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.4,0.4,0.4, 1.0)
+gStrCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.1,0.1,0.1, 1.0)
+gTxtCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0,1.0,1.0, 1.0)
+
+MAGICVAR = "__magic_var__"
 
 </t>
 </tnodes>

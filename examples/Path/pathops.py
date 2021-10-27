@@ -1,3 +1,7 @@
+
+from __future__ import print_function
+
+
 size(600, 1000)
 
 # pathmatics functions
@@ -35,11 +39,11 @@ c2 = circlepath( 300, 100, 100)
 drawpath(c1)
 drawpath(c2)
 label("Normal", 420, 100)
-print "Path c1 intersects path c2:", c1.intersects(c2)
+# print( "Path c1 intersects path c2:", c1.intersects(c2) )
 
 # flatness should always be 0.5
 var("flatness", NUMBER, 0.6, 0.1, 5.0)
-print "flatness:", flatness
+# print( "flatness:", flatness )
 
 # union
 c1 = circlepath( 200, 300, 100)
