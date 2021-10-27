@@ -34,11 +34,13 @@ import codecs
 import calendar
 import types
 
+import encodings
+import imagewells
+
 # currently not in py2
 # import MySQLdb # lib/pattern
 # import json
 # import locale
-
 
 
 #import UserList
