@@ -109,12 +109,13 @@ Attention!
 1.  New function `voiceattributes( voice )` (1.9.26).
 		return a dict with all attributes about that voice.
 
+1.	New function `anySpeakers()` anySpeakers():
+		Return a bool if ANY application is currently speaking.
 
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
 
 1.  New function `circle(cx, cy, rx, ry=None, draw=True)`
 		Draws a circle in current style with center = (cx, cy) and radii rx and ry. For better shoebot compatibility.
-
 
 
 
