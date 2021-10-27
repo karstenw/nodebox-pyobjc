@@ -53,11 +53,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -84,7 +84,7 @@
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
 </v>
-<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
+<v t="karstenw.20170709143301.1" a="E"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
 <v t="karstenw.20170704104725.25"><vh>arc</vh></v>
@@ -998,11 +998,13 @@ import codecs
 import calendar
 import types
 
+import encodings
+import imagewells
+
 # currently not in py2
 # import MySQLdb # lib/pattern
 # import json
 # import locale
-
 
 
 #import UserList
@@ -1314,7 +1316,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.10.0c1'
+<t tx="karstenw.20170704104119.1">__version__='1.10.0'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -1781,7 +1783,7 @@ def circle(self, cx, cy, rx, ry=None, draw=True, **kwargs):
     height = 2 * ry
     x = cx - rx
     y = cy - ry
-    self.oval( x, y, width, height, draw=draw, **kwargs )
+    return self.oval( x, y, width, height, draw=draw, **kwargs )
 
 
 </t>

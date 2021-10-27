@@ -31,7 +31,6 @@ for s in allspeakers:
     say(txt, voice, path)
     print( voice )
     print( name )
-    print( txt.encode("utf-8") )
+    print( txt )
     print()
-
-
+print( "voicecount:", len(allspeakers) )

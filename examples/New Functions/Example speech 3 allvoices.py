@@ -36,6 +36,6 @@ for s in allspeakers:
     voice, txt, name, path = s
     say(txt, voice, wait=False)
     print( name )
-    print( txt.encode("utf-8") )
+    print( txt )
     print()
 
