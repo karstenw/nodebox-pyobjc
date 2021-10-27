@@ -283,7 +283,7 @@ class Context(object):
         height = 2 * ry
         x = cx - rx
         y = cy - ry
-        self.oval( x, y, width, height, draw=draw, **kwargs )
+        return self.oval( x, y, width, height, draw=draw, **kwargs )
 
 
     def arc(self, x, y, r, startAngle, endAngle, draw=True, **kwargs):
