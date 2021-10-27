@@ -7,9 +7,9 @@ This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
 The current version is 1.10.0
 
-The current branch is [py38](https://github.com/karstenw/nodebox-pyobjc/tree/py38) which handles the transition to python 3.
+Download the compiled app from the [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
 
-Download the compiled app from my [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
+2021-10-26 The Python 3 transformation is nearly complete. 
 
 2021-06-20 A transition to Python3.8 is underway. I intend to keep the source py2/py3 compatible as long as possible or at least as long as I care.
 
@@ -126,6 +126,8 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+
+2021-10-26 Version 1.10.0  NodeBox 1 is on Python 3.8.
 
 2021-06-30 Version 1.10.0b Compiles with python3. About 85% of all scripts run. Saves. The C-extensions fractal and bwdither run again. Many small fixes.
 
