@@ -5,13 +5,13 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.10.0b
+The current version is 1.10.0
 
 Download the compiled app from my [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
 
-As of 2021-06-20 a transition to Python3.8 is underway. I intend to keep the source py2/py3 compatible as long as possible or at least as long as I care.
+2021-06-20 A transition to Python3.8 is underway. I intend to keep the source py2/py3 compatible as long as possible or at least as long as I care.
 
-As of 2018-05-05 and version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
+2018-05-05 With version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
 
 As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue if you need one.
 
@@ -53,7 +53,7 @@ Attention!
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
 
-1.  Uses Python 2.7.18 and PyObjC 5.2 or Python 3.8.7 and PyObjC 6.2.2
+1.  Uses Python 2.7.16 and PyObjC 5.3 or Python 3.8.12 and PyObjC 6.2.2
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
@@ -111,6 +111,10 @@ Attention!
 
 
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
+
+1.  New function `circle(cx, cy, rx, ry=None, draw=True)`
+		Draws a circle in current style with center = (cx, cy) and radii rx and ry. For better shoebot compatibility.
+
 
 
 
