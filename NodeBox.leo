@@ -392,20 +392,20 @@
 </v>
 <v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -508,7 +508,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105032.103"><vh>showPreferencesPanel_</vh></v>
 <v t="karstenw.20170704105032.104"><vh>generateCode_</vh></v>
@@ -1095,7 +1095,7 @@ import nodebox
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
 py3 = nodebox.py3
-BUNDLENAME = NAME + "_py27"
+BUNDLENAME = NAME #+ "-py27"
 if nodebox.py3:
     BUNDLENAME = NAME + "_py38"
 
@@ -2266,6 +2266,8 @@ def isqrt( self, v):
 </t>
 <t tx="karstenw.20170704104726.29">def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
     return nodebox.geo.reflect(x0, y0, x1, y1, d, a)
+
+## 
 
 </t>
 <t tx="karstenw.20170704104726.3">### Color Commands ###
@@ -7508,6 +7510,7 @@ else:
     Add = compiler.ast.Add
 
 
+
 kwdbg = 1
 import pdb
 
@@ -10327,6 +10330,8 @@ setup (name = "cGeo",
 </t>
 <t tx="karstenw.20180202044929.1">def dither(self, imagebytes, w, h, typ, threshhold):
     return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
+
+## 
 
 </t>
 <t tx="karstenw.20180202045145.1"></t>

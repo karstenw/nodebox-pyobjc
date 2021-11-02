@@ -53,6 +53,11 @@ examples/New Functions/Example shadow 1.py
 examples/New Functions/Example speech Badnews.py
 examples/New Functions/Image180208185835-4.png
 examples/New Functions/twyg/example-data/wind-instruments-large.json
+
 examples/Path/glyphpath_example-2.py
 examples/Path/glyphpath_example.py
 nodebox/geo/geo __init__ saved with benchmark.py
+
+examples/New Functions/cpt_palettes.py
+examples/New Functions/Example fractal 3.py
+examples/scaler.py
