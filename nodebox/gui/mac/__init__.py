@@ -13,14 +13,13 @@ import pprint
 pp = pprint.pprint
 
 import pdb
-
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import Foundation
 import AppKit
@@ -157,11 +156,15 @@ class OutputFile(object):
 class NodeBoxApplication(NSApplication):
 
     def awakeFromNib(self):
-        print("AppClass.awakeFromNib()")
+        if kwlog:
+            print("AppClass.awakeFromNib()")
         objc.super(NodeBoxApplication, self).awakeFromNib()
+
     def finishLaunching(self):
-        print("AppClass.finishLaunching()")
+        if kwdbg:
+            print("AppClass.finishLaunching()")
         objc.super(NodeBoxApplication, self).finishLaunching()
+
 
 
 class NodeBoxDocument(NSDocument):
