@@ -674,9 +674,14 @@ class Context(object):
     def reflect(self, x0, y0, x1, y1, d=1.0, a=180):
         return nodebox.geo.reflect(x0, y0, x1, y1, d, a)
 
+    ## 
+
     def dither(self, imagebytes, w, h, typ, threshhold):
         return nodebox.geo.dither(imagebytes, w, h, typ, threshhold)
 
+    ## 
+
     def fractalimage( self, clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit):
-        return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,dx,dy,nreal,nimag,limit)
+        return nodebox.geo.fractalimage(clut, w,h,iterations,x1,y1,
+                                            dx,dy,nreal,nimag,limit)
 
