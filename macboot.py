@@ -9,6 +9,7 @@ from __future__ import print_function
 import os
 import operator
 import warnings
+import io
 
 # for the libraries
 
@@ -37,9 +38,11 @@ import types
 import encodings
 import imagewells
 
+import json
+import requests
+
 # currently not in py2
 # import MySQLdb # lib/pattern
-# import json
 # import locale
 
 
@@ -49,12 +52,10 @@ import imagewells
 # import six
 # import pyparsing
 # import cycler
-# import requests
 # import pymongo
 # import dateutil
 # import copy
 # import gzip
-# import io
 # import http
 # import http.client
 # import http.server
