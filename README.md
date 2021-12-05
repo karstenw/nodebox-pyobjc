@@ -127,6 +127,8 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 Latest changes
 --------------
 
+2021-12-05 Version 1.10.1  "Goto Line..." works on python3
+
 2021-10-26 Version 1.10.0  NodeBox 1 is on Python 3.8.
 
 2021-06-30 Version 1.10.0b Compiles with python3. About 85% of all scripts run. Saves. The C-extensions fractal and bwdither run again. Many small fixes.
