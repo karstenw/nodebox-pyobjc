@@ -20,8 +20,6 @@ getSyntaxTextAttributes = PyDETextView.getSyntaxTextAttributes
 setTextFont = PyDETextView.setTextFont
 setBasicTextAttributes = PyDETextView.setBasicTextAttributes
 setSyntaxTextAttributes = PyDETextView.setSyntaxTextAttributes
-#from PyDETextView import getBasicTextAttributes, getSyntaxTextAttributes
-#from PyDETextView import setTextFont, setBasicTextAttributes, setSyntaxTextAttributes
 
 
 class LibraryFolder(object):
@@ -50,7 +48,6 @@ class LibraryFolder(object):
                 pass
 
 
-
 # class defined in NodeBoxPreferences.xib
 class NodeBoxPreferencesController(NSWindowController):
     commentsColorWell = objc.IBOutlet()
@@ -61,6 +58,7 @@ class NodeBoxPreferencesController(NSWindowController):
     stringsColorWell = objc.IBOutlet()
 
     def init(self):
+
         self = self.initWithWindowNibName_("NodeBoxPreferences")
         self.setWindowFrameAutosaveName_("NodeBoxPreferencesPanel")
         self.timer = None

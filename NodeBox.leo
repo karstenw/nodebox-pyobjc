@@ -25,12 +25,12 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20170704104150.1" a="E"><vh>@clean nodebox/PyFontify.py</vh>
+<v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210323114020.1"><vh>init</vh></v>
@@ -53,11 +53,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -163,7 +163,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104730.1" a="E"><vh>@clean nodebox/graphics/bezier.py</vh>
+<v t="karstenw.20170704104730.1"><vh>@clean nodebox/graphics/bezier.py</vh>
 <v t="karstenw.20170704104742.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104742.2"><vh>segment_lengths</vh></v>
 <v t="karstenw.20170704104742.3"><vh>length</vh></v>
@@ -390,22 +390,22 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
 <v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -518,15 +518,19 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
+<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105043.2"><vh>class AskStringWindowController</vh>
-<v t="karstenw.20170704105043.3"><vh>__new__</vh></v>
+<v t="karstenw.20211204132045.1"><vh>AskString_cb_default_parent_</vh></v>
+<v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
+<v t="karstenw.20211125131320.1"><vh>init</vh></v>
+<v t="karstenw.20170704105043.3"><vh>xx__new__</vh></v>
+<v t="karstenw.20211125131451.1"><vh>setup_cb_default_parent_</vh></v>
 <v t="karstenw.20170704105043.4"><vh>windowWillClose_</vh></v>
 <v t="karstenw.20170704105043.5"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105043.6"><vh>done</vh></v>
 <v t="karstenw.20170704105043.7"><vh>ok_</vh></v>
 <v t="karstenw.20170704105043.8"><vh>cancel_</vh></v>
+<v t="karstenw.20211127131740.1"><vh>DEBUG</vh></v>
 </v>
 </v>
 <v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
@@ -566,11 +570,11 @@
 <v t="karstenw.20170704105106.13"><vh>textFontChanged_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104934.1"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
+<v t="karstenw.20170704104934.1" a="E"><vh>@clean nodebox/gui/mac/PyDETextView.py</vh>
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
-<v t="karstenw.20170704105113.4"><vh>class PyDETextView</vh>
+<v t="karstenw.20170704105113.4" a="E"><vh>class PyDETextView</vh>
 <v t="karstenw.20170704105113.5"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105113.6"><vh>drawRect_</vh></v>
 <v t="karstenw.20170704105113.7"><vh>hideValueLadder</vh></v>
@@ -642,11 +646,11 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
-<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -973,6 +977,7 @@ from __future__ import print_function
 import os
 import operator
 import warnings
+import io
 
 # for the libraries
 
@@ -1001,9 +1006,11 @@ import types
 import encodings
 import imagewells
 
+import json
+import requests
+
 # currently not in py2
 # import MySQLdb # lib/pattern
-# import json
 # import locale
 
 
@@ -1013,12 +1020,10 @@ import imagewells
 # import six
 # import pyparsing
 # import cycler
-# import requests
 # import pymongo
 # import dateutil
 # import copy
 # import gzip
-# import io
 # import http
 # import http.client
 # import http.server
@@ -1095,7 +1100,7 @@ import nodebox
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
 py3 = nodebox.py3
-BUNDLENAME = NAME #+ "-py27"
+BUNDLENAME = NAME + "_py27"
 if nodebox.py3:
     BUNDLENAME = NAME + "_py38"
 
@@ -4768,7 +4773,7 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -6062,14 +6067,17 @@ jpegData = property(_get_jpegData)
     return True
 
 </t>
-<t tx="karstenw.20170704105043.1">__all__ = ["AskStringWindowController",]
+<t tx="karstenw.20170704105043.1"># __all__ = ["AskStringWindowController",]
+__all__ = ["AskString_cb_default_parent_",]
+
+import sys, os, pdb
 
 import objc
 
 import Foundation
 
 import AppKit
-#NSApp = AppKit.NSApplication
+NSApp = AppKit.NSApplication
 
 </t>
 <t tx="karstenw.20170704105043.2"># class defined in AskString.xib
@@ -6079,7 +6087,10 @@ class AskStringWindowController(AppKit.NSWindowController):
 
     @others
 </t>
-<t tx="karstenw.20170704105043.3">def __new__(cls, question, resultCallback, default="", parentWindow=None):
+<t tx="karstenw.20170704105043.3">def xx__new__(cls, question, resultCallback, default=u"DEFAULT", parentWindow=None):
+
+    pdb.set_trace()
+
     self = cls.alloc().initWithWindowNibName_("AskString")
     self.question = question
     self.resultCallback = resultCallback
@@ -6090,8 +6101,10 @@ class AskStringWindowController(AppKit.NSWindowController):
         self.setWindowFrameAutosaveName_("AskStringPanel")
         self.showWindow_(self)
     else:
-        #NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_( self.window(), self.parentWindow, None, None, 0)
-        self.parentWindow().beginSheet_completionHandler_( self.window(), None )
+        # self.parentWindow.beginSheet_completionHandler_( self.window(), None )
+        # self.parentWindow().beginSheet_completionHandler_( self.window(), None )
+
+        NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_( self.window(), self.parentWindow, None, None, 0)
         # (void)beginSheet_completionHandler_(NSWindow *)sheetWindow  completionHandler:(void (^)(NSModalResponse returnCode))handler;
     self.retain()
     return self
@@ -6099,11 +6112,16 @@ class AskStringWindowController(AppKit.NSWindowController):
 </t>
 <t tx="karstenw.20170704105043.4">def windowWillClose_(self, notification):
     self.autorelease()
+    return super(AskStringWindowController, self).windowWillClose_(self, notification)
 
 </t>
 <t tx="karstenw.20170704105043.5">def awakeFromNib(self):
-    self.questionLabel.setStringValue_(self.question)
-    self.textField.setStringValue_(self.default)
+
+    # pdb.set_trace()
+
+    self.questionLabel.setStringValue_( self.question )
+    self.textField.setStringValue_( self.default )
+    return super(AskStringWindowController, self).awakeFromNib()
 
 </t>
 <t tx="karstenw.20170704105043.6">def done(self):
@@ -6115,16 +6133,16 @@ class AskStringWindowController(AppKit.NSWindowController):
         sheet.endSheet_(self)
         sheet.orderOut_(self)
 
-@objc.IBAction
 </t>
-<t tx="karstenw.20170704105043.7">def ok_(self, sender):
+<t tx="karstenw.20170704105043.7">@objc.IBAction
+def ok_(self, sender):
     value = self.textField.stringValue()
     self.done()
     self.resultCallback(value)
 
-@objc.IBAction
 </t>
-<t tx="karstenw.20170704105043.8">def cancel_(self, sender):
+<t tx="karstenw.20170704105043.8">@objc.IBAction
+def cancel_(self, sender):
     self.done()
     self.resultCallback(None)
 
@@ -6425,7 +6443,7 @@ class DashboardController(NSObject):
 </t>
 <t tx="karstenw.20170704105106.1">import sys
 import os
-# import pdb
+import pdb
 
 import objc
 
@@ -6537,6 +6555,7 @@ def changeFont_(self, sender):
     @others
 </t>
 <t tx="karstenw.20170704105106.5">def init(self):
+    # pdb.set_trace()
     self = self.initWithWindowNibName_("NodeBoxPreferences")
     self.setWindowFrameAutosaveName_("NodeBoxPreferencesPanel")
     self.timer = None
@@ -6617,10 +6636,12 @@ NSUserDefaults = AppKit.NSUserDefaults
 import nodebox.PyFontify
 fontify = nodebox.PyFontify.fontify
 
-
 import pdb
+
 from nodebox.gui.mac.ValueLadder import ValueLadder
-from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
+
+# from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
+from nodebox.gui.mac.AskStringWindowController import * #AskString
 
 from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 
@@ -6628,9 +6649,6 @@ from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
 
-
-def AskString(question, resultCallback, default="", parentWindow=None):
-    AskStringWindowController(question, resultCallback, default, parentWindow)
 
 </t>
 <t tx="karstenw.20170704105113.10">def mouseDown_(self, event):
@@ -6710,8 +6728,7 @@ def AskString(question, resultCallback, default="", parentWindow=None):
 <t tx="karstenw.20170704105113.15">@objc.IBAction
 def jumpToLine_(self, sender):
     # from nodebox.gui.mac.AskString import AskString
-    AskString("Jump to line number:", self.jumpToLineCallback_,
-              parentWindow=self.window())
+    AskString_cb_default_parent_( u"Jump to line number:", self.jumpToLineCallback_, u"", self.window() )
 
 </t>
 <t tx="karstenw.20170704105113.16">def jumpToLineCallback_(self, value):
@@ -14333,6 +14350,58 @@ gStrCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.1,0.1,0.1, 1.0)
 gTxtCol = NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0,1.0,1.0, 1.0)
 
 MAGICVAR = "__magic_var__"
+
+</t>
+<t tx="karstenw.20211125131320.1">def init(self):
+
+    self = self.initWithWindowNibName_( "AskString" )
+    self.question = u"" #question
+    self.resultCallback = None # resultCallback
+    self.default = u"" #default
+    self.parentWindow = None #parentWindow
+    self.retain()
+    return self
+
+</t>
+<t tx="karstenw.20211125131451.1">def setup_cb_default_parent_( self, question, resultCallback, default, parentWindow):
+    
+    # pdb.set_trace()
+    
+    self.question = question
+    self.resultCallback = resultCallback
+    self.default = default
+    self.parentWindow = parentWindow
+    if 1: #self.parentWindow is None:
+        self.window().setFrameUsingName_( u"AskStringPanel" )
+        self.setWindowFrameAutosaveName_( u"AskStringPanel" )
+        # self.showWindow_(self)
+        self.showWindow_( self.window() )
+    else:
+        self.parentWindow.beginSheet_completionHandler_( self.window(), None )
+
+        # NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_( self.window(), self.parentWindow, None, None, 0)
+        # (void)beginSheet_completionHandler_(NSWindow *)sheetWindow  completionHandler:(void (^)(NSModalResponse returnCode))handler;
+</t>
+<t tx="karstenw.20211127131740.1">def windowDidLoad( self ):
+    print("AskStringWindowController.windowDidLoad()")
+    print( "self.window()", self.window() )
+    return super(AskStringWindowController, self).windowDidLoad()
+
+
+def windowWillLoad( self ):
+    # pdb.set_trace()
+    print("AskStringWindowController.windowWillLoad()")
+    return super(AskStringWindowController, self).windowWillLoad()
+
+</t>
+<t tx="karstenw.20211204132045.1">#def AskString(question, resultCallback, default="", parentWindow=None):
+#    AskStringWindowController(question, resultCallback, default, parentWindow)
+
+def AskString_cb_default_parent_(question, resultCallback, default, parentWindow):
+    # pdb.set_trace()
+    p = AskStringWindowController.alloc().init()
+    p.setup_cb_default_parent_(question, resultCallback, default, parentWindow)
+    # p.showWindow()
 
 </t>
 </tnodes>

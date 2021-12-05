@@ -1,40 +1,49 @@
-__all__ = ["AskStringWindowController",]
+import sys, os, pdb
 
 import objc
 
 import Foundation
 
 import AppKit
-#NSApp = AppKit.NSApplication
+NSApp = AppKit.NSApplication
+
+def AskString(question, resultCallback, default="", parentWindow=None):
+    p = AskStringWindowController.alloc().init()
+    p.setup_cb_default_parent_(question, resultCallback, default, parentWindow)
+
 
 # class defined in AskString.xib
 class AskStringWindowController(AppKit.NSWindowController):
     questionLabel = objc.IBOutlet()
     textField = objc.IBOutlet()
 
-    def __new__(cls, question, resultCallback, default="", parentWindow=None):
-        self = cls.alloc().initWithWindowNibName_("AskString")
+    def init(self):
+
+        self = self.initWithWindowNibName_( "AskString" )
+        self.question = u"" #question
+        self.resultCallback = None # resultCallback
+        self.default = u"" #default
+        self.parentWindow = None #parentWindow
+        self.retain()
+        return self
+
+    def setup_cb_default_parent_( self, question, resultCallback, default, parentWindow):
         self.question = question
         self.resultCallback = resultCallback
         self.default = default
         self.parentWindow = parentWindow
-        if self.parentWindow is None:
-            self.window().setFrameUsingName_("AskStringPanel")
-            self.setWindowFrameAutosaveName_("AskStringPanel")
-            self.showWindow_(self)
-        else:
-            #NSApp().beginSheet_modalForWindow_modalDelegate_didEndSelector_contextInfo_( self.window(), self.parentWindow, None, None, 0)
-            self.parentWindow().beginSheet_completionHandler_( self.window(), None )
-            # (void)beginSheet_completionHandler_(NSWindow *)sheetWindow  completionHandler:(void (^)(NSModalResponse returnCode))handler;
-        self.retain()
-        return self
+        self.window().setFrameUsingName_( u"AskStringPanel" )
+        self.setWindowFrameAutosaveName_( u"AskStringPanel" )
+        self.showWindow_( self.window() )
 
     def windowWillClose_(self, notification):
         self.autorelease()
+        return super(AskStringWindowController, self).windowWillClose_(self, notification)
 
     def awakeFromNib(self):
-        self.questionLabel.setStringValue_(self.question)
-        self.textField.setStringValue_(self.default)
+        self.questionLabel.setStringValue_( self.question )
+        self.textField.setStringValue_( self.default )
+        return super(AskStringWindowController, self).awakeFromNib()
 
     def done(self):
         if self.parentWindow is None:
@@ -56,4 +65,15 @@ class AskStringWindowController(AppKit.NSWindowController):
         self.done()
         self.resultCallback(None)
 
+
+    def windowDidLoad( self ):
+        print("AskStringWindowController.windowDidLoad()")
+        print( "self.window()", self.window() )
+        return super(AskStringWindowController, self).windowDidLoad()
+
+
+    def windowWillLoad( self ):
+        # pdb.set_trace()
+        print("AskStringWindowController.windowWillLoad()")
+        return super(AskStringWindowController, self).windowWillLoad()
 
