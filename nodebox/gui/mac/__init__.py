@@ -90,8 +90,8 @@ import nodebox.util.ottobot
 genProgram = nodebox.util.ottobot.genProgram
 
 
-import nodebox.util.QTSupport
-QTSupport = nodebox.util.QTSupport
+#import nodebox.util.QTSupport
+#QTSupport = nodebox.util.QTSupport
 
 # from nodebox import graphics
 import nodebox.graphics
