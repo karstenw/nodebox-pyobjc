@@ -92,7 +92,7 @@ setup(
 
             'CFBundleDocumentTypes': [
                 {
-                    'CFBundleTypeExtensions': [ 'py', 'bot' ],
+                    'CFBundleTypeExtensions': [ 'py', 'bot', 'pv' ],
                     'CFBundleTypeIconFile': 'NodeBoxFile.icns',
                     'CFBundleTypeName': "Python File",
                     'CFBundleTypeOSTypes': [ '????', '****', 'utxt'],
