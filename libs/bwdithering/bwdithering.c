@@ -1,6 +1,8 @@
 
 
 #include <stdlib.h>
+
+#define PY_SSIZE_T_CLEAN
 #include <Python.h>
 
 // Karsten Wolf 2018-01-17
