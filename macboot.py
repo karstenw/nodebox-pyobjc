@@ -41,6 +41,8 @@ import imagewells
 import json
 import requests
 
+import planar
+
 # currently not in py2
 # import MySQLdb # lib/pattern
 # import locale
