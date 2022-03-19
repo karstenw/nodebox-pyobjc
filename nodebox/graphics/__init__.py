@@ -87,6 +87,10 @@ class Context(object):
     KEY_TAB = graphics_impl.KEY_TAB
     KEY_ESC = graphics_impl.KEY_ESC
 
+    KEY_ENTER = graphics_impl.KEY_ENTER
+    KEY_RETURN = graphics_impl.KEY_RETURN
+    KEY_SPACE = graphics_impl.KEY_SPACE
+
     NORMAL = graphics_impl.NORMAL
     FORTYFIVE = graphics_impl.FORTYFIVE
 

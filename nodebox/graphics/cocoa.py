@@ -121,6 +121,11 @@ KEY_BACKSPACE = 51
 KEY_TAB = 48
 KEY_ESC = 53
 
+KEY_ENTER = 76
+KEY_RETURN = 36
+KEY_SPACE = 49
+
+
 _STATE_NAMES = {
     '_outputmode':    'outputmode',
     '_colorrange':    'colorrange',
