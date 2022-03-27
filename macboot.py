@@ -34,6 +34,7 @@ import itertools
 import codecs
 import calendar
 import types
+import feedparser
 
 import encodings
 import imagewells
@@ -81,6 +82,39 @@ import PIL.ImageStat
 import objc
 import Foundation
 import AppKit
+
+import Quartz
+import Quartz.QuartzCore
+import AVFoundation
+import AVKit
+import LaunchServices
+import WebKit
+
+if 0:
+    #import AddressBook
+    #import CloudKit
+    #import Collaboration
+
+    import ColorSync # 10.13
+    import Contacts # 10.11
+
+    import CoreLocation
+
+    import CoreMedia
+    import CoreMediaIO
+
+    import CoreServices
+
+    import CoreText
+    import DictionaryServices
+    import EventKit
+    import ImageCaptureCore
+    # import MapKit
+
+    import OpenDirectory
+    import OSAKit
+    import SyncServices
+
 
 from PyObjCTools import AppHelper
 #import PyObjCTools.Debugging
