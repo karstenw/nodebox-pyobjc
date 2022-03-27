@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
@@ -69,7 +69,7 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
@@ -84,7 +84,7 @@
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
 </v>
-<v t="karstenw.20170709143301.1" a="E"><vh>## Primitives ##</vh>
+<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
 <v t="karstenw.20170704104725.25"><vh>arc</vh></v>
@@ -133,7 +133,7 @@
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -393,7 +393,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -401,11 +401,11 @@
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -518,10 +518,10 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
+<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211204132045.1"><vh>AskString_cb_default_parent_</vh></v>
-<v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
+<v t="karstenw.20170704105043.2"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20211125131320.1"><vh>init</vh></v>
 <v t="karstenw.20170704105043.3"><vh>xx__new__</vh></v>
 <v t="karstenw.20211125131451.1"><vh>setup_cb_default_parent_</vh></v>
@@ -533,11 +533,11 @@
 <v t="karstenw.20211127131740.1"><vh>DEBUG</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
-<v t="karstenw.20170704105051.2" a="E"><vh>class DashboardController</vh>
+<v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
 <v t="karstenw.20170704105051.5"><vh>textChanged_</vh></v>
@@ -646,7 +646,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
@@ -1009,6 +1009,8 @@ import imagewells
 import json
 import requests
 
+import planar
+
 # currently not in py2
 # import MySQLdb # lib/pattern
 # import locale
@@ -1047,6 +1049,39 @@ import PIL.ImageStat
 import objc
 import Foundation
 import AppKit
+
+import Quartz
+import Quartz.QuartzCore
+import AVFoundation
+import AVKit
+import LaunchServices
+import WebKit
+
+if 0:
+    #import AddressBook
+    #import CloudKit
+    #import Collaboration
+
+    import ColorSync # 10.13
+    import Contacts # 10.11
+
+    import CoreLocation
+
+    import CoreMedia
+    import CoreMediaIO
+
+    import CoreServices
+
+    import CoreText
+    import DictionaryServices
+    import EventKit
+    import ImageCaptureCore
+    # import MapKit
+
+    import OpenDirectory
+    import OSAKit
+    import SyncServices
+
 
 from PyObjCTools import AppHelper
 #import PyObjCTools.Debugging
@@ -1174,7 +1209,7 @@ setup(
 
             'CFBundleDocumentTypes': [
                 {
-                    'CFBundleTypeExtensions': [ 'py', 'bot' ],
+                    'CFBundleTypeExtensions': [ 'py', 'bot', 'pv' ],
                     'CFBundleTypeIconFile': 'NodeBoxFile.icns',
                     'CFBundleTypeName': "Python File",
                     'CFBundleTypeOSTypes': [ '????', '****', 'utxt'],
@@ -1212,8 +1247,9 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", ], # , "numba", "llvmlite"
-            "excludes": ["TkInter", "scipy", "matplotlib", "mpl_toolkits", "sklearn", "pandas" ],
+            "packages": [ "numpy", ],
+            "excludes": ["TkInter", "scipy", "matplotlib", "mpl_toolkits",
+                         "sklearn", "pandas" ],
         }
     } )
 </t>
@@ -1321,7 +1357,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.10.0'
+<t tx="karstenw.20170704104119.1">__version__='1.10.1'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -1722,6 +1758,10 @@ def _makeInstance(self, clazz, args, kwargs):
     KEY_BACKSPACE = graphics_impl.KEY_BACKSPACE
     KEY_TAB = graphics_impl.KEY_TAB
     KEY_ESC = graphics_impl.KEY_ESC
+
+    KEY_ENTER = graphics_impl.KEY_ENTER
+    KEY_RETURN = graphics_impl.KEY_RETURN
+    KEY_SPACE = graphics_impl.KEY_SPACE
 
     NORMAL = graphics_impl.NORMAL
     FORTYFIVE = graphics_impl.FORTYFIVE
@@ -2968,6 +3008,11 @@ KEY_RIGHT = 124
 KEY_BACKSPACE = 51
 KEY_TAB = 48
 KEY_ESC = 53
+
+KEY_ENTER = 76
+KEY_RETURN = 36
+KEY_SPACE = 49
+
 
 _STATE_NAMES = {
     '_outputmode':    'outputmode',
@@ -4847,8 +4892,8 @@ import nodebox.util.ottobot
 genProgram = nodebox.util.ottobot.genProgram
 
 
-import nodebox.util.QTSupport
-QTSupport = nodebox.util.QTSupport
+#import nodebox.util.QTSupport
+#QTSupport = nodebox.util.QTSupport
 
 # from nodebox import graphics
 import nodebox.graphics
@@ -10128,6 +10173,8 @@ dither(PyObject *self, PyObject *args) {
 
 </t>
 <t tx="karstenw.20180202040658.1">#include &lt;stdlib.h&gt;
+
+#define PY_SSIZE_T_CLEAN
 #include &lt;Python.h&gt;
 
 // Karsten Wolf 2018-01-17
@@ -10274,7 +10321,8 @@ coordinates(PyObject *self, PyObject *args) {
 
 
 </t>
-<t tx="karstenw.20180202044341.1">#include &lt;Python.h&gt;
+<t tx="karstenw.20180202044341.1">#define PY_SSIZE_T_CLEAN
+#include &lt;Python.h&gt;
 #include &lt;math.h&gt;
 
 // FAST INVERSE SQRT
@@ -10577,6 +10625,8 @@ MOD_INIT(fractal) {
 <t tx="karstenw.20210320115212.1">#include &lt;stdlib.h&gt;
 #include &lt;stdio.h&gt;
 #include &lt;complex.h&gt;
+
+#define PY_SSIZE_T_CLEAN
 #include &lt;Python.h&gt;
 
 // Karsten Wolf 2020-06-21
@@ -10937,7 +10987,8 @@ cPathmatics_curvelength(PyObject *self, PyObject *args)
 static PyObject *PathmaticsError;
 
 </t>
-<t tx="karstenw.20210320121857.1">#include &lt;Python.h&gt;
+<t tx="karstenw.20210320121857.1">#define PY_SSIZE_T_CLEAN
+#include &lt;Python.h&gt;
 #include &lt;math.h&gt;
 
 </t>
@@ -13871,6 +13922,8 @@ intersects_path(NSBezierPath* p1, NSBezierPath* p2)
 
 </t>
 <t tx="karstenw.20210320131053.1">#import &lt;Cocoa/Cocoa.h&gt;
+
+#define PY_SSIZE_T_CLEAN
 #include &lt;Python.h&gt;
 
 #include &lt;math.h&gt;
