@@ -5,9 +5,11 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.10.0
+The current version is 1.10.1
 
 Download the compiled app from the [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
+
+2022-03-28 App only release includes version for M1. This was generated on an iMac with 11.6.3and has only been tested to run the examples. Not the Library.
 
 2021-10-26 The Python 3 transformation is nearly complete. 
 
