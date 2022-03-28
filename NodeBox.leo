@@ -25,7 +25,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -1002,6 +1002,7 @@ import itertools
 import codecs
 import calendar
 import types
+import feedparser
 
 import encodings
 import imagewells
@@ -1357,7 +1358,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.10.1'
+<t tx="karstenw.20170704104119.1">__version__='1.10.2'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
