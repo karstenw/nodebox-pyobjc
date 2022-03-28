@@ -26,8 +26,7 @@ examples/Extended Application/sklearn/doc/
 
 examples/geometry/Voronoi
 
-libs/fractal
-libs/polymagic/
+libs/polymagic/gpc233-release*
 
 examples/Escher/*.png
 examples/Images/Images*
