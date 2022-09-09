@@ -20,8 +20,8 @@ for voice in v:
         attrs.pop( u'VoiceSupportedCharacters', None )
 
     for attr in attrs:
-        print( attr.ljust(30), )
-        print( attrs[attr] )
-    # pprint.pprint(attr)
+        print( attr.ljust(30),attrs[attr] )
+
+    print()
     print( "-" * 80 )
     print()
