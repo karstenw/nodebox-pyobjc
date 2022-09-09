@@ -51,7 +51,7 @@ fractalimage(PyObject *self, PyObject *args) {
 
     int count = 0;
     
-    int dbg = 0;
+    // int dbg = 0;
 
     PyObject *result;
 
@@ -65,8 +65,8 @@ fractalimage(PyObject *self, PyObject *args) {
 
     count = w * h * 4;
 
-    if (dbg)
-        printf("count: %d\n", count);
+    // if (dbg)
+    //     printf("count: %d\n", count);
 
     // create the buffers
     pixels = (unsigned char *)malloc( count );
@@ -107,13 +107,16 @@ fractalimage(PyObject *self, PyObject *args) {
             for (iter=0; iter < 4; iter++) {
                 if ((o+iter < count) && (idx+iter < clutsize))
                     pixels[o+iter] = clut[idx+iter];
+                /*
                 else if (dbg) {
                     printf("BOUNDS crossed\n");
                     if (o+iter < count)
                         printf("o+iter %d  count %d\n", o+iter, count);
                     if (idx+iter < clutsize)
                         printf("idx+iter %d clutsize %d\n", o+iter, clutsize);
+                
                 }
+                */
             }
         }
     }
