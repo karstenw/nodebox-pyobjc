@@ -9267,7 +9267,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     # Set the frame
     self.namespace['FRAME'] = self._frame
 
-    if kwlog:
+    if 0:
         pp(self.namespace)
 
     # Run the script
