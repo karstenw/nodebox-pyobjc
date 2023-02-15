@@ -85,8 +85,6 @@ RGB = "rgb"
 HSB = "hsb"
 CMYK = "cmyk"
 
-CENTER = "center"
-CORNER = "corner"
 
 MOVETO = AppKit.NSMoveToBezierPathElement
 LINETO = AppKit.NSLineToBezierPathElement
@@ -103,6 +101,11 @@ LEFT = AppKit.NSLeftTextAlignment
 RIGHT = AppKit.NSRightTextAlignment
 CENTER = AppKit.NSCenterTextAlignment
 JUSTIFY = AppKit.NSJustifiedTextAlignment
+
+# don't want to override justification.CENTER
+# CENTER = "center"
+CORNER = 4 #"corner"
+
 
 NORMAL=1
 FORTYFIVE=2
