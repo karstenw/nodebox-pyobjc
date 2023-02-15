@@ -11,7 +11,6 @@ BUTTON = cocoa.BUTTON
 BUTT = cocoa.BUTT
 BezierPath = cocoa.BezierPath
 CENTER = cocoa.CENTER
-CENTER = cocoa.CENTER
 CLOSE = cocoa.CLOSE
 CMYK = cocoa.CMYK
 CORNER = cocoa.CORNER
