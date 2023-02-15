@@ -8,6 +8,7 @@ Usage:
 #import setuptools, distutils
 #from setuptools.extension import Extension
 # from distutils.core import setup, Extension
+import platform
 from setuptools import setup
 from setuptools.extension import Extension
 
@@ -15,12 +16,15 @@ import py2app
 
 import nodebox
 
+machine = platform.machine()
+
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
 py3 = nodebox.py3
-BUNDLENAME = NAME + "_py27"
-if nodebox.py3:
-    BUNDLENAME = NAME + "_py38"
+
+BUNDLENAME = NAME + "_intel"
+if machine.startswith("arm"):
+    BUNDLENAME = NAME + "_arm"
 
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
@@ -134,9 +138,15 @@ setup(
                         # "pandas", "cv2", "dlib", "skimage", "sklearn"],
             ],
             "excludes": [
-                "TkInter",
-                "scipy", "matplotlib",
-                "pandas", "cv2", "dlib", "skimage", "sklearn", "mpl_toolkits", 
+                'TkInter', 'tkinter', 'tk', 'wx', 'sphinx',
+                'pyqt5', 'qt5', 'PyQt5', 
+                
+                # 'certifi', 'pytz', 
+                'notebook', 'nbformat', 'jedi', 'testpath', 'docutils',
+                'ipykernel', 'parso', 'Cython', 'sphinx_rtd_theme', 'alabaster',
+                'tornado', 'IPython', 'numpydoc', 'nbconvert', 
+                'scipy', 'matplotlib', 
+                'pandas', 'cv2', 'dlib', 'skimage', 'sklearn', 'mpl_toolkits', 
             ],
         }
     } )
