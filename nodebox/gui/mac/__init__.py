@@ -16,10 +16,10 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import Foundation
 import AppKit
@@ -403,6 +403,9 @@ class NodeBoxDocument(NSDocument):
         
         # Set the frame
         self.namespace['FRAME'] = self._frame
+
+        if kwlog:
+            pp(self.namespace)
 
         # Run the script
         success, output = self.boxedRun_args_(fn, args)
