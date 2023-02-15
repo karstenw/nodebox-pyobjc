@@ -25,7 +25,7 @@ import hashlib
 import base64
 import re
 import pickle
-
+import pydoc
 
 # pattern lib
 import csv
