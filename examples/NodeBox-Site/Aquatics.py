@@ -1,4 +1,4 @@
-size(800,600)
+size(1200,600)
  
 try:
     supershape = ximport("supershape")
@@ -91,9 +91,12 @@ class head:
         #self.p = textpath(self.pp,self.x-random(50,100),self.y+100,800,0)
  
         self.p = supershape.path(self.x, self.y, self.w, self.h, m, n1, n2, n3)
-        arms = 4+random(20)
-        l = supershape.path(self.x,self.y+self.h/1.5,self.w*.35,self.h*.65,
-                            arms,0.98,3.0,0.81+random(-.8,.8))
+        arms = 4 + random(20)
+        l = supershape.path(self.x, self.y+self.h / 1.5,
+                            self.w * 0.35,
+                            self.h * 0.65,
+                            arms, 0.98,3.0,
+                            0.81 + random(-.8,.8) )
         self.p = self.p.difference(l)
         ''' create some locations to place the eyes on '''
         for i in range(2+random(10)):
@@ -168,7 +171,7 @@ class head:
         aantal = [1,2,3,4,5,2,3,3]
         pa = choice(aantal)
         cc = random(1,2)
-        print( pa )
+        # print( pa )
         for x,y in grid(rw,rh,dx,dy):
             nx = x+self.x-self.w*2
             ny = y+self.y-self.h*2
@@ -210,11 +213,11 @@ class head:
         for item in self.eyelist:
             self.eyes(item[0], item[1],item[2])
  
-for i in range(1):        
+for i in range(2):
     s = 70+random(50)
     c = color(random(),random(),random())
-    print( s )
-    header = head(250+i*(300),HEIGHT/2+10,s,s,c,0)     
+    # print( s )
+    header = head(250+i*(400),HEIGHT/2+10,s,s,c,0)     
     header.draw()   
  
  
