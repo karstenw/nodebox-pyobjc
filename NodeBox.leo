@@ -25,7 +25,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -53,11 +53,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
@@ -152,7 +152,7 @@
 <v t="karstenw.20170709143618.1"><vh>## Canvas Proxy ##</vh>
 <v t="karstenw.20170704104726.24"><vh>save</vh></v>
 </v>
-<v t="karstenw.20170709143636.1"><vh>## C-Extensions Interface ##</vh>
+<v t="karstenw.20170709143636.1" a="E"><vh>## C-Extensions Interface ##</vh>
 <v t="karstenw.20170704104726.25"><vh>isqrt</vh></v>
 <v t="karstenw.20170704104726.26"><vh>angle</vh></v>
 <v t="karstenw.20170704104726.27"><vh>distance</vh></v>
@@ -393,7 +393,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -401,11 +401,11 @@
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -665,7 +665,7 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
 <v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -993,7 +993,7 @@ import hashlib
 import base64
 import re
 import pickle
-
+import pydoc
 
 # pattern lib
 import csv
@@ -1126,6 +1126,7 @@ Usage:
 #import setuptools, distutils
 #from setuptools.extension import Extension
 # from distutils.core import setup, Extension
+import platform
 from setuptools import setup
 from setuptools.extension import Extension
 
@@ -1133,12 +1134,15 @@ import py2app
 
 import nodebox
 
+machine = platform.machine()
+
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
 py3 = nodebox.py3
-BUNDLENAME = NAME + "_py27"
-if nodebox.py3:
-    BUNDLENAME = NAME + "_py38"
+
+BUNDLENAME = NAME + "_intel"
+if machine.startswith("arm"):
+    BUNDLENAME = NAME + "_arm"
 
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
@@ -1248,9 +1252,20 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", ],
-            "excludes": ["TkInter", "scipy", "matplotlib", "mpl_toolkits",
-                         "sklearn", "pandas" ],
+            "packages": [ "numpy", #"scipy", "matplotlib", "sympy",
+                        # "pandas", "cv2", "dlib", "skimage", "sklearn"],
+            ],
+            "excludes": [
+                'TkInter', 'tkinter', 'tk', 'wx', 'sphinx',
+                'pyqt5', 'qt5', 'PyQt5', 
+                
+                # 'certifi', 'pytz', 
+                'notebook', 'nbformat', 'jedi', 'testpath', 'docutils',
+                'ipykernel', 'parso', 'Cython', 'sphinx_rtd_theme', 'alabaster',
+                'tornado', 'IPython', 'numpydoc', 'nbconvert', 
+                'scipy', 'matplotlib', 
+                'pandas', 'cv2', 'dlib', 'skimage', 'sklearn', 'mpl_toolkits', 
+            ],
         }
     } )
 </t>
@@ -1628,7 +1643,6 @@ BOOLEAN = cocoa.BOOLEAN
 BUTTON = cocoa.BUTTON
 BUTT = cocoa.BUTT
 BezierPath = cocoa.BezierPath
-CENTER = cocoa.CENTER
 CENTER = cocoa.CENTER
 CLOSE = cocoa.CLOSE
 CMYK = cocoa.CMYK
@@ -2974,8 +2988,6 @@ RGB = "rgb"
 HSB = "hsb"
 CMYK = "cmyk"
 
-CENTER = "center"
-CORNER = "corner"
 
 MOVETO = AppKit.NSMoveToBezierPathElement
 LINETO = AppKit.NSLineToBezierPathElement
@@ -2992,6 +3004,11 @@ LEFT = AppKit.NSLeftTextAlignment
 RIGHT = AppKit.NSRightTextAlignment
 CENTER = AppKit.NSCenterTextAlignment
 JUSTIFY = AppKit.NSJustifiedTextAlignment
+
+# don't want to override justification.CENTER
+# CENTER = "center"
+CORNER = 4 #"corner"
+
 
 NORMAL=1
 FORTYFIVE=2
@@ -4819,10 +4836,10 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import Foundation
 import AppKit
@@ -9250,6 +9267,9 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
     # Set the frame
     self.namespace['FRAME'] = self._frame
 
+    if kwlog:
+        pp(self.namespace)
+
     # Run the script
     success, output = self.boxedRun_args_(fn, args)
     self.flushOutput_(output)
@@ -10519,7 +10539,7 @@ fractalimage(PyObject *self, PyObject *args) {
 
     int count = 0;
     
-    int dbg = 0;
+    // int dbg = 0;
 
     PyObject *result;
 
@@ -10533,8 +10553,8 @@ fractalimage(PyObject *self, PyObject *args) {
 
     count = w * h * 4;
 
-    if (dbg)
-        printf("count: %d\n", count);
+    // if (dbg)
+    //     printf("count: %d\n", count);
 
     // create the buffers
     pixels = (unsigned char *)malloc( count );
@@ -10575,13 +10595,16 @@ fractalimage(PyObject *self, PyObject *args) {
             for (iter=0; iter &lt; 4; iter++) {
                 if ((o+iter &lt; count) &amp;&amp; (idx+iter &lt; clutsize))
                     pixels[o+iter] = clut[idx+iter];
+                /*
                 else if (dbg) {
                     printf("BOUNDS crossed\n");
                     if (o+iter &lt; count)
                         printf("o+iter %d  count %d\n", o+iter, count);
                     if (idx+iter &lt; clutsize)
                         printf("idx+iter %d clutsize %d\n", o+iter, clutsize);
+                
                 }
+                */
             }
         }
     }
