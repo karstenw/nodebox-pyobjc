@@ -26,8 +26,9 @@ class LibraryFolder(object):
     def __init__(self):
         self.libDir = ""
         prefpath = ""
+        defaults = NSUserDefaults.standardUserDefaults()
         try:
-            prefpath = NSUserDefaults.standardUserDefaults().objectForKey_("libraryPath")
+            prefpath = defaults.objectForKey_("libraryPath")
         except Exception as err:
             print("LibraryFolder: prefpath: %s" % repr(prefpath))
             prefpath = ""
