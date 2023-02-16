@@ -9,13 +9,13 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
@@ -25,7 +25,7 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
@@ -282,7 +282,7 @@
 <v t="karstenw.20170704104751.88"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.89"><vh>copy</vh></v>
 </v>
-<v t="karstenw.20170704104751.90" a="E"><vh>class Color</vh>
+<v t="karstenw.20170704104751.90"><vh>class Color</vh>
 <v t="karstenw.20170704104751.91"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.92"><vh>__repr__</vh></v>
 <v t="karstenw.20210715171431.1"><vh>__hash__</vh></v>
@@ -401,11 +401,11 @@
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -508,8 +508,10 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
+<v t="karstenw.20230216113142.1"><vh>applicationShouldOpenUntitledFile_</vh></v>
+<v t="karstenw.20230216115950.1"><vh>applicationShouldHandleReopen_hasVisibleWindows_</vh></v>
 <v t="karstenw.20170704105032.103"><vh>showPreferencesPanel_</vh></v>
 <v t="karstenw.20170704105032.104"><vh>generateCode_</vh></v>
 <v t="karstenw.20170704105032.105"><vh>showHelp_</vh></v>
@@ -555,7 +557,7 @@
 </v>
 <v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
+<v t="karstenw.20170704105106.2" a="E"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
 </v>
 <v t="karstenw.20170704105106.4" a="E"><vh>class NodeBoxPreferencesController</vh>
@@ -574,7 +576,7 @@
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
-<v t="karstenw.20170704105113.4"><vh>class PyDETextView</vh>
+<v t="karstenw.20170704105113.4" a="E"><vh>class PyDETextView</vh>
 <v t="karstenw.20170704105113.5"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105113.6"><vh>drawRect_</vh></v>
 <v t="karstenw.20170704105113.7"><vh>hideValueLadder</vh></v>
@@ -634,6 +636,7 @@
 <v t="karstenw.20170704105113.59"><vh>charIndexFromLineIndex_</vh></v>
 <v t="karstenw.20170704105113.60"><vh>numberOfLines</vh></v>
 </v>
+<v t="karstenw.20230216131548.1" a="E"><vh>+ ATTRIBUTES +</vh>
 <v t="karstenw.20170704105113.61"><vh>unpackAttrs</vh></v>
 <v t="karstenw.20170704105113.62"><vh>packAttrs</vh></v>
 <v t="karstenw.20170704105113.63"><vh>getBasicTextAttributes</vh></v>
@@ -641,6 +644,7 @@
 <v t="karstenw.20170704105113.65"><vh>setBasicTextAttributes</vh></v>
 <v t="karstenw.20170704105113.66"><vh>setSyntaxTextAttributes</vh></v>
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
+</v>
 </v>
 <v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
@@ -666,7 +670,7 @@
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
 <v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
@@ -4844,9 +4848,15 @@ kwlog = True
 import Foundation
 import AppKit
 NSObject = AppKit.NSObject
+
+NSMutableDictionary = AppKit.NSMutableDictionary
+NSArray = AppKit.NSArray
+NSMutableArray = AppKit.NSMutableArray
+
 NSColor = AppKit.NSColor
 NSScriptCommand = AppKit.NSScriptCommand
 NSApplication = AppKit.NSApplication
+NSUserDefaults = AppKit.NSUserDefaults
 
 NSDocument = AppKit.NSDocument
 NSDocumentController = AppKit.NSDocumentController
@@ -4953,7 +4963,6 @@ ProgressBarController = progressbar.ProgressBarController
     return True
 
 
-
 </t>
 <t tx="karstenw.20170704105032.101">class NodeBoxAppDelegate(NSObject):
 
@@ -4962,6 +4971,16 @@ ProgressBarController = progressbar.ProgressBarController
 <t tx="karstenw.20170704105032.102">def awakeFromNib(self):
     print("AppDelegate.awakeFromNib")
     self._prefsController = None
+    
+    userdefaults = NSMutableDictionary.dictionary()
+    userdefaults.setObject_forKey_([], u'lastSessionURLs')
+    
+    defaults = NSUserDefaults.standardUserDefaults()
+    
+    if not 'lastSessionURLs' in defaults:
+        defaults.setObject_forKey_([], u'lastSessionURLs')
+        defaults.registerDefaults_( defaults )
+
     libpath = LibraryFolder()
 
 </t>
@@ -5003,7 +5022,20 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.108">def applicationWillTerminate_(self, note):
-    # import atexit
+    
+    controller = NSDocumentController.sharedDocumentController()
+    opendocuments = controller.documents()
+    defaults = NSUserDefaults.standardUserDefaults()
+    ns = NSMutableArray.arrayWithCapacity_( len(opendocuments) )
+    #print("opendocuments:")
+    #pp(opendocuments)
+    for document in opendocuments:
+        try:
+            ns.addObject_( document.fileURL().absoluteString() )
+        except Exception as err:
+            print(err)
+    defaults.setObject_forKey_( ns, u'lastSessionURLs')
+    #pp(ns)
     atexit._run_exitfuncs()
 </t>
 <t tx="karstenw.20170704105032.11">def __del__(self):
@@ -6562,8 +6594,9 @@ def changeFont_(self, sender):
 <t tx="karstenw.20170704105106.3">def __init__(self):
     self.libDir = ""
     prefpath = ""
+    defaults = NSUserDefaults.standardUserDefaults()
     try:
-        prefpath = NSUserDefaults.standardUserDefaults().objectForKey_("libraryPath")
+        prefpath = defaults.objectForKey_("libraryPath")
     except Exception as err:
         print("LibraryFolder: prefpath: %s" % repr(prefpath))
         prefpath = ""
@@ -14435,5 +14468,31 @@ def windowWillLoad( self ):
 
 
 </t>
+<t tx="karstenw.20230216113142.1">def applicationShouldOpenUntitledFile_( self, sender ):
+    """Reopen last opened files. See also applicationWillTerminate_()"""
+
+    if kwlog:
+        print( "applicationShouldOpenUntitledFile_()" )
+    defaults = NSUserDefaults.standardUserDefaults()
+    documents = defaults.arrayForKey_( u"lastSessionURLs" )
+
+    if len(documents) &gt; 0:
+        controller = NSDocumentController.sharedDocumentController()
+        for fileurl in documents:
+            url = NSURL.URLWithString_( fileurl )
+            theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
+    else:
+        # TODO read / write empty file open preferences here
+        return True
+
+
+</t>
+<t tx="karstenw.20230216115950.1"># NOT NOW
+#def applicationShouldHandleReopen_hasVisibleWindows_(self, sender, flag ):
+#    return not flag
+
+
+</t>
+<t tx="karstenw.20230216131548.1"></t>
 </tnodes>
 </leo_file>

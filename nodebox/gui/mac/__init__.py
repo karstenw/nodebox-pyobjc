@@ -24,9 +24,15 @@ kwlog = True
 import Foundation
 import AppKit
 NSObject = AppKit.NSObject
+
+NSMutableDictionary = AppKit.NSMutableDictionary
+NSArray = AppKit.NSArray
+NSMutableArray = AppKit.NSMutableArray
+
 NSColor = AppKit.NSColor
 NSScriptCommand = AppKit.NSScriptCommand
 NSApplication = AppKit.NSApplication
+NSUserDefaults = AppKit.NSUserDefaults
 
 NSDocument = AppKit.NSDocument
 NSDocumentController = AppKit.NSDocumentController
@@ -404,7 +410,7 @@ class NodeBoxDocument(NSDocument):
         # Set the frame
         self.namespace['FRAME'] = self._frame
 
-        if kwlog:
+        if 0:
             pp(self.namespace)
 
         # Run the script
@@ -1255,13 +1261,45 @@ class NodeBoxGraphicsView(NSView):
         return True
 
 
-
 class NodeBoxAppDelegate(NSObject):
 
     def awakeFromNib(self):
         print("AppDelegate.awakeFromNib")
         self._prefsController = None
+        
+        userdefaults = NSMutableDictionary.dictionary()
+        userdefaults.setObject_forKey_([], u'lastSessionURLs')
+        
+        defaults = NSUserDefaults.standardUserDefaults()
+        
+        if not 'lastSessionURLs' in defaults:
+            defaults.setObject_forKey_([], u'lastSessionURLs')
+            defaults.registerDefaults_( defaults )
+
         libpath = LibraryFolder()
+
+    def applicationShouldOpenUntitledFile_( self, sender ):
+        """Reopen last opened files. See also applicationWillTerminate_()"""
+
+        if kwlog:
+            print( "applicationShouldOpenUntitledFile_()" )
+        defaults = NSUserDefaults.standardUserDefaults()
+        documents = defaults.arrayForKey_( u"lastSessionURLs" )
+
+        if len(documents) > 0:
+            controller = NSDocumentController.sharedDocumentController()
+            for fileurl in documents:
+                url = NSURL.URLWithString_( fileurl )
+                theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
+        else:
+            # TODO read / write empty file open preferences here
+            return True
+
+
+    # NOT NOW
+    #def applicationShouldHandleReopen_hasVisibleWindows_(self, sender, flag ):
+    #    return not flag
+
 
     @objc.IBAction
     def showPreferencesPanel_(self, sender):
@@ -1296,5 +1334,18 @@ class NodeBoxAppDelegate(NSObject):
         NSWorkspace.sharedWorkspace().openURL_(url)
 
     def applicationWillTerminate_(self, note):
-        # import atexit
+        
+        controller = NSDocumentController.sharedDocumentController()
+        opendocuments = controller.documents()
+        defaults = NSUserDefaults.standardUserDefaults()
+        ns = NSMutableArray.arrayWithCapacity_( len(opendocuments) )
+        #print("opendocuments:")
+        #pp(opendocuments)
+        for document in opendocuments:
+            try:
+                ns.addObject_( document.fileURL().absoluteString() )
+            except Exception as err:
+                print(err)
+        defaults.setObject_forKey_( ns, u'lastSessionURLs')
+        #pp(ns)
         atexit._run_exitfuncs()
