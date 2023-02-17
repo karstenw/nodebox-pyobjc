@@ -1,3 +1,5 @@
+import importlib
+
 import pdb
 
 import AppKit
@@ -136,8 +138,15 @@ class Context(object):
         self._vars = []
 
     def ximport(self, libName):
-        
-        lib = __import__(libName)
+        import pprint
+        lib = importlib.__import__( libName )
+        if 0:
+            for name in self._ns:
+                if name[0] != '_':
+                    if name not in lib.__dict__:
+                        lib.__dict__[name] = self._ns[name]
+                    else:
+                        print("ximport ignored:", name)
         self._ns[libName] = lib
         lib._ctx = self
         return lib
