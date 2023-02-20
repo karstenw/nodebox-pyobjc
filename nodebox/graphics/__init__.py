@@ -1,3 +1,5 @@
+
+import pprint
 import importlib
 
 import pdb
@@ -137,16 +139,28 @@ class Context(object):
         self._oldvars = self._vars
         self._vars = []
 
+    def scanmodule( self, module):
+        types = {}
+        # pdb.set_trace()
+        for name in module.__dict__:
+            inst = module.__dict__[name]
+            t = type(inst)
+            try:
+                tn = inst.__class__.__name__
+            except:
+                tn = str(t)
+            if tn not in types:
+                types[tn] = []
+            if tn == 'function':
+                print( "co_filename:", name, inst.__code__.co_filename )
+            types[tn].append(name)
+        return types
+
     def ximport(self, libName):
-        import pprint
         lib = importlib.__import__( libName )
-        if 0:
-            for name in self._ns:
-                if name[0] != '_':
-                    if name not in lib.__dict__:
-                        lib.__dict__[name] = self._ns[name]
-                    else:
-                        print("ximport ignored:", name)
+        if 1:
+            scan = self.scanmodule( lib )
+            # pprint.pprint( scan )
         self._ns[libName] = lib
         lib._ctx = self
         return lib

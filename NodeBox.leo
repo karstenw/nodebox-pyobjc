@@ -60,6 +60,7 @@
 <v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
+<v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
 <v t="karstenw.20170709143724.1"><vh>## Setup Methods ##</vh>
 <v t="karstenw.20170704104725.6"><vh>size</vh></v>
@@ -1636,7 +1637,9 @@ from __future__ import print_function
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104725.1">import importlib
+<t tx="karstenw.20170704104725.1">
+import pprint
+import importlib
 
 import pdb
 
@@ -2145,15 +2148,10 @@ def push(self): #, all=False):
 
 </t>
 <t tx="karstenw.20170704104725.5">def ximport(self, libName):
-    import pprint
     lib = importlib.__import__( libName )
-    if 0:
-        for name in self._ns:
-            if name[0] != '_':
-                if name not in lib.__dict__:
-                    lib.__dict__[name] = self._ns[name]
-                else:
-                    print("ximport ignored:", name)
+    if 1:
+        scan = self.scanmodule( lib )
+        # pprint.pprint( scan )
     self._ns[libName] = lib
     lib._ctx = self
     return lib
@@ -14504,5 +14502,23 @@ def windowWillLoad( self ):
 
 </t>
 <t tx="karstenw.20230216131548.1"></t>
+<t tx="karstenw.20230217121258.1">def scanmodule( self, module):
+    types = {}
+    # pdb.set_trace()
+    for name in module.__dict__:
+        inst = module.__dict__[name]
+        t = type(inst)
+        try:
+            tn = inst.__class__.__name__
+        except:
+            tn = str(t)
+        if tn not in types:
+            types[tn] = []
+        if tn == 'function':
+            print( "co_filename:", name, inst.__code__.co_filename )
+        types[tn].append(name)
+    return types
+
+</t>
 </tnodes>
 </leo_file>
