@@ -158,7 +158,7 @@ class Context(object):
 
     def ximport(self, libName):
         lib = importlib.__import__( libName )
-        if 1:
+        if 0:
             scan = self.scanmodule( lib )
             # pprint.pprint( scan )
         self._ns[libName] = lib
