@@ -394,7 +394,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -509,7 +509,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20230216113142.1"><vh>applicationShouldOpenUntitledFile_</vh></v>
 <v t="karstenw.20230216115950.1"><vh>applicationShouldHandleReopen_hasVisibleWindows_</vh></v>
@@ -4845,7 +4845,7 @@ import pprint
 pp = pprint.pprint
 
 import pdb
-kwdbg = False
+kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
 debugging = True
@@ -14489,6 +14489,8 @@ def windowWillLoad( self ):
         for fileurl in documents:
             url = NSURL.URLWithString_( fileurl )
             theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
+            print( theerr )
+        return False
     else:
         # TODO read / write empty file open preferences here
         return True
