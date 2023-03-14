@@ -216,7 +216,7 @@ def files(path="*"):
     return f
 
 
-def filelist( folderpathorlist, pathonly=True ):
+def filelist( folderpathorlist, pathonly=True, extensions=None ):
     """Walk a folder or a list of folders and return
     paths or ((filepath, size, lastmodified, mode) tuples..
     """
@@ -240,6 +240,9 @@ def filelist( folderpathorlist, pathonly=True ):
                 thefile = makeunicode( thefile )
                 basename, ext = os.path.splitext(thefile)
 
+                if extensions:
+                    if ext.lower() not in extensions:
+                        continue
                 # exclude dotfiles
                 if thefile.startswith('.'):
                     continue
