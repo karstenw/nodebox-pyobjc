@@ -167,7 +167,7 @@ class NodeBoxApplication(NSApplication):
         objc.super(NodeBoxApplication, self).awakeFromNib()
 
     def finishLaunching(self):
-        if kwdbg:
+        if kwlog:
             print("AppClass.finishLaunching()")
         objc.super(NodeBoxApplication, self).finishLaunching()
 
@@ -1264,7 +1264,8 @@ class NodeBoxGraphicsView(NSView):
 class NodeBoxAppDelegate(NSObject):
 
     def awakeFromNib(self):
-        print("AppDelegate.awakeFromNib")
+        if kwlog:
+            print("AppDelegate.awakeFromNib")
         self._prefsController = None
         
         userdefaults = NSMutableDictionary.dictionary()
@@ -1291,6 +1292,9 @@ class NodeBoxAppDelegate(NSObject):
             for fileurl in documents:
                 url = NSURL.URLWithString_( fileurl )
                 theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
+                if kwdbg:
+                    print( theerr )
+            return False
         else:
             # TODO read / write empty file open preferences here
             return True
