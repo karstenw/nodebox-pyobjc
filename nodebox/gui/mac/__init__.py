@@ -3,7 +3,6 @@ import os
 import io
 import traceback, linecache
 import re
-import objc
 import time
 import random
 import signal
@@ -20,6 +19,10 @@ debugging = True
 
 # if true print out some debug info on stdout
 kwlog = True
+
+import objc
+objc.options.deprecation_warnings=1
+
 
 import Foundation
 import AppKit
@@ -214,7 +217,7 @@ class NodeBoxDocument(NSDocument):
 
     def init(self):
         # pdb.set_trace()
-        self = super(NodeBoxDocument, self).init()
+        self = objc.super(NodeBoxDocument, self).init()
         nc = NSNotificationCenter.defaultCenter()
         nc.addObserver_selector_name_object_(self,
                                              "textFontChanged:",
@@ -246,7 +249,7 @@ class NodeBoxDocument(NSDocument):
             if kwlog:
                 print("ERROR window.close()")
                 print( err )
-        super(NodeBoxDocument, self).close()
+        objc.super(NodeBoxDocument, self).close()
 
     def __del__(self):
         nc = NSNotificationCenter.defaultCenter()
@@ -800,8 +803,7 @@ class NodeBoxDocument(NSDocument):
                         self._frame += 1
                         pb.inc()
                     if "stop" in self.namespace:
-                        success, output = self.boxedRun_args_(self.namespace["stop"],
-                                                              [])
+                        success, output = self.boxedRun_args_(self.namespace["stop"], [])
                         self.flushOutput_(output)
             except KeyboardInterrupt:
                 pass
@@ -980,7 +982,7 @@ class FullscreenWindow(NSWindow):
 class FullscreenView(NSView):
     
     def init(self):
-        super(FullscreenView, self).init()
+        objc.super(FullscreenView, self).init()
         self.mousedown = False
         self.keydown = False
         self.key = None

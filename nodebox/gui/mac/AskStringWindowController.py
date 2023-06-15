@@ -38,12 +38,13 @@ class AskStringWindowController(AppKit.NSWindowController):
 
     def windowWillClose_(self, notification):
         self.autorelease()
-        return super(AskStringWindowController, self).windowWillClose_(self, notification)
+        return objc.super(AskStringWindowController, self).windowWillClose_(
+                                                    self, notification)
 
     def awakeFromNib(self):
         self.questionLabel.setStringValue_( self.question )
         self.textField.setStringValue_( self.default )
-        return super(AskStringWindowController, self).awakeFromNib()
+        return objc.super(AskStringWindowController, self).awakeFromNib()
 
     def done(self):
         if self.parentWindow is None:
@@ -69,11 +70,11 @@ class AskStringWindowController(AppKit.NSWindowController):
     def windowDidLoad( self ):
         print("AskStringWindowController.windowDidLoad()")
         print( "self.window()", self.window() )
-        return super(AskStringWindowController, self).windowDidLoad()
+        return objc.super(AskStringWindowController, self).windowDidLoad()
 
 
     def windowWillLoad( self ):
         # pdb.set_trace()
         print("AskStringWindowController.windowWillLoad()")
-        return super(AskStringWindowController, self).windowWillLoad()
+        return objc.super(AskStringWindowController, self).windowWillLoad()
 
