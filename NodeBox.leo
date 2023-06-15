@@ -53,8 +53,8 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
@@ -176,7 +176,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -398,7 +398,7 @@
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
@@ -406,7 +406,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -509,7 +509,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20230216113142.1"><vh>applicationShouldOpenUntitledFile_</vh></v>
 <v t="karstenw.20230216115950.1"><vh>applicationShouldHandleReopen_hasVisibleWindows_</vh></v>
@@ -651,7 +651,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
@@ -994,6 +994,8 @@ import numpy
 
 import sqlite3
 import zipfile
+import tarfile
+import gzip
 
 import hashlib
 import base64
@@ -1018,6 +1020,8 @@ import requests
 
 import planar
 
+import sdb
+
 # currently not in py2
 # import MySQLdb # lib/pattern
 # import locale
@@ -1032,7 +1036,6 @@ import planar
 # import pymongo
 # import dateutil
 # import copy
-# import gzip
 # import http
 # import http.client
 # import http.server
@@ -4845,7 +4848,7 @@ import pprint
 pp = pprint.pprint
 
 import pdb
-kwdbg = True
+kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
 debugging = True
@@ -4977,7 +4980,8 @@ ProgressBarController = progressbar.ProgressBarController
     @others
 </t>
 <t tx="karstenw.20170704105032.102">def awakeFromNib(self):
-    print("AppDelegate.awakeFromNib")
+    if kwlog:
+        print("AppDelegate.awakeFromNib")
     self._prefsController = None
     
     userdefaults = NSMutableDictionary.dictionary()
@@ -5569,8 +5573,7 @@ def exportImageFormatChanged_(self, sender):
                     self._frame += 1
                     pb.inc()
                 if "stop" in self.namespace:
-                    success, output = self.boxedRun_args_(self.namespace["stop"],
-                                                          [])
+                    success, output = self.boxedRun_args_(self.namespace["stop"], [])
                     self.flushOutput_(output)
         except KeyboardInterrupt:
             pass
@@ -8170,7 +8173,7 @@ __all__ = (
 
 
 </t>
-<t tx="karstenw.20170704105353.7">def filelist( folderpathorlist, pathonly=True ):
+<t tx="karstenw.20170704105353.7">def filelist( folderpathorlist, pathonly=True, extensions=None ):
     """Walk a folder or a list of folders and return
     paths or ((filepath, size, lastmodified, mode) tuples..
     """
@@ -8194,6 +8197,9 @@ __all__ = (
                 thefile = makeunicode( thefile )
                 basename, ext = os.path.splitext(thefile)
 
+                if extensions:
+                    if ext.lower() not in extensions:
+                        continue
                 # exclude dotfiles
                 if thefile.startswith('.'):
                     continue
@@ -14306,7 +14312,7 @@ class NodeBoxApplication(NSApplication):
 
 </t>
 <t tx="karstenw.20210623180302.1">def finishLaunching(self):
-    if kwdbg:
+    if kwlog:
         print("AppClass.finishLaunching()")
     objc.super(NodeBoxApplication, self).finishLaunching()
 
@@ -14489,7 +14495,8 @@ def windowWillLoad( self ):
         for fileurl in documents:
             url = NSURL.URLWithString_( fileurl )
             theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
-            print( theerr )
+            if kwdbg:
+                print( theerr )
         return False
     else:
         # TODO read / write empty file open preferences here

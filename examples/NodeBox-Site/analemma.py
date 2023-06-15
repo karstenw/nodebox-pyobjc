@@ -8,7 +8,7 @@ class circle(BezierPath):
     def __init__(self, x, y, radius, draw=True, **kwargs):
         BezierPath.__init__(self, _ctx, **kwargs)
         self._nsBezierPath.appendBezierPathWithOvalInRect_( ((x-radius, y-radius), (radius*2.0, radius*2.0)) )
-        self.center = _N.array([x, y], _N.float)
+        self.center = _N.array([x, y], float)
         self.radius = float(radius)
         self.diameter = radius*2.0
         self.inheritFromContext(kwargs.keys())    
