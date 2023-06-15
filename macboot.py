@@ -10,17 +10,15 @@ import os
 import operator
 import warnings
 import io
+import json
+
 import importlib
-
-# for the libraries
-
-import bs4
-
-# moved to Library
-import numpy
+# import _multibytecodec
 
 import sqlite3
 import zipfile
+import tarfile
+import gzip
 
 import hashlib
 import base64
@@ -38,12 +36,24 @@ import types
 import feedparser
 
 import encodings
+
 import imagewells
+# import requests
 
-import json
-import requests
 
-import planar
+# for the libraries
+import bs4
+
+# moved to Library
+import numpy
+
+
+try:
+    import planar
+except:
+    pass
+
+import sdb
 
 # currently not in py2
 # import MySQLdb # lib/pattern
@@ -59,7 +69,6 @@ import planar
 # import pymongo
 # import dateutil
 # import copy
-# import gzip
 # import http
 # import http.client
 # import http.server
@@ -91,13 +100,16 @@ import AVKit
 import LaunchServices
 import WebKit
 
+import CoreLocation
+
+"""
 if 0:
     #import AddressBook
     #import CloudKit
     #import Collaboration
 
     import ColorSync # 10.13
-    import Contacts # 10.11
+    # import Contacts # 10.11
 
     import CoreLocation
 
@@ -115,7 +127,7 @@ if 0:
     import OpenDirectory
     import OSAKit
     import SyncServices
-
+"""
 
 from PyObjCTools import AppHelper
 #import PyObjCTools.Debugging
