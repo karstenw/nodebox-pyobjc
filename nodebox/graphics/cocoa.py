@@ -9,6 +9,8 @@ shuffle = random.shuffle
 import objc
 super = objc.super
 
+# import pdb
+
 # from AppKit import *
 import AppKit
 NSBezierPath = AppKit.NSBezierPath
