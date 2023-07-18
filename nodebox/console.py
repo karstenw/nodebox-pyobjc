@@ -32,8 +32,8 @@ class NodeBoxRunner(object):
         """Returns False if this is not an animation, True otherwise.
         Throws an expection if the animation is not correct (missing a draw method)."""
         if self.canvas.speed is not None:
-            if not self.namespace.has_key('draw'):
-                raise graphics.NodeBoxError('Not a correct animation: No draw() method.')
+            if 'draw' not in self.namespace:
+                raise( graphics.NodeBoxError('Not a correct animation: No draw() method.') )
             return True
         return False
 
@@ -43,7 +43,7 @@ class NodeBoxRunner(object):
             source_or_code = compile(source_or_code + "\n\n", "<Untitled>", "exec")
         exec( source_or_code, self.namespace, self.namespace ) 
         if self._check_animation():
-            if self.namespace.has_key('setup'):
+            if 'setup' in self.namespace:
                 self.namespace['setup']()
             self.namespace['draw']()
         
@@ -97,6 +97,8 @@ def make_image(source_or_code, outputfile):
     runner = NodeBoxRunner()
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
+    return source_or_code
+    
     
 def make_movie(source_or_code, outputfile, frames, fps=30):
 
