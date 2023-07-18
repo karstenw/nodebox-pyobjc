@@ -3,4 +3,4 @@
 
 size(0,0)
 
-print WIDTH, HEIGHT
+print( WIDTH, HEIGHT )
