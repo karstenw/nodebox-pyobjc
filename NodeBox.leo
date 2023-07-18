@@ -25,10 +25,25 @@
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
-<v t="karstenw.20170704104053.1" a="E"><vh>@clean nodebox/__init__.py</vh>
+<v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
+</v>
+<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
+<v t="karstenw.20230718111113.2" a="E"><vh>class NodeBoxRunner</vh>
+<v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
+<v t="karstenw.20230718111113.4"><vh>_check_animation</vh></v>
+<v t="karstenw.20230718111113.5"><vh>run</vh></v>
+<v t="karstenw.20230718111113.6"><vh>run_multiple</vh></v>
+<v t="karstenw.20230718111113.7"><vh>_initNamespace</vh></v>
+</v>
+<v t="karstenw.20230718111113.8"><vh>make_image</vh></v>
+<v t="karstenw.20230718111113.9"><vh>make_movie</vh></v>
+<v t="karstenw.20230718111113.10"><vh>usage</vh></v>
+<v t="karstenw.20230718111113.11"><vh>main</vh></v>
+<v t="karstenw.20230718111113.12"><vh>test</vh></v>
 </v>
 <v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
@@ -57,7 +72,7 @@
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
@@ -153,7 +168,7 @@
 <v t="karstenw.20170709143618.1"><vh>## Canvas Proxy ##</vh>
 <v t="karstenw.20170704104726.24"><vh>save</vh></v>
 </v>
-<v t="karstenw.20170709143636.1" a="E"><vh>## C-Extensions Interface ##</vh>
+<v t="karstenw.20170709143636.1"><vh>## C-Extensions Interface ##</vh>
 <v t="karstenw.20170704104726.25"><vh>isqrt</vh></v>
 <v t="karstenw.20170704104726.26"><vh>angle</vh></v>
 <v t="karstenw.20170704104726.27"><vh>distance</vh></v>
@@ -220,14 +235,17 @@
 <v t="karstenw.20170704104751.35"><vh>_get_strokewidth</vh></v>
 <v t="karstenw.20170704104751.36"><vh>_set_strokewidth</vh></v>
 </v>
-<v t="karstenw.20170704104751.37"><vh>class BezierPath</vh>
+<v t="karstenw.20170704104751.37" a="E"><vh>class BezierPath</vh>
 <v t="karstenw.20170704104751.38"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.39"><vh>_get_path</vh></v>
 <v t="karstenw.20170704104751.40"><vh>copy</vh></v>
+<v t="karstenw.20230718091724.1"><vh>### Cap and Join style ###</vh>
 <v t="karstenw.20170704104751.41"><vh>_get_capstyle</vh></v>
 <v t="karstenw.20170704104751.42"><vh>_set_capstyle</vh></v>
 <v t="karstenw.20170704104751.43"><vh>_get_joinstyle</vh></v>
 <v t="karstenw.20170704104751.44"><vh>_set_joinstyle</vh></v>
+</v>
+<v t="karstenw.20230718091743.1"><vh>### Path methods ###</vh>
 <v t="karstenw.20170704104751.45"><vh>moveto</vh></v>
 <v t="karstenw.20170704104751.46"><vh>lineto</vh></v>
 <v t="karstenw.20170704104751.47"><vh>curveto</vh></v>
@@ -235,29 +253,40 @@
 <v t="karstenw.20170704104751.49"><vh>setlinewidth</vh></v>
 <v t="karstenw.20170704104751.50"><vh>_get_bounds</vh></v>
 <v t="karstenw.20170704104751.51"><vh>contains</vh></v>
+</v>
+<v t="karstenw.20230718091902.1"><vh>### Basic shapes ###</vh>
 <v t="karstenw.20170704104751.52"><vh>rect</vh></v>
 <v t="karstenw.20170704104751.53"><vh>oval</vh></v>
 <v t="karstenw.20170704104751.54"><vh>arc</vh></v>
 <v t="karstenw.20170704104751.55"><vh>line</vh></v>
+</v>
+<v t="karstenw.20230718091919.1"><vh>### List methods ###</vh>
 <v t="karstenw.20170704104751.56"><vh>__getitem__</vh></v>
 <v t="karstenw.20170704104751.57"><vh>__iter__</vh></v>
 <v t="karstenw.20170704104751.58"><vh>__len__</vh></v>
 <v t="karstenw.20170704104751.59"><vh>extend</vh></v>
 <v t="karstenw.20170704104751.60"><vh>append</vh></v>
+</v>
 <v t="karstenw.20170704104751.61"><vh>_get_contours</vh></v>
+<v t="karstenw.20230718092007.1"><vh>### Drawing methods ###</vh>
 <v t="karstenw.20170704104751.62"><vh>_get_transform</vh></v>
 <v t="karstenw.20170704104751.63"><vh>_draw</vh></v>
+</v>
+<v t="karstenw.20230718092025.1"><vh>### Geometry ###</vh>
 <v t="karstenw.20170704104751.64"><vh>fit</vh></v>
 <v t="karstenw.20170704104751.65"><vh>segmentlengths</vh></v>
 <v t="karstenw.20170704104751.66"><vh>_get_length</vh></v>
 <v t="karstenw.20170704104751.67"><vh>point</vh></v>
 <v t="karstenw.20170704104751.68"><vh>points</vh></v>
 <v t="karstenw.20170704104751.69"><vh>addpoint</vh></v>
+</v>
+<v t="karstenw.20230718092146.1"><vh>### Clipping operations ###</vh>
 <v t="karstenw.20170704104751.70"><vh>intersects</vh></v>
 <v t="karstenw.20170704104751.71"><vh>union</vh></v>
 <v t="karstenw.20170704104751.72"><vh>intersect</vh></v>
 <v t="karstenw.20170704104751.73"><vh>difference</vh></v>
 <v t="karstenw.20170704104751.74"><vh>xor</vh></v>
+</v>
 </v>
 <v t="karstenw.20170704104751.75"><vh>class PathElement</vh>
 <v t="karstenw.20170704104751.76"><vh>__init__</vh></v>
@@ -391,14 +420,14 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
-<v t="karstenw.20170704105032.3" a="E"><vh>class OutputFile</vh>
+<v t="karstenw.20170704105032.3"><vh>class OutputFile</vh>
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
@@ -406,7 +435,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -651,11 +680,11 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
-<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -670,7 +699,7 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
 <v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -786,9 +815,9 @@
 </v>
 </v>
 <v t="karstenw.20170704105416.1"><vh>QTSupport</vh>
-<v t="karstenw.20170704105551.1" a="E"><vh>@clean nodebox/util/QTSupport/__init__.py</vh>
+<v t="karstenw.20170704105551.1"><vh>@clean nodebox/util/QTSupport/__init__.py</vh>
 <v t="karstenw.20170704105603.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105603.2" a="E"><vh>class Movie</vh>
+<v t="karstenw.20170704105603.2"><vh>class Movie</vh>
 <v t="karstenw.20170704105603.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105603.4"><vh>add</vh></v>
 <v t="karstenw.20170704105603.5"><vh>save</vh></v>
@@ -796,7 +825,7 @@
 <v t="karstenw.20170704105603.6"><vh>test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105619.1"><vh>@clean nodebox/util/vdiff.py</vh>
+<v t="karstenw.20170704105619.1" a="E"><vh>@clean nodebox/util/vdiff.py</vh>
 <v t="karstenw.20170704105642.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105642.2"><vh>format_stats</vh></v>
 <v t="karstenw.20170704105642.3"><vh>format_stats_list</vh></v>
@@ -983,14 +1012,10 @@ import os
 import operator
 import warnings
 import io
+import json
+
 import importlib
-
-# for the libraries
-
-import bs4
-
-# moved to Library
-import numpy
+# import _multibytecodec
 
 import sqlite3
 import zipfile
@@ -1013,12 +1038,22 @@ import types
 import feedparser
 
 import encodings
+
 import imagewells
+# import requests
 
-import json
-import requests
 
-import planar
+# for the libraries
+import bs4
+
+# moved to Library
+import numpy
+
+
+try:
+    import planar
+except:
+    pass
 
 import sdb
 
@@ -1067,13 +1102,16 @@ import AVKit
 import LaunchServices
 import WebKit
 
+import CoreLocation
+
+"""
 if 0:
     #import AddressBook
     #import CloudKit
     #import Collaboration
 
     import ColorSync # 10.13
-    import Contacts # 10.11
+    # import Contacts # 10.11
 
     import CoreLocation
 
@@ -1091,7 +1129,7 @@ if 0:
     import OpenDirectory
     import OSAKit
     import SyncServices
-
+"""
 
 from PyObjCTools import AppHelper
 #import PyObjCTools.Debugging
@@ -1261,7 +1299,7 @@ setup(
     options={
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
-            "packages": [ "numpy", #"scipy", "matplotlib", "sympy",
+            "packages": [ "requests", "numpy", #"scipy", "matplotlib", "sympy",
                         # "pandas", "cv2", "dlib", "skimage", "sklearn"],
             ],
             "excludes": [
@@ -2927,6 +2965,8 @@ shuffle = random.shuffle
 import objc
 super = objc.super
 
+# import pdb
+
 # from AppKit import *
 import AppKit
 NSBezierPath = AppKit.NSBezierPath
@@ -4200,8 +4240,6 @@ class NodeBoxError(Exception):
 <t tx="karstenw.20170704104751.40">def copy(self):
     return self.__class__(self._ctx, self)
 
-### Cap and Join style ###
-
 </t>
 <t tx="karstenw.20170704104751.41">def _get_capstyle(self):
     return self._capstyle
@@ -4221,8 +4259,6 @@ capstyle = property(_get_capstyle, _set_capstyle)
         raise NodeBoxError('Line join style should be MITER, ROUND or BEVEL.')
     self._joinstyle = style
 joinstyle = property(_get_joinstyle, _set_joinstyle)
-
-### Path methods ###
 
 </t>
 <t tx="karstenw.20170704104751.45">def moveto(self, x, y):
@@ -4286,8 +4322,6 @@ bounds = property(_get_bounds)
 <t tx="karstenw.20170704104751.51">def contains(self, x, y):
     return self._nsBezierPath.containsPoint_((x,y))
 
-### Basic shapes ###
-
 </t>
 <t tx="karstenw.20170704104751.52">def rect(self, x, y, width, height):
     self._segment_cache = None
@@ -4312,8 +4346,6 @@ ellipse = oval
     self._segment_cache = None
     self._nsBezierPath.moveToPoint_( (x1, y1) )
     self._nsBezierPath.lineToPoint_( (x2, y2) )
-
-### List methods ###
 
 </t>
 <t tx="karstenw.20170704104751.56">def __getitem__(self, index):
@@ -4375,9 +4407,7 @@ ellipse = oval
 contours = property(_get_contours)
 
 </t>
-<t tx="karstenw.20170704104751.62">### Drawing methods ###
-
-def _get_transform(self):
+<t tx="karstenw.20170704104751.62">def _get_transform(self):
     trans = self._transform.copy()
     if (self._transformmode == CENTER):
         (x, y), (w, h) = self.bounds
@@ -4406,8 +4436,6 @@ transform = property(_get_transform)
         self._nsBezierPath.setLineJoinStyle_(self._joinstyle)
         self._nsBezierPath.stroke()
     _restore()
-
-### Geometry ###
 
 </t>
 <t tx="karstenw.20170704104751.64">def fit(self, x=None, y=None, width=None, height=None, stretch=False):
@@ -4502,8 +4530,6 @@ length = property(_get_length)
     from . import bezier
     self._nsBezierPath = bezier.insert_point(self, t)._nsBezierPath
     self._segment_cache = None
-
-### Clipping operations ###
 
 </t>
 <t tx="karstenw.20170704104751.7">def __repr__(self):
@@ -4838,7 +4864,6 @@ import os
 import io
 import traceback, linecache
 import re
-import objc
 import time
 import random
 import signal
@@ -4855,6 +4880,10 @@ debugging = True
 
 # if true print out some debug info on stdout
 kwlog = True
+
+import objc
+objc.options.deprecation_warnings=1
+
 
 import Foundation
 import AppKit
@@ -4967,7 +4996,7 @@ ProgressBarController = progressbar.ProgressBarController
         if kwlog:
             print("ERROR window.close()")
             print( err )
-    super(NodeBoxDocument, self).close()
+    objc.super(NodeBoxDocument, self).close()
 
 </t>
 <t tx="karstenw.20170704105032.100">def acceptsFirstResponder(self):
@@ -5781,7 +5810,7 @@ def zoomToFit_(self, sender):
     @others
 </t>
 <t tx="karstenw.20170704105032.56">def init(self):
-    super(FullscreenView, self).init()
+    objc.super(FullscreenView, self).init()
     self.mousedown = False
     self.keydown = False
     self.key = None
@@ -6014,7 +6043,7 @@ def resetZoom_(self, sender):
 </t>
 <t tx="karstenw.20170704105032.8">def init(self):
     # pdb.set_trace()
-    self = super(NodeBoxDocument, self).init()
+    self = objc.super(NodeBoxDocument, self).init()
     nc = NSNotificationCenter.defaultCenter()
     nc.addObserver_selector_name_object_(self,
                                          "textFontChanged:",
@@ -6202,13 +6231,14 @@ class AskStringWindowController(AppKit.NSWindowController):
 </t>
 <t tx="karstenw.20170704105043.4">def windowWillClose_(self, notification):
     self.autorelease()
-    return super(AskStringWindowController, self).windowWillClose_(self, notification)
+    return objc.super(AskStringWindowController, self).windowWillClose_(
+                                                self, notification)
 
 </t>
 <t tx="karstenw.20170704105043.5">def awakeFromNib(self):
     self.questionLabel.setStringValue_( self.question )
     self.textField.setStringValue_( self.default )
-    return super(AskStringWindowController, self).awakeFromNib()
+    return objc.super(AskStringWindowController, self).awakeFromNib()
 
 </t>
 <t tx="karstenw.20170704105043.6">def done(self):
@@ -9072,11 +9102,11 @@ comparison_image = property(_get_comparison_image)
     diff = visual_diff(fname1, fname2)    
     stats = Statistics(fname1, fname2, diff)
 
-    print "Differences:", len(stats.differences)
-    print "Total delta:", stats.total_delta
-    print "Max delta:", stats.max_delta
-    print "Mean:", stats.mean
-    print "Stdev:", stats.stdev
+    print( "Differences:", len(stats.differences) )
+    print( "Total delta:", stats.total_delta )
+    print( "Max delta:", stats.max_delta )
+    print( "Mean:", stats.mean )
+    print( "Stdev:", stats.stdev )
 
     stats.comparison_image.save('cmp.png')
     
@@ -9107,8 +9137,8 @@ comparison_image = property(_get_comparison_image)
     
 </t>
 <t tx="karstenw.20170704105642.18">def usage():
-    print """vdiff -- visually compare images
-Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]"""
+    print( """vdiff -- visually compare images
+Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]""" )
 
 </t>
 <t tx="karstenw.20170704105642.2">def format_stats(stats):
@@ -14467,13 +14497,13 @@ MAGICVAR = "__magic_var__"
 <t tx="karstenw.20211127131740.1">def windowDidLoad( self ):
     print("AskStringWindowController.windowDidLoad()")
     print( "self.window()", self.window() )
-    return super(AskStringWindowController, self).windowDidLoad()
+    return objc.super(AskStringWindowController, self).windowDidLoad()
 
 
 def windowWillLoad( self ):
     # pdb.set_trace()
     print("AskStringWindowController.windowWillLoad()")
-    return super(AskStringWindowController, self).windowWillLoad()
+    return objc.super(AskStringWindowController, self).windowWillLoad()
 
 </t>
 <t tx="karstenw.20211204132045.1">def AskString(question, resultCallback, default="", parentWindow=None):
@@ -14527,6 +14557,211 @@ def windowWillLoad( self ):
             print( "co_filename:", name, inst.__code__.co_filename )
         types[tn].append(name)
     return types
+
+</t>
+<t tx="karstenw.20230718091724.1">### Cap and Join style ###
+
+</t>
+<t tx="karstenw.20230718091743.1">### Path methods ###
+
+</t>
+<t tx="karstenw.20230718091902.1">### Basic shapes ###
+
+</t>
+<t tx="karstenw.20230718091919.1">### List methods ###
+
+</t>
+<t tx="karstenw.20230718092007.1">### Drawing methods ###
+
+</t>
+<t tx="karstenw.20230718092025.1">### Geometry ###
+
+</t>
+<t tx="karstenw.20230718092146.1">### Clipping operations ###
+
+</t>
+<t tx="karstenw.20230718111102.1">@language python
+@tabwidth -4
+@others
+if __name__=='__main__':
+    main()
+</t>
+<t tx="karstenw.20230718111113.1">import sys, os, io
+
+import AppKit
+NSApplication = AppKit.NSApplication
+
+try:
+    import nodebox
+except ImportError:
+    nodebox_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.append(os.path.dirname(nodebox_dir))
+
+import nodebox.graphics
+graphics = nodebox.graphics
+
+import nodebox.util
+util = nodebox.util
+
+
+</t>
+<t tx="karstenw.20230718111113.10">def usage(err=""):
+    if len(err) &gt; 0:
+        err = '\n\nError: ' + str(err)
+    print("""NodeBox console runner
+Usage: console.py sourcefile imagefile
+   or: console.py sourcefile moviefile number_of_frames [fps]
+Supported image extensions: pdf, tiff, png, jpg, gif
+Supported movie extension:  mov""" + err)
+
+</t>
+<t tx="karstenw.20230718111113.11">def main():
+    if len(sys.argv) &lt; 2:
+        usage()
+    elif len(sys.argv) == 3: # Should be an image
+        basename, ext = os.path.splitext(sys.argv[2])
+        if ext not in ('.pdf', '.gif', '.jpg', '.jpeg', '.png', '.tiff'):
+            return usage('This is not a supported image format.')
+        make_image(open(sys.argv[1]).read(), sys.argv[2])
+    elif len(sys.argv) == 4 or len(sys.argv) == 5: # Should be a movie
+        basename, ext = os.path.splitext(sys.argv[2])
+        if ext != '.mov':
+            return usage('This is not a supported movie format.')
+        if len(sys.argv) == 5:
+            try:
+                fps = int(sys.argv[4])
+            except ValueError:
+                return usage()
+        else:
+            fps = 30
+        make_movie(open(sys.argv[1]).read(), sys.argv[2], int(sys.argv[3]), fps)
+
+</t>
+<t tx="karstenw.20230718111113.12">def test():
+    # Creating the NodeBoxRunner class directly:
+    runner = NodeBoxRunner()
+    testscript = ('size(500,500)\n'
+                  'for i in range(400):\n'
+                  '  oval(random(WIDTH),random(HEIGHT),50,50, '
+                  'fill=(random(), 0,0,random()))')
+    runner.run(testscript)
+    runner.canvas.save('console-test.pdf')
+    runner.canvas.save('console-test.png')
+    
+    # Using the runner for animations:
+    runner = NodeBoxRunner()
+    for frame in runner.run_multiple('size(300, 300)\ntext(FRAME, 100, 100)', 10):
+        runner.canvas.save('console-test-frame%02i.png' % frame)
+
+    # Using the shortcut functions:
+    make_image('size(200,200)\ntext(FRAME, 100, 100)', 'console-test.gif')
+    make_movie('size(200,200)\ntext(FRAME, 100, 100)', 'console-test.mov', 10)
+
+</t>
+<t tx="karstenw.20230718111113.2">class NodeBoxRunner(object):
+    
+    @others
+</t>
+<t tx="karstenw.20230718111113.3">def __init__(self):
+    # Force NSApp initialisation.
+    NSApplication.sharedApplication().activateIgnoringOtherApps_(0)
+    self.namespace = {}
+    self.canvas = graphics.Canvas()
+    self.context = graphics.Context(self.canvas, self.namespace)
+    self.__doc__ = {}
+    self._pageNumber = 1
+    self.frame = 1
+    
+</t>
+<t tx="karstenw.20230718111113.4">def _check_animation(self):
+    """Returns False if this is not an animation, True otherwise.
+    Throws an expection if the animation is not correct (missing a draw method)."""
+    if self.canvas.speed is not None:
+        if not self.namespace.has_key('draw'):
+            raise graphics.NodeBoxError('Not a correct animation: No draw() method.')
+        return True
+    return False
+
+</t>
+<t tx="karstenw.20230718111113.5">def run(self, source_or_code):
+    self._initNamespace()
+    if isinstance(source_or_code, str):
+        source_or_code = compile(source_or_code + "\n\n", "&lt;Untitled&gt;", "exec")
+    exec( source_or_code, self.namespace, self.namespace ) 
+    if self._check_animation():
+        if self.namespace.has_key('setup'):
+            self.namespace['setup']()
+        self.namespace['draw']()
+    
+</t>
+<t tx="karstenw.20230718111113.6">def run_multiple(self, source_or_code, frames):
+    if isinstance(source_or_code, str):
+        source_or_code = compile(source_or_code + "\n\n", "&lt;Untitled&gt;", "exec")
+        
+    # First frame is special:
+    self.run(source_or_code)
+    yield 1
+    animation = self._check_animation()
+        
+    for i in range(frames-1):
+        self.canvas.clear()
+        self.frame = i + 2
+        self.namespace["PAGENUM"] = self.namespace["FRAME"] = self.frame
+        if animation:
+            self.namespace['draw']()
+        else:
+            exec( source_or_code, self.namespace, self.namespace )
+        yield self.frame
+
+</t>
+<t tx="karstenw.20230718111113.7">def _initNamespace(self, frame=1):
+    self.canvas.clear()
+    self.namespace.clear()
+    # Add everything from the namespace
+    for name in graphics.__all__:
+        self.namespace[name] = getattr(graphics, name)
+    for name in util.__all__:
+        self.namespace[name] = getattr(util, name)
+    # Add everything from the context object
+    self.namespace["_ctx"] = self.context
+    for attrName in dir(self.context):
+        self.namespace[attrName] = getattr(self.context, attrName)
+    # Add the document global
+    self.namespace["__doc__"] = self.__doc__
+    # Add the frame
+    self.frame = frame
+    self.namespace["PAGENUM"] = self.namespace["FRAME"] = self.frame
+    
+</t>
+<t tx="karstenw.20230718111113.8">def make_image(source_or_code, outputfile):
+    
+    """Given a source string or code object, executes the scripts and saves the result as
+    an image.  Supported image extensions: pdf, tiff, png, jpg, gif"""
+    
+    if os.path.exists( source_or_code ):
+        f = io.open( source_or_code, encoding="utf-8" )
+        source_or_code = f.read()
+        f.close()
+        
+    runner = NodeBoxRunner()
+    runner.run(source_or_code)
+    runner.canvas.save(outputfile)
+    
+</t>
+<t tx="karstenw.20230718111113.9">def make_movie(source_or_code, outputfile, frames, fps=30):
+
+    """Given a source string or code object, executes the scripts and saves the result as
+    a movie.
+    
+    You also have to specify the number of frames to render.
+    Supported movie extension: mov"""
+
+    from nodebox.util import QTSupport
+    runner = NodeBoxRunner()
+    movie = QTSupport.Movie(outputfile, fps)
+    for frame in runner.run_multiple(source_or_code, frames):
+        movie.add(runner.canvas)
+    movie.save()
 
 </t>
 </tnodes>

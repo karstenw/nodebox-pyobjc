@@ -1,10 +1,11 @@
+import sys, os, io
+
 import AppKit
 NSApplication = AppKit.NSApplication
 
 try:
     import nodebox
 except ImportError:
-    import sys, os
     nodebox_dir = os.path.dirname(os.path.abspath(__file__))
     sys.path.append(os.path.dirname(nodebox_dir))
 
@@ -14,8 +15,6 @@ graphics = nodebox.graphics
 import nodebox.util
 util = nodebox.util
 
-#from nodebox import graphics
-#from nodebox import util
 
 class NodeBoxRunner(object):
     
@@ -40,16 +39,16 @@ class NodeBoxRunner(object):
 
     def run(self, source_or_code):
         self._initNamespace()
-        if isinstance(source_or_code, basestring):
+        if isinstance(source_or_code, str):
             source_or_code = compile(source_or_code + "\n\n", "<Untitled>", "exec")
-        exec source_or_code in self.namespace
+        exec( source_or_code, self.namespace, self.namespace ) 
         if self._check_animation():
             if self.namespace.has_key('setup'):
                 self.namespace['setup']()
             self.namespace['draw']()
         
     def run_multiple(self, source_or_code, frames):
-        if isinstance(source_or_code, basestring):
+        if isinstance(source_or_code, str):
             source_or_code = compile(source_or_code + "\n\n", "<Untitled>", "exec")
             
         # First frame is special:
@@ -64,9 +63,9 @@ class NodeBoxRunner(object):
             if animation:
                 self.namespace['draw']()
             else:
-                exec source_or_code in self.namespace
+                exec( source_or_code, self.namespace, self.namespace )
             yield self.frame
-    
+
     def _initNamespace(self, frame=1):
         self.canvas.clear()
         self.namespace.clear()
@@ -90,6 +89,11 @@ def make_image(source_or_code, outputfile):
     """Given a source string or code object, executes the scripts and saves the result as
     an image.  Supported image extensions: pdf, tiff, png, jpg, gif"""
     
+    if os.path.exists( source_or_code ):
+        f = io.open( source_or_code, encoding="utf-8" )
+        source_or_code = f.read()
+        f.close()
+        
     runner = NodeBoxRunner()
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
@@ -119,7 +123,6 @@ Supported image extensions: pdf, tiff, png, jpg, gif
 Supported movie extension:  mov""" + err)
 
 def main():
-    import sys, os
     if len(sys.argv) < 2:
         usage()
     elif len(sys.argv) == 3: # Should be an image
