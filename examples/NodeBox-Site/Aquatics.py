@@ -212,31 +212,35 @@ class head:
  
         for item in self.eyelist:
             self.eyes(item[0], item[1],item[2])
- 
-for i in range(2):
-    s = 70+random(50)
-    c = color(random(),random(),random())
-    # print( s )
-    header = head(250+i*(400),HEIGHT/2+10,s,s,c,0)     
-    header.draw()   
+
+#r = random(100)
+#print("r:", r)
+#if r > 50:
+if 0:
+    for i in range(2):
+        s = 70+random(50)
+        c = color(random(),random(),random())
+        # print( s )
+        header = head(250+i*(400),HEIGHT/2+10,s,s,c,0)     
+        header.draw()   
  
  
 # textexample with background 
-''' 
-m = 'A'
-ttt = 'AquaTics'
-font("Marker Felt",250)
-#ttt = ''
-background(0.9,0.28,0.62)
-for i in range(10):
-    fill(0.9,0.28*i/10,0.62)
-    rotate(i*4.0)
-    rect(i*WIDTH/10,0,WIDTH/10,HEIGHT)
-for i in range(len(ttt)):     
-    m = ttt[i]   
-    c = color(random(.5,.99),random(0.5,0),random(0.5,0),1.0)
-    s = 70+random(50)
-    print( s )
-    header = head(80+i*(WIDTH/len(ttt)),HEIGHT/2+random(-5*i),s,s,c,m)     
-    header.draw() 
-'''
+else:
+    m = 'A'
+    ttt = 'AquaTics'
+    font("Marker Felt",250)
+    #ttt = ''
+    background(0.9,0.28,0.62)
+    for i in range(10):
+        fill(0.9,0.28*i/10,0.62)
+        rotate(i*4.0)
+        rect(i*WIDTH/10,0,WIDTH/10,HEIGHT)
+    for i in range(len(ttt)):     
+        m = ttt[i]   
+        c = color(random(.5,.99),random(0.5,0),random(0.5,0),1.0)
+        s = 70+random(50)
+        print( s )
+        header = head(80+i*(WIDTH/len(ttt)),HEIGHT/2+random(-5*i),s,s,c,m)     
+        header.draw() 
+
