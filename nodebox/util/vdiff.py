@@ -161,11 +161,11 @@ def statistics(fname1, fname2, threshold=0):
     diff = visual_diff(fname1, fname2)    
     stats = Statistics(fname1, fname2, diff)
 
-    print "Differences:", len(stats.differences)
-    print "Total delta:", stats.total_delta
-    print "Max delta:", stats.max_delta
-    print "Mean:", stats.mean
-    print "Stdev:", stats.stdev
+    print( "Differences:", len(stats.differences) )
+    print( "Total delta:", stats.total_delta )
+    print( "Max delta:", stats.max_delta )
+    print( "Mean:", stats.mean )
+    print( "Stdev:", stats.stdev )
 
     stats.comparison_image.save('cmp.png')
     
@@ -194,8 +194,8 @@ def test_vdiff(self):
     statistics(fname1, fname2)
     
 def usage():
-    print """vdiff -- visually compare images
-Usage: vdiff <image1> <image2> [threshold]"""
+    print( """vdiff -- visually compare images
+Usage: vdiff <image1> <image2> [threshold]""" )
 
 if __name__=='__main__':
     import sys
