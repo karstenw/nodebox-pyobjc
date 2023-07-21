@@ -7,7 +7,11 @@ import nodebox.util
 
 examples = os.path.abspath( "../examples" )
 
-alldemos = nodebox.util.filelist( examples, pathonly=False, extensions=[".py",] )
+print("examples:", examples)
+
+alldemos = nodebox.util.filelist( examples,
+                                  pathonly=False,
+                                  extensions=['.py','.bot', '.pv'] )
 
 total = errors = 0
 
@@ -15,7 +19,7 @@ for rec in alldemos:
     filepath, size, lastmodified, mode, islink = rec
     if islink:
         continue
-
+    
     folder, filename = os.path.split( filepath )
     basename, ext = os.path.splitext( filename )
     
@@ -28,16 +32,20 @@ for rec in alldemos:
     total += 1
     imgname = basename + '.png'
     imgname = basename + '.jpg'
-    
+    imgfolder = os.path.abspath( "temp" )
+    if not os.path.exists( imgfolder ):
+        os.makedirs( imgfolder )
+    imgpath = os.path.join( imgfolder, imgname )
     try:
-        s = nodebox.console.make_image( filepath, imgname )
+        s = nodebox.console.make_image( filepath, imgpath )
     except Exception as err:
         errors += 1
         print(filepath)
         print(err)
-        #pdb.set_trace()
+        # pdb.set_trace()
         print()
         print()
+    
 
 print()
 print("total:", total)
