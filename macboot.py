@@ -88,6 +88,7 @@ import PIL.ImageOps
 import PIL.ImageDraw
 import PIL.ImageStat
 
+import cairo
 
 import objc
 import Foundation
