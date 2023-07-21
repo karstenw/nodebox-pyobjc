@@ -30,3 +30,5 @@ examples/New Functions/Example fractal 3.py
 examples/scaler.py
 examples/Third party stuff
 examples/Test
+tests/temp
+tests/examples-*
