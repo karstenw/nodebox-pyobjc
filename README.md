@@ -33,9 +33,10 @@ Attention!
 		The distance between points (x0,y0) and (x1,y1).
 	1.  `coordinates(x0, y0, distance, angle)`
 		The point at dintance and angle from point(x0,y0)
-	1.  `reflect(x0, y0, x1, y1, d=1.0, a=180)
+	1.  `reflect(x0, y0, x1, y1, d=1.0, a=180)`
 		Too complicated. Watch the example file _Example coordinates 1.py_
-	1.  `isqrt(n)` = 1 / sqrt(n)
+	1.  `isqrt(n)`
+		The inverse square root 1 / sqrt(n)
 
 1. Different behaviour:
 	1.  `size(0,0)`  sets size to size of main screen
