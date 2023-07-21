@@ -1,4 +1,5 @@
-import sys, os, io
+import sys, os, io, pdb
+import subprocess
 
 import AppKit
 NSApplication = AppKit.NSApplication
@@ -15,6 +16,21 @@ graphics = nodebox.graphics
 import nodebox.util
 util = nodebox.util
 
+librarypath = "NONE"
+try:
+    # pdb.set_trace()
+    result = subprocess.run([ "defaults","read","net.nodebox.NodeBox","libraryPath" ], capture_output=True)
+    
+    p = result.stdout  #os.system("/usr/bin/defaults read net.nodebox.NodeBox libraryPath")
+    p = p.strip( b" \t\n\r" )
+    p = str(p,encoding="utf-8")
+    if os.path.exists(p):
+        librarypath = p
+        sys.path.insert(0, librarypath)
+except:
+    librarypath = False
+print("librarypath:", repr(librarypath))
+
 
 class NodeBoxRunner(object):
     
@@ -27,6 +43,8 @@ class NodeBoxRunner(object):
         self.__doc__ = {}
         self._pageNumber = 1
         self.frame = 1
+        self.library = False
+        
         
     def _check_animation(self):
         """Returns False if this is not an animation, True otherwise.
@@ -36,7 +54,7 @@ class NodeBoxRunner(object):
                 raise( graphics.NodeBoxError('Not a correct animation: No draw() method.') )
             return True
         return False
-
+        
     def run(self, source_or_code):
         self._initNamespace()
         if isinstance(source_or_code, str):
