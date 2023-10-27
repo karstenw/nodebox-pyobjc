@@ -13,8 +13,8 @@ NSJPEGFileType = AppKit.NSJPEGFileType
 
 import QTKit
 QTMovie = QTKit.QTMovie
-QTDataReference = QTKit.QTDataReference
-QTMovieFileNameAttribute = QTKit.QTMovieFileNameAttribute
+# QTDataReference = QTKit.QTDataReference
+# QTMovieFileNameAttribute = QTKit.QTMovieFileNameAttribute
 QTMakeTimeRange = QTKit.QTMakeTimeRange
 QTMakeTime = QTKit.QTMakeTime
 QTMovieEditableAttribute = QTKit.QTMovieEditableAttribute
@@ -70,7 +70,9 @@ class Movie(object):
                 
     def save(self):
         self.movie.updateMovieFile()
-        
+
+
+
 def test():
     import sys
     sys.path.insert(0, '../..')
