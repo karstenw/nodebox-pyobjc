@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
@@ -24,15 +24,15 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
-<v t="karstenw.20230718111113.2" a="E"><vh>class NodeBoxRunner</vh>
+<v t="karstenw.20230718111113.2"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
 <v t="karstenw.20230718111113.4"><vh>_check_animation</vh></v>
 <v t="karstenw.20230718111113.5"><vh>run</vh></v>
@@ -77,7 +77,7 @@
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
-<v t="karstenw.20170709143724.1"><vh>## Setup Methods ##</vh>
+<v t="karstenw.20170709143724.1" a="E"><vh>## Setup Methods ##</vh>
 <v t="karstenw.20170704104725.6"><vh>size</vh></v>
 <v t="karstenw.20170704104725.7"><vh>_get_width</vh></v>
 <v t="karstenw.20170704104725.8"><vh>_get_height</vh></v>
@@ -85,12 +85,12 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
 </v>
-<v t="karstenw.20170709143242.1"><vh>## Objects ##</vh>
+<v t="karstenw.20170709143242.1" a="E"><vh>## Objects ##</vh>
 <v t="karstenw.20170704104725.15"><vh>_makeInstance</vh></v>
 <v t="karstenw.20170704104725.16"><vh>BezierPath</vh></v>
 <v t="karstenw.20170704104725.17"><vh>ClippingPath</vh></v>
@@ -100,7 +100,7 @@
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
 </v>
-<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
+<v t="karstenw.20170709143301.1" a="E"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
 <v t="karstenw.20170704104725.25"><vh>arc</vh></v>
@@ -110,7 +110,7 @@
 <v t="karstenw.20170704104725.29"><vh>_arrow</vh></v>
 <v t="karstenw.20170704104725.30"><vh>_arrow45</vh></v>
 </v>
-<v t="karstenw.20170709143318.1"><vh>## Path Commands ##</vh>
+<v t="karstenw.20170709143318.1" a="E"><vh>## Path Commands ##</vh>
 <v t="karstenw.20170704104725.31"><vh>beginpath</vh></v>
 <v t="karstenw.20170704104725.32"><vh>moveto</vh></v>
 <v t="karstenw.20170704104725.33"><vh>lineto</vh></v>
@@ -121,11 +121,11 @@
 <v t="karstenw.20170704104725.38"><vh>autoclosepath</vh></v>
 <v t="karstenw.20170704104725.39"><vh>findpath</vh></v>
 </v>
-<v t="karstenw.20170709143341.1"><vh>## Clipping Commands ##</vh>
+<v t="karstenw.20170709143341.1" a="E"><vh>## Clipping Commands ##</vh>
 <v t="karstenw.20170704104725.40"><vh>beginclip</vh></v>
 <v t="karstenw.20170704104725.41"><vh>endclip</vh></v>
 </v>
-<v t="karstenw.20170709143354.1"><vh>## Transformation Commands ##</vh>
+<v t="karstenw.20170709143354.1" a="E"><vh>## Transformation Commands ##</vh>
 <v t="karstenw.20170704104725.42"><vh>push</vh></v>
 <v t="karstenw.20170704104725.43"><vh>pop</vh></v>
 <v t="karstenw.20170704104725.44"><vh>transform</vh></v>
@@ -149,7 +149,7 @@
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -379,7 +379,7 @@
 <v t="karstenw.20170704104751.151"><vh>getSize</vh></v>
 <v t="karstenw.20170704104751.152"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20170704104751.153"><vh>class Text</vh>
+<v t="karstenw.20170704104751.153" a="E"><vh>class Text</vh>
 <v t="karstenw.20170704104751.154"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.155"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.156"><vh>font_exists</vh></v>
@@ -699,7 +699,7 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
 <v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -825,7 +825,7 @@
 <v t="karstenw.20170704105603.6"><vh>test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105619.1" a="E"><vh>@clean nodebox/util/vdiff.py</vh>
+<v t="karstenw.20170704105619.1"><vh>@clean nodebox/util/vdiff.py</vh>
 <v t="karstenw.20170704105642.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105642.2"><vh>format_stats</vh></v>
 <v t="karstenw.20170704105642.3"><vh>format_stats_list</vh></v>
@@ -1090,6 +1090,7 @@ import PIL.ImageOps
 import PIL.ImageDraw
 import PIL.ImageStat
 
+import cairo
 
 import objc
 import Foundation
@@ -1473,8 +1474,8 @@ import re
 from . import graphics
 from . import util
 
-import Foundation
-import objc
+# import Foundation
+# import objc
 
 </t>
 <t tx="karstenw.20170704104209.2">def fontify(pytext, searchfrom=0, searchto=None):
@@ -8920,8 +8921,8 @@ NSJPEGFileType = AppKit.NSJPEGFileType
 
 import QTKit
 QTMovie = QTKit.QTMovie
-QTDataReference = QTKit.QTDataReference
-QTMovieFileNameAttribute = QTKit.QTMovieFileNameAttribute
+# QTDataReference = QTKit.QTDataReference
+# QTMovieFileNameAttribute = QTKit.QTMovieFileNameAttribute
 QTMakeTimeRange = QTKit.QTMakeTimeRange
 QTMakeTime = QTKit.QTMakeTime
 QTMovieEditableAttribute = QTKit.QTMovieEditableAttribute
@@ -8982,7 +8983,9 @@ QTMovieFlatten = QTKit.QTMovieFlatten
 </t>
 <t tx="karstenw.20170704105603.5">def save(self):
     self.movie.updateMovieFile()
-    
+
+
+
 </t>
 <t tx="karstenw.20170704105603.6">def test():
     import sys
@@ -14586,7 +14589,13 @@ def windowWillLoad( self ):
 if __name__=='__main__':
     main()
 </t>
-<t tx="karstenw.20230718111113.1">import sys, os, io
+<t tx="karstenw.20230718111113.1">
+
+import sys
+import os
+import io
+# import pdb
+import subprocess
 
 import AppKit
 NSApplication = AppKit.NSApplication
@@ -14602,6 +14611,21 @@ graphics = nodebox.graphics
 
 import nodebox.util
 util = nodebox.util
+
+librarypath = "NONE"
+try:
+    # pdb.set_trace()
+    result = subprocess.run([ "defaults","read","net.nodebox.NodeBox","libraryPath" ], capture_output=True)
+    
+    p = result.stdout  #os.system("/usr/bin/defaults read net.nodebox.NodeBox libraryPath")
+    p = p.strip( b" \t\n\r" )
+    p = str(p,encoding="utf-8")
+    if os.path.exists(p):
+        librarypath = p
+        sys.path.insert(0, librarypath)
+except:
+    librarypath = False
+print("librarypath:", repr(librarypath))
 
 
 </t>
@@ -14671,17 +14695,19 @@ Supported movie extension:  mov""" + err)
     self.__doc__ = {}
     self._pageNumber = 1
     self.frame = 1
+    self.library = False
+    
     
 </t>
 <t tx="karstenw.20230718111113.4">def _check_animation(self):
     """Returns False if this is not an animation, True otherwise.
     Throws an expection if the animation is not correct (missing a draw method)."""
     if self.canvas.speed is not None:
-        if not self.namespace.has_key('draw'):
-            raise graphics.NodeBoxError('Not a correct animation: No draw() method.')
+        if 'draw' not in self.namespace:
+            raise( graphics.NodeBoxError('Not a correct animation: No draw() method.') )
         return True
     return False
-
+    
 </t>
 <t tx="karstenw.20230718111113.5">def run(self, source_or_code):
     self._initNamespace()
@@ -14689,7 +14715,7 @@ Supported movie extension:  mov""" + err)
         source_or_code = compile(source_or_code + "\n\n", "&lt;Untitled&gt;", "exec")
     exec( source_or_code, self.namespace, self.namespace ) 
     if self._check_animation():
-        if self.namespace.has_key('setup'):
+        if 'setup' in self.namespace:
             self.namespace['setup']()
         self.namespace['draw']()
     
@@ -14746,6 +14772,8 @@ Supported movie extension:  mov""" + err)
     runner = NodeBoxRunner()
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
+    return source_or_code
+    
     
 </t>
 <t tx="karstenw.20230718111113.9">def make_movie(source_or_code, outputfile, frames, fps=30):

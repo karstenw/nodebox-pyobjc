@@ -36,8 +36,8 @@ import re
 from . import graphics
 from . import util
 
-import Foundation
-import objc
+# import Foundation
+# import objc
 
 # py3 stuff
 py3 = False
