@@ -9,7 +9,7 @@ nofill()
 strokewidth(.1)
 
 # n defines how many vertices we find: the number will be n^2
-n = 200
+n = 120
 
 def rotate(matrix, x, y, z):
 	rotY = np.array(([np.cos(y), 0, np.sin(y)],[0, 1, 0],[-np.sin(y), 0, np.cos(y)]))
@@ -32,7 +32,7 @@ denom = b*((w * np.cosh(b*u))**2 + (b * np.sin(w*v))**2)
 
 x = -u + (2*r*np.cosh(b*u) * np.sinh(b*u)) / denom
 y = (2 * w * np.cosh(b*u) * (-(w * np.cos(v) * np.cos(w*v)) - np.sin(v) * np.sin(w*v))) / denom
-z = (2 * w * np.cosh(b*u) * (-(w * np.sin(v) * np.cos(w*v)) + np.cos(v) * np.sin(w*v)))/denom
+z = (2 * w * np.cosh(b*u) * (-(w * np.sin(v) * np.cos(w*v)) + np.cos(v) * np.sin(w*v))) / denom
 x.shape = (n**2,)
 y.shape = (n**2,)
 z.shape = (n**2,)
