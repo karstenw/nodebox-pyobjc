@@ -1171,6 +1171,8 @@ class Image(Grob, TransformMixin):
         super(Image, self).__init__(ctx)
         TransformMixin.__init__(self)
 
+        # pdb.set_trace()
+
         if data is not None:
             if not isinstance(data, NSData):
                 data = NSData.dataWithBytes_length_(data, len(data))
