@@ -15,7 +15,7 @@
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
@@ -24,13 +24,13 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20230718111113.2"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
@@ -68,11 +68,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
@@ -191,7 +191,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -420,10 +420,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -550,7 +550,7 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
+<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211204132045.1"><vh>AskString_cb_default_parent_</vh></v>
 <v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
@@ -565,7 +565,7 @@
 <v t="karstenw.20211127131740.1"><vh>DEBUG</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
@@ -680,7 +680,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
@@ -699,13 +699,13 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
-<v t="karstenw.20180202045145.1" a="E"><vh>UTILITIES</vh>
+<v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
 <v t="karstenw.20170704105353.4"><vh>grid</vh></v>
