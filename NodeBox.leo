@@ -30,7 +30,7 @@
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20230718111113.2"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
@@ -69,7 +69,7 @@
 </v>
 </v>
 <v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
@@ -85,7 +85,7 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
@@ -149,7 +149,7 @@
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -435,7 +435,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -550,10 +550,10 @@
 <v t="karstenw.20170704105032.108"><vh>applicationWillTerminate_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104908.1"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
+<v t="karstenw.20170704104908.1" a="E"><vh>@clean nodebox/gui/mac/AskStringWindowController.py</vh>
 <v t="karstenw.20170704105043.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211204132045.1"><vh>AskString_cb_default_parent_</vh></v>
-<v t="karstenw.20170704105043.2"><vh>class AskStringWindowController</vh>
+<v t="karstenw.20170704105043.2" a="E"><vh>class AskStringWindowController</vh>
 <v t="karstenw.20211125131320.1"><vh>init</vh></v>
 <v t="karstenw.20170704105043.3"><vh>xx__new__</vh></v>
 <v t="karstenw.20211125131451.1"><vh>setup_cb_default_parent_</vh></v>
@@ -565,11 +565,11 @@
 <v t="karstenw.20211127131740.1"><vh>DEBUG</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
-<v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
+<v t="karstenw.20170704105051.2" a="E"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
 <v t="karstenw.20170704105051.5"><vh>textChanged_</vh></v>
@@ -680,11 +680,11 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
-<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -699,8 +699,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
@@ -4879,7 +4879,7 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = False
 
 # if true print out some debug info on stdout
 kwlog = True
