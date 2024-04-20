@@ -1,4 +1,5 @@
-import os, glob
+import os
+import glob
 from nodebox.util import vdiff
 
 TEST_PATH = 'images'
@@ -30,13 +31,15 @@ html = """<html>
 """
 
 for testPath in glob.glob('%s/*' % TEST_PATH):
-    if not os.path.isdir(testPath): continue
+    if not os.path.isdir(testPath):
+        continue
     name = os.path.basename(testPath)
-    print name
-    testFiles = glob.glob('%s/*.png' % testPath)
+    print( name )
+    testFiles = glob.glob('%s/*.png' % (testPath,))
     try:
-        testFiles.remove('%s/_compare.png' % testPath)
-    except ValueError: pass
+        testFiles.remove('%s/_compare.png' % (testPath,))
+    except ValueError:
+        pass
     if len(testFiles) == 2:
         fname1, fname2 = testFiles
         stats = vdiff.Statistics(fname1, fname2)
@@ -48,7 +51,7 @@ for testPath in glob.glob('%s/*' % TEST_PATH):
         else:
             html += format_stats(name, stats)
     else:
-        print "path %s has more than two PNG images: %s" % (testPath, testFiles)
+        print( "path %s has more than two PNG images: %s" % (testPath, testFiles) )
 
 html += """</body>\n</html>\n"""
     
@@ -56,4 +59,4 @@ fp = open('test-results.html', 'w')
 fp.write(html)
 fp.close()
 
-print "Generated test-results.html"
+print( "Generated test-results.html" )
