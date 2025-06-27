@@ -49,10 +49,10 @@ for test_file in test_files:
     
     if stats.number_of_differences > 0:
         differences = True
-        print "E",
+        print( "E", end='' )
     else:
-        print ".",
-print
+        print( ".", end='' )
+print()
 
 html = vdiff.format_stats_list(stats_list)
 open(os.path.join(RESULTS_DIR, '_results.html'), 'w').write(html)
@@ -60,4 +60,4 @@ open(os.path.join(RESULTS_DIR, '_results.html'), 'w').write(html)
 if differences:
     for stats in stats_list:
         if stats.number_of_differences > 0:
-            print "%s: Images don't match." % stats.name
+            print( "%s: Images don't match." % (stats.name,) )
