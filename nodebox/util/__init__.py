@@ -5,6 +5,9 @@ import glob
 
 import tempfile
 
+import functools
+cmp_to_key = functools.cmp_to_key
+
 import random as librandom
 choice = librandom.choice
 
@@ -27,12 +30,16 @@ from . import kgp
 
 __all__ = (
     'grid', 'random', 'choice', 'files', 'autotext',
-    '_copy_attr',
-    '_copy_attrs',
+    '_copy_attr', '_copy_attrs',
+    
     'datestring','makeunicode', 'filelist', 'imagefiles',
+    
     'fontnames', 'fontfamilies',
+    
     'voices', 'voiceattributes', 'anySpeakers', 'say',
+    
     'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage',
+    
     'sortlistfunction')
 
 
@@ -49,25 +56,6 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
-
-def cmp_to_key(mycmp):
-    'Convert a cmp= function into a key= function'
-    class K:
-        def __init__(self, obj, *args):
-            self.obj = obj
-        def __lt__(self, other):
-            return mycmp(self.obj, other.obj) < 0
-        def __gt__(self, other):
-            return mycmp(self.obj, other.obj) > 0
-        def __eq__(self, other):
-            return mycmp(self.obj, other.obj) == 0
-        def __le__(self, other):
-            return mycmp(self.obj, other.obj) <= 0
-        def __ge__(self, other):
-            return mycmp(self.obj, other.obj) >= 0
-        def __ne__(self, other):
-            return mycmp(self.obj, other.obj) != 0
-    return K
 
 
 def sortlistfunction(thelist, thecompare):
@@ -95,14 +83,18 @@ _ditherIDs = _dithertypes.values()
 
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
+    
+    if type(s) in ( pstr, ):
+        s = punicode(s, srcencoding)
 
-    if type(s) not in ( pstr,
+    if type(s) not in ( #pstr,
                     punicode,
                     Foundation.NSMutableAttributedString,
                     objc.pyobjc_unicode,
                     Foundation.NSMutableStringProxyForMutableAttributedString,
                     Foundation.NSString):
-        s = str(s)
+        #s = str(s)
+        s = punicode(s, srcencoding)
     if type(s) not in (
             punicode,
             #Foundation.NSMutableAttributedString,
@@ -222,9 +214,12 @@ def filelist( folderpathorlist, pathonly=True, extensions=None ):
     """
 
     folders = folderpathorlist
-    if type(folderpathorlist) in (pstr, punicode):
+    if type(folderpathorlist) in (pstr,):
+        folderpathorlist = makeunicode( folderpathorlist )
+
+    if type(folderpathorlist) in ( punicode, ):
         folders = [folderpathorlist]
-    result = []
+    
     for folder in folders:
         folder = os.path.expanduser( folder )
         folder = os.path.abspath( folder )
@@ -253,7 +248,6 @@ def filelist( folderpathorlist, pathonly=True, extensions=None ):
                         continue
 
                 filepath = os.path.join( root, thefile )
-
                 record = filepath
                 if not pathonly:
                     islink = os.path.islink( filepath )
@@ -269,7 +263,7 @@ def filelist( folderpathorlist, pathonly=True, extensions=None ):
 
 def imagefiles( folderpathorlist, pathonly=True ):
     """Use filelist to extract all imagefiles"""
-    result = []
+    
     filetuples = filelist( folderpathorlist, pathonly=pathonly )
 
     # 2017-06-23 - kw .eps dismissed
@@ -397,7 +391,7 @@ def anySpeakers():
     global g_voicetrash
 
     b = bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
-    if b == False:
+    if b is False:
         # empty accumulated voices
         while len(g_voicetrash) > 0:
             f = g_voicetrash.pop()
@@ -561,20 +555,18 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
         img = PIL.Image.open( pathOrPILimgage ).convert('L')
     else:
         img = pathOrPILimgage
-
-    # pdb.set_trace()
-
+    
     w, h = img.size
     bin = img.tobytes(encoder_name='raw')
     resultimg = bytearray( len(bin) )
-    result = dither(bin, w, h, ditherid, threshhold)
+    resultbytes = dither(bin, w, h, ditherid, threshhold)
     # result = dither(bin, resultimg, w, h, ditherid, threshhold)
 
-    out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
+    out = PIL.Image.frombytes( 'L', (w,h), resultbytes, decoder_name='raw')
 
     name = "dither_%s_%s.png" % (datestring(nocolons=True), dithername)
     out.convert('1').save(name, format="PNG")
-    del out, bin, result
+    del out, bin, resultbytes
     if img != pathOrPILimgage:
         del img
     return os.path.abspath(name)
