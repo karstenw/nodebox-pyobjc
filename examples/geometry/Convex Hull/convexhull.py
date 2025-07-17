@@ -7,8 +7,6 @@
    Displaying a million points takes about 4-8 minutes
 """
 
-from __future__ import print_function
-
 
 
 # This is new with Nodebox 1.9.13; size(0,0) sets size to main screen size
@@ -18,15 +16,10 @@ except:
     # if we're running an older version, set some reasonable default
     size(800, 800)
 
-try:
-    xrange
-except NameError:
-    xrange = range
-
 import time
 
 # how many points 1,000,000 takes about 1 min.
-noOfPoints = 100000
+noOfPoints = 10000
 
 # inset from canvas size
 inset = 25
@@ -111,7 +104,7 @@ def createRandomPoints( count, width, height, inset):
     # fill(0.5)
     strokewidth(1)
     stroke(0)
-    for i in xrange( count ):
+    for i in range( count ):
         px = inset + random() * (width - inset * 2)
         py = inset + random() * (height - inset * 2)
         points.append( (px+0.5,py+0.5) )
