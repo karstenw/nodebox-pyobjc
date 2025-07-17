@@ -141,6 +141,8 @@ setup(
                 'TkInter', 'tkinter', 'tk', 'wx', 'sphinx',
                 'pyqt5', 'qt5', 'PyQt5', 
                 
+                'setuptools', 'numba', 
+                
                 # 'certifi', 'pytz', 
                 'notebook', 'nbformat', 'jedi', 'testpath', 'docutils',
                 'ipykernel', 'parso', 'Cython', 'sphinx_rtd_theme', 'alabaster',
