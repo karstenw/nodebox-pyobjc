@@ -1,24 +1,12 @@
-# py3 stuff
-py3 = False
-try:
-    unicode('')
-    punicode = unicode
-    pstr = str
-    punichr = unichr
-except NameError:
-    punicode = str
-    pstr = bytes
-    py3 = True
-    punichr = chr
-    long = int
 
-if 1: #py3:
-    import ast
-    parse = ast.parse
-    Sub = ast.Sub
-    UnarySub = ast.USub
-    Add = ast.Add
-else:
+
+import ast
+parse = ast.parse
+Sub = ast.Sub
+UnarySub = ast.USub
+Add = ast.Add
+
+if 0: # py2 version
     import compiler
     parse = compiler.parse
     import compiler.ast
@@ -29,7 +17,7 @@ else:
 
 
 kwdbg = False
-import pdb
+# import pdb
 
 import Foundation
 
