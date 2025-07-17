@@ -4,7 +4,7 @@
 # via https://web.archive.org/web/20110203052513/https://siafoo.net/snippet/173
 
 
-size(1280,900)
+size( 1440, 1024)
 
 fill(0.2)
 rect(0,0,WIDTH,HEIGHT)
