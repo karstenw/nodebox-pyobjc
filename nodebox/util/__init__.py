@@ -83,7 +83,8 @@ _ditherIDs = _dithertypes.values()
 
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
-    
+    if type(s) in ( int, long, float, bool ):
+        s = str( s )
     if type(s) in ( pstr, ):
         s = punicode(s, srcencoding)
 
@@ -381,8 +382,9 @@ def voiceattributes(voice):
         attrs = AppKit.NSSpeechSynthesizer.attributesForVoice_( voice )
         result = PyObjCTools.Conversion.pythonCollectionFromPropertyList(attrs)
         keys = result.keys()
-        for key  in keys:
-            result[key] = makeunicode(result[key])
+        # this crashes
+        #for key  in keys:
+        #    result[key] = makeunicode(result[key])
     return result
 
 
