@@ -415,10 +415,30 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
 
     def _get_bounds(self):
         try:
-            return self._nsBezierPath.bounds()
-        except:
-            # Path is empty -- no bounds
-            return (0,0) , (0,0)
+            if self._nsBezierPath.isEmpty():
+                return (0,0) , (0,0)
+        except Exception as err:
+            print()
+            #pdb.set_trace()
+            print(err)
+            print()
+        try:
+            cgr = self._nsBezierPath.bounds()
+            xy = cgr.origin
+            wh = cgr.size
+            result = (xy,wh)
+            return result
+        #try:
+        #    return self._nsBezierPath.bounds()
+        #except :
+        #    # Path is empty -- no bounds
+        #    return (0,0) , (0,0)
+        except Exception as err:
+            print()
+            #pdb.set_trace()
+            print(err)
+            print()
+        return (0,0) , (0,0)
 
     bounds = property(_get_bounds)
 
@@ -497,7 +517,13 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
     def _get_transform(self):
         trans = self._transform.copy()
         if (self._transformmode == CENTER):
-            (x, y), (w, h) = self.bounds
+            try:
+                (x, y), (w, h) = self.bounds
+            except Exception as err:
+                print()
+                # pdb.set_trace()
+                print(err)
+                print
             deltax = x + w / 2
             deltay = y + h / 2
             t = Transform()
@@ -540,7 +566,15 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
                    keep the aspect ratio.
         """
 
-        (px, py), (pw, ph) = self.bounds
+        # (px, py), (pw, ph) = self.bounds
+        try:
+            (px, py), (pw, ph) = self.bounds
+        except Exception as err:
+            print()
+            # pdb.set_trace()
+            print(err)
+            print
+
         t = Transform()
         if x is not None and y is None:
             t.translate(x, py)
