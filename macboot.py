@@ -11,6 +11,7 @@ import operator
 import warnings
 import io
 import json
+import optparse
 
 import importlib
 # import _multibytecodec
@@ -37,7 +38,6 @@ import feedparser
 
 import encodings
 
-import imagewells
 # import requests
 
 
@@ -53,29 +53,19 @@ try:
 except:
     pass
 
-import sdb
+# wn
+import httpx
+import tomli
+import anyio
+import certifi
+import httpcore
+import idna
+import sniffio
+import h11
 
-# currently not in py2
-# import MySQLdb # lib/pattern
-# import locale
+# nltk
+import regex
 
-
-#import UserList
-
-# needed by matplotlib et al.
-# import six
-# import pyparsing
-# import cycler
-# import pymongo
-# import dateutil
-# import copy
-# import http
-# import http.client
-# import http.server
-# import urllib
-# import urlparse
-# import decimal
-# import gettext
 
 
 # PIL / Pillow support
@@ -103,36 +93,12 @@ import WebKit
 
 import CoreLocation
 
-"""
-if 0:
-    #import AddressBook
-    #import CloudKit
-    #import Collaboration
 
-    import ColorSync # 10.13
-    # import Contacts # 10.11
-
-    import CoreLocation
-
-    import CoreMedia
-    import CoreMediaIO
-
-    import CoreServices
-
-    import CoreText
-    import DictionaryServices
-    import EventKit
-    import ImageCaptureCore
-    # import MapKit
-
-    import OpenDirectory
-    import OSAKit
-    import SyncServices
-"""
 
 from PyObjCTools import AppHelper
-#import PyObjCTools.Debugging
-#PyObjCTools.Debugging.installVerboseExceptionHandler()
+
+import PyObjCTools.Debugging
+PyObjCTools.Debugging.installVerboseExceptionHandler()
 
 import nodebox
 import nodebox.geo
