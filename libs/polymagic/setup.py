@@ -9,3 +9,4 @@ setup (name = "polymagic",
        author = "Frederik De Bleser",
        description = "Additional utility functions for NSBezierPath using GPC.",
        ext_modules = [cPolymagic])
+
