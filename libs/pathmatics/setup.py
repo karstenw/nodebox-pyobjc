@@ -7,3 +7,4 @@ setup (name = "pathmatics",
        author = "Tom De Smedt and Frederik De Bleser",
        description = "Inner looping functions for calculating bezier operations.",
        ext_modules = [cPathmatics])
+
