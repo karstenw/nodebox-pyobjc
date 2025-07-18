@@ -24,7 +24,6 @@
   #define MOD_DEF(ob, name, doc, methods) \
     ob = Py_InitModule3(name, methods, doc);
 #endif
-
 #if PY_MAJOR_VERSION >= 3
   #define IN_FORMAT "y#iiiddddddd"
   #define OUT_FORMAT "y#"
