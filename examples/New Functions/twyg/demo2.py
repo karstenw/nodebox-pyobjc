@@ -1,9 +1,9 @@
 
 from __future__ import print_function
-
+from importlib import reload
 import os
 twyg = ximport('twyg')
-#reload(twyg)
+reload(twyg)
 
 
 datafiles = list(filelist( os.path.abspath('example-data')))
