@@ -9,7 +9,8 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
+<v t="karstenw.20250718093121.1"><vh>+ APP +</vh>
+<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
@@ -848,7 +849,8 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20180202040514.1"><vh>libs</vh>
+</v>
+<v t="karstenw.20180202040514.1" a="E"><vh>+ c-libraries +</vh>
 <v t="karstenw.20180202040520.1"><vh>bwdithering</vh>
 <v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
@@ -898,7 +900,7 @@
 <v t="karstenw.20210320115153.1"><vh>Declarations</vh></v>
 </v>
 </v>
-<v t="karstenw.20210320120737.1"><vh>pathmatics</vh>
+<v t="karstenw.20210320120737.1" a="E"><vh>pathmatics</vh>
 <v t="karstenw.20210320120859.1"><vh>@clean libs/pathmatics/pathmatics.c</vh>
 <v t="karstenw.20210320121857.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320110747.1"></v>
@@ -921,11 +923,11 @@
 <v t="karstenw.20210320120938.4"><vh>curvepoint</vh></v>
 <v t="karstenw.20210320120938.5"><vh>curvelength</vh></v>
 </v>
-<v t="karstenw.20210320120924.1"><vh>@clean libs/pathmatics/setup.py</vh>
+<v t="karstenw.20210320120924.1" a="E"><vh>@clean libs/pathmatics/setup.py</vh>
 <v t="karstenw.20210320120934.1"><vh>Declarations</vh></v>
 </v>
 </v>
-<v t="karstenw.20210320120741.1"><vh>polymagic</vh>
+<v t="karstenw.20210320120741.1" a="E"><vh>polymagic</vh>
 <v t="karstenw.20210320123535.1"><vh>@clean libs/polymagic/gpc.h</vh>
 <v t="karstenw.20210320125516.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320123811.1"><vh>typedef enum</vh></v>
@@ -989,7 +991,7 @@
 <v t="karstenw.20210320131126.1"><vh>PyMethodDef</vh></v>
 <v t="karstenw.20210320133430.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20210320123652.1"><vh>@clean libs/polymagic/setup.py</vh>
+<v t="karstenw.20210320123652.1" a="E"><vh>@clean libs/polymagic/setup.py</vh>
 <v t="karstenw.20210320123819.1"><vh>Declarations</vh></v>
 </v>
 </v>
@@ -1013,6 +1015,7 @@ import operator
 import warnings
 import io
 import json
+import optparse
 
 import importlib
 # import _multibytecodec
@@ -1039,7 +1042,6 @@ import feedparser
 
 import encodings
 
-import imagewells
 # import requests
 
 
@@ -1055,29 +1057,19 @@ try:
 except:
     pass
 
-import sdb
+# wn
+import httpx
+import tomli
+import anyio
+import certifi
+import httpcore
+import idna
+import sniffio
+import h11
 
-# currently not in py2
-# import MySQLdb # lib/pattern
-# import locale
+# nltk
+import regex
 
-
-#import UserList
-
-# needed by matplotlib et al.
-# import six
-# import pyparsing
-# import cycler
-# import pymongo
-# import dateutil
-# import copy
-# import http
-# import http.client
-# import http.server
-# import urllib
-# import urlparse
-# import decimal
-# import gettext
 
 
 # PIL / Pillow support
@@ -1105,36 +1097,12 @@ import WebKit
 
 import CoreLocation
 
-"""
-if 0:
-    #import AddressBook
-    #import CloudKit
-    #import Collaboration
 
-    import ColorSync # 10.13
-    # import Contacts # 10.11
-
-    import CoreLocation
-
-    import CoreMedia
-    import CoreMediaIO
-
-    import CoreServices
-
-    import CoreText
-    import DictionaryServices
-    import EventKit
-    import ImageCaptureCore
-    # import MapKit
-
-    import OpenDirectory
-    import OSAKit
-    import SyncServices
-"""
 
 from PyObjCTools import AppHelper
-#import PyObjCTools.Debugging
-#PyObjCTools.Debugging.installVerboseExceptionHandler()
+
+import PyObjCTools.Debugging
+PyObjCTools.Debugging.installVerboseExceptionHandler()
 
 import nodebox
 import nodebox.geo
@@ -1195,7 +1163,7 @@ if machine.startswith("arm"):
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
 URL = "http://nodebox.net/",
-CLASSIFIERS = (
+CLASSIFIERS = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: MacOS X :: Cocoa",
     "Intended Audience :: Developers",
@@ -1211,7 +1179,7 @@ CLASSIFIERS = (
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Software Development :: User Interfaces",
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
-)
+]
 
 DESCRIPTION = (u"Simple application for creating 2-dimensional graphics "
                u"and animation using Python code")
@@ -1306,6 +1274,8 @@ setup(
             "excludes": [
                 'TkInter', 'tkinter', 'tk', 'wx', 'sphinx',
                 'pyqt5', 'qt5', 'PyQt5', 
+                
+                'setuptools', 'numba', 
                 
                 # 'certifi', 'pytz', 
                 'notebook', 'nbformat', 'jedi', 'testpath', 'docutils',
@@ -4314,10 +4284,30 @@ joinstyle = property(_get_joinstyle, _set_joinstyle)
 </t>
 <t tx="karstenw.20170704104751.50">def _get_bounds(self):
     try:
-        return self._nsBezierPath.bounds()
-    except:
-        # Path is empty -- no bounds
-        return (0,0) , (0,0)
+        if self._nsBezierPath.isEmpty():
+            return (0,0) , (0,0)
+    except Exception as err:
+        print()
+        #pdb.set_trace()
+        print(err)
+        print()
+    try:
+        cgr = self._nsBezierPath.bounds()
+        xy = cgr.origin
+        wh = cgr.size
+        result = (xy,wh)
+        return result
+    #try:
+    #    return self._nsBezierPath.bounds()
+    #except :
+    #    # Path is empty -- no bounds
+    #    return (0,0) , (0,0)
+    except Exception as err:
+        print()
+        #pdb.set_trace()
+        print(err)
+        print()
+    return (0,0) , (0,0)
 
 bounds = property(_get_bounds)
 
@@ -4413,7 +4403,13 @@ contours = property(_get_contours)
 <t tx="karstenw.20170704104751.62">def _get_transform(self):
     trans = self._transform.copy()
     if (self._transformmode == CENTER):
-        (x, y), (w, h) = self.bounds
+        try:
+            (x, y), (w, h) = self.bounds
+        except Exception as err:
+            print()
+            # pdb.set_trace()
+            print(err)
+            print
         deltax = x + w / 2
         deltay = y + h / 2
         t = Transform()
@@ -4456,7 +4452,15 @@ transform = property(_get_transform)
                keep the aspect ratio.
     """
 
-    (px, py), (pw, ph) = self.bounds
+    # (px, py), (pw, ph) = self.bounds
+    try:
+        (px, py), (pw, ph) = self.bounds
+    except Exception as err:
+        print()
+        # pdb.set_trace()
+        print(err)
+        print
+
     t = Transform()
     if x is not None and y is None:
         t.translate(x, py)
@@ -4875,14 +4879,14 @@ import atexit
 import pprint
 pp = pprint.pprint
 
-import pdb
+# import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
 debugging = False
 
 # if true print out some debug info on stdout
-kwlog = True
+kwlog = False
 
 import objc
 objc.options.deprecation_warnings=1
@@ -7628,14 +7632,7 @@ NSUserDefaults.standardUserDefaults().registerDefaults_(_defaultUserDefaults)
     return alert.runModal()
 
 </t>
-<t tx="karstenw.20170704105126.1">if 1: #py3:
-    import ast
-    parse = ast.parse
-    Sub = ast.Sub
-    UnarySub = ast.USub
-    Add = ast.Add
-else:
-    import compiler
+<t tx="karstenw.20170704105126.1">    import compiler
     parse = compiler.parse
     import compiler.ast
     Sub = compiler.ast.Sub
@@ -7645,7 +7642,7 @@ else:
 
 
 kwdbg = False
-import pdb
+# import pdb
 
 import Foundation
 
@@ -7951,6 +7948,9 @@ import glob
 
 import tempfile
 
+import functools
+cmp_to_key = functools.cmp_to_key
+
 import random as librandom
 choice = librandom.choice
 
@@ -7973,12 +7973,16 @@ from . import kgp
 
 __all__ = (
     'grid', 'random', 'choice', 'files', 'autotext',
-    '_copy_attr',
-    '_copy_attrs',
+    '_copy_attr', '_copy_attrs',
+    
     'datestring','makeunicode', 'filelist', 'imagefiles',
+    
     'fontnames', 'fontfamilies',
+    
     'voices', 'voiceattributes', 'anySpeakers', 'say',
+    
     'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage',
+    
     'sortlistfunction')
 
 
@@ -8085,14 +8089,19 @@ __all__ = (
 
 </t>
 <t tx="karstenw.20170704105353.2">def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
+    if type(s) in ( int, long, float, bool ):
+        s = str( s )
+    if type(s) in ( pstr, ):
+        s = punicode(s, srcencoding)
 
-    if type(s) not in ( pstr,
+    if type(s) not in ( #pstr,
                     punicode,
                     Foundation.NSMutableAttributedString,
                     objc.pyobjc_unicode,
                     Foundation.NSMutableStringProxyForMutableAttributedString,
                     Foundation.NSString):
-        s = str(s)
+        #s = str(s)
+        s = punicode(s, srcencoding)
     if type(s) not in (
             punicode,
             #Foundation.NSMutableAttributedString,
@@ -8212,9 +8221,12 @@ __all__ = (
     """
 
     folders = folderpathorlist
-    if type(folderpathorlist) in (pstr, punicode):
+    if type(folderpathorlist) in (pstr,):
+        folderpathorlist = makeunicode( folderpathorlist )
+
+    if type(folderpathorlist) in ( punicode, ):
         folders = [folderpathorlist]
-    result = []
+    
     for folder in folders:
         folder = os.path.expanduser( folder )
         folder = os.path.abspath( folder )
@@ -8243,7 +8255,6 @@ __all__ = (
                         continue
 
                 filepath = os.path.join( root, thefile )
-
                 record = filepath
                 if not pathonly:
                     islink = os.path.islink( filepath )
@@ -8260,7 +8271,7 @@ __all__ = (
 </t>
 <t tx="karstenw.20170704105353.8">def imagefiles( folderpathorlist, pathonly=True ):
     """Use filelist to extract all imagefiles"""
-    result = []
+    
     filetuples = filelist( folderpathorlist, pathonly=pathonly )
 
     # 2017-06-23 - kw .eps dismissed
@@ -9488,8 +9499,9 @@ except ImportError:
         attrs = AppKit.NSSpeechSynthesizer.attributesForVoice_( voice )
         result = PyObjCTools.Conversion.pythonCollectionFromPropertyList(attrs)
         keys = result.keys()
-        for key  in keys:
-            result[key] = makeunicode(result[key])
+        # this crashes
+        #for key  in keys:
+        #    result[key] = makeunicode(result[key])
     return result
 
 
@@ -9517,7 +9529,7 @@ _ditherIDs = _dithertypes.values()
     global g_voicetrash
 
     b = bool(AppKit.NSSpeechSynthesizer.isAnyApplicationSpeaking())
-    if b == False:
+    if b is False:
         # empty accumulated voices
         while len(g_voicetrash) &gt; 0:
             f = g_voicetrash.pop()
@@ -10531,20 +10543,18 @@ setup (name = "cGeo",
         img = PIL.Image.open( pathOrPILimgage ).convert('L')
     else:
         img = pathOrPILimgage
-
-    # pdb.set_trace()
-
+    
     w, h = img.size
     bin = img.tobytes(encoder_name='raw')
     resultimg = bytearray( len(bin) )
-    result = dither(bin, w, h, ditherid, threshhold)
+    resultbytes = dither(bin, w, h, ditherid, threshhold)
     # result = dither(bin, resultimg, w, h, ditherid, threshhold)
 
-    out = PIL.Image.frombytes( 'L', (w,h), result, decoder_name='raw')
+    out = PIL.Image.frombytes( 'L', (w,h), resultbytes, decoder_name='raw')
 
     name = "dither_%s_%s.png" % (datestring(nocolons=True), dithername)
     out.convert('1').save(name, format="PNG")
-    del out, bin, result
+    del out, bin, resultbytes
     if img != pathOrPILimgage:
         del img
     return os.path.abspath(name)
@@ -10763,6 +10773,7 @@ setup (name = "pathmatics",
        author = "Tom De Smedt and Frederik De Bleser",
        description = "Inner looping functions for calculating bezier operations.",
        ext_modules = [cPathmatics])
+
 </t>
 <t tx="karstenw.20210320120938.1">from math import sqrt, pow
 
@@ -13607,6 +13618,7 @@ setup (name = "polymagic",
        author = "Frederik De Bleser",
        description = "Additional utility functions for NSBezierPath using GPC.",
        ext_modules = [cPolymagic])
+
 </t>
 <t tx="karstenw.20210320125516.1">/*
 ===========================================================================
@@ -14372,24 +14384,10 @@ def clearMessageArea_(self, sender):
 
 
 </t>
-<t tx="karstenw.20210630133918.1">def cmp_to_key(mycmp):
-    'Convert a cmp= function into a key= function'
-    class K:
-        def __init__(self, obj, *args):
-            self.obj = obj
-        def __lt__(self, other):
-            return mycmp(self.obj, other.obj) &lt; 0
-        def __gt__(self, other):
-            return mycmp(self.obj, other.obj) &gt; 0
-        def __eq__(self, other):
-            return mycmp(self.obj, other.obj) == 0
-        def __le__(self, other):
-            return mycmp(self.obj, other.obj) &lt;= 0
-        def __ge__(self, other):
-            return mycmp(self.obj, other.obj) &gt;= 0
-        def __ne__(self, other):
-            return mycmp(self.obj, other.obj) != 0
-    return K
+<t tx="karstenw.20210630133918.1">    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
 
 
 def sortlistfunction(thelist, thecompare):
@@ -14794,5 +14792,6 @@ Supported movie extension:  mov""" + err)
     movie.save()
 
 </t>
+<t tx="karstenw.20250718093121.1"></t>
 </tnodes>
 </leo_file>
