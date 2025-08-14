@@ -277,7 +277,7 @@ triangle = [
 
 
 def build_up_module(picture, doleft, doright, level):
-    """
+    r"""
     Squarelimit layout engine.
 
     Assumes a current point and orientation.
@@ -285,12 +285,12 @@ def build_up_module(picture, doleft, doright, level):
     The "up_module" in ascii speak:
 
     ------+----------+------
-    \     |    /\    |     /
-     \    |   /  \   |    /
-      \   |  /    \  |   /
-       \  | /      \ |  /
-        \ |/        \| /
-         \|----------|/
+    ﹨     |    /﹨    |     /
+     ﹨    |   /  ﹨   |    /
+      ﹨   |  /    ﹨  |   /
+       ﹨  | /      ﹨ |  /
+        ﹨ |/        ﹨| /
+         ﹨|----------|/ 
 
     The left and right triangles are drawn if doleft/doright are True respectively.
     """
@@ -386,12 +386,12 @@ def build_down_module(picture, doleft, doright, level):
     The "up_module" in ascii speak:
 
     ------+----------+------
-    \     |    /\    |     /
-     \    |   /  \   |    /
-      \   |  /    \  |   /
-       \  | /      \ |  /
-        \ |/        \| /
-         \|----------|/
+    ﹨     |    /﹨    |     /
+     ﹨    |   /  ﹨   |    /
+      ﹨   |  /    ﹨  |   /
+       ﹨  | /      ﹨ |  /
+        ﹨ |/        ﹨| /
+         ﹨|----------|/
 
     The left and right triangles are drawn if doleft/doright are True respectively.
     """
@@ -560,6 +560,7 @@ if 1: # __name__ == '__builtin__':
     fishpicture = Picture( (80, 80), fish)
     insettrianglepicture = Picture( (80, 80), insettriangle)
     trianglepicture = Picture( (80, 80), triangle)
+
     reset()
     # scale(2)
     strokewidth(1)
@@ -572,7 +573,7 @@ if 1: # __name__ == '__builtin__':
     scale(2)
 
     # The actual call:
-    squarelimit(fishpicture, 1)
+    squarelimit(fishpicture, 2)
     # squarelimit(insettrianglepicture, 8)
 
     print("#pictures rendered:", no_of_pictures)
