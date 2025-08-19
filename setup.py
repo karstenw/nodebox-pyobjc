@@ -5,9 +5,7 @@ Usage:
     python setup.py py2app
 """
 
-#import setuptools, distutils
-#from setuptools.extension import Extension
-# from distutils.core import setup, Extension
+
 import platform
 from setuptools import setup
 from setuptools.extension import Extension
