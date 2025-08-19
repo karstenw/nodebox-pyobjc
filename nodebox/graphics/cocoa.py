@@ -436,6 +436,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         except Exception as err:
             print()
             #pdb.set_trace()
+            print("Bezierpath._get_bounds() FAILED")
             print(err)
             print()
         return (0,0) , (0,0)
@@ -571,6 +572,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             (px, py), (pw, ph) = self.bounds
         except Exception as err:
             print()
+            print("BezierPath.fit() FAILED.")
             # pdb.set_trace()
             print(err)
             print
