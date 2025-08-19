@@ -21,8 +21,10 @@ string = "hairy"
 def maketextpath( s, x, y ):
     path = textpath( s, x, y)
     b = path.bounds
-    x,y,w,h = (float(b.origin.x), float(b.origin.y),
-               float(b.size.width), float(b.size.height) )
+    x,y = b[0]
+    w,h = b[1]
+    #x,y,w,h = (float(b.origin.x), float(b.origin.y),
+    #           float(b.size.width), float(b.size.height) )
     cx = x + (w / 2)
     cy = y + (h / 2)
     return path, x,y,w,h,cx,cy
