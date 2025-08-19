@@ -3,8 +3,6 @@
 # This just imports everything from the nodebox.gui.mac module
 # and works from there
 
-from __future__ import print_function
-
 
 import os
 import operator
@@ -38,7 +36,7 @@ import feedparser
 
 import encodings
 
-# import requests
+import requests
 
 
 # for the libraries
@@ -55,7 +53,7 @@ except:
 
 # wn
 import httpx
-import tomli
+import tomllib
 import anyio
 import certifi
 import httpcore
@@ -78,7 +76,7 @@ import PIL.ImageOps
 import PIL.ImageDraw
 import PIL.ImageStat
 
-import cairo
+# import cairo
 
 import objc
 import Foundation
@@ -95,10 +93,15 @@ import CoreLocation
 
 
 
-from PyObjCTools import AppHelper
+import  PyObjCTools
+import  PyObjCTools.AppHelper
+
+import  PyObjCTools.Signals
+PyObjCTools.Signals.dumpStackOnFatalSignal()
 
 import PyObjCTools.Debugging
 PyObjCTools.Debugging.installVerboseExceptionHandler()
+
 
 import nodebox
 import nodebox.geo
@@ -121,23 +124,10 @@ import nodebox.gui.mac
 
 
 # py3 stuff
-py3 = False
-try:
-    unicode('')
-    punicode = unicode
-    pstr = str
-    punichr = unichr
-except NameError:
-    punicode = str
-    pstr = bytes
-    py3 = True
-    punichr = chr
-    long = int
+punicode = str
+pstr = bytes
+py3 = True
+punichr = chr
+long = int
 
-if not py3:
-    import new
-    import httplib
-
-
-
-AppHelper.runEventLoop()
+PyObjCTools.AppHelper.runEventLoop()
