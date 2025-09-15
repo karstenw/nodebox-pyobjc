@@ -37,13 +37,17 @@ def setup():
 
 
 def box( b ):
+    origin = b[0]
+    size = b[1]
     push()
     oldfill = fill( None )
     nofill()
     oldstrokewidth = strokewidth( 0.5 )
     oldstroke = stroke( 0 )
-    x, y = b.origin.x, b.origin.y
-    w, h = b.size.width, b.size.height
+    #x, y = b.origin.x, b.origin.y
+    #w, h = b.size.width, b.size.height
+    x, y = origin.x, origin.y
+    w, h = size.width, size.height
     rect( x,y,w,h)
     pop()
     fill( oldfill )
@@ -137,4 +141,5 @@ def draw():
         label( p, str(idx) )
         currentpoint = p
         idx += 1
+
 
