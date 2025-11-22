@@ -523,9 +523,6 @@ class Context(object):
             self._transformmode = mode
         return self._transformmode
         
-    def translate(self, x, y):
-        self._transform.translate(x, y)
-        
     def reset(self):
         self._transform = Transform()
 
@@ -667,6 +664,9 @@ class Context(object):
 
     def image(self, path, x, y, width=None, height=None, alpha=1.0,
                     data=None, draw=True, **kwargs):
+        
+        # pdb.set_trace()
+        
         img = self.Image(path, x, y, width, height, alpha, data=data, **kwargs)
         img.inheritFromContext( kwargs.keys() )
         if draw:
