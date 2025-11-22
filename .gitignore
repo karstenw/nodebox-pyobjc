@@ -21,6 +21,7 @@ Resources/English.lproj/NodeBoxPreferences Kopie.xib
 Resources/English.lproj/PyDETextView.py
 Resources/English.lproj/NodeBoxGraphicsView.py
 README.html
+examples/+develop
 examples/Fun/sutcliffe.py
 examples/Fun/sutcliffe.rb
 examples/New Functions/*.png
