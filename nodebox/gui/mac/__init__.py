@@ -12,13 +12,13 @@ import pprint
 pp = pprint.pprint
 
 # import pdb
-kwdbg = False
+kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import objc
 objc.options.deprecation_warnings=1
