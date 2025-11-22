@@ -9,7 +9,7 @@ shuffle = random.shuffle
 import objc
 super = objc.super
 
-# import pdb
+import pdb
 
 # from AppKit import *
 import AppKit
@@ -265,9 +265,6 @@ class TransformMixin(object):
     def _set_transformmode(self, mode):
         self._transformmode = mode
     transformmode = property(_get_transformmode, _set_transformmode)
-        
-    def translate(self, x, y):
-        self._transform.translate(x, y)
         
     def reset(self):
         self._transform = Transform()
@@ -1212,13 +1209,16 @@ class Image(Grob, TransformMixin):
         if data is not None:
             if not isinstance(data, NSData):
                 data = NSData.dataWithBytes_length_(data, len(data))
+            
             self._nsImage = NSImage.alloc().initWithData_(data)
+            
             if self._nsImage is None:
                 raise NodeBoxError("can't read image %r" % path)
             self._nsImage.setFlipped_(True)
             self._nsImage.setCacheMode_(NSImageCacheNever)
 
         elif image is not None:
+            # TODO: insert PIL.Image handling here
             if isinstance(image, NSImage):
                 self._nsImage = image
                 self._nsImage.setFlipped_(True)
