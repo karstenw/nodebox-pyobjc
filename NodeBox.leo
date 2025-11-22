@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20250718093121.1"><vh>+ APP +</vh>
+<v t="karstenw.20250718093121.1" a="E"><vh>+ APP +</vh>
 <v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
@@ -25,7 +25,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -69,11 +69,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
@@ -126,11 +126,10 @@
 <v t="karstenw.20170704104725.40"><vh>beginclip</vh></v>
 <v t="karstenw.20170704104725.41"><vh>endclip</vh></v>
 </v>
-<v t="karstenw.20170709143354.1"><vh>## Transformation Commands ##</vh>
+<v t="karstenw.20170709143354.1" a="E"><vh>## Transformation Commands ##</vh>
 <v t="karstenw.20170704104725.42"><vh>push</vh></v>
 <v t="karstenw.20170704104725.43"><vh>pop</vh></v>
 <v t="karstenw.20170704104725.44"><vh>transform</vh></v>
-<v t="karstenw.20170704104725.45"><vh>translate</vh></v>
 <v t="karstenw.20170704104725.46"><vh>reset</vh></v>
 <v t="karstenw.20170704104725.47"><vh>rotate</vh></v>
 <v t="karstenw.20170704104725.48"><vh>translate</vh></v>
@@ -192,7 +191,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -213,14 +212,13 @@
 <v t="karstenw.20170704104751.14"><vh>inheritFromContext</vh></v>
 <v t="karstenw.20170704104751.15"><vh>checkKwargs</vh></v>
 </v>
-<v t="karstenw.20170704104751.16"><vh>class TransformMixin</vh>
+<v t="karstenw.20170704104751.16" a="E"><vh>class TransformMixin</vh>
 <v t="karstenw.20170704104751.17"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.18"><vh>_reset</vh></v>
 <v t="karstenw.20170704104751.19"><vh>_get_transform</vh></v>
 <v t="karstenw.20170704104751.20"><vh>_set_transform</vh></v>
 <v t="karstenw.20170704104751.21"><vh>_get_transformmode</vh></v>
 <v t="karstenw.20170704104751.22"><vh>_set_transformmode</vh></v>
-<v t="karstenw.20170704104751.23"><vh>translate</vh></v>
 <v t="karstenw.20170704104751.24"><vh>reset</vh></v>
 <v t="karstenw.20170704104751.25"><vh>rotate</vh></v>
 <v t="karstenw.20170704104751.26"><vh>translate</vh></v>
@@ -850,7 +848,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20180202040514.1" a="E"><vh>+ c-libraries +</vh>
+<v t="karstenw.20180202040514.1"><vh>+ c-libraries +</vh>
 <v t="karstenw.20180202040520.1"><vh>bwdithering</vh>
 <v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
@@ -900,7 +898,7 @@
 <v t="karstenw.20210320115153.1"><vh>Declarations</vh></v>
 </v>
 </v>
-<v t="karstenw.20210320120737.1" a="E"><vh>pathmatics</vh>
+<v t="karstenw.20210320120737.1"><vh>pathmatics</vh>
 <v t="karstenw.20210320120859.1"><vh>@clean libs/pathmatics/pathmatics.c</vh>
 <v t="karstenw.20210320121857.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320110747.1"></v>
@@ -927,7 +925,7 @@
 <v t="karstenw.20210320120934.1"><vh>Declarations</vh></v>
 </v>
 </v>
-<v t="karstenw.20210320120741.1" a="E"><vh>polymagic</vh>
+<v t="karstenw.20210320120741.1"><vh>polymagic</vh>
 <v t="karstenw.20210320123535.1"><vh>@clean libs/polymagic/gpc.h</vh>
 <v t="karstenw.20210320125516.1"><vh>declarations</vh></v>
 <v t="karstenw.20210320123811.1"><vh>typedef enum</vh></v>
@@ -1007,8 +1005,6 @@
 # This just imports everything from the nodebox.gui.mac module
 # and works from there
 
-from __future__ import print_function
-
 
 import os
 import operator
@@ -1042,7 +1038,7 @@ import feedparser
 
 import encodings
 
-# import requests
+import requests
 
 
 # for the libraries
@@ -1059,7 +1055,7 @@ except:
 
 # wn
 import httpx
-import tomli
+import tomllib
 import anyio
 import certifi
 import httpcore
@@ -1082,7 +1078,7 @@ import PIL.ImageOps
 import PIL.ImageDraw
 import PIL.ImageStat
 
-import cairo
+# import cairo
 
 import objc
 import Foundation
@@ -1099,10 +1095,15 @@ import CoreLocation
 
 
 
-from PyObjCTools import AppHelper
+import  PyObjCTools
+import  PyObjCTools.AppHelper
+
+import  PyObjCTools.Signals
+PyObjCTools.Signals.dumpStackOnFatalSignal()
 
 import PyObjCTools.Debugging
 PyObjCTools.Debugging.installVerboseExceptionHandler()
+
 
 import nodebox
 import nodebox.geo
@@ -1125,9 +1126,7 @@ import nodebox.gui.mac
 
 
 </t>
-<t tx="karstenw.20170704103935.1">
-AppHelper.runEventLoop()
-</t>
+<t tx="karstenw.20170704103935.1"></t>
 <t tx="karstenw.20170704103951.1">@language python
 @tabwidth -4
 @others
@@ -1139,9 +1138,7 @@ Usage:
     python setup.py py2app
 """
 
-#import setuptools, distutils
-#from setuptools.extension import Extension
-# from distutils.core import setup, Extension
+
 import platform
 from setuptools import setup
 from setuptools.extension import Extension
@@ -2143,10 +2140,6 @@ def push(self): #, all=False):
     return self._transformmode
     
 </t>
-<t tx="karstenw.20170704104725.45">def translate(self, x, y):
-    self._transform.translate(x, y)
-    
-</t>
 <t tx="karstenw.20170704104725.46">def reset(self):
     self._transform = Transform()
 
@@ -2311,6 +2304,9 @@ def font(self, fontname=None, fontsize = None):
 
 def image(self, path, x, y, width=None, height=None, alpha=1.0,
                 data=None, draw=True, **kwargs):
+    
+    # pdb.set_trace()
+    
     img = self.Image(path, x, y, width, height, alpha, data=data, **kwargs)
     img.inheritFromContext( kwargs.keys() )
     if draw:
@@ -2936,7 +2932,7 @@ shuffle = random.shuffle
 import objc
 super = objc.super
 
-# import pdb
+import pdb
 
 # from AppKit import *
 import AppKit
@@ -3440,13 +3436,16 @@ matrix = property(_get_matrix, _set_matrix)
     if data is not None:
         if not isinstance(data, NSData):
             data = NSData.dataWithBytes_length_(data, len(data))
+        
         self._nsImage = NSImage.alloc().initWithData_(data)
+        
         if self._nsImage is None:
             raise NodeBoxError("can't read image %r" % path)
         self._nsImage.setFlipped_(True)
         self._nsImage.setCacheMode_(NSImageCacheNever)
 
     elif image is not None:
+        # TODO: insert PIL.Image handling here
         if isinstance(image, NSImage):
             self._nsImage = image
             self._nsImage.setFlipped_(True)
@@ -4096,10 +4095,6 @@ transform = property(_get_transform, _set_transform)
 transformmode = property(_get_transformmode, _set_transformmode)
     
 </t>
-<t tx="karstenw.20170704104751.23">def translate(self, x, y):
-    self._transform.translate(x, y)
-    
-</t>
 <t tx="karstenw.20170704104751.24">def reset(self):
     self._transform = Transform()
 
@@ -4305,6 +4300,7 @@ joinstyle = property(_get_joinstyle, _set_joinstyle)
     except Exception as err:
         print()
         #pdb.set_trace()
+        print("Bezierpath._get_bounds() FAILED")
         print(err)
         print()
     return (0,0) , (0,0)
@@ -4457,6 +4453,7 @@ transform = property(_get_transform)
         (px, py), (pw, ph) = self.bounds
     except Exception as err:
         print()
+        print("BezierPath.fit() FAILED.")
         # pdb.set_trace()
         print(err)
         print
@@ -4880,13 +4877,13 @@ import pprint
 pp = pprint.pprint
 
 # import pdb
-kwdbg = False
+kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = True
 
 import objc
 objc.options.deprecation_warnings=1
@@ -14283,11 +14280,7 @@ except NameError:
     long = int
 
 </t>
-<t tx="karstenw.20210322113320.1">if not py3:
-    import new
-    import httplib
-
-
+<t tx="karstenw.20210322113320.1">PyObjCTools.AppHelper.runEventLoop()
 </t>
 <t tx="karstenw.20210323114020.1">from keyword import kwlist as keywordsList
 keywordsList = keywordsList[:]
