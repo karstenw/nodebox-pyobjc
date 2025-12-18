@@ -216,7 +216,7 @@ class head:
 #r = random(100)
 #print("r:", r)
 #if r > 50:
-if 0:
+if 1:
     for i in range(2):
         s = 70+random(50)
         c = color(random(),random(),random())
