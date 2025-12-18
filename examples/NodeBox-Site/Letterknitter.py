@@ -1,7 +1,28 @@
-var("typeface", TEXT, "Times-Bold")
-var("text", TEXT, " LetterKnitter")
-var("size", NUMBER, 100, 10, 200)
-var("stitches", NUMBER, 700, 10, 1000)
+
+fonts = fontnames()
+
+
+def menuhandler( value, name ):
+    global typeface, text, size, stitches
+    if name == 'typeface':
+        typeface = value
+    elif name == 'text':
+        text = value
+    elif name == 'size':
+        size = int(value)
+    elif name == 'stitches':
+        stitches = int( value )
+    run()
+    
+
+
+# var("typeface", TEXT, "Times-Bold")
+var("typeface", MENU, default=menuhandler, value=fonts)
+
+
+var("text", TEXT, " LetterKnitter", handler= menuhandler)
+var("size", NUMBER, 100, 10, 200, handler= menuhandler)
+var("stitches", NUMBER, 700, 10, 1000, handler=menuhandler)
  
 def stitch(txt, x, y, n=1000):
     
@@ -47,9 +68,14 @@ def stitch(txt, x, y, n=1000):
  
     endpath()
  
-nofill()
-stroke(0.2)
-strokewidth(1)
- 
-font(typeface, size)
-stitch(text, 50, 150, n=stitches)
+
+def run(): 
+    nofill()
+    stroke(0.2)
+    strokewidth(0.5)
+    font(typeface, size)
+    
+    stitch(text, 50, 150, n=stitches)
+
+run()
+
