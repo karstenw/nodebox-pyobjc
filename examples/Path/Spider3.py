@@ -15,7 +15,7 @@ doubleinset = inset * 2
 # First, create a textpath that we will use further on.
 fontsize( fntsize )
 fontname = "" #"EurostileLTStd-BoldEx2"
-fontname="Zapfino"
+# fontname="Zapfino"
 if not fontname:
     fontname = choice( fontnames() )
     print( fontname )
