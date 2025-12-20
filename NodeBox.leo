@@ -73,7 +73,7 @@
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
@@ -212,7 +212,7 @@
 <v t="karstenw.20170704104751.14"><vh>inheritFromContext</vh></v>
 <v t="karstenw.20170704104751.15"><vh>checkKwargs</vh></v>
 </v>
-<v t="karstenw.20170704104751.16" a="E"><vh>class TransformMixin</vh>
+<v t="karstenw.20170704104751.16"><vh>class TransformMixin</vh>
 <v t="karstenw.20170704104751.17"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.18"><vh>_reset</vh></v>
 <v t="karstenw.20170704104751.19"><vh>_get_transform</vh></v>
@@ -371,14 +371,14 @@
 <v t="karstenw.20170704104751.145"><vh>transformPoint</vh></v>
 <v t="karstenw.20170704104751.146"><vh>transformBezierPath</vh></v>
 </v>
-<v t="karstenw.20170704104751.147" a="E"><vh>class Image</vh>
+<v t="karstenw.20170704104751.147"><vh>class Image</vh>
 <v t="karstenw.20170704104751.148"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.149"><vh>_get_image</vh></v>
 <v t="karstenw.20170704104751.150"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.151"><vh>getSize</vh></v>
 <v t="karstenw.20170704104751.152"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20170704104751.153" a="E"><vh>class Text</vh>
+<v t="karstenw.20170704104751.153"><vh>class Text</vh>
 <v t="karstenw.20170704104751.154"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.155"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.156"><vh>font_exists</vh></v>
@@ -4456,7 +4456,7 @@ transform = property(_get_transform)
         print("BezierPath.fit() FAILED.")
         # pdb.set_trace()
         print(err)
-        print
+        print()
 
     t = Transform()
     if x is not None and y is None:
@@ -4483,10 +4483,10 @@ transform = property(_get_transform)
 
 </t>
 <t tx="karstenw.20170704104751.65">def segmentlengths(self, relative=False, n=10):
-    # import bezier
-    
     from . import bezier
-    if relative: # Use the opportunity to store the segment cache.
+    
+    if relative:
+        # Use the opportunity to store the segment cache.
         if self._segment_cache is None:
             self._segment_cache = bezier.segment_lengths(self,
                                                         relative=True, n=n)
@@ -4496,20 +4496,21 @@ transform = property(_get_transform)
 
 </t>
 <t tx="karstenw.20170704104751.66">def _get_length(self, segmented=False, n=10):
-    # import bezier
     from . import bezier
+    
     return bezier.length(self, segmented=segmented, n=n)
 length = property(_get_length)
     
 </t>
 <t tx="karstenw.20170704104751.67">def point(self, t):
-    # import bezier
     from . import bezier
+    
     return bezier.point(self, t)
     
 </t>
 <t tx="karstenw.20170704104751.68">def points(self, amount=100):
     from . import bezier
+    
     if len(self) == 0:
         raise NodeBoxError("The given path is empty")
 
@@ -4530,8 +4531,8 @@ length = property(_get_length)
         
 </t>
 <t tx="karstenw.20170704104751.69">def addpoint(self, t):
-    # import bezier
     from . import bezier
+    
     self._nsBezierPath = bezier.insert_point(self, t)._nsBezierPath
     self._segment_cache = None
 
@@ -4545,23 +4546,30 @@ length = property(_get_length)
     
 </t>
 <t tx="karstenw.20170704104751.71">def union(self, other, flatness=0.6):
-    return BezierPath(self._ctx, cPolymagic.union(self._nsBezierPath,
-                                                other._nsBezierPath, flatness))
+    return BezierPath(self._ctx, cPolymagic.union( self._nsBezierPath,
+                                                  other._nsBezierPath,
+                                                  flatness))
 
 </t>
 <t tx="karstenw.20170704104751.72">def intersect(self, other, flatness=0.6):
-    return BezierPath(self._ctx, cPolymagic.intersect(self._nsBezierPath,
-                                                other._nsBezierPath, flatness))
+    return BezierPath(self._ctx,
+                      cPolymagic.intersect( self._nsBezierPath,
+                                           other._nsBezierPath,
+                                           flatness))
 
 </t>
 <t tx="karstenw.20170704104751.73">def difference(self, other, flatness=0.6):
-    return BezierPath(self._ctx, cPolymagic.difference(self._nsBezierPath,
-                                                other._nsBezierPath, flatness))
+    return BezierPath(self._ctx,
+                      cPolymagic.difference( self._nsBezierPath,
+                                            other._nsBezierPath,
+                                            flatness))
 
 </t>
 <t tx="karstenw.20170704104751.74">def xor(self, other, flatness=0.6):
-    return BezierPath(self._ctx, cPolymagic.xor(self._nsBezierPath,
-                                                other._nsBezierPath, flatness))
+    return BezierPath(self._ctx,
+                      cPolymagic.xor( self._nsBezierPath,
+                                     other._nsBezierPath,
+                                     flatness))
 
 
 </t>
