@@ -572,7 +572,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             print("BezierPath.fit() FAILED.")
             # pdb.set_trace()
             print(err)
-            print
+            print()
 
         t = Transform()
         if x is not None and y is None:
@@ -598,10 +598,10 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
     ### Mathematics ###
 
     def segmentlengths(self, relative=False, n=10):
-        # import bezier
-        
         from . import bezier
-        if relative: # Use the opportunity to store the segment cache.
+        
+        if relative:
+            # Use the opportunity to store the segment cache.
             if self._segment_cache is None:
                 self._segment_cache = bezier.segment_lengths(self,
                                                             relative=True, n=n)
@@ -610,18 +610,19 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             return bezier.segment_lengths(self, relative=False, n=n)
 
     def _get_length(self, segmented=False, n=10):
-        # import bezier
         from . import bezier
+        
         return bezier.length(self, segmented=segmented, n=n)
     length = property(_get_length)
         
     def point(self, t):
-        # import bezier
         from . import bezier
+        
         return bezier.point(self, t)
         
     def points(self, amount=100):
         from . import bezier
+        
         if len(self) == 0:
             raise NodeBoxError("The given path is empty")
 
@@ -641,8 +642,8 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             yield self.point( delta*i )
             
     def addpoint(self, t):
-        # import bezier
         from . import bezier
+        
         self._nsBezierPath = bezier.insert_point(self, t)._nsBezierPath
         self._segment_cache = None
 
@@ -652,20 +653,27 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return cPolymagic.intersects(self._nsBezierPath, other._nsBezierPath)
         
     def union(self, other, flatness=0.6):
-        return BezierPath(self._ctx, cPolymagic.union(self._nsBezierPath,
-                                                    other._nsBezierPath, flatness))
+        return BezierPath(self._ctx, cPolymagic.union( self._nsBezierPath,
+                                                      other._nsBezierPath,
+                                                      flatness))
 
     def intersect(self, other, flatness=0.6):
-        return BezierPath(self._ctx, cPolymagic.intersect(self._nsBezierPath,
-                                                    other._nsBezierPath, flatness))
+        return BezierPath(self._ctx,
+                          cPolymagic.intersect( self._nsBezierPath,
+                                               other._nsBezierPath,
+                                               flatness))
 
     def difference(self, other, flatness=0.6):
-        return BezierPath(self._ctx, cPolymagic.difference(self._nsBezierPath,
-                                                    other._nsBezierPath, flatness))
+        return BezierPath(self._ctx,
+                          cPolymagic.difference( self._nsBezierPath,
+                                                other._nsBezierPath,
+                                                flatness))
 
     def xor(self, other, flatness=0.6):
-        return BezierPath(self._ctx, cPolymagic.xor(self._nsBezierPath,
-                                                    other._nsBezierPath, flatness))
+        return BezierPath(self._ctx,
+                          cPolymagic.xor( self._nsBezierPath,
+                                         other._nsBezierPath,
+                                         flatness))
 
 
 class PathElement(object):
