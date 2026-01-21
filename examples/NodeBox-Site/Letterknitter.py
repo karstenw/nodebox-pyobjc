@@ -1,4 +1,7 @@
 
+size( 1440, 900 )
+
+
 fonts = fontnames()
 
 
@@ -21,8 +24,8 @@ var("typeface", MENU, default=menuhandler, value=fonts)
 
 
 var("text", TEXT, " LetterKnitter", handler= menuhandler)
-var("size", NUMBER, 100, 10, 200, handler= menuhandler)
-var("stitches", NUMBER, 700, 10, 1000, handler=menuhandler)
+var("size", NUMBER, 70, 10, 200, handler= menuhandler)
+var("stitches", NUMBER, 400, 10, 1000, handler=menuhandler)
  
 def stitch(txt, x, y, n=1000):
     
@@ -67,7 +70,6 @@ def stitch(txt, x, y, n=1000):
         pt0.y = pt1.y
  
     endpath()
- 
 
 def run(): 
     nofill()
@@ -75,7 +77,7 @@ def run():
     strokewidth(0.5)
     font(typeface, size)
     
-    stitch(text, 50, 150, n=stitches)
+    stitch(text, 50, 450, n=stitches)
 
 run()
 
