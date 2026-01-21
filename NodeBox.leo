@@ -10,13 +10,13 @@
 <find_panel_settings/>
 <vnodes>
 <v t="karstenw.20250718093121.1" a="E"><vh>+ APP +</vh>
-<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
@@ -25,7 +25,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -69,16 +69,16 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
-<v t="karstenw.20170709143724.1"><vh>## Setup Methods ##</vh>
+<v t="karstenw.20170709143724.1" a="E"><vh>## Setup Methods ##</vh>
 <v t="karstenw.20170704104725.6"><vh>size</vh></v>
 <v t="karstenw.20170704104725.7"><vh>_get_width</vh></v>
 <v t="karstenw.20170704104725.8"><vh>_get_height</vh></v>
@@ -191,19 +191,25 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
 <v t="karstenw.20170704104751.3"><vh>_restore</vh></v>
+<v t="karstenw.20251222122634.1"><vh>+ FROM SQUEAKLIB +</vh>
+<v t="karstenw.20251222122658.1"><vh>sign</vh></v>
+<v t="karstenw.20251222122705.1"><vh>makePoint</vh></v>
+</v>
 <v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
 <v t="karstenw.20170704104751.5"><vh>class Point</vh>
+<v t="karstenw.20251222122048.1"><vh>__python__</vh>
 <v t="karstenw.20170704104751.6"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.7"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.8"><vh>__eq__</vh></v>
 <v t="karstenw.20170704104751.9"><vh>__ne__</vh></v>
-<v t="karstenw.20210714232702.1"><vh>__le__</vh></v>
+<v t="karstenw.20210714232702.1"><vh>__lt__ __le__ __gt__ __ge__</vh></v>
 <v t="karstenw.20210714232606.1"><vh>__hash__</vh></v>
+</v>
 </v>
 <v t="karstenw.20170704104751.10"><vh>class Grob</vh>
 <v t="karstenw.20170704104751.11"><vh>__init__</vh></v>
@@ -215,10 +221,8 @@
 <v t="karstenw.20170704104751.16"><vh>class TransformMixin</vh>
 <v t="karstenw.20170704104751.17"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.18"><vh>_reset</vh></v>
-<v t="karstenw.20170704104751.19"><vh>_get_transform</vh></v>
-<v t="karstenw.20170704104751.20"><vh>_set_transform</vh></v>
-<v t="karstenw.20170704104751.21"><vh>_get_transformmode</vh></v>
-<v t="karstenw.20170704104751.22"><vh>_set_transformmode</vh></v>
+<v t="karstenw.20170704104751.19"><vh>transform</vh></v>
+<v t="karstenw.20170704104751.21"><vh>transformmode</vh></v>
 <v t="karstenw.20170704104751.24"><vh>reset</vh></v>
 <v t="karstenw.20170704104751.25"><vh>rotate</vh></v>
 <v t="karstenw.20170704104751.26"><vh>translate</vh></v>
@@ -227,30 +231,23 @@
 </v>
 <v t="karstenw.20170704104751.29"><vh>class ColorMixin</vh>
 <v t="karstenw.20170704104751.30"><vh>__init__</vh></v>
-<v t="karstenw.20170704104751.31"><vh>_get_fill</vh></v>
-<v t="karstenw.20170704104751.32"><vh>_set_fill</vh></v>
-<v t="karstenw.20170704104751.33"><vh>_get_stroke</vh></v>
-<v t="karstenw.20170704104751.34"><vh>_set_stroke</vh></v>
-<v t="karstenw.20170704104751.35"><vh>_get_strokewidth</vh></v>
-<v t="karstenw.20170704104751.36"><vh>_set_strokewidth</vh></v>
+<v t="karstenw.20170704104751.31"><vh>fill</vh></v>
+<v t="karstenw.20170704104751.33"><vh>stroke</vh></v>
+<v t="karstenw.20170704104751.35"><vh>strokewidth</vh></v>
 </v>
 <v t="karstenw.20170704104751.37"><vh>class BezierPath</vh>
 <v t="karstenw.20170704104751.38"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.39"><vh>_get_path</vh></v>
 <v t="karstenw.20170704104751.40"><vh>copy</vh></v>
-<v t="karstenw.20230718091724.1"><vh>### Cap and Join style ###</vh>
-<v t="karstenw.20170704104751.41"><vh>_get_capstyle</vh></v>
-<v t="karstenw.20170704104751.42"><vh>_set_capstyle</vh></v>
-<v t="karstenw.20170704104751.43"><vh>_get_joinstyle</vh></v>
-<v t="karstenw.20170704104751.44"><vh>_set_joinstyle</vh></v>
-</v>
-<v t="karstenw.20230718091743.1"><vh>### Path methods ###</vh>
+<v t="karstenw.20170704104751.41"><vh>capstyle</vh></v>
+<v t="karstenw.20170704104751.43"><vh>joinstyle</vh></v>
+<v t="karstenw.20230718091743.1"><vh>+ Path methods</vh>
 <v t="karstenw.20170704104751.45"><vh>moveto</vh></v>
 <v t="karstenw.20170704104751.46"><vh>lineto</vh></v>
 <v t="karstenw.20170704104751.47"><vh>curveto</vh></v>
 <v t="karstenw.20170704104751.48"><vh>closepath</vh></v>
 <v t="karstenw.20170704104751.49"><vh>setlinewidth</vh></v>
-<v t="karstenw.20170704104751.50"><vh>_get_bounds</vh></v>
+<v t="karstenw.20170704104751.50"><vh>bounds</vh></v>
 <v t="karstenw.20170704104751.51"><vh>contains</vh></v>
 </v>
 <v t="karstenw.20230718091902.1"><vh>### Basic shapes ###</vh>
@@ -2924,6 +2921,8 @@ if __name__=='__main__':
 <t tx="karstenw.20170704104751.1">import os
 import warnings
 
+import math
+
 # from random import choice, shuffle
 import random
 choice = random.choice
@@ -3368,7 +3367,6 @@ matrix = property(_get_matrix, _set_matrix)
 
 </t>
 <t tx="karstenw.20170704104751.141">def skew(self, x=0, y=0):
-    import math
     x = math.pi * x / 180
     y = math.pi * y / 180
     t = Transform()
@@ -4076,24 +4074,26 @@ _nsImage = property(_get_nsImage)
 </t>
 <t tx="karstenw.20170704104751.19">def _get_transform(self):
     return self._transform
+
+def _set_transform(self, transform):
+    self._transform = Transform(transform)
+transform = property(_get_transform, _set_transform)
+
+
 </t>
 <t tx="karstenw.20170704104751.2">def _save():
     NSGraphicsContext.currentContext().saveGraphicsState()
 
 
 </t>
-<t tx="karstenw.20170704104751.20">def _set_transform(self, transform):
-    self._transform = Transform(transform)
-transform = property(_get_transform, _set_transform)
-
-</t>
 <t tx="karstenw.20170704104751.21">def _get_transformmode(self):
     return self._transformmode
-</t>
-<t tx="karstenw.20170704104751.22">def _set_transformmode(self, mode):
+
+def _set_transformmode(self, mode):
     self._transformmode = mode
 transformmode = property(_get_transformmode, _set_transformmode)
     
+
 </t>
 <t tx="karstenw.20170704104751.24">def reset(self):
     self._transform = Transform()
@@ -4140,26 +4140,29 @@ transformmode = property(_get_transformmode, _set_transformmode)
 </t>
 <t tx="karstenw.20170704104751.31">def _get_fill(self):
     return self._fillcolor
-</t>
-<t tx="karstenw.20170704104751.32">def _set_fill(self, *args):
+
+def _set_fill(self, *args):
     self._fillcolor = Color(self._ctx, *args)
 fill = property(_get_fill, _set_fill)
+
 
 </t>
 <t tx="karstenw.20170704104751.33">def _get_stroke(self):
     return self._strokecolor
-</t>
-<t tx="karstenw.20170704104751.34">def _set_stroke(self, *args):
+
+def _set_stroke(self, *args):
     self._strokecolor = Color(self._ctx, *args)
 stroke = property(_get_stroke, _set_stroke)
+
 
 </t>
 <t tx="karstenw.20170704104751.35">def _get_strokewidth(self):
     return self._strokewidth
-</t>
-<t tx="karstenw.20170704104751.36">def _set_strokewidth(self, strokewidth):
+
+def _set_strokewidth(self, strokewidth):
     self._strokewidth = max(strokewidth, 0.0001)
 strokewidth = property(_get_strokewidth, _set_strokewidth)
+
 
 </t>
 <t tx="karstenw.20170704104751.37">class BezierPath(Grob, TransformMixin, ColorMixin):
@@ -4194,7 +4197,7 @@ strokewidth = property(_get_strokewidth, _set_strokewidth)
 </t>
 <t tx="karstenw.20170704104751.39">def _get_path(self):
     s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
-    warnings.warn(s, DeprecationWarning, stacklevel=2)
+    #warnings.warn(s, DeprecationWarning, stacklevel=2)
     return self._nsBezierPath
 path = property(_get_path)
 
@@ -4211,22 +4214,24 @@ class NodeBoxError(Exception):
 </t>
 <t tx="karstenw.20170704104751.41">def _get_capstyle(self):
     return self._capstyle
-</t>
-<t tx="karstenw.20170704104751.42">def _set_capstyle(self, style):
+
+def _set_capstyle(self, style):
     if style not in (BUTT, ROUND, SQUARE):
         raise NodeBoxError('Line cap style should be BUTT, ROUND or SQUARE.')
     self._capstyle = style
 capstyle = property(_get_capstyle, _set_capstyle)
 
+
 </t>
 <t tx="karstenw.20170704104751.43">def _get_joinstyle(self):
     return self._joinstyle
-</t>
-<t tx="karstenw.20170704104751.44">def _set_joinstyle(self, style):
+
+def _set_joinstyle(self, style):
     if style not in (MITER, ROUND, BEVEL):
         raise NodeBoxError('Line join style should be MITER, ROUND or BEVEL.')
     self._joinstyle = style
 joinstyle = property(_get_joinstyle, _set_joinstyle)
+
 
 </t>
 <t tx="karstenw.20170704104751.45">def moveto(self, x, y):
@@ -14452,6 +14457,27 @@ def __gt__(self, other):
 def __ge__(self, other):
     return (self.x &gt;= other.x) and (self.y &gt;= other.y)
 
+# added from squeaklib
+def __add__( self, other):
+    if not isinstance(other, Point):
+        other = makePoint( other )
+    return Point( self.x + other.x, self.y + other.y )
+
+def __sub__( self, other):
+    if not isinstance(other, Point):
+        other = makePoint( other )
+    return Point( self.x - other.x, self.y - other.y )
+
+def __mul__( self, other):
+    if isinstance(other, Point):
+        return Point( self.x * other.x, self.y * other.y )
+    return Point( self.x * other, self.y * other )
+
+def __truediv__( self, other):
+    if isinstance(other, Point):
+        return Point( self.x / other.x, self.y / other.y )
+    return Point( self.x / other, self.y / other )
+
 </t>
 <t tx="karstenw.20210714234429.1">def __lt__(self, other):
     return (    (self.x &lt; other.x) and (self.y &lt; other.y)
@@ -14561,9 +14587,6 @@ def windowWillLoad( self ):
             print( "co_filename:", name, inst.__code__.co_filename )
         types[tn].append(name)
     return types
-
-</t>
-<t tx="karstenw.20230718091724.1">### Cap and Join style ###
 
 </t>
 <t tx="karstenw.20230718091743.1">### Path methods ###
@@ -14794,5 +14817,36 @@ Supported movie extension:  mov""" + err)
 
 </t>
 <t tx="karstenw.20250718093121.1"></t>
+<t tx="karstenw.20251222122048.1"></t>
+<t tx="karstenw.20251222122634.1"></t>
+<t tx="karstenw.20251222122658.1">def sign( number ):
+    """I can't believe that Python does not have a sign() function."""
+
+    if number &gt; 0:
+        return +1
+    elif number &lt; 0:
+        return -1
+    return 0
+
+
+</t>
+<t tx="karstenw.20251222122705.1">def makePoint( *args  ):
+    """Tries to create a Point from args."""
+    
+    n = len(args)
+    
+    if n == 1:
+        typ = type( args[0] )
+        if typ in (Point,):
+            return args[0]
+        elif typ in (long, int, float):
+            return Point( args[0], args[0] )
+        elif typ in (list, tuple):
+            return Point( args[0][0], args[0][1] )
+    elif n == 2:
+        return Point( args[0], args[1] )
+    return None
+
+</t>
 </tnodes>
 </leo_file>
