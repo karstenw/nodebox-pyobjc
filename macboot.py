@@ -45,6 +45,7 @@ import bs4
 # moved to Library
 import numpy
 
+import charset_normalizer
 
 try:
     import planar
@@ -93,10 +94,10 @@ import CoreLocation
 
 
 
-import  PyObjCTools
-import  PyObjCTools.AppHelper
+import PyObjCTools
+import PyObjCTools.AppHelper
 
-import  PyObjCTools.Signals
+import PyObjCTools.Signals
 PyObjCTools.Signals.dumpStackOnFatalSignal()
 
 import PyObjCTools.Debugging
