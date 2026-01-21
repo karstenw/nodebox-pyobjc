@@ -1,6 +1,8 @@
 import os
 import warnings
 
+import math
+
 # from random import choice, shuffle
 import random
 choice = random.choice
@@ -169,6 +171,33 @@ def _save():
 def _restore():
     NSGraphicsContext.currentContext().restoreGraphicsState()
 
+def sign( number ):
+    """I can't believe that Python does not have a sign() function."""
+
+    if number > 0:
+        return +1
+    elif number < 0:
+        return -1
+    return 0
+
+
+def makePoint( *args  ):
+    """Tries to create a Point from args."""
+    
+    n = len(args)
+    
+    if n == 1:
+        typ = type( args[0] )
+        if typ in (Point,):
+            return args[0]
+        elif typ in (long, int, float):
+            return Point( args[0], args[0] )
+        elif typ in (list, tuple):
+            return Point( args[0][0], args[0][1] )
+    elif n == 2:
+        return Point( args[0], args[1] )
+    return None
+
 
 class NodeBoxError(Exception):
     pass
@@ -208,6 +237,27 @@ class Point(object):
 
     def __ge__(self, other):
         return (self.x >= other.x) and (self.y >= other.y)
+
+    # added from squeaklib
+    def __add__( self, other):
+        if not isinstance(other, Point):
+            other = makePoint( other )
+        return Point( self.x + other.x, self.y + other.y )
+
+    def __sub__( self, other):
+        if not isinstance(other, Point):
+            other = makePoint( other )
+        return Point( self.x - other.x, self.y - other.y )
+
+    def __mul__( self, other):
+        if isinstance(other, Point):
+            return Point( self.x * other.x, self.y * other.y )
+        return Point( self.x * other, self.y * other )
+
+    def __truediv__( self, other):
+        if isinstance(other, Point):
+            return Point( self.x / other.x, self.y / other.y )
+        return Point( self.x / other, self.y / other )
 
     def __hash__( self ):
         return hash( (self.x, self.y) )
@@ -256,16 +306,20 @@ class TransformMixin(object):
         
     def _get_transform(self):
         return self._transform
+
     def _set_transform(self, transform):
         self._transform = Transform(transform)
     transform = property(_get_transform, _set_transform)
 
+
     def _get_transformmode(self):
         return self._transformmode
+
     def _set_transformmode(self, mode):
         self._transformmode = mode
     transformmode = property(_get_transformmode, _set_transformmode)
         
+
     def reset(self):
         self._transform = Transform()
 
@@ -299,21 +353,27 @@ class ColorMixin(object):
         
     def _get_fill(self):
         return self._fillcolor
+
     def _set_fill(self, *args):
         self._fillcolor = Color(self._ctx, *args)
     fill = property(_get_fill, _set_fill)
 
+
     def _get_stroke(self):
         return self._strokecolor
+
     def _set_stroke(self, *args):
         self._strokecolor = Color(self._ctx, *args)
     stroke = property(_get_stroke, _set_stroke)
 
+
     def _get_strokewidth(self):
         return self._strokewidth
+
     def _set_strokewidth(self, strokewidth):
         self._strokewidth = max(strokewidth, 0.0001)
     strokewidth = property(_get_strokewidth, _set_strokewidth)
+
 
 class BezierPath(Grob, TransformMixin, ColorMixin):
     """A BezierPath provides a wrapper around NSBezierPath."""
@@ -344,30 +404,32 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             
     def _get_path(self):
         s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
-        warnings.warn(s, DeprecationWarning, stacklevel=2)
+        #warnings.warn(s, DeprecationWarning, stacklevel=2)
         return self._nsBezierPath
     path = property(_get_path)
 
     def copy(self):
         return self.__class__(self._ctx, self)
 
-    ### Cap and Join style ###
-
     def _get_capstyle(self):
         return self._capstyle
+
     def _set_capstyle(self, style):
         if style not in (BUTT, ROUND, SQUARE):
             raise NodeBoxError('Line cap style should be BUTT, ROUND or SQUARE.')
         self._capstyle = style
     capstyle = property(_get_capstyle, _set_capstyle)
 
+
     def _get_joinstyle(self):
         return self._joinstyle
+
     def _set_joinstyle(self, style):
         if style not in (MITER, ROUND, BEVEL):
             raise NodeBoxError('Line join style should be MITER, ROUND or BEVEL.')
         self._joinstyle = style
     joinstyle = property(_get_joinstyle, _set_joinstyle)
+
 
     ### Path methods ###
 
@@ -1157,7 +1219,6 @@ class Transform(object):
         self._nsAffineTransform.scaleXBy_yBy_(x, y)
 
     def skew(self, x=0, y=0):
-        import math
         x = math.pi * x / 180
         y = math.pi * y / 180
         t = Transform()
