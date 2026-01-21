@@ -156,9 +156,10 @@ def handlecoordinate(value, name):
         zoom = float(value)
         delta = 1 / zoom
         #print( "delta", delta )
-        #print( "zoom", zoom )
+        print( "zoom", zoom )
     elif name == "iterations":
         iterations = int( value )
+        print("iterations:", iterations)
     elif name == "const_real":
         const_real = float( value )
         # const_imag = const_real
@@ -167,6 +168,7 @@ def handlecoordinate(value, name):
         #const_real = const_imag
     elif name == "limit":
         limit = float( value )
+        print("limit:", limit)
     elif name == "h":
         h = float( value )
     elif name == "s":
@@ -182,7 +184,7 @@ def handlecoordinate(value, name):
 delta = 4.0 #0.5
 inity = -0.75 # -1.75
 
-var("fsize", NUMBER, 320, 200, 1200, handler=handlecoordinate)
+var("fsize", NUMBER, 320, 200, 1440, handler=handlecoordinate)
 var("xpos", NUMBER,  0.0, -6.0, 6.0, handler=handlecoordinate)
 var("ypos", NUMBER,  0.0, -3.5, 3.5, handler=handlecoordinate)
 # var("delta", NUMBER, 4.0, 0.0001, 20.0, handler=handlecoordinate)
