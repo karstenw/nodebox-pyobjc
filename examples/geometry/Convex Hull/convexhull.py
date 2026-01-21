@@ -7,19 +7,17 @@
    Displaying a million points takes about 4-8 minutes
 """
 
+# make canvas 85% width height
+size(0, 0)
+w = int(round(WIDTH * 0.85))
+h = int(round(HEIGHT * 0.85))
+size(w,h)
 
-
-# This is new with Nodebox 1.9.13; size(0,0) sets size to main screen size
-try:
-    size(0, 0)
-except:
-    # if we're running an older version, set some reasonable default
-    size(800, 800)
 
 import time
 
 # how many points 1,000,000 takes about 1 min.
-noOfPoints = 10000
+noOfPoints = 100000
 
 # inset from canvas size
 inset = 25
@@ -76,23 +74,24 @@ def convex_hull(points):
 # Example: convex hull of a 10-by-10 grid.
 # assert convex_hull([(i//10, i%10) for i in range(100)]) == [(0, 0), (9, 0), (9, 9), (0, 9)]
 
-def displayPoints( points ):
+def displayPoints( points, msize=msize ):
     """Mark a point with a cross or a rect."""
     push()
     
     fill( 0 )
     strokewidth( 1 )
     stroke( 0 ) #0.5, 0,0, 0.5 )
-    beginpath()
-    for p in points:
-        x, y = p
-        #moveto( x    , y )
-        #lineto( x+1.0, y )
-        moveto( x-msize, y )
-        lineto( x+msize, y )
-        moveto( x  , y-msize )
-        lineto( x  , y+msize )
-    endpath(draw=1)
+    if 1:
+        # partition here in sections of 100.000
+        # max drawpathsize ~ 250.000
+        beginpath()
+        for p in points:
+            x, y = p
+            moveto( x-msize, y )
+            lineto( x+msize, y )
+            moveto( x  , y-msize )
+            lineto( x  , y+msize )
+        endpath(draw=1)
     pop()
 
 
