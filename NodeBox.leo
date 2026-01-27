@@ -10,9 +10,8 @@
 <find_panel_settings/>
 <vnodes>
 <v t="karstenw.20250718093121.1" a="E"><vh>+ APP +</vh>
-<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
-<v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
@@ -25,10 +24,10 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
-<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
 <v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
@@ -418,7 +417,7 @@
 </v>
 <v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
 <v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -677,10 +676,9 @@
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
 <v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
-<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
-<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -695,8 +693,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
@@ -1044,6 +1042,7 @@ import bs4
 # moved to Library
 import numpy
 
+import charset_normalizer
 
 try:
     import planar
@@ -1092,10 +1091,10 @@ import CoreLocation
 
 
 
-import  PyObjCTools
-import  PyObjCTools.AppHelper
+import PyObjCTools
+import PyObjCTools.AppHelper
 
-import  PyObjCTools.Signals
+import PyObjCTools.Signals
 PyObjCTools.Signals.dumpStackOnFatalSignal()
 
 import PyObjCTools.Debugging
@@ -1123,7 +1122,8 @@ import nodebox.gui.mac
 
 
 </t>
-<t tx="karstenw.20170704103935.1"></t>
+<t tx="karstenw.20170704103935.1">PyObjCTools.AppHelper.runEventLoop()
+</t>
 <t tx="karstenw.20170704103951.1">@language python
 @tabwidth -4
 @others
@@ -7642,7 +7642,16 @@ NSUserDefaults.standardUserDefaults().registerDefaults_(_defaultUserDefaults)
     return alert.runModal()
 
 </t>
-<t tx="karstenw.20170704105126.1">    import compiler
+<t tx="karstenw.20170704105126.1">
+
+import ast
+parse = ast.parse
+Sub = ast.Sub
+UnarySub = ast.USub
+Add = ast.Add
+
+if 0: # py2 version
+    import compiler
     parse = compiler.parse
     import compiler.ast
     Sub = compiler.ast.Sub
@@ -7891,29 +7900,35 @@ NSFontAttributeName = AppKit.NSFontAttributeName
     self.textView.setNeedsDisplay_(True)
     self.textView.document.currentView.direct = False
     NSCursor.unhide()
-
+    
+    
 </t>
 <t tx="karstenw.20170704105126.8">def draw(self):
-    mx,my=self.viewPoint
-
+    mx, my = self.viewPoint
+    
     x = mx-20
-    w = 80
-    h = 20
-    h2 = h*2
-
+    width = 80
+    halfwidth = width / 2
+    height = 20
+    doubleheight = height * 2
+    
     context = NSGraphicsContext.currentContext()
-    aa = context.shouldAntialias()
+    
+    antialiasSaveValue = context.shouldAntialias()
     context.setShouldAntialias_(False)
-    r = ((mx-w/2,my+12),(w,h))
-    NSBezierPath.setDefaultLineWidth_(0)
+    
+    rect = ( (mx-halfwidth, my + 12), ( width, height ))
+    
+    NSBezierPath.setDefaultLineWidth_( 0 )
     self.backgroundColor.set()
-    NSBezierPath.fillRect_(r)
+    NSBezierPath.fillRect_( rect )
     self.strokeColor.set()
-    NSBezierPath.strokeRect_(r)
-
+    NSBezierPath.strokeRect_( rect )
+    
     # A standard value just displays the value that you have been dragging.
     if not self.negative:
         v = str(self.value)
+    
     # When the value is negative, we don't display a double negative,
     # but a positive.
     elif self.value &lt; 0:
@@ -7921,10 +7936,12 @@ NSFontAttributeName = AppKit.NSFontAttributeName
     # When the value is positive, we have to add a minus sign.
     else:
         v = "-" + str(self.value)
-
-    NSString.drawInRect_withAttributes_(v, ((mx-w/2,my+14),(w,h2)), self.textAttributes)
-    context.setShouldAntialias_(aa)
-
+    text = NSString.stringWithString_( v )
+    text.drawInRect_withAttributes_( (( mx-halfwidth, my+14 ), ( width, doubleheight)),
+                                     self.textAttributes)
+    context.setShouldAntialias_( antialiasSaveValue )
+    
+    
 </t>
 <t tx="karstenw.20170704105126.9">def mouseDragged_(self, event):
     mod = event.modifierFlags()
@@ -14293,7 +14310,13 @@ except NameError:
     long = int
 
 </t>
-<t tx="karstenw.20210322113320.1">PyObjCTools.AppHelper.runEventLoop()
+<t tx="karstenw.20210322113320.1"># py3 stuff
+punicode = str
+pstr = bytes
+py3 = True
+punichr = chr
+long = int
+
 </t>
 <t tx="karstenw.20210323114020.1">from keyword import kwlist as keywordsList
 keywordsList = keywordsList[:]
@@ -14390,12 +14413,7 @@ def clearMessageArea_(self, sender):
 
 
 </t>
-<t tx="karstenw.20210630133918.1">    pstr = bytes
-    py3 = True
-    punichr = chr
-    long = int
-
-
+<t tx="karstenw.20210630133918.1">
 def sortlistfunction(thelist, thecompare):
     if py3:
         sortkeyfunction = cmp_to_key( thecompare )
