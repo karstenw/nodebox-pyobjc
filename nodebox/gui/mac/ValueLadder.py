@@ -253,28 +253,34 @@ class ValueLadder:
         self.textView.setNeedsDisplay_(True)
         self.textView.document.currentView.direct = False
         NSCursor.unhide()
-
+        
+        
     def draw(self):
-        mx,my=self.viewPoint
-
+        mx, my = self.viewPoint
+        
         x = mx-20
-        w = 80
-        h = 20
-        h2 = h*2
-
+        width = 80
+        halfwidth = width / 2
+        height = 20
+        doubleheight = height * 2
+        
         context = NSGraphicsContext.currentContext()
-        aa = context.shouldAntialias()
+        
+        antialiasSaveValue = context.shouldAntialias()
         context.setShouldAntialias_(False)
-        r = ((mx-w/2,my+12),(w,h))
-        NSBezierPath.setDefaultLineWidth_(0)
+        
+        rect = ( (mx-halfwidth, my + 12), ( width, height ))
+        
+        NSBezierPath.setDefaultLineWidth_( 0 )
         self.backgroundColor.set()
-        NSBezierPath.fillRect_(r)
+        NSBezierPath.fillRect_( rect )
         self.strokeColor.set()
-        NSBezierPath.strokeRect_(r)
-
+        NSBezierPath.strokeRect_( rect )
+        
         # A standard value just displays the value that you have been dragging.
         if not self.negative:
             v = str(self.value)
+        
         # When the value is negative, we don't display a double negative,
         # but a positive.
         elif self.value < 0:
@@ -282,10 +288,12 @@ class ValueLadder:
         # When the value is positive, we have to add a minus sign.
         else:
             v = "-" + str(self.value)
-
-        NSString.drawInRect_withAttributes_(v, ((mx-w/2,my+14),(w,h2)), self.textAttributes)
-        context.setShouldAntialias_(aa)
-
+        text = NSString.stringWithString_( v )
+        text.drawInRect_withAttributes_( (( mx-halfwidth, my+14 ), ( width, doubleheight)),
+                                         self.textAttributes)
+        context.setShouldAntialias_( antialiasSaveValue )
+        
+        
     def mouseDragged_(self, event):
         mod = event.modifierFlags()
         newX, newY = NSEvent.mouseLocation()
