@@ -11,11 +11,13 @@ import atexit
 import pprint
 pp = pprint.pprint
 
+
 # import pdb
 kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
 debugging = True
+
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -1294,8 +1296,6 @@ class NodeBoxAppDelegate(NSObject):
             for fileurl in documents:
                 url = NSURL.URLWithString_( fileurl )
                 theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
-                if kwdbg:
-                    print( theerr )
             return False
         else:
             # TODO read / write empty file open preferences here
