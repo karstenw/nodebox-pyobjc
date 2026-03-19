@@ -34,3 +34,4 @@ examples/Test
 tests/temp
 tests/examples-*
 examples/NodeBox-Site/creature & evolution/evolution/creatures
+examples/NodeBox-Site/+*
