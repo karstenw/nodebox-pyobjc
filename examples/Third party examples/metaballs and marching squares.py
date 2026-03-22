@@ -329,11 +329,12 @@ def update_grid(): # blobs, grid ):
     xygrids = []
     for blob in blobs:
         xsquares = np.zeros( WIDTH )
+        ysquares = np.zeros( WIDTH )
         for x in range(WIDTH):
-            bx[x] = (blob.pos.x - x)**2
+            xsquares[x] = (blob.pos.x - x)**2
         for y in range( HEIGHT ):
-            by[y] = (blob.pos.y - y)**2
-        xygrids.append( (bx, by) )
+            ysquares[y] = (blob.pos.y - y)**2
+        xygrids.append( (xsquares, ysquares) )
     
     arr = np.ones( (GRIDWIDTH+1, GRIDHEIGHT+1) )
     for i, blob in enumerate(blobs):
@@ -399,6 +400,7 @@ def draw():
     update = update_fields
     if newfields > 0:
         update = update_fields2
+    
     maxsum = update()
     s1 = time.time()
     if timeit:
