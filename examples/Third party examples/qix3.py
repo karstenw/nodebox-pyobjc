@@ -3,7 +3,7 @@
 # original code:
 # https://github.com/jamesbowman/py-bteve/blob/master/examples/qix.py
 
-s = 391
+s = 900
 size( s, s )
 
 import sys
@@ -47,7 +47,8 @@ def setup():
 
 speed( 30 )
 t = 100
-nlines = 42
+# only every 3rd line is drawn
+nlines = 14 * 3
 
 def fizzle( v ):
     if rnd.random() > 0.5:
@@ -102,6 +103,7 @@ def draw():
         # print( "tri:", tri(tn))
         col = color( tri( red * tn), tri( green * tn), tri( blue * tn), 0.5 )
         stroke( col )
+        strokewidth( 2.5 )
         if typ < 2:
             beginpath()
         
