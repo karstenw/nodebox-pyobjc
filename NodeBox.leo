@@ -68,8 +68,8 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
@@ -144,7 +144,7 @@
 <v t="karstenw.20170704104726.8"><vh>stroke</vh></v>
 <v t="karstenw.20170704104726.9"><vh>strokewidth</vh></v>
 </v>
-<v t="karstenw.20170709143705.1"><vh>## Path Style Commands ##</vh>
+<v t="karstenw.20170709143705.1" a="E"><vh>## Path Style Commands ##</vh>
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
@@ -190,7 +190,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -397,7 +397,7 @@
 <v t="karstenw.20170704104751.171"><vh>isOpaque</vh></v>
 <v t="karstenw.20170704104751.172"><vh>isFlipped</vh></v>
 </v>
-<v t="karstenw.20170704104751.173"><vh>class Canvas</vh>
+<v t="karstenw.20170704104751.173" a="E"><vh>class Canvas</vh>
 <v t="karstenw.20170704104751.174"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.175"><vh>clear</vh></v>
 <v t="karstenw.20170704104751.176"><vh>_get_size</vh></v>
@@ -418,7 +418,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -693,7 +693,7 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
 <v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -711,13 +711,16 @@
 <v t="karstenw.20170704105353.7"><vh>filelist</vh></v>
 <v t="karstenw.20170704105353.8"><vh>imagefiles</vh></v>
 </v>
-<v t="karstenw.20170811141102.1"><vh>FONT FUNCTIONS</vh>
+<v t="karstenw.20170811141102.1" a="E"><vh>FONT FUNCTIONS</vh>
 <v t="karstenw.20170704105353.9"><vh>fontnames</vh></v>
-<v t="karstenw.20170704105353.10"><vh>class FontRecord</vh>
+<v t="karstenw.20170704105353.10" a="E"><vh>class FontRecord</vh>
 <v t="karstenw.20170704105353.11"><vh>__init__</vh></v>
 <v t="karstenw.20170704105353.12"><vh>__repr__</vh></v>
 </v>
-<v t="karstenw.20170704105353.13"><vh>fontfamilies</vh></v>
+<v t="karstenw.20170704105353.13" a="E"><vh>fontfamilies</vh>
+<v t="karstenw.20260401145845.1"><vh>&lt;&lt; makeTraitsList function &gt;&gt;</vh></v>
+<v t="karstenw.20260401145943.1"><vh>&lt;&lt; makeFontRecord function &gt;&gt;</vh></v>
+</v>
 </v>
 <v t="karstenw.20170811141113.1"><vh>SPEECH FUNCTIONS</vh>
 <v t="karstenw.20170801052347.1"><vh>voices</vh></v>
@@ -4059,12 +4062,15 @@ _nsImage = property(_get_nsImage)
 
 </t>
 <t tx="karstenw.20170704104751.186">def save(self, fname, format=None):
+    fname = makeunicode( fname )
     if format is None:
         basename, ext = os.path.splitext(fname)
         format = ext[1:].lower() # Skip the dot
     data = self._getImageData(format)
-    fname = NSString.stringByExpandingTildeInPath(fname)
-    data.writeToFile_atomically_(fname, False)
+    fname = os.path.abspath( os.path.expanduser(fname) )
+    # fname = NSString.stringByExpandingTildeInPath_( fname )
+    nsname = NSString.stringWithString_( fname )
+    data.writeToFile_atomically_(nsname, False)
 
 </t>
 <t tx="karstenw.20170704104751.187">def _test():
@@ -4889,11 +4895,13 @@ import atexit
 import pprint
 pp = pprint.pprint
 
+
 # import pdb
 kwdbg = True
 
 # set to true to have stdio on the terminal for pdb
 debugging = True
+
 
 # if true print out some debug info on stdout
 kwlog = True
@@ -6311,6 +6319,9 @@ NSPopUpButton = AppKit.NSPopUpButton
 import objc
 
 from nodebox import graphics
+import nodebox.util
+makeunicode = nodebox.util.makeunicode
+
 
 # just to make the next lines print better
 smfontsize = NSFont.smallSystemFontSize()
@@ -6373,7 +6384,7 @@ MINI_FONT = NSFont.systemFontOfSize_(smctrlsize)
     control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) # + AppKit.NSViewMinYMargin )
     self.panel.contentView().addSubview_(control)
     return control
-    
+
 </t>
 <t tx="karstenw.20170704105051.13">def addButton_idx_frame_(self, v, cnt, frame):
     (x,y),(w,h) = frame
@@ -6397,7 +6408,7 @@ class DashboardController(NSObject):
     document = objc.IBOutlet()
     documentWindow = objc.IBOutlet()
     panel = objc.IBOutlet()
-
+    
     @others
 </t>
 <t tx="karstenw.20170704105051.3">def clearInterface(self):
@@ -6446,6 +6457,7 @@ class DashboardController(NSObject):
     else:
         self.document.runScript(compile=False, newSeed=False)
 
+
 </t>
 <t tx="karstenw.20170704105051.7">def buttonClicked_(self, sender):
     var = self.document.vars[sender.tag()]
@@ -6460,10 +6472,11 @@ class DashboardController(NSObject):
     else:
         self.document.runScript(compile=False, newSeed=False)
 
+
 </t>
 <t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
     panelwidth = 300
-
+    
     label_x = 0
     label_w = 100
     ctrl_x = 108
@@ -6553,7 +6566,7 @@ class DashboardController(NSObject):
         # print("cnt/y  %i   %i" % (cnt, y) )
         y -= ctrlheight
         cnt += 1
-
+    
     self.panel.setFrame_display_animate_( ((panelx,panely),(panelwidth,panelheight)), True, 0 )
 
 
@@ -8034,49 +8047,23 @@ __all__ = (
 
 </t>
 <t tx="karstenw.20170704105353.13">def fontfamilies(flat=False):
-    fm = AppKit.NSFontManager.sharedFontManager()
-    l = fm.availableFontFamilies()
+    fontmanager = AppKit.NSFontManager.sharedFontManager()
+    fontfamilies = fontmanager.availableFontFamilies()
 
-    def makeTraitsList( traits ):
-        appleTraits = {
-            0x00000001: u"italic",
-            0x00000002: u"bold",
-            0x00000004: u"unbold",
-            0x00000008: u"nonstandardcharacterset",
-            0x00000010: u"narrow",
-            0x00000020: u"expanded",
-            0x00000040: u"condensed",
-            0x00000080: u"smallcaps",
-            0x00000100: u"poster",
-            0x00000200: u"compressed",
-            0x00000400: u"fixedpitch",
-            0x01000000: u"unitalic"}
-        result = []
-        keys = appleTraits.keys()
-        for key in keys:
-            if traits &amp; key == key:
-                result.append( appleTraits[key])
-        return result
+    &lt;&lt; makeTraitsList function &gt;&gt;
 
-    def makeFontRecord(fnt):
-        psname, styl, weight, traits = fnt
-        psname = makeunicode(psname)
-        styl = makeunicode(styl)
-        weight = float( weight )
-        traits = int(traits)
-        traitNames = makeTraitsList( traits )
-        return FontRecord(psname, familyName, styl, weight, traits, traitNames)
-        
+    &lt;&lt; makeFontRecord function &gt;&gt;
+    
+    result = {}
     if flat:
         result = []
-    else:
-        result = {}
-    for fn in l:
-        familyName = makeunicode( fn )
+    
+    for fontfamily in fontfamilies:
+        familyName = makeunicode( fontfamily )
         if not flat:
             result[familyName] = famfonts = {}
 
-        subs = fm.availableMembersOfFontFamily_( familyName )
+        subs = fontmanager.availableMembersOfFontFamily_( familyName )
         for fnt in subs:
             fontRec = makeFontRecord( fnt )
             if not flat:
@@ -8318,14 +8305,14 @@ __all__ = (
 
 </t>
 <t tx="karstenw.20170704105353.9">def fontnames():
-    fm = AppKit.NSFontManager.sharedFontManager()
-    l = fm.availableFonts()
+    fontmanager = AppKit.NSFontManager.sharedFontManager()
+    fontlist = fontmanager.availableFonts()
     result = []
-    for i in l:
+    for fontname in fontlist:
         # filter out the weird fontnames
-        if i.startswith(u'.'):
+        if fontname.startswith( '.' ):
             continue
-        result.append( makeunicode(i) )
+        result.append( makeunicode(fontname) )
     return result
 
 
@@ -9310,6 +9297,7 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]""" )
         self.document.fastRun_newSeed_args_(fn, False, args)
     #self.document.runFunction_(var.name)
 
+
 </t>
 <t tx="karstenw.20170709145531.1">def addMenu_idx_frame_(self, v, cnt, frame):
     (x,y),(w,h) = frame
@@ -9320,8 +9308,9 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]""" )
     control.removeAllItems()
     if v.menuitems is not None:
         for title in v.menuitems:
+            title = makeunicode( title )
             control.addItemWithTitle_( title )
-    control.setTitle_(v.value)
+    control.setTitle_( makeunicode(v.value) )
     control.synchronizeTitleAndSelectedItem()
     control.setBezelStyle_(1)
     control.setFont_(SMALL_FONT)
@@ -14573,8 +14562,6 @@ def windowWillLoad( self ):
         for fileurl in documents:
             url = NSURL.URLWithString_( fileurl )
             theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
-            if kwdbg:
-                print( theerr )
         return False
     else:
         # TODO read / write empty file open preferences here
@@ -14864,6 +14851,38 @@ Supported movie extension:  mov""" + err)
     elif n == 2:
         return Point( args[0], args[1] )
     return None
+
+</t>
+<t tx="karstenw.20260401145845.1">def makeTraitsList( traits ):
+    appleTraits = {
+        0x00000001: u"italic",
+        0x00000002: u"bold",
+        0x00000004: u"unbold",
+        0x00000008: u"nonstandardcharacterset",
+        0x00000010: u"narrow",
+        0x00000020: u"expanded",
+        0x00000040: u"condensed",
+        0x00000080: u"smallcaps",
+        0x00000100: u"poster",
+        0x00000200: u"compressed",
+        0x00000400: u"fixedpitch",
+        0x01000000: u"unitalic"}
+    result = []
+    keys = appleTraits.keys()
+    for key in keys:
+        if traits &amp; key == key:
+            result.append( appleTraits[key])
+    return result
+
+</t>
+<t tx="karstenw.20260401145943.1">def makeFontRecord( fnt ):
+    psname, styl, weight, traits = fnt
+    psname = makeunicode(psname)
+    styl = makeunicode(styl)
+    weight = float( weight )
+    traits = int(traits)
+    traitNames = makeTraitsList( traits )
+    return FontRecord(psname, familyName, styl, weight, traits, traitNames)
 
 </t>
 </tnodes>
