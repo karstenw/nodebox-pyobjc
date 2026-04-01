@@ -283,14 +283,14 @@ def imagefiles( folderpathorlist, pathonly=True ):
 
 
 def fontnames():
-    fm = AppKit.NSFontManager.sharedFontManager()
-    l = fm.availableFonts()
+    fontmanager = AppKit.NSFontManager.sharedFontManager()
+    fontlist = fontmanager.availableFonts()
     result = []
-    for i in l:
+    for fontname in fontlist:
         # filter out the weird fontnames
-        if i.startswith(u'.'):
+        if fontname.startswith( '.' ):
             continue
-        result.append( makeunicode(i) )
+        result.append( makeunicode(fontname) )
     return result
 
 
@@ -310,8 +310,8 @@ class FontRecord:
 
 
 def fontfamilies(flat=False):
-    fm = AppKit.NSFontManager.sharedFontManager()
-    l = fm.availableFontFamilies()
+    fontmanager = AppKit.NSFontManager.sharedFontManager()
+    fontfamilies = fontmanager.availableFontFamilies()
 
     def makeTraitsList( traits ):
         appleTraits = {
@@ -334,7 +334,8 @@ def fontfamilies(flat=False):
                 result.append( appleTraits[key])
         return result
 
-    def makeFontRecord(fnt):
+
+    def makeFontRecord( fnt ):
         psname, styl, weight, traits = fnt
         psname = makeunicode(psname)
         styl = makeunicode(styl)
@@ -342,17 +343,18 @@ def fontfamilies(flat=False):
         traits = int(traits)
         traitNames = makeTraitsList( traits )
         return FontRecord(psname, familyName, styl, weight, traits, traitNames)
-        
+
+    
+    result = {}
     if flat:
         result = []
-    else:
-        result = {}
-    for fn in l:
-        familyName = makeunicode( fn )
+    
+    for fontfamily in fontfamilies:
+        familyName = makeunicode( fontfamily )
         if not flat:
             result[familyName] = famfonts = {}
 
-        subs = fm.availableMembersOfFontFamily_( familyName )
+        subs = fontmanager.availableMembersOfFontFamily_( familyName )
         for fnt in subs:
             fontRec = makeFontRecord( fnt )
             if not flat:
