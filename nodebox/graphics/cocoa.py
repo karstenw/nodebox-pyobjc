@@ -1836,12 +1836,15 @@ class Canvas(Grob):
                 return data
 
     def save(self, fname, format=None):
+        fname = makeunicode( fname )
         if format is None:
             basename, ext = os.path.splitext(fname)
             format = ext[1:].lower() # Skip the dot
         data = self._getImageData(format)
-        fname = NSString.stringByExpandingTildeInPath(fname)
-        data.writeToFile_atomically_(fname, False)
+        fname = os.path.abspath( os.path.expanduser(fname) )
+        # fname = NSString.stringByExpandingTildeInPath_( fname )
+        nsname = NSString.stringWithString_( fname )
+        data.writeToFile_atomically_(nsname, False)
 
 def _test():
     import doctest, cocoa
