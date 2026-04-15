@@ -25,6 +25,8 @@ import re
 import pickle
 import pydoc
 
+import shelve
+
 # pattern lib
 import csv
 import functools
