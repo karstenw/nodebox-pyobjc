@@ -100,9 +100,10 @@
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
 </v>
-<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
+<v t="karstenw.20170709143301.1" a="E"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
+<v t="karstenw.20260414095521.1"><vh>circle</vh></v>
 <v t="karstenw.20170704104725.25"><vh>arc</vh></v>
 <v t="karstenw.20170704104725.26"><vh>line</vh></v>
 <v t="karstenw.20170704104725.27"><vh>star</vh></v>
@@ -1025,6 +1026,8 @@ import re
 import pickle
 import pydoc
 
+import shelve
+
 # pattern lib
 import csv
 import functools
@@ -1853,16 +1856,6 @@ def rect(self, x, y, width, height, roundness=0.0, draw=True, **kwargs):
     return path
 
 ellipse = oval
-
-
-def circle(self, cx, cy, rx, ry=None, draw=True, **kwargs):
-    if ry == None:
-        ry = rx
-    width = 2 * rx
-    height = 2 * ry
-    x = cx - rx
-    y = cy - ry
-    return self.oval( x, y, width, height, draw=draw, **kwargs )
 
 
 </t>
@@ -14883,6 +14876,17 @@ Supported movie extension:  mov""" + err)
     traits = int(traits)
     traitNames = makeTraitsList( traits )
     return FontRecord(psname, familyName, styl, weight, traits, traitNames)
+
+</t>
+<t tx="karstenw.20260414095521.1">def circle(self, cx, cy, rx, ry=None, draw=True, **kwargs):
+    if ry == None:
+        ry = rx
+    width = 2 * rx
+    height = 2 * ry
+    x = cx - rx
+    y = cy - ry
+    return self.oval( x, y, width, height, draw=draw, **kwargs )
+
 
 </t>
 </tnodes>
