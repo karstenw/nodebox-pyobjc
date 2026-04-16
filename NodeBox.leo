@@ -9,8 +9,8 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20250718093121.1" a="E"><vh>+ APP +</vh>
-<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
+<v t="karstenw.20250718093121.1"><vh>+ APP +</vh>
+<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
@@ -24,7 +24,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
@@ -68,16 +68,16 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
 <v t="karstenw.20170704104725.5"><vh>ximport</vh></v>
-<v t="karstenw.20170709143724.1" a="E"><vh>## Setup Methods ##</vh>
+<v t="karstenw.20170709143724.1"><vh>## Setup Methods ##</vh>
 <v t="karstenw.20170704104725.6"><vh>size</vh></v>
 <v t="karstenw.20170704104725.7"><vh>_get_width</vh></v>
 <v t="karstenw.20170704104725.8"><vh>_get_height</vh></v>
@@ -85,12 +85,12 @@
 <v t="karstenw.20170704104725.10"><vh>background</vh></v>
 <v t="karstenw.20170704104725.11"><vh>outputmode</vh></v>
 </v>
-<v t="karstenw.20170709143221.1" a="E"><vh>## Variables ##</vh>
+<v t="karstenw.20170709143221.1"><vh>## Variables ##</vh>
 <v t="karstenw.20170704104725.12"><vh>var</vh></v>
 <v t="karstenw.20170704104725.13"><vh>addvar</vh></v>
 <v t="karstenw.20170704104725.14"><vh>findvar</vh></v>
 </v>
-<v t="karstenw.20170709143242.1" a="E"><vh>## Objects ##</vh>
+<v t="karstenw.20170709143242.1"><vh>## Objects ##</vh>
 <v t="karstenw.20170704104725.15"><vh>_makeInstance</vh></v>
 <v t="karstenw.20170704104725.16"><vh>BezierPath</vh></v>
 <v t="karstenw.20170704104725.17"><vh>ClippingPath</vh></v>
@@ -100,7 +100,7 @@
 <v t="karstenw.20170704104725.21"><vh>Image</vh></v>
 <v t="karstenw.20170704104725.22"><vh>Text</vh></v>
 </v>
-<v t="karstenw.20170709143301.1" a="E"><vh>## Primitives ##</vh>
+<v t="karstenw.20170709143301.1"><vh>## Primitives ##</vh>
 <v t="karstenw.20170704104725.23"><vh>rect</vh></v>
 <v t="karstenw.20170704104725.24"><vh>oval</vh></v>
 <v t="karstenw.20260414095521.1"><vh>circle</vh></v>
@@ -126,7 +126,7 @@
 <v t="karstenw.20170704104725.40"><vh>beginclip</vh></v>
 <v t="karstenw.20170704104725.41"><vh>endclip</vh></v>
 </v>
-<v t="karstenw.20170709143354.1" a="E"><vh>## Transformation Commands ##</vh>
+<v t="karstenw.20170709143354.1"><vh>## Transformation Commands ##</vh>
 <v t="karstenw.20170704104725.42"><vh>push</vh></v>
 <v t="karstenw.20170704104725.43"><vh>pop</vh></v>
 <v t="karstenw.20170704104725.44"><vh>transform</vh></v>
@@ -145,11 +145,11 @@
 <v t="karstenw.20170704104726.8"><vh>stroke</vh></v>
 <v t="karstenw.20170704104726.9"><vh>strokewidth</vh></v>
 </v>
-<v t="karstenw.20170709143705.1" a="E"><vh>## Path Style Commands ##</vh>
+<v t="karstenw.20170709143705.1"><vh>## Path Style Commands ##</vh>
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -161,7 +161,7 @@
 <v t="karstenw.20170704104726.20"><vh>textmetrics</vh></v>
 <v t="karstenw.20170704104726.21"><vh>alltextmetrics</vh></v>
 </v>
-<v t="karstenw.20170709143553.1" a="E"><vh>## Image Commands ##</vh>
+<v t="karstenw.20170709143553.1"><vh>## Image Commands ##</vh>
 <v t="karstenw.20170704104726.22"><vh>image</vh></v>
 <v t="karstenw.20170704104726.23"><vh>imagesize</vh></v>
 </v>
@@ -191,7 +191,7 @@
 <v t="karstenw.20170704104742.9"><vh>insert_point</vh></v>
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
-<v t="karstenw.20170704104743.1" a="E"><vh>@clean nodebox/graphics/cocoa.py</vh>
+<v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
 <v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -300,6 +300,7 @@
 <v t="karstenw.20170704104751.82"><vh>append</vh></v>
 <v t="karstenw.20170704104751.83"><vh>_draw</vh></v>
 </v>
+<v t="karstenw.20260416084610.1"><vh>+ DEPRECATED +</vh>
 <v t="karstenw.20170704104751.84"><vh>class Rect</vh>
 <v t="karstenw.20170704104751.85"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.86"><vh>copy</vh></v>
@@ -307,6 +308,7 @@
 <v t="karstenw.20170704104751.87"><vh>class Oval</vh>
 <v t="karstenw.20170704104751.88"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.89"><vh>copy</vh></v>
+</v>
 </v>
 <v t="karstenw.20170704104751.90"><vh>class Color</vh>
 <v t="karstenw.20170704104751.91"><vh>__init__</vh></v>
@@ -398,7 +400,7 @@
 <v t="karstenw.20170704104751.171"><vh>isOpaque</vh></v>
 <v t="karstenw.20170704104751.172"><vh>isFlipped</vh></v>
 </v>
-<v t="karstenw.20170704104751.173" a="E"><vh>class Canvas</vh>
+<v t="karstenw.20170704104751.173"><vh>class Canvas</vh>
 <v t="karstenw.20170704104751.174"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.175"><vh>clear</vh></v>
 <v t="karstenw.20170704104751.176"><vh>_get_size</vh></v>
@@ -416,9 +418,9 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
 <v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -431,7 +433,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -694,7 +696,7 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
 <v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -847,7 +849,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20180202040514.1"><vh>+ c-libraries +</vh>
+<v t="karstenw.20180202040514.1" a="E"><vh>+ c-libraries +</vh>
 <v t="karstenw.20180202040520.1"><vh>bwdithering</vh>
 <v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
@@ -1761,9 +1763,7 @@ __all__.extend(['Context'])
 
 
 </t>
-<t tx="karstenw.20170704104725.15">### Objects ####
-
-def _makeInstance(self, clazz, args, kwargs):
+<t tx="karstenw.20170704104725.15">def _makeInstance(self, clazz, args, kwargs):
     """Creates an instance of a class defined in this document.        
        This method sets the context of the object to the current context."""
     inst = clazz(self, *args, **kwargs)
@@ -1820,9 +1820,7 @@ def _makeInstance(self, clazz, args, kwargs):
 
 
 </t>
-<t tx="karstenw.20170704104725.23">### Primitives ###
-
-def rect(self, x, y, width, height, roundness=0.0, draw=True, **kwargs):
+<t tx="karstenw.20170704104725.23">def rect(self, x, y, width, height, roundness=0.0, draw=True, **kwargs):
     BezierPath.checkKwargs(kwargs)
     p = self.BezierPath(**kwargs)
     if roundness == 0:
@@ -2155,9 +2153,7 @@ def push(self): #, all=False):
     return lib
     
 </t>
-<t tx="karstenw.20170704104725.6">### Setup methods ###
-
-def size(self, width, height):
+<t tx="karstenw.20170704104725.6">def size(self, width, height):
     if width == 0 and height == 0:
         # set to main screen size
         allsc = AppKit.NSScreen.screens()
@@ -2211,9 +2207,7 @@ HEIGHT = property(_get_height)
 
 
 </t>
-<t tx="karstenw.20170704104726.12">### Font Commands ###
-
-def font(self, fontname=None, fontsize = None):
+<t tx="karstenw.20170704104726.12">def font(self, fontname=None, fontsize = None):
     if fontname is not None:
         if not Text.font_exists(fontname):
             raise NodeBoxError('Font "%s" not found.' % fontname )
@@ -2293,9 +2287,7 @@ def font(self, fontname=None, fontsize = None):
 
 
 </t>
-<t tx="karstenw.20170704104726.22">### Image commands ###
-
-def image(self, path, x, y, width=None, height=None, alpha=1.0,
+<t tx="karstenw.20170704104726.22">def image(self, path, x, y, width=None, height=None, alpha=1.0,
                 data=None, draw=True, **kwargs):
     
     # pdb.set_trace()
@@ -2312,16 +2304,12 @@ def image(self, path, x, y, width=None, height=None, alpha=1.0,
     return img.size
     
 </t>
-<t tx="karstenw.20170704104726.24">### Canvas proxy ###
-
-def save(self, fname, format=None):
+<t tx="karstenw.20170704104726.24">def save(self, fname, format=None):
     self.canvas.save(fname, format)
 
 
 </t>
-<t tx="karstenw.20170704104726.25">## cGeo
-
-def isqrt( self, v):
+<t tx="karstenw.20170704104726.25">def isqrt( self, v):
     return nodebox.geo.isqrt( v )
 
 </t>
@@ -2343,11 +2331,7 @@ def isqrt( self, v):
 ## 
 
 </t>
-<t tx="karstenw.20170704104726.3">### Color Commands ###
-
-color = Color
-
-def colormode(self, mode=None, range=None):
+<t tx="karstenw.20170704104726.3">def colormode(self, mode=None, range=None):
     if mode is not None:
         self._colormode = mode
     if range is not None:
@@ -2389,7 +2373,11 @@ def colormode(self, mode=None, range=None):
 </t>
 <t tx="karstenw.20170704104730.1">@language python
 @tabwidth -4
-# Bezier - last updated for NodeBox 1.8.3
+@others
+if __name__=='__main__':
+    _test()
+</t>
+<t tx="karstenw.20170704104742.1"># Bezier - last updated for NodeBox 1.8.3
 # Author: Tom De Smedt &lt;tomdesmedt@trapdoor.be&gt;
 # Manual: http://nodebox.net/code/index.php/Bezier
 # Copyright (c) 2007 by Tom De Smedt.
@@ -2397,11 +2385,7 @@ def colormode(self, mode=None, range=None):
 # Thanks to Dr. Florimond De Smedt at the Free University of Brussels for the math routines.
 
 from __future__ import print_function
-@others
-if __name__=='__main__':
-    _test()
-</t>
-<t tx="karstenw.20170704104742.1">
+
 from nodebox.graphics import BezierPath, PathElement, NodeBoxError, Point
 from nodebox.graphics import MOVETO, LINETO, CURVETO, CLOSE
 
@@ -4201,8 +4185,7 @@ strokewidth = property(_get_strokewidth, _set_strokewidth)
 path = property(_get_path)
 
 </t>
-<t tx="karstenw.20170704104751.4">
-class NodeBoxError(Exception):
+<t tx="karstenw.20170704104751.4">class NodeBoxError(Exception):
     pass
 
 
@@ -9265,18 +9248,36 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]""" )
 <t tx="karstenw.20170709143221.1">### Variables ###
 
 </t>
-<t tx="karstenw.20170709143242.1"></t>
-<t tx="karstenw.20170709143301.1"></t>
+<t tx="karstenw.20170709143242.1">### Objects ####
+
+</t>
+<t tx="karstenw.20170709143301.1">### Primitives ###
+
+</t>
 <t tx="karstenw.20170709143318.1"></t>
 <t tx="karstenw.20170709143341.1"></t>
 <t tx="karstenw.20170709143354.1"></t>
-<t tx="karstenw.20170709143414.1"></t>
-<t tx="karstenw.20170709143458.1"></t>
-<t tx="karstenw.20170709143553.1"></t>
-<t tx="karstenw.20170709143618.1"></t>
-<t tx="karstenw.20170709143636.1"></t>
+<t tx="karstenw.20170709143414.1">### Color Commands ###
+
+color = Color
+
+</t>
+<t tx="karstenw.20170709143458.1">### Font Commands ###
+
+</t>
+<t tx="karstenw.20170709143553.1">### Image commands ###
+
+</t>
+<t tx="karstenw.20170709143618.1">### Canvas proxy ###
+
+</t>
+<t tx="karstenw.20170709143636.1">## cGeo
+
+</t>
 <t tx="karstenw.20170709143705.1"></t>
-<t tx="karstenw.20170709143724.1"></t>
+<t tx="karstenw.20170709143724.1">### Setup methods ###
+
+</t>
 <t tx="karstenw.20170709145427.1">def menuSelected_(self, sender):
     var = self.document.vars[sender.tag()]
     sel = sender.titleOfSelectedItem()
@@ -14845,6 +14846,7 @@ Supported movie extension:  mov""" + err)
         return Point( args[0], args[1] )
     return None
 
+
 </t>
 <t tx="karstenw.20260401145845.1">def makeTraitsList( traits ):
     appleTraits = {
@@ -14879,7 +14881,8 @@ Supported movie extension:  mov""" + err)
 
 </t>
 <t tx="karstenw.20260414095521.1">def circle(self, cx, cy, rx, ry=None, draw=True, **kwargs):
-    if ry == None:
+    """Create a circle with center at cx,cy and with radii rx and ry respectively."""
+    if ry is None:
         ry = rx
     width = 2 * rx
     height = 2 * ry
@@ -14889,5 +14892,6 @@ Supported movie extension:  mov""" + err)
 
 
 </t>
+<t tx="karstenw.20260416084610.1"></t>
 </tnodes>
 </leo_file>
