@@ -303,7 +303,8 @@ class Context(object):
 
 
     def circle(self, cx, cy, rx, ry=None, draw=True, **kwargs):
-        if ry == None:
+        """Create a circle with center at cx,cy and with radii rx and ry respectively."""
+        if ry is None:
             ry = rx
         width = 2 * rx
         height = 2 * ry
