@@ -5,9 +5,11 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.10.1
+The current version is 1.10.2
 
 Download the compiled app from the [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
+
+2026-05 The first final release. Python is up to 3.13, PyObjc is 12.1. Separate archives for arm and intel. 
 
 2022-03-28 App only release includes version for M1. This was generated on an iMac with 11.6.3 and has only been tested to run the examples. Not the Library.
 
@@ -23,6 +25,11 @@ Attention!
 ==========
 
 ### The download includes the NodeBox-Library. When first starting NodeBox, go to the preferences and set the Library folder to the included folder.
+
+#### 1. Open the script "install-conceptnet-database.py" and run it. This installs the conceptnet database
+
+#### 1. Open the script "download_corpora.py" and run it. This installs the NLTK database and downloads some data.
+
 
 #### Differences from the official version:
 
@@ -58,7 +65,7 @@ Attention!
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
 
-1.  Uses Python 2.7.16 and PyObjC 5.3 or Python 3.8.12 and PyObjC 6.2.2
+1.  Uses Python 3.13.13 and PyObjC 12.1
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
