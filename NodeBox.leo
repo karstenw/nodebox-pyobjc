@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20250718093121.1"><vh>+ APP +</vh>
+<v t="karstenw.20250718093121.1" a="E"><vh>+ APP +</vh>
 <v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
@@ -24,7 +24,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
@@ -418,10 +418,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -536,7 +536,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20230216113142.1"><vh>applicationShouldOpenUntitledFile_</vh></v>
 <v t="karstenw.20230216115950.1"><vh>applicationShouldHandleReopen_hasVisibleWindows_</vh></v>
@@ -4873,14 +4873,14 @@ pp = pprint.pprint
 
 
 # import pdb
-kwdbg = True
+kwdbg = 0
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = 0
 
 
 # if true print out some debug info on stdout
-kwlog = True
+kwlog = 1
 
 import objc
 objc.options.deprecation_warnings=1
@@ -5075,7 +5075,9 @@ def showLibrary_(self, sender):
         try:
             ns.addObject_( document.fileURL().absoluteString() )
         except Exception as err:
-            print(err)
+            # untitled &amp; unsaved docs have None fileURL
+            pass
+            # print(err)
     defaults.setObject_forKey_( ns, u'lastSessionURLs')
     #pp(ns)
     atexit._run_exitfuncs()
