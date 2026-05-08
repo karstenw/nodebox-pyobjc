@@ -13,14 +13,14 @@ pp = pprint.pprint
 
 
 # import pdb
-kwdbg = True
+kwdbg = 0
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = 0
 
 
 # if true print out some debug info on stdout
-kwlog = True
+kwlog = 1
 
 import objc
 objc.options.deprecation_warnings=1
@@ -1351,7 +1351,9 @@ class NodeBoxAppDelegate(NSObject):
             try:
                 ns.addObject_( document.fileURL().absoluteString() )
             except Exception as err:
-                print(err)
+                # untitled & unsaved docs have None fileURL
+                pass
+                # print(err)
         defaults.setObject_forKey_( ns, u'lastSessionURLs')
         #pp(ns)
         atexit._run_exitfuncs()
