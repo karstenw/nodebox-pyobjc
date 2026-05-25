@@ -13,10 +13,10 @@ pp = pprint.pprint
 
 
 # import pdb
-kwdbg = 0
+kwdbg = 1
 
 # set to true to have stdio on the terminal for pdb
-debugging = 0
+debugging = 1
 
 
 # if true print out some debug info on stdout
