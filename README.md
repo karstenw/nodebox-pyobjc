@@ -33,7 +33,7 @@ Attention!
 
 #### Differences from the official version:
 
-1. Additional Commands (they were already in the original source but not active)
+1.  Additional Commands (they were already in the original source but not active)
 	1.  `angle(x0, y0, x1, y1)`
 		The angle of line (y0,y0,x1,y1) 
 	1.  `distance(x0, y0, x1, y1)`
@@ -45,7 +45,7 @@ Attention!
 	1.  `isqrt(n)`
 		The inverse square root 1 / sqrt(n)
 
-1. Different behaviour:
+1.  Different behaviour:
 	1.  `size(0,0)`  sets size to size of main screen
 	1.  Can open shoebot ('.bot') files.  Runs many of the shoebot examples. Incompatibilities exist.
 	1.  Colors can be hex strings. 
@@ -92,7 +92,7 @@ Attention!
 
 
 1.  New function `fontfamilies(flat=False)` (v1.9.20)
- 	-  Return a dict with [FontFamily][STYLE]-> FontRecord
+	-  Return a dict with [FontFamily][STYLE]-> FontRecord
 	-  if parameter flat=True returns a list of FontRecord
 	-  A FontRecord has the following attributes:
 		-  psname - the postscript name, which can be used for font()
