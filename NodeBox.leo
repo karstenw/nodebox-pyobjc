@@ -47,8 +47,8 @@
 </v>
 <v t="karstenw.20170704104150.1"><vh>@clean nodebox/PyFontify.py</vh>
 <v t="karstenw.20170704104209.1"><vh>Declarations</vh></v>
-<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210323114020.1"><vh>init</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104209.2"><vh>fontify</vh></v>
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
@@ -111,7 +111,7 @@
 <v t="karstenw.20170704104725.29"><vh>_arrow</vh></v>
 <v t="karstenw.20170704104725.30"><vh>_arrow45</vh></v>
 </v>
-<v t="karstenw.20170709143318.1"><vh>## Path Commands ##</vh>
+<v t="karstenw.20170709143318.1" a="E"><vh>## Path Commands ##</vh>
 <v t="karstenw.20170704104725.31"><vh>beginpath</vh></v>
 <v t="karstenw.20170704104725.32"><vh>moveto</vh></v>
 <v t="karstenw.20170704104725.33"><vh>lineto</vh></v>
@@ -126,7 +126,7 @@
 <v t="karstenw.20170704104725.40"><vh>beginclip</vh></v>
 <v t="karstenw.20170704104725.41"><vh>endclip</vh></v>
 </v>
-<v t="karstenw.20170709143354.1"><vh>## Transformation Commands ##</vh>
+<v t="karstenw.20170709143354.1" a="E"><vh>## Transformation Commands ##</vh>
 <v t="karstenw.20170704104725.42"><vh>push</vh></v>
 <v t="karstenw.20170704104725.43"><vh>pop</vh></v>
 <v t="karstenw.20170704104725.44"><vh>transform</vh></v>
@@ -192,7 +192,9 @@
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
 <v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
-<v t="karstenw.20170704104751.1"><vh>Declarations</vh></v>
+<v t="karstenw.20170704104751.1"><vh>Declarations</vh>
+<v t="karstenw.20260602184611.1"><vh>&lt;&lt; aliases and globals &gt;&gt;</vh></v>
+</v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
 <v t="karstenw.20170704104751.3"><vh>_restore</vh></v>
@@ -235,13 +237,13 @@
 <v t="karstenw.20170704104751.33"><vh>stroke</vh></v>
 <v t="karstenw.20170704104751.35"><vh>strokewidth</vh></v>
 </v>
-<v t="karstenw.20170704104751.37"><vh>class BezierPath</vh>
+<v t="karstenw.20170704104751.37" a="E"><vh>class BezierPath</vh>
 <v t="karstenw.20170704104751.38"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.39"><vh>_get_path</vh></v>
 <v t="karstenw.20170704104751.40"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.41"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104751.43"><vh>joinstyle</vh></v>
-<v t="karstenw.20230718091743.1"><vh>+ Path methods</vh>
+<v t="karstenw.20230718091743.1" a="E"><vh>+ Path methods</vh>
 <v t="karstenw.20170704104751.45"><vh>moveto</vh></v>
 <v t="karstenw.20170704104751.46"><vh>lineto</vh></v>
 <v t="karstenw.20170704104751.47"><vh>curveto</vh></v>
@@ -264,11 +266,11 @@
 <v t="karstenw.20170704104751.60"><vh>append</vh></v>
 </v>
 <v t="karstenw.20170704104751.61"><vh>_get_contours</vh></v>
-<v t="karstenw.20230718092007.1"><vh>### Drawing methods ###</vh>
+<v t="karstenw.20230718092007.1" a="E"><vh>### Drawing methods ###</vh>
 <v t="karstenw.20170704104751.62"><vh>_get_transform</vh></v>
 <v t="karstenw.20170704104751.63"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20230718092025.1"><vh>### Geometry ###</vh>
+<v t="karstenw.20230718092025.1" a="E"><vh>### Geometry ###</vh>
 <v t="karstenw.20170704104751.64"><vh>fit</vh></v>
 <v t="karstenw.20170704104751.65"><vh>segmentlengths</vh></v>
 <v t="karstenw.20170704104751.66"><vh>_get_length</vh></v>
@@ -276,7 +278,7 @@
 <v t="karstenw.20170704104751.68"><vh>points</vh></v>
 <v t="karstenw.20170704104751.69"><vh>addpoint</vh></v>
 </v>
-<v t="karstenw.20230718092146.1"><vh>### Clipping operations ###</vh>
+<v t="karstenw.20230718092146.1" a="E"><vh>### Clipping operations ###</vh>
 <v t="karstenw.20170704104751.70"><vh>intersects</vh></v>
 <v t="karstenw.20170704104751.71"><vh>union</vh></v>
 <v t="karstenw.20170704104751.72"><vh>intersect</vh></v>
@@ -310,7 +312,7 @@
 <v t="karstenw.20170704104751.89"><vh>copy</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104751.90"><vh>class Color</vh>
+<v t="karstenw.20170704104751.90" a="E"><vh>class Color</vh>
 <v t="karstenw.20170704104751.91"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.92"><vh>__repr__</vh></v>
 <v t="karstenw.20210715171431.1"><vh>__hash__</vh></v>
@@ -377,7 +379,7 @@
 <v t="karstenw.20170704104751.151"><vh>getSize</vh></v>
 <v t="karstenw.20170704104751.152"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20170704104751.153"><vh>class Text</vh>
+<v t="karstenw.20170704104751.153" a="E"><vh>class Text</vh>
 <v t="karstenw.20170704104751.154"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.155"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.156"><vh>font_exists</vh></v>
@@ -388,7 +390,7 @@
 <v t="karstenw.20170704104751.161"><vh>_get_metrics</vh></v>
 <v t="karstenw.20170704104751.162"><vh>_get_path</vh></v>
 </v>
-<v t="karstenw.20170704104751.163"><vh>class Variable</vh>
+<v t="karstenw.20170704104751.163" a="E"><vh>class Variable</vh>
 <v t="karstenw.20170704104751.164"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.165"><vh>sanitize</vh></v>
 <v t="karstenw.20170704104751.166"><vh>compliesTo</vh></v>
@@ -400,7 +402,7 @@
 <v t="karstenw.20170704104751.171"><vh>isOpaque</vh></v>
 <v t="karstenw.20170704104751.172"><vh>isFlipped</vh></v>
 </v>
-<v t="karstenw.20170704104751.173"><vh>class Canvas</vh>
+<v t="karstenw.20170704104751.173" a="E"><vh>class Canvas</vh>
 <v t="karstenw.20170704104751.174"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.175"><vh>clear</vh></v>
 <v t="karstenw.20170704104751.176"><vh>_get_size</vh></v>
@@ -536,7 +538,7 @@
 <v t="karstenw.20170704105032.99"><vh>canBecomeKeyView</vh></v>
 <v t="karstenw.20170704105032.100"><vh>acceptsFirstResponder</vh></v>
 </v>
-<v t="karstenw.20170704105032.101" a="E"><vh>class NodeBoxAppDelegate</vh>
+<v t="karstenw.20170704105032.101"><vh>class NodeBoxAppDelegate</vh>
 <v t="karstenw.20170704105032.102"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20230216113142.1"><vh>applicationShouldOpenUntitledFile_</vh></v>
 <v t="karstenw.20230216115950.1"><vh>applicationShouldHandleReopen_hasVisibleWindows_</vh></v>
@@ -604,7 +606,7 @@
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
-<v t="karstenw.20170704105113.4" a="E"><vh>class PyDETextView</vh>
+<v t="karstenw.20170704105113.4"><vh>class PyDETextView</vh>
 <v t="karstenw.20170704105113.5"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105113.6"><vh>drawRect_</vh></v>
 <v t="karstenw.20170704105113.7"><vh>hideValueLadder</vh></v>
@@ -664,7 +666,7 @@
 <v t="karstenw.20170704105113.59"><vh>charIndexFromLineIndex_</vh></v>
 <v t="karstenw.20170704105113.60"><vh>numberOfLines</vh></v>
 </v>
-<v t="karstenw.20230216131548.1" a="E"><vh>+ ATTRIBUTES +</vh>
+<v t="karstenw.20230216131548.1"><vh>+ ATTRIBUTES +</vh>
 <v t="karstenw.20170704105113.61"><vh>unpackAttrs</vh></v>
 <v t="karstenw.20170704105113.62"><vh>packAttrs</vh></v>
 <v t="karstenw.20170704105113.63"><vh>getBasicTextAttributes</vh></v>
@@ -678,10 +680,10 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
-<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -697,7 +699,7 @@
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
 <v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
@@ -1527,7 +1529,10 @@ from __future__ import print_function
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104615.1">from math import sqrt, pow
+<t tx="karstenw.20170704104615.1">import math
+sqrt = math.sqrt
+pow = math.pow
+
 
 # from nodebox.geo import distance
 
@@ -1556,7 +1561,7 @@ from __future__ import print_function
     #return distance(x0,y0, x1,y1)
     
     # fastest
-    return math.sqrt((x1-x0)**2 + (y1-y0)**2)
+    return sqrt((x1-x0)**2 + (y1-y0)**2)
     #a = pow(abs(x0 - x1), 2)
     #b = pow(abs(y0 - y1), 2)
     #return sqrt(a+b)
@@ -1652,14 +1657,19 @@ from __future__ import print_function
 @others
 </t>
 <t tx="karstenw.20170704104725.1">
-import pprint
 import importlib
 
-import pdb
+# import pprint
+# import pdb
 
 import AppKit
 
 from . import cocoa
+
+import nodebox.util
+import nodebox.geo
+
+# aliases
 graphics_impl = cocoa
 
 BEVEL = cocoa.BEVEL
@@ -1707,12 +1717,9 @@ inch = cocoa.inch
 mm = cocoa.mm
 
 
-# from nodebox.util import _copy_attr, _copy_attrs
-import nodebox.util
 _copy_attr = nodebox.util._copy_attr
 _copy_attrs = nodebox.util._copy_attrs
 
-import nodebox.geo
 
 # add graphics commands from cocoa
 __all__ = list(graphics_impl.__all__)
@@ -1739,7 +1746,6 @@ __all__.extend(['Context'])
 <t tx="karstenw.20170704104725.12">def var(self, name, type,
         default=None, min=0, max=100, value=None,
         handler=None, menuitems=None):
-    # pdb.set_trace()
     v = Variable(name, type, default, min, max, value, handler, menuitems)
     self.addvar(v)
     return v
@@ -1995,8 +2001,9 @@ ellipse = oval
 def beginpath(self, x=None, y=None):
     self._path = self.BezierPath()
     self._pathclosed = False
-    if x != None and y != None:
-        self._path.moveto(x,y)
+    if x is not None:
+        if y is not None:
+            self._path.moveto(x,y)
 
 </t>
 <t tx="karstenw.20170704104725.32">def moveto(self, x, y):
@@ -2114,7 +2121,7 @@ def push(self): #, all=False):
 <t tx="karstenw.20170704104725.43">def pop(self):
     try:
         top = self._transformstack.pop()
-    except IndexError as e:
+    except IndexError:
         raise NodeBoxError( "pop: too many pops!" )
     if len(top) &gt; 1:
         self._align, self._autoclosepath, self._capstyle, self._colormode,
@@ -2145,9 +2152,9 @@ def push(self): #, all=False):
 </t>
 <t tx="karstenw.20170704104725.5">def ximport(self, libName):
     lib = importlib.__import__( libName )
-    if 0:
-        scan = self.scanmodule( lib )
-        # pprint.pprint( scan )
+    #if 0:
+    #    scan = self.scanmodule( lib )
+    #    pprint.pprint( scan )
     self._ns[libName] = lib
     lib._ctx = self
     return lib
@@ -2262,7 +2269,6 @@ HEIGHT = property(_get_height)
 
 </t>
 <t tx="karstenw.20170704104726.19">def textpath(self, txt, x, y, width=None, height=None, **kwargs):
-    # pdb.set_trace()
     Text.checkKwargs(kwargs)
     txt = self.Text(txt, x, y, width, height, **kwargs)
     txt.inheritFromContext( list( kwargs.keys()) )
@@ -2289,9 +2295,7 @@ HEIGHT = property(_get_height)
 </t>
 <t tx="karstenw.20170704104726.22">def image(self, path, x, y, width=None, height=None, alpha=1.0,
                 data=None, draw=True, **kwargs):
-    
-    # pdb.set_trace()
-    
+
     img = self.Image(path, x, y, width, height, alpha, data=data, **kwargs)
     img.inheritFromContext( kwargs.keys() )
     if draw:
@@ -2299,8 +2303,10 @@ HEIGHT = property(_get_height)
     return img
 
 </t>
-<t tx="karstenw.20170704104726.23">def imagesize(self, path, data=None):
+<t tx="karstenw.20170704104726.23">def imagesize(self, path, data=None, pixelsize=False):
     img = self.Image(path, data=data)
+    if pixelsize:
+        return img.pixelsize
     return img.size
     
 </t>
@@ -2396,7 +2402,7 @@ try:
     linelength = cPathmatics.linelength
     curvepoint = cPathmatics.curvepoint
     curvelength = cPathmatics.curvelength
-except:
+except Exception:
     import nodebox.geo.pathmatics
     linepoint = nodebox.geo.pathmatics.linepoint
     linelength = nodebox.geo.pathmatics.linelength
@@ -2438,20 +2444,25 @@ except:
     first = True
 
     for el in path:
-        if first == True:
-            close_x, close_y = el.x, el.y
+        if first is True:
+            close_x = x0 = el.x
+            close_y = y0 = el.y
             first = False
+        
         elif el.cmd == MOVETO:
             close_x, close_y = el.x, el.y
-            lengths.append(0.0)
+            lengths.append( 0.0 )
+        
         elif el.cmd == CLOSE:
-            lengths.append(linelength(x0, y0, close_x, close_y))
+            lengths.append( linelength(x0, y0, close_x, close_y) )
+        
         elif el.cmd == LINETO:
             lengths.append(linelength(x0, y0, el.x, el.y))
+        
         elif el.cmd == CURVETO:
             x3, y3, x1, y1, x2, y2 = (el.x, el.y, el.ctrl1.x, el.ctrl1.y,
                                       el.ctrl2.x, el.ctrl2.y)
-            lengths.append(curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n))
+            lengths.append( curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n) )
             
         if el.cmd != CLOSE:
             x0 = el.x
@@ -2548,7 +2559,7 @@ except:
     """
     
 
-    if segments == None:
+    if segments is None:
         segments = list( path.segmentlengths(relative=True) )
     
     if len(segments) == 0:
@@ -2752,11 +2763,14 @@ except:
         if type(pt) in (tuple,):
             points[i] = Point(pt[0], pt[1])
     
-    if len(points) == 0: return None
+    if len(points) == 0:
+        return None
+    
     if len(points) == 1:
         path = BezierPath(None)
         path.moveto(points[0].x, points[0].y)
         return path
+    
     if len(points) == 2:
         path = BezierPath(None)
         path.moveto(points[0].x, points[0].y)
@@ -2905,54 +2919,15 @@ import math
 
 # from random import choice, shuffle
 import random
-choice = random.choice
-shuffle = random.shuffle
 
 import objc
-super = objc.super
 
-import pdb
+# import pdb
 
 # from AppKit import *
 import AppKit
-NSBezierPath = AppKit.NSBezierPath
-NSColor = AppKit.NSColor
-NSGraphicsContext = AppKit.NSGraphicsContext
-
-NSView = AppKit.NSView
-
-NSDeviceCMYKColorSpace = AppKit.NSDeviceCMYKColorSpace
-NSDeviceRGBColorSpace = AppKit.NSDeviceRGBColorSpace
-NSAffineTransform = AppKit.NSAffineTransform
-NSImage = AppKit.NSImage
-NSImageCacheNever = AppKit.NSImageCacheNever
-NSCompositeSourceOver = AppKit.NSCompositeSourceOver
-NSLeftTextAlignment = AppKit.NSLeftTextAlignment
-NSFont = AppKit.NSFont
-NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
-NSLineBreakByWordWrapping = AppKit.NSLineBreakByWordWrapping
-NSParagraphStyleAttributeName = AppKit.NSParagraphStyleAttributeName
-NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
-NSFontAttributeName = AppKit.NSFontAttributeName
-NSTextStorage = AppKit.NSTextStorage
-NSLayoutManager = AppKit.NSLayoutManager
-NSTextContainer = AppKit.NSTextContainer
-NSRectFillUsingOperation = AppKit.NSRectFillUsingOperation
-NSGIFFileType = AppKit.NSGIFFileType
-NSJPEGFileType = AppKit.NSJPEGFileType
-NSJPEGFileType = AppKit.NSJPEGFileType
-NSPNGFileType = AppKit.NSPNGFileType
-NSTIFFFileType = AppKit.NSTIFFFileType
-NSBitmapImageRep = AppKit.NSBitmapImageRep
-NSString = AppKit.NSString
-NSData = AppKit.NSData
-NSAffineTransformStruct = AppKit.NSAffineTransformStruct
-
 
 import nodebox.util
-_copy_attr = nodebox.util._copy_attr
-_copy_attrs = nodebox.util._copy_attrs
-makeunicode = nodebox.util.makeunicode
 
 
 try:
@@ -2977,77 +2952,8 @@ __all__ = [
         "Variable", "Canvas",
         ]
 
-DEFAULT_WIDTH, DEFAULT_HEIGHT = 1000, 1000
 
-# unused
-inch = 72.0
-cm = inch / 2.54
-mm = cm * 10.0
-
-
-RGB = "rgb"
-HSB = "hsb"
-CMYK = "cmyk"
-
-
-MOVETO = AppKit.NSMoveToBezierPathElement
-LINETO = AppKit.NSLineToBezierPathElement
-CURVETO = AppKit.NSCurveToBezierPathElement
-CLOSE = AppKit.NSClosePathBezierPathElement
-
-MITER = AppKit.NSMiterLineJoinStyle
-ROUND = AppKit.NSRoundLineJoinStyle # Also used for NSRoundLineCapStyle, same value.
-BEVEL = AppKit.NSBevelLineJoinStyle
-BUTT = AppKit.NSButtLineCapStyle
-SQUARE = AppKit.NSSquareLineCapStyle
-
-LEFT = AppKit.NSLeftTextAlignment
-RIGHT = AppKit.NSRightTextAlignment
-CENTER = AppKit.NSCenterTextAlignment
-JUSTIFY = AppKit.NSJustifiedTextAlignment
-
-# don't want to override justification.CENTER
-# CENTER = "center"
-CORNER = 4 #"corner"
-
-
-NORMAL=1
-FORTYFIVE=2
-
-NUMBER = 1
-TEXT = 2
-BOOLEAN = 3
-BUTTON = 4
-MENU = 5
-
-KEY_UP = 126
-KEY_DOWN = 125
-KEY_LEFT = 123
-KEY_RIGHT = 124
-KEY_BACKSPACE = 51
-KEY_TAB = 48
-KEY_ESC = 53
-
-KEY_ENTER = 76
-KEY_RETURN = 36
-KEY_SPACE = 49
-
-
-_STATE_NAMES = {
-    '_outputmode':    'outputmode',
-    '_colorrange':    'colorrange',
-    '_fillcolor':     'fill',
-    '_strokecolor':   'stroke',
-    '_strokewidth':   'strokewidth',
-    '_capstyle':      'capstyle',
-    '_joinstyle':     'joinstyle',
-    '_transform':     'transform',
-    '_transformmode': 'transformmode',
-    '_fontname':      'font',
-    '_fontsize':      'fontsize',
-    '_align':         'align',
-    '_lineheight':    'lineheight',
-}
+&lt;&lt; aliases and globals &gt;&gt;
 
 
 </t>
@@ -3088,7 +2994,7 @@ v = brightness = property(_get_brightness,
 
 </t>
 <t tx="karstenw.20170704104751.105">def _set_hsba(self, values):
-    val = self._normalize(val)
+    # val = self._normalize(val)
     h, s, b, a = values
     self._rgb = NSColor.colorWithDeviceHue_saturation_brightness_alpha_(h, s, b, a)
     self._updateCmyk()
@@ -3484,6 +3390,13 @@ checkKwargs = classmethod(checkKwargs)
 
 size = property(getSize)
 
+def getPixelSize( self ):
+    rep = self._nsImage.representations()[0]
+    return ( rep.pixelsWide(), rep.pixelsHigh())
+
+pixelsize = property( getPixelSize )
+
+
 </t>
 <t tx="karstenw.20170704104751.152">def _draw(self):
     """Draw an image on the given coordinates."""
@@ -3666,7 +3579,7 @@ font = property(_get_font)
 
     layoutManager = NSLayoutManager.alloc().init()
     textContainer = NSTextContainer.alloc().init()
-    if self.width != None:
+    if self.width is not None:
         textContainer.setContainerSize_((self.width,1000000))
         textContainer.setWidthTracksTextView_(False)
         textContainer.setHeightTracksTextView_(False)
@@ -3866,7 +3779,7 @@ path = property(_get_path)
         try:
             # return unicode(str(val), "utf_8", "replace")
             return makeunicode( val )
-        except:
+        except Exception:
             return ""
     elif self.type == BOOLEAN:
         v = makeunicode( val )
@@ -3990,7 +3903,7 @@ size = property(_get_size)
     try:
         del self._grobstack[0]
         self._container = self._grobstack[0]
-    except IndexError as e:
+    except IndexError:
         raise NodeBoxError("pop: too many canvas pops!")
 
 </t>
@@ -4179,7 +4092,7 @@ strokewidth = property(_get_strokewidth, _set_strokewidth)
         
 </t>
 <t tx="karstenw.20170704104751.39">def _get_path(self):
-    s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
+    #s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
     #warnings.warn(s, DeprecationWarning, stacklevel=2)
     return self._nsBezierPath
 path = property(_get_path)
@@ -4270,7 +4183,6 @@ joinstyle = property(_get_joinstyle, _set_joinstyle)
             return (0,0) , (0,0)
     except Exception as err:
         print()
-        #pdb.set_trace()
         print(err)
         print()
     try:
@@ -4286,7 +4198,6 @@ joinstyle = property(_get_joinstyle, _set_joinstyle)
     #    return (0,0) , (0,0)
     except Exception as err:
         print()
-        #pdb.set_trace()
         print("Bezierpath._get_bounds() FAILED")
         print(err)
         print()
@@ -4390,9 +4301,8 @@ contours = property(_get_contours)
             (x, y), (w, h) = self.bounds
         except Exception as err:
             print()
-            # pdb.set_trace()
             print(err)
-            print
+            print()
         deltax = x + w / 2
         deltay = y + h / 2
         t = Transform()
@@ -4441,7 +4351,6 @@ transform = property(_get_transform)
     except Exception as err:
         print()
         print("BezierPath.fit() FAILED.")
-        # pdb.set_trace()
         print(err)
         print()
 
@@ -4869,25 +4778,45 @@ import signal
 import atexit
 
 import pprint
-pp = pprint.pprint
 
+import objc
+
+import Foundation
+import AppKit
+
+import threading
+
+from . import ValueLadder
+
+from . import PyDETextView
+
+from . import preferences
+
+from . import util
+
+#import nodebox.util.QTSupport
+#QTSupport = nodebox.util.QTSupport
+
+import nodebox.util
+import nodebox.util.ottobot
+import nodebox.graphics
+
+from . import dashboard
+from . import progressbar
 
 # import pdb
-kwdbg = 0
+kwdbg = 1
 
 # set to true to have stdio on the terminal for pdb
-debugging = 0
+debugging = 1
 
+pp = pprint.pprint
 
 # if true print out some debug info on stdout
 kwlog = 1
 
-import objc
 objc.options.deprecation_warnings=1
 
-
-import Foundation
-import AppKit
 NSObject = AppKit.NSObject
 
 NSMutableDictionary = AppKit.NSMutableDictionary
@@ -4935,37 +4864,21 @@ NSURL = AppKit.NSURL
 NSWorkspace = AppKit.NSWorkspace
 NSBezierPath = AppKit.NSBezierPath
 
-
-import threading
 Thread = threading.Thread
 
-from . import ValueLadder
 MAGICVAR = ValueLadder.MAGICVAR
 
-from . import PyDETextView
-
-from . import preferences
 NodeBoxPreferencesController = preferences.NodeBoxPreferencesController
 LibraryFolder = preferences.LibraryFolder
 
-from . import util
 errorAlert = util.errorAlert
 
 
-# from nodebox import util
-import nodebox.util
 util = nodebox.util
 makeunicode = nodebox.util.makeunicode
 
-import nodebox.util.ottobot
 genProgram = nodebox.util.ottobot.genProgram
 
-
-#import nodebox.util.QTSupport
-#QTSupport = nodebox.util.QTSupport
-
-# from nodebox import graphics
-import nodebox.graphics
 graphics = nodebox.graphics
 
 # AppleScript enumerator codes for PDF and Quicktime export
@@ -4979,12 +4892,8 @@ VERY_LIGHT_GRAY = black.blendedColorWithFraction_ofColor_(0.95,
 DARKER_GRAY = black.blendedColorWithFraction_ofColor_(0.8,
                                                       NSColor.whiteColor())
 
-# from nodebox.gui.mac.dashboard import *
-# from nodebox.gui.mac.progressbar import ProgressBarController
-from . import dashboard
-DashboardController = dashboard.DashboardController
 
-from . import progressbar
+DashboardController = dashboard.DashboardController
 ProgressBarController = progressbar.ProgressBarController
 
 </t>
@@ -5095,7 +5004,6 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.13">def readFromFile_ofType_(self, path, tp):
-    # pdb.set_trace()
     if self.textView is None:
         # we're not yet fully loaded
         self.path = path
@@ -5106,7 +5014,6 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.14">def writeToFile_ofType_(self, path, tp):
-    # pdb.set_trace()
     f = io.open(path, "wb")
     text = self.textView.string()
     f.write( text.encode("utf8") )
@@ -5115,7 +5022,6 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.15">def windowControllerDidLoadNib_(self, controller):
-    # pdb.set_trace()
     if self.path:
         self.readFromUTF8_(self.path)
     font = PyDETextView.getBasicTextAttributes()[NSFontAttributeName]
@@ -5144,7 +5050,6 @@ def showLibrary_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.16">def readFromUTF8_(self, path):
-    # pdb.set_trace()
     f = io.open(path, 'r', encoding="utf-8")
     s = f.read()
     f.close()
@@ -5155,7 +5060,6 @@ def showLibrary_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.17">def cleanRun_newSeed_buildInterface_(self, fn, newSeed, buildInterface):
-    # pdb.set_trace()
     self.animationSpinner.startAnimation_(None)
 
     # Prepare everything for running the script
@@ -5238,7 +5142,6 @@ def runScript_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105032.23">def _runScript(self, compile=True, newSeed=True):
-    # pdb.set_trace()
     if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
         pass
 
@@ -5397,8 +5300,6 @@ def stopScript_(self, sender=None):
          - A boolean indicating whether the run was successful
          - The OutputFile
     """
-
-    # pdb.set_trace()
 
     self.scriptName = self.fileName()
     libpath = LibraryFolder()
@@ -6045,7 +5946,6 @@ def resetZoom_(self, sender):
     
 </t>
 <t tx="karstenw.20170704105032.8">def init(self):
-    # pdb.set_trace()
     self = objc.super(NodeBoxDocument, self).init()
     nc = NSNotificationCenter.defaultCenter()
     nc.addObserver_selector_name_object_(self,
@@ -6205,11 +6105,7 @@ jpegData = property(_get_jpegData)
     return True
 
 </t>
-<t tx="karstenw.20170704105043.1">import sys, os, pdb
-
-import objc
-
-import Foundation
+<t tx="karstenw.20170704105043.1">import objc
 
 import AppKit
 NSApp = AppKit.NSApplication
@@ -6727,9 +6623,19 @@ def updateColors_(self, sender):
 <t tx="karstenw.20170704105113.1">from bisect import bisect
 import re
 import objc
-super = objc.super
-
 import AppKit
+import nodebox.PyFontify
+
+# import pdb
+
+from nodebox.gui.mac.ValueLadder import ValueLadder
+
+# from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
+from nodebox.gui.mac.AskStringWindowController import AskString
+
+from nodebox.util import makeunicode # _copy_attr, _copy_attrs
+
+super = objc.super
 
 NSBackgroundColorAttributeName = AppKit.NSBackgroundColorAttributeName
 NSBeep = AppKit.NSBeep
@@ -6756,17 +6662,7 @@ NSCalibratedRGBColorSpace = AppKit.NSCalibratedRGBColorSpace
 NSUserDefaults = AppKit.NSUserDefaults
 
 
-import nodebox.PyFontify
 fontify = nodebox.PyFontify.fontify
-
-import pdb
-
-from nodebox.gui.mac.ValueLadder import ValueLadder
-
-# from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
-from nodebox.gui.mac.AskStringWindowController import AskString
-
-from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
@@ -6807,7 +6703,7 @@ commentRE = re.compile(r"[ \t]*(#)")
                                                eval(txt[begin:end]),
                                                (begin,end),
                                                screenPoint, viewPoint)
-        except IndexError:
+        except IndexError as err:
             print( "PyDETextView.mouseDown_() failed to scan number 3." )
             print( err )
             # pass
@@ -6821,7 +6717,6 @@ commentRE = re.compile(r"[ \t]*(#)")
 </t>
 <t tx="karstenw.20170704105113.12">def draggingEntered_(self, dragInfo):
     pboard = dragInfo.draggingPasteboard()
-    types = pboard.types()
     if NSURLPboardType in pboard.types():
         # Convert URL to string, replace pboard entry, let NSTextView
         # handle the drop as if it were a plain text drop.
@@ -7137,7 +7032,7 @@ def dedent_(self, sender):
 def comment_(self, sender):
     def commentFilter(lines):
         commentedLines = []
-        indent = self.getIndent()
+        # indent = self.getIndent()
         pos = 100
         for line in lines:
             if not line.strip():
@@ -7298,7 +7193,7 @@ def uncomment_(self, sender):
     rng = self._storage.editedRange()
     try:
         self._lineTracker._update(rng, self._storage.changeInLength())
-    except:
+    except Exception:
         import traceback
         traceback.print_exc()
     start = rng[0]
@@ -7309,7 +7204,7 @@ def uncomment_(self, sender):
         start -= 1
         attrs, rng = self._storage.attributesAtIndex_effectiveRange_(start, None)
         value = attrs.objectForKey_(NSForegroundColorAttributeName)
-        if value != None:
+        if value is not None:
             count += 1
             if count &gt; 1:
                 break
@@ -7332,7 +7227,7 @@ def uncomment_(self, sender):
     try:
         try:
             self._colorize()
-        except:
+        except Exception:
             import traceback
             traceback.print_exc()
     finally:
@@ -7633,13 +7528,7 @@ NSUserDefaults.standardUserDefaults().registerDefaults_(_defaultUserDefaults)
     return alert.runModal()
 
 </t>
-<t tx="karstenw.20170704105126.1">
-
-import ast
-parse = ast.parse
-Sub = ast.Sub
-UnarySub = ast.USub
-Add = ast.Add
+<t tx="karstenw.20170704105126.1">import ast
 
 if 0: # py2 version
     import compiler
@@ -7651,12 +7540,19 @@ if 0: # py2 version
 
 
 
-kwdbg = False
 # import pdb
 
-import Foundation
-
+# import Foundation
 import AppKit
+
+
+parse = ast.parse
+Sub = ast.Sub
+UnarySub = ast.USub
+Add = ast.Add
+
+kwdbg = False
+
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
@@ -7866,7 +7762,7 @@ NSFontAttributeName = AppKit.NSFontAttributeName
     elif self.add and self.value &lt; 0:
         # Find the plus sign.
         i = begin - 1
-        notFound = True
+        # notFound = True
         while True:
             if self.originalString[i] == '+':
                 # Re-create the string: 
@@ -7897,7 +7793,8 @@ NSFontAttributeName = AppKit.NSFontAttributeName
 <t tx="karstenw.20170704105126.8">def draw(self):
     mx, my = self.viewPoint
     
-    x = mx-20
+    # x = mx-20
+    
     width = 80
     halfwidth = width / 2
     height = 20
@@ -9321,7 +9218,6 @@ color = Color
 
 </t>
 <t tx="karstenw.20170709154311.1">def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
-    # pdb.set_trace()
     # Check if there is code to run
     if self._code is None:
         return False
@@ -14574,13 +14470,12 @@ def windowWillLoad( self ):
 <t tx="karstenw.20230216131548.1"></t>
 <t tx="karstenw.20230217121258.1">def scanmodule( self, module):
     types = {}
-    # pdb.set_trace()
     for name in module.__dict__:
         inst = module.__dict__[name]
         t = type(inst)
         try:
             tn = inst.__class__.__name__
-        except:
+        except Exception:
             tn = str(t)
         if tn not in types:
             types[tn] = []
@@ -14623,7 +14518,6 @@ import io
 import subprocess
 
 import AppKit
-NSApplication = AppKit.NSApplication
 
 try:
     import nodebox
@@ -14632,9 +14526,11 @@ except ImportError:
     sys.path.append(os.path.dirname(nodebox_dir))
 
 import nodebox.graphics
-graphics = nodebox.graphics
 
 import nodebox.util
+
+NSApplication = AppKit.NSApplication
+graphics = nodebox.graphics
 util = nodebox.util
 
 librarypath = "NONE"
@@ -14648,7 +14544,9 @@ try:
     if os.path.exists(p):
         librarypath = p
         sys.path.insert(0, librarypath)
-except:
+except Exception as err:
+    print("READ Librarypath Preference failed.")
+    print(err)
     librarypath = False
 print("librarypath:", repr(librarypath))
 
@@ -14895,5 +14793,122 @@ Supported movie extension:  mov""" + err)
 
 </t>
 <t tx="karstenw.20260416084610.1"></t>
+<t tx="karstenw.20260602184611.1">choice = random.choice
+shuffle = random.shuffle
+
+super = objc.super
+
+NSBezierPath = AppKit.NSBezierPath
+NSColor = AppKit.NSColor
+NSGraphicsContext = AppKit.NSGraphicsContext
+
+NSView = AppKit.NSView
+
+NSDeviceCMYKColorSpace = AppKit.NSDeviceCMYKColorSpace
+NSDeviceRGBColorSpace = AppKit.NSDeviceRGBColorSpace
+NSAffineTransform = AppKit.NSAffineTransform
+NSImage = AppKit.NSImage
+NSImageCacheNever = AppKit.NSImageCacheNever
+NSCompositeSourceOver = AppKit.NSCompositeSourceOver
+NSLeftTextAlignment = AppKit.NSLeftTextAlignment
+NSFont = AppKit.NSFont
+NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
+NSLineBreakByWordWrapping = AppKit.NSLineBreakByWordWrapping
+NSParagraphStyleAttributeName = AppKit.NSParagraphStyleAttributeName
+NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
+NSFontAttributeName = AppKit.NSFontAttributeName
+NSTextStorage = AppKit.NSTextStorage
+NSLayoutManager = AppKit.NSLayoutManager
+NSTextContainer = AppKit.NSTextContainer
+NSRectFillUsingOperation = AppKit.NSRectFillUsingOperation
+NSGIFFileType = AppKit.NSGIFFileType
+NSJPEGFileType = AppKit.NSJPEGFileType
+NSJPEGFileType = AppKit.NSJPEGFileType
+NSPNGFileType = AppKit.NSPNGFileType
+NSTIFFFileType = AppKit.NSTIFFFileType
+NSBitmapImageRep = AppKit.NSBitmapImageRep
+NSString = AppKit.NSString
+NSData = AppKit.NSData
+NSAffineTransformStruct = AppKit.NSAffineTransformStruct
+
+_copy_attr = nodebox.util._copy_attr
+_copy_attrs = nodebox.util._copy_attrs
+makeunicode = nodebox.util.makeunicode
+
+
+DEFAULT_WIDTH, DEFAULT_HEIGHT = 1000, 1000
+
+# unused
+inch = 72.0
+cm = inch / 2.54
+mm = cm * 10.0
+
+
+RGB = "rgb"
+HSB = "hsb"
+CMYK = "cmyk"
+
+
+MOVETO = AppKit.NSMoveToBezierPathElement
+LINETO = AppKit.NSLineToBezierPathElement
+CURVETO = AppKit.NSCurveToBezierPathElement
+CLOSE = AppKit.NSClosePathBezierPathElement
+
+MITER = AppKit.NSMiterLineJoinStyle
+ROUND = AppKit.NSRoundLineJoinStyle # Also used for NSRoundLineCapStyle, same value.
+BEVEL = AppKit.NSBevelLineJoinStyle
+BUTT = AppKit.NSButtLineCapStyle
+SQUARE = AppKit.NSSquareLineCapStyle
+
+LEFT = AppKit.NSLeftTextAlignment
+RIGHT = AppKit.NSRightTextAlignment
+CENTER = AppKit.NSCenterTextAlignment
+JUSTIFY = AppKit.NSJustifiedTextAlignment
+
+# don't want to override justification.CENTER
+# CENTER = "center"
+CORNER = 4 #"corner"
+
+
+NORMAL=1
+FORTYFIVE=2
+
+NUMBER = 1
+TEXT = 2
+BOOLEAN = 3
+BUTTON = 4
+MENU = 5
+
+KEY_UP = 126
+KEY_DOWN = 125
+KEY_LEFT = 123
+KEY_RIGHT = 124
+KEY_BACKSPACE = 51
+KEY_TAB = 48
+KEY_ESC = 53
+
+KEY_ENTER = 76
+KEY_RETURN = 36
+KEY_SPACE = 49
+
+
+_STATE_NAMES = {
+    '_outputmode':    'outputmode',
+    '_colorrange':    'colorrange',
+    '_fillcolor':     'fill',
+    '_strokecolor':   'stroke',
+    '_strokewidth':   'strokewidth',
+    '_capstyle':      'capstyle',
+    '_joinstyle':     'joinstyle',
+    '_transform':     'transform',
+    '_transformmode': 'transformmode',
+    '_fontname':      'font',
+    '_fontsize':      'fontsize',
+    '_align':         'align',
+    '_lineheight':    'lineheight',
+}
+
+
+</t>
 </tnodes>
 </leo_file>
