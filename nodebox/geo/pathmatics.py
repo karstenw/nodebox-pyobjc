@@ -1,4 +1,7 @@
-from math import sqrt, pow
+import math
+sqrt = math.sqrt
+pow = math.pow
+
 
 # from nodebox.geo import distance
 
@@ -25,7 +28,7 @@ def linelength(x0, y0, x1, y1):
     #return distance(x0,y0, x1,y1)
     
     # fastest
-    return math.sqrt((x1-x0)**2 + (y1-y0)**2)
+    return sqrt((x1-x0)**2 + (y1-y0)**2)
     #a = pow(abs(x0 - x1), 2)
     #b = pow(abs(y0 - y1), 2)
     #return sqrt(a+b)

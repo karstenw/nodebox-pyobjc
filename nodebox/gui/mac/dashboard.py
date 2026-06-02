@@ -69,7 +69,7 @@ class DashboardController(NSObject):
     def clearInterface(self):
         for s in list(self.panel.contentView().subviews()):
             s.removeFromSuperview()
-    
+
     def numberChanged_(self, sender):
         var = self.document.vars[sender.tag()]
         var.value = sender.floatValue()
@@ -81,7 +81,7 @@ class DashboardController(NSObject):
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
             self.document.runScript(compile=False, newSeed=False)
-    
+
     def textChanged_(self, sender):
         var = self.document.vars[sender.tag()]
         var.value = sender.stringValue()
@@ -93,7 +93,7 @@ class DashboardController(NSObject):
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
             self.document.runScript(compile=False, newSeed=False)
-    
+
     def booleanChanged_(self, sender):
         var = self.document.vars[sender.tag()]
         if sender.state() == NSOnState:
@@ -108,8 +108,8 @@ class DashboardController(NSObject):
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
             self.document.runScript(compile=False, newSeed=False)
-    
-    
+
+
     def buttonClicked_(self, sender):
         var = self.document.vars[sender.tag()]
         # self.document.fastRun_newSeed_(self.document.namespace[var.name], True)
@@ -122,8 +122,8 @@ class DashboardController(NSObject):
             self.document.fastRun_newSeed_args_(var.handler, False, args)
         else:
             self.document.runScript(compile=False, newSeed=False)
-    
-    
+
+
     def menuSelected_(self, sender):
         var = self.document.vars[sender.tag()]
         sel = sender.titleOfSelectedItem()
@@ -136,8 +136,8 @@ class DashboardController(NSObject):
                 args = [sel]
             self.document.fastRun_newSeed_args_(fn, False, args)
         #self.document.runFunction_(var.name)
-    
-    
+
+
     def buildInterface_(self, variables):
         panelwidth = 300
         
@@ -232,8 +232,8 @@ class DashboardController(NSObject):
             cnt += 1
         
         self.panel.setFrame_display_animate_( ((panelx,panely),(panelwidth,panelheight)), True, 0 )
-    
-    
+
+
     def addLabel_idx_frame_(self, v, cnt, frame):
         (x,y),(w,h) = frame
         y += 3
@@ -249,7 +249,7 @@ class DashboardController(NSObject):
         # control.setAutoresizingMask_( AppKit.NSViewMinYMargin )
         self.panel.contentView().addSubview_(control)
         return control
-    
+
     def addSlider_idx_frame_(self, v, cnt, frame):
         (x,y),(w,h) = frame
         control = NSSlider.alloc().init()
@@ -266,7 +266,7 @@ class DashboardController(NSObject):
         control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) #+ AppKit.NSViewMinYMargin )
         self.panel.contentView().addSubview_(control)
         return control
-    
+
     def addTextField_idx_frame_(self, v, cnt, frame):
         (x,y),(w,h) = frame
         control = NSTextField.alloc().init()
@@ -281,7 +281,7 @@ class DashboardController(NSObject):
         control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) #+ AppKit.NSViewMinYMargin )
         self.panel.contentView().addSubview_(control)
         return control
-    
+
     def addSwitch_idx_frame_(self, v, cnt, frame):
         (x,y),(w,h) = frame
         control = NSButton.alloc().init()
@@ -301,7 +301,7 @@ class DashboardController(NSObject):
         control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) # + AppKit.NSViewMinYMargin )
         self.panel.contentView().addSubview_(control)
         return control
-    
+
     def addButton_idx_frame_(self, v, cnt, frame):
         (x,y),(w,h) = frame
         control = NSButton.alloc().init()
@@ -317,7 +317,7 @@ class DashboardController(NSObject):
         control.setAutoresizingMask_( AppKit.NSViewWidthSizable ) # + AppKit.NSViewMinYMargin )
         self.panel.contentView().addSubview_(control)
         return control
-    
+
     def addMenu_idx_frame_(self, v, cnt, frame):
         (x,y),(w,h) = frame
         

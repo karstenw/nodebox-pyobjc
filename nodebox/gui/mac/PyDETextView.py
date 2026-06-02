@@ -1,9 +1,19 @@
 from bisect import bisect
 import re
 import objc
-super = objc.super
-
 import AppKit
+import nodebox.PyFontify
+
+# import pdb
+
+from nodebox.gui.mac.ValueLadder import ValueLadder
+
+# from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
+from nodebox.gui.mac.AskStringWindowController import AskString
+
+from nodebox.util import makeunicode # _copy_attr, _copy_attrs
+
+super = objc.super
 
 NSBackgroundColorAttributeName = AppKit.NSBackgroundColorAttributeName
 NSBeep = AppKit.NSBeep
@@ -30,17 +40,7 @@ NSCalibratedRGBColorSpace = AppKit.NSCalibratedRGBColorSpace
 NSUserDefaults = AppKit.NSUserDefaults
 
 
-import nodebox.PyFontify
 fontify = nodebox.PyFontify.fontify
-
-import pdb
-
-from nodebox.gui.mac.ValueLadder import ValueLadder
-
-# from nodebox.gui.mac.AskStringWindowController import AskStringWindowController
-from nodebox.gui.mac.AskStringWindowController import AskString
-
-from nodebox.util import _copy_attr, _copy_attrs, makeunicode
 
 whiteRE = re.compile(r"[ \t]+")
 commentRE = re.compile(r"[ \t]*(#)")
@@ -169,7 +169,7 @@ class PyDETextView(NSTextView):
                                                    eval(txt[begin:end]),
                                                    (begin,end),
                                                    screenPoint, viewPoint)
-            except IndexError:
+            except IndexError as err:
                 print( "PyDETextView.mouseDown_() failed to scan number 3." )
                 print( err )
                 # pass
@@ -181,7 +181,6 @@ class PyDETextView(NSTextView):
 
     def draggingEntered_(self, dragInfo):
         pboard = dragInfo.draggingPasteboard()
-        types = pboard.types()
         if NSURLPboardType in pboard.types():
             # Convert URL to string, replace pboard entry, let NSTextView
             # handle the drop as if it were a plain text drop.
@@ -442,7 +441,7 @@ class PyDETextView(NSTextView):
     def comment_(self, sender):
         def commentFilter(lines):
             commentedLines = []
-            indent = self.getIndent()
+            # indent = self.getIndent()
             pos = 100
             for line in lines:
                 if not line.strip():
@@ -547,7 +546,7 @@ class PyDETextStorageDelegate(NSObject):
         rng = self._storage.editedRange()
         try:
             self._lineTracker._update(rng, self._storage.changeInLength())
-        except:
+        except Exception:
             import traceback
             traceback.print_exc()
         start = rng[0]
@@ -558,7 +557,7 @@ class PyDETextStorageDelegate(NSObject):
             start -= 1
             attrs, rng = self._storage.attributesAtIndex_effectiveRange_(start, None)
             value = attrs.objectForKey_(NSForegroundColorAttributeName)
-            if value != None:
+            if value is not None:
                 count += 1
                 if count > 1:
                     break
@@ -579,7 +578,7 @@ class PyDETextStorageDelegate(NSObject):
         try:
             try:
                 self._colorize()
-            except:
+            except Exception:
                 import traceback
                 traceback.print_exc()
         finally:

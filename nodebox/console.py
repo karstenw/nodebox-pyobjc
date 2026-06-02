@@ -7,7 +7,6 @@ import io
 import subprocess
 
 import AppKit
-NSApplication = AppKit.NSApplication
 
 try:
     import nodebox
@@ -16,9 +15,11 @@ except ImportError:
     sys.path.append(os.path.dirname(nodebox_dir))
 
 import nodebox.graphics
-graphics = nodebox.graphics
 
 import nodebox.util
+
+NSApplication = AppKit.NSApplication
+graphics = nodebox.graphics
 util = nodebox.util
 
 librarypath = "NONE"
@@ -32,7 +33,9 @@ try:
     if os.path.exists(p):
         librarypath = p
         sys.path.insert(0, librarypath)
-except:
+except Exception as err:
+    print("READ Librarypath Preference failed.")
+    print(err)
     librarypath = False
 print("librarypath:", repr(librarypath))
 

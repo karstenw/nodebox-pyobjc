@@ -1,8 +1,4 @@
-import sys, os, pdb
-
 import objc
-
-import Foundation
 
 import AppKit
 NSApp = AppKit.NSApplication

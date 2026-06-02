@@ -9,8 +9,31 @@ import signal
 import atexit
 
 import pprint
-pp = pprint.pprint
 
+import objc
+
+import Foundation
+import AppKit
+
+import threading
+
+from . import ValueLadder
+
+from . import PyDETextView
+
+from . import preferences
+
+from . import util
+
+#import nodebox.util.QTSupport
+#QTSupport = nodebox.util.QTSupport
+
+import nodebox.util
+import nodebox.util.ottobot
+import nodebox.graphics
+
+from . import dashboard
+from . import progressbar
 
 # import pdb
 kwdbg = 1
@@ -18,16 +41,13 @@ kwdbg = 1
 # set to true to have stdio on the terminal for pdb
 debugging = 1
 
+pp = pprint.pprint
 
 # if true print out some debug info on stdout
 kwlog = 1
 
-import objc
 objc.options.deprecation_warnings=1
 
-
-import Foundation
-import AppKit
 NSObject = AppKit.NSObject
 
 NSMutableDictionary = AppKit.NSMutableDictionary
@@ -75,37 +95,21 @@ NSURL = AppKit.NSURL
 NSWorkspace = AppKit.NSWorkspace
 NSBezierPath = AppKit.NSBezierPath
 
-
-import threading
 Thread = threading.Thread
 
-from . import ValueLadder
 MAGICVAR = ValueLadder.MAGICVAR
 
-from . import PyDETextView
-
-from . import preferences
 NodeBoxPreferencesController = preferences.NodeBoxPreferencesController
 LibraryFolder = preferences.LibraryFolder
 
-from . import util
 errorAlert = util.errorAlert
 
 
-# from nodebox import util
-import nodebox.util
 util = nodebox.util
 makeunicode = nodebox.util.makeunicode
 
-import nodebox.util.ottobot
 genProgram = nodebox.util.ottobot.genProgram
 
-
-#import nodebox.util.QTSupport
-#QTSupport = nodebox.util.QTSupport
-
-# from nodebox import graphics
-import nodebox.graphics
 graphics = nodebox.graphics
 
 # AppleScript enumerator codes for PDF and Quicktime export
@@ -119,12 +123,8 @@ VERY_LIGHT_GRAY = black.blendedColorWithFraction_ofColor_(0.95,
 DARKER_GRAY = black.blendedColorWithFraction_ofColor_(0.8,
                                                       NSColor.whiteColor())
 
-# from nodebox.gui.mac.dashboard import *
-# from nodebox.gui.mac.progressbar import ProgressBarController
-from . import dashboard
-DashboardController = dashboard.DashboardController
 
-from . import progressbar
+DashboardController = dashboard.DashboardController
 ProgressBarController = progressbar.ProgressBarController
 
 # py3 stuff
@@ -218,7 +218,6 @@ class NodeBoxDocument(NSDocument):
         return "NodeBoxDocument"
 
     def init(self):
-        # pdb.set_trace()
         self = objc.super(NodeBoxDocument, self).init()
         nc = NSNotificationCenter.defaultCenter()
         nc.addObserver_selector_name_object_(self,
@@ -264,7 +263,6 @@ class NodeBoxDocument(NSDocument):
         self.outputView.setFont_(font)
 
     def readFromFile_ofType_(self, path, tp):
-        # pdb.set_trace()
         if self.textView is None:
             # we're not yet fully loaded
             self.path = path
@@ -274,7 +272,6 @@ class NodeBoxDocument(NSDocument):
         return True
 
     def writeToFile_ofType_(self, path, tp):
-        # pdb.set_trace()
         f = io.open(path, "wb")
         text = self.textView.string()
         f.write( text.encode("utf8") )
@@ -282,7 +279,6 @@ class NodeBoxDocument(NSDocument):
         return True
 
     def windowControllerDidLoadNib_(self, controller):
-        # pdb.set_trace()
         if self.path:
             self.readFromUTF8_(self.path)
         font = PyDETextView.getBasicTextAttributes()[NSFontAttributeName]
@@ -310,7 +306,6 @@ class NodeBoxDocument(NSDocument):
 
 
     def readFromUTF8_(self, path):
-        # pdb.set_trace()
         f = io.open(path, 'r', encoding="utf-8")
         s = f.read()
         f.close()
@@ -320,7 +315,6 @@ class NodeBoxDocument(NSDocument):
         self.textView.usesTabs = "\t" in text
         
     def cleanRun_newSeed_buildInterface_(self, fn, newSeed, buildInterface):
-        # pdb.set_trace()
         self.animationSpinner.startAnimation_(None)
 
         # Prepare everything for running the script
@@ -364,7 +358,6 @@ class NodeBoxDocument(NSDocument):
 
 
     def fastRun_newSeed_args_(self, fn, newSeed = False, args=[]):
-        # pdb.set_trace()
         # Check if there is code to run
         if self._code is None:
             return False
@@ -465,7 +458,6 @@ class NodeBoxDocument(NSDocument):
         self._runScript(compile, newSeed)
 
     def _runScript(self, compile=True, newSeed=True):
-        # pdb.set_trace()
         if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
             pass
 
@@ -609,8 +601,6 @@ class NodeBoxDocument(NSDocument):
              - A boolean indicating whether the run was successful
              - The OutputFile
         """
-
-        # pdb.set_trace()
 
         self.scriptName = self.fileName()
         libpath = LibraryFolder()

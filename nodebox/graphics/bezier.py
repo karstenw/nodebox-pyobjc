@@ -17,7 +17,7 @@ try:
     linelength = cPathmatics.linelength
     curvepoint = cPathmatics.curvepoint
     curvelength = cPathmatics.curvelength
-except:
+except Exception:
     import nodebox.geo.pathmatics
     linepoint = nodebox.geo.pathmatics.linepoint
     linelength = nodebox.geo.pathmatics.linelength
@@ -53,20 +53,25 @@ def segment_lengths(path, relative=False, n=20):
     first = True
 
     for el in path:
-        if first == True:
-            close_x, close_y = el.x, el.y
+        if first is True:
+            close_x = x0 = el.x
+            close_y = y0 = el.y
             first = False
+        
         elif el.cmd == MOVETO:
             close_x, close_y = el.x, el.y
-            lengths.append(0.0)
+            lengths.append( 0.0 )
+        
         elif el.cmd == CLOSE:
-            lengths.append(linelength(x0, y0, close_x, close_y))
+            lengths.append( linelength(x0, y0, close_x, close_y) )
+        
         elif el.cmd == LINETO:
             lengths.append(linelength(x0, y0, el.x, el.y))
+        
         elif el.cmd == CURVETO:
             x3, y3, x1, y1, x2, y2 = (el.x, el.y, el.ctrl1.x, el.ctrl1.y,
                                       el.ctrl2.x, el.ctrl2.y)
-            lengths.append(curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n))
+            lengths.append( curvelength(x0, y0, x1, y1, x2, y2, x3, y3, n) )
             
         if el.cmd != CLOSE:
             x0 = el.x
@@ -161,7 +166,7 @@ def _locate(path, t, segments=None):
     """
     
 
-    if segments == None:
+    if segments is None:
         segments = list( path.segmentlengths(relative=True) )
     
     if len(segments) == 0:
@@ -361,11 +366,14 @@ def findpath(points, curvature=1.0):
         if type(pt) in (tuple,):
             points[i] = Point(pt[0], pt[1])
     
-    if len(points) == 0: return None
+    if len(points) == 0:
+        return None
+    
     if len(points) == 1:
         path = BezierPath(None)
         path.moveto(points[0].x, points[0].y)
         return path
+    
     if len(points) == 2:
         path = BezierPath(None)
         path.moveto(points[0].x, points[0].y)

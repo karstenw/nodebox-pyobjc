@@ -5,16 +5,45 @@ import math
 
 # from random import choice, shuffle
 import random
-choice = random.choice
-shuffle = random.shuffle
 
 import objc
-super = objc.super
 
-import pdb
+# import pdb
 
 # from AppKit import *
 import AppKit
+
+import nodebox.util
+
+
+try:
+    import cPolymagic
+except ImportError as e:
+    warnings.warn('Could not load cPolymagic: %s' % e)
+
+__all__ = [
+        "DEFAULT_WIDTH", "DEFAULT_HEIGHT",
+        "inch", "cm", "mm",
+        "RGB", "HSB", "CMYK",
+        "CENTER", "CORNER",
+        "MOVETO", "LINETO", "CURVETO", "CLOSE",
+        "MITER", "ROUND", "BEVEL", "BUTT", "SQUARE",
+        "LEFT", "RIGHT", "CENTER", "JUSTIFY",
+        "NORMAL","FORTYFIVE",
+        "NUMBER", "TEXT", "BOOLEAN","BUTTON", "MENU",
+        "NodeBoxError",
+        "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect",
+        "Oval",
+        "Color", "Transform", "Image", "Text",
+        "Variable", "Canvas",
+        ]
+
+
+choice = random.choice
+shuffle = random.shuffle
+
+super = objc.super
+
 NSBezierPath = AppKit.NSBezierPath
 NSColor = AppKit.NSColor
 NSGraphicsContext = AppKit.NSGraphicsContext
@@ -48,34 +77,10 @@ NSString = AppKit.NSString
 NSData = AppKit.NSData
 NSAffineTransformStruct = AppKit.NSAffineTransformStruct
 
-
-import nodebox.util
 _copy_attr = nodebox.util._copy_attr
 _copy_attrs = nodebox.util._copy_attrs
 makeunicode = nodebox.util.makeunicode
 
-
-try:
-    import cPolymagic
-except ImportError as e:
-    warnings.warn('Could not load cPolymagic: %s' % e)
-
-__all__ = [
-        "DEFAULT_WIDTH", "DEFAULT_HEIGHT",
-        "inch", "cm", "mm",
-        "RGB", "HSB", "CMYK",
-        "CENTER", "CORNER",
-        "MOVETO", "LINETO", "CURVETO", "CLOSE",
-        "MITER", "ROUND", "BEVEL", "BUTT", "SQUARE",
-        "LEFT", "RIGHT", "CENTER", "JUSTIFY",
-        "NORMAL","FORTYFIVE",
-        "NUMBER", "TEXT", "BOOLEAN","BUTTON", "MENU",
-        "NodeBoxError",
-        "Point", "Grob", "BezierPath", "PathElement", "ClippingPath", "Rect",
-        "Oval",
-        "Color", "Transform", "Image", "Text",
-        "Variable", "Canvas",
-        ]
 
 DEFAULT_WIDTH, DEFAULT_HEIGHT = 1000, 1000
 
@@ -148,6 +153,8 @@ _STATE_NAMES = {
     '_align':         'align',
     '_lineheight':    'lineheight',
 }
+
+
 
 
 # py3 stuff
@@ -403,7 +410,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
             raise NodeBoxError("Don't know what to do with %s." % path)
             
     def _get_path(self):
-        s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
+        #s = "The 'path' attribute is deprecated. Please use _nsBezierPath instead."
         #warnings.warn(s, DeprecationWarning, stacklevel=2)
         return self._nsBezierPath
     path = property(_get_path)
@@ -478,7 +485,6 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
                 return (0,0) , (0,0)
         except Exception as err:
             print()
-            #pdb.set_trace()
             print(err)
             print()
         try:
@@ -494,7 +500,6 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         #    return (0,0) , (0,0)
         except Exception as err:
             print()
-            #pdb.set_trace()
             print("Bezierpath._get_bounds() FAILED")
             print(err)
             print()
@@ -581,9 +586,8 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
                 (x, y), (w, h) = self.bounds
             except Exception as err:
                 print()
-                # pdb.set_trace()
                 print(err)
-                print
+                print()
             deltax = x + w / 2
             deltay = y + h / 2
             t = Transform()
@@ -632,7 +636,6 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         except Exception as err:
             print()
             print("BezierPath.fit() FAILED.")
-            # pdb.set_trace()
             print(err)
             print()
 
@@ -1016,7 +1019,7 @@ class Color(object):
         return self._rgb.getHue_saturation_brightness_alpha_(None, None, None, None)
 
     def _set_hsba(self, values):
-        val = self._normalize(val)
+        # val = self._normalize(val)
         h, s, b, a = values
         self._rgb = NSColor.colorWithDeviceHue_saturation_brightness_alpha_(h, s, b, a)
         self._updateCmyk()
@@ -1336,6 +1339,13 @@ class Image(Grob, TransformMixin):
 
     size = property(getSize)
 
+    def getPixelSize( self ):
+        rep = self._nsImage.representations()[0]
+        return ( rep.pixelsWide(), rep.pixelsHigh())
+
+    pixelsize = property( getPixelSize )
+
+
     def _draw(self):
         """Draw an image on the given coordinates."""
 
@@ -1510,7 +1520,7 @@ class Text(Grob, TransformMixin, ColorMixin):
 
         layoutManager = NSLayoutManager.alloc().init()
         textContainer = NSTextContainer.alloc().init()
-        if self.width != None:
+        if self.width is not None:
             textContainer.setContainerSize_((self.width,1000000))
             textContainer.setWidthTracksTextView_(False)
             textContainer.setHeightTracksTextView_(False)
@@ -1695,7 +1705,7 @@ class Variable(object):
             try:
                 # return unicode(str(val), "utf_8", "replace")
                 return makeunicode( val )
-            except:
+            except Exception:
                 return ""
         elif self.type == BOOLEAN:
             v = makeunicode( val )
@@ -1791,7 +1801,7 @@ class Canvas(Grob):
         try:
             del self._grobstack[0]
             self._container = self._grobstack[0]
-        except IndexError as e:
+        except IndexError:
             raise NodeBoxError("pop: too many canvas pops!")
 
     def draw(self):

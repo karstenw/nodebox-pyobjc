@@ -1,10 +1,4 @@
-
-
 import ast
-parse = ast.parse
-Sub = ast.Sub
-UnarySub = ast.USub
-Add = ast.Add
 
 if 0: # py2 version
     import compiler
@@ -16,12 +10,19 @@ if 0: # py2 version
 
 
 
-kwdbg = False
 # import pdb
 
-import Foundation
-
+# import Foundation
 import AppKit
+
+
+parse = ast.parse
+Sub = ast.Sub
+UnarySub = ast.USub
+Add = ast.Add
+
+kwdbg = False
+
 NSObject = AppKit.NSObject
 NSColor = AppKit.NSColor
 NSMutableParagraphStyle = AppKit.NSMutableParagraphStyle
@@ -228,7 +229,7 @@ class ValueLadder:
         elif self.add and self.value < 0:
             # Find the plus sign.
             i = begin - 1
-            notFound = True
+            # notFound = True
             while True:
                 if self.originalString[i] == '+':
                     # Re-create the string: 
@@ -258,7 +259,8 @@ class ValueLadder:
     def draw(self):
         mx, my = self.viewPoint
         
-        x = mx-20
+        # x = mx-20
+        
         width = 80
         halfwidth = width / 2
         height = 20

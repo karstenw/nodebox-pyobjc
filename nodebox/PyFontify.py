@@ -39,20 +39,6 @@ from . import util
 # import Foundation
 # import objc
 
-# py3 stuff
-py3 = False
-try:
-    unicode('')
-    punicode = unicode
-    pstr = str
-    punichr = unichr
-except NameError:
-    punicode = str
-    pstr = bytes
-    py3 = True
-    punichr = chr
-    long = int
-
 from keyword import kwlist as keywordsList
 keywordsList = keywordsList[:]
 keywordsList += ["None", "True", "False"]
@@ -107,6 +93,20 @@ matchRE = re.compile(matchPat)
 idKeyPat = "[ \t]*([A-Za-z_][A-Za-z_0-9.]*)"	# Ident w. leading whitespace.
 idRE = re.compile(idKeyPat)
 asRE = re.compile(r".*?\b(as)\b")
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
 
 def fontify(pytext, searchfrom=0, searchto=None):
     if searchto is None:

@@ -1,12 +1,17 @@
 
-import pprint
 import importlib
 
-import pdb
+# import pprint
+# import pdb
 
 import AppKit
 
 from . import cocoa
+
+import nodebox.util
+import nodebox.geo
+
+# aliases
 graphics_impl = cocoa
 
 BEVEL = cocoa.BEVEL
@@ -54,12 +59,9 @@ inch = cocoa.inch
 mm = cocoa.mm
 
 
-# from nodebox.util import _copy_attr, _copy_attrs
-import nodebox.util
 _copy_attr = nodebox.util._copy_attr
 _copy_attrs = nodebox.util._copy_attrs
 
-import nodebox.geo
 
 # add graphics commands from cocoa
 __all__ = list(graphics_impl.__all__)
@@ -141,13 +143,12 @@ class Context(object):
 
     def scanmodule( self, module):
         types = {}
-        # pdb.set_trace()
         for name in module.__dict__:
             inst = module.__dict__[name]
             t = type(inst)
             try:
                 tn = inst.__class__.__name__
-            except:
+            except Exception:
                 tn = str(t)
             if tn not in types:
                 types[tn] = []
@@ -158,9 +159,9 @@ class Context(object):
 
     def ximport(self, libName):
         lib = importlib.__import__( libName )
-        if 0:
-            scan = self.scanmodule( lib )
-            # pprint.pprint( scan )
+        #if 0:
+        #    scan = self.scanmodule( lib )
+        #    pprint.pprint( scan )
         self._ns[libName] = lib
         lib._ctx = self
         return lib
@@ -213,7 +214,6 @@ class Context(object):
     def var(self, name, type,
             default=None, min=0, max=100, value=None,
             handler=None, menuitems=None):
-        # pdb.set_trace()
         v = Variable(name, type, default, min, max, value, handler, menuitems)
         self.addvar(v)
         return v
@@ -426,8 +426,9 @@ class Context(object):
     def beginpath(self, x=None, y=None):
         self._path = self.BezierPath()
         self._pathclosed = False
-        if x != None and y != None:
-            self._path.moveto(x,y)
+        if x is not None:
+            if y is not None:
+                self._path.moveto(x,y)
 
     def moveto(self, x, y):
         if self._path is None:
@@ -509,7 +510,7 @@ class Context(object):
     def pop(self):
         try:
             top = self._transformstack.pop()
-        except IndexError as e:
+        except IndexError:
             raise NodeBoxError( "pop: too many pops!" )
         if len(top) > 1:
             self._align, self._autoclosepath, self._capstyle, self._colormode,
@@ -644,7 +645,6 @@ class Context(object):
             return txt
 
     def textpath(self, txt, x, y, width=None, height=None, **kwargs):
-        # pdb.set_trace()
         Text.checkKwargs(kwargs)
         txt = self.Text(txt, x, y, width, height, **kwargs)
         txt.inheritFromContext( list( kwargs.keys()) )
@@ -665,17 +665,17 @@ class Context(object):
 
     def image(self, path, x, y, width=None, height=None, alpha=1.0,
                     data=None, draw=True, **kwargs):
-        
-        # pdb.set_trace()
-        
+
         img = self.Image(path, x, y, width, height, alpha, data=data, **kwargs)
         img.inheritFromContext( kwargs.keys() )
         if draw:
             img.draw()
         return img
 
-    def imagesize(self, path, data=None):
+    def imagesize(self, path, data=None, pixelsize=False):
         img = self.Image(path, data=data)
+        if pixelsize:
+            return img.pixelsize
         return img.size
         
     ### Canvas proxy ###
