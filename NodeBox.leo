@@ -10,7 +10,7 @@
 <find_panel_settings/>
 <vnodes>
 <v t="karstenw.20250718093121.1" a="E"><vh>+ APP +</vh>
-<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
@@ -24,7 +24,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
@@ -420,7 +420,7 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
 <v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
@@ -1074,6 +1074,7 @@ import h11
 # nltk
 import regex
 
+import imageio_ffmpeg
 
 
 # PIL / Pillow support

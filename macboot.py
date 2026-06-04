@@ -67,6 +67,7 @@ import h11
 # nltk
 import regex
 
+import imageio_ffmpeg
 
 
 # PIL / Pillow support
