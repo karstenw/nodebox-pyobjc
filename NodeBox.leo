@@ -60,7 +60,7 @@
 <v t="karstenw.20170726133907.1"><vh>benchmark</vh></v>
 <v t="karstenw.20170704104618.2"><vh>reflect</vh></v>
 </v>
-<v t="karstenw.20170704104605.1"><vh>@clean nodebox/geo/pathmatics.py</vh>
+<v t="karstenw.20170704104605.1" a="E"><vh>@clean nodebox/geo/pathmatics.py</vh>
 <v t="karstenw.20170704104615.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104615.2"><vh>linepoint</vh></v>
 <v t="karstenw.20170704104615.3"><vh>linelength</vh></v>
@@ -72,7 +72,7 @@
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
@@ -149,7 +149,7 @@
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -192,8 +192,9 @@
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
 <v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
-<v t="karstenw.20170704104751.1"><vh>Declarations</vh>
-<v t="karstenw.20260602184611.1"><vh>&lt;&lt; aliases and globals &gt;&gt;</vh></v>
+<v t="karstenw.20170704104751.1" a="E"><vh>Declarations</vh>
+<v t="karstenw.20260602184611.1"><vh>&lt;&lt; aliases &gt;&gt;</vh></v>
+<v t="karstenw.20260604142205.1"><vh>&lt;&lt; globals &gt;&gt;</vh></v>
 </v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104751.2"><vh>_save</vh></v>
@@ -202,9 +203,8 @@
 <v t="karstenw.20251222122658.1"><vh>sign</vh></v>
 <v t="karstenw.20251222122705.1"><vh>makePoint</vh></v>
 </v>
-<v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
 <v t="karstenw.20170704104751.5"><vh>class Point</vh>
-<v t="karstenw.20251222122048.1"><vh>__python__</vh>
+<v t="karstenw.20251222122048.1" a="E"><vh>__python__</vh>
 <v t="karstenw.20170704104751.6"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.7"><vh>__repr__</vh></v>
 <v t="karstenw.20170704104751.8"><vh>__eq__</vh></v>
@@ -237,7 +237,7 @@
 <v t="karstenw.20170704104751.33"><vh>stroke</vh></v>
 <v t="karstenw.20170704104751.35"><vh>strokewidth</vh></v>
 </v>
-<v t="karstenw.20170704104751.37" a="E"><vh>class BezierPath</vh>
+<v t="karstenw.20170704104751.37"><vh>class BezierPath</vh>
 <v t="karstenw.20170704104751.38"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.39"><vh>_get_path</vh></v>
 <v t="karstenw.20170704104751.40"><vh>copy</vh></v>
@@ -312,7 +312,7 @@
 <v t="karstenw.20170704104751.89"><vh>copy</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104751.90" a="E"><vh>class Color</vh>
+<v t="karstenw.20170704104751.90"><vh>class Color</vh>
 <v t="karstenw.20170704104751.91"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.92"><vh>__repr__</vh></v>
 <v t="karstenw.20210715171431.1"><vh>__hash__</vh></v>
@@ -379,7 +379,7 @@
 <v t="karstenw.20170704104751.151"><vh>getSize</vh></v>
 <v t="karstenw.20170704104751.152"><vh>_draw</vh></v>
 </v>
-<v t="karstenw.20170704104751.153" a="E"><vh>class Text</vh>
+<v t="karstenw.20170704104751.153"><vh>class Text</vh>
 <v t="karstenw.20170704104751.154"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.155"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.156"><vh>font_exists</vh></v>
@@ -390,7 +390,7 @@
 <v t="karstenw.20170704104751.161"><vh>_get_metrics</vh></v>
 <v t="karstenw.20170704104751.162"><vh>_get_path</vh></v>
 </v>
-<v t="karstenw.20170704104751.163" a="E"><vh>class Variable</vh>
+<v t="karstenw.20170704104751.163"><vh>class Variable</vh>
 <v t="karstenw.20170704104751.164"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.165"><vh>sanitize</vh></v>
 <v t="karstenw.20170704104751.166"><vh>compliesTo</vh></v>
@@ -402,7 +402,7 @@
 <v t="karstenw.20170704104751.171"><vh>isOpaque</vh></v>
 <v t="karstenw.20170704104751.172"><vh>isFlipped</vh></v>
 </v>
-<v t="karstenw.20170704104751.173" a="E"><vh>class Canvas</vh>
+<v t="karstenw.20170704104751.173"><vh>class Canvas</vh>
 <v t="karstenw.20170704104751.174"><vh>__init__</vh></v>
 <v t="karstenw.20170704104751.175"><vh>clear</vh></v>
 <v t="karstenw.20170704104751.176"><vh>_get_size</vh></v>
@@ -423,7 +423,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -569,7 +569,7 @@
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
-<v t="karstenw.20170704105051.2" a="E"><vh>class DashboardController</vh>
+<v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
 <v t="karstenw.20170704105051.5"><vh>textChanged_</vh></v>
@@ -585,12 +585,12 @@
 <v t="karstenw.20170709145531.1"><vh>addMenu_idx_frame_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105106.2" a="E"><vh>class LibraryFolder</vh>
+<v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
 </v>
-<v t="karstenw.20170704105106.4" a="E"><vh>class NodeBoxPreferencesController</vh>
+<v t="karstenw.20170704105106.4"><vh>class NodeBoxPreferencesController</vh>
 <v t="karstenw.20170704105106.5"><vh>init</vh></v>
 <v t="karstenw.20170704105106.6"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105106.7"><vh>windowWillClose_</vh></v>
@@ -606,7 +606,7 @@
 <v t="karstenw.20170704105113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105113.2"><vh>findWhitespace</vh></v>
 <v t="karstenw.20170704105113.3"><vh>removeStringsAndComments</vh></v>
-<v t="karstenw.20170704105113.4"><vh>class PyDETextView</vh>
+<v t="karstenw.20170704105113.4" a="E"><vh>class PyDETextView</vh>
 <v t="karstenw.20170704105113.5"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20170704105113.6"><vh>drawRect_</vh></v>
 <v t="karstenw.20170704105113.7"><vh>hideValueLadder</vh></v>
@@ -642,7 +642,7 @@
 <v t="karstenw.20170704105113.37"><vh>uncomment_</vh></v>
 <v t="karstenw.20170704105113.38"><vh>filterLines_</vh></v>
 </v>
-<v t="karstenw.20170704105113.39"><vh>class PyDETextStorageDelegate</vh>
+<v t="karstenw.20170704105113.39" a="E"><vh>class PyDETextStorageDelegate</vh>
 <v t="karstenw.20170704105113.40"><vh>__new__</vh></v>
 <v t="karstenw.20170704105113.41"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.42"><vh>textFontChanged_</vh></v>
@@ -658,7 +658,7 @@
 <v t="karstenw.20170704105113.52"><vh>colorize</vh></v>
 <v t="karstenw.20170704105113.53"><vh>_colorize</vh></v>
 </v>
-<v t="karstenw.20170704105113.54"><vh>class LineTracker</vh>
+<v t="karstenw.20170704105113.54" a="E"><vh>class LineTracker</vh>
 <v t="karstenw.20170704105113.55"><vh>__init__</vh></v>
 <v t="karstenw.20170704105113.56"><vh>_makeLines</vh></v>
 <v t="karstenw.20170704105113.57"><vh>_update</vh></v>
@@ -676,14 +676,14 @@
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
-<v t="karstenw.20170704105126.2" a="E"><vh>class ValueLadder</vh>
+<v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
 <v t="karstenw.20170704105126.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105126.4"><vh>_parseAndCompile</vh></v>
 <v t="karstenw.20170704105126.5"><vh>_checkSigns</vh></v>
@@ -702,6 +702,7 @@
 <v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
 <v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
@@ -716,13 +717,13 @@
 <v t="karstenw.20170704105353.7"><vh>filelist</vh></v>
 <v t="karstenw.20170704105353.8"><vh>imagefiles</vh></v>
 </v>
-<v t="karstenw.20170811141102.1" a="E"><vh>FONT FUNCTIONS</vh>
+<v t="karstenw.20170811141102.1"><vh>FONT FUNCTIONS</vh>
 <v t="karstenw.20170704105353.9"><vh>fontnames</vh></v>
-<v t="karstenw.20170704105353.10" a="E"><vh>class FontRecord</vh>
+<v t="karstenw.20170704105353.10"><vh>class FontRecord</vh>
 <v t="karstenw.20170704105353.11"><vh>__init__</vh></v>
 <v t="karstenw.20170704105353.12"><vh>__repr__</vh></v>
 </v>
-<v t="karstenw.20170704105353.13" a="E"><vh>fontfamilies</vh>
+<v t="karstenw.20170704105353.13"><vh>fontfamilies</vh>
 <v t="karstenw.20260401145845.1"><vh>&lt;&lt; makeTraitsList function &gt;&gt;</vh></v>
 <v t="karstenw.20260401145943.1"><vh>&lt;&lt; makeFontRecord function &gt;&gt;</vh></v>
 </v>
@@ -733,10 +734,10 @@
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
 </v>
-<v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20171218183025.1"><vh>IMAGE FUNCTIONS</vh>
 <v t="karstenw.20180202050130.1"><vh>aspectRatio</vh></v>
-<v t="karstenw.20171218183032.1"><vh>palette</vh></v>
 <v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
+<v t="karstenw.20171218183032.1"><vh>palette</vh></v>
 <v t="karstenw.20180202044822.1"><vh>imagepalette</vh></v>
 <v t="karstenw.20180207131456.1"><vh>tempimagepath</vh></v>
 <v t="karstenw.20180207131514.1"><vh>dithertypes</vh></v>
@@ -752,7 +753,7 @@
 <v t="karstenw.20210703124707.1"><vh>makeunicode double</vh></v>
 <v t="karstenw.20170704105455.2"><vh>openAnything</vh></v>
 <v t="karstenw.20170704105455.3"><vh>class NoSourceError</vh></v>
-<v t="karstenw.20170704105455.4" a="E"><vh>class KantGenerator</vh>
+<v t="karstenw.20170704105455.4"><vh>class KantGenerator</vh>
 <v t="karstenw.20170704105455.5"><vh>__init__</vh></v>
 <v t="karstenw.20170704105455.6"><vh>_load</vh></v>
 <v t="karstenw.20170704105455.7"><vh>loadGrammar</vh></v>
@@ -778,7 +779,7 @@
 <v t="karstenw.20170704105534.1"><vh>ottobot</vh>
 <v t="karstenw.20170704105412.1"><vh>@clean nodebox/util/ottobot/__init__.py</vh>
 <v t="karstenw.20170704105528.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105528.2"><vh>class Context</vh>
+<v t="karstenw.20170704105528.2" a="E"><vh>class Context</vh>
 <v t="karstenw.20170704105528.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704105528.4"><vh>indent</vh></v>
 <v t="karstenw.20170704105528.5"><vh>dedent</vh></v>
@@ -829,13 +830,14 @@
 </v>
 <v t="karstenw.20170704105619.1"><vh>@clean nodebox/util/vdiff.py</vh>
 <v t="karstenw.20170704105642.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105642.2"><vh>format_stats</vh></v>
 <v t="karstenw.20170704105642.3"><vh>format_stats_list</vh></v>
 <v t="karstenw.20170704105642.4"><vh>compare_pixel</vh></v>
 <v t="karstenw.20170704105642.5"><vh>visual_diff</vh></v>
 <v t="karstenw.20170704105642.6"><vh>make_comparison_image</vh></v>
 <v t="karstenw.20170704105642.7"><vh>isEqual</vh></v>
-<v t="karstenw.20170704105642.8" a="E"><vh>class Statistics</vh>
+<v t="karstenw.20170704105642.8"><vh>class Statistics</vh>
 <v t="karstenw.20170704105642.9"><vh>__init__</vh></v>
 <v t="karstenw.20170704105642.10"><vh>calculate</vh></v>
 <v t="karstenw.20170704105642.11"><vh>_get_size</vh></v>
@@ -851,7 +853,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20180202040514.1" a="E"><vh>+ c-libraries +</vh>
+<v t="karstenw.20180202040514.1"><vh>+ c-libraries +</vh>
 <v t="karstenw.20180202040520.1"><vh>bwdithering</vh>
 <v t="karstenw.20180202040559.1"><vh>@clean libs/bwdithering/bwdithering.c</vh>
 <v t="karstenw.20180202040658.1"><vh>includes &amp; globals</vh></v>
@@ -1056,7 +1058,7 @@ import charset_normalizer
 
 try:
     import planar
-except:
+except Exception:
     pass
 
 # wn
@@ -2412,7 +2414,8 @@ except Exception:
 
 </t>
 <t tx="karstenw.20170704104742.10">def _test():
-    import doctest, bezier
+    import doctest
+    import bezier
     return doctest.testmod(bezier)
 
 </t>
@@ -2929,11 +2932,11 @@ import AppKit
 
 import nodebox.util
 
-
 try:
     import cPolymagic
 except ImportError as e:
     warnings.warn('Could not load cPolymagic: %s' % e)
+
 
 __all__ = [
         "DEFAULT_WIDTH", "DEFAULT_HEIGHT",
@@ -2953,7 +2956,9 @@ __all__ = [
         ]
 
 
-&lt;&lt; aliases and globals &gt;&gt;
+&lt;&lt; aliases &gt;&gt;
+
+&lt;&lt; globals &gt;&gt;
 
 
 </t>
@@ -3964,7 +3969,8 @@ _nsImage = property(_get_nsImage)
 
 </t>
 <t tx="karstenw.20170704104751.187">def _test():
-    import doctest, cocoa
+    import doctest
+    import cocoa
     return doctest.testmod(cocoa)
 
 </t>
@@ -4405,7 +4411,7 @@ length = property(_get_length)
     
 </t>
 <t tx="karstenw.20170704104751.68">def points(self, amount=100):
-    from . import bezier
+    # from . import bezier
     
     if len(self) == 0:
         raise NodeBoxError("The given path is empty")
@@ -4770,8 +4776,9 @@ h = hue = property(_get_hue, _set_hue, doc="the hue of the color")
 <t tx="karstenw.20170704105032.1">import sys
 import os
 import io
-import traceback, linecache
-import re
+import traceback
+# import linecache
+# import re
 import time
 import random
 import signal
@@ -4781,7 +4788,7 @@ import pprint
 
 import objc
 
-import Foundation
+# import Foundation
 import AppKit
 
 import threading
@@ -4902,7 +4909,7 @@ ProgressBarController = progressbar.ProgressBarController
     try:
         if len(self.vars) &gt; 0:
             self.dashboardController.panel.close()
-    except Wxception as err:
+    except Exception as err:
         if kwlog:
             print("ERROR window.close()")
             print( err )
@@ -4928,11 +4935,11 @@ ProgressBarController = progressbar.ProgressBarController
     
     defaults = NSUserDefaults.standardUserDefaults()
     
-    if not 'lastSessionURLs' in defaults:
+    if 'lastSessionURLs' not in defaults:
         defaults.setObject_forKey_([], u'lastSessionURLs')
         defaults.registerDefaults_( defaults )
 
-    libpath = LibraryFolder()
+    _ = LibraryFolder()
 
 </t>
 <t tx="karstenw.20170704105032.103">@objc.IBAction
@@ -4980,16 +4987,16 @@ def showLibrary_(self, sender):
     ns = NSMutableArray.arrayWithCapacity_( len(opendocuments) )
     #print("opendocuments:")
     #pp(opendocuments)
+    #pp(ns)
     for document in opendocuments:
         try:
             ns.addObject_( document.fileURL().absoluteString() )
-        except Exception as err:
+        except Exception:
             # untitled &amp; unsaved docs have None fileURL
             pass
-            # print(err)
     defaults.setObject_forKey_( ns, u'lastSessionURLs')
-    #pp(ns)
     atexit._run_exitfuncs()
+
 </t>
 <t tx="karstenw.20170704105032.11">def __del__(self):
     nc = NSNotificationCenter.defaultCenter()
@@ -5147,7 +5154,7 @@ def runScript_(self, sender):
 
     # Check whether we are dealing with animation
     if self.canvas.speed is not None:
-        if not "draw" in self.namespace:
+        if "draw" not in self.namespace:
             errorAlert("Not a proper NodeBox animation",
                 "NodeBox animations should have at least a draw() method.")
             return
@@ -5338,7 +5345,7 @@ def stopScript_(self, sender=None):
             method(*args)
         except KeyboardInterrupt:
             self.stopScript()
-        except:
+        except Exception:
             etype, value, tb = sys.exc_info()
             if tb.tb_next is not None:
                 tb = tb.tb_next  # skip the frame doing the exec
@@ -5555,7 +5562,8 @@ def exportAsMovie_(self, sender):
         fps = self.exportMovieFps.floatValue()
         panel.close()
 
-        if frames &lt;= 0 or fps &lt;= 0: return
+        if frames &lt;= 0 or fps &lt;= 0:
+            return
         self.doExportAsMovie_frames_fps_(fname, frames, fps)
 
 qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
@@ -5571,12 +5579,12 @@ qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_c
 
     try:
         os.unlink(fname)
-    except:
+    except Exception:
         pass
     try:
         fp = io.open(fname, 'wb')
         fp.close()
-    except:
+    except Exception:
         errorAlert("File Error", ("Could not create file '%s'. "
                                   "Perhaps it is locked or busy.") % fname)
         return
@@ -5657,13 +5665,15 @@ def buildInterface_(self, sender):
 </t>
 <t tx="karstenw.20170704105032.48">@objc.IBAction
 def zoomIn_(self, sender):
-    if self.fullScreen is not None: return
+    if self.fullScreen is not None:
+        return
     self.graphicsView.zoomIn_(sender)
 
 </t>
 <t tx="karstenw.20170704105032.49">@objc.IBAction
 def zoomOut_(self, sender):
-    if self.fullScreen is not None: return
+    if self.fullScreen is not None:
+        return
     self.graphicsView.zoomOut_(sender)
     
 </t>
@@ -5682,13 +5692,15 @@ def zoomOut_(self, sender):
 </t>
 <t tx="karstenw.20170704105032.50">@objc.IBAction
 def zoomToTag_(self, sender):
-    if self.fullScreen is not None: return
+    if self.fullScreen is not None:
+        return
     self.graphicsView.zoomTo_(sender.tag() / 100.0)
 
 </t>
 <t tx="karstenw.20170704105032.51">@objc.IBAction
 def zoomToFit_(self, sender):
-    if self.fullScreen is not None: return
+    if self.fullScreen is not None:
+        return
     self.graphicsView.zoomToFit_(sender)
     
 </t>
@@ -6007,7 +6019,7 @@ def zoomToFit_(self, sender):
                                                             self.canvas.height)) )
                 clip.addClip()
             self.canvas.draw()
-        except:
+        except Exception:
             # A lot of code just to display the error in the output view.
             etype, value, tb = sys.exc_info()
             if tb.tb_next is not None:
@@ -6165,14 +6177,19 @@ def cancel_(self, sender):
 
 </t>
 <t tx="karstenw.20170704105051.1">
-
 from __future__ import print_function
 
-import pdb
-kwdbg = False
-
+# import pdb
 
 import AppKit
+
+import objc
+
+from nodebox import graphics
+
+import nodebox.util
+
+kwdbg = False
 
 NSObject = AppKit.NSObject
 NSFont = AppKit.NSFont
@@ -6189,13 +6206,7 @@ NSSwitchButton = AppKit.NSSwitchButton
 NSSmallControlSize = AppKit.NSSmallControlSize
 NSPopUpButton = AppKit.NSPopUpButton
 
-
-import objc
-
-from nodebox import graphics
-import nodebox.util
 makeunicode = nodebox.util.makeunicode
-
 
 # just to make the next lines print better
 smfontsize = NSFont.smallSystemFontSize()
@@ -6359,7 +6370,7 @@ class DashboardController(NSObject):
     ctrltop = 5
     ctrlheader = 11
     ctrlfooter = 38
-    ctrlheaderfooter = ctrlheader + ctrlfooter
+    # ctrlheaderfooter = ctrlheader + ctrlfooter
     ncontrols = len( variables )
     varsheight = ncontrols * ctrlheight
     
@@ -6404,39 +6415,39 @@ class DashboardController(NSObject):
     y = panelheight - ( ctrlheader + ctrlfooter )
     
     cnt = 0
-    widthlabel = 0
-    widthctrl = 0
+    # widthlabel = 0
+    # widthctrl = 0
     y = panelheight - (ctrltop + ctrlheight + 20)
     for v in self.vars:
         leftheight = sizes.get('label', ctrlheight)
         rightheight = sizes.get(v.type, ctrlheight)
-        left_coord = (label_x, y)
-        right_coord = (ctrl_x, y)
+        # left_coord = (label_x, y)
+        # right_coord = (ctrl_x, y)
         leftframe =  ( ( label_x, y), (label_w, leftheight) )
         rightframe = ( ( ctrl_x, y), (ctrl_w, rightheight) )
 
         if v.type == graphics.NUMBER:
-            l = self.addLabel_idx_frame_(v, cnt, leftframe)
-            c = self.addSlider_idx_frame_(v, cnt, rightframe)
-            v.control = (l,c)
+            label = self.addLabel_idx_frame_(v, cnt, leftframe)
+            control = self.addSlider_idx_frame_(v, cnt, rightframe)
+            v.control = (label,control)
 
         elif v.type == graphics.TEXT:
-            l = self.addLabel_idx_frame_(v, cnt, leftframe)
-            c = self.addTextField_idx_frame_(v, cnt, rightframe)
-            v.control = (l,c)
+            label = self.addLabel_idx_frame_(v, cnt, leftframe)
+            control = self.addTextField_idx_frame_(v, cnt, rightframe)
+            v.control = (label,control)
 
         elif v.type == graphics.BOOLEAN:
-            c = self.addSwitch_idx_frame_(v, cnt, rightframe)
-            v.control = (None,c)
+            control = self.addSwitch_idx_frame_(v, cnt, rightframe)
+            v.control = (None,control)
 
         elif v.type == graphics.BUTTON:
-            c = self.addButton_idx_frame_(v, cnt, rightframe)
-            v.control = (None,c)
+            control = self.addButton_idx_frame_(v, cnt, rightframe)
+            v.control = (None,control)
 
         elif v.type == graphics.MENU:
-            l = self.addLabel_idx_frame_(v, cnt, leftframe)
-            c = self.addMenu_idx_frame_(v, cnt, rightframe)
-            v.control = (l,c)
+            label = self.addLabel_idx_frame_(v, cnt, leftframe)
+            control = self.addMenu_idx_frame_(v, cnt, rightframe)
+            v.control = (label,control)
         # print("cnt/y  %i   %i" % (cnt, y) )
         y -= ctrlheight
         cnt += 1
@@ -6462,13 +6473,18 @@ class DashboardController(NSObject):
     return control
 
 </t>
-<t tx="karstenw.20170704105106.1">import sys
+<t tx="karstenw.20170704105106.1"># import sys
 import os
 # import pdb
 
 import objc
 
 import AppKit
+
+from . import PyDETextView
+
+
+NSTimer = AppKit.NSTimer
 NSWindowController = AppKit.NSWindowController
 NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
 NSNotificationCenter = AppKit.NSNotificationCenter
@@ -6478,7 +6494,6 @@ NSUserDefaults = AppKit.NSUserDefaults
 NSOpenPanel = AppKit.NSOpenPanel
 
 
-from . import PyDETextView
 getBasicTextAttributes = PyDETextView.getBasicTextAttributes
 getSyntaxTextAttributes = PyDETextView.getSyntaxTextAttributes
 setTextFont = PyDETextView.setTextFont
@@ -6542,7 +6557,7 @@ def changeFont_(self, sender):
     defaults = NSUserDefaults.standardUserDefaults()
     try:
         prefpath = defaults.objectForKey_("libraryPath")
-    except Exception as err:
+    except Exception:
         print("LibraryFolder: prefpath: %s" % repr(prefpath))
         prefpath = ""
     stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support", "NodeBox")
@@ -7524,7 +7539,7 @@ NSUserDefaults.standardUserDefaults().registerDefaults_(_defaultUserDefaults)
     alert.setMessageText_(msgText)
     alert.setInformativeText_(infoText)
     alert.setAlertStyle_(AppKit.NSCriticalAlertStyle)
-    btn = alert.addButtonWithTitle_("OK")
+    _ = alert.addButtonWithTitle_("OK")
     return alert.runModal()
 
 </t>
@@ -7741,7 +7756,7 @@ NSFontAttributeName = AppKit.NSFontAttributeName
     if self.negative and self.value &lt; 0:
         # Find the minus sign.
         i = begin - 1
-        notFound = True
+        # notFound = True
         while True:
             if self.originalString[i] == '-':
                 # Unary subtractions will have the sign removed.
@@ -7864,16 +7879,13 @@ import glob
 import tempfile
 
 import functools
-cmp_to_key = functools.cmp_to_key
 
 import random as librandom
-choice = librandom.choice
 
 import unicodedata
 
-import pdb
+# import pdb
 import pprint
-pp = pprint.pprint
 
 import PIL
 import numpy as np
@@ -7886,7 +7898,13 @@ import PyObjCTools.Conversion
 from . import kgp
 
 
+cmp_to_key = functools.cmp_to_key
+choice = librandom.choice
+pp = pprint.pprint
+
+
 __all__ = (
+    'NodeBoxError',
     'grid', 'random', 'choice', 'files', 'autotext',
     '_copy_attr', '_copy_attrs',
     
@@ -7936,7 +7954,7 @@ __all__ = (
     for fontfamily in fontfamilies:
         familyName = makeunicode( fontfamily )
         if not flat:
-            result[familyName] = famfonts = {}
+            result[familyName] = {}
 
         subs = fontmanager.availableMembersOfFontFamily_( familyName )
         for fnt in subs:
@@ -7989,30 +8007,13 @@ __all__ = (
                     objc.pyobjc_unicode,
                     Foundation.NSMutableStringProxyForMutableAttributedString,
                     Foundation.NSString):
-        #s = str(s)
         s = punicode(s, srcencoding)
-    if type(s) not in (
-            punicode,
-            #Foundation.NSMutableAttributedString,
-            #objc.pyobjc_unicode,
-            #Foundation.NSMutableStringProxyForMutableAttributedString
-            ):
+    if type(s) not in ( punicode, ):
         try:
             s = punicode(s, srcencoding)
-        except TypeError as err:
-            
-            #print() 
-            #print("makeunicode(): %s" % err)
-            #print(repr(s))
-            #print(type(s))
-            #print()
+        except TypeError:
             pass
-    if type(s) in ( punicode,
-                    #Foundation.NSMutableAttributedString,
-                    #objc.pyobjc_unicode,
-                    #Foundation.NSMutableStringProxyForMutableAttributedString,
-                    #Foundation.NSString
-                    ):
+    if type(s) in ( punicode, ):
         s = unicodedata.normalize(normalizer, s)
     return s
 
@@ -8073,12 +8074,12 @@ __all__ = (
     - If two values are given, random returns a value between the two; if two
       integers are given, the two boundaries are inclusive.
     """
-    if v1 != None and v2 == None: # One value means 0 -&gt; v1
+    if v1 is not None and v2 is None: # One value means 0 -&gt; v1
         if isinstance(v1, float):
             return librandom.random() * v1
         else:
             return int(librandom.random() * v1)
-    elif v1 != None and v2 != None: # v1 -&gt; v2
+    elif v1 is not None and v2 is not None: # v1 -&gt; v2
         if isinstance(v1, float) or isinstance(v2, float):
             start = min(v1, v2)
             end = max(v1, v2)
@@ -8441,7 +8442,8 @@ _debug = 0
     else:
         doit = 1
     if doit:
-        for child in node.childNodes: self.parse(child)
+        for child in node.childNodes:
+            self.parse(child)
 
 </t>
 <t tx="karstenw.20170704105455.21">def do_choice(self, node):
@@ -8479,7 +8481,8 @@ _debug = 0
     print(k.output())
 
 </t>
-<t tx="karstenw.20170704105455.3">class NoSourceError(Exception): pass
+<t tx="karstenw.20170704105455.3">class NoSourceError(Exception):
+    pass
 
 </t>
 <t tx="karstenw.20170704105455.4">class KantGenerator:
@@ -8541,7 +8544,7 @@ _debug = 0
     return '&lt;xref id="%s"/&gt;' % random.choice(standaloneXrefs)
     
 </t>
-<t tx="karstenw.20170704105528.1">from AppKit import NSFontManager
+<t tx="karstenw.20170704105528.1"># from AppKit import NSFontManager
 
 from nodebox.util import random, choice
 
@@ -8683,7 +8686,8 @@ STARPOINTS = 17
     
 </t>
 <t tx="karstenw.20170704105528.32">def genFor(ctx):
-    if ctx._indent &gt;= 2: return ""
+    if ctx._indent &gt;= 2:
+        return ""
     s = ctx.spaces() + """for i in range(%s):\n""" % nr(ctx,LOOP)
     ctx.indent()    
     for i in range(random(5)):
@@ -8694,7 +8698,8 @@ STARPOINTS = 17
     
 </t>
 <t tx="karstenw.20170704105528.33">def genGrid(ctx):
-    if ctx.inGrid(): return ""
+    if ctx.inGrid():
+        return ""
     s = ctx.spaces() + """for x, y in grid(%s,%s,%s,%s):\n""" % (nr(ctx,GRIDCOUNT), nr(ctx,GRIDCOUNT), nr(ctx,GRIDWIDTH), nr(ctx,GRIDHEIGHT))
     ctx.indent()
     ctx._grid = True
@@ -8811,9 +8816,11 @@ if __name__=='__main__':
 <t tx="karstenw.20170704105603.1">import os
 import tempfile
 import Foundation
+import QTKit
+import AppKit
+
 NSNumber = Foundation.NSNumber
 
-import AppKit
 NSImage = AppKit.NSImage
 NSApplication = AppKit.NSApplication
 NSColor = AppKit.NSColor
@@ -8821,7 +8828,6 @@ NSData = AppKit.NSData
 NSBitmapImageRep = AppKit.NSBitmapImageRep
 NSJPEGFileType = AppKit.NSJPEGFileType
 
-import QTKit
 QTMovie = QTKit.QTMovie
 # QTDataReference = QTKit.QTDataReference
 # QTMovieFileNameAttribute = QTKit.QTMovieFileNameAttribute
@@ -8893,7 +8899,7 @@ QTMovieFlatten = QTKit.QTMovieFlatten
     import sys
     sys.path.insert(0, '../..')
     sys.path.insert(0, '../../..')
-    from nodebox.graphics import Canvas, Context
+    from nodebox.graphics import Context # Canvas, 
     from math import sin
 
     NSApplication.sharedApplication().activateIgnoringOtherApps_(0)
@@ -8921,11 +8927,11 @@ if __name__=='__main__':
         fname2 = sys.argv[2]
         try:
             threshold = int(sys.argv[3])
-        except:
+        except Exception:
             threshold = 0
         statistics(fname1, fname2, threshold)
 </t>
-<t tx="karstenw.20170704105642.1">import os
+<t tx="karstenw.20170704105642.1"># import os
 import PIL.Image as Image
 
 HTML_HEADER = r'''
@@ -9086,10 +9092,10 @@ Usage: vdiff &lt;image1&gt; &lt;image2&gt; [threshold]""" )
 
 </t>
 <t tx="karstenw.20170704105642.5">def visual_diff(img1, img2, threshold=0, stop_on_diff=False):
-    if isinstance(img1, str) or isinstance(img1, unicode):
+    if isinstance(img1, str) or isinstance(img1, punicode):
         img1 = Image.open(img1)
         img1 = img1.convert("RGBA")
-    if isinstance(img2, str) or isinstance(img2, unicode):
+    if isinstance(img2, str) or isinstance(img2, punicode):
         img2 = Image.open(img2)
         img2 = img2.convert("RGBA")
     assert img1.size == img2.size
@@ -9406,10 +9412,11 @@ except ImportError:
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
         attrs = AppKit.NSSpeechSynthesizer.attributesForVoice_( voice )
         result = PyObjCTools.Conversion.pythonCollectionFromPropertyList(attrs)
-        keys = result.keys()
+        
         # this crashes
-        #for key  in keys:
-        #    result[key] = makeunicode(result[key])
+        # keys = result.keys()
+        # for key  in keys:
+        #     result[key] = makeunicode(result[key])
     return result
 
 
@@ -9594,7 +9601,7 @@ setup(
     """
     result = []
     arr = np.asarray(pilimage)
-    if mask != None:
+    if mask is not None:
         if 0 &lt;= mask &lt;= 255:
             arr = arr &amp; int(mask)
     palette, index = np.unique(asvoid(arr).ravel(), return_inverse=True)
@@ -10386,7 +10393,7 @@ setup (name = "cGeo",
     else:
         try:
             result = palette( pathOrPILimgage, mask )
-        except Exception as err:
+        except Exception:
             pass
     return result
 
@@ -10454,8 +10461,9 @@ setup (name = "cGeo",
     
     w, h = img.size
     bin = img.tobytes(encoder_name='raw')
-    resultimg = bytearray( len(bin) )
     resultbytes = dither(bin, w, h, ditherid, threshhold)
+    
+    # resultimg = bytearray( len(bin) )
     # result = dither(bin, resultimg, w, h, ditherid, threshhold)
 
     out = PIL.Image.frombytes( 'L', (w,h), resultbytes, decoder_name='raw')
@@ -14326,7 +14334,7 @@ def sortlistfunction(thelist, thecompare):
     if type(s) not in ( punicode, ):
         try:
             s = punicode(s, srcencoding)
-        except TypeError as err:
+        except TypeError:
             pass
     if type(s) in ( punicode, ):
         s = unicodedata.normalize(normalizer, s)
@@ -14453,7 +14461,7 @@ def windowWillLoad( self ):
         controller = NSDocumentController.sharedDocumentController()
         for fileurl in documents:
             url = NSURL.URLWithString_( fileurl )
-            theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
+            _ = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
         return False
     else:
         # TODO read / write empty file open preferences here
@@ -14834,19 +14842,7 @@ NSAffineTransformStruct = AppKit.NSAffineTransformStruct
 _copy_attr = nodebox.util._copy_attr
 _copy_attrs = nodebox.util._copy_attrs
 makeunicode = nodebox.util.makeunicode
-
-
-DEFAULT_WIDTH, DEFAULT_HEIGHT = 1000, 1000
-
-# unused
-inch = 72.0
-cm = inch / 2.54
-mm = cm * 10.0
-
-
-RGB = "rgb"
-HSB = "hsb"
-CMYK = "cmyk"
+NodeBoxError = nodebox.util.NodeBoxError
 
 
 MOVETO = AppKit.NSMoveToBezierPathElement
@@ -14864,6 +14860,20 @@ LEFT = AppKit.NSLeftTextAlignment
 RIGHT = AppKit.NSRightTextAlignment
 CENTER = AppKit.NSCenterTextAlignment
 JUSTIFY = AppKit.NSJustifiedTextAlignment
+
+
+</t>
+<t tx="karstenw.20260604142205.1">DEFAULT_WIDTH, DEFAULT_HEIGHT = 1000, 1000
+
+# unused
+inch = 72.0
+cm = inch / 2.54
+mm = cm * 10.0
+
+
+RGB = "rgb"
+HSB = "hsb"
+CMYK = "cmyk"
 
 # don't want to override justification.CENTER
 # CENTER = "center"
@@ -14907,7 +14917,6 @@ _STATE_NAMES = {
     '_align':         'align',
     '_lineheight':    'lineheight',
 }
-
 
 </t>
 </tnodes>
