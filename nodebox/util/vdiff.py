@@ -1,4 +1,4 @@
-import os
+# import os
 import PIL.Image as Image
 
 HTML_HEADER = r'''
@@ -28,6 +28,20 @@ HTML_FOOTER = r'''
 </body>
 </html>
 '''
+
+# py3 stuff
+py3 = False
+try:
+    unicode('')
+    punicode = unicode
+    pstr = str
+    punichr = unichr
+except NameError:
+    punicode = str
+    pstr = bytes
+    py3 = True
+    punichr = chr
+    long = int
 
 def format_stats(stats):
     if stats.number_of_differences > 0:
@@ -66,10 +80,10 @@ def compare_pixel(px1, px2):
     return abs(r1-r2) + abs(g1-g2) + abs(b1-b2) + abs(a1-a2)
 
 def visual_diff(img1, img2, threshold=0, stop_on_diff=False):
-    if isinstance(img1, str) or isinstance(img1, unicode):
+    if isinstance(img1, str) or isinstance(img1, punicode):
         img1 = Image.open(img1)
         img1 = img1.convert("RGBA")
-    if isinstance(img2, str) or isinstance(img2, unicode):
+    if isinstance(img2, str) or isinstance(img2, punicode):
         img2 = Image.open(img2)
         img2 = img2.convert("RGBA")
     assert img1.size == img2.size
@@ -206,6 +220,6 @@ if __name__=='__main__':
         fname2 = sys.argv[2]
         try:
             threshold = int(sys.argv[3])
-        except:
+        except Exception:
             threshold = 0
         statistics(fname1, fname2, threshold)

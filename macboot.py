@@ -51,7 +51,7 @@ import charset_normalizer
 
 try:
     import planar
-except:
+except Exception:
     pass
 
 # wn

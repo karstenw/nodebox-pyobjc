@@ -508,7 +508,8 @@ def insert_point(path, t):
     return new_path
     
 def _test():
-    import doctest, bezier
+    import doctest
+    import bezier
     return doctest.testmod(bezier)
 
 if __name__=='__main__':

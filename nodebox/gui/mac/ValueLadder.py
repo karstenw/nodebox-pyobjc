@@ -208,7 +208,7 @@ class ValueLadder:
         if self.negative and self.value < 0:
             # Find the minus sign.
             i = begin - 1
-            notFound = True
+            # notFound = True
             while True:
                 if self.originalString[i] == '-':
                     # Unary subtractions will have the sign removed.

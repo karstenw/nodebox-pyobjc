@@ -1,10 +1,15 @@
-import sys
+# import sys
 import os
 # import pdb
 
 import objc
 
 import AppKit
+
+from . import PyDETextView
+
+
+NSTimer = AppKit.NSTimer
 NSWindowController = AppKit.NSWindowController
 NSForegroundColorAttributeName = AppKit.NSForegroundColorAttributeName
 NSNotificationCenter = AppKit.NSNotificationCenter
@@ -14,7 +19,6 @@ NSUserDefaults = AppKit.NSUserDefaults
 NSOpenPanel = AppKit.NSOpenPanel
 
 
-from . import PyDETextView
 getBasicTextAttributes = PyDETextView.getBasicTextAttributes
 getSyntaxTextAttributes = PyDETextView.getSyntaxTextAttributes
 setTextFont = PyDETextView.setTextFont
@@ -29,7 +33,7 @@ class LibraryFolder(object):
         defaults = NSUserDefaults.standardUserDefaults()
         try:
             prefpath = defaults.objectForKey_("libraryPath")
-        except Exception as err:
+        except Exception:
             print("LibraryFolder: prefpath: %s" % repr(prefpath))
             prefpath = ""
         stdpath = os.path.join(os.getenv("HOME"), "Library", "Application Support", "NodeBox")

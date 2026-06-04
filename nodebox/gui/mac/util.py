@@ -7,6 +7,6 @@ def errorAlert(msgText, infoText):
     alert.setMessageText_(msgText)
     alert.setInformativeText_(infoText)
     alert.setAlertStyle_(AppKit.NSCriticalAlertStyle)
-    btn = alert.addButtonWithTitle_("OK")
+    _ = alert.addButtonWithTitle_("OK")
     return alert.runModal()
 

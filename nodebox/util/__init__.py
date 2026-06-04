@@ -6,16 +6,13 @@ import glob
 import tempfile
 
 import functools
-cmp_to_key = functools.cmp_to_key
 
 import random as librandom
-choice = librandom.choice
 
 import unicodedata
 
-import pdb
+# import pdb
 import pprint
-pp = pprint.pprint
 
 import PIL
 import numpy as np
@@ -28,7 +25,13 @@ import PyObjCTools.Conversion
 from . import kgp
 
 
+cmp_to_key = functools.cmp_to_key
+choice = librandom.choice
+pp = pprint.pprint
+
+
 __all__ = (
+    'NodeBoxError',
     'grid', 'random', 'choice', 'files', 'autotext',
     '_copy_attr', '_copy_attrs',
     
@@ -56,6 +59,10 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
+
+class NodeBoxError(Exception):
+    pass
+
 
 
 def sortlistfunction(thelist, thecompare):
@@ -94,30 +101,13 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
                     objc.pyobjc_unicode,
                     Foundation.NSMutableStringProxyForMutableAttributedString,
                     Foundation.NSString):
-        #s = str(s)
         s = punicode(s, srcencoding)
-    if type(s) not in (
-            punicode,
-            #Foundation.NSMutableAttributedString,
-            #objc.pyobjc_unicode,
-            #Foundation.NSMutableStringProxyForMutableAttributedString
-            ):
+    if type(s) not in ( punicode, ):
         try:
             s = punicode(s, srcencoding)
-        except TypeError as err:
-            
-            #print() 
-            #print("makeunicode(): %s" % err)
-            #print(repr(s))
-            #print(type(s))
-            #print()
+        except TypeError:
             pass
-    if type(s) in ( punicode,
-                    #Foundation.NSMutableAttributedString,
-                    #objc.pyobjc_unicode,
-                    #Foundation.NSMutableStringProxyForMutableAttributedString,
-                    #Foundation.NSString
-                    ):
+    if type(s) in ( punicode, ):
         s = unicodedata.normalize(normalizer, s)
     return s
 
@@ -175,12 +165,12 @@ def random(v1=None, v2=None):
     - If two values are given, random returns a value between the two; if two
       integers are given, the two boundaries are inclusive.
     """
-    if v1 != None and v2 == None: # One value means 0 -> v1
+    if v1 is not None and v2 is None: # One value means 0 -> v1
         if isinstance(v1, float):
             return librandom.random() * v1
         else:
             return int(librandom.random() * v1)
-    elif v1 != None and v2 != None: # v1 -> v2
+    elif v1 is not None and v2 is not None: # v1 -> v2
         if isinstance(v1, float) or isinstance(v2, float):
             start = min(v1, v2)
             end = max(v1, v2)
@@ -352,7 +342,7 @@ def fontfamilies(flat=False):
     for fontfamily in fontfamilies:
         familyName = makeunicode( fontfamily )
         if not flat:
-            result[familyName] = famfonts = {}
+            result[familyName] = {}
 
         subs = fontmanager.availableMembersOfFontFamily_( familyName )
         for fnt in subs:
@@ -383,10 +373,11 @@ def voiceattributes(voice):
         voice = u"com.apple.speech.synthesis.voice.%s" % (voice,)
         attrs = AppKit.NSSpeechSynthesizer.attributesForVoice_( voice )
         result = PyObjCTools.Conversion.pythonCollectionFromPropertyList(attrs)
-        keys = result.keys()
+        
         # this crashes
-        #for key  in keys:
-        #    result[key] = makeunicode(result[key])
+        # keys = result.keys()
+        # for key  in keys:
+        #     result[key] = makeunicode(result[key])
     return result
 
 
@@ -472,13 +463,27 @@ def aspectRatio(size, maxsize=None, maxw=None, maxh=None):
     return neww, newh
 
 
+def asvoid(arr):
+    """View the array as dtype np.void (bytes)
+    This collapses ND-arrays to 1D-arrays, so you can perform 1D operations on them.
+    http://stackoverflow.com/a/16216866/190597 (Jaime)
+    http://stackoverflow.com/a/16840350/190597 (Jaime)
+    Warning:
+    >>> asvoid([-0.]) == asvoid([0.])
+    array([False], dtype=bool)
+    """
+    arr = np.ascontiguousarray(arr)
+    result = arr.view(np.dtype((np.void, arr.dtype.itemsize * arr.shape[-1])))
+    return result
+
+
 def palette(pilimage, mask):
     """
     Return palette in descending order of frequency
     """
     result = []
     arr = np.asarray(pilimage)
-    if mask != None:
+    if mask is not None:
         if 0 <= mask <= 255:
             arr = arr & int(mask)
     palette, index = np.unique(asvoid(arr).ravel(), return_inverse=True)
@@ -495,20 +500,6 @@ def palette(pilimage, mask):
     return result
 
 
-def asvoid(arr):
-    """View the array as dtype np.void (bytes)
-    This collapses ND-arrays to 1D-arrays, so you can perform 1D operations on them.
-    http://stackoverflow.com/a/16216866/190597 (Jaime)
-    http://stackoverflow.com/a/16840350/190597 (Jaime)
-    Warning:
-    >>> asvoid([-0.]) == asvoid([0.])
-    array([False], dtype=bool)
-    """
-    arr = np.ascontiguousarray(arr)
-    result = arr.view(np.dtype((np.void, arr.dtype.itemsize * arr.shape[-1])))
-    return result
-
-
 def imagepalette( pathOrPILimgage, mask=None ):
     t = type(pathOrPILimgage)
     result = []
@@ -519,7 +510,7 @@ def imagepalette( pathOrPILimgage, mask=None ):
     else:
         try:
             result = palette( pathOrPILimgage, mask )
-        except Exception as err:
+        except Exception:
             pass
     return result
 
@@ -562,8 +553,9 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
     
     w, h = img.size
     bin = img.tobytes(encoder_name='raw')
-    resultimg = bytearray( len(bin) )
     resultbytes = dither(bin, w, h, ditherid, threshhold)
+    
+    # resultimg = bytearray( len(bin) )
     # result = dither(bin, resultimg, w, h, ditherid, threshhold)
 
     out = PIL.Image.frombytes( 'L', (w,h), resultbytes, decoder_name='raw')

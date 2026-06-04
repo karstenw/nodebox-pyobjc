@@ -15,11 +15,11 @@ import AppKit
 
 import nodebox.util
 
-
 try:
     import cPolymagic
 except ImportError as e:
     warnings.warn('Could not load cPolymagic: %s' % e)
+
 
 __all__ = [
         "DEFAULT_WIDTH", "DEFAULT_HEIGHT",
@@ -80,19 +80,7 @@ NSAffineTransformStruct = AppKit.NSAffineTransformStruct
 _copy_attr = nodebox.util._copy_attr
 _copy_attrs = nodebox.util._copy_attrs
 makeunicode = nodebox.util.makeunicode
-
-
-DEFAULT_WIDTH, DEFAULT_HEIGHT = 1000, 1000
-
-# unused
-inch = 72.0
-cm = inch / 2.54
-mm = cm * 10.0
-
-
-RGB = "rgb"
-HSB = "hsb"
-CMYK = "cmyk"
+NodeBoxError = nodebox.util.NodeBoxError
 
 
 MOVETO = AppKit.NSMoveToBezierPathElement
@@ -110,6 +98,20 @@ LEFT = AppKit.NSLeftTextAlignment
 RIGHT = AppKit.NSRightTextAlignment
 CENTER = AppKit.NSCenterTextAlignment
 JUSTIFY = AppKit.NSJustifiedTextAlignment
+
+
+
+DEFAULT_WIDTH, DEFAULT_HEIGHT = 1000, 1000
+
+# unused
+inch = 72.0
+cm = inch / 2.54
+mm = cm * 10.0
+
+
+RGB = "rgb"
+HSB = "hsb"
+CMYK = "cmyk"
 
 # don't want to override justification.CENTER
 # CENTER = "center"
@@ -153,7 +155,6 @@ _STATE_NAMES = {
     '_align':         'align',
     '_lineheight':    'lineheight',
 }
-
 
 
 
@@ -204,10 +205,6 @@ def makePoint( *args  ):
     elif n == 2:
         return Point( args[0], args[1] )
     return None
-
-
-class NodeBoxError(Exception):
-    pass
 
 
 class Point(object):
@@ -686,7 +683,7 @@ class BezierPath(Grob, TransformMixin, ColorMixin):
         return bezier.point(self, t)
         
     def points(self, amount=100):
-        from . import bezier
+        # from . import bezier
         
         if len(self) == 0:
             raise NodeBoxError("The given path is empty")
@@ -1857,7 +1854,8 @@ class Canvas(Grob):
         data.writeToFile_atomically_(nsname, False)
 
 def _test():
-    import doctest, cocoa
+    import doctest
+    import cocoa
     return doctest.testmod(cocoa)
 
 if __name__=='__main__':

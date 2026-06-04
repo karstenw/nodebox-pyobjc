@@ -1,9 +1,11 @@
 import os
 import tempfile
 import Foundation
+import QTKit
+import AppKit
+
 NSNumber = Foundation.NSNumber
 
-import AppKit
 NSImage = AppKit.NSImage
 NSApplication = AppKit.NSApplication
 NSColor = AppKit.NSColor
@@ -11,7 +13,6 @@ NSData = AppKit.NSData
 NSBitmapImageRep = AppKit.NSBitmapImageRep
 NSJPEGFileType = AppKit.NSJPEGFileType
 
-import QTKit
 QTMovie = QTKit.QTMovie
 # QTDataReference = QTKit.QTDataReference
 # QTMovieFileNameAttribute = QTKit.QTMovieFileNameAttribute
@@ -77,7 +78,7 @@ def test():
     import sys
     sys.path.insert(0, '../..')
     sys.path.insert(0, '../../..')
-    from nodebox.graphics import Canvas, Context
+    from nodebox.graphics import Context # Canvas, 
     from math import sin
 
     NSApplication.sharedApplication().activateIgnoringOtherApps_(0)

@@ -71,7 +71,7 @@ def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     if type(s) not in ( punicode, ):
         try:
             s = punicode(s, srcencoding)
-        except TypeError as err:
+        except TypeError:
             pass
     if type(s) in ( punicode, ):
         s = unicodedata.normalize(normalizer, s)
@@ -124,7 +124,8 @@ def openAnything(source):
     # treat source as string
     return StringIO( makeunicode(source) )
 
-class NoSourceError(Exception): pass
+class NoSourceError(Exception):
+    pass
 
 class KantGenerator:
     """generates mock philosophy based on a context-free grammar"""
@@ -302,7 +303,8 @@ class KantGenerator:
         else:
             doit = 1
         if doit:
-            for child in node.childNodes: self.parse(child)
+            for child in node.childNodes:
+                self.parse(child)
 
     def do_choice(self, node):
         """handle <choice> tag

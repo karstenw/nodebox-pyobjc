@@ -1,8 +1,9 @@
 import sys
 import os
 import io
-import traceback, linecache
-import re
+import traceback
+# import linecache
+# import re
 import time
 import random
 import signal
@@ -12,7 +13,7 @@ import pprint
 
 import objc
 
-import Foundation
+# import Foundation
 import AppKit
 
 import threading
@@ -246,7 +247,7 @@ class NodeBoxDocument(NSDocument):
         try:
             if len(self.vars) > 0:
                 self.dashboardController.panel.close()
-        except Wxception as err:
+        except Exception as err:
             if kwlog:
                 print("ERROR window.close()")
                 print( err )
@@ -463,7 +464,7 @@ class NodeBoxDocument(NSDocument):
 
         # Check whether we are dealing with animation
         if self.canvas.speed is not None:
-            if not "draw" in self.namespace:
+            if "draw" not in self.namespace:
                 errorAlert("Not a proper NodeBox animation",
                     "NodeBox animations should have at least a draw() method.")
                 return
@@ -639,7 +640,7 @@ class NodeBoxDocument(NSDocument):
                 method(*args)
             except KeyboardInterrupt:
                 self.stopScript()
-            except:
+            except Exception:
                 etype, value, tb = sys.exc_info()
                 if tb.tb_next is not None:
                     tb = tb.tb_next  # skip the frame doing the exec
@@ -842,7 +843,8 @@ class NodeBoxDocument(NSDocument):
             fps = self.exportMovieFps.floatValue()
             panel.close()
 
-            if frames <= 0 or fps <= 0: return
+            if frames <= 0 or fps <= 0:
+                return
             self.doExportAsMovie_frames_fps_(fname, frames, fps)
 
     qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
@@ -857,12 +859,12 @@ class NodeBoxDocument(NSDocument):
 
         try:
             os.unlink(fname)
-        except:
+        except Exception:
             pass
         try:
             fp = io.open(fname, 'wb')
             fp.close()
-        except:
+        except Exception:
             errorAlert("File Error", ("Could not create file '%s'. "
                                       "Perhaps it is locked or busy.") % fname)
             return
@@ -939,22 +941,26 @@ class NodeBoxDocument(NSDocument):
     # Zoom commands, forwarding to the graphics view.
     @objc.IBAction
     def zoomIn_(self, sender):
-        if self.fullScreen is not None: return
+        if self.fullScreen is not None:
+            return
         self.graphicsView.zoomIn_(sender)
 
     @objc.IBAction
     def zoomOut_(self, sender):
-        if self.fullScreen is not None: return
+        if self.fullScreen is not None:
+            return
         self.graphicsView.zoomOut_(sender)
         
     @objc.IBAction
     def zoomToTag_(self, sender):
-        if self.fullScreen is not None: return
+        if self.fullScreen is not None:
+            return
         self.graphicsView.zoomTo_(sender.tag() / 100.0)
 
     @objc.IBAction
     def zoomToFit_(self, sender):
-        if self.fullScreen is not None: return
+        if self.fullScreen is not None:
+            return
         self.graphicsView.zoomToFit_(sender)
         
 
@@ -1172,7 +1178,7 @@ class NodeBoxGraphicsView(NSView):
                                                                 self.canvas.height)) )
                     clip.addClip()
                 self.canvas.draw()
-            except:
+            except Exception:
                 # A lot of code just to display the error in the output view.
                 etype, value, tb = sys.exc_info()
                 if tb.tb_next is not None:
@@ -1267,11 +1273,11 @@ class NodeBoxAppDelegate(NSObject):
         
         defaults = NSUserDefaults.standardUserDefaults()
         
-        if not 'lastSessionURLs' in defaults:
+        if 'lastSessionURLs' not in defaults:
             defaults.setObject_forKey_([], u'lastSessionURLs')
             defaults.registerDefaults_( defaults )
 
-        libpath = LibraryFolder()
+        _ = LibraryFolder()
 
     def applicationShouldOpenUntitledFile_( self, sender ):
         """Reopen last opened files. See also applicationWillTerminate_()"""
@@ -1285,7 +1291,7 @@ class NodeBoxAppDelegate(NSObject):
             controller = NSDocumentController.sharedDocumentController()
             for fileurl in documents:
                 url = NSURL.URLWithString_( fileurl )
-                theerr = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
+                _ = controller.openDocumentWithContentsOfURL_display_error_( url, True, None )
             return False
         else:
             # TODO read / write empty file open preferences here
@@ -1337,13 +1343,13 @@ class NodeBoxAppDelegate(NSObject):
         ns = NSMutableArray.arrayWithCapacity_( len(opendocuments) )
         #print("opendocuments:")
         #pp(opendocuments)
+        #pp(ns)
         for document in opendocuments:
             try:
                 ns.addObject_( document.fileURL().absoluteString() )
-            except Exception as err:
+            except Exception:
                 # untitled & unsaved docs have None fileURL
                 pass
-                # print(err)
         defaults.setObject_forKey_( ns, u'lastSessionURLs')
-        #pp(ns)
         atexit._run_exitfuncs()
+

@@ -1,12 +1,17 @@
 
-
 from __future__ import print_function
 
-import pdb
-kwdbg = False
-
+# import pdb
 
 import AppKit
+
+import objc
+
+from nodebox import graphics
+
+import nodebox.util
+
+kwdbg = False
 
 NSObject = AppKit.NSObject
 NSFont = AppKit.NSFont
@@ -23,13 +28,7 @@ NSSwitchButton = AppKit.NSSwitchButton
 NSSmallControlSize = AppKit.NSSmallControlSize
 NSPopUpButton = AppKit.NSPopUpButton
 
-
-import objc
-
-from nodebox import graphics
-import nodebox.util
 makeunicode = nodebox.util.makeunicode
-
 
 # just to make the next lines print better
 smfontsize = NSFont.smallSystemFontSize()
@@ -149,7 +148,7 @@ class DashboardController(NSObject):
         ctrltop = 5
         ctrlheader = 11
         ctrlfooter = 38
-        ctrlheaderfooter = ctrlheader + ctrlfooter
+        # ctrlheaderfooter = ctrlheader + ctrlfooter
         ncontrols = len( variables )
         varsheight = ncontrols * ctrlheight
         
@@ -194,39 +193,39 @@ class DashboardController(NSObject):
         y = panelheight - ( ctrlheader + ctrlfooter )
         
         cnt = 0
-        widthlabel = 0
-        widthctrl = 0
+        # widthlabel = 0
+        # widthctrl = 0
         y = panelheight - (ctrltop + ctrlheight + 20)
         for v in self.vars:
             leftheight = sizes.get('label', ctrlheight)
             rightheight = sizes.get(v.type, ctrlheight)
-            left_coord = (label_x, y)
-            right_coord = (ctrl_x, y)
+            # left_coord = (label_x, y)
+            # right_coord = (ctrl_x, y)
             leftframe =  ( ( label_x, y), (label_w, leftheight) )
             rightframe = ( ( ctrl_x, y), (ctrl_w, rightheight) )
 
             if v.type == graphics.NUMBER:
-                l = self.addLabel_idx_frame_(v, cnt, leftframe)
-                c = self.addSlider_idx_frame_(v, cnt, rightframe)
-                v.control = (l,c)
+                label = self.addLabel_idx_frame_(v, cnt, leftframe)
+                control = self.addSlider_idx_frame_(v, cnt, rightframe)
+                v.control = (label,control)
 
             elif v.type == graphics.TEXT:
-                l = self.addLabel_idx_frame_(v, cnt, leftframe)
-                c = self.addTextField_idx_frame_(v, cnt, rightframe)
-                v.control = (l,c)
+                label = self.addLabel_idx_frame_(v, cnt, leftframe)
+                control = self.addTextField_idx_frame_(v, cnt, rightframe)
+                v.control = (label,control)
 
             elif v.type == graphics.BOOLEAN:
-                c = self.addSwitch_idx_frame_(v, cnt, rightframe)
-                v.control = (None,c)
+                control = self.addSwitch_idx_frame_(v, cnt, rightframe)
+                v.control = (None,control)
 
             elif v.type == graphics.BUTTON:
-                c = self.addButton_idx_frame_(v, cnt, rightframe)
-                v.control = (None,c)
+                control = self.addButton_idx_frame_(v, cnt, rightframe)
+                v.control = (None,control)
 
             elif v.type == graphics.MENU:
-                l = self.addLabel_idx_frame_(v, cnt, leftframe)
-                c = self.addMenu_idx_frame_(v, cnt, rightframe)
-                v.control = (l,c)
+                label = self.addLabel_idx_frame_(v, cnt, leftframe)
+                control = self.addMenu_idx_frame_(v, cnt, rightframe)
+                v.control = (label,control)
             # print("cnt/y  %i   %i" % (cnt, y) )
             y -= ctrlheight
             cnt += 1

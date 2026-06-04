@@ -1,4 +1,4 @@
-from AppKit import NSFontManager
+# from AppKit import NSFontManager
 
 from nodebox.util import random, choice
 
@@ -178,7 +178,8 @@ def genLoop(ctx):
     return fn(ctx)
     
 def genFor(ctx):
-    if ctx._indent >= 2: return ""
+    if ctx._indent >= 2:
+        return ""
     s = ctx.spaces() + """for i in range(%s):\n""" % nr(ctx,LOOP)
     ctx.indent()    
     for i in range(random(5)):
@@ -188,7 +189,8 @@ def genFor(ctx):
     return s
     
 def genGrid(ctx):
-    if ctx.inGrid(): return ""
+    if ctx.inGrid():
+        return ""
     s = ctx.spaces() + """for x, y in grid(%s,%s,%s,%s):\n""" % (nr(ctx,GRIDCOUNT), nr(ctx,GRIDCOUNT), nr(ctx,GRIDWIDTH), nr(ctx,GRIDHEIGHT))
     ctx.indent()
     ctx._grid = True
