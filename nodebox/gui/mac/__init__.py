@@ -28,6 +28,10 @@ from . import util
 
 #import nodebox.util.QTSupport
 #QTSupport = nodebox.util.QTSupport
+import nodebox.util.MP4Support
+MovieReader = nodebox.util.MP4Support.MovieReader
+MovieWriter = nodebox.util.MP4Support.MovieWriter
+
 
 import nodebox.util
 import nodebox.util.ottobot
@@ -36,7 +40,7 @@ import nodebox.graphics
 from . import dashboard
 from . import progressbar
 
-# import pdb
+import pdb
 kwdbg = 1
 
 # set to true to have stdio on the terminal for pdb
@@ -76,6 +80,8 @@ NSPasteboard = AppKit.NSPasteboard
 NSPDFPboardType = AppKit.NSPDFPboardType
 NSPostScriptPboardType = AppKit.NSPostScriptPboardType
 NSTIFFPboardType = AppKit.NSTIFFPboardType
+
+NSBitmapImageRep = AppKit.NSBitmapImageRep
 
 NSBundle = AppKit.NSBundle
 NSSavePanel = AppKit.NSSavePanel
@@ -812,19 +818,19 @@ class NodeBoxDocument(NSDocument):
         exportPanel.setNameFieldLabel_("Export To:")
         exportPanel.setPrompt_("Export")
         exportPanel.setCanSelectHiddenExtension_(True)
-        exportPanel.setAllowedFileTypes_(["mov"])
+        exportPanel.setAllowedFileTypes_(["mp4", "mov", "gif"])
         if not NSBundle.loadNibNamed_owner_("ExportMovieAccessory", self):
             NSLog("Error -- could not load ExportMovieAccessory.")
-        self.exportMovieFrames.setIntValue_(150)
-        self.exportMovieFps.setIntValue_(30)
+        self.exportMovieFrames.setIntValue_( 150 )
+        self.exportMovieFps.setIntValue_( 30 )
         exportPanel.setAccessoryView_(self.exportMovieAccessory)
         path = self.fileName()
         if path:
             dirName, fileName = os.path.split(path)
             fileName, ext = os.path.splitext(fileName)
-            fileName += ".mov"
+            fileName += ".mp4"
         else:
-            dirName, fileName = None, "Untitled.mov"
+            dirName, fileName = None, "Untitled.mp4"
         # If a file was already exported, use that folder as the default.
         if self.exportDir is not None:
             dirName = self.exportDir
@@ -851,12 +857,9 @@ class NodeBoxDocument(NSDocument):
                                                           signature=b"v@:@ii")
 
     def doExportAsMovie_frames_fps_(self, fname, frames, fps):
-        # Only load QTSupport when necessary. 
-        # QTSupport loads QTKit, which wants to establish a connection to the window
-        # server.
-        # If we load QTSupport before something is on screen, the connection to the
-        # window server cannot be established.
-
+        """Runs the document as needed, gets each frame as tiffimagedata and forwards it to imageio_ffmpeg.
+        """
+        
         try:
             os.unlink(fname)
         except Exception:
@@ -873,19 +876,38 @@ class NodeBoxDocument(NSDocument):
 
         pb = ProgressBarController.alloc().init()
         pb.begin_maxval_("Generating %s frames..." % frames, frames)
+        
+        def writeframe( movie, canvas, w, h ):
+            tiffData = canvas._nsImage.TIFFRepresentation()
+            bitmap = NSBitmapImageRep.imageRepWithData_ ( tiffData )
+            dataalpha = bytearray( bitmap.bitmapData() )
+            movie.send( dataalpha)
+        
         try:
             if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
                 return
+
             self._pageNumber = 1
             self._frame = 1
-
-            movie = QTSupport.Movie(fname, fps)
+            
+            w = self.canvas.width
+            h = self.canvas.height
+            
+            
+            mw = MovieWriter(fname, (w,h), pix_fmt_in="rgba", fps=fps)
+            movie = mw.openmovie()
+            movie.send( None )
+            dbg = 1
             # If the speed is set, we are dealing with animation
             if self.canvas.speed is None:
                 for i in range(frames):
                     if i > 0: # Run has already happened first time
                         self.fastRun_newSeed_(self._execScript, True)
-                    movie.add(self.canvas)
+                    
+                    writeframe( movie, self.canvas, w, h )
+                    if i == 0:
+                        dbg = False
+                    
                     self.graphicsView.setNeedsDisplay_(True)
                     pb.inc()
                     self._pageNumber += 1
@@ -895,7 +917,11 @@ class NodeBoxDocument(NSDocument):
                     self.fastRun_newSeed_(self.namespace["setup"], False)
                 for i in range(frames):
                     self.fastRun_newSeed_(self.namespace["draw"], True)
-                    movie.add(self.canvas)
+                    
+                    writeframe( movie, self.canvas, w, h )
+                    if i == 0:
+                        dbg = False
+                    
                     self.graphicsView.setNeedsDisplay_(True)
                     pb.inc()
                     self._pageNumber += 1
@@ -907,7 +933,7 @@ class NodeBoxDocument(NSDocument):
             pass
         pb.end()
         del pb
-        movie.save()
+        # movie.save()
         self._pageNumber = 1
         self._frame = 1
 
