@@ -20,7 +20,7 @@ VERSION = nodebox.__version__
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
 URL = "http://nodebox.net/",
-CLASSIFIERS = (
+CLASSIFIERS = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: MacOS X :: Cocoa",
     "Intended Audience :: Developers",
@@ -36,7 +36,7 @@ CLASSIFIERS = (
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Software Development :: User Interfaces",
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
-)
+]
 
 DESCRIPTION = "Simple application for creating 2-dimensional graphics and animation using Python code"
 LONG_DESCRIPTION = """NodeBox is a Mac OS X application that allows you to create visual output
