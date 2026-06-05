@@ -91,12 +91,21 @@ class MovieReader:
 
 class MovieWriter:
     def __init__(self, path, size,
-                       pix_fmt_in="rgb24", pix_fmt_out="yuv420p", fps=16, quality=5,
+                       pix_fmt_in="rgb24",
+                       # pix_fmt_out="yuv420p",
+                       pix_fmt_out=None,
+                       fps=16, quality=5,
                        bitrate=None, codec=None, macro_block_size=16, ffmpeg_log_level="warning",
                        ffmpeg_timeout=None, input_params=None, output_params=None,
                        audio_path=None, audio_codec=None ):
 
-        self.path = path
+        self.path = os.path.abspath( os.path.expanduser(path) )
+        folder, filename = os.path.split( self.path )
+        basename, ext = os.path.splitext( filename )
+        
+        # handle different output formats here
+        
+        
         self.size = size
         self.pix_fmt_in = pix_fmt_in
         self.pix_fmt_out = pix_fmt_out
