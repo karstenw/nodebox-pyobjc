@@ -75,7 +75,8 @@ packages = [
     # 'nodebox.graphics.cocoa',
     'nodebox.util',
     'nodebox.util.kgp',
-    'nodebox.util.QTSupport',
+    # 'nodebox.util.QTSupport',
+    'nodebox.util.MP4Support',
     'nodebox.geo']
 
 if __name__=='__main__':
