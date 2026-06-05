@@ -21,7 +21,7 @@
 <v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
 <v t="karstenw.20170804152129.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104018.1" a="E"><vh>@clean setup_console.py</vh>
+<v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
@@ -30,9 +30,9 @@
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
-<v t="karstenw.20230718111113.2"><vh>class NodeBoxRunner</vh>
+<v t="karstenw.20230718111113.2" a="E"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
 <v t="karstenw.20230718111113.4"><vh>_check_animation</vh></v>
 <v t="karstenw.20230718111113.5"><vh>run</vh></v>
@@ -68,7 +68,7 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -423,8 +423,8 @@
 </v>
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -436,7 +436,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -677,7 +677,7 @@
 <v t="karstenw.20170704105113.67"><vh>setTextFont</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104947.1" a="E"><vh>@clean nodebox/gui/mac/util.py</vh>
+<v t="karstenw.20170704104947.1"><vh>@clean nodebox/gui/mac/util.py</vh>
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
@@ -829,7 +829,7 @@
 <v t="karstenw.20260605100859.1"><vh>readMeta</vh></v>
 <v t="karstenw.20260604203957.1"><vh>readFrames</vh></v>
 </v>
-<v t="karstenw.20260604202729.1"><vh>class MovieWriter</vh>
+<v t="karstenw.20260604202729.1" a="E"><vh>class MovieWriter</vh>
 <v t="karstenw.20260604203737.1"><vh>__init__</vh></v>
 <v t="karstenw.20260605105418.1"><vh>openmovie</vh></v>
 <v t="karstenw.20260604204015.1"><vh>writeFrames</vh></v>
@@ -1329,7 +1329,7 @@ VERSION = nodebox.__version__
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
 URL = "http://nodebox.net/",
-CLASSIFIERS = (
+CLASSIFIERS = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: MacOS X :: Cocoa",
     "Intended Audience :: Developers",
@@ -1345,7 +1345,7 @@ CLASSIFIERS = (
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Software Development :: User Interfaces",
     "Topic :: Text Editors :: Integrated Development Environments (IDE)",
-)
+]
 
 DESCRIPTION = "Simple application for creating 2-dimensional graphics and animation using Python code"
 LONG_DESCRIPTION = """NodeBox is a Mac OS X application that allows you to create visual output
@@ -14357,7 +14357,8 @@ if __name__=='__main__':
 import sys
 import os
 import io
-# import pdb
+import pdb
+import pprint
 import subprocess
 
 import AppKit
@@ -14371,16 +14372,19 @@ except ImportError:
 import nodebox.graphics
 
 import nodebox.util
+import nodebox.util.MP4Support
+
+pp = pprint.pprint
 
 NSApplication = AppKit.NSApplication
 graphics = nodebox.graphics
 util = nodebox.util
+MovieWriter = nodebox.util.MP4Support.MovieWriter
+writeframe = nodebox.util.MP4Support.writeframe
 
 librarypath = "NONE"
 try:
-    # pdb.set_trace()
     result = subprocess.run([ "defaults","read","net.nodebox.NodeBox","libraryPath" ], capture_output=True)
-    
     p = result.stdout  #os.system("/usr/bin/defaults read net.nodebox.NodeBox libraryPath")
     p = p.strip( b" \t\n\r" )
     p = str(p,encoding="utf-8")
@@ -14415,7 +14419,7 @@ Supported movie extension:  mov""" + err)
         make_image(open(sys.argv[1]).read(), sys.argv[2])
     elif len(sys.argv) == 4 or len(sys.argv) == 5: # Should be a movie
         basename, ext = os.path.splitext(sys.argv[2])
-        if ext != '.mov':
+        if ext not in ('.mp4', '.mov', '.mkv'):
             return usage('This is not a supported movie format.')
         if len(sys.argv) == 5:
             try:
@@ -14429,8 +14433,9 @@ Supported movie extension:  mov""" + err)
 </t>
 <t tx="karstenw.20230718111113.12">def test():
     # Creating the NodeBoxRunner class directly:
+    
     runner = NodeBoxRunner()
-    testscript = ('size(500,500)\n'
+    testscript = ('size(512,512)\n'
                   'for i in range(400):\n'
                   '  oval(random(WIDTH),random(HEIGHT),50,50, '
                   'fill=(random(), 0,0,random()))')
@@ -14440,12 +14445,26 @@ Supported movie extension:  mov""" + err)
     
     # Using the runner for animations:
     runner = NodeBoxRunner()
-    for frame in runner.run_multiple('size(300, 300)\ntext(FRAME, 100, 100)', 10):
+    for frame in runner.run_multiple('size(304, 304)\ntext(FRAME, 100, 100)', 5):
         runner.canvas.save('console-test-frame%02i.png' % frame)
-
+    
+    # pdb.set_trace()
+    
+    script="""
+size( 208, 208 )
+fill(1,0,0)
+stroke(0,1,0)
+font(choice(fontnames()))
+fontsize(36)
+text(str(FRAME), 70, 70, 36 )"""
+    make_movie( script, 'console-test.mp4', 10)
+    make_movie( script, 'console-test.mkv', 10)
+    make_movie( script, 'console-test.mov', 10)
     # Using the shortcut functions:
-    make_image('size(200,200)\ntext(FRAME, 100, 100)', 'console-test.gif')
-    make_movie('size(200,200)\ntext(FRAME, 100, 100)', 'console-test.mov', 10)
+    #make_image('size(208,208)\ntext(FRAME, 100, 100)', 'console-test.jpg')
+    # make_movie('size(208,208)\ntext(FRAME, 100, 100)', 'console-test.mp4', 10)
+    #make_movie('size(208,208)\ntext(FRAME, 100, 100)', 'console-test.mkv', 10)
+    #make_movie('size(208,208)\ntext(FRAME, 100, 100)', 'console-test.mov', 10)
 
 </t>
 <t tx="karstenw.20230718111113.2">class NodeBoxRunner(object):
@@ -14462,8 +14481,7 @@ Supported movie extension:  mov""" + err)
     self._pageNumber = 1
     self.frame = 1
     self.library = False
-    
-    
+
 </t>
 <t tx="karstenw.20230718111113.4">def _check_animation(self):
     """Returns False if this is not an animation, True otherwise.
@@ -14487,23 +14505,31 @@ Supported movie extension:  mov""" + err)
     
 </t>
 <t tx="karstenw.20230718111113.6">def run_multiple(self, source_or_code, frames):
+    # pdb.set_trace()
     if isinstance(source_or_code, str):
         source_or_code = compile(source_or_code + "\n\n", "&lt;Untitled&gt;", "exec")
         
     # First frame is special:
     self.run(source_or_code)
-    yield 1
+    # yield 1
     animation = self._check_animation()
         
-    for i in range(frames-1):
+    # for i in range(frames-1):
+    for frame in range(1,frames+1):
+        
         self.canvas.clear()
-        self.frame = i + 2
-        self.namespace["PAGENUM"] = self.namespace["FRAME"] = self.frame
+        
+        # self.frame = i + 2
+        self.frame = frame
+        
+        # self.namespace["PAGENUM"] = self.namespace["FRAME"] = self.frame
+        self.namespace["PAGENUM"] = self.namespace["FRAME"] = frame
         if animation:
             self.namespace['draw']()
         else:
             exec( source_or_code, self.namespace, self.namespace )
         yield self.frame
+
 
 </t>
 <t tx="karstenw.20230718111113.7">def _initNamespace(self, frame=1):
@@ -14523,7 +14549,8 @@ Supported movie extension:  mov""" + err)
     # Add the frame
     self.frame = frame
     self.namespace["PAGENUM"] = self.namespace["FRAME"] = self.frame
-    
+
+
 </t>
 <t tx="karstenw.20230718111113.8">def make_image(source_or_code, outputfile):
     
@@ -14539,8 +14566,8 @@ Supported movie extension:  mov""" + err)
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
     return source_or_code
-    
-    
+
+
 </t>
 <t tx="karstenw.20230718111113.9">def make_movie(source_or_code, outputfile, frames, fps=30):
 
@@ -14549,13 +14576,28 @@ Supported movie extension:  mov""" + err)
     
     You also have to specify the number of frames to render.
     Supported movie extension: mov"""
-
-    from nodebox.util import QTSupport
+    
+    # pdb.set_trace()
+    
     runner = NodeBoxRunner()
-    movie = QTSupport.Movie(outputfile, fps)
-    for frame in runner.run_multiple(source_or_code, frames):
-        movie.add(runner.canvas)
-    movie.save()
+    runner.run( source_or_code )
+    
+    w = runner.canvas.width
+    h = runner.canvas.height
+    
+    mw = MovieWriter(outputfile, (w,h), pix_fmt_in="rgba", fps=fps)
+    movie = mw.openmovie()
+    movie.send( None )
+    
+    for framenr in runner.run_multiple(source_or_code, frames):
+        if 1:
+            print("make_movie FRAME:", framenr)
+            runner.canvas.save("dbg-%i.jpg" % framenr )
+        writeframe( movie, runner.canvas )
+    # movie.close()
+    print()
+
+
 
 </t>
 <t tx="karstenw.20250718093121.1"></t>
@@ -14832,12 +14874,21 @@ NSJPEGFileType = AppKit.NSJPEGFileType
         
 </t>
 <t tx="karstenw.20260604203737.1">def __init__(self, path, size,
-                   pix_fmt_in="rgb24", pix_fmt_out="yuv420p", fps=16, quality=5,
+                   pix_fmt_in="rgb24",
+                   # pix_fmt_out="yuv420p",
+                   pix_fmt_out=None,
+                   fps=16, quality=5,
                    bitrate=None, codec=None, macro_block_size=16, ffmpeg_log_level="warning",
                    ffmpeg_timeout=None, input_params=None, output_params=None,
                    audio_path=None, audio_codec=None ):
 
-    self.path = path
+    self.path = os.path.abspath( os.path.expanduser(path) )
+    folder, filename = os.path.split( self.path )
+    basename, ext = os.path.splitext( filename )
+    
+    # handle different output formats here
+    
+    
     self.size = size
     self.pix_fmt_in = pix_fmt_in
     self.pix_fmt_out = pix_fmt_out
@@ -14943,7 +14994,6 @@ audioextensione = ("aa aac ac3 act afc aiff aif aix alaw au ast boa mp2 mp3 oga 
 
     pb = ProgressBarController.alloc().init()
     pb.begin_maxval_("Generating %s frames..." % frames, frames)
-    
     
     try:
         if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
