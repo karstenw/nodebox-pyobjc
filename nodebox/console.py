@@ -3,7 +3,8 @@
 import sys
 import os
 import io
-# import pdb
+import pdb
+import pprint
 import subprocess
 
 import AppKit
@@ -17,16 +18,19 @@ except ImportError:
 import nodebox.graphics
 
 import nodebox.util
+import nodebox.util.MP4Support
+
+pp = pprint.pprint
 
 NSApplication = AppKit.NSApplication
 graphics = nodebox.graphics
 util = nodebox.util
+MovieWriter = nodebox.util.MP4Support.MovieWriter
+writeframe = nodebox.util.MP4Support.writeframe
 
 librarypath = "NONE"
 try:
-    # pdb.set_trace()
     result = subprocess.run([ "defaults","read","net.nodebox.NodeBox","libraryPath" ], capture_output=True)
-    
     p = result.stdout  #os.system("/usr/bin/defaults read net.nodebox.NodeBox libraryPath")
     p = p.strip( b" \t\n\r" )
     p = str(p,encoding="utf-8")
@@ -52,8 +56,7 @@ class NodeBoxRunner(object):
         self._pageNumber = 1
         self.frame = 1
         self.library = False
-        
-        
+
     def _check_animation(self):
         """Returns False if this is not an animation, True otherwise.
         Throws an expection if the animation is not correct (missing a draw method)."""
@@ -74,23 +77,31 @@ class NodeBoxRunner(object):
             self.namespace['draw']()
         
     def run_multiple(self, source_or_code, frames):
+        # pdb.set_trace()
         if isinstance(source_or_code, str):
             source_or_code = compile(source_or_code + "\n\n", "<Untitled>", "exec")
             
         # First frame is special:
         self.run(source_or_code)
-        yield 1
+        # yield 1
         animation = self._check_animation()
             
-        for i in range(frames-1):
+        # for i in range(frames-1):
+        for frame in range(1,frames+1):
+            
             self.canvas.clear()
-            self.frame = i + 2
-            self.namespace["PAGENUM"] = self.namespace["FRAME"] = self.frame
+            
+            # self.frame = i + 2
+            self.frame = frame
+            
+            # self.namespace["PAGENUM"] = self.namespace["FRAME"] = self.frame
+            self.namespace["PAGENUM"] = self.namespace["FRAME"] = frame
             if animation:
                 self.namespace['draw']()
             else:
                 exec( source_or_code, self.namespace, self.namespace )
             yield self.frame
+
 
     def _initNamespace(self, frame=1):
         self.canvas.clear()
@@ -109,7 +120,8 @@ class NodeBoxRunner(object):
         # Add the frame
         self.frame = frame
         self.namespace["PAGENUM"] = self.namespace["FRAME"] = self.frame
-        
+
+
 def make_image(source_or_code, outputfile):
     
     """Given a source string or code object, executes the scripts and saves the result as
@@ -124,8 +136,8 @@ def make_image(source_or_code, outputfile):
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
     return source_or_code
-    
-    
+
+
 def make_movie(source_or_code, outputfile, frames, fps=30):
 
     """Given a source string or code object, executes the scripts and saves the result as
@@ -133,13 +145,28 @@ def make_movie(source_or_code, outputfile, frames, fps=30):
     
     You also have to specify the number of frames to render.
     Supported movie extension: mov"""
-
-    from nodebox.util import QTSupport
+    
+    # pdb.set_trace()
+    
     runner = NodeBoxRunner()
-    movie = QTSupport.Movie(outputfile, fps)
-    for frame in runner.run_multiple(source_or_code, frames):
-        movie.add(runner.canvas)
-    movie.save()
+    runner.run( source_or_code )
+    
+    w = runner.canvas.width
+    h = runner.canvas.height
+    
+    mw = MovieWriter(outputfile, (w,h), pix_fmt_in="rgba", fps=fps)
+    movie = mw.openmovie()
+    movie.send( None )
+    
+    for framenr in runner.run_multiple(source_or_code, frames):
+        if 1:
+            print("make_movie FRAME:", framenr)
+            runner.canvas.save("dbg-%i.jpg" % framenr )
+        writeframe( movie, runner.canvas )
+    # movie.close()
+    print()
+
+
 
 def usage(err=""):
     if len(err) > 0:
@@ -160,7 +187,7 @@ def main():
         make_image(open(sys.argv[1]).read(), sys.argv[2])
     elif len(sys.argv) == 4 or len(sys.argv) == 5: # Should be a movie
         basename, ext = os.path.splitext(sys.argv[2])
-        if ext != '.mov':
+        if ext not in ('.mp4', '.mov', '.mkv'):
             return usage('This is not a supported movie format.')
         if len(sys.argv) == 5:
             try:
@@ -173,8 +200,9 @@ def main():
 
 def test():
     # Creating the NodeBoxRunner class directly:
+    
     runner = NodeBoxRunner()
-    testscript = ('size(500,500)\n'
+    testscript = ('size(512,512)\n'
                   'for i in range(400):\n'
                   '  oval(random(WIDTH),random(HEIGHT),50,50, '
                   'fill=(random(), 0,0,random()))')
@@ -184,12 +212,26 @@ def test():
     
     # Using the runner for animations:
     runner = NodeBoxRunner()
-    for frame in runner.run_multiple('size(300, 300)\ntext(FRAME, 100, 100)', 10):
+    for frame in runner.run_multiple('size(304, 304)\ntext(FRAME, 100, 100)', 5):
         runner.canvas.save('console-test-frame%02i.png' % frame)
-
+    
+    # pdb.set_trace()
+    
+    script="""
+size( 208, 208 )
+fill(1,0,0)
+stroke(0,1,0)
+font(choice(fontnames()))
+fontsize(36)
+text(str(FRAME), 70, 70, 36 )"""
+    make_movie( script, 'console-test.mp4', 10)
+    make_movie( script, 'console-test.mkv', 10)
+    make_movie( script, 'console-test.mov', 10)
     # Using the shortcut functions:
-    make_image('size(200,200)\ntext(FRAME, 100, 100)', 'console-test.gif')
-    make_movie('size(200,200)\ntext(FRAME, 100, 100)', 'console-test.mov', 10)
+    #make_image('size(208,208)\ntext(FRAME, 100, 100)', 'console-test.jpg')
+    # make_movie('size(208,208)\ntext(FRAME, 100, 100)', 'console-test.mp4', 10)
+    #make_movie('size(208,208)\ntext(FRAME, 100, 100)', 'console-test.mkv', 10)
+    #make_movie('size(208,208)\ntext(FRAME, 100, 100)', 'console-test.mov', 10)
 
 if __name__=='__main__':
     main()
