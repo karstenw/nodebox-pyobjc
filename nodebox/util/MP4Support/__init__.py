@@ -169,7 +169,6 @@ def test():
         ctx.rect(100.0+sin(i/10.0)*100.0,i/2.0,100,100)
         ctx.text(str(i), i*2, 200)
         writer.send( ctx )
-    m.save()
     
 if __name__=='__main__':
     test()
