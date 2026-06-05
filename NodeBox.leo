@@ -822,21 +822,17 @@
 <v t="karstenw.20260604195850.1" a="E"><vh>@clean nodebox/util/MP4Support/__init__.py</vh>
 <v t="karstenw.20260604195902.1"><vh>Declarations</vh></v>
 <v t="karstenw.20260605104136.1"><vh>Globals</vh></v>
+<v t="karstenw.20260605144846.1"><vh>writeframe</vh></v>
 <v t="karstenw.20260604202705.1"><vh>class MovieReader</vh>
 <v t="karstenw.20260604203601.1"><vh>__init__</vh></v>
 <v t="karstenw.20260605103736.1"><vh>openmovie</vh></v>
 <v t="karstenw.20260605100859.1"><vh>readMeta</vh></v>
 <v t="karstenw.20260604203957.1"><vh>readFrames</vh></v>
 </v>
-<v t="karstenw.20260604202729.1" a="E"><vh>class MovieWriter</vh>
+<v t="karstenw.20260604202729.1"><vh>class MovieWriter</vh>
 <v t="karstenw.20260604203737.1"><vh>__init__</vh></v>
 <v t="karstenw.20260605105418.1"><vh>openmovie</vh></v>
 <v t="karstenw.20260604204015.1"><vh>writeFrames</vh></v>
-</v>
-<v t="karstenw.20260604195902.2" a="E"><vh>class Movie</vh>
-<v t="karstenw.20260604195902.3"><vh>__init__</vh></v>
-<v t="karstenw.20260604195902.4"><vh>add</vh></v>
-<v t="karstenw.20260604195902.5"><vh>save</vh></v>
 </v>
 <v t="karstenw.20260604195902.6"><vh>test</vh></v>
 </v>
@@ -4785,8 +4781,6 @@ h = hue = property(_get_hue, _set_hue, doc="the hue of the color")
 import os
 import io
 import traceback
-# import linecache
-# import re
 import time
 import random
 import signal
@@ -4809,13 +4803,7 @@ from . import preferences
 
 from . import util
 
-#import nodebox.util.QTSupport
-#QTSupport = nodebox.util.QTSupport
 import nodebox.util.MP4Support
-MovieReader = nodebox.util.MP4Support.MovieReader
-MovieWriter = nodebox.util.MP4Support.MovieWriter
-
-
 import nodebox.util
 import nodebox.util.ottobot
 import nodebox.graphics
@@ -4899,6 +4887,10 @@ util = nodebox.util
 makeunicode = nodebox.util.makeunicode
 
 genProgram = nodebox.util.ottobot.genProgram
+
+MovieReader = nodebox.util.MP4Support.MovieReader
+MovieWriter = nodebox.util.MP4Support.MovieWriter
+writeframe = nodebox.util.MP4Support.writeframe
 
 graphics = nodebox.graphics
 
@@ -14788,63 +14780,6 @@ NSBitmapImageRep = AppKit.NSBitmapImageRep
 NSJPEGFileType = AppKit.NSJPEGFileType
 
 </t>
-<t tx="karstenw.20260604195902.2">class Movie(object):
-
-    @others
-</t>
-<t tx="karstenw.20260604195902.3">def __init__(self, fname, fps=30):
-    self.fname = fname
-
-    self.frame = 1
-    self.tmpfname = None
-    self.firstFrame = True
-    self.movie = None
-    self.fps = fps
-    self._time = 0 
-
-
-</t>
-<t tx="karstenw.20260604195902.4">def add(self, canvas_or_context):
-    if self.movie is None:
-        # The first frame will be written to a temporary png file,
-        # then opened as a movie file, then saved again as a movie.
-        handle, self.tmpfname = tempfile.mkstemp('.tiff')
-        canvas_or_context.save(self.tmpfname)
-        try:
-            movie, err = QTMovie.movieWithFile_error_(self.tmpfname, None)
-            movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
-            range = QTMakeTimeRange(QTMakeTime(0,600), movie.duration())
-            movie.scaleSegment_newDuration_(range, self._time)
-            if err is not None:
-                raise str(err)
-            movie.writeToFile_withAttributes_(self.fname, {QTMovieFlatten:True})
-            self.movie, err = QTMovie.movieWithFile_error_(self.fname, None)
-            self.movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
-            if err is not None:
-                raise str(err)
-            self.imageTrack = self.movie.tracks()[0]
-        finally:
-            os.remove(self.tmpfname)
-    else:
-        try:
-            canvas_or_context.save(self.tmpfname)
-            img = NSImage.alloc().initByReferencingFile_(self.tmpfname)
-            self.imageTrack.addImage_forDuration_withAttributes_(img, self._time, {QTAddImageCodecType:'tiff'})
-        finally:
-            try:
-                os.remove(self.tmpfname)
-            except OSError as err:
-                print(err)
-                # pass
-    self.frame += 1
-            
-</t>
-<t tx="karstenw.20260604195902.5">def save(self):
-    self.movie.updateMovieFile()
-
-
-
-</t>
 <t tx="karstenw.20260604195902.6">def test():
     import sys
     sys.path.insert(0, '../..')
@@ -15009,11 +14944,6 @@ audioextensione = ("aa aac ac3 act afc aiff aif aix alaw au ast boa mp2 mp3 oga 
     pb = ProgressBarController.alloc().init()
     pb.begin_maxval_("Generating %s frames..." % frames, frames)
     
-    def writeframe( movie, canvas, w, h ):
-        tiffData = canvas._nsImage.TIFFRepresentation()
-        bitmap = NSBitmapImageRep.imageRepWithData_ ( tiffData )
-        dataalpha = bytearray( bitmap.bitmapData() )
-        movie.send( dataalpha)
     
     try:
         if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
@@ -15036,7 +14966,7 @@ audioextensione = ("aa aac ac3 act afc aiff aif aix alaw au ast boa mp2 mp3 oga 
                 if i &gt; 0: # Run has already happened first time
                     self.fastRun_newSeed_(self._execScript, True)
                 
-                writeframe( movie, self.canvas, w, h )
+                writeframe( movie, self.canvas )
                 if i == 0:
                     dbg = False
                 
@@ -15050,7 +14980,7 @@ audioextensione = ("aa aac ac3 act afc aiff aif aix alaw au ast boa mp2 mp3 oga 
             for i in range(frames):
                 self.fastRun_newSeed_(self.namespace["draw"], True)
                 
-                writeframe( movie, self.canvas, w, h )
+                writeframe( movie, self.canvas )
                 if i == 0:
                     dbg = False
                 
@@ -15075,6 +15005,23 @@ audioextensione = ("aa aac ac3 act afc aiff aif aix alaw au ast boa mp2 mp3 oga 
     return ( rep.pixelsWide(), rep.pixelsHigh())
 
 pixelsize = property( getPixelSize )
+
+
+</t>
+<t tx="karstenw.20260605144846.1">def writeframe( movie, canvas ):
+    """Write a frame from the current Nodebox canvas.
+    
+    Every NB-writer should do it like this.
+    
+    movie: a valid &amp; open MovieWriter
+    
+    canvas: the canvas from current document
+    """
+    
+    tiffData = canvas._nsImage.TIFFRepresentation()
+    bitmap = NSBitmapImageRep.imageRepWithData_ ( tiffData )
+    dataalpha = bytearray( bitmap.bitmapData() )
+    movie.send( dataalpha)
 
 
 </t>

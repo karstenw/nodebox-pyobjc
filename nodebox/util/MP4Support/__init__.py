@@ -26,6 +26,22 @@ videoextensions = ("avi caf dhav dvd h261 h263 h264 mkv webm mov mp4 m4a 3gp 3g2
 audioextensione = ("aa aac ac3 act afc aiff aif aix alaw au ast boa mp2 mp3 oga ogg")
 
 
+def writeframe( movie, canvas ):
+    """Write a frame from the current Nodebox canvas.
+    
+    Every NB-writer should do it like this.
+    
+    movie: a valid & open MovieWriter
+    
+    canvas: the canvas from current document
+    """
+    
+    tiffData = canvas._nsImage.TIFFRepresentation()
+    bitmap = NSBitmapImageRep.imageRepWithData_ ( tiffData )
+    dataalpha = bytearray( bitmap.bitmapData() )
+    movie.send( dataalpha)
+
+
 class MovieReader:
     def __init__(self, path, pix_fmt="rgb24", bpp=None, input_params=None, output_params=None, bits_per_pixel=None ):
         self.path = os.path.abspath( os.path.expanduser(path) )
@@ -123,58 +139,6 @@ class MovieWriter:
             movie.send( frame )
         movie.close()
 
-
-
-
-class Movie(object):
-
-    def __init__(self, fname, fps=30):
-        self.fname = fname
-
-        self.frame = 1
-        self.tmpfname = None
-        self.firstFrame = True
-        self.movie = None
-        self.fps = fps
-        self._time = 0 
-
-
-    def add(self, canvas_or_context):
-        if self.movie is None:
-            # The first frame will be written to a temporary png file,
-            # then opened as a movie file, then saved again as a movie.
-            handle, self.tmpfname = tempfile.mkstemp('.tiff')
-            canvas_or_context.save(self.tmpfname)
-            try:
-                movie, err = QTMovie.movieWithFile_error_(self.tmpfname, None)
-                movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
-                range = QTMakeTimeRange(QTMakeTime(0,600), movie.duration())
-                movie.scaleSegment_newDuration_(range, self._time)
-                if err is not None:
-                    raise str(err)
-                movie.writeToFile_withAttributes_(self.fname, {QTMovieFlatten:True})
-                self.movie, err = QTMovie.movieWithFile_error_(self.fname, None)
-                self.movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
-                if err is not None:
-                    raise str(err)
-                self.imageTrack = self.movie.tracks()[0]
-            finally:
-                os.remove(self.tmpfname)
-        else:
-            try:
-                canvas_or_context.save(self.tmpfname)
-                img = NSImage.alloc().initByReferencingFile_(self.tmpfname)
-                self.imageTrack.addImage_forDuration_withAttributes_(img, self._time, {QTAddImageCodecType:'tiff'})
-            finally:
-                try:
-                    os.remove(self.tmpfname)
-                except OSError as err:
-                    print(err)
-                    # pass
-        self.frame += 1
-                
-    def save(self):
-        self.movie.updateMovieFile()
 
 
 

@@ -2,8 +2,6 @@ import sys
 import os
 import io
 import traceback
-# import linecache
-# import re
 import time
 import random
 import signal
@@ -26,13 +24,7 @@ from . import preferences
 
 from . import util
 
-#import nodebox.util.QTSupport
-#QTSupport = nodebox.util.QTSupport
 import nodebox.util.MP4Support
-MovieReader = nodebox.util.MP4Support.MovieReader
-MovieWriter = nodebox.util.MP4Support.MovieWriter
-
-
 import nodebox.util
 import nodebox.util.ottobot
 import nodebox.graphics
@@ -116,6 +108,10 @@ util = nodebox.util
 makeunicode = nodebox.util.makeunicode
 
 genProgram = nodebox.util.ottobot.genProgram
+
+MovieReader = nodebox.util.MP4Support.MovieReader
+MovieWriter = nodebox.util.MP4Support.MovieWriter
+writeframe = nodebox.util.MP4Support.writeframe
 
 graphics = nodebox.graphics
 
@@ -877,11 +873,6 @@ class NodeBoxDocument(NSDocument):
         pb = ProgressBarController.alloc().init()
         pb.begin_maxval_("Generating %s frames..." % frames, frames)
         
-        def writeframe( movie, canvas, w, h ):
-            tiffData = canvas._nsImage.TIFFRepresentation()
-            bitmap = NSBitmapImageRep.imageRepWithData_ ( tiffData )
-            dataalpha = bytearray( bitmap.bitmapData() )
-            movie.send( dataalpha)
         
         try:
             if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
@@ -904,7 +895,7 @@ class NodeBoxDocument(NSDocument):
                     if i > 0: # Run has already happened first time
                         self.fastRun_newSeed_(self._execScript, True)
                     
-                    writeframe( movie, self.canvas, w, h )
+                    writeframe( movie, self.canvas )
                     if i == 0:
                         dbg = False
                     
@@ -918,7 +909,7 @@ class NodeBoxDocument(NSDocument):
                 for i in range(frames):
                     self.fastRun_newSeed_(self.namespace["draw"], True)
                     
-                    writeframe( movie, self.canvas, w, h )
+                    writeframe( movie, self.canvas )
                     if i == 0:
                         dbg = False
                     
