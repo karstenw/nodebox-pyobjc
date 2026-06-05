@@ -873,7 +873,6 @@ class NodeBoxDocument(NSDocument):
         pb = ProgressBarController.alloc().init()
         pb.begin_maxval_("Generating %s frames..." % frames, frames)
         
-        
         try:
             if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
                 return
