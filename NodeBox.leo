@@ -10,7 +10,7 @@
 <find_panel_settings/>
 <vnodes>
 <v t="karstenw.20250718093121.1" a="E"><vh>+ APP +</vh>
-<v t="karstenw.20170704103837.1" a="E"><vh>@clean macboot.py</vh>
+<v t="karstenw.20170704103837.1"><vh>@clean macboot.py</vh>
 <v t="karstenw.20170704103857.1"><vh>Declarations 1</vh></v>
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
@@ -21,10 +21,10 @@
 <v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
 <v t="karstenw.20170804152129.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
+<v t="karstenw.20170704104018.1" a="E"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
@@ -60,7 +60,7 @@
 <v t="karstenw.20170726133907.1"><vh>benchmark</vh></v>
 <v t="karstenw.20170704104618.2"><vh>reflect</vh></v>
 </v>
-<v t="karstenw.20170704104605.1" a="E"><vh>@clean nodebox/geo/pathmatics.py</vh>
+<v t="karstenw.20170704104605.1"><vh>@clean nodebox/geo/pathmatics.py</vh>
 <v t="karstenw.20170704104615.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104615.2"><vh>linepoint</vh></v>
 <v t="karstenw.20170704104615.3"><vh>linelength</vh></v>
@@ -68,11 +68,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
 <v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
@@ -111,7 +111,7 @@
 <v t="karstenw.20170704104725.29"><vh>_arrow</vh></v>
 <v t="karstenw.20170704104725.30"><vh>_arrow45</vh></v>
 </v>
-<v t="karstenw.20170709143318.1" a="E"><vh>## Path Commands ##</vh>
+<v t="karstenw.20170709143318.1"><vh>## Path Commands ##</vh>
 <v t="karstenw.20170704104725.31"><vh>beginpath</vh></v>
 <v t="karstenw.20170704104725.32"><vh>moveto</vh></v>
 <v t="karstenw.20170704104725.33"><vh>lineto</vh></v>
@@ -126,7 +126,7 @@
 <v t="karstenw.20170704104725.40"><vh>beginclip</vh></v>
 <v t="karstenw.20170704104725.41"><vh>endclip</vh></v>
 </v>
-<v t="karstenw.20170709143354.1" a="E"><vh>## Transformation Commands ##</vh>
+<v t="karstenw.20170709143354.1"><vh>## Transformation Commands ##</vh>
 <v t="karstenw.20170704104725.42"><vh>push</vh></v>
 <v t="karstenw.20170704104725.43"><vh>pop</vh></v>
 <v t="karstenw.20170704104725.44"><vh>transform</vh></v>
@@ -149,7 +149,7 @@
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -192,7 +192,7 @@
 <v t="karstenw.20170704104742.10"><vh>_test</vh></v>
 </v>
 <v t="karstenw.20170704104743.1"><vh>@clean nodebox/graphics/cocoa.py</vh>
-<v t="karstenw.20170704104751.1" a="E"><vh>Declarations</vh>
+<v t="karstenw.20170704104751.1"><vh>Declarations</vh>
 <v t="karstenw.20260602184611.1"><vh>&lt;&lt; aliases &gt;&gt;</vh></v>
 <v t="karstenw.20260604142205.1"><vh>&lt;&lt; globals &gt;&gt;</vh></v>
 </v>
@@ -377,6 +377,7 @@
 <v t="karstenw.20170704104751.149"><vh>_get_image</vh></v>
 <v t="karstenw.20170704104751.150"><vh>copy</vh></v>
 <v t="karstenw.20170704104751.151"><vh>getSize</vh></v>
+<v t="karstenw.20260605114956.1"><vh>getPixelSize</vh></v>
 <v t="karstenw.20170704104751.152"><vh>_draw</vh></v>
 </v>
 <v t="karstenw.20170704104751.153"><vh>class Text</vh>
@@ -420,10 +421,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -435,7 +436,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -474,7 +475,7 @@
 <v t="karstenw.20170704105032.40"><vh>doExportAsImage_fmt_pages_</vh></v>
 <v t="karstenw.20170704105032.41"><vh>exportAsMovie_</vh></v>
 <v t="karstenw.20170704105032.42"><vh>qtPanelDidEnd_returnCode_contextInfo_</vh></v>
-<v t="karstenw.20170704105032.43"><vh>doExportAsMovie_frames_fps_</vh></v>
+<v t="karstenw.20260605112607.1"><vh>doExportAsMovie_frames_fps_</vh></v>
 <v t="karstenw.20170704105032.44"><vh>printDocument_</vh></v>
 <v t="karstenw.20170704105032.45"><vh>printOperationDidRun_success_contextInfo_</vh></v>
 <v t="karstenw.20170704105032.46"><vh>buildInterface_</vh></v>
@@ -585,7 +586,7 @@
 <v t="karstenw.20170709145531.1"><vh>addMenu_idx_frame_</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104926.1" a="E"><vh>@clean nodebox/gui/mac/preferences.py</vh>
+<v t="karstenw.20170704104926.1"><vh>@clean nodebox/gui/mac/preferences.py</vh>
 <v t="karstenw.20170704105106.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105106.2"><vh>class LibraryFolder</vh>
 <v t="karstenw.20170704105106.3"><vh>__init__</vh></v>
@@ -698,7 +699,7 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
 <v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -817,15 +818,27 @@
 <v t="karstenw.20170704105528.36"><vh>genProgram</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704105416.1"><vh>QTSupport</vh>
-<v t="karstenw.20170704105551.1"><vh>@clean nodebox/util/QTSupport/__init__.py</vh>
-<v t="karstenw.20170704105603.1"><vh>Declarations</vh></v>
-<v t="karstenw.20170704105603.2"><vh>class Movie</vh>
-<v t="karstenw.20170704105603.3"><vh>__init__</vh></v>
-<v t="karstenw.20170704105603.4"><vh>add</vh></v>
-<v t="karstenw.20170704105603.5"><vh>save</vh></v>
+<v t="karstenw.20260604195825.1" a="E"><vh>MP4Support</vh>
+<v t="karstenw.20260604195850.1" a="E"><vh>@clean nodebox/util/MP4Support/__init__.py</vh>
+<v t="karstenw.20260604195902.1"><vh>Declarations</vh></v>
+<v t="karstenw.20260605104136.1"><vh>Globals</vh></v>
+<v t="karstenw.20260604202705.1"><vh>class MovieReader</vh>
+<v t="karstenw.20260604203601.1"><vh>__init__</vh></v>
+<v t="karstenw.20260605103736.1"><vh>openmovie</vh></v>
+<v t="karstenw.20260605100859.1"><vh>readMeta</vh></v>
+<v t="karstenw.20260604203957.1"><vh>readFrames</vh></v>
 </v>
-<v t="karstenw.20170704105603.6"><vh>test</vh></v>
+<v t="karstenw.20260604202729.1" a="E"><vh>class MovieWriter</vh>
+<v t="karstenw.20260604203737.1"><vh>__init__</vh></v>
+<v t="karstenw.20260605105418.1"><vh>openmovie</vh></v>
+<v t="karstenw.20260604204015.1"><vh>writeFrames</vh></v>
+</v>
+<v t="karstenw.20260604195902.2" a="E"><vh>class Movie</vh>
+<v t="karstenw.20260604195902.3"><vh>__init__</vh></v>
+<v t="karstenw.20260604195902.4"><vh>add</vh></v>
+<v t="karstenw.20260604195902.5"><vh>save</vh></v>
+</v>
+<v t="karstenw.20260604195902.6"><vh>test</vh></v>
 </v>
 </v>
 <v t="karstenw.20170704105619.1"><vh>@clean nodebox/util/vdiff.py</vh>
@@ -1375,7 +1388,8 @@ packages = [
     # 'nodebox.graphics.cocoa',
     'nodebox.util',
     'nodebox.util.kgp',
-    'nodebox.util.QTSupport',
+    # 'nodebox.util.QTSupport',
+    'nodebox.util.MP4Support',
     'nodebox.geo']
 
 if __name__=='__main__':
@@ -3396,13 +3410,6 @@ checkKwargs = classmethod(checkKwargs)
 
 size = property(getSize)
 
-def getPixelSize( self ):
-    rep = self._nsImage.representations()[0]
-    return ( rep.pixelsWide(), rep.pixelsHigh())
-
-pixelsize = property( getPixelSize )
-
-
 </t>
 <t tx="karstenw.20170704104751.152">def _draw(self):
     """Draw an image on the given coordinates."""
@@ -4804,6 +4811,10 @@ from . import util
 
 #import nodebox.util.QTSupport
 #QTSupport = nodebox.util.QTSupport
+import nodebox.util.MP4Support
+MovieReader = nodebox.util.MP4Support.MovieReader
+MovieWriter = nodebox.util.MP4Support.MovieWriter
+
 
 import nodebox.util
 import nodebox.util.ottobot
@@ -4812,7 +4823,7 @@ import nodebox.graphics
 from . import dashboard
 from . import progressbar
 
-# import pdb
+import pdb
 kwdbg = 1
 
 # set to true to have stdio on the terminal for pdb
@@ -4852,6 +4863,8 @@ NSPasteboard = AppKit.NSPasteboard
 NSPDFPboardType = AppKit.NSPDFPboardType
 NSPostScriptPboardType = AppKit.NSPostScriptPboardType
 NSTIFFPboardType = AppKit.NSTIFFPboardType
+
+NSBitmapImageRep = AppKit.NSBitmapImageRep
 
 NSBundle = AppKit.NSBundle
 NSSavePanel = AppKit.NSSavePanel
@@ -5531,19 +5544,19 @@ def exportAsMovie_(self, sender):
     exportPanel.setNameFieldLabel_("Export To:")
     exportPanel.setPrompt_("Export")
     exportPanel.setCanSelectHiddenExtension_(True)
-    exportPanel.setAllowedFileTypes_(["mov"])
+    exportPanel.setAllowedFileTypes_(["mp4", "mov", "gif"])
     if not NSBundle.loadNibNamed_owner_("ExportMovieAccessory", self):
         NSLog("Error -- could not load ExportMovieAccessory.")
-    self.exportMovieFrames.setIntValue_(150)
-    self.exportMovieFps.setIntValue_(30)
+    self.exportMovieFrames.setIntValue_( 150 )
+    self.exportMovieFps.setIntValue_( 30 )
     exportPanel.setAccessoryView_(self.exportMovieAccessory)
     path = self.fileName()
     if path:
         dirName, fileName = os.path.split(path)
         fileName, ext = os.path.splitext(fileName)
-        fileName += ".mov"
+        fileName += ".mp4"
     else:
-        dirName, fileName = None, "Untitled.mov"
+        dirName, fileName = None, "Untitled.mp4"
     # If a file was already exported, use that folder as the default.
     if self.exportDir is not None:
         dirName = self.exportDir
@@ -5569,68 +5582,6 @@ def exportAsMovie_(self, sender):
 
 qtPanelDidEnd_returnCode_contextInfo_ = objc.selector(qtPanelDidEnd_returnCode_contextInfo_,
                                                       signature=b"v@:@ii")
-
-</t>
-<t tx="karstenw.20170704105032.43">def doExportAsMovie_frames_fps_(self, fname, frames, fps):
-    # Only load QTSupport when necessary. 
-    # QTSupport loads QTKit, which wants to establish a connection to the window
-    # server.
-    # If we load QTSupport before something is on screen, the connection to the
-    # window server cannot be established.
-
-    try:
-        os.unlink(fname)
-    except Exception:
-        pass
-    try:
-        fp = io.open(fname, 'wb')
-        fp.close()
-    except Exception:
-        errorAlert("File Error", ("Could not create file '%s'. "
-                                  "Perhaps it is locked or busy.") % fname)
-        return
-
-    movie = None
-
-    pb = ProgressBarController.alloc().init()
-    pb.begin_maxval_("Generating %s frames..." % frames, frames)
-    try:
-        if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
-            return
-        self._pageNumber = 1
-        self._frame = 1
-
-        movie = QTSupport.Movie(fname, fps)
-        # If the speed is set, we are dealing with animation
-        if self.canvas.speed is None:
-            for i in range(frames):
-                if i &gt; 0: # Run has already happened first time
-                    self.fastRun_newSeed_(self._execScript, True)
-                movie.add(self.canvas)
-                self.graphicsView.setNeedsDisplay_(True)
-                pb.inc()
-                self._pageNumber += 1
-                self._frame += 1
-        else:
-            if "setup" in self.namespace:
-                self.fastRun_newSeed_(self.namespace["setup"], False)
-            for i in range(frames):
-                self.fastRun_newSeed_(self.namespace["draw"], True)
-                movie.add(self.canvas)
-                self.graphicsView.setNeedsDisplay_(True)
-                pb.inc()
-                self._pageNumber += 1
-                self._frame += 1
-            if "stop" in self.namespace:
-                success, output = self.boxedRun_args_(self.namespace["stop"], [])
-                self.flushOutput_(output)
-    except KeyboardInterrupt:
-        pass
-    pb.end()
-    del pb
-    movie.save()
-    self._pageNumber = 1
-    self._frame = 1
 
 </t>
 <t tx="karstenw.20170704105032.44">@objc.IBAction
@@ -8201,7 +8152,6 @@ __all__ = (
 if __name__ == '__main__':
     print(genProgram())
 </t>
-<t tx="karstenw.20170704105416.1"></t>
 <t tx="karstenw.20170704105442.1">@language python
 @tabwidth -4
 #!/usr/bin/env python2
@@ -8808,114 +8758,6 @@ colormode(HSB)
 
 </t>
 <t tx="karstenw.20170704105534.1"></t>
-<t tx="karstenw.20170704105551.1">@language python
-@tabwidth -4
-@others
-if __name__=='__main__':
-    test()
-</t>
-<t tx="karstenw.20170704105603.1">import os
-import tempfile
-import Foundation
-import QTKit
-import AppKit
-
-NSNumber = Foundation.NSNumber
-
-NSImage = AppKit.NSImage
-NSApplication = AppKit.NSApplication
-NSColor = AppKit.NSColor
-NSData = AppKit.NSData
-NSBitmapImageRep = AppKit.NSBitmapImageRep
-NSJPEGFileType = AppKit.NSJPEGFileType
-
-QTMovie = QTKit.QTMovie
-# QTDataReference = QTKit.QTDataReference
-# QTMovieFileNameAttribute = QTKit.QTMovieFileNameAttribute
-QTMakeTimeRange = QTKit.QTMakeTimeRange
-QTMakeTime = QTKit.QTMakeTime
-QTMovieEditableAttribute = QTKit.QTMovieEditableAttribute
-QTAddImageCodecType = QTKit.QTAddImageCodecType
-QTMovieFlatten = QTKit.QTMovieFlatten
-
-</t>
-<t tx="karstenw.20170704105603.2">class Movie(object):
-
-    @others
-</t>
-<t tx="karstenw.20170704105603.3">def __init__(self, fname, fps=30):
-    if os.path.exists(fname):
-        os.remove(fname)
-    self.frame = 1
-    self.fname = fname
-    self.tmpfname = None
-    self.firstFrame = True
-    self.movie = None
-    self.fps = fps
-    self._time = QTMakeTime(int(600/self.fps), 600)
-    
-</t>
-<t tx="karstenw.20170704105603.4">def add(self, canvas_or_context):
-    if self.movie is None:
-        # The first frame will be written to a temporary png file,
-        # then opened as a movie file, then saved again as a movie.
-        handle, self.tmpfname = tempfile.mkstemp('.tiff')
-        canvas_or_context.save(self.tmpfname)
-        try:
-            movie, err = QTMovie.movieWithFile_error_(self.tmpfname, None)
-            movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
-            range = QTMakeTimeRange(QTMakeTime(0,600), movie.duration())
-            movie.scaleSegment_newDuration_(range, self._time)
-            if err is not None:
-                raise str(err)
-            movie.writeToFile_withAttributes_(self.fname, {QTMovieFlatten:True})
-            self.movie, err = QTMovie.movieWithFile_error_(self.fname, None)
-            self.movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
-            if err is not None:
-                raise str(err)
-            self.imageTrack = self.movie.tracks()[0]
-        finally:
-            os.remove(self.tmpfname)
-    else:
-        try:
-            canvas_or_context.save(self.tmpfname)
-            img = NSImage.alloc().initByReferencingFile_(self.tmpfname)
-            self.imageTrack.addImage_forDuration_withAttributes_(img, self._time, {QTAddImageCodecType:'tiff'})
-        finally:
-            try:
-                os.remove(self.tmpfname)
-            except OSError as err:
-                print(err)
-                # pass
-    self.frame += 1
-            
-</t>
-<t tx="karstenw.20170704105603.5">def save(self):
-    self.movie.updateMovieFile()
-
-
-
-</t>
-<t tx="karstenw.20170704105603.6">def test():
-    import sys
-    sys.path.insert(0, '../..')
-    sys.path.insert(0, '../../..')
-    from nodebox.graphics import Context # Canvas, 
-    from math import sin
-
-    NSApplication.sharedApplication().activateIgnoringOtherApps_(0)
-    w, h = 500, 300
-    m = Movie("xx3.mov")
-    for i in range(200):
-        print("Frame %i" % i)
-        ctx = Context()
-        ctx.size(w, h)
-        ctx.rect(100.0+sin(i/10.0)*100.0,i/2.0,100,100)
-        ctx.text(str(i), i*2, 200)
-        m.add(ctx)
-    m.save()
-    
-</t>
 <t tx="karstenw.20170704105619.1">@language python
 @tabwidth -4
 @others
@@ -14918,6 +14760,322 @@ _STATE_NAMES = {
     '_align':         'align',
     '_lineheight':    'lineheight',
 }
+
+</t>
+<t tx="karstenw.20260604195825.1"></t>
+<t tx="karstenw.20260604195850.1">@language python
+@tabwidth -4
+@others
+if __name__=='__main__':
+    test()
+</t>
+<t tx="karstenw.20260604195902.1">import os
+import tempfile
+import pprint
+import Foundation
+import imageio_ffmpeg
+import AppKit
+
+pp=pprint.pprint
+
+NSNumber = Foundation.NSNumber
+
+NSImage = AppKit.NSImage
+NSApplication = AppKit.NSApplication
+NSColor = AppKit.NSColor
+NSData = AppKit.NSData
+NSBitmapImageRep = AppKit.NSBitmapImageRep
+NSJPEGFileType = AppKit.NSJPEGFileType
+
+</t>
+<t tx="karstenw.20260604195902.2">class Movie(object):
+
+    @others
+</t>
+<t tx="karstenw.20260604195902.3">def __init__(self, fname, fps=30):
+    self.fname = fname
+
+    self.frame = 1
+    self.tmpfname = None
+    self.firstFrame = True
+    self.movie = None
+    self.fps = fps
+    self._time = 0 
+
+
+</t>
+<t tx="karstenw.20260604195902.4">def add(self, canvas_or_context):
+    if self.movie is None:
+        # The first frame will be written to a temporary png file,
+        # then opened as a movie file, then saved again as a movie.
+        handle, self.tmpfname = tempfile.mkstemp('.tiff')
+        canvas_or_context.save(self.tmpfname)
+        try:
+            movie, err = QTMovie.movieWithFile_error_(self.tmpfname, None)
+            movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
+            range = QTMakeTimeRange(QTMakeTime(0,600), movie.duration())
+            movie.scaleSegment_newDuration_(range, self._time)
+            if err is not None:
+                raise str(err)
+            movie.writeToFile_withAttributes_(self.fname, {QTMovieFlatten:True})
+            self.movie, err = QTMovie.movieWithFile_error_(self.fname, None)
+            self.movie.setAttribute_forKey_(NSNumber.numberWithBool_(True), QTMovieEditableAttribute)
+            if err is not None:
+                raise str(err)
+            self.imageTrack = self.movie.tracks()[0]
+        finally:
+            os.remove(self.tmpfname)
+    else:
+        try:
+            canvas_or_context.save(self.tmpfname)
+            img = NSImage.alloc().initByReferencingFile_(self.tmpfname)
+            self.imageTrack.addImage_forDuration_withAttributes_(img, self._time, {QTAddImageCodecType:'tiff'})
+        finally:
+            try:
+                os.remove(self.tmpfname)
+            except OSError as err:
+                print(err)
+                # pass
+    self.frame += 1
+            
+</t>
+<t tx="karstenw.20260604195902.5">def save(self):
+    self.movie.updateMovieFile()
+
+
+
+</t>
+<t tx="karstenw.20260604195902.6">def test():
+    import sys
+    sys.path.insert(0, '../..')
+    sys.path.insert(0, '../../..')
+    from nodebox.graphics import Context # Canvas, 
+    from math import sin
+
+    NSApplication.sharedApplication().activateIgnoringOtherApps_(0)
+    w, h = 512, 320
+    mw = MovieWriter("xx3.mp4", (w,h) )
+    writer = mw.openmovie()
+    for i in range(200):
+        print("Frame %i" % i)
+        ctx = Context()
+        ctx.size(w, h)
+        ctx.rect(100.0+sin(i/10.0)*100.0,i/2.0,100,100)
+        ctx.text(str(i), i*2, 200)
+        writer.send( ctx )
+    m.save()
+    
+</t>
+<t tx="karstenw.20260604202705.1">class MovieReader:
+    @others
+
+
+</t>
+<t tx="karstenw.20260604202729.1">class MovieWriter:
+    @others
+
+
+</t>
+<t tx="karstenw.20260604203601.1">def __init__(self, path, pix_fmt="rgb24", bpp=None, input_params=None, output_params=None, bits_per_pixel=None ):
+    self.path = os.path.abspath( os.path.expanduser(path) )
+    self.pix_fmt = pix_fmt
+    self.bpp = bpp
+    self.input_params = input_params
+    self.output_params = output_params
+    self.bits_per_pixel = bits_per_pixel
+    meta = self.readMeta()
+    if 0:
+        pp(meta)
+    self.fps = meta.get('fps', 0.0)
+    self.audio_codec = meta.get('audio_codec', None)
+    self.codec = meta.get('codec', None)
+    self.duration = meta.get('duration', 0.0)
+    self.pix_fmt = meta.get('pix_fmt', None)
+    self.rotate = meta.get('rotate', 0)
+    self.size = meta.get('size', None)
+    self.source_size = meta.get('source_size', self.size)
+        
+</t>
+<t tx="karstenw.20260604203737.1">def __init__(self, path, size,
+                   pix_fmt_in="rgb24", pix_fmt_out="yuv420p", fps=16, quality=5,
+                   bitrate=None, codec=None, macro_block_size=16, ffmpeg_log_level="warning",
+                   ffmpeg_timeout=None, input_params=None, output_params=None,
+                   audio_path=None, audio_codec=None ):
+
+    self.path = path
+    self.size = size
+    self.pix_fmt_in = pix_fmt_in
+    self.pix_fmt_out = pix_fmt_out
+    self.fps = fps
+    self.quality = quality
+    self.bitrate = bitrate
+    self.codec = codec
+    self.macro_block_size = macro_block_size
+    self.ffmpeg_log_level = ffmpeg_log_level
+    self.ffmpeg_timeout = ffmpeg_timeout
+    self.input_params = input_params
+    self.output_params = output_params
+    self.audio_path = audio_path
+    self.audio_codec = audio_codec
+    
+</t>
+<t tx="karstenw.20260604203957.1">def readFrames(self):
+    movie = self.openmovie()
+    
+    # read meta
+    _ = next(movie)
+    
+    for frame in next(movie):
+        yield frame
+    
+    movie.close()
+
+
+</t>
+<t tx="karstenw.20260604204015.1">def writeFrames(self, frames):
+    movie = self.openmovie()
+    
+    for frame in frames:
+        movie.send( frame )
+    movie.close()
+
+
+</t>
+<t tx="karstenw.20260605100859.1">def readMeta( self ):
+    movie = self.openmovie()
+    meta = next(movie)
+    movie.close()
+    return meta
+
+
+</t>
+<t tx="karstenw.20260605103736.1">def openmovie(self):
+    return imageio_ffmpeg.read_frames( self.path, pix_fmt=self.pix_fmt, bpp=self.bpp,
+                                       input_params=self.input_params, output_params=self.output_params,
+                                       bits_per_pixel=self.bits_per_pixel)
+
+
+</t>
+<t tx="karstenw.20260605104136.1"># 
+# file extensions for later use - extracted via "ffmpeg -formats" and manually selected &amp; sorted; ignored imageformats for now
+#
+# this needs expansion
+
+videoextensions = ("avi caf dhav dvd h261 h263 h264 mkv webm mov mp4 m4a 3gp 3g2 mj2 mpeg ogv rm vcd vob")
+
+audioextensione = ("aa aac ac3 act afc aiff aif aix alaw au ast boa mp2 mp3 oga ogg")
+
+
+</t>
+<t tx="karstenw.20260605105418.1">def openmovie(self):
+    movie = imageio_ffmpeg.write_frames(
+            self.path,
+            self.size,
+            self.pix_fmt_in,
+            self.pix_fmt_out,
+            self.fps,
+            self.quality,
+            self.bitrate,
+            self.codec,
+            self.macro_block_size,
+            self.ffmpeg_log_level,
+            self.ffmpeg_timeout,
+            self.input_params,
+            self.output_params,
+            self.audio_path,
+            self.audio_codec)
+    return movie
+
+
+</t>
+<t tx="karstenw.20260605112607.1">def doExportAsMovie_frames_fps_(self, fname, frames, fps):
+    """Runs the document as needed, gets each frame as tiffimagedata and forwards it to imageio_ffmpeg.
+    """
+    
+    try:
+        os.unlink(fname)
+    except Exception:
+        pass
+    try:
+        fp = io.open(fname, 'wb')
+        fp.close()
+    except Exception:
+        errorAlert("File Error", ("Could not create file '%s'. "
+                                  "Perhaps it is locked or busy.") % fname)
+        return
+
+    movie = None
+
+    pb = ProgressBarController.alloc().init()
+    pb.begin_maxval_("Generating %s frames..." % frames, frames)
+    
+    def writeframe( movie, canvas, w, h ):
+        tiffData = canvas._nsImage.TIFFRepresentation()
+        bitmap = NSBitmapImageRep.imageRepWithData_ ( tiffData )
+        dataalpha = bytearray( bitmap.bitmapData() )
+        movie.send( dataalpha)
+    
+    try:
+        if not self.cleanRun_newSeed_buildInterface_(self._execScript, True, True):
+            return
+
+        self._pageNumber = 1
+        self._frame = 1
+        
+        w = self.canvas.width
+        h = self.canvas.height
+        
+        
+        mw = MovieWriter(fname, (w,h), pix_fmt_in="rgba", fps=fps)
+        movie = mw.openmovie()
+        movie.send( None )
+        dbg = 1
+        # If the speed is set, we are dealing with animation
+        if self.canvas.speed is None:
+            for i in range(frames):
+                if i &gt; 0: # Run has already happened first time
+                    self.fastRun_newSeed_(self._execScript, True)
+                
+                writeframe( movie, self.canvas, w, h )
+                if i == 0:
+                    dbg = False
+                
+                self.graphicsView.setNeedsDisplay_(True)
+                pb.inc()
+                self._pageNumber += 1
+                self._frame += 1
+        else:
+            if "setup" in self.namespace:
+                self.fastRun_newSeed_(self.namespace["setup"], False)
+            for i in range(frames):
+                self.fastRun_newSeed_(self.namespace["draw"], True)
+                
+                writeframe( movie, self.canvas, w, h )
+                if i == 0:
+                    dbg = False
+                
+                self.graphicsView.setNeedsDisplay_(True)
+                pb.inc()
+                self._pageNumber += 1
+                self._frame += 1
+            if "stop" in self.namespace:
+                success, output = self.boxedRun_args_(self.namespace["stop"], [])
+                self.flushOutput_(output)
+    except KeyboardInterrupt:
+        pass
+    pb.end()
+    del pb
+    # movie.save()
+    self._pageNumber = 1
+    self._frame = 1
+
+</t>
+<t tx="karstenw.20260605114956.1">def getPixelSize( self ):
+    rep = self._nsImage.representations()[0]
+    return ( rep.pixelsWide(), rep.pixelsHigh())
+
+pixelsize = property( getPixelSize )
+
 
 </t>
 </tnodes>
