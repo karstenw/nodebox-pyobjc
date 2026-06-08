@@ -25,6 +25,9 @@ import re
 import pickle
 import pydoc
 
+import math
+import cmath
+
 import shelve
 
 # pattern lib
@@ -37,7 +40,6 @@ import types
 import feedparser
 
 import encodings
-
 import requests
 
 
