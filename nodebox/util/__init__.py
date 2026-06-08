@@ -31,19 +31,32 @@ pp = pprint.pprint
 
 
 __all__ = (
+    'choice', 
     'NodeBoxError',
-    'grid', 'random', 'choice', 'files', 'autotext',
-    '_copy_attr', '_copy_attrs',
-    
-    'datestring','makeunicode', 'filelist', 'imagefiles',
-    
+    'sortlistfunction',
+    'makeunicode', 'datestring', 'grid', 'random', 
+    'autotext',
+    'files', 'filelist', 'imagefiles',
     'fontnames', 'fontfamilies',
-    
     'voices', 'voiceattributes', 'anySpeakers', 'say',
-    
-    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage',
-    
-    'sortlistfunction')
+    'aspectRatio', 'imagepalette',  'dithertypes', 'ditherimage',
+    'constrain', 'lerp', 'remap', 'normalize',
+    '_copy_attr', '_copy_attrs' )
+
+g_voicetrash = []
+
+_dithertypes = {
+    'atkinson': 1,
+    'floyd-steinberg': 2,
+    'jarvis-judice-ninke': 3,
+    'stucki': 4,
+    'burkes': 5,
+    'sierra-1': 6,
+    'sierra-2': 7,
+    'sierra-3': 8,
+}
+
+_ditherIDs = list( _dithertypes.values() )
 
 
 # py3 stuff
@@ -60,11 +73,6 @@ except NameError:
     punichr = chr
     long = int
 
-class NodeBoxError(Exception):
-    pass
-
-
-
 def sortlistfunction(thelist, thecompare):
     if py3:
         sortkeyfunction = cmp_to_key( thecompare )
@@ -72,21 +80,8 @@ def sortlistfunction(thelist, thecompare):
     else:
         thelist.sort( thecompare )
 
-g_voicetrash = []
-
-_dithertypes = {
-    'atkinson': 1,
-    'floyd-steinberg': 2,
-    'jarvis-judice-ninke': 3,
-    'stucki': 4,
-    'burkes': 5,
-    'sierra-1': 6,
-    'sierra-2': 7,
-    'sierra-3': 8,
-}
-
-_ditherIDs = _dithertypes.values()
-
+class NodeBoxError(Exception):
+    pass
 
 
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
@@ -567,6 +562,32 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
         del img
     return os.path.abspath(name)
 
+
+def constrain( val, low, high):
+    """Constrain the given value to the range low...high."""
+    if val < low:
+        return low
+    elif val > high:
+        return high
+    else:
+        return val
+
+
+def lerp( start, end, t):
+    """Linearly interpolate the start value to the end value."""
+    return start + t * (end - start)
+
+
+def remap( val, src_start, src_end, dst_start, dst_end ):
+    """Remap a value from the source range to the dest range."""
+    source_range = src_end - src_start
+    target_range = dst_end - dst_start
+    return dst_start + ((val - src_start) / source_range) * target_range
+
+
+def normalize(val, low, high):
+    """Normalize the given value and range to 0...1."""
+    return remap(val, low, high, 0.0, 1.0 )
 
 def _copy_attr(v):
     if v is None:
