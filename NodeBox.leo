@@ -30,9 +30,9 @@
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
-<v t="karstenw.20230718111113.2" a="E"><vh>class NodeBoxRunner</vh>
+<v t="karstenw.20230718111113.2"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
 <v t="karstenw.20230718111113.4"><vh>_check_animation</vh></v>
 <v t="karstenw.20230718111113.5"><vh>run</vh></v>
@@ -421,7 +421,7 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1"><vh>mac</vh>
 <v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
@@ -699,13 +699,13 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
 <v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
-<v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
-<v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
+<v t="karstenw.20210322113242.1"></v>
+<v t="karstenw.20210630133918.1"><vh>py2/3 list sort</vh></v>
+<v t="karstenw.20170704104751.4"><vh>class NodeBoxError</vh></v>
 <v t="karstenw.20180202045145.1"><vh>UTILITIES</vh>
 <v t="karstenw.20170704105353.2"><vh>makeunicode</vh></v>
 <v t="karstenw.20170704105353.3"><vh>datestring</vh></v>
@@ -743,6 +743,12 @@
 <v t="karstenw.20180207131456.1"><vh>tempimagepath</vh></v>
 <v t="karstenw.20180207131514.1"><vh>dithertypes</vh></v>
 <v t="karstenw.20180202061109.1"><vh>ditherimage</vh></v>
+</v>
+<v t="karstenw.20260607135445.1"><vh>SCALING TOOLS</vh>
+<v t="karstenw.20260607135454.1"><vh>constrain</vh></v>
+<v t="karstenw.20260607140316.1"><vh>lerp</vh></v>
+<v t="karstenw.20260607140303.1"><vh>remap</vh></v>
+<v t="karstenw.20260607140253.1"><vh>normalize</vh></v>
 </v>
 <v t="karstenw.20170704105353.15"><vh>_copy_attr</vh></v>
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
@@ -818,7 +824,7 @@
 <v t="karstenw.20170704105528.36"><vh>genProgram</vh></v>
 </v>
 </v>
-<v t="karstenw.20260604195825.1" a="E"><vh>MP4Support</vh>
+<v t="karstenw.20260604195825.1"><vh>MP4Support</vh>
 <v t="karstenw.20260604195850.1" a="E"><vh>@clean nodebox/util/MP4Support/__init__.py</vh>
 <v t="karstenw.20260604195902.1"><vh>Declarations</vh></v>
 <v t="karstenw.20260605104136.1"><vh>Globals</vh></v>
@@ -1041,6 +1047,9 @@ import re
 import pickle
 import pydoc
 
+import math
+import cmath
+
 import shelve
 
 # pattern lib
@@ -1053,7 +1062,6 @@ import types
 import feedparser
 
 import encodings
-
 import requests
 
 
@@ -1656,7 +1664,7 @@ pow = math.pow
         
     return length
 </t>
-<t tx="karstenw.20170704104618.1">import math
+<t tx="karstenw.20170704104618.1"># import math
 </t>
 <t tx="karstenw.20170704104618.2">def reflect(x0, y0, x1, y1, d=1.0, a=180):
     d *= distance(x0, y0, x1, y1)
@@ -7848,20 +7856,17 @@ pp = pprint.pprint
 
 
 __all__ = (
+    'choice', 
     'NodeBoxError',
-    'grid', 'random', 'choice', 'files', 'autotext',
-    '_copy_attr', '_copy_attrs',
-    
-    'datestring','makeunicode', 'filelist', 'imagefiles',
-    
+    'sortlistfunction',
+    'makeunicode', 'datestring', 'grid', 'random', 
+    'autotext',
+    'files', 'filelist', 'imagefiles',
     'fontnames', 'fontfamilies',
-    
     'voices', 'voiceattributes', 'anySpeakers', 'say',
-    
-    'imagepalette', 'aspectRatio', 'dithertypes', 'ditherimage',
-    
-    'sortlistfunction')
-
+    'aspectRatio', 'imagepalette',  'dithertypes', 'ditherimage',
+    'constrain', 'lerp', 'remap', 'normalize',
+    '_copy_attr', '_copy_attrs' )
 
 </t>
 <t tx="karstenw.20170704105353.10">class FontRecord:
@@ -9167,20 +9172,21 @@ except ImportError as err:
     coordinates = cGeo.coordinates
 
 except ImportError:
+    from math import sqrt, degrees, atan2, pow, sin, cos, radians
     def inverse_sqrt(x):
-        return 1.0 / math.sqrt(x)
+        return 1.0 / sqrt(x)
 
     isqrt = inverse_sqrt
 
     def angle(x0, y0, x1, y1):
-        return math.degrees( math.atan2(y1-y0, x1-x0) )
+        return degrees( atan2(y1-y0, x1-x0) )
 
     def distance(x0, y0, x1, y1):
-        return math.sqrt(math.pow(x1-x0, 2) + math.pow(y1-y0, 2))
+        return sqrt( pow(x1-x0, 2) + pow(y1-y0, 2))
     
     def coordinates(x0, y0, distance, angle):
-        x1 = x0 + math.cos(math.radians(angle)) * distance
-        y1 = y0 + math.sin(math.radians(angle)) * distance
+        x1 = x0 + cos(radians(angle)) * distance
+        y1 = y0 + sin(radians(angle)) * distance
         return x1, y1
 
 
@@ -9269,8 +9275,7 @@ _dithertypes = {
     'sierra-3': 8,
 }
 
-_ditherIDs = _dithertypes.values()
-
+_ditherIDs = list( _dithertypes.values() )
 
 
 </t>
@@ -14137,8 +14142,7 @@ def clearMessageArea_(self, sender):
 
 
 </t>
-<t tx="karstenw.20210630133918.1">
-def sortlistfunction(thelist, thecompare):
+<t tx="karstenw.20210630133918.1">def sortlistfunction(thelist, thecompare):
     if py3:
         sortkeyfunction = cmp_to_key( thecompare )
         thelist.sort( key=sortkeyfunction )
@@ -15071,6 +15075,37 @@ pixelsize = property( getPixelSize )
     bitmap = NSBitmapImageRep.imageRepWithData_ ( tiffData )
     dataalpha = bytearray( bitmap.bitmapData() )
     movie.send( dataalpha)
+
+
+</t>
+<t tx="karstenw.20260607135445.1"></t>
+<t tx="karstenw.20260607135454.1">def constrain( val, low, high):
+    """Constrain the given value to the range low...high."""
+    if val &lt; low:
+        return low
+    elif val &gt; high:
+        return high
+    else:
+        return val
+
+
+</t>
+<t tx="karstenw.20260607140253.1">def normalize(val, low, high):
+    """Normalize the given value and range to 0...1."""
+    return remap(val, low, high, 0.0, 1.0 )
+
+</t>
+<t tx="karstenw.20260607140303.1">def remap( val, src_start, src_end, dst_start, dst_end ):
+    """Remap a value from the source range to the dest range."""
+    source_range = src_end - src_start
+    target_range = dst_end - dst_start
+    return dst_start + ((val - src_start) / source_range) * target_range
+
+
+</t>
+<t tx="karstenw.20260607140316.1">def lerp( start, end, t):
+    """Linearly interpolate the start value to the end value."""
+    return start + t * (end - start)
 
 
 </t>
