@@ -9,7 +9,9 @@ The current version is 1.10.2
 
 Download the compiled app from the [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
 
-2026-05 The first final release. Python is up to 3.13, PyObjc is 12.1. Separate archives for arm and intel. 
+2026-06 The first final release. Python is up to 3.13, PyObjc is 12.1. Separate archives for arm and intel. 
+
+2026-06-02 The `imagesize(path, data=None, pixelsize=False)`command reports the size od an image in points. if `pixelsize=True` the value returned will be in pixels.
 
 2022-03-28 App only release includes version for M1. This was generated on an iMac with 11.6.3 and has only been tested to run the examples. Not the Library.
 
