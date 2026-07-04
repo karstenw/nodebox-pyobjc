@@ -5,7 +5,7 @@ import sys
 # Run the following command in the Terminal:
 #   xcodebuild -target "Build Extensions"
 sys.path.append('..')
-sys.path.append('../build/libs')
+sys.path.append('../build/bdist.macosx-10.13-x86_64/lib.macosx-10.13-x86_64-cpython-313')
 
 from nodebox.graphics import *
 
@@ -26,7 +26,7 @@ class GraphicsTestCase(unittest.TestCase):
         """Test if setting an unexisting font raises an error."""
         old_font = self.ctx.font()
         self.assertRaises(NodeBoxError, self.ctx.font, "THIS_FONT_DOES_NOT_EXIST")
-        self.assertEquals(self.ctx.font(), old_font, "Current font has not changed.")
+        self.assertEqual(self.ctx.font(), old_font, "Current font has not changed.")
     
     def test_ellipse(self):
         """Test if ellipse is an alias for oval."""
@@ -44,13 +44,13 @@ class BezierPathTestCase(unittest.TestCase):
     def test_capstyle_context(self):
         self.ctx.capstyle(SQUARE)
         p = BezierPath(self.ctx)
-        self.assertEquals(p.capstyle, BUTT, "Default line cap style is butt.")
+        self.assertEqual(p.capstyle, BUTT, "Default line cap style is butt.")
         p.inheritFromContext()
-        self.assertEquals(p.capstyle, SQUARE)
+        self.assertEqual(p.capstyle, SQUARE)
         
     def test_capstyle_constructor(self):
         p = BezierPath(self.ctx, capstyle=ROUND)
-        self.assertEquals(p.capstyle, ROUND)
+        self.assertEqual(p.capstyle, ROUND)
         
     def test_capstyle_validation(self):
         self.assertRaises(NodeBoxError, self.ctx.capstyle, 42)
@@ -61,13 +61,13 @@ class BezierPathTestCase(unittest.TestCase):
     def test_joinstyle_context(self):
         self.ctx.joinstyle(ROUND)
         p = BezierPath(self.ctx)
-        self.assertEquals(p.joinstyle, MITER, "Default line join style is miter.")
+        self.assertEqual(p.joinstyle, MITER, "Default line join style is miter.")
         p.inheritFromContext()
-        self.assertEquals(p.joinstyle, ROUND)
+        self.assertEqual(p.joinstyle, ROUND)
         
     def test_joinstyle_constructor(self):
         p = BezierPath(self.ctx, joinstyle=ROUND)
-        self.assertEquals(p.joinstyle, ROUND)
+        self.assertEqual(p.joinstyle, ROUND)
 
     def test_joinstyle_validation(self):
         self.assertRaises(NodeBoxError, self.ctx.joinstyle, 42)
