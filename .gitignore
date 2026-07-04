@@ -5,6 +5,7 @@ dist/
 +trash
 +private
 +current
+art/+icons
 # Xcode user files
 project.xcworkspace
 xcuserdata
