@@ -33,6 +33,7 @@ examples/scaler.py
 examples/Third party examples
 examples/Test
 tests/temp
+tests/exports
 tests/examples-*
 tests/*.db
 tests/*.xml
