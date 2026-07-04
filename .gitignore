@@ -33,5 +33,7 @@ examples/Third party examples
 examples/Test
 tests/temp
 tests/examples-*
+tests/*.db
+tests/*.xml
 examples/NodeBox-Site/creature & evolution/evolution/creatures
 examples/NodeBox-Site/+*
