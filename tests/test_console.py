@@ -40,6 +40,10 @@ def uniquepath(folder,  filenamebase, ext, nfill=1,
 
 
 examples = os.path.abspath( "../examples" )
+imgfolder = os.path.abspath( "./temp" )
+if not os.path.exists( imgfolder ):
+    os.makedirs( imgfolder )
+
 # examples = os.path.abspath( "../examples/Third party examples/shoebot" )
 
 print("examples:", examples)
@@ -50,6 +54,10 @@ alldemos = nodebox.util.filelist( examples,
 
 total = errors = 0
 
+ignorefiles = ("Example speech 3 allvoices.py", "Example speech 4 allvoicefiles.py", "Example filelist.py")
+
+pdb.set_trace()
+
 for rec in alldemos:
     filepath, size, lastmodified, mode, islink = rec
     if islink:
@@ -59,18 +67,13 @@ for rec in alldemos:
     basename, ext = os.path.splitext( filename )
     
     # you don't want that - trust me
-    if 'voice' in filename:
+    if filename in ignorefiles:
         continue
-    if 'speech' in filename:
-        continue
+    
     
     total += 1
     imgname = basename + '.png'
     imgname = basename + '.jpg'
-    
-    imgfolder = os.path.abspath( "temp" )
-    if not os.path.exists( imgfolder ):
-        os.makedirs( imgfolder )
     
     imgpath = uniquepath(imgfolder, basename, ".jpg")
     # imgpath = os.path.join( imgfolder, imgname )
