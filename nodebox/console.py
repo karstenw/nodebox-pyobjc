@@ -9,10 +9,11 @@ import subprocess
 
 import AppKit
 
+nodebox_dir = os.path.dirname(os.path.abspath(__file__))
+
 try:
     import nodebox
 except ImportError:
-    nodebox_dir = os.path.dirname(os.path.abspath(__file__))
     sys.path.append(os.path.dirname(nodebox_dir))
 
 import nodebox.graphics
@@ -49,6 +50,7 @@ class NodeBoxRunner(object):
     def __init__(self):
         # Force NSApp initialisation.
         NSApplication.sharedApplication().activateIgnoringOtherApps_(0)
+        #os.chdir( nodebox_dir )
         self.namespace = {}
         self.canvas = graphics.Canvas()
         self.context = graphics.Context(self.canvas, self.namespace)
@@ -75,7 +77,7 @@ class NodeBoxRunner(object):
             if 'setup' in self.namespace:
                 self.namespace['setup']()
             self.namespace['draw']()
-        
+    
     def run_multiple(self, source_or_code, frames):
         # pdb.set_trace()
         if isinstance(source_or_code, str):
@@ -128,6 +130,9 @@ def make_image(source_or_code, outputfile):
     an image.  Supported image extensions: pdf, tiff, png, jpg, gif"""
     
     if os.path.exists( source_or_code ):
+        path = os.path.abspath( source_or_code )
+        d = os.path.split( path )[0]
+        os.chdir( d )
         f = io.open( source_or_code, encoding="utf-8" )
         source_or_code = f.read()
         f.close()
@@ -135,6 +140,7 @@ def make_image(source_or_code, outputfile):
     runner = NodeBoxRunner()
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
+    os.chdir( nodebox_dir )
     return source_or_code
 
 
@@ -148,6 +154,10 @@ def make_movie(source_or_code, outputfile, frames, fps=30):
     
     # pdb.set_trace()
     
+    if os.path.exists( source_or_code ):
+        path = os.path.abspath( source_or_code )
+        d = os.path.split( path )[0]
+        os.chdir( d )
     runner = NodeBoxRunner()
     runner.run( source_or_code )
     
@@ -165,7 +175,7 @@ def make_movie(source_or_code, outputfile, frames, fps=30):
         writeframe( movie, runner.canvas )
     # movie.close()
     print()
-
+    os.chdir( nodebox_dir )
 
 
 def usage(err=""):
