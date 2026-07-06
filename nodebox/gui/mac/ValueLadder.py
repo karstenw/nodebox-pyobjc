@@ -11,10 +11,9 @@ if 0: # py2 version
 
 
 # import pdb
-
 # import Foundation
-import AppKit
 
+import AppKit
 
 parse = ast.parse
 Sub = ast.Sub

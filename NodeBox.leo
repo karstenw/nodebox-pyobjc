@@ -24,13 +24,13 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20230718111113.2" a="E"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
@@ -53,7 +53,7 @@
 <v t="karstenw.20170704104209.3"><vh>test</vh></v>
 </v>
 <v t="karstenw.20170704104453.1"><vh>geo</vh>
-<v t="karstenw.20170704104531.1"><vh>@clean nodebox/geo/__init__.py</vh>
+<v t="karstenw.20170704104531.1" a="E"><vh>@clean nodebox/geo/__init__.py</vh>
 <v t="karstenw.20170704104618.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170726154241.1"><vh>Python Functions</vh></v>
 <v t="karstenw.20170726154315.1"><vh>C Functions</vh></v>
@@ -421,10 +421,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
+<v t="karstenw.20170704104501.1"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -436,7 +436,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -1416,7 +1416,7 @@ if __name__=='__main__':
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20170704104119.1">__version__='1.10.2'
+<t tx="karstenw.20170704104119.1">__version__='1.10.3'
 
 </t>
 <t tx="karstenw.20170704104119.2">def get_version():
@@ -4820,10 +4820,10 @@ from . import dashboard
 from . import progressbar
 
 import pdb
-kwdbg = 1
+kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = 1
+debugging = 0
 
 pp = pprint.pprint
 
@@ -5276,10 +5276,6 @@ def stopScript_(self, sender=None):
         self.namespace[name] = getattr(graphics, name)
     for name in util.__all__:
         self.namespace[name] = getattr(util, name)
-    if '__file__' not in self.namespace:
-        if self.path:
-            self.namespace['__file__'] = self.path
-            print('__file__:', self.namespace['__file__'])
 
     # debug print all collected keywords
     if kwlog:
@@ -5295,14 +5291,22 @@ def stopScript_(self, sender=None):
     self.namespace["_ctx"] = self.context
     for attrName in dir(self.context):
         self.namespace[attrName] = getattr(self.context, attrName)
+    
     # Add the document global
     self.namespace["__doc__"] = self.__doc__
+    
     # Add the page number
     self.namespace["PAGENUM"] = self._pageNumber
+    
     # Add the frame number
     self.namespace["FRAME"] = self._frame
+    
     # Add the magic var
     self.namespace[MAGICVAR] = self.magicvar
+    
+    # Add the filepath
+    self.namespace['__file__'] = self.path
+    
     # XXX: will be empty after reset.
     #for var in self.vars:
     #    self.namespace[var.name] = var.value
@@ -7512,10 +7516,9 @@ if 0: # py2 version
 
 
 # import pdb
-
 # import Foundation
-import AppKit
 
+import AppKit
 
 parse = ast.parse
 Sub = ast.Sub

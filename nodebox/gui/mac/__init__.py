@@ -33,10 +33,10 @@ from . import dashboard
 from . import progressbar
 
 import pdb
-kwdbg = 1
+kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = 1
+debugging = 0
 
 pp = pprint.pprint
 
@@ -561,10 +561,6 @@ class NodeBoxDocument(NSDocument):
             self.namespace[name] = getattr(graphics, name)
         for name in util.__all__:
             self.namespace[name] = getattr(util, name)
-        if '__file__' not in self.namespace:
-            if self.path:
-                self.namespace['__file__'] = self.path
-                print('__file__:', self.namespace['__file__'])
 
         # debug print all collected keywords
         if kwlog:
@@ -580,14 +576,22 @@ class NodeBoxDocument(NSDocument):
         self.namespace["_ctx"] = self.context
         for attrName in dir(self.context):
             self.namespace[attrName] = getattr(self.context, attrName)
+        
         # Add the document global
         self.namespace["__doc__"] = self.__doc__
+        
         # Add the page number
         self.namespace["PAGENUM"] = self._pageNumber
+        
         # Add the frame number
         self.namespace["FRAME"] = self._frame
+        
         # Add the magic var
         self.namespace[MAGICVAR] = self.magicvar
+        
+        # Add the filepath
+        self.namespace['__file__'] = self.path
+        
         # XXX: will be empty after reset.
         #for var in self.vars:
         #    self.namespace[var.name] = var.value
