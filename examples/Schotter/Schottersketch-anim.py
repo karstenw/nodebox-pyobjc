@@ -3,6 +3,7 @@
 # https://github.com/abey79/vsketch
 #
 # http://www.medienkunstnetz.de/works/schotter/
+# Georg Nees
 #
 
 from random import seed
