@@ -561,15 +561,19 @@ class NodeBoxDocument(NSDocument):
             self.namespace[name] = getattr(graphics, name)
         for name in util.__all__:
             self.namespace[name] = getattr(util, name)
+        if '__file__' not in self.namespace:
+            if self.path:
+                self.namespace['__file__'] = self.path
+                print('__file__:', self.namespace['__file__'])
 
         # debug print all collected keywords
         if kwlog:
-            #print "util.__all__:"
+            #print( "util.__all__:" )
             #pp(util.__all__)
-            #print "graphics.__all__:"
+            #print( "graphics.__all__:" )
             #pp(graphics.__all__)
-            # print("namespace.keys():")
-            # pp(namespace.keys())
+            #print("namespace.keys():")
+            #pp( list(self.namespace.keys()) )
             pass
 
         # Add everything from the context object

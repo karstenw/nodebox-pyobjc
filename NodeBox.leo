@@ -15,10 +15,10 @@
 <v t="karstenw.20210322113320.1"><vh>Declarations 2</vh></v>
 <v t="karstenw.20170704103935.1"><vh>main</vh></v>
 </v>
-<v t="karstenw.20170704103951.1"><vh>@clean setup.py</vh>
+<v t="karstenw.20170704103951.1" a="E"><vh>@clean setup.py</vh>
 <v t="karstenw.20170704104003.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170804151930.1"><vh>@clean setup_large.py</vh>
+<v t="karstenw.20170804151930.1" a="E"><vh>@clean setup_large.py</vh>
 <v t="karstenw.20170804152129.1"><vh>Declarations</vh></v>
 </v>
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
@@ -30,9 +30,9 @@
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
-<v t="karstenw.20230718111113.2"><vh>class NodeBoxRunner</vh>
+<v t="karstenw.20230718111113.2" a="E"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
 <v t="karstenw.20230718111113.4"><vh>_check_animation</vh></v>
 <v t="karstenw.20230718111113.5"><vh>run</vh></v>
@@ -421,10 +421,10 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -436,7 +436,7 @@
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -5276,15 +5276,19 @@ def stopScript_(self, sender=None):
         self.namespace[name] = getattr(graphics, name)
     for name in util.__all__:
         self.namespace[name] = getattr(util, name)
+    if '__file__' not in self.namespace:
+        if self.path:
+            self.namespace['__file__'] = self.path
+            print('__file__:', self.namespace['__file__'])
 
     # debug print all collected keywords
     if kwlog:
-        #print "util.__all__:"
+        #print( "util.__all__:" )
         #pp(util.__all__)
-        #print "graphics.__all__:"
+        #print( "graphics.__all__:" )
         #pp(graphics.__all__)
-        # print("namespace.keys():")
-        # pp(namespace.keys())
+        #print("namespace.keys():")
+        #pp( list(self.namespace.keys()) )
         pass
 
     # Add everything from the context object
@@ -14367,10 +14371,11 @@ import subprocess
 
 import AppKit
 
+nodebox_dir = os.path.dirname(os.path.abspath(__file__))
+
 try:
     import nodebox
 except ImportError:
-    nodebox_dir = os.path.dirname(os.path.abspath(__file__))
     sys.path.append(os.path.dirname(nodebox_dir))
 
 import nodebox.graphics
@@ -14478,6 +14483,7 @@ text(str(FRAME), 70, 70, 36 )"""
 <t tx="karstenw.20230718111113.3">def __init__(self):
     # Force NSApp initialisation.
     NSApplication.sharedApplication().activateIgnoringOtherApps_(0)
+    #os.chdir( nodebox_dir )
     self.namespace = {}
     self.canvas = graphics.Canvas()
     self.context = graphics.Context(self.canvas, self.namespace)
@@ -14506,7 +14512,7 @@ text(str(FRAME), 70, 70, 36 )"""
         if 'setup' in self.namespace:
             self.namespace['setup']()
         self.namespace['draw']()
-    
+
 </t>
 <t tx="karstenw.20230718111113.6">def run_multiple(self, source_or_code, frames):
     # pdb.set_trace()
@@ -14562,6 +14568,9 @@ text(str(FRAME), 70, 70, 36 )"""
     an image.  Supported image extensions: pdf, tiff, png, jpg, gif"""
     
     if os.path.exists( source_or_code ):
+        path = os.path.abspath( source_or_code )
+        d = os.path.split( path )[0]
+        os.chdir( d )
         f = io.open( source_or_code, encoding="utf-8" )
         source_or_code = f.read()
         f.close()
@@ -14569,6 +14578,7 @@ text(str(FRAME), 70, 70, 36 )"""
     runner = NodeBoxRunner()
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
+    os.chdir( nodebox_dir )
     return source_or_code
 
 
@@ -14583,6 +14593,10 @@ text(str(FRAME), 70, 70, 36 )"""
     
     # pdb.set_trace()
     
+    if os.path.exists( source_or_code ):
+        path = os.path.abspath( source_or_code )
+        d = os.path.split( path )[0]
+        os.chdir( d )
     runner = NodeBoxRunner()
     runner.run( source_or_code )
     
@@ -14600,7 +14614,7 @@ text(str(FRAME), 70, 70, 36 )"""
         writeframe( movie, runner.canvas )
     # movie.close()
     print()
-
+    os.chdir( nodebox_dir )
 
 
 </t>
