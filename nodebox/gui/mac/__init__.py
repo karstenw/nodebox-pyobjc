@@ -36,7 +36,7 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = 0
+debugging = 1
 
 pp = pprint.pprint
 
