@@ -24,7 +24,7 @@
 <v t="karstenw.20170704104018.1"><vh>@clean setup_console.py</vh>
 <v t="karstenw.20170704104030.1"><vh>Declarations</vh></v>
 </v>
-<v t="karstenw.20170704104045.1"><vh>nodebox</vh>
+<v t="karstenw.20170704104045.1" a="E"><vh>nodebox</vh>
 <v t="karstenw.20170704104053.1"><vh>@clean nodebox/__init__.py</vh>
 <v t="karstenw.20170704104119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
@@ -699,8 +699,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -717,6 +717,13 @@
 <v t="karstenw.20170704105353.6"><vh>files</vh></v>
 <v t="karstenw.20170704105353.7"><vh>filelist</vh></v>
 <v t="karstenw.20170704105353.8"><vh>imagefiles</vh></v>
+</v>
+<v t="karstenw.20260709223641.1" a="E"><vh>OPEN DIALOGS</vh>
+<v t="karstenw.20260709223651.1"><vh>getOpenDialog</vh></v>
+<v t="karstenw.20260709224452.1"><vh>getFileDialog</vh></v>
+<v t="karstenw.20260709224457.1"><vh>getFolderDialog</vh></v>
+<v t="karstenw.20260709224502.1"><vh>cancelContinueAlert</vh></v>
+<v t="karstenw.20260709224508.1"><vh>errorDialog</vh></v>
 </v>
 <v t="karstenw.20170811141102.1"><vh>FONT FUNCTIONS</vh>
 <v t="karstenw.20170704105353.9"><vh>fontnames</vh></v>
@@ -4823,7 +4830,7 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = 0
+debugging = 1
 
 pp = pprint.pprint
 
@@ -15124,6 +15131,57 @@ pixelsize = property( getPixelSize )
     """Linearly interpolate the start value to the end value."""
     return start + t * (end - start)
 
+
+</t>
+<t tx="karstenw.20260709223641.1"></t>
+<t tx="karstenw.20260709223651.1">def getOpenDialog( files=True, folders=True, multiple=True, types=None ):
+    panel = AppKit.NSOpenPanel.openPanel()
+    panel.setCanChooseFiles_( files )
+    panel.setCanChooseDirectories_( folders )
+    panel.setAllowsMultipleSelection_( multiple )
+    if types is None:
+        types = []
+    rval = panel.runModalForTypes_( types )
+    if rval:
+        return [makeunicode(t) for t in panel.filenames()]
+    return []
+
+
+</t>
+<t tx="karstenw.20260709224452.1">def getFileDialog(multiple=False, types=None):
+    return getOpenDialog( files=True, folders=False, multiple=multiple, types=types )
+
+
+</t>
+<t tx="karstenw.20260709224457.1">def getFolderDialog(multiple=False, types=None):
+    return getOpenDialog( files=False, folders=True, multiple=multiple, types=types )
+
+
+</t>
+<t tx="karstenw.20260709224502.1">def cancelContinueAlert(title, message, butt1="OK", butt2=False):
+    """Run a generic Alert with buttons "Weiter" &amp; "Abbrechen".
+
+       Returns True if "Weiter"; False otherwise
+    """
+    alert = AppKit.NSAlert.alloc().init()
+    alert.setAlertStyle_( 0 )
+    alert.setInformativeText_( title )
+    alert.setMessageText_( message )
+    alert.setShowsHelp_( False )
+    alert.addButtonWithTitle_( butt1 )
+
+    if butt2:
+        # button 2 has keyboard equivalent "Escape"
+        button2 = alert.addButtonWithTitle_( butt2 )
+        button2.setKeyEquivalent_( chr(27) )
+
+    f = alert.runModal()
+    return f == AppKit.NSAlertFirstButtonReturn
+
+
+</t>
+<t tx="karstenw.20260709224508.1">def errorDialog( message="Error", title="Some error occured..."):
+    return cancelContinueAlert(title, message)
 
 </t>
 </tnodes>

@@ -267,6 +267,51 @@ def imagefiles( folderpathorlist, pathonly=True ):
             yield filetuple
 
 
+def getOpenDialog( files=True, folders=True, multiple=True, types=None ):
+    panel = AppKit.NSOpenPanel.openPanel()
+    panel.setCanChooseFiles_( files )
+    panel.setCanChooseDirectories_( folders )
+    panel.setAllowsMultipleSelection_( multiple )
+    if types is None:
+        types = []
+    rval = panel.runModalForTypes_( types )
+    if rval:
+        return [makeunicode(t) for t in panel.filenames()]
+    return []
+
+
+def getFileDialog(multiple=False, types=None):
+    return getOpenDialog( files=True, folders=False, multiple=multiple, types=types )
+
+
+def getFolderDialog(multiple=False, types=None):
+    return getOpenDialog( files=False, folders=True, multiple=multiple, types=types )
+
+
+def cancelContinueAlert(title, message, butt1="OK", butt2=False):
+    """Run a generic Alert with buttons "Weiter" & "Abbrechen".
+
+       Returns True if "Weiter"; False otherwise
+    """
+    alert = AppKit.NSAlert.alloc().init()
+    alert.setAlertStyle_( 0 )
+    alert.setInformativeText_( title )
+    alert.setMessageText_( message )
+    alert.setShowsHelp_( False )
+    alert.addButtonWithTitle_( butt1 )
+
+    if butt2:
+        # button 2 has keyboard equivalent "Escape"
+        button2 = alert.addButtonWithTitle_( butt2 )
+        button2.setKeyEquivalent_( chr(27) )
+
+    f = alert.runModal()
+    return f == AppKit.NSAlertFirstButtonReturn
+
+
+def errorDialog( message="Error", title="Some error occured..."):
+    return cancelContinueAlert(title, message)
+
 def fontnames():
     fontmanager = AppKit.NSFontManager.sharedFontManager()
     fontlist = fontmanager.availableFonts()
