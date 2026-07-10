@@ -22,6 +22,14 @@ import Foundation
 import AppKit
 import PyObjCTools.Conversion
 
+import requests
+
+import urllib.parse
+import urllib.request
+urlopen = urllib.request.urlopen
+url2pathname = urllib.request.url2pathname
+urlparse = urllib.parse.urlparse
+
 from . import kgp
 
 
@@ -37,6 +45,8 @@ __all__ = (
     'makeunicode', 'datestring', 'grid', 'random', 
     'autotext',
     'files', 'filelist', 'imagefiles',
+    'getOpenDialog', 'getFileDialog', 'getFolderDialog',
+    'cancelContinueAlert', 'errorDialog', 'readURL',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
     'aspectRatio', 'imagepalette',  'dithertypes', 'ditherimage',
@@ -267,25 +277,35 @@ def imagefiles( folderpathorlist, pathonly=True ):
             yield filetuple
 
 
-def getOpenDialog( files=True, folders=True, multiple=True, types=None ):
+def getOpenDialog( files=True, folders=True, multiple=True, types=None, asURLs=False ):
     panel = AppKit.NSOpenPanel.openPanel()
     panel.setCanChooseFiles_( files )
     panel.setCanChooseDirectories_( folders )
     panel.setAllowsMultipleSelection_( multiple )
-    if types is None:
-        types = []
     rval = panel.runModalForTypes_( types )
+    result = []
+    #if rval:
+    #    return [makeunicode(t) for t in panel.filenames()]
+    #if rval:
+    #    return [makeunicode( NSURL2str(t) ) for t in panel.URLs()]
     if rval:
-        return [makeunicode(t) for t in panel.filenames()]
-    return []
+        for nsurl in panel.URLs():
+            if asURLs:
+                result.append( NSURL2str(nsurl) )
+            else:
+                url = NSURL2str(nsurl)
+                p = urlparse( url )
+                filepath = url2pathname( p.path )
+                result.append( makeunicode(filepath) )
+    return result
 
 
 def getFileDialog(multiple=False, types=None):
     return getOpenDialog( files=True, folders=False, multiple=multiple, types=types )
 
 
-def getFolderDialog(multiple=False, types=None):
-    return getOpenDialog( files=False, folders=True, multiple=multiple, types=types )
+def getFolderDialog( multiple=False ):
+    return getOpenDialog( files=False, folders=True, multiple=multiple )
 
 
 def cancelContinueAlert(title, message, butt1="OK", butt2=False):
@@ -311,6 +331,38 @@ def cancelContinueAlert(title, message, butt1="OK", butt2=False):
 
 def errorDialog( message="Error", title="Some error occured..."):
     return cancelContinueAlert(title, message)
+
+def NSURL2str( nsurl ):
+    if isinstance(nsurl, AppKit.NSURL):
+        return str(nsurl.absoluteString())
+    return str(nsurl)
+
+def readURL( nsurl ):
+    """Read a file. May be local, may be http"""
+    url = NSURL2str(nsurl)
+    if 1:
+        print( "readURL_( '%s' )" % (url,) )
+
+    # pdb.set_trace()
+    
+    result = {
+        'headers':"",
+        'content':""
+    }
+    if url.startswith("file://"):
+        p = urlparse( url )
+        filepath = url2pathname( p.path )
+        f = open( filepath, 'rb')
+        result['content'] = f.read()
+        f.close()
+    else:
+        # does not work with file urls
+        r = requests.get( url )
+        result['content'] = r.content
+        result['headers'] = r.headers
+        r.close()
+    return result
+
 
 def fontnames():
     fontmanager = AppKit.NSFontManager.sharedFontManager()
