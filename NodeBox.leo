@@ -724,6 +724,8 @@
 <v t="karstenw.20260709224457.1"><vh>getFolderDialog</vh></v>
 <v t="karstenw.20260709224502.1"><vh>cancelContinueAlert</vh></v>
 <v t="karstenw.20260709224508.1"><vh>errorDialog</vh></v>
+<v t="karstenw.20260710002619.1"><vh>NSURL2str</vh></v>
+<v t="karstenw.20260710002546.1"><vh>readURL</vh></v>
 </v>
 <v t="karstenw.20170811141102.1"><vh>FONT FUNCTIONS</vh>
 <v t="karstenw.20170704105353.9"><vh>fontnames</vh></v>
@@ -7861,6 +7863,14 @@ import Foundation
 import AppKit
 import PyObjCTools.Conversion
 
+import requests
+
+import urllib.parse
+import urllib.request
+urlopen = urllib.request.urlopen
+url2pathname = urllib.request.url2pathname
+urlparse = urllib.parse.urlparse
+
 from . import kgp
 
 
@@ -7876,6 +7886,8 @@ __all__ = (
     'makeunicode', 'datestring', 'grid', 'random', 
     'autotext',
     'files', 'filelist', 'imagefiles',
+    'getOpenDialog', 'getFileDialog', 'getFolderDialog',
+    'cancelContinueAlert', 'errorDialog', 'readURL',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
     'aspectRatio', 'imagepalette',  'dithertypes', 'ditherimage',
@@ -15134,17 +15146,27 @@ pixelsize = property( getPixelSize )
 
 </t>
 <t tx="karstenw.20260709223641.1"></t>
-<t tx="karstenw.20260709223651.1">def getOpenDialog( files=True, folders=True, multiple=True, types=None ):
+<t tx="karstenw.20260709223651.1">def getOpenDialog( files=True, folders=True, multiple=True, types=None, asURLs=False ):
     panel = AppKit.NSOpenPanel.openPanel()
     panel.setCanChooseFiles_( files )
     panel.setCanChooseDirectories_( folders )
     panel.setAllowsMultipleSelection_( multiple )
-    if types is None:
-        types = []
     rval = panel.runModalForTypes_( types )
+    result = []
+    #if rval:
+    #    return [makeunicode(t) for t in panel.filenames()]
+    #if rval:
+    #    return [makeunicode( NSURL2str(t) ) for t in panel.URLs()]
     if rval:
-        return [makeunicode(t) for t in panel.filenames()]
-    return []
+        for nsurl in panel.URLs():
+            if asURLs:
+                result.append( NSURL2str(nsurl) )
+            else:
+                url = NSURL2str(nsurl)
+                p = urlparse( url )
+                filepath = url2pathname( p.path )
+                result.append( makeunicode(filepath) )
+    return result
 
 
 </t>
@@ -15153,8 +15175,8 @@ pixelsize = property( getPixelSize )
 
 
 </t>
-<t tx="karstenw.20260709224457.1">def getFolderDialog(multiple=False, types=None):
-    return getOpenDialog( files=False, folders=True, multiple=multiple, types=types )
+<t tx="karstenw.20260709224457.1">def getFolderDialog( multiple=False ):
+    return getOpenDialog( files=False, folders=True, multiple=multiple )
 
 
 </t>
@@ -15182,6 +15204,40 @@ pixelsize = property( getPixelSize )
 </t>
 <t tx="karstenw.20260709224508.1">def errorDialog( message="Error", title="Some error occured..."):
     return cancelContinueAlert(title, message)
+
+</t>
+<t tx="karstenw.20260710002546.1">def readURL( nsurl ):
+    """Read a file. May be local, may be http"""
+    url = NSURL2str(nsurl)
+    if 1:
+        print( "readURL_( '%s' )" % (url,) )
+
+    # pdb.set_trace()
+    
+    result = {
+        'headers':"",
+        'content':""
+    }
+    if url.startswith("file://"):
+        p = urlparse( url )
+        filepath = url2pathname( p.path )
+        f = open( filepath, 'rb')
+        result['content'] = f.read()
+        f.close()
+    else:
+        # does not work with file urls
+        r = requests.get( url )
+        result['content'] = r.content
+        result['headers'] = r.headers
+        r.close()
+    return result
+
+
+</t>
+<t tx="karstenw.20260710002619.1">def NSURL2str( nsurl ):
+    if isinstance(nsurl, AppKit.NSURL):
+        return str(nsurl.absoluteString())
+    return str(nsurl)
 
 </t>
 </tnodes>
