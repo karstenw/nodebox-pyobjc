@@ -9,9 +9,11 @@ The current version is 1.10.2
 
 Download the compiled app from the [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
 
-2026-06 The first final release. Python is up to 3.13, PyObjc is 12.1. Separate archives for arm and intel. 
+2026-07 
 
-2026-06-02 The `imagesize(path, data=None, pixelsize=False)`command reports the size od an image in points. if `pixelsize=True` the value returned will be in pixels.
+2026-07 The first final release. Python is up to 3.13, PyObjc is 12.1. Separate archives for arm and intel. 
+
+2026-06-02 The `imagesize(path, data=None, pixelsize=False)`command reports the size of an image in points. This was not detected for a long time since most images are 72 dpi. If `pixelsize=True` the value returned will be in pixels. 
 
 2022-03-28 App only release includes version for M1. This was generated on an iMac with 11.6.3 and has only been tested to run the examples. Not the Library.
 
@@ -67,7 +69,7 @@ Attention!
 		-  See example file `"examples/New Functions/Example var menu 2.py"`
 
 
-1.  Uses Python 3.13.13 and PyObjC 12.1
+1.  Uses Python 3.13.14 and PyObjC 12.1
 
 1.  Is self containend so it does not depend on an installed Python and therefore runs on different OS versions.
 
@@ -123,13 +125,61 @@ Attention!
 1.  New function `voiceattributes( voice )` (1.9.26).
 		return a dict with all attributes about that voice.
 
-1.	New function `anySpeakers()` anySpeakers():
+1.	New function `anySpeakers()`
 		Return a bool if ANY application is currently speaking.
 
 1.  New Examples subfolder "New Functions" which contains examples for the new functions.
 
 1.  New function `circle(cx, cy, rx, ry=None, draw=True)`
 		Draws a circle in current style with center = (cx, cy) and radii rx and ry. For better shoebot compatibility.
+
+1.  New Function `aspectRatio(size, maxsize=None, maxw=None, maxh=None)`
+		Calculates a new size:
+		
+		- aspectRatio( (4000,3000),512) -> (512, 384)
+		
+		- aspectRatio( (4000,3000), maxh=512) -> (683, 512)
+
+1.  New Function `imagepalette( pathOrPILimgage, mask=None )`
+
+1.  New Function `dithertypes()`
+		Returns a list of strings with possible dithertypes for ditherimage()
+
+1.  New Function `ditherimage(pathOrPILimgage, dithertype, threshhold)`
+		Dithers an imagefile. 
+
+1.  New Function `constrain( val, low, high)`
+		Constrain the given value to the range low...high
+
+1.  New Function `lerp( start, end, t)`
+		Linearly interpolate the start value to the end value with t running from 0.0 to 1.0
+
+1.  New Function `remap( val, src_start, src_end, dst_start, dst_end )`
+		Remap a value from the source range to the dest range
+
+1.  New Function `normalize(val, low, high)`
+		Normalize the given value and range to 0...1
+
+1.  New Function `getFileDialog(multiple=False, types=None, asURLs=False)`
+		open a file dialog. Set multiple=True if multiple selections should be allowed
+		types is a list of filetypes ('py', 'jpg', 'png')
+		asURLs if result should be a list of URLs. List of paths otherwise
+
+1.  New Function `getFolderDialog( multiple=False, asURLs=False)`
+		open a folder dialog. Set multiple=True if multiple selections should be allowed
+		asURLs if result should be a list of URLs. List of paths otherwise
+
+1.  New Function `errorDialog( message="Error", title="Some error occured...")`
+		
+
+1.  New Function `readURL( nsurl )`
+		returns (headerrdict, contentbytes) for nsurl. nsurl can be a string or a NSURL; works with file and net URLs
+
+
+
+
+
+
 
 
 
@@ -138,6 +188,7 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
+2026-07-10 Version 1.10.3
 
 2021-12-05 Version 1.10.1  "Goto Line..." works on python3
 
