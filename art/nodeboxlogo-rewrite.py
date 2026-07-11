@@ -16,11 +16,11 @@ cubedepth = cubesize * depthscale
 cell = n * cubesize + n * cubedepth + 2*offset + 3.5
 
 size( cell, cell )
-#size(1280, 1280 )
-print("WIDTH:", WIDTH)
+# print("WIDTH:", WIDTH)
 
 background( None )
 
+# sometimes a random number is needed in times of hard random.seed() lockdown
 coins = cycle( [random() for i in range(10000)] )
     
 joinstyle( ROUND )
@@ -28,6 +28,7 @@ capstyle( ROUND )
 autoclosepath( True )
 
 animate = 0
+flicker = 0
 
 if animate:
     speed( 8 )
@@ -46,20 +47,24 @@ def cube(x, y, width, depth):
     
     """
     # cubepoints
-    # front point 0
+    # front point 0-3 topleft,topright,bottomright,bottomleft
     f0 = x-depth, y+depth
     f1 = x-depth+width, y+depth
     f2 = x-depth+width, y+depth+width
     f3 = x-depth, y+depth+width
     
-    # back point 0
+    # back point 0-3 topleft,topright,bottomright,bottomleft
     b0 = x,y
     b1 = x+width,y
     b2 = x+width,y+width
     b3 = x,y+width
     
     def coin():
-        if next(coins) > 0.5:
+        """Toss a coin even if random is seed-locked;
+        but only when not flickering..."""
+        if not flicker:
+            return True
+        if next(coins) > 0.2:
             return True
         return False
 
@@ -89,24 +94,24 @@ def cube(x, y, width, depth):
     # stroke(s)
     
     if 0:
-        #back plane (b0,b1,b2,b3)
+        #back plane (b0,b1,b2,b3) - not visible
         if f != None:
             fill(f)
         rect(x, y, width, width)
     
     if 0:
-        #bottom  
+        #bottom - not visible
         cuberect( b3, b2, f2, f3 )
     
-    if 1: #coin():
-        #left
+    if 0:
+        #left - not visible
         cuberect( b0, b3, f3, f0 )
     
     # delta color for side planes
     if f != None:
         fill(f.hue, f.saturation-0, f.brightness-0.15)
     
-    if 1: #coin():
+    if coin():
         #top
         cuberect( b0, b1, f1, f0 )
     
@@ -114,7 +119,7 @@ def cube(x, y, width, depth):
     if f != None:
         fill(f.hue, f.saturation-0, f.brightness-0.15)
     
-    if 1: #coin():
+    if coin():
         #right
         cuberect( b1, b2, f2, f1 )
     
@@ -123,7 +128,7 @@ def cube(x, y, width, depth):
         stroke(s)
     
     # nostroke()
-    if 1:
+    if coin():
         # top back
         cubeline( b0, b1 )
         
@@ -136,13 +141,13 @@ def cube(x, y, width, depth):
         # lower right diagonal
         cubeline( b2, f2 )
         
-        # lower left diagonal
-        cubeline( b3, f3 )
+        # lower left diagonal - not visible
+        # cubeline( b3, f3 )
         
         # upper right diagonal
         cubeline( b1, f1 )
     
-    if 1: #coin():
+    if coin():
         #front
         if f != None:
             fill(f)
@@ -163,8 +168,8 @@ def draw():
     extended = 29
     classic = 55
     
-    #seed( kwfork )
-    #seed( extended )
+    # seed( kwfork )
+    # seed( extended )
     seed( classic )
     # seed(11)
     
@@ -199,9 +204,11 @@ def draw():
                 db = (1-c.b)/(n-1) * (x*0.85+y*0.15+z*0.05) * 1.1
                 fill(1.2-dr, 1.1-dg, 1.2-db)
                 
+                doit = True
                 if random() > 0.5:
                     nostroke()
                     nofill()
+                    doit = False
                 
                 dx = cubesize * x - cubedepth * z
                 dy = bottom - cubesize * y + cubedepth * z
@@ -209,7 +216,8 @@ def draw():
                 transform(CORNER)
                 translate( offset + cubesize + cubedepth, -cubesize)
                 #scale( 1.01 )
-                cube(dx, dy, cubesize, cubedepth)
+                if doit:
+                    cube(dx, dy, cubesize, cubedepth)
                 # print(dx, dy)
                 reset()
 
