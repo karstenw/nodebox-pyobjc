@@ -45,8 +45,8 @@ __all__ = (
     'makeunicode', 'datestring', 'grid', 'random', 
     'autotext',
     'files', 'filelist', 'imagefiles',
-    'getOpenDialog', 'getFileDialog', 'getFolderDialog',
-    'cancelContinueAlert', 'errorDialog', 'readURL',
+    'getFileDialog', 'getFolderDialog',
+    'errorDialog', 'readURL',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
     'aspectRatio', 'imagepalette',  'dithertypes', 'ditherimage',
@@ -300,11 +300,11 @@ def getOpenDialog( files=True, folders=True, multiple=True, types=None, asURLs=F
     return result
 
 
-def getFileDialog(multiple=False, types=None):
+def getFileDialog(multiple=False, types=None, asURLs=False):
     return getOpenDialog( files=True, folders=False, multiple=multiple, types=types )
 
 
-def getFolderDialog( multiple=False ):
+def getFolderDialog( multiple=False, asURLs=False ):
     return getOpenDialog( files=False, folders=True, multiple=multiple )
 
 
@@ -345,23 +345,22 @@ def readURL( nsurl ):
 
     # pdb.set_trace()
     
-    result = {
-        'headers':"",
-        'content':""
-    }
+    headers = {}
+    content = b""
+    
     if url.startswith("file://"):
         p = urlparse( url )
         filepath = url2pathname( p.path )
         f = open( filepath, 'rb')
-        result['content'] = f.read()
+        content = f.read()
         f.close()
     else:
         # does not work with file urls
         r = requests.get( url )
-        result['content'] = r.content
-        result['headers'] = r.headers
+        content = r.content
+        headers = r.headers
         r.close()
-    return result
+    return headers, content
 
 
 def fontnames():
@@ -532,7 +531,7 @@ def aspectRatio(size, maxsize=None, maxw=None, maxh=None):
         - or max height maxh."""
     w, h = size
     denom = maxcurrent = 1
-
+    
     if maxsize:
         maxcurrent = max(size)
         denom = maxsize
@@ -542,14 +541,14 @@ def aspectRatio(size, maxsize=None, maxw=None, maxh=None):
     elif maxh:
         maxcurrent = h
         denom = maxh
-
+    
     if maxcurrent == denom:
         return size
     elif maxsize == 0:
         return size
-
+    
     ratio = maxcurrent / float(denom)
-
+    
     neww = int(round(w / ratio))
     newh = int(round(h / ratio))
     return neww, newh
@@ -607,6 +606,7 @@ def imagepalette( pathOrPILimgage, mask=None ):
     return result
 
 
+# UNUSED
 def tempimagepath(mode='w+b', suffix='.png'):
     """Create a temporary file with mode and suffix.
     Returns pathstring."""

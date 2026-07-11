@@ -252,13 +252,13 @@
 <v t="karstenw.20170704104751.50"><vh>bounds</vh></v>
 <v t="karstenw.20170704104751.51"><vh>contains</vh></v>
 </v>
-<v t="karstenw.20230718091902.1"><vh>### Basic shapes ###</vh>
+<v t="karstenw.20230718091902.1" a="E"><vh>### Basic shapes ###</vh>
 <v t="karstenw.20170704104751.52"><vh>rect</vh></v>
 <v t="karstenw.20170704104751.53"><vh>oval</vh></v>
 <v t="karstenw.20170704104751.54"><vh>arc</vh></v>
 <v t="karstenw.20170704104751.55"><vh>line</vh></v>
 </v>
-<v t="karstenw.20230718091919.1"><vh>### List methods ###</vh>
+<v t="karstenw.20230718091919.1" a="E"><vh>### List methods ###</vh>
 <v t="karstenw.20170704104751.56"><vh>__getitem__</vh></v>
 <v t="karstenw.20170704104751.57"><vh>__iter__</vh></v>
 <v t="karstenw.20170704104751.58"><vh>__len__</vh></v>
@@ -699,8 +699,8 @@
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -744,7 +744,7 @@
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
 </v>
-<v t="karstenw.20171218183025.1"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
 <v t="karstenw.20180202050130.1"><vh>aspectRatio</vh></v>
 <v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
 <v t="karstenw.20171218183032.1"><vh>palette</vh></v>
@@ -7886,8 +7886,8 @@ __all__ = (
     'makeunicode', 'datestring', 'grid', 'random', 
     'autotext',
     'files', 'filelist', 'imagefiles',
-    'getOpenDialog', 'getFileDialog', 'getFolderDialog',
-    'cancelContinueAlert', 'errorDialog', 'readURL',
+    'getFileDialog', 'getFolderDialog',
+    'errorDialog', 'readURL',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
     'aspectRatio', 'imagepalette',  'dithertypes', 'ditherimage',
@@ -10279,7 +10279,7 @@ setup (name = "cGeo",
         - or max height maxh."""
     w, h = size
     denom = maxcurrent = 1
-
+    
     if maxsize:
         maxcurrent = max(size)
         denom = maxsize
@@ -10289,14 +10289,14 @@ setup (name = "cGeo",
     elif maxh:
         maxcurrent = h
         denom = maxh
-
+    
     if maxcurrent == denom:
         return size
     elif maxsize == 0:
         return size
-
+    
     ratio = maxcurrent / float(denom)
-
+    
     neww = int(round(w / ratio))
     newh = int(round(h / ratio))
     return neww, newh
@@ -10343,7 +10343,8 @@ setup (name = "cGeo",
 
 
 </t>
-<t tx="karstenw.20180207131456.1">def tempimagepath(mode='w+b', suffix='.png'):
+<t tx="karstenw.20180207131456.1"># UNUSED
+def tempimagepath(mode='w+b', suffix='.png'):
     """Create a temporary file with mode and suffix.
     Returns pathstring."""
     fob = tempfile.NamedTemporaryFile(mode=mode, suffix=suffix, delete=False)
@@ -15170,12 +15171,12 @@ pixelsize = property( getPixelSize )
 
 
 </t>
-<t tx="karstenw.20260709224452.1">def getFileDialog(multiple=False, types=None):
+<t tx="karstenw.20260709224452.1">def getFileDialog(multiple=False, types=None, asURLs=False):
     return getOpenDialog( files=True, folders=False, multiple=multiple, types=types )
 
 
 </t>
-<t tx="karstenw.20260709224457.1">def getFolderDialog( multiple=False ):
+<t tx="karstenw.20260709224457.1">def getFolderDialog( multiple=False, asURLs=False ):
     return getOpenDialog( files=False, folders=True, multiple=multiple )
 
 
@@ -15214,23 +15215,22 @@ pixelsize = property( getPixelSize )
 
     # pdb.set_trace()
     
-    result = {
-        'headers':"",
-        'content':""
-    }
+    headers = {}
+    content = b""
+    
     if url.startswith("file://"):
         p = urlparse( url )
         filepath = url2pathname( p.path )
         f = open( filepath, 'rb')
-        result['content'] = f.read()
+        content = f.read()
         f.close()
     else:
         # does not work with file urls
         r = requests.get( url )
-        result['content'] = r.content
-        result['headers'] = r.headers
+        content = r.content
+        headers = r.headers
         r.close()
-    return result
+    return headers, content
 
 
 </t>
