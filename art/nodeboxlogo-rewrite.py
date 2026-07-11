@@ -1,13 +1,14 @@
 from random import seed
+from itertools import cycle
 
 # export as tiff and use with Icon Composer"
 
 i = 0
-cubesize = 111.2223
+cubesize = 225.8888
 n = 3
-offset = 3
+offset = 2
 
-strokew = 2.8284
+strokew = 4.5
 
 depthscale = 0.5
 cubedepth = cubesize * depthscale
@@ -18,14 +19,66 @@ size( cell, cell )
 #size(1280, 1280 )
 print("WIDTH:", WIDTH)
 
-background(1)
+background( None )
+
+coins = cycle( [random() for i in range(10000)] )
+    
+joinstyle( ROUND )
+capstyle( ROUND )
+autoclosepath( True )
 
 animate = 0
 
 if animate:
-    speed( 2 )
+    speed( 8 )
 
 def cube(x, y, width, depth):
+    """
+    cube origin is back top left corner. back plane is numbered 0-3,
+    front plane is numbered 0-3
+    
+     b0--b1
+     /|  /|
+   f0--f1 | 
+    |b3-|b2
+    |/  |/
+   f3--f2
+    
+    """
+    # cubepoints
+    # front point 0
+    f0 = x-depth, y+depth
+    f1 = x-depth+width, y+depth
+    f2 = x-depth+width, y+depth+width
+    f3 = x-depth, y+depth+width
+    
+    # back point 0
+    b0 = x,y
+    b1 = x+width,y
+    b2 = x+width,y+width
+    b3 = x,y+width
+    
+    def coin():
+        if next(coins) > 0.5:
+            return True
+        return False
+
+    def cubeline( start, end ):
+        # draw a line between two cube corners
+        x1,y1 = start
+        x2,y2 = end
+        line( x1,y1, x2,y2 )
+
+
+    def cuberect( p1,p2,p3,p4):
+        # draw a rect between 4 cube corners
+        beginpath( *p1 )
+        lineto( *p2 )
+        lineto( *p3 )
+        lineto( *p4 )
+        endpath()
+
+    
     colormode(HSB)
     f = fill()
     s = stroke()
@@ -36,104 +89,91 @@ def cube(x, y, width, depth):
     # stroke(s)
     
     if 0:
-        #back
+        #back plane (b0,b1,b2,b3)
         if f != None:
             fill(f)
         rect(x, y, width, width)
     
     if 0:
-        #bottom
-        beginpath(x, y+width)
-        lineto(x-depth, y+width+depth)
-        lineto(x-depth+width, y+width+depth)
-        lineto(x+width, y+width)
-        endpath()
+        #bottom  
+        cuberect( b3, b2, f2, f3 )
     
-    if 0:
+    if 1: #coin():
         #left
-        beginpath(x, y)
-        lineto(x-depth, y+depth)
-        lineto(x-depth, y+width+depth)
-        lineto(x, y+width)
-        endpath()
+        cuberect( b0, b3, f3, f0 )
     
-    if 1:
+    # delta color for side planes
+    if f != None:
+        fill(f.hue, f.saturation-0, f.brightness-0.15)
+    
+    if 1: #coin():
         #top
-        # delta color for side planes
-        if f != None:
-            fill(f.hue, f.saturation-0, f.brightness-0.15)
-        beginpath(x, y)
-        lineto(x+width, y)
-        lineto(x+width-depth, y+depth)
-        lineto(x-depth, y+depth)
-        endpath()
+        cuberect( b0, b1, f1, f0 )
     
-    if 1:
+    # delta color for side planes
+    if f != None:
+        fill(f.hue, f.saturation-0, f.brightness-0.15)
+    
+    if 1: #coin():
         #right
-        # delta color for side planes
-        if f != None:
-            fill(f.hue, f.saturation-0, f.brightness-0.15)
-        beginpath(x+width, y)
-        lineto(x+width-depth, y+depth)
-        lineto(x+width-depth, y+width+depth)
-        lineto(x+width, y+width)
-        endpath()
+        cuberect( b1, b2, f2, f1 )
     
     # restore and redo some strokes
     if s != None:
         stroke(s)
+    
     # nostroke()
     if 1:
-        # top front
-        line(x, y, x+width, y)
+        # top back
+        cubeline( b0, b1 )
         
         # upper left diagonal
-        line(x, y, x-depth, y+depth)
+        cubeline( b0, f0 )
         
         # back right down
-        line(x+width, y, x+width, y+width)
+        cubeline( b1, b2 )
         
         # lower right diagonal
-        line(x+width, y+width, x+width-depth, y+width+depth)
+        cubeline( b2, f2 )
         
-        # lower right diagonal
-        line(x+width, y+width, x+width-depth, y+width+depth)
+        # lower left diagonal
+        cubeline( b3, f3 )
         
-        
-        line(x, y+width, x-depth, y+width+depth)
-        line(x+width, y, x+width-depth, y+depth)
+        # upper right diagonal
+        cubeline( b1, f1 )
     
-    if 1:
+    if 1: #coin():
         #front
         if f != None:
             fill(f)
         rect(x-depth, y+depth, width, width)
     
-    x += depth
-    y += depth
-
 
 def setup():
     seed( i )
 
+
 def draw():
     global i 
     i = i + 1
-    # i = 15
     
+    # different seed values for certain results - uncomment accordingly
+    # for animation seed( i ) should be active
     kwfork = 15
     extended = 29
     classic = 55
-    seed(i)
-    seed( kwfork )
-    # seed( extended )
-    # seed( classic )
+    
+    #seed( kwfork )
+    #seed( extended )
+    seed( classic )
     # seed(11)
     
-    #print("seed( %i )" % (i,))
-
+    if animate:
+        seed(i)
+        print("seed( %i )" % (i,))
+    
     strokewidth( strokew )
-
+    
     colormode(RGB)
     c = color( 0.05, 0.65, 0.85)
     c.brightness += 0.2
