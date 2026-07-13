@@ -1,14 +1,15 @@
 from random import seed
 from itertools import cycle
 
-# export as tiff and use with Icon Composer"
 
 i = 0
 cubesize = 225.8888
+#cubesize = 110
 n = 3
 offset = 2
 
 strokew = 4.5
+#strokew = 2.667
 
 depthscale = 0.5
 cubedepth = cubesize * depthscale
@@ -16,13 +17,12 @@ cubedepth = cubesize * depthscale
 cell = n * cubesize + n * cubedepth + 2*offset + 3.5
 
 size( cell, cell )
-# print("WIDTH:", WIDTH)
-
-background( None )
+print("WIDTH:", WIDTH)
 
 # sometimes a random number is needed in times of hard random.seed() lockdown
 coins = cycle( [random() for i in range(10000)] )
-    
+
+
 joinstyle( ROUND )
 capstyle( ROUND )
 autoclosepath( True )
@@ -32,6 +32,17 @@ flicker = 0
 
 if animate:
     speed( 8 )
+
+# different seed values for certain results - uncomment accordingly
+kwfork = 15
+extended = 29
+classic = 55
+
+seed( classic )
+#seed( extended )
+#seed( kwfork )
+#seed(11)
+
 
 def cube(x, y, width, depth):
     """
@@ -162,17 +173,6 @@ def draw():
     global i 
     i = i + 1
     
-    # different seed values for certain results - uncomment accordingly
-    # for animation seed( i ) should be active
-    kwfork = 15
-    extended = 29
-    classic = 55
-    
-    # seed( kwfork )
-    # seed( extended )
-    seed( classic )
-    # seed(11)
-    
     if animate:
         seed(i)
         print("seed( %i )" % (i,))
@@ -182,7 +182,8 @@ def draw():
     colormode(RGB)
     c = color( 0.05, 0.65, 0.85)
     c.brightness += 0.2
-
+    
+    background( None )
     
     # from left to right
     for x in range( n ):
@@ -214,7 +215,7 @@ def draw():
                 dy = bottom - cubesize * y + cubedepth * z
             
                 transform(CORNER)
-                translate( offset + cubesize + cubedepth, -cubesize)
+                translate( offset + cubesize + cubedepth, offset - cubesize)
                 #scale( 1.01 )
                 if doit:
                     cube(dx, dy, cubesize, cubedepth)

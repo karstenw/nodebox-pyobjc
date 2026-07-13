@@ -11,6 +11,7 @@
 <vnodes>
 <v t="karstenw.20260702150854.2" a="E"><vh>@clean nodeboxlogo-rewrite.py</vh>
 <v t="karstenw.20260702150922.1"><vh>Declarations</vh></v>
+<v t="karstenw.20260711180731.1"><vh>newHeadline</vh></v>
 <v t="karstenw.20260702150922.3" a="E"><vh>cube</vh>
 <v t="karstenw.20260710155254.1"><vh>&lt;&lt; helpers &gt;&gt;</vh></v>
 </v>
@@ -26,36 +27,6 @@
 <t tx="karstenw.20260702150922.1">from random import seed
 from itertools import cycle
 
-# export as tiff and use with Icon Composer"
-
-i = 0
-cubesize = 225.5
-n = 3
-offset = 2
-
-strokew = 4.5
-
-depthscale = 0.5
-cubedepth = cubesize * depthscale
-
-cell = n * cubesize + n * cubedepth + 2*offset + 3.5
-
-size( cell, cell )
-#size(1280, 1280 )
-# print("WIDTH:", WIDTH)
-
-background( None )
-
-coins = cycle( [random() for i in range(10000)] )
-    
-joinstyle( ROUND )
-capstyle( ROUND )
-autoclosepath( True )
-
-animate = 0
-
-if animate:
-    speed( 8 )
 
 </t>
 <t tx="karstenw.20260702150922.3">def cube(x, y, width, depth):
@@ -72,13 +43,13 @@ if animate:
     
     """
     # cubepoints
-    # front point 0
+    # front point 0-3 topleft,topright,bottomright,bottomleft
     f0 = x-depth, y+depth
     f1 = x-depth+width, y+depth
     f2 = x-depth+width, y+depth+width
     f3 = x-depth, y+depth+width
     
-    # back point 0
+    # back point 0-3 topleft,topright,bottomright,bottomleft
     b0 = x,y
     b1 = x+width,y
     b2 = x+width,y+width
@@ -96,24 +67,24 @@ if animate:
     # stroke(s)
     
     if 0:
-        #back plane (b0,b1,b2,b3)
+        #back plane (b0,b1,b2,b3) - not visible
         if f != None:
             fill(f)
         rect(x, y, width, width)
     
     if 0:
-        #bottom  
+        #bottom - not visible
         cuberect( b3, b2, f2, f3 )
     
-    if 1: #coin():
-        #left
+    if 0:
+        #left - not visible
         cuberect( b0, b3, f3, f0 )
     
     # delta color for side planes
     if f != None:
         fill(f.hue, f.saturation-0, f.brightness-0.15)
     
-    if 1: #coin():
+    if coin():
         #top
         cuberect( b0, b1, f1, f0 )
     
@@ -121,7 +92,7 @@ if animate:
     if f != None:
         fill(f.hue, f.saturation-0, f.brightness-0.15)
     
-    if 1: #coin():
+    if coin():
         #right
         cuberect( b1, b2, f2, f1 )
     
@@ -130,7 +101,7 @@ if animate:
         stroke(s)
     
     # nostroke()
-    if 1:
+    if coin():
         # top back
         cubeline( b0, b1 )
         
@@ -143,13 +114,13 @@ if animate:
         # lower right diagonal
         cubeline( b2, f2 )
         
-        # lower left diagonal
-        cubeline( b3, f3 )
+        # lower left diagonal - not visible
+        # cubeline( b3, f3 )
         
         # upper right diagonal
         cubeline( b1, f1 )
     
-    if 1: #coin():
+    if coin():
         #front
         if f != None:
             fill(f)
@@ -166,17 +137,6 @@ if animate:
     global i 
     i = i + 1
     
-    # different seed values for certain results - uncomment accordingly
-    # for animation seed( i ) should be active
-    kwfork = 15
-    extended = 29
-    classic = 55
-    
-    #seed( kwfork )
-    #seed( extended )
-    seed( classic )
-    # seed(11)
-    
     if animate:
         seed(i)
         print("seed( %i )" % (i,))
@@ -186,7 +146,8 @@ if animate:
     colormode(RGB)
     c = color( 0.05, 0.65, 0.85)
     c.brightness += 0.2
-
+    
+    background( None )
     
     # from left to right
     for x in range( n ):
@@ -208,17 +169,20 @@ if animate:
                 db = (1-c.b)/(n-1) * (x*0.85+y*0.15+z*0.05) * 1.1
                 fill(1.2-dr, 1.1-dg, 1.2-db)
                 
+                doit = True
                 if random() &gt; 0.5:
                     nostroke()
                     nofill()
+                    doit = False
                 
                 dx = cubesize * x - cubedepth * z
                 dy = bottom - cubesize * y + cubedepth * z
             
                 transform(CORNER)
-                translate( offset + cubesize + cubedepth, -cubesize)
+                translate( offset + cubesize + cubedepth, offset - cubesize)
                 #scale( 1.01 )
-                cube(dx, dy, cubesize, cubedepth)
+                if doit:
+                    cube(dx, dy, cubesize, cubedepth)
                 # print(dx, dy)
                 reset()
 
@@ -227,7 +191,11 @@ if not animate:
 
 </t>
 <t tx="karstenw.20260710155254.1">def coin():
-    if next(coins) &gt; 0.5:
+    """Toss a coin even if random is seed-locked;
+    but only when not flickering..."""
+    if not flicker:
+        return True
+    if next(coins) &gt; 0.2:
         return True
     return False
 
@@ -245,6 +213,49 @@ def cuberect( p1,p2,p3,p4):
     lineto( *p3 )
     lineto( *p4 )
     endpath()
+
+</t>
+<t tx="karstenw.20260711180731.1">i = 0
+cubesize = 225.8888
+#cubesize = 110
+n = 3
+offset = 2
+
+strokew = 4.5
+#strokew = 2.667
+
+depthscale = 0.5
+cubedepth = cubesize * depthscale
+
+cell = n * cubesize + n * cubedepth + 2*offset + 3.5
+
+size( cell, cell )
+print("WIDTH:", WIDTH)
+
+# sometimes a random number is needed in times of hard random.seed() lockdown
+coins = cycle( [random() for i in range(10000)] )
+
+
+joinstyle( ROUND )
+capstyle( ROUND )
+autoclosepath( True )
+
+animate = 0
+flicker = 0
+
+if animate:
+    speed( 8 )
+
+# different seed values for certain results - uncomment accordingly
+kwfork = 15
+extended = 29
+classic = 55
+
+seed( classic )
+#seed( extended )
+#seed( kwfork )
+#seed(11)
+
 
 </t>
 </tnodes>
