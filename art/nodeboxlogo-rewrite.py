@@ -15,6 +15,7 @@ depthscale = 0.5
 cubedepth = cubesize * depthscale
 
 cell = n * cubesize + n * cubedepth + 2*offset + 3.5
+cell = int(round(cell))
 
 size( cell, cell )
 print("WIDTH:", WIDTH)
@@ -39,9 +40,9 @@ extended = 29
 classic = 55
 
 seed( classic )
-#seed( extended )
-#seed( kwfork )
-#seed(11)
+seed( extended )
+seed( kwfork )
+# seed(11)
 
 
 def cube(x, y, width, depth):
