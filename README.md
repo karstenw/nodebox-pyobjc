@@ -165,6 +165,12 @@ Attention!
 		types is a list of filetypes ('py', 'jpg', 'png')
 		asURLs if result should be a list of URLs. List of paths otherwise
 
+1.  New Function `getAnyDialog( multiple=True, types=None, asURLs=False )`
+		Opens anything. File or folder.
+		open a file dialog. Set multiple=True if multiple selections should be allowed
+		types is a list of filetypes ('py', 'jpg', 'png')
+		asURLs if result should be a list of URLs. List of paths otherwise
+
 1.  New Function `getFolderDialog( multiple=False, asURLs=False)`
 		open a folder dialog. Set multiple=True if multiple selections should be allowed
 		asURLs if result should be a list of URLs. List of paths otherwise

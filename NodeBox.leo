@@ -718,9 +718,10 @@
 <v t="karstenw.20170704105353.7"><vh>filelist</vh></v>
 <v t="karstenw.20170704105353.8"><vh>imagefiles</vh></v>
 </v>
-<v t="karstenw.20260709223641.1"><vh>OPEN DIALOGS</vh>
+<v t="karstenw.20260709223641.1" a="E"><vh>OPEN DIALOGS</vh>
 <v t="karstenw.20260709223651.1"><vh>getOpenDialog</vh></v>
 <v t="karstenw.20260709224452.1"><vh>getFileDialog</vh></v>
+<v t="karstenw.20260718150726.1"><vh>getAnyDialog</vh></v>
 <v t="karstenw.20260709224457.1"><vh>getFolderDialog</vh></v>
 <v t="karstenw.20260709224502.1"><vh>cancelContinueAlert</vh></v>
 <v t="karstenw.20260709224508.1"><vh>errorDialog</vh></v>
@@ -7886,7 +7887,7 @@ __all__ = (
     'makeunicode', 'datestring', 'grid', 'random', 
     'autotext',
     'files', 'filelist', 'imagefiles',
-    'getFileDialog', 'getFolderDialog',
+    'getFileDialog', 'getAnyDialog', 'getFolderDialog',
     'errorDialog', 'readURL',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
@@ -15172,12 +15173,12 @@ pixelsize = property( getPixelSize )
 
 </t>
 <t tx="karstenw.20260709224452.1">def getFileDialog(multiple=False, types=None, asURLs=False):
-    return getOpenDialog( files=True, folders=False, multiple=multiple, types=types )
+    return getOpenDialog( files=True, folders=False, multiple=multiple, types=types, asURLs=asURLs )
 
 
 </t>
 <t tx="karstenw.20260709224457.1">def getFolderDialog( multiple=False, asURLs=False ):
-    return getOpenDialog( files=False, folders=True, multiple=multiple )
+    return getOpenDialog( files=False, folders=True, multiple=multiple, asURLs=asURLs )
 
 
 </t>
@@ -15238,6 +15239,11 @@ pixelsize = property( getPixelSize )
     if isinstance(nsurl, AppKit.NSURL):
         return str(nsurl.absoluteString())
     return str(nsurl)
+
+</t>
+<t tx="karstenw.20260718150726.1">def getAnyDialog( multiple=True, types=None, asURLs=False ):
+    return getOpenDialog( files=True, folders=True, multiple=True, types=types, asURLs=asURLs )
+
 
 </t>
 </tnodes>

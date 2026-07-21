@@ -45,7 +45,7 @@ __all__ = (
     'makeunicode', 'datestring', 'grid', 'random', 
     'autotext',
     'files', 'filelist', 'imagefiles',
-    'getFileDialog', 'getFolderDialog',
+    'getFileDialog', 'getAnyDialog', 'getFolderDialog',
     'errorDialog', 'readURL',
     'fontnames', 'fontfamilies',
     'voices', 'voiceattributes', 'anySpeakers', 'say',
@@ -301,11 +301,15 @@ def getOpenDialog( files=True, folders=True, multiple=True, types=None, asURLs=F
 
 
 def getFileDialog(multiple=False, types=None, asURLs=False):
-    return getOpenDialog( files=True, folders=False, multiple=multiple, types=types )
+    return getOpenDialog( files=True, folders=False, multiple=multiple, types=types, asURLs=asURLs )
+
+
+def getAnyDialog( multiple=True, types=None, asURLs=False ):
+    return getOpenDialog( files=True, folders=True, multiple=True, types=types, asURLs=asURLs )
 
 
 def getFolderDialog( multiple=False, asURLs=False ):
-    return getOpenDialog( files=False, folders=True, multiple=multiple )
+    return getOpenDialog( files=False, folders=True, multiple=multiple, asURLs=asURLs )
 
 
 def cancelContinueAlert(title, message, butt1="OK", butt2=False):
