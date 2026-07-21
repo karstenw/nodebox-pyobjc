@@ -30,9 +30,7 @@ Attention!
 
 ### The download includes the NodeBox-Library. When first starting NodeBox, go to the preferences and set the Library folder to the included folder.
 
-#### 1. Open the script "install-conceptnet-database.py" and run it. This installs the conceptnet database
-
-#### 1. Open the script "download_corpora.py" and run it. This installs the NLTK database and downloads some data.
+#### 1. Open the script "DOWNLOAD_DATABASES_AND_INSTALL_CONCEPTNET.py" and run it. This loads databases for nltk, wn, textblob and builds the conceptnet database.
 
 
 #### Differences from the official version:
