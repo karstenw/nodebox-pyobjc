@@ -35,7 +35,7 @@ if frames:
     rect(x, y-fsize, t1w+dx, t1h+dy)
 
 
-y = 200
+y = 260
 fill(0)
 dx, dy, t2w, t2h = alltextmetrics(t2, fontsize=fsize, font=f)
 text(t2, x+dx, y+dy)
@@ -44,7 +44,7 @@ nofill()
 if frames:
     rect(x, y-fsize, t2w+dx, t2h+dy)
 
-y = 300
+y = 420
 fill(0)
 dx, dy, t3w, t3h = alltextmetrics(t3, fontsize=fsize, font=f)
 text(t3, x+dx, y+dy)
