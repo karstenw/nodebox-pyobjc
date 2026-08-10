@@ -56,7 +56,7 @@ total = errors = 0
 
 ignorefiles = ("Example speech 3 allvoices.py", "Example speech 4 allvoicefiles.py", "Example filelist.py")
 
-pdb.set_trace()
+# pdb.set_trace()
 
 for rec in alldemos:
     filepath, size, lastmodified, mode, islink = rec
