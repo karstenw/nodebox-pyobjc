@@ -30,7 +30,7 @@
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20230718111113.2" a="E"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
@@ -432,11 +432,11 @@
 <v t="karstenw.20170704105032.4"><vh>__init__</vh></v>
 <v t="karstenw.20170704105032.5"><vh>write</vh></v>
 </v>
-<v t="karstenw.20210623180227.1" a="E"><vh>NodeBoxApplication</vh>
+<v t="karstenw.20210623180227.1"><vh>NodeBoxApplication</vh>
 <v t="karstenw.20210623180253.1"><vh>awakeFromNib</vh></v>
 <v t="karstenw.20210623180302.1"><vh>finishLaunching</vh></v>
 </v>
-<v t="karstenw.20170704105032.6" a="E"><vh>class NodeBoxDocument</vh>
+<v t="karstenw.20170704105032.6"><vh>class NodeBoxDocument</vh>
 <v t="karstenw.20170704105032.7"><vh>windowNibName</vh></v>
 <v t="karstenw.20170704105032.8"><vh>init</vh></v>
 <v t="karstenw.20170704105032.9"><vh>autosavesInPlace</vh></v>
@@ -566,7 +566,7 @@
 <v t="karstenw.20211127131740.1"><vh>DEBUG</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
@@ -681,7 +681,7 @@
 <v t="karstenw.20170704105119.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704105119.2"><vh>errorAlert</vh></v>
 </v>
-<v t="karstenw.20170704104953.1" a="E"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
+<v t="karstenw.20170704104953.1"><vh>@clean nodebox/gui/mac/ValueLadder.py</vh>
 <v t="karstenw.20170704105126.1"><vh>Declarations</vh></v>
 <v t="karstenw.20211017190738.1"><vh>+ Globals +</vh></v>
 <v t="karstenw.20170704105126.2"><vh>class ValueLadder</vh>
@@ -718,7 +718,7 @@
 <v t="karstenw.20170704105353.7"><vh>filelist</vh></v>
 <v t="karstenw.20170704105353.8"><vh>imagefiles</vh></v>
 </v>
-<v t="karstenw.20260709223641.1" a="E"><vh>OPEN DIALOGS</vh>
+<v t="karstenw.20260709223641.1"><vh>OPEN DIALOGS</vh>
 <v t="karstenw.20260709223651.1"><vh>getOpenDialog</vh></v>
 <v t="karstenw.20260709224452.1"><vh>getFileDialog</vh></v>
 <v t="karstenw.20260718150726.1"><vh>getAnyDialog</vh></v>
@@ -745,7 +745,7 @@
 <v t="karstenw.20170804123557.1"><vh>anySpeakers</vh></v>
 <v t="karstenw.20170801052423.1"><vh>say</vh></v>
 </v>
-<v t="karstenw.20171218183025.1" a="E"><vh>IMAGE FUNCTIONS</vh>
+<v t="karstenw.20171218183025.1"><vh>IMAGE FUNCTIONS</vh>
 <v t="karstenw.20180202050130.1"><vh>aspectRatio</vh></v>
 <v t="karstenw.20171218183048.1"><vh>asvoid</vh></v>
 <v t="karstenw.20171218183032.1"><vh>palette</vh></v>
@@ -834,18 +834,21 @@
 <v t="karstenw.20170704105528.36"><vh>genProgram</vh></v>
 </v>
 </v>
-<v t="karstenw.20260604195825.1"><vh>MP4Support</vh>
+<v t="karstenw.20260604195825.1" a="E"><vh>MP4Support</vh>
 <v t="karstenw.20260604195850.1" a="E"><vh>@clean nodebox/util/MP4Support/__init__.py</vh>
 <v t="karstenw.20260604195902.1"><vh>Declarations</vh></v>
 <v t="karstenw.20260605104136.1"><vh>Globals</vh></v>
 <v t="karstenw.20260605144846.1"><vh>writeframe</vh></v>
+<v t="karstenw.20260725132958.1"><vh>frame2image</vh></v>
+<v t="karstenw.20260725133651.1"><vh>frame2imagefile</vh></v>
+<v t="karstenw.20260725132749.1"><vh>exportframes</vh></v>
 <v t="karstenw.20260604202705.1"><vh>class MovieReader</vh>
 <v t="karstenw.20260604203601.1"><vh>__init__</vh></v>
 <v t="karstenw.20260605103736.1"><vh>openmovie</vh></v>
 <v t="karstenw.20260605100859.1"><vh>readMeta</vh></v>
 <v t="karstenw.20260604203957.1"><vh>readFrames</vh></v>
 </v>
-<v t="karstenw.20260604202729.1" a="E"><vh>class MovieWriter</vh>
+<v t="karstenw.20260604202729.1"><vh>class MovieWriter</vh>
 <v t="karstenw.20260604203737.1"><vh>__init__</vh></v>
 <v t="karstenw.20260605105418.1"><vh>openmovie</vh></v>
 <v t="karstenw.20260604204015.1"><vh>writeFrames</vh></v>
@@ -4833,7 +4836,7 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = True
 
 pp = pprint.pprint
 
@@ -14848,8 +14851,10 @@ if __name__=='__main__':
 <t tx="karstenw.20260604195902.1">import os
 import tempfile
 import pprint
-import Foundation
+import numpy as np
 import imageio_ffmpeg
+
+import Foundation
 import AppKit
 
 pp=pprint.pprint
@@ -15245,6 +15250,54 @@ pixelsize = property( getPixelSize )
     return getOpenDialog( files=True, folders=True, multiple=True, types=types, asURLs=asURLs )
 
 
+</t>
+<t tx="karstenw.20260725132749.1">def exportframes(movie, folder, basename):
+    frames = movie.openmovie()
+    meta = frames.__next__()
+    pprint.pprint( meta )
+    
+    # export folder
+    folder = os.path.abspath( folder )
+    if not os.path.exists( folder ):
+        os.makedirs( folder )
+    
+    
+    imghashes = set()
+    
+    width, height = meta["size"]
+    pixels = width * height
+    idx = 0
+    for frame in frames:
+        idx += 1
+        
+        # make filename &amp; path
+        filename = "%s-%s.png" % (basename, str( idx ).rjust(5, '0'),)
+        fullpath = os.path.join( folder, filename )    
+        
+        if 0:
+            # export one frame per second
+            if idx % 14 == 0:
+                frame2imagefile( fullpath, frame, width, height )
+        else:
+            # export every frame
+            frame2imagefile( fullpath, frame, width, height )
+        if idx % 100 == 0:
+            print(idx)
+    print(idx)
+
+</t>
+<t tx="karstenw.20260725132958.1">def frame2image( frame, width, height ):
+    """Make a PIL image fron a frame."""
+    destpixels = np.frombuffer( frame, dtype=np.uint8)
+    destpixels = destpixels.reshape( (height, width, 3) )
+    return Image.fromarray( destpixels )
+
+
+</t>
+<t tx="karstenw.20260725133651.1">def frame2imagefile( framepath, frame, width, height ):
+    img = frame2image( frame, width, height )
+    img.save( framepath, format="PNG", optimize=False)
+    del img
 </t>
 </tnodes>
 </leo_file>
