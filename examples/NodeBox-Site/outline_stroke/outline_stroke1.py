@@ -20,6 +20,9 @@ endy = 377
 
 ang = 0
 width = 30
+prec = 30
+dbg = 1
+path2inset = 2
 
 path1 = 1
 path2 = 1
@@ -33,14 +36,13 @@ strokewidth(1)
 path = sl.makepath( startx, starty, ctrl1x, ctrl1y, ctrl2x, ctrl2y, endx, endy )
 
 strokewidth( width )
-path = sl.outline_stroke(path, debug=True, fixedangle=ang)
+path = sl.outline_stroke(path, precision=prec, debug=dbg, fixedangle=ang)
 
 nofill()
 if path1: 
     strokewidth(1)
     fill(0.4, 0, 0.4, 0.25)
     drawpath(path)
-
 
 # PATH 2
 nofill()
@@ -49,9 +51,10 @@ strokewidth(1)
 
 path = sl.makepath( startx, starty, ctrl1x, ctrl1y, ctrl2x, ctrl2y, endx, endy )
 
-strokewidth( width - 2 )
+strokewidth( width - path2inset )
+path = sl.outline_stroke(path, precision=prec, transform=SMOOTH, debug=dbg, fixedangle=ang)
+
 if path2:
-    path = sl.outline_stroke(path, transform=SMOOTH, debug=True, fixedangle=ang)
     strokewidth(1)
     fill(0.4,0,0.4,0.25)
     drawpath(path)
