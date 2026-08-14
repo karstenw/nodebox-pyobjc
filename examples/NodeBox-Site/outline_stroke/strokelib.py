@@ -1,8 +1,13 @@
+
+
+
 def linecap_flat(pt1, pt2, path):
+    """Flat line ending. A line from pt1 to pt2."""
     path.lineto(pt2.x, pt2.y)
 
 
 def linecap_rounded(pt1, pt2, path):
+    """."""
     a = _ctx.angle(pt1.x, pt1.y, pt2.x, pt2.y)
     d = _ctx.distance(pt1.x, pt1.y, pt2.x, pt2.y) * 1
     dx1, dy1 = _ctx.coordinates(pt1.x, pt1.y, d, a+90)
@@ -47,23 +52,28 @@ def outline_stroke( path,
                     precision=30,
                     debug=True,
                     fixedangle=None):
-    """ Returns an outlined path from the given path and the current strokewidth.
-        This will plot vector points along the stroke edge.
-        Interesting effects can be achieved by modifying the thickness of the path
-        at each individual point. This can be done with the given transform function:
-        - It takes three parameters: time, distance, angle.
-        - It returns a new distance and angle.
-        The time represents the current place on the path as a number between 0.0-1.0.
-        The distance represents the thickness of the path.
-    """
-    L = [] # The stroke edge to "the left" of the path.
-    R = [] # The stroke edge to "the right" of the path.
+    
+    """Returns an outlined path from the given path and the current strokewidth.
+    This will plot vector points along the stroke edge.
+    Interesting effects can be achieved by modifying the thickness of the path
+    at each individual point. This can be done with the given transform function:
+    - It takes three parameters: time, distance, angle.
+    - It returns a new distance and angle.
+    The time represents the current place on the path as a number between 0.0-1.0.
+    The distance represents the thickness of the path."""
+    
+    
+    leftBorder = [] # The stroke edge to "the left" of the path.
+    rightBorder = [] # The stroke edge to "the right" of the path.
+    
     # The stroke width / 2 is the distance from the path to the left and right.
     # This distance can be tweaked by the given transform function.
     r = _ctx.strokewidth() * 0.5
+    
     # Take a number of sample points on the path.
     # The longer the path, the more precision is needed.
-    points = list(path.points(precision))
+    points = list( path.points(precision) )
+    
     for i, pt in enumerate(points):
         # We can calculate the angle (i.e. direction) of a point
         # from the line between this point and the next.
@@ -89,8 +99,8 @@ def outline_stroke( path,
         # the direction - 90 degrees is a point on the right stroke edge.
         dx1, dy1 = _ctx.coordinates(pt.x, pt.y, d, a+90)
         dx2, dy2 = _ctx.coordinates(pt.x, pt.y, d, a-90)
-        L.append( (dx1, dy1) )
-        R.append( (dx2, dy2) )
+        leftBorder.append( (dx1, dy1) )
+        rightBorder.append( (dx2, dy2) )
         if debug == True:
             # In debug mode, show the sample points,
             # the calculated points on the stroke edge,
@@ -107,20 +117,20 @@ def outline_stroke( path,
     
     # From the points on the stroke edges,
     # calculate new Bezier paths.
-    L = _ctx.findpath(L)
-    R = _ctx.findpath(list(reversed(R)))
+    leftBorder = _ctx.findpath(leftBorder)
+    rightBorder = _ctx.findpath(list(reversed(rightBorder)))
     
     # Join the paths in a single path and close the beginning and end.
     # The linecap function defines the style of the join.
     path = _ctx.BezierPath()
-    for pt in L: 
+    for pt in leftBorder: 
         path.append(pt)
     
-    linecap(pt, R[0], path) # Close end.
-    for pt in R: 
+    linecap(pt, rightBorder[0], path) # Close end.
+    for pt in rightBorder: 
         path.append(pt)
     
-    linecap(pt, L[0], path) # Close beginning.
+    linecap(pt, leftBorder[0], path) # Close beginning.
     return path
 
 
