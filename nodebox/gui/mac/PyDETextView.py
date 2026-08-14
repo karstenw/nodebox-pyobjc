@@ -138,11 +138,10 @@ class PyDETextView(NSTextView):
     def mouseDown_(self, event):
         if event.modifierFlags() & NSCommandKeyMask:
             screenPoint = NSEvent.mouseLocation()
-            viewPoint =   self.superview().convertPoint_fromView_(event.locationInWindow(),
-                                                        self.window().contentView())
-
+            viewPoint = self.superview().convertPoint_fromView_(event.locationInWindow(),
+                                                      self.window().contentView())
             c = self.characterIndexForPoint_(screenPoint)
-
+            
             txt = self.string()
             # XXX move code into ValueLadder
             try:
@@ -175,10 +174,10 @@ class PyDETextView(NSTextView):
                 # pass
         else:
             NSTextView.mouseDown_(self,event)
-
+    
     def acceptableDragTypes(self):
         return list(super(PyDETextView, self).acceptableDragTypes()) + [NSURLPboardType]
-
+    
     def draggingEntered_(self, dragInfo):
         pboard = dragInfo.draggingPasteboard()
         if NSURLPboardType in pboard.types():
@@ -193,21 +192,27 @@ class PyDETextView(NSTextView):
             pboard.declareTypes_owner_([NSStringPboardType], self)
             pboard.setString_forType_(s, NSStringPboardType)
         return super(PyDETextView, self).draggingEntered_(dragInfo)
-
+    
     def _cleanup(self):
         # delete two circular references
-        del self._string
-        del self._storageDelegate
-
+        try:
+            del self._string
+        except:
+            pass
+        try:
+            del self._storageDelegate
+        except:
+            pass
+    
     def __del__(self):
         nc = NSNotificationCenter.defaultCenter()
         nc.removeObserver_name_object_(self, "PyDETextFontChanged", None)
-
+    
     @objc.IBAction
     def jumpToLine_(self, sender):
         # from nodebox.gui.mac.AskString import AskString
         AskString( u"Jump to line number:", self.jumpToLineCallback_, u"", self.window() )
-
+    
     def jumpToLineCallback_(self, value):
         if value is None:
             return  # user cancelled
@@ -217,7 +222,7 @@ class PyDETextView(NSTextView):
             NSBeep()
         else:
             self.jumpToLineNr_(lineNo)
-
+    
     def jumpToLineNr_(self, lineNo):
         lines = self.textStorage().string().splitlines()
         lineNo = min(max(0, lineNo - 1), len(lines))
@@ -227,7 +232,7 @@ class PyDETextView(NSTextView):
         self.setSelectedRange_(rng)
         self.scrollRangeToVisible_(rng)
         self.setNeedsDisplay_(True)
-
+    
     def textFontChanged_(self, notification):
         basicAttrs = getBasicTextAttributes()
         self.setTypingAttributes_(basicAttrs)
@@ -235,12 +240,12 @@ class PyDETextView(NSTextView):
         self.layoutManager().invalidateDisplayForCharacterRange_(
                                                         (0, self._string.length()))
         self._storageDelegate.textFontChanged_(notification)
-
+    
     def setTextStorage_str_tabs_(self, storage, string, usesTabs):
         storage.addLayoutManager_(self.layoutManager())
         self._string = string
         self.usesTabs = usesTabs
-
+    
     @objc.IBAction
     def changeFont_(self, sender):
         # Change the font through the user prefs API, we'll get notified
@@ -248,21 +253,21 @@ class PyDETextView(NSTextView):
         font = getBasicTextAttributes()[NSFontAttributeName]
         font = sender.convertFont_(font)
         setTextFont(font)
-
+    
     def getLinesForRange_(self, rng):
         rng = self._string.lineRangeForRange_(rng)
         return self._string.substringWithRange_(rng), rng
-
+    
     def getIndent(self):
         if self.usesTabs:
             return "\t"
         else:
             return self.indentSize * " "
-
+    
     def drawInsertionPointInRect_color_turnedOn_(self, pt, color, on):
         self.insertionPoint = pt
         super(PyDETextView, self).drawInsertionPointInRect_color_turnedOn_(pt, color, on)
-
+    
     def keyDown_(self, event):
         super(PyDETextView, self).keyDown_(event)
         char = event.characters()[:1]
@@ -271,7 +276,7 @@ class PyDETextView(NSTextView):
             line, lineRng, pos = self.findMatchingIndex_paren_(selRng[0] - 1, char)
             if pos is not None:
                 self.balanceParens_(lineRng[0] + pos)
-
+    
     def balanceParens_(self, index):
         rng = (index, 1)
         oldAttrs, effRng = self.textStorage().attributesAtIndex_effectiveRange_(index,
@@ -284,11 +289,11 @@ class PyDETextView(NSTextView):
                                                                                 rng)
         self.performSelector_withObject_afterDelay_("resetBalanceParens:",
                 (oldAttrs, effRng), 0.2)
-
+    
     def resetBalanceParens_(self, params):
         attrs, rng = params
         self.layoutManager().setTemporaryAttributes_forCharacterRange_(attrs, rng)
-
+    
     def iterLinesBackwards_maxChars_(self, end, maxChars):
         begin = max(0, end - maxChars)
         if end > 0:
@@ -305,7 +310,7 @@ class PyDETextView(NSTextView):
             yield line, (end - nChars, nChars)
             end -= nChars
         assert end == linesRng[0]
-
+    
     def findMatchingIndex_paren_(self, index, paren):
         openToCloseMap = {"(": ")", "[": "]", "{": "}"}
         if paren:
@@ -337,7 +342,7 @@ class PyDETextView(NSTextView):
             if not stack:
                 break
         return line, lineRng, pos
-
+    
     def insertNewline_(self, sender):
         selRng = self.selectedRange()
         super(PyDETextView, self).insertNewline_(sender)
@@ -355,10 +360,10 @@ class PyDETextView(NSTextView):
         line = removeStringsAndComments(line).strip()
         if line and line[-1] == ":":
             leadingSpace += self.getIndent()
-
+        
         if leadingSpace:
             self.insertText_(leadingSpace)
-
+    
     def insertTab_(self, sender):
         if self.usesTabs:
             return super(PyDETextView, self).insertTab_(sender)
@@ -374,13 +379,13 @@ class PyDETextView(NSTextView):
         whiteEnd += nSpaces
         sel = min(whiteEnd, sel + (sel % self.indentSize))
         self.setSelectedRange_((sel + linesRng[0], 0))
-
+    
     def deleteBackward_(self, sender):
         self.delete_fwd_superf_(sender, False, super(PyDETextView, self).deleteBackward_)
-
+    
     def deleteForward_(self, sender):
         self.delete_fwd_superf_(sender, True, super(PyDETextView, self).deleteForward_)
-
+    
     def delete_fwd_superf_(self, sender, isForward, superFunc):
         selRng = self.selectedRange()
         if self.usesTabs or selRng[1]:
@@ -409,7 +414,7 @@ class PyDETextView(NSTextView):
         delEnd = min(delEnd, whiteEnd)
         self.setSelectedRange_((linesRng[0] + delBegin, delEnd - delBegin))
         self.insertText_("")
-
+    
     @objc.IBAction
     def indent_(self, sender):
         def indentFilter(lines):
@@ -423,7 +428,7 @@ class PyDETextView(NSTextView):
             [indent + line for line in lines[:-1]]
             return indentedLines
         self.filterLines_(indentFilter)
-
+    
     @objc.IBAction
     def dedent_(self, sender):
         def dedentFilter(lines):
@@ -436,7 +441,7 @@ class PyDETextView(NSTextView):
                 dedentedLines.append(line)
             return dedentedLines
         self.filterLines_(dedentFilter)
-
+    
     @objc.IBAction
     def comment_(self, sender):
         def commentFilter(lines):
@@ -454,7 +459,7 @@ class PyDETextView(NSTextView):
                     commentedLines.append(line)
             return commentedLines
         self.filterLines_(commentFilter)
-
+    
     @objc.IBAction
     def uncomment_(self, sender):
         def uncommentFilter(lines):
@@ -468,7 +473,7 @@ class PyDETextView(NSTextView):
                 commentedLines.append(line)
             return commentedLines
         self.filterLines_(uncommentFilter)
-
+    
     def filterLines_(self, filterFunc):
         selRng = self.selectedRange()
         lines, linesRng = self.getLinesForRange_(selRng)
