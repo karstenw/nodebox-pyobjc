@@ -42,7 +42,7 @@ def makeoutline( startx, starty, ctrl1x, ctrl1y,
     path = sl.makepath( startx, starty, ctrl1x, ctrl1y, ctrl2x, ctrl2y, endx, endy )
 
     strokewidth( width )
-    path = sl.outline_stroke(path, debug=dbg, fixedangle=fixedangle)
+    path = sl.outline_stroke(path, linecap=linecp, debug=dbg, fixedangle=fixedangle)
 
     nofill()
     if path1: 
@@ -59,13 +59,14 @@ def makeoutline( startx, starty, ctrl1x, ctrl1y,
 
     strokewidth( width - 2 )
     if path2:
-        path = sl.outline_stroke(path, linecap=linecp, transform=transfrm, debug=True, fixedangle=ang)
+        path = sl.outline_stroke(path, linecap=linecp, transform=transfrm, debug=dbg, fixedangle=fixedangle)
         strokewidth(1)
         fill(0.4,0,0.4,0.25)
         drawpath(path)
 
 def handler(val, name):
-    global transfrm, linecp, startx, starty, ctrl1x, ctrl1y, ctrl2x, ctrl2y, endx, endy, width, ang
+    global transfrm, linecp, startx, starty, ctrl1x, ctrl1y, ctrl2x, ctrl2y, endx, endy
+    global width, ang, path1, path2, dbg
     
     if name == 'Transform':
         transfrm = transformitems[val]
@@ -91,10 +92,17 @@ def handler(val, name):
         width = int( val )
     elif name == 'ang':
         ang = float( val )
+    elif name == 'path1':
+        path1 = bool( val )
+    elif name == 'path2':
+        path2 = bool( val )
+    elif name == 'dbg':
+        dbg = bool( val )
     
     makeoutline(startx, starty, ctrl1x, ctrl1y,
                 ctrl2x, ctrl2y, endx, endy,
-                width, transfrm, linecp, ang )
+                width, transfrm, linecp, ang,
+                path1, path2, dbg )
 
 var('Transform', MENU, default="SMOOTH", handler=handler, menuitems=list(transformitems.keys()))
 var('Linecap', MENU, default="FLAT", handler=handler, menuitems=list(linecapitems.keys()))
@@ -108,7 +116,10 @@ var('endx', NUMBER, 400, 0, 800, handler=handler )
 var('endy', NUMBER, 377, 0, 800, handler=handler )
 var('width', NUMBER, 30, 1, 200, handler=handler )
 var('ang', NUMBER, 0, 0, 360, handler=handler )
+var('path1', BOOLEAN, True, handler=handler )
+var('path2', BOOLEAN, True, handler=handler )
+var('dbg', BOOLEAN, True, handler=handler )
 
 makeoutline(startx, starty, ctrl1x, ctrl1y,
                 ctrl2x, ctrl2y, endx, endy,
-                width, transfrm, linecp, ang )
+                width, transfrm, linecp, ang, path1, path2, dbg )
