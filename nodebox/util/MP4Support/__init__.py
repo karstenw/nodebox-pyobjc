@@ -1,8 +1,10 @@
 import os
 import tempfile
 import pprint
-import Foundation
+import numpy as np
 import imageio_ffmpeg
+
+import Foundation
 import AppKit
 
 pp=pprint.pprint
@@ -42,6 +44,54 @@ def writeframe( movie, canvas ):
     movie.send( dataalpha)
 
 
+def frame2image( frame, width, height ):
+    """Make a PIL image fron a frame."""
+    destpixels = np.frombuffer( frame, dtype=np.uint8)
+    destpixels = destpixels.reshape( (height, width, 3) )
+    return Image.fromarray( destpixels )
+
+
+def frame2imagefile( framepath, frame, width, height ):
+    img = frame2image( frame, width, height )
+    img.save( framepath, format="PNG", optimize=False)
+    del img
+
+
+def exportframes(movie, folder, basename):
+    frames = movie.openmovie()
+    meta = frames.__next__()
+    pprint.pprint( meta )
+    
+    # export folder
+    folder = os.path.abspath( folder )
+    if not os.path.exists( folder ):
+        os.makedirs( folder )
+    
+    
+    imghashes = set()
+    
+    width, height = meta["size"]
+    pixels = width * height
+    idx = 0
+    for frame in frames:
+        idx += 1
+        
+        # make filename & path
+        filename = "%s-%s.png" % (basename, str( idx ).rjust(5, '0'),)
+        fullpath = os.path.join( folder, filename )    
+        
+        if 0:
+            # export one frame per second
+            if idx % 14 == 0:
+                frame2imagefile( fullpath, frame, width, height )
+        else:
+            # export every frame
+            frame2imagefile( fullpath, frame, width, height )
+        if idx % 100 == 0:
+            print(idx)
+    print(idx)
+
+
 class MovieReader:
     def __init__(self, path, pix_fmt="rgb24", bpp=None, input_params=None, output_params=None, bits_per_pixel=None ):
         self.path = os.path.abspath( os.path.expanduser(path) )
@@ -53,6 +103,7 @@ class MovieReader:
         meta = self.readMeta()
         if 0:
             pp(meta)
+        self.meta = meta
         self.fps = meta.get('fps', 0.0)
         self.audio_codec = meta.get('audio_codec', None)
         self.codec = meta.get('codec', None)
@@ -63,9 +114,14 @@ class MovieReader:
         self.source_size = meta.get('source_size', self.size)
             
     def openmovie(self):
-        return imageio_ffmpeg.read_frames( self.path, pix_fmt=self.pix_fmt, bpp=self.bpp,
-                                           input_params=self.input_params, output_params=self.output_params,
-                                           bits_per_pixel=self.bits_per_pixel)
+        return imageio_ffmpeg.read_frames( self.path,
+                                           pix_fmt=self.pix_fmt,
+                                           # pix_fmt="rgb24",
+                                           # bpp=self.bpp,
+                                           input_params=self.input_params,
+                                           output_params=self.output_params,
+                                           #bits_per_pixel=self.bits_per_pixel
+                                           )
 
 
     def readMeta( self ):
