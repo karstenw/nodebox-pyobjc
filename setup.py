@@ -18,7 +18,6 @@ machine = platform.machine()
 
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
-py3 = nodebox.py3
 
 BUNDLENAME = NAME + "_intel"
 if machine.startswith("arm"):
@@ -133,7 +132,7 @@ setup(
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
             "packages": [ "requests", "numpy", #"scipy", "matplotlib", "sympy",
-                        # "pandas", "cv2", "dlib", "skimage", "sklearn"],
+                        # "pandas", "cv2", "dlib", "skimage", "sklearn",
             ],
             "excludes": [
                 'TkInter', 'tkinter', 'tk', 'wx', 'sphinx',
