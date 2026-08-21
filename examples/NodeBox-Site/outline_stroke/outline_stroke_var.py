@@ -22,6 +22,7 @@ endy = 377
 
 ang = 0
 width = 30
+precision = 30
 
 path1 = 1
 path2 = 1
@@ -33,7 +34,7 @@ linecp = linecapitems['FLAT']
 def makeoutline( startx, starty, ctrl1x, ctrl1y,
                  ctrl2x, ctrl2y, endx, endy,
                  width, transform, linecap, fixedangle=ang,
-                 path1=1, path2=1, dbg=1  ):
+                 path1=1, path2=1, dbg=1, precision=precision  ):
     # PATH 1
     nofill()
     stroke(0)
@@ -42,7 +43,7 @@ def makeoutline( startx, starty, ctrl1x, ctrl1y,
     path = sl.makepath( startx, starty, ctrl1x, ctrl1y, ctrl2x, ctrl2y, endx, endy )
 
     strokewidth( width )
-    path = sl.outline_stroke(path, linecap=linecp, debug=dbg, fixedangle=fixedangle)
+    path = sl.outline_stroke(path, linecap=linecp, precision=precision, debug=dbg, fixedangle=fixedangle)
 
     nofill()
     if path1: 
@@ -59,14 +60,14 @@ def makeoutline( startx, starty, ctrl1x, ctrl1y,
 
     strokewidth( width - 2 )
     if path2:
-        path = sl.outline_stroke(path, linecap=linecp, transform=transfrm, debug=dbg, fixedangle=fixedangle)
+        path = sl.outline_stroke(path, linecap=linecp, transform=transfrm, precision=precision, debug=dbg, fixedangle=fixedangle)
         strokewidth(1)
         fill(0.4,0,0.4,0.25)
         drawpath(path)
 
 def handler(val, name):
     global transfrm, linecp, startx, starty, ctrl1x, ctrl1y, ctrl2x, ctrl2y, endx, endy
-    global width, ang, path1, path2, dbg
+    global width, precision, ang, path1, path2, dbg
     
     if name == 'Transform':
         transfrm = transformitems[val]
@@ -90,6 +91,8 @@ def handler(val, name):
         endy = int( val )
     elif name == 'width':
         width = int( val )
+    elif name == 'precision':
+        precision = int( val )
     elif name == 'ang':
         ang = float( val )
     elif name == 'path1':
@@ -102,7 +105,7 @@ def handler(val, name):
     makeoutline(startx, starty, ctrl1x, ctrl1y,
                 ctrl2x, ctrl2y, endx, endy,
                 width, transfrm, linecp, ang,
-                path1, path2, dbg )
+                path1, path2, dbg, precision )
 
 var('Transform', MENU, default="SMOOTH", handler=handler, menuitems=list(transformitems.keys()))
 var('Linecap', MENU, default="FLAT", handler=handler, menuitems=list(linecapitems.keys()))
@@ -115,6 +118,7 @@ var('ctrl2y', NUMBER, 400, 0, 800, handler=handler )
 var('endx', NUMBER, 400, 0, 800, handler=handler )
 var('endy', NUMBER, 377, 0, 800, handler=handler )
 var('width', NUMBER, 30, 1, 200, handler=handler )
+var('precision', NUMBER, 30, 1, 200, handler=handler )
 var('ang', NUMBER, 0, 0, 360, handler=handler )
 var('path1', BOOLEAN, True, handler=handler )
 var('path2', BOOLEAN, True, handler=handler )
