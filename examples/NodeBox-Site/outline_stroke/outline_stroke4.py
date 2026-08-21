@@ -9,37 +9,34 @@ CONTRACT = sl.transform_contract
 SMOOTH   = sl.transform_smooth
 
 ang = 0
+width = 30
+prec = 37
 
 nofill()
 stroke(0)
 strokewidth(1)
 
-path = sl.makepath( 95, 164, 318, 49, 188, 400, 400, 290)
- 
-strokewidth(30)
+strokewidth(width)
+
 path = BezierPath()
 path.moveto( 154, 457 )
 path.lineto( 228, 300 )
 path.lineto( 618, 223 )
 path.lineto( 751, 546 )
 
-
 path1 = sl.outline_stroke(path.copy(),
                         linecap=ROUNDED, transform=UNIFORM,
-                        precision=37,
+                        precision=prec,
                         debug=1, fixedangle=ang)
- 
-#strokewidth(1)
-#fill(0.4, 0, 0.4, 0.25)
 
 strokewidth( 1 )
 fill(0.4,0,0.4,0.25)
 drawpath(path1)
 
-strokewidth(30)
+strokewidth(width)
 path2 = sl.outline_stroke(path.copy(),
                         linecap=FLAT, transform=SMOOTH,
-                        precision=37,
+                        precision=prec,
                         debug=1, fixedangle=ang)
 strokewidth( 1 )
 fill(0.4,0,0.4,0.25)
