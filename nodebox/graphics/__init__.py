@@ -661,6 +661,14 @@ class Context(object):
         return txt.allmetrics
 
 
+    def fontnames(self):
+        return nodebox.util.fontnames()
+
+
+    def fontfamilies(sef, flat=False):
+        return nodebox.util.fontfamilies(flat=False)
+
+
     ### Image commands ###
 
     def image(self, path, x, y, width=None, height=None, alpha=1.0,

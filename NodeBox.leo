@@ -30,7 +30,7 @@
 <v t="karstenw.20210322113242.1"><vh>python3 stuff</vh></v>
 <v t="karstenw.20170704104119.2"><vh>get_version</vh></v>
 </v>
-<v t="karstenw.20230718111102.1" a="E"><vh>@clean nodebox/console.py</vh>
+<v t="karstenw.20230718111102.1"><vh>@clean nodebox/console.py</vh>
 <v t="karstenw.20230718111113.1"><vh>Declarations</vh></v>
 <v t="karstenw.20230718111113.2" a="E"><vh>class NodeBoxRunner</vh>
 <v t="karstenw.20230718111113.3"><vh>__init__</vh></v>
@@ -68,8 +68,8 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
@@ -160,6 +160,8 @@
 <v t="karstenw.20170704104726.19"><vh>textpath</vh></v>
 <v t="karstenw.20170704104726.20"><vh>textmetrics</vh></v>
 <v t="karstenw.20170704104726.21"><vh>alltextmetrics</vh></v>
+<v t="karstenw.20260920103626.1"><vh>fontnames</vh></v>
+<v t="karstenw.20260920103909.1"><vh>fontfamilies</vh></v>
 </v>
 <v t="karstenw.20170709143553.1"><vh>## Image Commands ##</vh>
 <v t="karstenw.20170704104726.22"><vh>image</vh></v>
@@ -424,7 +426,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -700,7 +702,7 @@
 <v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
 </v>
 <v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -728,13 +730,13 @@
 <v t="karstenw.20260710002619.1"><vh>NSURL2str</vh></v>
 <v t="karstenw.20260710002546.1"><vh>readURL</vh></v>
 </v>
-<v t="karstenw.20170811141102.1"><vh>FONT FUNCTIONS</vh>
+<v t="karstenw.20170811141102.1" a="E"><vh>FONT FUNCTIONS</vh>
 <v t="karstenw.20170704105353.9"><vh>fontnames</vh></v>
 <v t="karstenw.20170704105353.10"><vh>class FontRecord</vh>
 <v t="karstenw.20170704105353.11"><vh>__init__</vh></v>
 <v t="karstenw.20170704105353.12"><vh>__repr__</vh></v>
 </v>
-<v t="karstenw.20170704105353.13"><vh>fontfamilies</vh>
+<v t="karstenw.20170704105353.13" a="E"><vh>fontfamilies</vh>
 <v t="karstenw.20260401145845.1"><vh>&lt;&lt; makeTraitsList function &gt;&gt;</vh></v>
 <v t="karstenw.20260401145943.1"><vh>&lt;&lt; makeFontRecord function &gt;&gt;</vh></v>
 </v>
@@ -834,7 +836,7 @@
 <v t="karstenw.20170704105528.36"><vh>genProgram</vh></v>
 </v>
 </v>
-<v t="karstenw.20260604195825.1" a="E"><vh>MP4Support</vh>
+<v t="karstenw.20260604195825.1"><vh>MP4Support</vh>
 <v t="karstenw.20260604195850.1" a="E"><vh>@clean nodebox/util/MP4Support/__init__.py</vh>
 <v t="karstenw.20260604195902.1"><vh>Declarations</vh></v>
 <v t="karstenw.20260605104136.1"><vh>Globals</vh></v>
@@ -1191,7 +1193,6 @@ machine = platform.machine()
 
 NAME = 'NodeBox'
 VERSION = nodebox.__version__
-py3 = nodebox.py3
 
 BUNDLENAME = NAME + "_intel"
 if machine.startswith("arm"):
@@ -1306,7 +1307,7 @@ setup(
         "py2app": {
             "iconfile": "Resources/NodeBox.icns",
             "packages": [ "requests", "numpy", #"scipy", "matplotlib", "sympy",
-                        # "pandas", "cv2", "dlib", "skimage", "sklearn"],
+                        # "pandas", "cv2", "dlib", "skimage", "sklearn",
             ],
             "excludes": [
                 'TkInter', 'tkinter', 'tk', 'wx', 'sphinx',
@@ -4836,12 +4837,12 @@ import pdb
 kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = False
 
 pp = pprint.pprint
 
 # if true print out some debug info on stdout
-kwlog = 1
+kwlog = False
 
 objc.options.deprecation_warnings=1
 
@@ -6660,11 +6661,10 @@ commentRE = re.compile(r"[ \t]*(#)")
 <t tx="karstenw.20170704105113.10">def mouseDown_(self, event):
     if event.modifierFlags() &amp; NSCommandKeyMask:
         screenPoint = NSEvent.mouseLocation()
-        viewPoint =   self.superview().convertPoint_fromView_(event.locationInWindow(),
-                                                    self.window().contentView())
-
+        viewPoint = self.superview().convertPoint_fromView_(event.locationInWindow(),
+                                                  self.window().contentView())
         c = self.characterIndexForPoint_(screenPoint)
-
+        
         txt = self.string()
         # XXX move code into ValueLadder
         try:
@@ -6721,8 +6721,14 @@ commentRE = re.compile(r"[ \t]*(#)")
 </t>
 <t tx="karstenw.20170704105113.13">def _cleanup(self):
     # delete two circular references
-    del self._string
-    del self._storageDelegate
+    try:
+        del self._string
+    except:
+        pass
+    try:
+        del self._storageDelegate
+    except:
+        pass
 
 </t>
 <t tx="karstenw.20170704105113.14">def __del__(self):
@@ -6909,7 +6915,7 @@ def changeFont_(self, sender):
     line = removeStringsAndComments(line).strip()
     if line and line[-1] == ":":
         leadingSpace += self.getIndent()
-
+    
     if leadingSpace:
         self.insertText_(leadingSpace)
 
@@ -14089,7 +14095,8 @@ keywordsList += dir(graphics.Context)
 keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key",
                  "scrollwheel", "wheeldelta", "PAGENUM", "keycode",
                  "FRAME", "canvas"]
-
+keywordsList = list(set(keywordsList))
+keywordsList.sort()
 
 # Build up a regular expression which will match anything
 # interesting, including multi-line triple-quoted strings.
@@ -14909,6 +14916,7 @@ NSJPEGFileType = AppKit.NSJPEGFileType
     meta = self.readMeta()
     if 0:
         pp(meta)
+    self.meta = meta
     self.fps = meta.get('fps', 0.0)
     self.audio_codec = meta.get('audio_codec', None)
     self.codec = meta.get('codec', None)
@@ -14982,9 +14990,14 @@ NSJPEGFileType = AppKit.NSJPEGFileType
 
 </t>
 <t tx="karstenw.20260605103736.1">def openmovie(self):
-    return imageio_ffmpeg.read_frames( self.path, pix_fmt=self.pix_fmt, bpp=self.bpp,
-                                       input_params=self.input_params, output_params=self.output_params,
-                                       bits_per_pixel=self.bits_per_pixel)
+    return imageio_ffmpeg.read_frames( self.path,
+                                       pix_fmt=self.pix_fmt,
+                                       # pix_fmt="rgb24",
+                                       # bpp=self.bpp,
+                                       input_params=self.input_params,
+                                       output_params=self.output_params,
+                                       #bits_per_pixel=self.bits_per_pixel
+                                       )
 
 
 </t>
@@ -15285,6 +15298,7 @@ pixelsize = property( getPixelSize )
             print(idx)
     print(idx)
 
+
 </t>
 <t tx="karstenw.20260725132958.1">def frame2image( frame, width, height ):
     """Make a PIL image fron a frame."""
@@ -15298,6 +15312,18 @@ pixelsize = property( getPixelSize )
     img = frame2image( frame, width, height )
     img.save( framepath, format="PNG", optimize=False)
     del img
+
+
+</t>
+<t tx="karstenw.20260920103626.1">def fontnames(self):
+    return nodebox.util.fontnames()
+
+
+</t>
+<t tx="karstenw.20260920103909.1">def fontfamilies(sef, flat=False):
+    return nodebox.util.fontfamilies(flat=False)
+
+
 </t>
 </tnodes>
 </leo_file>
