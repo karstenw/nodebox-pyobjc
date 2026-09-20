@@ -113,7 +113,7 @@ def outline_stroke( path,
             _ctx.line(dx2, dy2, pt.x, pt.y)
     
     # Reset the strokewidth (we may have changed it in debug mode).
-    _ctx.strokewidth(r*2)        
+    _ctx.strokewidth(r*2)
     
     # From the points on the stroke edges,
     # calculate new Bezier paths.
