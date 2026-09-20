@@ -50,7 +50,8 @@ keywordsList += dir(graphics.Context)
 keywordsList += ["MOUSEX", "MOUSEY", "mousedown", "keydown", "key",
                  "scrollwheel", "wheeldelta", "PAGENUM", "keycode",
                  "FRAME", "canvas"]
-
+keywordsList = list(set(keywordsList))
+keywordsList.sort()
 
 # Build up a regular expression which will match anything
 # interesting, including multi-line triple-quoted strings.
