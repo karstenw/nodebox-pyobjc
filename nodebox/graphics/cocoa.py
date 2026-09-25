@@ -172,6 +172,7 @@ except NameError:
     punichr = chr
     long = int
 
+
 def _save():
     NSGraphicsContext.currentContext().saveGraphicsState()
 
