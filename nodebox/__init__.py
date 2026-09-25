@@ -14,6 +14,7 @@ except NameError:
     punichr = chr
     long = int
 
+
 def get_version():
     return __version__
 
