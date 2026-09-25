@@ -43,6 +43,7 @@ except NameError:
     punichr = chr
     long = int
 
+
 def format_stats(stats):
     if stats.number_of_differences > 0:
         clz = " different"

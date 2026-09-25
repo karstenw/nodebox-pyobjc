@@ -65,6 +65,7 @@ except NameError:
     punichr = chr
     long = int
 
+
 def makeunicode(s, srcencoding="utf-8", normalizer="NFC"):
     if type(s) not in ( pstr, punicode):
         s = str(s)

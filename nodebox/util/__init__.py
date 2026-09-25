@@ -83,6 +83,7 @@ except NameError:
     punichr = chr
     long = int
 
+
 def sortlistfunction(thelist, thecompare):
     if py3:
         sortkeyfunction = cmp_to_key( thecompare )

@@ -109,6 +109,7 @@ except NameError:
     punichr = chr
     long = int
 
+
 def fontify(pytext, searchfrom=0, searchto=None):
     if searchto is None:
         searchto = len(pytext)
