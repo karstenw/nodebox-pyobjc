@@ -51,6 +51,7 @@ except NameError:
     punichr = chr
     long = int
 
+
 def getFunctionArgCount( function ):
     # pdb.set_trace()
     if py3:
@@ -139,15 +140,19 @@ class DashboardController(NSObject):
 
     def buildInterface_(self, variables):
         panelwidth = 300
+        panelNIBHeight = 97
         
         label_x = 0
         label_w = 100
         ctrl_x = 108
         ctrl_w = 172
+        
         ctrlheight = 26 # 21
         ctrltop = 5
         ctrlheader = 11
         ctrlfooter = 38
+        
+        
         # ctrlheaderfooter = ctrlheader + ctrlfooter
         ncontrols = len( variables )
         varsheight = ncontrols * ctrlheight
@@ -177,7 +182,7 @@ class DashboardController(NSObject):
         # pdb.set_trace()
 
         # reset panel
-        self.panel.setContentSize_( (panelwidth, 97) )
+        self.panel.setContentSize_( (panelwidth, panelNIBHeight) )
         (panelx,panely),(panelwidth,panelheight) = self.panel.frame()
 
         # Height of the window. Each element has a height of ctrlheight.
