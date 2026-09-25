@@ -4,21 +4,29 @@ Script for building NodeBox
 Usage:
     python setup.py py2app
 """
-from distutils.core import setup
+
+
+import platform
+from setuptools import setup
 from setuptools.extension import Extension
 
 import py2app
 
 import nodebox
 
+machine = platform.machine()
+
 NAME = 'NodeBox_cv2dlib'
 VERSION = nodebox.__version__
 
+BUNDLENAME = NAME + "_intel"
+if machine.startswith("arm"):
+    BUNDLENAME = NAME + "_arm"
 
 AUTHOR = "Frederik De Bleser",
 AUTHOR_EMAIL = "frederik@pandora.be",
 URL = "http://nodebox.net/",
-CLASSIFIERS = (
+CLASSIFIERS = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: MacOS X :: Cocoa",
     "Intended Audience :: Developers",
