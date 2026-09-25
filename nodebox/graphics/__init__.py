@@ -82,6 +82,7 @@ except NameError:
     punichr = chr
     long = int
 
+
 class Context(object):
     
     KEY_UP = graphics_impl.KEY_UP
