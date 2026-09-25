@@ -33,10 +33,10 @@ from . import dashboard
 from . import progressbar
 
 import pdb
-kwdbg = False
+kwdbg = 1
 
 # set to true to have stdio on the terminal for pdb
-debugging = True
+debugging = 1
 
 pp = pprint.pprint
 
@@ -143,6 +143,7 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
+
 
 class ExportCommand(NSScriptCommand):
     pass    
