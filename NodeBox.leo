@@ -68,8 +68,8 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704104725.2"><vh>class Context</vh>
@@ -426,7 +426,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -568,11 +568,11 @@
 <v t="karstenw.20211127131740.1"><vh>DEBUG</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104918.1"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
+<v t="karstenw.20170704104918.1" a="E"><vh>@clean nodebox/gui/mac/dashboard.py</vh>
 <v t="karstenw.20170704105051.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210628212143.1"><vh>getFunctionArgCount</vh></v>
-<v t="karstenw.20170704105051.2"><vh>class DashboardController</vh>
+<v t="karstenw.20170704105051.2" a="E"><vh>class DashboardController</vh>
 <v t="karstenw.20170704105051.3"><vh>clearInterface</vh></v>
 <v t="karstenw.20170704105051.4"><vh>numberChanged_</vh></v>
 <v t="karstenw.20170704105051.5"><vh>textChanged_</vh></v>
@@ -4834,15 +4834,15 @@ from . import dashboard
 from . import progressbar
 
 import pdb
-kwdbg = False
+kwdbg = 1
 
 # set to true to have stdio on the terminal for pdb
-debugging = False
+debugging = 1
 
 pp = pprint.pprint
 
 # if true print out some debug info on stdout
-kwlog = False
+kwlog = 1
 
 objc.options.deprecation_warnings=1
 
@@ -6335,15 +6335,19 @@ class DashboardController(NSObject):
 </t>
 <t tx="karstenw.20170704105051.8">def buildInterface_(self, variables):
     panelwidth = 300
+    panelNIBHeight = 97
     
     label_x = 0
     label_w = 100
     ctrl_x = 108
     ctrl_w = 172
+    
     ctrlheight = 26 # 21
     ctrltop = 5
     ctrlheader = 11
     ctrlfooter = 38
+    
+    
     # ctrlheaderfooter = ctrlheader + ctrlfooter
     ncontrols = len( variables )
     varsheight = ncontrols * ctrlheight
@@ -6373,7 +6377,7 @@ class DashboardController(NSObject):
     # pdb.set_trace()
 
     # reset panel
-    self.panel.setContentSize_( (panelwidth, 97) )
+    self.panel.setContentSize_( (panelwidth, panelNIBHeight) )
     (panelx,panely),(panelwidth,panelheight) = self.panel.frame()
 
     # Height of the window. Each element has a height of ctrlheight.
@@ -14074,6 +14078,7 @@ except NameError:
     py3 = True
     punichr = chr
     long = int
+
 
 </t>
 <t tx="karstenw.20210322113320.1"># py3 stuff
