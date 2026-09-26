@@ -426,7 +426,7 @@
 <v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
 <v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
-<v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
+<v t="karstenw.20170704104856.1"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20170704105032.2"><vh>class ExportCommand</vh></v>
@@ -4834,15 +4834,15 @@ from . import dashboard
 from . import progressbar
 
 import pdb
-kwdbg = 1
+kwdbg = False
 
 # set to true to have stdio on the terminal for pdb
-debugging = 1
+debugging = False
 
 pp = pprint.pprint
 
 # if true print out some debug info on stdout
-kwlog = 1
+kwlog = False
 
 objc.options.deprecation_warnings=1
 
@@ -6153,8 +6153,6 @@ def cancel_(self, sender):
 <t tx="karstenw.20170704105051.1">
 from __future__ import print_function
 
-# import pdb
-
 import AppKit
 
 import objc
@@ -6164,6 +6162,7 @@ from nodebox import graphics
 import nodebox.util
 
 kwdbg = False
+# import pdb
 
 NSObject = AppKit.NSObject
 NSFont = AppKit.NSFont
@@ -6347,62 +6346,70 @@ class DashboardController(NSObject):
     ctrlheader = 11
     ctrlfooter = 38
     
-    
     # ctrlheaderfooter = ctrlheader + ctrlfooter
     ncontrols = len( variables )
     varsheight = ncontrols * ctrlheight
     
-    sizes = {
+    ctrlheights = {
         'label': 13,
         graphics.NUMBER: 13,
         graphics.TEXT: 15,
         graphics.BOOLEAN: 16,
         graphics.BUTTON: 16,
         graphics.MENU: 16 }
-
+    
     ctrlfluff = ctrltop + ctrlheader + ctrlfooter
-
+    
     self.vars = variables
     self.clearInterface()
+    
     if len(self.vars) &gt; 0:
         self.panel.orderFront_(None)
     else:
         self.panel.orderOut_(None)
         return
-
-
+    
     # Set the title of the parameter panel to the title of the window
     self.panel.setTitle_(self.documentWindow.title())
-
-    # pdb.set_trace()
-
+    
+    # get initila top for later correction    
+    (initialLeft, initialBottom),(initialWidth,initialHeight) = self.panel.frame()
+    if initialWidth != panelwidth:
+        ctrl_w = ctrl_w + (initialWidth - panelwidth)
+    initialTop = initialBottom + initialHeight
+    
+    self.panel.setContentSize_( (initialWidth, ctrlfluff) )
+    
     # reset panel
-    self.panel.setContentSize_( (panelwidth, panelNIBHeight) )
+    # self.panel.setContentSize_( (panelwidth, panelNIBHeight) )
     (panelx,panely),(panelwidth,panelheight) = self.panel.frame()
-
+    
     # Height of the window. Each element has a height of ctrlheight.
     # The extra "fluff" is 38 pixels.
     # panelheight = len(self.vars) * 21 + 54
     panelheight = varsheight + ctrlfluff
     # print("panelheight: ", panelheight )
     self.panel.setMinSize_( (panelwidth, panelheight) )
+    self.panel.setMaxSize_( (panelwidth*8, panelheight) )
 
     # Start of first element
     # First element is the height minus the fluff.
     # y = panelheight - 49
     y = panelheight - ( ctrlheader + ctrlfooter )
+    # y = panelheight - (ctrltop + ctrlheight + 20)
+    y = panelheight - (ctrlheader + ctrlfooter)
     
     cnt = 0
     # widthlabel = 0
     # widthctrl = 0
-    y = panelheight - (ctrltop + ctrlheight + 20)
+    
     for v in self.vars:
-        leftheight = sizes.get('label', ctrlheight)
-        rightheight = sizes.get(v.type, ctrlheight)
+        leftDeltaY = ctrlheights.get('label', ctrlheight)
+        rightDeltaY = ctrlheights.get(v.type, ctrlheight)
         # left_coord = (label_x, y)
         # right_coord = (ctrl_x, y)
-        leftframe =  ( ( label_x, y), (label_w, leftheight) )
-        rightframe = ( ( ctrl_x, y), (ctrl_w, rightheight) )
+        leftframe =  ( ( label_x, y), (label_w, leftDeltaY) )
+        rightframe = ( ( ctrl_x, y), (ctrl_w, rightDeltaY) )
 
         if v.type == graphics.NUMBER:
             label = self.addLabel_idx_frame_(v, cnt, leftframe)
@@ -6426,11 +6433,12 @@ class DashboardController(NSObject):
             label = self.addLabel_idx_frame_(v, cnt, leftframe)
             control = self.addMenu_idx_frame_(v, cnt, rightframe)
             v.control = (label,control)
-        # print("cnt/y  %i   %i" % (cnt, y) )
+        
         y -= ctrlheight
         cnt += 1
     
-    self.panel.setFrame_display_animate_( ((panelx,panely),(panelwidth,panelheight)), True, 0 )
+    panely = initialTop - panelheight
+    self.panel.setFrame_display_animate_( ((panelx,panely),(initialWidth,panelheight)), True, 0 )
 
 
 </t>
