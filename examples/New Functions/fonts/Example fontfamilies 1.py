@@ -3,6 +3,9 @@ from __future__ import print_function
 
 import pprint
 
+# flat == True gives a list of FontRecords
+
+# flat == False gives dict fontname -> fontstyle -> list of FontRecord
 
 fontFamilies = fontfamilies(flat=False)
 # pprint.pprint(fontFamilies)

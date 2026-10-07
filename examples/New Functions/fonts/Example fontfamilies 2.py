@@ -4,13 +4,15 @@ from __future__ import print_function
 import pprint
 
 
-fontFamilies = fontfamilies(flat=False)
-# pprint.pprint(fontFamilies)
+# flat == True gives a list of FontRecords
 
+# flat == False gives dict fontname -> fontstyle -> list of FontRecord
+
+flatFonts = fontfamilies(flat=True)
 
 # filter all fixed width fonts
 fixed = []
-flatFonts = fontfamilies(flat=True)
+
 for fontRec in flatFonts:
     if u'fixedpitch' in fontRec.traitnames:
         fixed.append( fontRec )
