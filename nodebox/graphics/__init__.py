@@ -598,7 +598,7 @@ class Context(object):
 
     ### Font Commands ###
 
-    def font(self, fontname=None, fontsize = None):
+    def font(self, fontname=None, fontsize=None):
         if fontname is not None:
             if not Text.font_exists(fontname):
                 raise NodeBoxError('Font "%s" not found.' % fontname )
@@ -667,7 +667,7 @@ class Context(object):
 
 
     def fontfamilies(sef, flat=False):
-        return nodebox.util.fontfamilies(flat=False)
+        return nodebox.util.fontfamilies(flat=flat)
 
 
     ### Image commands ###
