@@ -23,7 +23,7 @@ canvas = coreimage.canvas(800,600)
 
 
 
-l = canvas.layer( path ) #"LP-17.07.09_08_small.jpg")
+l = canvas.layer( path )
 p = l.pixels()
 canvas.draw()
 
