@@ -33,10 +33,10 @@ from . import dashboard
 from . import progressbar
 
 import pdb
-kwdbg = 1
+kwdbg = 0
 
 # set to true to have stdio on the terminal for pdb
-debugging = 1
+debugging = 0
 
 pp = pprint.pprint
 
