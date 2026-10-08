@@ -40,3 +40,4 @@ tests/*.db
 tests/*.xml
 examples/NodeBox-Site/creature & evolution/evolution/creatures
 examples/NodeBox-Site/+*
+examples/New Functions/fonts/test_fontfamilies.py
