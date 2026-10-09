@@ -4,8 +4,6 @@ __all__ = ['rotate_matrix', 'length', 'normalize_vector', 'project']
 
 import numpy as np
 
-from mmparametriclib import length, normalize_vector
-
 '''
 def matrix(u, v, index):
     """
@@ -21,6 +19,19 @@ def matrix(u, v, index):
                     )
                  )
 '''
+
+
+# --- VECTOR NORMALIZATION -------------------------------------------------
+ 
+def length(vector):
+    return np.sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
+
+def normalize_vector(face):
+    """ Calculate the normal vector between -1 and 1 for a flat surface """
+    norm = np.cross((face[0,0] - face[1,1]), (face[1,0] - face[0,1]))
+    return norm / length(norm)
+
+
 
 # --- MATRIX ROTATION ------------------------------------------------------
 

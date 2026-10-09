@@ -1,7 +1,8 @@
 
 import numpy as np
 
-size(550, 550)
+cell = 750
+size( cell, cell )
 background(0)
 nofill()
 stroke(0.5, 0.25)
@@ -20,7 +21,7 @@ n = 150
 # it is only used in transformations and shading; 
 # it is not used in the drawing 
 # (although it could be if you wanted to add perspective).
-r = 120
+r = 104
 def x(u, v):
     return  r * np.sin(3*u) / (2 + np.cos(v))
 def y(u, v):
@@ -148,7 +149,7 @@ view = np.array([0, 0, 1], np.float64)
 
 sphere = np.fromfunction(matrix, (n+1, n+1, 3))
 sphere = rotate_matrix(sphere, rot_x, rot_y, rot_z)
-project(sphere)
+project(sphere, light)
 
 # z-sort to avoid problems with overlapping surfaces:
 sorted_grobs = list(canvas)

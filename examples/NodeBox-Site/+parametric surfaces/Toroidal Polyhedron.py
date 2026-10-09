@@ -14,7 +14,9 @@ stroke(0.6, 5.6, 2.7, 0.35)
 strokewidth(1.0)
  
 translate(WIDTH/2, HEIGHT/2)
- 
+
+import numpy as np
+
 # n defines how many vertices we find: the number will be n^2.
 # Large values of n can take a while to render!
 
@@ -31,56 +33,56 @@ n = 8
 # (although it could be if you wanted to add perspective).
 r1 = 165
 r2 = 55
-def x(u, v): return (r1 + r2 * cos(v)) * cos(u)
-def y(u, v): return (r1 + r2 * cos(v)) * sin(u)
-def z(u, v): return r2 * sin(v)
+def x(u, v): return (r1 + r2 * np.cos(v)) * np.cos(u)
+def y(u, v): return (r1 + r2 * np.cos(v)) * np.sin(u)
+def z(u, v): return r2 * np.sin(v)
  
 def fit_to_domain(u, v):
-    u = 1.0 * u/n * pi*2
-    v = 2.0 * v/n * pi*2
+    u = 1.0 * u/n * np.pi*2
+    v = 2.0 * v/n * np.pi*2
     return u, v
  
-from Numeric import *
+# from Numeric import *
 def matrix(u, v, index):
     u, v = fit_to_domain(u, v)
-    return where(index==0, x(u, v),
-           where(index==1, y(u,v),
-           where(index==2, z(u,v), 1)))
+    return np.where(index==0, x(u, v),
+           np.where(index==1, y(u,v),
+           np.where(index==2, z(u,v), 1)))
  
 # --- MATRIX ROTATION ------------------------------------------------------
  
 def rotate_matrix(matrix, x, y, z):
-    rot_x = array(
+    rot_x = np.array(
         ([0, 1, 0],
-         [cos(y), 0, sin(y)],
-         [-sin(y), 0, cos(y)]
-        ), Float
+         [ np.cos(y), 0, np.sin(y)],
+         [-np.sin(y), 0, np.cos(y)]
+        ), np.float64
     )
-    rot_y = array(
+    rot_y = np.array(
         ([0, 0, 1],
-         [sin((1.5*pi/e)*z), cos((1.5*pi/e)*z), 0],
-         [cos((1.5*pi/e)*z), -sin((1.5*pi/e)*z), 0]
-        ), Float
+         [np.sin((1.5 * np.pi / np.e)*z),  np.cos((1.5 * np.pi / np.e)*z), 0],
+         [np.cos((1.5 * np.pi / np.e)*z), -np.sin((1.5 * np.pi / np.e)*z), 0]
+        ), np.float64
     )
-    rot_z = array(
+    rot_z = np.array(
         ([1, 0, 0],
-         [0, cos(1.25*x), -sin(1.25*x)],
-         [0, sin(1.25*x), cos(1.25*x)]
-        ), Float
+         [0, np.cos(1.25*x), -np.sin(1.25*x)],
+         [0, np.sin(1.25*x),  np.cos(1.25*x)]
+        ), np.float64
     )
-    matrix = matrixmultiply(matrix, rot_x)
-    matrix = matrixmultiply(matrix, rot_y)
-    matrix = matrixmultiply(matrix, rot_z)
+    matrix = np.matmul(matrix, rot_x)
+    matrix = np.matmul(matrix, rot_y)
+    matrix = np.matmul(matrix, rot_z)
     return matrix
  
 # --- VECTOR NORMALIZATION -------------------------------------------------
  
 def length(vector):
-    return sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
+    return np.sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
  
 def normalize_vector(face):
     """ Calculate the normal vector between -1 and 1 for a flat surface """
-    norm = cross_product((face[0,0] - face[1,1]), (face[1,0] - face[0,1]))
+    norm = np.cross((face[0,0] - face[1,1]), (face[1,0] - face[0,1]))
     return norm / length(norm)
  
 # --- ORTHOGRAPHIC PROJECTION ----------------------------------------------
@@ -94,7 +96,7 @@ def project(rows):
         for j in range(len(rows[i])-1):
             face = rows[i:i+2, j:j+2]
             normal = normalize_vector(face)
-            light_angle = (dot(normal, light))
+            light_angle = ( np.dot(normal, light))
             if (light_angle < 0):
                 light_angle = 0
             fill(
@@ -104,7 +106,7 @@ def project(rows):
                 1.0
             )
             # Draw only forward facing facets.
-            if (dot(view, normal) > 0):
+            if (np.dot(view, normal) > 0):
                 beginpath(
                     face[0, 0, 0],
                     face[0, 0, 1]
@@ -127,9 +129,9 @@ def project(rows):
  
 # --- ROTATION SLIDERS -----------------------------------------------------
  
-var("rot_x", NUMBER, 1.00, -pi, pi)
-var("rot_y", NUMBER, pi/4, -pi, pi)
-var("rot_z", NUMBER, -e, -pi, pi)
+var("rot_x", NUMBER, 1.00, -np.pi, np.pi)
+var("rot_y", NUMBER, np.pi/4, -np.pi, np.pi)
+var("rot_z", NUMBER, -np.e, -np.pi, np.pi)
  
 # --- LIGHTING SLIDERS -----------------------------------------------------
  
@@ -137,18 +139,24 @@ var("light_x", NUMBER, 0.50, -1.0, 1.0)
 var("light_y", NUMBER, -0.60, -1.0, 1.0)
 var("light_z", NUMBER, -0.25, -1.0, 1.0)
  
-light = array([light_x, light_y, light_z], Float)
+light = np.array([light_x, light_y, light_z], np.float64)
  
 # --- FACET CULLING --------------------------------------------------------
 # Draw only forward facing facets.
-view = array([0, 0, 1], Float)
+view = np.array([0, 0, 1], np.float64)
  
-sphere = fromfunction(matrix, (n+1, n+1, 3))
+sphere = np.fromfunction(matrix, (n+1, n+1, 3))
 sphere = rotate_matrix(sphere, rot_x, rot_y, rot_z)
 project(sphere)
  
 # z-sort to avoid problems with overlapping surfaces:
 sorted_grobs = list(canvas)
-sorted_grobs.sort(lambda p1, p2: cmp(p1.z, p2.z))
-canvas._grobs = sorted_grobs
 
+def depthsort( a, b ):
+    if a.z > b.z:
+        return 1
+    elif a.z < b.z:
+        return -1
+    return 0
+sortlistfunction( sorted_grobs, depthsort )
+canvas._grobs = sorted_grobs

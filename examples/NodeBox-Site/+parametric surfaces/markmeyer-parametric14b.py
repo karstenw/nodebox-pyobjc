@@ -3,8 +3,6 @@
 import math
 import numpy as np
 
-from mmparametriclib import rotate_matrix, length, normalize_vector
-
 sin = math.sin
 cos = math.cos
 pi = math.pi
@@ -60,19 +58,19 @@ def matrix(u, v, index):
 def rotate_matrix(matrix, x, y, z):
     rot_x = np.array(
         ([1, 0, 0], 
-         [0, cos(x), -sin(x)], 
-         [0, sin(x), cos(x)]
+         [0, np.cos(x), -np.sin(x)], 
+         [0, np.sin(x),  np.cos(x)]
         ), np.float64
     )
     rot_y = np.array(
-        ([cos(y), 0, sin(y)], 
+        ([np.cos(y), 0, np.sin(y)], 
          [0, 1, 0], 
-         [-sin(y), 0, cos(y)]
+         [-np.sin(y), 0, np.cos(y)]
         ), np.float64
     )
     rot_z = np.array(
-        ([cos(z),  -sin(z), 0], 
-         [sin(z), cos(z), 0], 
+        ([np.cos(z),-np.sin(z), 0], 
+         [np.sin(z), np.cos(z), 0], 
          [0, 0, 1]
         ), np.float64
     )
@@ -84,7 +82,7 @@ def rotate_matrix(matrix, x, y, z):
 # --- VECTOR NORMALIZATION -------------------------------------------------
  
 def length(vector):
-    return sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
+    return np.sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
  
 def normalize_vector(face):
     """ Calculate the normal vector between -1 and 1 for a flat surface """
@@ -135,9 +133,9 @@ def project(rows):
  
 # --- ROTATION SLIDERS -----------------------------------------------------
  
-var("rot_x", NUMBER, 0.00, -pi, pi)
-var("rot_y", NUMBER, pi/2, -pi, pi)
-var("rot_z", NUMBER, 0.00, -pi, pi)
+var("rot_x", NUMBER, 0.00, -np.pi, np.pi)
+var("rot_y", NUMBER, np.pi/2, -np.pi, np.pi)
+var("rot_z", NUMBER, 0.00, -np.pi, np.pi)
  
 # --- LIGHTING SLIDERS -----------------------------------------------------
  
