@@ -29,7 +29,7 @@ util = nodebox.util
 MovieWriter = nodebox.util.MP4Support.MovieWriter
 writeframe = nodebox.util.MP4Support.writeframe
 
-librarypath = "NONE"
+librarypath = None
 try:
     result = subprocess.run([ "defaults","read","net.nodebox.NodeBox","libraryPath" ], capture_output=True)
     p = result.stdout  #os.system("/usr/bin/defaults read net.nodebox.NodeBox libraryPath")
@@ -42,7 +42,7 @@ except Exception as err:
     print("READ Librarypath Preference failed.")
     print(err)
     librarypath = False
-print("librarypath:", repr(librarypath))
+print("librarypath:", librarypath )
 
 
 class NodeBoxRunner(object):
@@ -57,8 +57,11 @@ class NodeBoxRunner(object):
         self.__doc__ = {}
         self._pageNumber = 1
         self.frame = 1
-        self.library = False
-
+        if os.path.exists( librarypath ):
+            if librarypath not in sys.path:
+                sys.path.insert( 0, librarypath )
+        #self.library = False
+    
     def _check_animation(self):
         """Returns False if this is not an animation, True otherwise.
         Throws an expection if the animation is not correct (missing a draw method)."""
@@ -129,18 +132,23 @@ def make_image(source_or_code, outputfile):
     """Given a source string or code object, executes the scripts and saves the result as
     an image.  Supported image extensions: pdf, tiff, png, jpg, gif"""
     
+    scriptdir = False
     if os.path.exists( source_or_code ):
         path = os.path.abspath( source_or_code )
-        d = os.path.split( path )[0]
-        os.chdir( d )
+        scriptdir = os.path.split( path )[0]
+        os.chdir( scriptdir )
         f = io.open( source_or_code, encoding="utf-8" )
         source_or_code = f.read()
         f.close()
         
     runner = NodeBoxRunner()
+    if scriptdir and scriptdir not in sys.path:
+        sys.path.insert( 0, scriptdir )
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
     os.chdir( nodebox_dir )
+    if scriptdir and scriptdir in sys.path:
+        sys.path.remove( scriptdir )
     return source_or_code
 
 
