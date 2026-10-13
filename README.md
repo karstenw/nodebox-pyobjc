@@ -195,7 +195,7 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 
 Latest changes
 --------------
-2026-07-10 Version 1.10.3
+2026-07-10 Version 1.10.3  Many small fixes.
 
 2021-12-05 Version 1.10.1  "Goto Line..." works on python3
 
