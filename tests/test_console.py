@@ -54,7 +54,8 @@ alldemos = nodebox.util.filelist( examples,
 
 total = errors = 0
 
-ignorefiles = ("Example speech 3 allvoices.py", "Example speech 4 allvoicefiles.py", "Example filelist.py")
+ignorefiles = ("Example speech 3 allvoices.py", "Example speech 4 allvoicefiles.py",
+               "Example filelist.py", "dialogs.py", "__init__.py")
 
 # pdb.set_trace()
 
@@ -78,7 +79,11 @@ for rec in alldemos:
     imgpath = uniquepath(imgfolder, basename, ".jpg")
     # imgpath = os.path.join( imgfolder, imgname )
     
+    #if filename in ("outline_stroke1.py",):
+    #    pdb.set_trace()
+    
     try:
+        print("\n\nRUN:", filepath)
         s = nodebox.console.make_image( filepath, imgpath )
     except Exception as err:
         errors += 1
