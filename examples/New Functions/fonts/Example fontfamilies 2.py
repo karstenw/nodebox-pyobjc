@@ -23,6 +23,5 @@ print()
 pprint.pprint( fixed )
 
 print()
-print( "font families:", len(fontFamilies) )
 print( "fonts:", len(flatFonts) )
 print( "fixed width fonts:", len(fixed) )
