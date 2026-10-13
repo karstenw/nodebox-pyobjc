@@ -28,11 +28,11 @@ joinstyle( ROUND )
 capstyle( ROUND )
 autoclosepath( True )
 
-animate = 0
-flicker = 0
+animate = 0 # if True: walk through the many different forms @ 2 fps
+flicker = 0 # if True: skip random cube faces
 
 if animate:
-    speed( 8 )
+    speed( 2 )
 
 # different seed values for certain results - uncomment accordingly
 kwfork = 15
@@ -40,8 +40,8 @@ extended = 29
 classic = 55
 
 seed( classic )
-seed( extended )
-seed( kwfork )
+#seed( extended )
+#seed( kwfork )
 # seed(11)
 
 
@@ -176,7 +176,7 @@ def draw():
     
     if animate:
         seed(i)
-        print("seed( %i )" % (i,))
+        # print("seed( %i )" % (i,))
     
     strokewidth( strokew )
     
