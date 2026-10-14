@@ -17,7 +17,7 @@ class CompareError(Exception):
         self.stats = stats
     def __str__(self):
         return "%s: Images don't match: %s" % (self.scriptname, self.stats)
-    
+
 all_python_files = glob("*.py")
 test_files = [file for file in all_python_files if test_re.match(file)]
 
