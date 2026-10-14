@@ -665,14 +665,22 @@ def ditherimage(pathOrPILimgage, dithertype, threshhold):
     return os.path.abspath(name)
 
 
+# remap & lerp came as afterthoughts to the metaballs demo
+# 
+# constrain & normalize came after some searching (i.e. DrawBot, Processing, Shoebot, nodebox-gl)
+# 
 def constrain( val, low, high):
-    """Constrain the given value to the range low...high."""
+    """Constrain the given value to the range low...high.
+    
+    # this is the slow and easy understandable version
     if val < low:
         return low
     elif val > high:
         return high
     else:
-        return val
+        return val"""
+    # taken from nodebox-gl/graphics/geometry:def clamp()
+    return max(low, min(val, high))
 
 
 def lerp( start, end, t):

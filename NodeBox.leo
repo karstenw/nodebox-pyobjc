@@ -68,11 +68,11 @@
 <v t="karstenw.20170704104615.5"><vh>curvelength</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104455.1" a="E"><vh>graphics</vh>
-<v t="karstenw.20170704104646.1" a="E"><vh>@clean nodebox/graphics/__init__.py</vh>
+<v t="karstenw.20170704104455.1"><vh>graphics</vh>
+<v t="karstenw.20170704104646.1"><vh>@clean nodebox/graphics/__init__.py</vh>
 <v t="karstenw.20170704104725.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
-<v t="karstenw.20170704104725.2" a="E"><vh>class Context</vh>
+<v t="karstenw.20170704104725.2"><vh>class Context</vh>
 <v t="karstenw.20170704104725.3"><vh>__init__</vh></v>
 <v t="karstenw.20170704104725.4"><vh>_resetContext</vh></v>
 <v t="karstenw.20230217121258.1"><vh>scanmodule</vh></v>
@@ -149,7 +149,7 @@
 <v t="karstenw.20170704104726.10"><vh>capstyle</vh></v>
 <v t="karstenw.20170704104726.11"><vh>joinstyle</vh></v>
 </v>
-<v t="karstenw.20170709143458.1" a="E"><vh>## Font Commands ##</vh>
+<v t="karstenw.20170709143458.1"><vh>## Font Commands ##</vh>
 <v t="karstenw.20170704104726.12"><vh>font</vh></v>
 <v t="karstenw.20170704104726.13"><vh>fontsize</vh></v>
 <v t="karstenw.20170704104726.14"><vh>lineheight</vh></v>
@@ -163,14 +163,14 @@
 <v t="karstenw.20260920103626.1"><vh>fontnames</vh></v>
 <v t="karstenw.20260920103909.1"><vh>fontfamilies</vh></v>
 </v>
-<v t="karstenw.20170709143553.1" a="E"><vh>## Image Commands ##</vh>
+<v t="karstenw.20170709143553.1"><vh>## Image Commands ##</vh>
 <v t="karstenw.20170704104726.22"><vh>image</vh></v>
 <v t="karstenw.20170704104726.23"><vh>imagesize</vh></v>
 </v>
-<v t="karstenw.20170709143618.1" a="E"><vh>## Canvas Proxy ##</vh>
+<v t="karstenw.20170709143618.1"><vh>## Canvas Proxy ##</vh>
 <v t="karstenw.20170704104726.24"><vh>save</vh></v>
 </v>
-<v t="karstenw.20170709143636.1" a="E"><vh>## C-Extensions Interface ##</vh>
+<v t="karstenw.20170709143636.1"><vh>## C-Extensions Interface ##</vh>
 <v t="karstenw.20170704104726.25"><vh>isqrt</vh></v>
 <v t="karstenw.20170704104726.26"><vh>angle</vh></v>
 <v t="karstenw.20170704104726.27"><vh>distance</vh></v>
@@ -181,7 +181,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20170704104730.1" a="E"><vh>@clean nodebox/graphics/bezier.py</vh>
+<v t="karstenw.20170704104730.1"><vh>@clean nodebox/graphics/bezier.py</vh>
 <v t="karstenw.20170704104742.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170704104742.2"><vh>segment_lengths</vh></v>
 <v t="karstenw.20170704104742.3"><vh>length</vh></v>
@@ -699,9 +699,43 @@
 </v>
 </v>
 <v t="karstenw.20170704104503.1"><vh>tests</vh>
-<v t="karstenw.20170704105701.1"><vh>newHeadline</vh></v>
+<v t="karstenw.20170704105701.1" a="E"><vh>graphics</vh>
+<v t="karstenw.20261014124422.1"><vh>@clean nodebox/tests/graphics/001-basic-primitives.py</vh>
+<v t="karstenw.20261014124437.1"><vh>Declarations</vh></v>
+<v t="karstenw.20261014124437.2"><vh>flow</vh></v>
 </v>
-<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20261014124447.1"><vh>@clean nodebox/tests/graphics/002-text.py</vh>
+<v t="karstenw.20261014124616.1"><vh>Declarations</vh></v>
+</v>
+<v t="karstenw.20261014124451.1"><vh>@clean nodebox/tests/graphics/003-color.py</vh>
+<v t="karstenw.20261014124619.1"><vh>Declarations</vh></v>
+<v t="karstenw.20261014124619.2"><vh>draw_rect</vh></v>
+<v t="karstenw.20261014124619.3"><vh>move</vh></v>
+</v>
+<v t="karstenw.20261014124451.2"><vh>@clean nodebox/tests/graphics/004-state.py</vh>
+<v t="karstenw.20261014124621.1"><vh>Declarations</vh></v>
+<v t="karstenw.20261014124621.2"><vh>flow</vh></v>
+<v t="karstenw.20261014124621.3"><vh>draw_rect</vh></v>
+</v>
+<v t="karstenw.20261014124453.1"><vh>@clean nodebox/tests/graphics/005-path.py</vh>
+<v t="karstenw.20261014124623.1"><vh>Declarations</vh></v>
+<v t="karstenw.20261014124623.2"><vh>flow</vh></v>
+<v t="karstenw.20261014124623.3"><vh>draw_rect</vh></v>
+</v>
+<v t="karstenw.20261014124453.2"><vh>@clean nodebox/tests/graphics/006-text.py</vh>
+<v t="karstenw.20261014124626.1"><vh>Declarations</vh></v>
+</v>
+<v t="karstenw.20261014124555.1"><vh>@clean nodebox/tests/graphics/runtests.py</vh>
+<v t="karstenw.20261014124628.1"><vh>Declarations</vh></v>
+<v t="karstenw.20261014124628.2"><vh>class CompareError</vh>
+<v t="karstenw.20261014124628.3"><vh>__init__</vh></v>
+<v t="karstenw.20261014124628.4"><vh>__str__</vh></v>
+</v>
+</v>
+<v t="karstenw.20261014124602.1"><vh>@clean nodebox/tests/graphics/tests.py</vh></v>
+</v>
+</v>
+<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
 <v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
@@ -730,13 +764,13 @@
 <v t="karstenw.20260710002619.1"><vh>NSURL2str</vh></v>
 <v t="karstenw.20260710002546.1"><vh>readURL</vh></v>
 </v>
-<v t="karstenw.20170811141102.1" a="E"><vh>FONT FUNCTIONS</vh>
+<v t="karstenw.20170811141102.1"><vh>FONT FUNCTIONS</vh>
 <v t="karstenw.20170704105353.9"><vh>fontnames</vh></v>
 <v t="karstenw.20170704105353.10"><vh>class FontRecord</vh>
 <v t="karstenw.20170704105353.11"><vh>__init__</vh></v>
 <v t="karstenw.20170704105353.12"><vh>__repr__</vh></v>
 </v>
-<v t="karstenw.20170704105353.13" a="E"><vh>fontfamilies</vh>
+<v t="karstenw.20170704105353.13"><vh>fontfamilies</vh>
 <v t="karstenw.20260401145845.1"><vh>&lt;&lt; makeTraitsList function &gt;&gt;</vh></v>
 <v t="karstenw.20260401145943.1"><vh>&lt;&lt; makeFontRecord function &gt;&gt;</vh></v>
 </v>
@@ -756,7 +790,7 @@
 <v t="karstenw.20180207131514.1"><vh>dithertypes</vh></v>
 <v t="karstenw.20180202061109.1"><vh>ditherimage</vh></v>
 </v>
-<v t="karstenw.20260607135445.1"><vh>SCALING TOOLS</vh>
+<v t="karstenw.20260607135445.1" a="E"><vh>SCALING TOOLS</vh>
 <v t="karstenw.20260607135454.1"><vh>constrain</vh></v>
 <v t="karstenw.20260607140316.1"><vh>lerp</vh></v>
 <v t="karstenw.20260607140303.1"><vh>remap</vh></v>
@@ -766,7 +800,7 @@
 <v t="karstenw.20170704105353.16"><vh>_copy_attrs</vh></v>
 </v>
 <v t="karstenw.20170704105406.1"><vh>kgp</vh>
-<v t="karstenw.20170704105442.1" a="E"><vh>@clean nodebox/util/kgp/__init__.py</vh>
+<v t="karstenw.20170704105442.1"><vh>@clean nodebox/util/kgp/__init__.py</vh>
 <v t="karstenw.20170704105455.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
 <v t="karstenw.20210703124707.1"><vh>makeunicode double</vh></v>
@@ -837,7 +871,7 @@
 </v>
 </v>
 <v t="karstenw.20260604195825.1"><vh>MP4Support</vh>
-<v t="karstenw.20260604195850.1" a="E"><vh>@clean nodebox/util/MP4Support/__init__.py</vh>
+<v t="karstenw.20260604195850.1"><vh>@clean nodebox/util/MP4Support/__init__.py</vh>
 <v t="karstenw.20260604195902.1"><vh>Declarations</vh></v>
 <v t="karstenw.20260605104136.1"><vh>Globals</vh></v>
 <v t="karstenw.20260605144846.1"><vh>writeframe</vh></v>
@@ -4834,10 +4868,10 @@ from . import dashboard
 from . import progressbar
 
 import pdb
-kwdbg = 1
+kwdbg = 0
 
 # set to true to have stdio on the terminal for pdb
-debugging = 1
+debugging = 0
 
 pp = pprint.pprint
 
@@ -14438,7 +14472,7 @@ util = nodebox.util
 MovieWriter = nodebox.util.MP4Support.MovieWriter
 writeframe = nodebox.util.MP4Support.writeframe
 
-librarypath = "NONE"
+librarypath = None
 try:
     result = subprocess.run([ "defaults","read","net.nodebox.NodeBox","libraryPath" ], capture_output=True)
     p = result.stdout  #os.system("/usr/bin/defaults read net.nodebox.NodeBox libraryPath")
@@ -14451,7 +14485,7 @@ except Exception as err:
     print("READ Librarypath Preference failed.")
     print(err)
     librarypath = False
-print("librarypath:", repr(librarypath))
+print("librarypath:", librarypath )
 
 
 </t>
@@ -14537,7 +14571,10 @@ text(str(FRAME), 70, 70, 36 )"""
     self.__doc__ = {}
     self._pageNumber = 1
     self.frame = 1
-    self.library = False
+    if os.path.exists( librarypath ):
+        if librarypath not in sys.path:
+            sys.path.insert( 0, librarypath )
+    #self.library = False
 
 </t>
 <t tx="karstenw.20230718111113.4">def _check_animation(self):
@@ -14614,18 +14651,23 @@ text(str(FRAME), 70, 70, 36 )"""
     """Given a source string or code object, executes the scripts and saves the result as
     an image.  Supported image extensions: pdf, tiff, png, jpg, gif"""
     
+    scriptdir = False
     if os.path.exists( source_or_code ):
         path = os.path.abspath( source_or_code )
-        d = os.path.split( path )[0]
-        os.chdir( d )
+        scriptdir = os.path.split( path )[0]
+        os.chdir( scriptdir )
         f = io.open( source_or_code, encoding="utf-8" )
         source_or_code = f.read()
         f.close()
         
     runner = NodeBoxRunner()
+    if scriptdir and scriptdir not in sys.path:
+        sys.path.insert( 0, scriptdir )
     runner.run(source_or_code)
     runner.canvas.save(outputfile)
     os.chdir( nodebox_dir )
+    if scriptdir and scriptdir in sys.path:
+        sys.path.remove( scriptdir )
     return source_or_code
 
 
@@ -15147,15 +15189,24 @@ pixelsize = property( getPixelSize )
 
 
 </t>
-<t tx="karstenw.20260607135445.1"></t>
+<t tx="karstenw.20260607135445.1">@
+remap &amp; lerp came as afterthoughts to the metaballs demo
+
+constrain &amp; normalize came after some searching (i.e. DrawBot, Processing, Shoebot, nodebox-gl)
+
+</t>
 <t tx="karstenw.20260607135454.1">def constrain( val, low, high):
-    """Constrain the given value to the range low...high."""
+    """Constrain the given value to the range low...high.
+    
+    # this is the slow and easy understandable version
     if val &lt; low:
         return low
     elif val &gt; high:
         return high
     else:
-        return val
+        return val"""
+    # taken from nodebox-gl/graphics/geometry:def clamp()
+    return max(low, min(val, high))
 
 
 </t>
@@ -15336,6 +15387,323 @@ pixelsize = property( getPixelSize )
 <t tx="karstenw.20260920103909.1">def fontfamilies(sef, flat=False):
     return nodebox.util.fontfamilies(flat=flat)
 
+
+</t>
+<t tx="karstenw.20261014124422.1">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20261014124437.1">size(300, 300)
+
+_total_w = 0
+</t>
+<t tx="karstenw.20261014124437.2">def flow(w, h):
+    global _total_w
+    if _total_w + w*2 &gt;= WIDTH:
+        translate(-_total_w, h)
+        _total_w = 0 
+    else:
+        translate(w, 0)
+        _total_w += w
+
+x, y = 10, 10
+rect(x, y, 50, 50)
+flow(60, 60)
+rect(x, y, 50, 50, 0.6)
+flow(60, 60)
+oval(x, y, 50, 50)
+flow(60, 60)
+star(x+25, y+25, 20, outer=25, inner=15)
+flow(60, 60)
+arrow(x+50, y+25, 50)
+flow(60, 60)
+arrow(x+50, y, 50, type=FORTYFIVE)
+flow(60, 60)
+oval(x, y, 50, 50)
+</t>
+<t tx="karstenw.20261014124447.1">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20261014124451.1">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20261014124451.2"># State semantics
+
+@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20261014124453.1"># Path semantics
+
+@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20261014124453.2">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20261014124555.1">@others
+@language python
+@tabwidth -4
+</t>
+<t tx="karstenw.20261014124602.1"></t>
+<t tx="karstenw.20261014124616.1">size(300, 300)
+x, y = 10, 30
+fontsize(12)
+
+text("Hello", x, y)
+drawpath(textpath("Hello", x + 100, y))
+rect(x, y-12,50,20, fill=None, stroke=0)
+rect(x + 100, y-12,50,20, fill=None, stroke=0)
+
+y += 30
+align(LEFT)
+text("Hello", x, y, width=50)
+drawpath(textpath("Hello", x + 100, y, width=50))
+rect(x, y-12,50,20, fill=None, stroke=0)
+rect(x + 100, y-12,50,20, fill=None, stroke=0)
+
+y += 30
+align(CENTER)
+text("Hello", x, y, width=50)
+drawpath(textpath("Hello", x + 100, y, width=50))
+rect(x, y-12,50,20, fill=None, stroke=0)
+rect(x + 100, y-12,50,20, fill=None, stroke=0)
+
+y += 30
+align(RIGHT)
+text("Hello", x, y, width=50)    
+drawpath(textpath("Hello", x + 100, y, width=50))
+rect(x, y-12,50,20, fill=None, stroke=0)
+rect(x + 100, y-12,50,20, fill=None, stroke=0)
+
+</t>
+<t tx="karstenw.20261014124619.1">size(300, 300)
+
+</t>
+<t tx="karstenw.20261014124619.2">def draw_rect(*args, **kwargs):
+    r = rect(0, 0, 12, 42) # Draw default square
+    r = rect(20, 0, 42, 42, *args, **kwargs)
+    return r
+    
+_counter = 1
+</t>
+<t tx="karstenw.20261014124619.3">def move():
+    global _counter
+    text(_counter, 80, 25, fontsize=12, fill=0)
+    _counter += 1
+    translate(0, 50)    
+
+# 1: Give the color using a tuple
+draw_rect(fill=(1, 0, 0))
+move()
+
+# 2: Give the color using a Color object
+draw_rect(fill=Color(1, 0, 0))
+move()
+
+# 3: Use HSB Colors
+colormode(HSB)
+draw_rect(fill=Color(0, 1, 1))
+move()
+
+# 4: Use CMYK Colors
+colormode(CMYK)
+draw_rect(fill=Color(0, 0, 0, 1))
+move()
+
+# 5: Color range
+colormode(RGB)
+colorrange(255)
+draw_rect(fill=(128, 0, 0)) # One red component
+move()
+
+</t>
+<t tx="karstenw.20261014124621.1">size(300, 300)
+
+_total_w = 0
+_counter = 1
+</t>
+<t tx="karstenw.20261014124621.2">def flow(w=50, h=70):
+    global _total_w
+    global _counter
+    text(_counter, 17, 60, fontsize=12, fill=0)
+    _counter += 1
+    if _total_w + w*2 &gt;= WIDTH:
+        translate(-_total_w, h)
+        _total_w = 0 
+    else:
+        translate(w, 0)
+        _total_w += w
+
+</t>
+<t tx="karstenw.20261014124621.3">def draw_rect(*args, **kwargs):
+    r = rect(0, 0, 42, 42, *args, **kwargs)
+    return r
+    
+# 1: The current state specifies the color of an object.
+fill(1, 0, 0)
+draw_rect()
+flow()
+
+# 2: The current state can be overridden by direct access.
+draw_rect(fill=(0, 0, 1))
+flow()
+
+# 3: You can also change things "after the facts"
+r = draw_rect()
+r.fill = 0, 0, 1
+flow()
+
+# 4: Re-inheriting from the context
+r = draw_rect() # Would be red
+fill(0, 1, 0) # The current fill is now green
+r.inheritFromContext() # Copy the fill
+flow()
+
+# 5: By default, objects don't inherit from the context
+pt = BezierPath()
+pt.rect(200, 0, 42, 42) # Note that I set the position directly
+pt.draw()
+flow()
+
+# 6: You have to let them inherit
+pt = BezierPath()
+pt.rect(0, 0, 42, 42)
+pt.inheritFromContext()
+pt.draw()
+flow()
+
+# 7: Drawpath does a inheritFromContext
+pt = BezierPath()
+pt.rect(0, 0, 42, 42)
+pt.fill = 0, 0, 1 # This gets overridden by inheritFromContext
+drawpath(pt)
+flow()
+
+# 8: Drawpath can also override attributes
+pt = BezierPath()
+pt.rect(0, 0, 42, 42)
+drawpath(pt, fill=(0, 0, 1))
+flow()
+
+</t>
+<t tx="karstenw.20261014124623.1">size(300, 300)
+
+_total_w = 0
+_counter = 1
+</t>
+<t tx="karstenw.20261014124623.2">def flow(w=50, h=70):
+    global _total_w
+    global _counter
+    text(_counter, 17, 60, fontsize=12, fill=0)
+    _counter += 1
+    if _total_w + w*2 &gt;= WIDTH:
+        translate(-_total_w, h)
+        _total_w = 0 
+    else:
+        translate(w, 0)
+        _total_w += w
+
+</t>
+<t tx="karstenw.20261014124623.3">def draw_rect(*args, **kwargs):
+    r = rect(0, 0, 42, 42, *args, **kwargs)
+    return r
+    
+# 1: A basic bezier path filled with a color
+pt = BezierPath(fill=(1,0,0))
+pt.rect(0, 0, 42, 42)
+pt.draw()
+flow()
+
+# 2: Using the transform bezier path method should copy color
+trans = Transform()
+trans.translate(50, 0)
+pt2 = trans.transformBezierPath(pt)
+pt2.draw()
+flow()
+</t>
+<t tx="karstenw.20261014124626.1">size(300, 300)
+fontsize(40)
+fill(0, 0.5)
+stroke(0)
+line(0,150, WIDTH, 150)
+line(10, 0, 10, HEIGHT)
+text("hamburgevons", 10, 150)
+nofill()
+p = text("hamburgevons", 10, 150, outline=True)
+(x, y), (w,h) = p.bounds
+rect(x, y, w, h)
+</t>
+<t tx="karstenw.20261014124628.1">import shutil
+import os
+import re
+from glob import glob
+
+import sys
+sys.path.insert(0, '../..')
+
+from nodebox.console import make_image
+from nodebox.util import vdiff
+
+test_re = re.compile("^[0-9]{3}.*.py$")
+
+</t>
+<t tx="karstenw.20261014124628.2">class CompareError(Exception):
+    @others
+all_python_files = glob("*.py")
+test_files = [file for file in all_python_files if test_re.match(file)]
+
+# Remove and re-create the results directory
+try:
+    shutil.rmtree("_results")
+except OSError as e:
+    if e.errno != 2: # The directory doesn't exist yet
+        raise e()
+RESULTS_DIR = "_results"
+os.mkdir("_results")
+
+stats_list = []
+differences = False
+# Test all the scripts one by one.
+for test_file in test_files:
+    basename = os.path.splitext(test_file)[0]
+    ref_image = "%s.png" % basename
+    result_image = os.path.join(RESULTS_DIR, "%s.result.png" % basename)
+    test_script = open(test_file).read()
+    make_image(test_script, result_image)
+    
+    stats = vdiff.Statistics(ref_image, result_image, name=basename)
+    stats.save_comparison_image(os.path.join(RESULTS_DIR, "%s.compare.png" % basename))
+    stats.fname1 = "../" + stats.fname1 # This will link to the original file
+    stats.fname2 = os.path.split(stats.fname2)[1] # This will link to a file in the same folder
+    stats.comparison_image_fname = os.path.split(stats.comparison_image_fname)[1] # This will link to a file in the same folder
+    stats_list.append(stats)
+    
+    if stats.number_of_differences &gt; 0:
+        differences = True
+        print( "E", end='' )
+    else:
+        print( ".", end='' )
+print()
+
+html = vdiff.format_stats_list(stats_list)
+open(os.path.join(RESULTS_DIR, '_results.html'), 'w').write(html)
+
+if differences:
+    for stats in stats_list:
+        if stats.number_of_differences &gt; 0:
+            print( "%s: Images don't match." % (stats.name,) )
+</t>
+<t tx="karstenw.20261014124628.3">def __init__(self, scriptname, stats):
+    self.scriptname = scriptname
+    self.stats = stats
+</t>
+<t tx="karstenw.20261014124628.4">def __str__(self):
+    return "%s: Images don't match: %s" % (self.scriptname, self.stats)
 
 </t>
 </tnodes>
