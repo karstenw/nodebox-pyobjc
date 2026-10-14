@@ -61,7 +61,7 @@ class NodeBoxRunner(object):
             if librarypath not in sys.path:
                 sys.path.insert( 0, librarypath )
         #self.library = False
-    
+
     def _check_animation(self):
         """Returns False if this is not an animation, True otherwise.
         Throws an expection if the animation is not correct (missing a draw method)."""
@@ -80,7 +80,7 @@ class NodeBoxRunner(object):
             if 'setup' in self.namespace:
                 self.namespace['setup']()
             self.namespace['draw']()
-    
+
     def run_multiple(self, source_or_code, frames):
         # pdb.set_trace()
         if isinstance(source_or_code, str):
