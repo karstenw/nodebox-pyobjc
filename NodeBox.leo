@@ -423,9 +423,9 @@
 <v t="karstenw.20170704104751.187"><vh>_test</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104501.1"><vh>gui</vh>
+<v t="karstenw.20170704104501.1" a="E"><vh>gui</vh>
 <v t="karstenw.20170704104824.1"><vh>@clean nodebox/gui/__init__.py</vh></v>
-<v t="karstenw.20170704105258.1"><vh>mac</vh>
+<v t="karstenw.20170704105258.1" a="E"><vh>mac</vh>
 <v t="karstenw.20170704104856.1" a="E"><vh>@clean nodebox/gui/mac/__init__.py</vh>
 <v t="karstenw.20170704105032.1"><vh>Declarations</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -735,8 +735,8 @@
 <v t="karstenw.20261014124602.1"><vh>@clean nodebox/tests/graphics/tests.py</vh></v>
 </v>
 </v>
-<v t="karstenw.20170704104508.1" a="E"><vh>util</vh>
-<v t="karstenw.20170704105327.1" a="E"><vh>@clean nodebox/util/__init__.py</vh>
+<v t="karstenw.20170704104508.1"><vh>util</vh>
+<v t="karstenw.20170704105327.1"><vh>@clean nodebox/util/__init__.py</vh>
 <v t="karstenw.20170704105353.1"><vh>Declarations</vh></v>
 <v t="karstenw.20170804122614.1"><vh>Globals</vh></v>
 <v t="karstenw.20210322113242.1"></v>
@@ -790,7 +790,7 @@
 <v t="karstenw.20180207131514.1"><vh>dithertypes</vh></v>
 <v t="karstenw.20180202061109.1"><vh>ditherimage</vh></v>
 </v>
-<v t="karstenw.20260607135445.1" a="E"><vh>SCALING TOOLS</vh>
+<v t="karstenw.20260607135445.1"><vh>SCALING TOOLS</vh>
 <v t="karstenw.20260607135454.1"><vh>constrain</vh></v>
 <v t="karstenw.20260607140316.1"><vh>lerp</vh></v>
 <v t="karstenw.20260607140303.1"><vh>remap</vh></v>
@@ -4868,10 +4868,10 @@ from . import dashboard
 from . import progressbar
 
 import pdb
-kwdbg = 0
+kwdbg = 1
 
 # set to true to have stdio on the terminal for pdb
-debugging = 0
+debugging = 1
 
 pp = pprint.pprint
 
