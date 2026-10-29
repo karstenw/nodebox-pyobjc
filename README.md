@@ -187,14 +187,14 @@ Attention!
 
 
 
-
-
-
 Since 1.9.21 the adapted Nodebox library is now included in the [download](http://goo.gl/vkuBeV). Open Nodebox, go to preferences and set the Library folder to the included one "NodeBox-Library". The repository is here: [Library](https://github.com/karstenw/Library). 
 
 
 Latest changes
 --------------
+
+2026-10-29 New compiled Apps. The intel version is on 3.13.18. The arm version is on 3.14.2
+
 2026-07-10 Version 1.10.3  Many small fixes.
 
 2021-12-05 Version 1.10.1  "Goto Line..." works on python3
