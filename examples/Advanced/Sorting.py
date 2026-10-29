@@ -37,9 +37,6 @@ t = 0.0
 # d is the delta amount added each step
 d = 1.0 / len(sorted_grobs)
 
-
-
-
 for grob in sorted_grobs:
     # Grobs will get bigger
     grob.scale(t)
