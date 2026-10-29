@@ -1,3 +1,6 @@
+
+"""This is a rewrite of the Nodebox Icon generator. Rewritten to make it easier for me to understand it's working."""
+
 from random import seed
 from itertools import cycle
 

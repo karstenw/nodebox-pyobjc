@@ -11,7 +11,7 @@
 <vnodes>
 <v t="karstenw.20260702150854.2" a="E"><vh>@clean nodeboxlogo-rewrite.py</vh>
 <v t="karstenw.20260702150922.1"><vh>Declarations</vh></v>
-<v t="karstenw.20260711180731.1"><vh>newHeadline</vh></v>
+<v t="karstenw.20260711180731.1"><vh>Globals &amp; config</vh></v>
 <v t="karstenw.20260702150922.3" a="E"><vh>cube</vh>
 <v t="karstenw.20260710155254.1"><vh>&lt;&lt; helpers &gt;&gt;</vh></v>
 </v>
@@ -24,7 +24,10 @@
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20260702150922.1">from random import seed
+<t tx="karstenw.20260702150922.1">
+"""This is a rewrite of the Nodebox Icon generator. Rewritten to make it easier for me to understand it's working."""
+
+from random import seed
 from itertools import cycle
 
 
@@ -139,7 +142,7 @@ from itertools import cycle
     
     if animate:
         seed(i)
-        print("seed( %i )" % (i,))
+        # print("seed( %i )" % (i,))
     
     strokewidth( strokew )
     
@@ -228,6 +231,7 @@ depthscale = 0.5
 cubedepth = cubesize * depthscale
 
 cell = n * cubesize + n * cubedepth + 2*offset + 3.5
+cell = int(round(cell))
 
 size( cell, cell )
 print("WIDTH:", WIDTH)
@@ -240,11 +244,11 @@ joinstyle( ROUND )
 capstyle( ROUND )
 autoclosepath( True )
 
-animate = 0
-flicker = 0
+animate = 0 # if True: walk through the many different forms @ 2 fps
+flicker = 0 # if True: skip random cube faces
 
 if animate:
-    speed( 8 )
+    speed( 2 )
 
 # different seed values for certain results - uncomment accordingly
 kwfork = 15
@@ -254,7 +258,7 @@ classic = 55
 seed( classic )
 #seed( extended )
 #seed( kwfork )
-#seed(11)
+# seed(11)
 
 
 </t>
