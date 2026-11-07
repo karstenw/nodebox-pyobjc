@@ -314,7 +314,7 @@ class Context(object):
         return self.oval( x, y, width, height, draw=draw, **kwargs )
 
 
-    def arc(self, x, y, r, startAngle, endAngle, draw=True, **kwargs):
+    def arc(self, x, y, r, startAngle=0, endAngle=360, draw=True, **kwargs):
         BezierPath.checkKwargs(kwargs)
         path = self.BezierPath(**kwargs)
         path.arc(x, y, r, startAngle, endAngle)
