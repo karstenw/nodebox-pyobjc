@@ -7,7 +7,7 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.10.2
+The current version is 1.10.3
 
 Download the compiled app from the [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
 
