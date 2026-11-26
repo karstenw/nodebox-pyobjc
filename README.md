@@ -7,26 +7,10 @@
 
 This is a fork of [NodeBox 1](https://github.com/nodebox/nodebox-pyobjc).
 
-The current version is 1.10.2
+The current version is 1.10.3
 
 Download the compiled app from the [github releases](https://github.com/karstenw/nodebox-pyobjc/releases).
 
-
-2026-10 The first final release. Python is up to 3.13, PyObjc is 12.1. Separate archives for arm and intel. 
-
-2026-07 
-
-2026-06-02 The `imagesize(path, data=None, pixelsize=False)`command reports the size of an image in points. This was not detected for a long time since most images are 72 dpi. If `pixelsize=True` the value returned will be in pixels. 
-
-2022-03-28 App only release includes version for M1. This was generated on an iMac with 11.6.3 and has only been tested to run the examples. Not the Library.
-
-2021-10-26 The Python 3 transformation is nearly complete. 
-
-2021-06-20 A transition to Python3.8 is underway. I intend to keep the source py2/py3 compatible as long as possible or at least as long as I care.
-
-2018-05-05 With version 1.9.31 OS X 10.9 is the minimum OS version needed to run NodeBox. Prior Versions should run on 10.6 and above.
-
-As of 2017-05-17 the 32-bit version has been dropped. Please write up an issue if you need one.
 
 Attention!
 ==========
@@ -111,7 +95,8 @@ Attention!
 
 
 1.  New graphics primitive `arc(x, y, r, startAngle, endAngle)`
-	-  Draws an arc between startAngle and endAngle with center at (x,y) and radius=r.
+		Draws an arc between startAngle and endAngle with center at (x,y) and radius=r.
+		Starting with 1.10.4 startAngle & endAngle will have default values `0` and `360`.
 
 
 1.  New function `say(txt, voice=None, outfile=None, wait=True)` (1.9.26).
@@ -193,9 +178,19 @@ Since 1.9.21 the adapted Nodebox library is now included in the [download](http:
 Latest changes
 --------------
 
+2026-11-07 `arc` - defaultvalues for `arc( x,y,r, startAngle=0, endAngle=360 )`.  This makes it possible to draw a circle with `arc( x,y,r)`
+
+2026-11-04 Version 1.10.3  The first final release. Python is up to 3.13, PyObjc is 12.1. Separate applications for arm and intel.
+
 2026-10-29 New compiled Apps. The intel version is on 3.13.18. The arm version is on 3.14.2
 
 2026-07-10 Version 1.10.3  Many small fixes.
+
+2026-06-05 Movie exports work again and have been delegated to the `imageio_ffmpeg` library. You'll need an installed `ffmpeg` binary for it work. The V1.10.3 ARM version should have a ffmpeg binary bundled
+
+2026-06-02 The `imagesize(path, data=None, pixelsize=False)`command reports the size of an image in points. This was not detected for a long time since most images are 72 dpi. If `pixelsize=True` the value returned will be in pixels. 
+
+2022-03-28 App only release includes version for M1. This was generated on an iMac with 11.6.3 and has only been tested to run the examples. Not the Library.
 
 2021-12-05 Version 1.10.1  "Goto Line..." works on python3
 
@@ -204,6 +199,8 @@ Latest changes
 2021-06-30 Version 1.10.0b Compiles with python3. About 85% of all scripts run. Saves. The C-extensions fractal and bwdither run again. Many small fixes.
 
 2021-06-28 Version 1.10.0a Compiles with python3. About 50% of all scripts run. No Save. No C-extensions.
+
+2021-06-20 A transition to Python3.8 is underway. I intend to keep the source py2/py3 compatible as long as possible or at least as long as I care.
 
 2021-03-14 Version 1.9.33 Updated Library; bug fixes; enhanced photobot lib
 
